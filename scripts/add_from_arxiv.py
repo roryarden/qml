@@ -34,7 +34,20 @@ USER_AGENT = "roryarden/qml/0.1 (https://arxiv.org; contact: local script)"
 
 PDF_DIR = Path("papers/pdfs")
 MD_DIR = Path("papers/md")
+INDEX_PATH = Path("papers/index.md")
 LUA_FILTER = Path(__file__).parent / "clean.lua"
+
+INDEX_HEADER = (
+    "# Paper Library Index\n\n"
+    "Source of truth for the library, keyed by arXiv id. PDFs and Markdown under\n"
+    "`pdfs/` and `md/` are a regenerable cache \u2014 rebuild any paper with:\n\n"
+    "```sh\n"
+    "uv run scripts/add_from_arxiv.py <arxiv-id>\n"
+    "```\n\n"
+    "## Papers\n\n"
+    "| Year | Author | Title | arXiv |\n"
+    "|------|--------|-------|-------|"
+)
 
 ARXIV_API = "http://export.arxiv.org/api/query"
 ATOM_NS = {
@@ -216,6 +229,51 @@ def build_front_matter(arxiv_id: str, meta: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n\n"
 
 
+def _display_author(authors: list[str]) -> str:
+    if not authors:
+        return "Unknown"
+    last_name = authors[0].split()[-1]
+    return f"{last_name} et al." if len(authors) > 1 else last_name
+
+
+def update_index(meta: dict[str, Any], versioned_id: str) -> None:
+    """Insert or refresh this paper's row in papers/index.md, sorted by year."""
+    year = meta["published"][:4] if meta["published"] else ""
+    author = _display_author(meta["authors"])
+    title = meta["title"].replace("|", "\\|")
+    row = (
+        f"| {year} | {author} | {title} | "
+        f"[{versioned_id}](https://arxiv.org/abs/{versioned_id}) |"
+    )
+    base_id = re.sub(r"v\d+$", "", versioned_id)
+
+    prefix = INDEX_HEADER
+    rows: list[str] = []
+    if INDEX_PATH.exists():
+        lines = INDEX_PATH.read_text(encoding="utf-8").splitlines()
+        sep_idx = next(
+            (
+                i
+                for i, line in enumerate(lines)
+                if "|" in line and "-" in line and set(line.strip()) <= set("|-: ")
+            ),
+            None,
+        )
+        if sep_idx is not None:
+            prefix = "\n".join(lines[: sep_idx + 1])
+            rows = [ln for ln in lines[sep_idx + 1 :] if ln.strip().startswith("|")]
+
+    rows = [r for r in rows if f"/abs/{base_id}" not in r]
+    rows.append(row)
+
+    def row_year(r: str) -> int:
+        first = r.strip("| ").split("|", 1)[0].strip()
+        return int(first) if first.isdigit() else 0
+
+    rows.sort(key=row_year, reverse=True)
+    INDEX_PATH.write_text(prefix + "\n" + "\n".join(rows) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -267,6 +325,9 @@ def main() -> int:
     md_path.parent.mkdir(parents=True, exist_ok=True)
     md_path.write_text(markdown, encoding="utf-8")
     print(f"Saved Markdown to {md_path}", file=sys.stderr)
+
+    update_index(meta, versioned_id)
+    print(f"Updated index {INDEX_PATH}", file=sys.stderr)
     return 0
 
 

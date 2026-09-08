@@ -15,11 +15,67 @@ function Link(el)
   return el
 end
 
--- Layout tables (e.g. the author block) can convert to empty pipe-table stubs.
+-- Gather every row of a table across its head, bodies, and foot.
+local function all_rows(el)
+  local rows = {}
+  for _, r in ipairs(el.head.rows) do
+    table.insert(rows, r)
+  end
+  for _, body in ipairs(el.bodies) do
+    for _, r in ipairs(body.head) do
+      table.insert(rows, r)
+    end
+    for _, r in ipairs(body.body) do
+      table.insert(rows, r)
+    end
+  end
+  for _, r in ipairs(el.foot.rows) do
+    table.insert(rows, r)
+  end
+  return rows
+end
+
+-- Layout tables (author block) convert to empty pipe-table stubs; equation
+-- floats convert to fenced math trapped inside a table cell (invalid GFM).
 function Table(el)
   if is_blank(el) then
     return {}
   end
+
+  -- Detect equation-layout tables: math present, no prose words.
+  local words, has_math = 0, false
+  pandoc.walk_block(el, {
+    Str = function(s)
+      if s.text:match("%a") then
+        words = words + 1
+      end
+    end,
+    Math = function()
+      has_math = true
+    end,
+  })
+  if not has_math or words > 0 then
+    return nil
+  end
+
+  -- Join the math cells within each row into a single display equation so
+  -- aligned multi-line equations stay on one line each.
+  local blocks = {}
+  for _, row in ipairs(all_rows(el)) do
+    local parts = {}
+    for _, cell in ipairs(row.cells) do
+      pandoc.walk_block(pandoc.Div(cell.contents), {
+        Math = function(m)
+          table.insert(parts, m.text)
+        end,
+      })
+    end
+    if #parts > 0 then
+      local tex = table.concat(parts, " ")
+      table.insert(blocks, pandoc.Para({ pandoc.Math("DisplayMath", tex) }))
+    end
+  end
+  return blocks
 end
 
 -- LaTeXML footnote-marker leakage that survives as literal text.

@@ -84,12 +84,9 @@ We call our particular attention "Scaled Dot-Product Attention" (Figure [2](#S3
 
 In practice, we compute the attention function on a set of queries simultaneously, packed together into a matrix $`Q`$. The keys and values are also packed together into matrices $`K`$ and $`V`$. We compute the matrix of outputs as:
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \mathrm{Attention}(Q,K,V)=\mathrm{softmax}(\frac{QK^{T}}{\sqrt{d_{k}}})V
-``` |  | \(1\) |
+```
 
 The two most commonly used attention functions are additive attention \[[2](#bib.bib2)\], and dot-product (multiplicative) attention. Dot-product attention is identical to our algorithm, except for the scaling factor of $`\frac{1}{\sqrt{d_{k}}}`$. Additive attention computes the compatibility function using a feed-forward network with a single hidden layer. While the two are similar in theoretical complexity, dot-product attention is much faster and more space-efficient in practice, since it can be implemented using highly optimized matrix multiplication code.
 
@@ -109,10 +106,13 @@ Instead of performing a single attention function with $`d_{\text{model}}`$-dime
 
 Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions. With a single attention head, averaging inhibits this.
 
-|  |  |  |  |
-|----|----|----|----|
-|  | $`\displaystyle\mathrm{MultiHead}(Q,K,V)`$ | $`\displaystyle=\mathrm{Concat}(\mathrm{head_{1}},...,\mathrm{head_{h}})W^{O}`$ |  |
-|  | $`\displaystyle\text{where}~\mathrm{head_{i}}`$ | $`\displaystyle=\mathrm{Attention}(QW^{Q}_{i},KW^{K}_{i},VW^{V}_{i})`$ |  |
+``` math
+\displaystyle\mathrm{MultiHead}(Q,K,V) \displaystyle=\mathrm{Concat}(\mathrm{head_{1}},...,\mathrm{head_{h}})W^{O}
+```
+
+``` math
+\displaystyle\text{where}~\mathrm{head_{i}} \displaystyle=\mathrm{Attention}(QW^{Q}_{i},KW^{K}_{i},VW^{V}_{i})
+```
 
 Where the projections are parameter matrices $`W^{Q}_{i}\in\mathbb{R}^{d_{\text{model}}\times d_{k}}`$, $`W^{K}_{i}\in\mathbb{R}^{d_{\text{model}}\times d_{k}}`$, $`W^{V}_{i}\in\mathbb{R}^{d_{\text{model}}\times d_{v}}`$ and $`W^{O}\in\mathbb{R}^{hd_{v}\times d_{\text{model}}}`$.
 
@@ -138,12 +138,9 @@ The Transformer uses multi-head attention in three different ways:
 
 In addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically. This consists of two linear transformations with a ReLU activation in between.
 
-|     |                                                 |     |       |
-|-----|-------------------------------------------------|-----|-------|
-|     |                                                 
-       ``` math                                         
-       \mathrm{FFN}(x)=\max(0,xW_{1}+b_{1})W_{2}+b_{2}  
-       ```                                              |     | \(2\) |
+``` math
+\mathrm{FFN}(x)=\max(0,xW_{1}+b_{1})W_{2}+b_{2}
+```
 
 While the linear transformations are the same across different positions, they use different parameters from layer to layer. Another way of describing this is as two convolutions with kernel size 1. The dimensionality of input and output is $`d_{\text{model}}=512`$, and the inner-layer has dimensionality $`d_{ff}=2048`$.
 
@@ -157,10 +154,13 @@ Since our model contains no recurrence and no convolution, in order for the mode
 
 In this work, we use sine and cosine functions of different frequencies:
 
-|  |  |  |
-|----|----|----|
-|  | $`\displaystyle PE_{(pos,2i)}=sin(pos/10000^{2i/d_{\text{model}}})`$ |  |
-|  | $`\displaystyle PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{\text{model}}})`$ |  |
+``` math
+\displaystyle PE_{(pos,2i)}=sin(pos/10000^{2i/d_{\text{model}}})
+```
+
+``` math
+\displaystyle PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{\text{model}}})
+```
 
 where $`pos`$ is the position and $`i`$ is the dimension. That is, each dimension of the positional encoding corresponds to a sinusoid. The wavelengths form a geometric progression from $`2\pi`$ to $`10000\cdot 2\pi`$. We chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset $`k`$, $`PE_{pos+k}`$ can be represented as a linear function of $`PE_{pos}`$.
 
@@ -242,12 +242,9 @@ We trained our models on one machine with 8 NVIDIA P100 GPUs. For our base model
 
 We used the Adam optimizer \[[20](#bib.bib20)\] with $`\beta_{1}=0.9`$, $`\beta_{2}=0.98`$ and $`\epsilon=10^{-9}`$. We varied the learning rate over the course of training, according to the formula:
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 lrate=d_{\text{model}}^{-0.5}\cdot\min({step\_num}^{-0.5},{step\_num}\cdot{warmup\_steps}^{-1.5})
-``` |  | \(3\) |
+```
 
 This corresponds to increasing the learning rate linearly for the first $`warmup\_steps`$ training steps, and decreasing it thereafter proportionally to the inverse square root of the step number. We used $`warmup\_steps=4000`$.
 
