@@ -8,3 +8,6 @@ brew "uv"
 # Provides the `llama-server` binary that marker-pdf/surya spawn to run the
 # VLM locally on CPU / Apple Silicon (the equation + layout OCR path).
 brew "llama.cpp"
+
+# Converts arXiv HTML to Markdown (maps MathML to LaTeX) for fetch_arxiv_html.py.
+brew "pandoc"
