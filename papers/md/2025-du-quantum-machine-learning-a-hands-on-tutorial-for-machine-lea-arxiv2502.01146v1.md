@@ -282,9 +282,9 @@ The advantages of quantum computers stem primarily from the key distinctions bet
 
 The formal definitions of quantum computing are presented in Chapter [2](#Ch2 "Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). As we will see, the power of quantum computers is primarily determined by two factors: the number of qubits and the quantum gates, as well as their respective qualities. The term “qualities” refers to the fact that fabricating quantum computers is highly challenging, as both qubits and quantum gates are prone to errors. These qualities are measured using various physical metrics. One commonly used metric is quantum volume $`V_{Q}`$ ([Cross et al., 2019](#bib.bib16)), which quantifies a quantum computer’s capabilities by accounting for both its error rates and overall performance. Mathematically, the quantum volume represents the maximum size of square quantum circuits that the computer can successfully implement to achieve the heavy output generation problem, i.e.,
 
-``` math
+$$
 \log_{2}(V_{Q})=\arg\max_{m}\min(m,d(m)),
-```
+$$
 
 where $`m\leq N`$ is a number of qubits selected from the given $`N`$-qubit quantum computer, and $`d(m)`$ is the number of qubits in the largest square circuits for which we can reliably sample heavy outputs with probability greater than $`2/3`$. The heavy output generation problem discussed here stems from proposals aimed at demonstrating quantum advantage. That is, if a quantum computer is of sufficiently high quality, we should expect to observe heavy outputs frequently across a range of random quantum circuit families. For illustration, Table [1.3](#Ch1.T3 "Table 1.3 ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") summarizes the progress of quantum computers as of 2024.
 
@@ -572,24 +572,24 @@ Analogous to the role of ‘bit’ in classical computation, the basic element i
 
 Single-qubit state. A single-qubit state can be represented by a two-dimensional vector with unit length. Mathematically, a qubit state can be written as
 
-``` math
+$$
 \boldsymbol{a}=\begin{bmatrix}\boldsymbol{a}_{1}\\
 \boldsymbol{a}_{2}\end{bmatrix}\in\mathbb{C}^{2}~,
-```
+$$
 
 where $`|\boldsymbol{a}_{1}|^{2}+|\boldsymbol{a}_{2}|^{2}=1`$ satisfies the normalization constraint. Following conventions in quantum theory, we use Dirac notation to represent vectors ([Nielsen and Chuang, 2011](#bib.bib8)), i.e., $`\boldsymbol{a}`$ is denoted by $`|{\boldsymbol{a}}\rangle`$ (named ‘ket’) with
 
-``` math
+$$
 |{\boldsymbol{a}}\rangle=\boldsymbol{a}_{1}|{0}\rangle+\boldsymbol{a}_{2}|{1}\rangle~,
-```
+$$
 
 where $`|{0}\rangle\equiv\boldsymbol{e}_{0}\equiv\begin{bmatrix}1\\
 0\end{bmatrix}`$ and $`|{1}\rangle\equiv\boldsymbol{e}_{1}\equiv\begin{bmatrix}0\\
 1\end{bmatrix}`$ are two computational (unit) basis states. In this representation, the coefficients $`\boldsymbol{a}_{1}`$ and $`\boldsymbol{a}_{2}`$ are referred to as amplitudes. The probabilities of obtaining the outcomes $`0`$ or $`1`$ upon measurement of the qubit are given by $`|\boldsymbol{a}_{1}|^{2}`$ and $`|\boldsymbol{a}_{2}|^{2}`$, respectively. The normalization constraint ensures that these probabilities always sum to one, as required by the probabilistic nature of quantum mechanics. In addition, the conjugated transpose of $`\boldsymbol{a}`$, i.e. $`\boldsymbol{a}^{\dagger}`$, is denoted by $`\langle{\boldsymbol{a}}|`$ (named ‘bra’) with
 
-``` math
+$$
 \langle{\boldsymbol{a}}|=\boldsymbol{a}_{1}^{*}\langle{0}|+\boldsymbol{a}_{2}^{*}\langle{1}|\in\mathbb{C}^{2}~,
-```
+$$
 
 where $`\langle{0}|\equiv\boldsymbol{e}_{0}^{\top}\equiv[1,0]`$, $`\langle{1}|\equiv\boldsymbol{e}_{1}^{\top}\equiv[0,1]`$, and the symbol ‘$`\top`$’ denotes the transpose operation.
 
@@ -599,7 +599,7 @@ The physical interpretation of coefficients $`\{\boldsymbol{a}_{i}\}`$ is probab
 
 Two-qubit state. The two qubits obey the tensor product rule, i.e.,
 
-``` math
+$$
 \left[\begin{matrix}\boldsymbol{x}_{1}\\
 \boldsymbol{x}_{2}\end{matrix}\right]\otimes\left[\begin{matrix}\boldsymbol{y}_{1}\\
 \boldsymbol{y}_{2}\end{matrix}\right]=\left[\begin{matrix}\boldsymbol{x}_{1}\left[\begin{matrix}\boldsymbol{y}_{1}\\
@@ -609,15 +609,15 @@ Two-qubit state. The two qubits obey the tensor product rule, i.e.,
 \boldsymbol{x}_{1}\boldsymbol{y}_{2}\\
 \boldsymbol{x}_{2}\boldsymbol{y}_{1}\\
 \boldsymbol{y}_{2}\boldsymbol{y}_{2}\end{matrix}\right],
-```
+$$
 
 which differs from the classical bits yielding the Cartesian product rule.
 
 For instance, let the first qubit follow Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and the second qubit state be $`|{\boldsymbol{b}}\rangle=\boldsymbol{b}_{1}|{0}\rangle+\boldsymbol{b}_{2}|{1}\rangle`$ with $`|\boldsymbol{b}_{1}|^{2}+|\boldsymbol{b}_{2}|^{2}=1`$. The two-qubit state formed by $`|{\boldsymbol{a}}\rangle`$ and $`|{\boldsymbol{b}}\rangle`$ is defined as
 
-``` math
+$$
 |{\boldsymbol{a}}\rangle\otimes|{\boldsymbol{b}}\rangle=\boldsymbol{a}_{1}\boldsymbol{b}_{1}|{0}\rangle\otimes|{0}\rangle+\boldsymbol{a}_{1}\boldsymbol{b}_{2}|{0}\rangle\otimes|{1}\rangle+\boldsymbol{a}_{2}\boldsymbol{b}_{1}|{1}\rangle\otimes|{0}\rangle+\boldsymbol{a}_{2}\boldsymbol{b}_{2}|{1}\rangle\otimes|{1}\rangle\in\mathbb{C}^{4}~,
-```
+$$
 
 where the computational basis follows $`|{0}\rangle\otimes|{0}\rangle\equiv\left[\begin{smallmatrix}1\\
 0\\
@@ -637,13 +637,13 @@ where the computational basis follows $`|{0}\rangle\otimes|{0}\rangle\equiv\left
 
 ###### Example 2.1.
 
-A typical example of a two-qubit state is the Bell state, which represents a maximally entangled quantum state of two qubits. There are four types of Bell states, expressed as: $`\displaystyle|{\phi^{+}}\rangle`$ $`\displaystyle=\frac{1}{\sqrt{2}}\left(|{00}\rangle+|{11}\rangle\right),`$ $`\displaystyle|{\phi^{-}}\rangle`$ $`\displaystyle=\frac{1}{\sqrt{2}}\left(|{00}\rangle-|{11}\rangle\right),`$ $`\displaystyle|{\psi^{+}}\rangle`$ $`\displaystyle=\frac{1}{\sqrt{2}}\left(|{01}\rangle+|{10}\rangle\right),`$ $`\displaystyle|{\psi^{-}}\rangle`$ $`\displaystyle=\frac{1}{\sqrt{2}}\left(|{01}\rangle-|{10}\rangle\right).`$ (2.6) Each Bell state is a superposition of two computational basis states in the four-dimensional Hilbert space.
+A typical example of a two-qubit state is the Bell state, which represents a maximally entangled quantum state of two qubits. There are four types of Bell states, expressed as: $`|{\phi^{+}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(|{00}\rangle+|{11}\rangle\right),`$ $`|{\phi^{-}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(|{00}\rangle-|{11}\rangle\right),`$ $`|{\psi^{+}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(|{01}\rangle+|{10}\rangle\right),`$ $`|{\psi^{-}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(|{01}\rangle-|{10}\rangle\right).`$ (2.6) Each Bell state is a superposition of two computational basis states in the four-dimensional Hilbert space.
 
 Multi-qubit state. We now generalize the above two-qubit case to the $`N`$-qubit case with $`N>2`$. In particular, an $`N`$-qubit state $`|{\psi}\rangle`$ is a $`2^{N}`$-dimensional vector with
 
-``` math
+$$
 |{\psi}\rangle=\sum_{i=1}^{2^{N}}\boldsymbol{c}_{i}|{i}\rangle\in\mathbb{C}^{2^{N}}~,
-```
+$$
 
 where the coefficients satisfy the normalization constraint $`\sum_{i=1}^{2^{N}}|\boldsymbol{c}_{i}|^{2}=1`$ and the symbol ‘$`i`$’ of the computational basis $`|{i}\rangle`$ refers to a bit-string with $`i\in\{0,1\}^{N}`$. As with the single-qubit case, the physical interpretation of coefficients $`\{\boldsymbol{c}_{i}\}`$ is probability amplitudes, where the probability to sample the bit-string ‘$`i`$’ is $`|\boldsymbol{c}_{i}|^{2}`$. When the number of nonzero entries in $`\boldsymbol{c}=[\boldsymbol{c}_{1},...,\boldsymbol{c}_{i},...,\boldsymbol{c}_{2^{N}}]^{\top}`$ is larger than one, which implies that different bit-strings are coexisting coherently, the state $`|{\psi}\rangle`$ is called in superposition.
 
@@ -655,18 +655,18 @@ Entangled multi-qubit state. A fundamental phenomenon in multi-qubit quantum sys
 
 (Entanglement for States in Dirac Notation) An $`N`$-qubit state $`|{\psi}\rangle\in\mathbb{C}^{2^{N}}`$ is entangled if it cannot be expressed as the tensor product of states of its subsystems $`A`$ and $`B`$:
 
-``` math
+$$
 |{\psi}\rangle\neq|{\psi_{a}}\rangle\otimes|{\psi_{b}}\rangle,\quad\forall|{\psi_{a}}\rangle\in\mathbb{C}^{2^{N_{A}}},|{\psi_{b}}\rangle\in\mathbb{C}^{2^{N_{B}}},N_{A}+N_{B}=N.
-```
+$$
 
 If the state can be expressed in this form, it is referred to as seperable.
 
 ###### Example 2.3.
 
-(GHZ state). A typical example of an entangled $`N`$-qubit state is the Greenberger-Horne-Zeilinger (GHZ) state ([Greenberger et al., 1989](#bib.bib66)), which is a generalization of the two-qubit Bell state (see Example [2.1](#Ch2.Thmtheorem1 "Example 2.1. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to a maximally entangled $`N`$-qubit state. The general form of an $`N`$-qubit GHZ state is: $`\displaystyle|{\text{GHZ}_{N}}\rangle=\frac{1}{\sqrt{2}}\left(|{0}\rangle^{\otimes N}+|{1}\rangle^{\otimes N}\right).`$ (2.10) For $`N=3`$, the GHZ state is:
-``` math
+(GHZ state). A typical example of an entangled $`N`$-qubit state is the Greenberger-Horne-Zeilinger (GHZ) state ([Greenberger et al., 1989](#bib.bib66)), which is a generalization of the two-qubit Bell state (see Example [2.1](#Ch2.Thmtheorem1 "Example 2.1. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to a maximally entangled $`N`$-qubit state. The general form of an $`N`$-qubit GHZ state is: $`|{\text{GHZ}_{N}}\rangle=\frac{1}{\sqrt{2}}\left(|{0}\rangle^{\otimes N}+|{1}\rangle^{\otimes N}\right).`$ (2.10) For $`N=3`$, the GHZ state is:
+$$
 |{\text{GHZ}_{3}}\rangle=\frac{1}{\sqrt{2}}\left(|{000}\rangle+|{111}\rangle\right).
-```
+$$
 (2.11)
 
 A key property of the entangled states (e.g., Bell states and GHZ states) is that measuring one qubit determines the outcome of measuring the other qubit, reflecting their strong quantum correlation.
@@ -677,13 +677,13 @@ Another description of quantum states is through density matrix or density opera
 
 Mathematically, an $`N`$-qubit density operator, denoted by $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$, presents a mixture of $`m`$ quantum pure states $`|{\psi_{i}}\rangle\in\mathbb{C}^{2^{N}}`$ with probability $`p_{i}\in[0,1]`$ and $`\sum_{i=1}^{m}p_{i}=1`$, i.e.,
 
-``` math
+$$
 \rho=\sum_{i=1}^{m}p_{i}\rho_{i}~,
-```
+$$
 
 where $`\rho_{i}=|{\psi_{i}}\rangle\langle{\psi_{i}}|\in\mathbb{C}^{2^{N}\times 2^{N}}`$ is the outer product of the pure state $`|{\psi_{i}}\rangle`$. The outer product of two vectors $`|{u}\rangle,|{v}\rangle\in\mathbb{C}^{n}`$ is expressed as
 
-``` math
+$$
 |{u}\rangle\langle{v}|=\begin{bmatrix}u_{1}\\
 u_{2}\\
 \vdots\\
@@ -691,7 +691,7 @@ u_{n}\end{bmatrix}\begin{bmatrix}v_{1}^{*}&v_{2}^{*}&\cdots&v_{n}^{*}\end{bmatri
 u_{2}v_{1}^{*}&u_{2}v_{2}^{*}&\cdots&u_{2}v_{n}^{*}\\
 \vdots&\vdots&\ddots&\vdots\\
 u_{n}v_{1}^{*}&u_{n}v_{2}^{*}&\cdots&u_{n}v_{n}^{*}\end{bmatrix},
-```
+$$
 
 where $`u_{i}`$ and $`v_{i}^{*}`$ are the element of $`|{u}\rangle`$ and the conjugate transpose $`\langle{v}|`$, respectively.
 
@@ -715,9 +715,9 @@ When $`m=1`$, the density operator $`\rho`$ amounts to a pure state with $`\rho=
 
 (Entanglement for Mixed States) Let $`\rho`$ be a density operator acting on a composite Hilbert space $`\mathcal{H}_{A}\otimes\mathcal{H}_{B}`$. The state $`\rho`$ is said to be entangled if it cannot be expressed as:
 
-``` math
+$$
 \rho=\sum_{i}p_{i}\,\rho_{A}^{(i)}\otimes\rho_{B}^{(i)},
-```
+$$
 
 where $`p_{i}\geq 0`$, $`\sum_{i}p_{i}=1`$, and $`\rho_{A}^{(i)}`$ and $`\rho_{B}^{(i)}`$ are density operators on $`\mathcal{H}_{A}`$ and $`\mathcal{H}_{B}`$, respectively. If $`\rho`$ can be written in this form, it is called separable.
 
@@ -725,16 +725,16 @@ where $`p_{i}\geq 0`$, $`\sum_{i}p_{i}=1`$, and $`\rho_{A}^{(i)}`$ and $`\rho_{B
 
 (Density matrix representations).\
 (i). Consider the single-qubit pure state $`|{\psi}\rangle=\frac{1}{\sqrt{2}}(|{0}\rangle+|{1}\rangle)`$. The corresponding density operator is:
-``` math
+$$
 \rho=|{\psi}\rangle\langle{\psi}|=\frac{1}{2}\begin{bmatrix}1&1\\
 1&1\end{bmatrix}.
-```
+$$
 Here, $`\mathop{\text{Tr}}(\rho^{2})=\mathop{\text{Tr}}(\rho)=1`$, confirming that it is a pure state.\
 (ii). Consider the classical probabilistic mixture of $`|{0}\rangle`$ and $`|{1}\rangle`$, each with equal probability $`p=0.5`$. The density operator is:
-``` math
+$$
 \rho=0.5|{0}\rangle\langle{0}|+0.5|{1}\rangle\langle{1}|=\frac{1}{2}\begin{bmatrix}1&0\\
 0&1\end{bmatrix}.
-```
+$$
 In this case, $`\mathop{\text{Tr}}(\rho^{2})=0.5<\mathop{\text{Tr}}(\rho)=1`$, indicating it is a mixed state.
 
 ### 2.2 From Digital Logical Circuit to Quantum Circuit Model
@@ -905,23 +905,23 @@ Recall that the computational toolkit for classical computers is logic gates, e.
 
 Single-qubit gates. Single-qubit gates control the evolution of the single-qubit state $`|{\boldsymbol{a}}\rangle`$. Due to the law of quantum mechanics, the evolved state should satisfy the normalization constraint. The implication of this constraint is that the evolution must be a unitary operation. Concretely, denoted $`U\in\mathbb{C}^{2\times 2}`$ as a linear operator and the evolved state as
 
-``` math
+$$
 |{\hat{\boldsymbol{a}}}\rangle:=U|{\boldsymbol{a}}\rangle=\hat{\boldsymbol{a}}_{1}|{0}\rangle+\hat{\boldsymbol{a}}_{2}|{1}\rangle\in\mathbb{C}^{2}~,
-```
+$$
 
 the summation of coefficients $`|\hat{\boldsymbol{a}}_{1}|^{2}+|\hat{\boldsymbol{a}}_{2}|^{2}=\braket{\hat{\boldsymbol{a}}|\hat{\boldsymbol{a}}}=\braket{\boldsymbol{a}|U^{\dagger}U|\boldsymbol{a}}`$ is equal to $`1`$ if and only if $`U`$ is unitary with $`U^{\dagger}U=UU^{\dagger}=\mathbb{I}_{2}`$. The symbol ‘$`\dagger`$’ denotes the conjugate transpose operation. Under the density operator representation, the evolution of $`|{\boldsymbol{a}}\rangle`$ yields
 
-``` math
+$$
 \hat{\rho}=U\rho U^{\dagger}~,
-```
+$$
 
 where $`\hat{\rho}=|{\hat{\boldsymbol{a}}}\rangle\langle{\hat{\boldsymbol{a}}}|`$ and $`\rho=|{\boldsymbol{a}}\rangle\langle{\boldsymbol{a}}|`$.
 
 Several common single-qubit gates, including Pauli-X, Pauli-Y, Pauli-Z, Hadamard, and rotational single-qubit gates about the X, Y, and Z axes ($`\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}`$), are illustrated in Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). According to Theorem 4.1 in ([Nielsen and Chuang, 2011](#bib.bib8)), any unitary operation on a single qubit can be decomposed into a sequence of rotations as:
 
-``` math
+$$
 U=\mathop{\text{RZ}}(\alpha)\mathop{\text{RY}}(\beta)\mathop{\text{RZ}}(\gamma),
-```
+$$
 
 where $`\alpha,\beta,\gamma\in[0,2\pi)`$, up to a global phase shift.
 
@@ -936,9 +936,9 @@ The evolution from $`|{\boldsymbol{a}}\rangle`$ to $`|{\hat{\boldsymbol{a}}}\ran
 
 Multi-qubit gates. The evolution of the $`N`$-qubit quantum state can be effectively generalized by the single-qubit case. That is, the unitary operator $`U\in\mathbb{C}^{2^{N}\times 2^{N}}`$ evolves an $`N`$-qubit state $`|{\psi}\rangle`$ in Eqn. ([2.7](#Ch2.E7 "Equation 2.7 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) as
 
-``` math
+$$
 |{\widehat{\psi}}\rangle=U|{\psi}\rangle\in\mathbb{C}^{2^{N}}~.
-```
+$$
 
 The evolution of $`|{\psi}\rangle`$ under the density operator representation is denoted by $`\hat{\rho}=U\rho U^{\dagger}`$, where $`\hat{\rho}=|{\widehat{\psi}}\rangle\langle{\widehat{\psi}}|`$ and $`\rho=|{\psi}\rangle\langle{\psi}|`$.
 
@@ -949,9 +949,9 @@ Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣
 ###### Example 2.7.
 
 (State evolved by multi-qubit gates). Figure [2.3](#Ch2.F3 "Figure 2.3 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") illustrates the evolution of a 3-qubit state $`|{\psi}\rangle`$ under a multi-qubit circuit consisting of multi-qubit gates. Each wire represents a qubit, and the evolution occurs from left to right. Starting with the initial state $`|{\psi}\rangle=|{000}\rangle`$, a Hadamard gate is applied to the first qubit, followed by two CNOT gates: one acting on the first and second qubits, and the other acting on the second and third qubits. The final evolved state, shown on the right, is the GHZ state introduced in Example [2.3](#Ch2.Thmtheorem3 "Example 2.3. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), i.e., $`|{\widehat{\psi}}\rangle=U|{\psi}\rangle=\frac{1}{\sqrt{2}}(|{000}\rangle+|{111}\rangle)`$. The entire unitary operation can be represented as:
-``` math
+$$
 U=(\mathop{\text{H}}\otimes\mathbb{I}_{4})(\mathop{\text{CNOT}}\otimes\mathbb{I}_{2})(\mathbb{I}_{2}\otimes\mathop{\text{CNOT}}).
-```
+$$
 (2.19)
 
 <figure id="Ch2.F3" class="ltx_figure">
@@ -967,15 +967,15 @@ A universal quantum gate set. While many single and multi-qubit gates exist, it 
 
 Suppose we are given a fixed universal gate set $`\mathcal{G}`$, which generates a dense group $`{\rm SU}(d)`$. Then any unitary operator $`U\in{\rm SU}(d)`$ can be approximated to an arbitrary precision $`\epsilon>0`$ by a finite sequence of gates from $`\mathcal{G}`$. Formally, there exists a decomposition such that
 
-``` math
+$$
 \left\|U-\prod_{l=1}^{L}G_{l}\right\|_{op}\leq\epsilon,\quad G_{l}\in\mathcal{G},\quad L\in\mathbb{N},
-```
+$$
 
 where $`\left\|\cdot\right\|_{op}`$ is the operator norm which is the largest singular value of a matrix, and $`L`$ is the required number of gates that scales as:
 
-``` math
+$$
 L=O\left(\log^{c}(1/\epsilon)\right),
-```
+$$
 
 with $`c\approx 4`$.
 
@@ -1005,9 +1005,9 @@ Denote $`\mathcal{L}(\mathcal{H})`$ as the space of square linear operators acti
 
 A quantum channel can be represented by the Choi-Kraus decomposition ([Nielsen and Chuang, 2011](#bib.bib8)). Mathematically, let $`\mathcal{L}(\mathcal{H}_{A},\mathcal{H}_{B})`$ denote the space of linear operators taking $`\mathcal{H}_{A}`$ to $`\mathcal{H}_{B}`$. The Choi–Kraus decomposition of the quantum channel $`\mathcal{N}(\cdot):\mathcal{L}(\mathcal{H}_{A})\rightarrow\mathcal{L}(\mathcal{H}_{B})`$ is
 
-``` math
+$$
 \mathcal{N}(X_{A})=\sum_{a=1}^{d}\mathbf{M}_{a}X_{A}\mathbf{M}_{a}^{\dagger}
-```
+$$
 
 where $`X_{A}\in\mathcal{L}(\mathcal{H}_{A})`$, $`M_{a}\in\mathcal{L}(\mathcal{H}_{A},\mathcal{H}_{B})`$,$`\sum_{a=1}^{d}\mathbf{M}_{a}^{\dagger}\mathbf{M}_{a}=\mathbb{I}_{\text{dim}(\mathcal{H}_{A})}`$, and $`d\leq\text{dim}(\mathcal{H}_{A})\text{dim}(\mathcal{H}_{B})`$. Here $`\text{dim}(\mathcal{H}_{*})`$ refers to the dimension of the space $`\mathcal{H}_{*}`$.
 
@@ -1019,30 +1019,30 @@ The first type is the depolarizing channel, which considers the scenario such th
 
 Given an $`N`$-qubit quantum state $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$, the depolarization channel $`\mathcal{N}_{p}`$ acts on a $`2^{N}`$-dimensional Hilbert space follows
 
-``` math
+$$
 \mathcal{N}_{p}(\rho)=(1-p)\rho+p\frac{\mathbb{I}_{2^{N}}}{2^{N}}~,
-```
+$$
 
 where $`\mathbb{I}_{2^{N}}/{2^{N}}`$ refers to the maximally mixed state and $`p`$ is a scalar representing the depolarization rate.
 
 ###### Example 2.11.
 
 (Single-qubit state with depolarization channel). Consider a single-qubit pure state $`\rho=|{0}\rangle\langle{0}|`$ with the density matrix
-``` math
+$$
 \rho=|{0}\rangle\langle{0}|=\begin{bmatrix}1&0\\
 0&0\end{bmatrix}.
-```
+$$
 (2.24) When the depolarizing channel $`\mathcal{N}_{p}`$ acts on this state, the output is given by
-``` math
+$$
 \mathcal{N}_{p}(\rho)=(1-p)\begin{bmatrix}1&0\\
 0&0\end{bmatrix}+\frac{p}{2}\begin{bmatrix}1&0\\
 0&1\end{bmatrix}=\begin{bmatrix}1-\frac{p}{2}&0\\
 0&\frac{p}{2}\end{bmatrix}.
-```
+$$
 (2.25) Therefore, the purity is inferred as:
-``` math
+$$
 \mathop{\text{Tr}}(\mathcal{N}_{p}^{2}(\rho))=1-p+\frac{p^{2}}{2}.
-```
+$$
 (2.26) When $`p=0`$, the state remains pure and unchanged. When $`0<p\leq 1`$, the state becomes a mixture of states $`|{0}\rangle`$ and $`|{1}\rangle`$ with $`\mathop{\text{Tr}}(\mathcal{N}_{p}^{2}(\rho))<1`$. When $`p=1`$, the state evolves into the maximally mixed state.
 
 The second type is the Pauli channel, which serves as a dominant noise source in many computing architectures and as a practical model for analyzing error correction ([Flammia and Wallman, 2020](#bib.bib70)).
@@ -1051,9 +1051,9 @@ The second type is the Pauli channel, which serves as a dominant noise source in
 
 Given a quantum state $`\rho\in\mathbb{C}^{2\times 2}`$, the single-qubit Pauli channel $`\mathcal{N}_{\vec{p}}`$ acts on this state follows
 
-``` math
+$$
 \mathcal{N}_{\vec{p}}(\rho)=p_{I}\rho+p_{X}\mathop{\text{X}}\rho\mathop{\text{X}}+p_{Y}\mathop{\text{Y}}\rho\mathop{\text{Y}}+p_{Z}\mathop{\text{Z}}\rho\mathop{\text{Z}}~,
-```
+$$
 
 where $`\vec{p}=(p_{I},p_{X},p_{Y},p_{Z})`$ and $`p_{I}+p_{X}+p_{Y}+p_{Z}=1`$.
 
@@ -1062,25 +1062,25 @@ Note that for a single-qubit system, the depolarization channel $`\mathcal{N}_{p
 ###### Example 2.13.
 
 (Single-qubit state with Pauli channel). Consider a single-qubit pure state $`\rho=|{0}\rangle\langle{0}|`$ with the density matrix:
-``` math
+$$
 \rho=|{0}\rangle\langle{0}|=\begin{bmatrix}1&0\\
 0&0\end{bmatrix}.
-```
-(2.28) When the Pauli channel $`\mathcal{N}_{\vec{p}}`$ acts on this state, the output is given by $`\displaystyle\mathcal{N}_{\vec{p}}(\rho)`$ $`\displaystyle=p_{I}\begin{bmatrix}1&0\\
+$$
+(2.28) When the Pauli channel $`\mathcal{N}_{\vec{p}}`$ acts on this state, the output is given by $`\mathcal{N}_{\vec{p}}(\rho)`$ $`=p_{I}\begin{bmatrix}1&0\\
 0&0\end{bmatrix}+p_{X}\begin{bmatrix}0&0\\
 0&1\end{bmatrix}+p_{Y}\begin{bmatrix}0&0\\
 0&1\end{bmatrix}+p_{Z}\begin{bmatrix}1&0\\
-0&0\end{bmatrix}`$ (2.29) $`\displaystyle=\begin{bmatrix}p_{I}+p_{Z}&0\\
+0&0\end{bmatrix}`$ (2.29) $`=\begin{bmatrix}p_{I}+p_{Z}&0\\
 0&p_{X}+p_{Y}\end{bmatrix}.`$ (2.30) Let us analyze three special cases for the probability vector $`\vec{p}=(p_{I},p_{X},p_{Y},p_{Z})`$: • Case 1: If $`p_{X}=p_{Y}=p_{Z}=p`$, the Pauli channel reduces to the depolarization channel and the prepared state becomes:
-``` math
+$$
 \mathcal{N}_{\vec{p}}(\rho)=\begin{bmatrix}1-2p&0\\
 0&2p\end{bmatrix}.
-```
+$$
 (2.31) • Case 2: If $`p_{Y}=p_{Z}=0`$, the prepared state becomes:
-``` math
+$$
 \mathcal{N}_{\vec{p}}(\rho)=\begin{bmatrix}1-p_{X}&0\\
 0&p_{X}\end{bmatrix}.
-```
+$$
 (2.32) In this scenario, the Pauli channel reduces to the bit-flip channel. • Case 3: For other values of $`\vec{p}`$, the effect of the Pauli channel on the pure state $`|{0}\rangle`$ can be interpreted as a combination of the depolarizing channel and the bit-flip channel.
 
 To generalize the single-qubit Pauli channel to a multi-qubit Pauli channel, we extend the definition to account for the action of Pauli operators on multiple qubits.
@@ -1089,9 +1089,9 @@ To generalize the single-qubit Pauli channel to a multi-qubit Pauli channel, we 
 
 Given a quantum state $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$ for an $`N`$-qubit system, the multi-qubit Pauli channel $`\mathcal{N}_{\vec{p}}`$ acts as
 
-``` math
+$$
 \mathcal{N}_{\vec{p}}(\rho)=\sum_{P\in\mathcal{P}_{N}}p_{P}P\rho P^{\dagger},
-```
+$$
 
 where $`\mathcal{P}_{N}=\{I,X,Y,Z\}^{\otimes N}`$ denotes the set of all tensor products of the $`N`$ single-qubit Pauli operators, and $`p_{P}`$ is the probability of applying the Pauli operator $`P`$ with $`\sum_{P\in\mathcal{P}_{N}}p_{P}=1`$.
 
@@ -1105,9 +1105,9 @@ Having acknowledged the motivation and definition of quantum channels, it is nat
 
 ([Wilde, 2011](#bib.bib69)) Let $`\mathcal{N}(\cdot):\mathcal{L}(\mathcal{H}_{A})\rightarrow\mathcal{L}(\mathcal{H}_{B})`$ be a quantum channel defined in Eqn. ([2.22](#Ch2.E22 "Equation 2.22 ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Let $`\mathcal{H}_{E}`$ be the Hilbert space of an auxiliary system. Denote the input state as $`\rho`$ (i.e., a density operator $`\rho\in\mathbb{C}^{\text{dim}(\mathcal{H}_{A})\times\text{dim}(\mathcal{H}_{A})}`$). Then there exists a unitary $`U:\mathcal{L}(\mathcal{H}_{A}\otimes\mathcal{H}_{E})\rightarrow\mathcal{L}(\mathcal{H}_{B}\otimes\mathcal{H}_{E})`$ and a normalized vector (i.e., a pure state) $`|{\varphi}\rangle\in\mathbb{C}^{\text{dim}(\mathcal{H}_{E})}`$ such that
 
-``` math
+$$
 \mathcal{N}(\mathcal{\rho})=\text{Tr}_{E}\left(U(\rho\otimes|{\varphi}\rangle\langle{\varphi}|)U^{\dagger}\right)~,
-```
+$$
 
 where $`\text{Tr}_{E}(\cdot)`$ denotes the partial trace over the ancillary Hilbert space $`\mathcal{H}_{E}`$, and the dimension of $`\mathcal{H}_{E}`$ depends on the rank of the Kraus representation of $`\mathcal{N}`$.
 
@@ -1117,9 +1117,9 @@ We extend the system to include an ancillary Hilbert space $`\mathcal{H}_{E}`$, 
 
 To find a feasible unitary $`U`$, we express the quantum channel $`\mathcal{N}`$ using its isometric extension ([Wilde, 2011](#bib.bib69)), i.e.,
 
-``` math
+$$
 \mathcal{N}(\rho)=\text{Tr}_{E}\left(V\rho V^{\dagger}\right),
-```
+$$
 
 where $`V:\mathcal{H}_{A}\to\mathcal{H}_{B}\otimes\mathcal{H}_{E}`$ is an isometry operator embedding the input state into the larger Hilbert space. For simplicity, assume $`\mathcal{H}_{A}=\mathcal{H}_{B}`$. The isometry operator $`V`$ can always be embedded into a unitary operator $`U`$ acting on $`\mathcal{H}_{B}\otimes\mathcal{H}_{E}`$, ensuring that $`U`$ captures the reversible evolution of the extended system.
 
@@ -1145,39 +1145,39 @@ The quantum measurements can be categorized into two types, i.e., projective mea
 
 The projective measurement, which is also called the von Neumann measurement, is formally described by the Hermitian operator $`A=\sum_{i}\lambda_{i}|{v_{i}}\rangle\langle{v_{i}}|`$, where $`\{\lambda_{i}\}`$ and $`\{|{v_{i}}\rangle\}`$ refer to the eigenvalues and eigenvectors of $`A`$, respectively. Supported by the Born rule ([Nielsen and Chuang, 2011](#bib.bib8)), when the measurement operator $`A\in\mathbb{C}^{2^{N}\times 2^{N}}`$ is applied to an $`N`$-qubit state $`|{\Phi}\rangle\in\mathbb{C}^{2^{N}}`$, the probability of measuring any one of the eigenvalues in $`\{\lambda_{i}\}`$ is
 
-``` math
+$$
 \Pr(\lambda_{i})=|\braket{v_{i}|\Phi}|^{2}~.
-```
+$$
 
 In the density operator representation, suppose that the state to be measured is $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$, the probability of measuring any one of the eigenvalues in $`\{\lambda_{i}\}`$ is
 
-``` math
+$$
 \Pr(\lambda_{i})=\mathop{\text{Tr}}(\rho|{v_{i}}\rangle\langle{v_{i}}|).
-```
+$$
 
 Define $`\Pi_{i}=|{v_{i}}\rangle\langle{v_{i}}|`$ as the $`i`$-th projective operator. The complete set of projective operators $`\{\Pi_{i}\}`$ has the following properties
 
-``` math
+$$
 \text{1)}\Pi_{i}\Pi_{j}=\delta_{ij};~\text{2)}\Pi^{\dagger}_{i}=\Pi;~\text{3)}\Pi^{2}_{i}=\Pi;~\text{4)}\sum_{i}\Pi_{i}=\mathbb{I}_{2^{N}}.
-```
+$$
 
 A special set of projectors is defined as $`\Pi_{i}=|{i}\rangle\langle{i}|`$ for $`\forall i\in[2^{N}]`$, which measures the probability corresponding to the basis state $`|{i}\rangle`$. For example, given the single-qubit state $`|{\boldsymbol{\alpha}}\rangle`$ in Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the probability to measure the computational basis state $`|{i}\rangle`$ is
 
-``` math
+$$
 \Pr(i)=|\braket{v_{i}|\boldsymbol{\alpha}}|^{2}=|\alpha_{i}|^{2}~.
-```
+$$
 
 The second type of quantum measurement is the positive operator-valued measures (POVM). A POVM is described by a collection of positive operators $`0\preceq E_{i}`$ satisfying $`\sum_{i}E_{i}=\mathbb{I}`$. Each positive operator $`E_{i}`$ is associated with an outcome of measurement. Specifically, applying the measurement $`\{E_{m}\}`$ to the state $`|{\psi}\rangle`$, the probability of outcome $`i`$ is given by
 
-``` math
+$$
 \Pr(i)=|\braket{\psi|E_{i}|\psi}|^{2}.
-```
+$$
 
 In the density operator representation, suppose that the state to be measured is $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$, the probability of outcome $`i`$ is given by
 
-``` math
+$$
 \Pr(\lambda_{i})=\mathop{\text{Tr}}(\rho E_{i}).
-```
+$$
 
 We remark that the main difference between projective measurements and POVM elements is that the POVM elements do not have to be orthogonal. Due to this reason, the projective measurement is a special case of the generalized measurement (i.e., with setting $`E_{i}=\Pi_{i}^{\dagger}\Pi_{i}`$).
 
@@ -1197,15 +1197,15 @@ Quantum read-in refers to the process of encoding classical information into qua
 
 Basis encoding is a basic method for processing classical data that can be represented in binary form. Given a classical binary vector $`\boldsymbol{x}=(\boldsymbol{x}_{0},\ldots,\boldsymbol{x}_{i},\ldots,\boldsymbol{x}_{N-1})\in\{0,1\}^{N}`$, this encoding technique maps the vector directly into a quantum computational basis state as follows:
 
-``` math
+$$
 |{\psi}\rangle=|{\boldsymbol{x}_{0},\ldots,\boldsymbol{x}_{N-1}}\rangle.
-```
+$$
 
 In this process, $`N`$ qubits are required to represent a binary vector of length $`N`$. To prepare the corresponding quantum state $`|{\psi}\rangle`$, an $`X`$ gate is applied to each qubit where the corresponding bit value is 1. The overall quantum state preparation can be expressed as:
 
-``` math
+$$
 |{\psi}\rangle=\bigotimes_{i=0}^{N-1}X^{\boldsymbol{x}_{i}}|{0}\rangle^{\otimes N},
-```
+$$
 
 where $`|{0}\rangle^{\otimes N}`$ represents an initial state of all qubits set to $`|0\rangle`$, and $`X^{\boldsymbol{x}_{i}}`$ means applying the $`X`$ gate to the $`i`$-th qubit only if $`\boldsymbol{x}_{i}=1`$.
 
@@ -1222,15 +1222,15 @@ where $`|{0}\rangle^{\otimes N}`$ represents an initial state of all qubits set 
 
 Amplitude encoding is a technique that maps classical data into the amplitudes of a quantum state. Given a vector $`\boldsymbol{x}=(\boldsymbol{x}_{0},\ldots,\boldsymbol{x}_{i},\ldots,\boldsymbol{x}_{2^{N}-1})\in\mathbb{C}^{2^{N}}`$ containing complex values, we first apply $`L_{2}`$ normalization to obtain a normalized vector
 
-``` math
+$$
 \hat{\boldsymbol{x}}=\frac{\boldsymbol{x}}{\|\boldsymbol{x}\|_{2}},
-```
+$$
 
 where $`\|\boldsymbol{x}\|_{2}`$ is the Euclidean norm. This ensures that the normalized vector $`\hat{\boldsymbol{x}}`$ satisfies $`\sum_{i=0}^{2^{N}-1}|\hat{\boldsymbol{x}}_{i}|^{2}=1`$. The corresponding quantum state is then expressed as
 
-``` math
+$$
 |{\psi}\rangle=\sum_{i=0}^{2^{N}-1}\hat{\boldsymbol{x}}_{i}|{i}\rangle
-```
+$$
 
 with $`|{i}\rangle`$ representing the $`N`$-qubit computational basis states.
 
@@ -1248,9 +1248,9 @@ To address this limitation, an alternative is angle encoding. The core idea of a
 
 Given a real-valued vector $`\boldsymbol{x}=(\boldsymbol{x}_{0},\ldots,\boldsymbol{x}_{i},\ldots,\boldsymbol{x}_{N-1})\in\mathbb{R}^{N}`$, the encoded quantum state can be represented as:
 
-``` math
+$$
 |{\psi}\rangle=\bigotimes_{i=0}^{N-1}R_{\sigma}(\boldsymbol{x}_{i})|{0}\rangle^{\otimes N}=\bigotimes_{i=0}^{N-1}\exp\left(-i\frac{\boldsymbol{x}_{i}}{2}\sigma\right)|{0}\rangle^{\otimes N},
-```
+$$
 
 where $`\sigma\in\{X,Y,Z\}`$ denotes a Pauli operator, as defined in Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Since Pauli rotation gates are $`2\pi`$-periodic, it is essential to scale each element $`\boldsymbol{x}_{i}`$ into the range $`[0,\pi)`$ to ensure that different values are encoded into distinct quantum states.
 
@@ -1262,18 +1262,18 @@ Basis encoding, amplitude encoding, and angle encoding are generally designed to
 
 QRAM consists of two types of qubits: data qubits for storing classical data and address qubits for addressing. Given a classical dataset $`\mathcal{D}=\{\boldsymbol{x}^{(j)}\}_{j=0}^{M-1}`$ with $`M`$ training examples, assume we separately encode each data item into a quantum state $`|{\boldsymbol{x}^{(j)}}\rangle_{d}`$ using one of the encoding methods above. The QRAM can be constructed as follows: (1) Prepare an $`N_{a}`$-qubit address register where $`N_{a}=\lceil\log_{2}(M)\rceil`$; (2) Associate each data state $`|{\boldsymbol{x}^{(j)}}\rangle_{d}`$ with corresponding address state $`|{j}\rangle_{a}`$. The whole dataset is therefore encoded into a quantum state of the form
 
-``` math
+$$
 |{\mathcal{D}}\rangle=\sum_{j=0}^{M-1}\frac{1}{\sqrt{M}}|{j}\rangle_{a}|{\boldsymbol{x}^{(j)}}\rangle_{d}.
-```
+$$
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxIiBjbGFzcz0ibHR4X3BpY3R1cmUiIGhlaWdodD0iMTI4LjQiIG92ZXJmbG93PSJ2aXNpYmxlIiB2ZXJzaW9uPSIxLjEiIHZpZXdib3g9IjAgMCA0NzcuMzggMTI4LjQiIHdpZHRoPSI0NzcuMzgiPjxnIHN0eWxlPSItLWx0eC1zdHJva2UtY29sb3I6IzAwMDAwMDstLWx0eC1maWxsLWNvbG9yOiMwMDAwMDA7IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC40cHQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTI4LjQpIG1hdHJpeCgxIDAgMCAtMSAwIDApIj48ZyBzdHlsZT0iLS1sdHgtZmlsbC1jb2xvcjojNjA2MDYwOyIgZmlsbD0iIzYwNjA2MCIgZmlsbC1vcGFjaXR5PSIxLjAiPjxwYXRoIHN0eWxlPSJzdHJva2U6bm9uZSIgZD0iTSAwIDUuOTEgTCAwIDEyMi41IEMgMCAxMjUuNzYgMi42NCAxMjguNCA1LjkxIDEyOC40IEwgNDcxLjQ3IDEyOC40IEMgNDc0LjczIDEyOC40IDQ3Ny4zOCAxMjUuNzYgNDc3LjM4IDEyMi41IEwgNDc3LjM4IDUuOTEgQyA0NzcuMzggMi42NCA0NzQuNzMgMCA0NzEuNDcgMCBMIDUuOTEgMCBDIDIuNjQgMCAwIDIuNjQgMCA1LjkxIFoiIC8+PC9nPjxnIHN0eWxlPSItLWx0eC1maWxsLWNvbG9yOiNGOUY5Rjk7IiBmaWxsPSIjRjlGOUY5IiBmaWxsLW9wYWNpdHk9IjEuMCI+PHBhdGggc3R5bGU9InN0cm9rZTpub25lIiBkPSJNIDEuOTcgNS45MSBMIDEuOTcgMTA2Ljk4IEwgNDc1LjQxIDEwNi45OCBMIDQ3NS40MSA1LjkxIEMgNDc1LjQxIDMuNzMgNDczLjY1IDEuOTcgNDcxLjQ3IDEuOTcgTCA1LjkxIDEuOTcgQyAzLjczIDEuOTcgMS45NyAzLjczIDEuOTcgNS45MSBaIiAvPjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDExMi44OSkiPjxmb3JlaWdub2JqZWN0IHN0eWxlPSItLWx0eC1mby13aWR0aDozMS4zN2VtOy0tbHR4LWZvLWhlaWdodDowLjY5ZW07LS1sdHgtZm8tZGVwdGg6MGVtO2ZvbnQtc2l6ZToxMHB0OyIgaGVpZ2h0PSI5LjYxIiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA5LjYxKSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjEiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjEuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjEuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojRkZGRkZGOyI+UmVtYXJrPC9zcGFuPjwvc3Bhbj4KPC9zcGFuPjwvc3Bhbj48L3NwYW4+PC9mb3JlaWdub2JqZWN0PjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDE2LjQ3KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjUuNjllbTstLWx0eC1mby1kZXB0aDowLjE5ZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9IjgxLjM5IiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA3OC43KSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjIiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjIuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjIuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyI+VGhlIHN1YnNjcmlwdCA8bWF0aCBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLm0xIiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9ImQiIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPmQ8L21pPjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+ZDwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+IGluIDxtYXRoIGlkPSJDaDIuUzMuU1MxLlNTU3g0LnAzLnBpYzEubTIiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXGtldHtcYm17eH1eeyhqKX19X3tkfSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtc3ViPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGZlbmNlPSJmYWxzZSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMTY3ZW0iIHN0cmV0Y2h5PSJmYWxzZSI+fDwvbW8+PG1zdXA+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj7wnZKZPC9taT48bXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+KDwvbW8+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5qPC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+KTwvbW8+PC9tcm93PjwvbXN1cD48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+4p+pPC9tbz48L21yb3c+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5kPC9taT48L21zdWI+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5ca2V0e1xibXt4fV57KGopfX1fe2R9PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4gaW5kaWNhdGVzIHRoYXQgdGhpcyBxdWFudHVtIHN0YXRlIHJlc2lkZXMgaW4gdGhlIGRhdGEgcmVnaXN0ZXIsIGRpZmZlcmVudGlhdGluZyBpdCBmcm9tIGFkZHJlc3MgcXViaXRzLCB3aGljaCBhcmUgZGVub3RlZCB3aXRoIHRoZSBzdWJzY3JpcHQgPG1hdGggaWQ9IkNoMi5TMy5TUzEuU1NTeDQucDMucGljMS5tMyIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJhIiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5hPC9taT48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPmE8L2Fubm90YXRpb24+PC9zZW1hbnRpY3M+PC9tYXRoPiAoZS5nLiwgPG1hdGggaWQ9IkNoMi5TMy5TUzEuU1NTeDQucDMucGljMS5tNCIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJca2V0e2p9X3thfSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtc3ViPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGZlbmNlPSJmYWxzZSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMTY3ZW0iIHN0cmV0Y2h5PSJmYWxzZSI+fDwvbW8+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5qPC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+4p+pPC9tbz48L21yb3c+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5hPC9taT48L21zdWI+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5ca2V0e2p9X3thfTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+KS4gVGhpcyBjb252ZW50aW9uIGhlbHBzIHRvIGRpc3Rpbmd1aXNoIGJldHdlZW4gdGhlIHJvbGVzIG9mIGRhdGEgYW5kIGFkZHJlc3MgcXViaXRzIGluIFFSQU0gb3BlcmF0aW9ucy48L3NwYW4+PC9zcGFuPgo8L3NwYW4+PC9zcGFuPjwvc3Bhbj48L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48L3N2Zz4=" id="Ch2.S3.SS1.SSSx4.p3.pic1" class="ltx_picture" />
 
 ###### Example 2.18.
 
 (QRAM Encoding). Consider a dataset $`\mathcal{D}=\{2,3\}`$. Using basis encoding, each sample is first converted into a two-qubit quantum state: $`\{|{10}\rangle_{d},|{11}\rangle_{d}\}`$. Each data state is then assigned an address state, $`|{0}\rangle_{a}`$ for the first state $`|{10}\rangle_{d}`$ and $`|{1}\rangle_{a}`$ for the second state $`|{11}\rangle_{d}`$. The resulting QRAM-encoded state is:
-``` math
+$$
 |{\mathcal{D}}\rangle=\frac{1}{\sqrt{2}}\left(|{0}\rangle_{a}|{10}\rangle_{d}+|{1}\rangle_{a}|{11}\rangle_{d}\right).
-```
+$$
 (2.49) The corresponding quantum circuit for implementing this state is shown in Fig. [2.7](#Ch2.F7 "Figure 2.7 ‣ Quantum Random Access Memory (QRAM) ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
 <figure id="Ch2.F7" class="ltx_figure">
@@ -1297,13 +1297,13 @@ QST involves performing quantum measurements, gathering measurement statistics, 
 
 QST with linear inversion. Linear inversion is a straightforward method to reconstruct the quantum state from measurement data by directly solving linear systems of equations. Let $`\rho`$ be the explored quantum state and $`\{E_{i}\}`$ be a set of measurements. According to the Born rule, the probability of measurement outcome $`i`$ is given by
 
-``` math
+$$
 \Pr(E_{i}|\rho)=\mathop{\text{Tr}}(\rho E_{i}).
-```
+$$
 
 In practice, $`\Pr(E_{i}|\rho)`$ is not directly accessible but is approximated by the frequency $`p_{i}`$ of measurement outcome $`i`$ over multiple measurements. By the law of large numbers, as the number of measurements increases, $`p_{i}`$ converges to the true probability $`\Pr(E_{i}|\rho)`$. Collecting measurements across all bases, we obtain a linear system
 
-``` math
+$$
 \begin{bmatrix}\mathop{\text{Tr}}(\rho E_{0})\\
 \mathop{\text{Tr}}(\rho E_{1})\\
 \vdots\end{bmatrix}=\begin{bmatrix}\vec{E}_{0}^{\dagger}\cdot\vec{\rho}\\
@@ -1311,27 +1311,27 @@ In practice, $`\Pr(E_{i}|\rho)`$ is not directly accessible but is approximated 
 \vdots\end{bmatrix}=A\vec{\rho}\approx\boldsymbol{p}=\begin{bmatrix}p_{0}\\
 p_{1}\\
 \vdots\end{bmatrix},
-```
+$$
 
 where $`\vec{E}`$ and $`\vec{\rho}`$ refer to the vector representations of matrices $`E_{i}`$ and $`\rho`$, respectively. The vector representation of a matrix is obtained by stacking its columns into a single-column vector. For example, the vector representation of a $`2\times 2`$ identity matrix is $`\vec{\mathbb{I}}_{2}=[1,0,0,1]^{T}`$. The matrix $`A`$ is constructed such that each row corresponds to the vector representation of the measurement operator, i.e., $`A=[\vec{E}_{0}^{\dagger};\vec{E}_{1}^{\dagger};...]`$. The vector $`\boldsymbol{p}`$ contains the measured frequencies $`p_{i}`$.
 
 Assuming the measurements are tomographically complete, i.e., $`\{E_{i}\}`$ forms a basis for the system’s Hilbert space, we can reconstruct $`\rho`$ by solving the following linear systems of equations, i.e.,
 
-``` math
+$$
 \vec{\rho}=(A^{T}A)^{-1}A^{T}\boldsymbol{p}.
-```
+$$
 
 A common strategy is to use Pauli operators as measurement bases $`\{E_{i}\}`$. The density matrix $`\rho`$ of an $`N`$-qubit system can be expanded in terms of the Pauli basis as:
 
-``` math
+$$
 \rho=\frac{1}{2^{N}}\sum_{i=0}^{4^{N}-1}c_{i}P_{i},\quad c_{i}\in\mathbb{R},\quad P_{i}\in\{I,X,Y,Z\}^{\otimes N},
-```
+$$
 
 where the coefficients $`c_{i}`$ represent projections of $`\rho`$ onto the Pauli basis, calculated as:
 
-``` math
+$$
 c_{i}=\mathop{\text{Tr}}(\rho P_{i}).
-```
+$$
 
 To fully reconstruct $`\rho`$, the quantum state must theoretically be measured in all $`4^{N}-1`$ Pauli bases to estimate each $`c_{i}`$.
 
@@ -1341,15 +1341,15 @@ A key limitation of linear inversion is that it does not guarantee a valid densi
 
 Maximum Likelihood Estimation (MLE). To ensure physical constraints on the quantum state during reconstruction, MLE is introduced. MLE reconstructs $`\rho`$ by maximizing the likelihood of observing the measurement outcomes, subject to the constraints that $`\rho`$ is Hermitian, positive semi-definite, and trace one. The likelihood function is given by
 
-``` math
+$$
 L(\rho)=\prod_{i}\mathop{\text{Tr}}(\rho E_{i})^{p_{i}}.
-```
+$$
 
 Reconstructing $`\rho`$ then reduces to solving the following optimization problem
 
-``` math
+$$
 \argmax_{\rho^{\prime}}L(\rho^{\prime}),\quad\text{s.t.}\quad\rho^{\prime}\succeq 0,\quad\rho^{\prime}=\rho^{\prime\dagger},\quad\mathop{\text{Tr}}(\rho^{\prime})=1.
-```
+$$
 
 Solving this typically requires iterative numerical optimization, which can be computationally intensive.
 
@@ -1361,9 +1361,9 @@ The partial information read-out protocol focuses on extracting specific, task-r
 
 Sampling. Sampling involves repeatedly measuring the quantum state in the computational basis to estimate the probability distribution over bit-strings. Given a state $`|{\psi}\rangle`$, the probability of observing a specific computational basis $`|{i}\rangle`$ is given by
 
-``` math
+$$
 \Pr(i)=\left|\braket{\psi|i}\right|^{2}.
-```
+$$
 
 The empirical frequency of each outcome from repeated measurements provides an estimate of $`\Pr(i)`$. Sampling is particularly useful in the following applications
 
@@ -1383,23 +1383,23 @@ Expectation value estimation. For a wide class of quantum computation problems, 
 
 An observable $`O\in\mathbb{C}^{2^{N}\times 2^{N}}`$ mentioned here is a Hermitian operator that represents a measurable physical quantity. For an $`N`$-qubit system, $`O`$ can be expressed in terms of a Pauli basis expansion, i.e.,
 
-``` math
+$$
 O=\sum_{i=1}^{4^{N}}\alpha_{i}P_{i},\quad P_{i}\in\{\mathbb{I}_{2},X,Y,Z\}^{\otimes N},\quad\alpha_{i}\in\mathbb{R}.
-```
+$$
 
 where $`P_{i}`$ denotes the $`i`$-th $`N`$-qubit Pauli string.
 
 The expectation value of an observable $`O`$ with respect to an $`N`$-qubit state $`\rho`$ is
 
-``` math
+$$
 \braket{O}=\mathop{\text{Tr}}(\rho O).
-```
+$$
 
 Substituting the Pauli expansion of $`O`$, the expectation value is expressed as the weighted sum of the expectation values of each Pauli basis term due to the linearity of the trace operation, i.e.,
 
-``` math
+$$
 \braket{O}=\sum_{i=1}^{4^{N}}\alpha_{i}\mathop{\text{Tr}}(\rho P_{i})\equiv\sum_{i=1}^{4^{N}}\alpha_{i}\braket{P_{i}}.
-```
+$$
 
 To estimate the expectation value of each individual Pauli term $`P_{i}`$, the quantum state $`\rho`$ must be measured on the basis of the eigenstates of $`P_{i}`$. The measurement outcome is then associated with the corresponding eigenvalue of $`P_{i}`$. Notably, the eigenstates and eigenvalues of $`P_{i}`$ can be derived from the eigenstates and eigenvalues of its constituent single-qubit Pauli operators $`P_{ij}`$:
 
@@ -1413,9 +1413,9 @@ To estimate the expectation value of each individual Pauli term $`P_{i}`$, the q
 
 This structure allows $`P_{i}`$ to be analyzed in terms of its simpler single-qubit components, significantly simplifying the process of determining the measurement basis for expectation value estimation. By repeating the measurements $`M`$ times and obtaining the corresponding measurement results $`\{r_{j}\}_{j=1}^{M}`$, the statistical value of $`\braket{P_{i}}`$ can be estimated by
 
-``` math
+$$
 \braket{\hat{P}_{i}}=\frac{1}{M}\sum_{j=1}^{M}r_{j}.
-```
+$$
 
 The expectation value of the observable $`O`$ is therefore statistically estimated by $`\braket{\hat{O}}=\sum_{i=0}^{K-1}\alpha_{i}\braket{\hat{P}_{i}}`$.
 
@@ -1457,9 +1457,9 @@ For many computational problems, such as solving linear equations, we need to de
 
 Suppose that $`A`$ is an $`N`$-qubit operator, $`\alpha,\varepsilon\geq 0`$ and $`a\in\mathbb{N}`$. Then we say that the $`(a+N)`$-qubit unitary $`U`$ is an $`(\alpha,a,\varepsilon)`$-block-encoding of $`A`$ if
 
-``` math
-\displaystyle\|A-\alpha(\langle{0}|^{\otimes a} \displaystyle\otimes\mathbb{I}_{2^{N}})U(|{0}\rangle^{\otimes a}\otimes\mathbb{I}_{2^{N}})\|\leq\varepsilon.
-```
+$$
+\|A-\alpha(\langle{0}|^{\otimes a} \otimes\mathbb{I}_{2^{N}})U(|{0}\rangle^{\otimes a}\otimes\mathbb{I}_{2^{N}})\|\leq\varepsilon.
+$$
 
 Here, $`\|\cdot\|`$ represents the spectral norm, i.e., the largest singular value of the matrix.
 
@@ -1474,19 +1474,19 @@ The circuit implementation of the block encoding is illustrated in Figure [2.8]
 
 (Block encoding via the linear combination of unitaries (LCU) method, [Gilyén et al. (2019)](#bib.bib38)). Suppose that $`A`$ can be written in the form
 
-``` math
-\displaystyle A=\sum_{k}\alpha_{k}U_{k},
-```
+$$
+A=\sum_{k}\alpha_{k}U_{k},
+$$
 
 where $`\{\alpha_{k}\}`$ are real numbers and $`U_{k}`$ are some easily prepared unitaries such as Pauli strings. Then, the LCU method allows us to have the access to two unitaries, i.e.,
 
-``` math
-\displaystyle U_{\mathrm{SEL}}= \displaystyle\sum_{k}|k\rangle\langle k|\otimes U_{k},
-```
+$$
+U_{\mathrm{SEL}}= \sum_{k}|k\rangle\langle k|\otimes U_{k},
+$$
 
-``` math
-\displaystyle U_{\mathrm{PREP}}: \displaystyle|{0}\rangle\rightarrow\frac{1}{\sqrt{\|\vec{\alpha}\|_{1}}}\sum_{k}\sqrt{\alpha_{k}}|{k}\rangle,
-```
+$$
+U_{\mathrm{PREP}}: |{0}\rangle\rightarrow\frac{1}{\sqrt{\|\vec{\alpha}\|_{1}}}\sum_{k}\sqrt{\alpha_{k}}|{k}\rangle,
+$$
 
 where $`\vec{\alpha}=(\alpha_{1},\alpha_{2},\dots)`$.
 
@@ -1498,17 +1498,17 @@ Similar to the definition of block encoding, we can also define the state prepar
 
 We say a unitary $`U_{\psi}`$ is an $`(\alpha,a,\epsilon)`$-state-encoding of an $`N`$-qubit quantum state $`|{\psi}\rangle`$ if
 
-``` math
-\displaystyle\mathopen{\|}|{\psi}\rangle-\alpha(\langle{0^{a}}|\otimes I)U_{\psi}|{0^{a+N}}\rangle\mathclose{\|}_{\infty}\leq\epsilon,
-```
+$$
+\mathopen{\|}|{\psi}\rangle-\alpha(\langle{0^{a}}|\otimes I)U_{\psi}|{0^{a+N}}\rangle\mathclose{\|}_{\infty}\leq\epsilon,
+$$
 
 where $`\|\cdot\|_{\infty}`$ denotes the infinity norm of the given vector.
 
 More straightforwardly, the $`(\alpha,a,\epsilon)`$-state-encoding $`U_{\psi}`$ prepares the state
 
-``` math
-\displaystyle U_{\psi}|{0}\rangle|{0}\rangle=\frac{1}{\alpha}|{0}\rangle|{\psi^{\prime}}\rangle+\sqrt{1-\alpha^{2}}|{1}\rangle|{\mathrm{bad}}\rangle,
-```
+$$
+U_{\psi}|{0}\rangle|{0}\rangle=\frac{1}{\alpha}|{0}\rangle|{\psi^{\prime}}\rangle+\sqrt{1-\alpha^{2}}|{1}\rangle|{\mathrm{bad}}\rangle,
+$$
 
 where $`\mathopen{\|}|{\psi^{\prime}}\rangle-|{\psi}\rangle\mathclose{\|}_{\infty}\leq\epsilon`$ and $`|{\mathrm{bad}}\rangle`$ is an arbitrary quantum state. One can further prepare the state $`|{\psi^{\prime}}\rangle`$ by using $`\mathcal{O}(\alpha)`$ times of amplitude amplification ([Brassard et al., 2002](#bib.bib84)). The state preparation encoding can be understood as a specific case of the block encoding, i.e., it is the block encoding of a $`\mathbb{C}^{2^{N}\times 1}`$ matrix.
 
@@ -1524,17 +1524,17 @@ If $`U`$ is an $`(\alpha,a,\delta)`$-block encoding of an $`N`$-qubit operator $
 
 Let $`A=\sum_{k}x_{k}A_{k}`$ be an $`s`$-qubit operator with $`\beta\geq\|\vec{x}\|_{1}`$ and $`\varepsilon_{1}>0`$, where $`\vec{x}`$ is the vector of coefficients. Suppose we have access to
 
-``` math
-\displaystyle P_{L}|{0}\rangle \displaystyle=\sum_{k}c_{k}|{k}\rangle,
-```
+$$
+P_{L}|{0}\rangle =\sum_{k}c_{k}|{k}\rangle,
+$$
 
-``` math
-\displaystyle P_{R}|{0}\rangle \displaystyle=\sum_{k}d_{k}|{k}\rangle,
-```
+$$
+P_{R}|{0}\rangle =\sum_{k}d_{k}|{k}\rangle,
+$$
 
-``` math
-\displaystyle W \displaystyle=\sum_{k}|k\rangle\langle k|\otimes U_{k}+\left(\bigl(\mathcal{I}_{s}-\sum_{k}|k\rangle\langle k|\bigl)\otimes\mathcal{I}_{a}\otimes\mathcal{I}_{b}\right),
-```
+$$
+W =\sum_{k}|k\rangle\langle k|\otimes U_{k}+\left(\bigl(\mathcal{I}_{s}-\sum_{k}|k\rangle\langle k|\bigl)\otimes\mathcal{I}_{a}\otimes\mathcal{I}_{b}\right),
+$$
 
 where $`\sum_{k}|\beta c_{k}^{*}d_{k}-x_{k}|\leq\varepsilon_{1}`$ and $`U_{k}`$ is an $`(\alpha,a,\varepsilon_{2})`$-block-encoding of $`A_{k}`$. Then we can implement an $`(\alpha\beta,a+b,\alpha\varepsilon_{1}+\beta\varepsilon_{2})`$-block-encoding of $`A`$ by using one time of $`W,P_{L}`$, and $`P_{R}`$.
 
@@ -1550,25 +1550,25 @@ For simplicity, we only consider the perfect case, i.e., no errors. Refer to Ref
 
 The intuition for achieving the Hadamard product is that all the needed elements can be found in the tensor product, i.e.,
 
-``` math
-\displaystyle(\langle{0^{a+b}}|\otimes\mathbb{I}_{2^{2N}})(\mathbb{I}_{2^{b}}\otimes U_{A}\otimes\mathbb{I}_{2^{N}})(\mathbb{I}_{2^{a}}\otimes U_{B}\otimes\mathbb{I}_{2^{N}})(|{0^{a+b}}\rangle\otimes\mathbb{I}_{2^{2N}})
-```
+$$
+(\langle{0^{a+b}}|\otimes\mathbb{I}_{2^{2N}})(\mathbb{I}_{2^{b}}\otimes U_{A}\otimes\mathbb{I}_{2^{N}})(\mathbb{I}_{2^{a}}\otimes U_{B}\otimes\mathbb{I}_{2^{N}})(|{0^{a+b}}\rangle\otimes\mathbb{I}_{2^{2N}})
+$$
 
-``` math
-\displaystyle= \displaystyle\frac{A\otimes B}{\alpha\beta}.
-```
+$$
+= \frac{A\otimes B}{\alpha\beta}.
+$$
 
 To this end, the question is reduced to finding proper permutation unitaries that can shift the required elements to the correct positions to achieve the Hadamard product. Denote $`P^{\prime}=\sum_{i=0}^{d-1}|i\rangle\langle i|\otimes|0\rangle\langle i|`$. As proved by [Zhao et al. (2021)](#bib.bib85), the tensor product of $`A`$ and $`B`$ can be reformulated to the Hadamard product via $`P`$, i.e.,
 
-``` math
+$$
 P^{\prime}(A\otimes B)P^{\prime\dagger}=(A\circ B)\otimes|0\rangle\langle 0|.
-```
+$$
 
 However, $`P^{\prime}`$ is not a unitary. Instead, we consider $`P=\sum_{i,j=0}^{d-1}|i\rangle\langle i|\otimes|i\oplus j\rangle\langle j|`$, which can be easily constructed by using $`N`$ CNOT gates, i.e., one CNOT gate between each pair of qubits consisting of one qubit from the first register and the corresponding qubit from the second register. By direct computation, we have
 
-``` math
-\displaystyle(\mathbb{I}_{2^{N}}\otimes\langle{0^{N}}|)P(A\otimes B)P^{\dagger}(\mathbb{I}_{2^{N}}\otimes|{0^{N}}\rangle)=A\circ B.
-```
+$$
+(\mathbb{I}_{2^{N}}\otimes\langle{0^{N}}|)P(A\otimes B)P^{\dagger}(\mathbb{I}_{2^{N}}\otimes|{0^{N}}\rangle)=A\circ B.
+$$
 
 Therefore, by direct computation, one can verify that $`(P\otimes\mathbb{I}_{2^{a+b}})(\mathbb{I}_{2^{b}}\otimes U_{A}\otimes\mathbb{I}_{2^{N}})(\mathbb{I}_{2^{a}}\otimes U_{B}\otimes\mathbb{I}_{2^{N}})(P^{\dagger}\otimes\mathbb{I}_{2^{a+b}})`$ is the desired block encoding. ∎
 
@@ -1582,9 +1582,9 @@ For machine learning applications, we mostly deal with the real matrices. The co
 
 Suppose that $`U_{A}`$ is an $`(\alpha,a,\varepsilon)`$-block-encoding of a real matrix $`A`$. If $`\delta\geq 0`$ and $`P:\mathbb{R}\rightarrow\mathbb{C}`$ is a d-degree polynomial satisfying that
 
-``` math
-\displaystyle\mathrm{for\ all}\ x\in[-1,1]:\left|P(x)\right|\leq\frac{1}{4},
-```
+$$
+\mathrm{for\ all}\ x\in[-1,1]:\left|P(x)\right|\leq\frac{1}{4},
+$$
 
 then there is a quantum circuit $`\tilde{U}`$, which is an $`(1,a+3,4d\sqrt{\varepsilon/\alpha}+\delta)`$-block-encoding of $`P^{(SV)}(A/\alpha)`$, and consists of d applications of $`U_{A}`$ and $`U^{\dagger}_{A}`$ gates. Further, the description of such a circuit can be computed classically in time $`\mathcal{O}(\operatorname{poly}(d,\log(1/\delta)))`$.
 
@@ -1893,9 +1893,9 @@ In this chapter, we provide a step-by-step explanation of the transition from cl
 
 Before delving into kernel machines, it is essential to first understand the motivation behind kernel methods. In many machine learning tasks, particularly in classification, the goal is to find a decision boundary that best separates different classes of data. When the data is linearly separable, this boundary can be represented as a straight line (in 2D), a plane (in 3D), or a hyperplane (in higher dimensions), as illustrated in Figure [3.1](#Ch3.F1 "Figure 3.1 ‣ 3.1.1 Motivation of kernel methods ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")(a). Mathematically, given an input space $`\mathcal{X}\subset\mathbb{R}^{d}`$ with $`d\geq 1`$ and a target or output space $`\mathcal{Y}=\{+1,-1\}`$, we consider a training dataset $`\mathcal{D}=\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{n}\in(\mathcal{X}\times\mathcal{Y})^{n}`$ where each data point $`\boldsymbol{x}^{(i)}\in\mathcal{X}`$ is associated with a label $`y^{(i)}\in\mathcal{Y}`$. For the dataset to be linearly separable, there must exist a vector $`\boldsymbol{w}\in\mathbb{R}^{d}`$ and a bias term $`b\in\mathbb{R}`$ such that
 
-``` math
+$$
 \forall i\in[n],\quad y^{(i)}(\boldsymbol{w}^{\top}\boldsymbol{x}^{(i)}+b)\geq 0,
-```
+$$
 
 where $`\boldsymbol{w}^{\top}\boldsymbol{x}^{(i)}`$ represents the inner product of vectors $`\boldsymbol{w}`$ and $`\boldsymbol{x}^{(i)}`$. This means that a hyperplane defined by $`(\boldsymbol{w},b)`$ can perfectly separate the two classes.
 
@@ -1903,9 +1903,9 @@ However, in real-world scenarios, data is often not linearly separable, as shown
 
 To address the challenge of non-linear data, one effective strategy is to transform the input data into a higher-dimensional space where the data may become linearly separable. This transformation is known as feature mapping, denoted by
 
-``` math
+$$
 \phi:\boldsymbol{x}\to\phi(\boldsymbol{x})\in\mathbb{R}^{D},
-```
+$$
 
 where the original input space $`\mathcal{X}`$ is mapped to a higher-dimensional feature space $`\mathbb{R}^{D}`$ with $`D\geq d`$. The idea is that, in this higher-dimensional space, complex patterns in the original data can be more easily identified using linear models.
 
@@ -1915,9 +1915,9 @@ However, explicitly computing the feature map $`\phi(\boldsymbol{x})`$ in Eqn. 
 
 To circumvent the computational cost of explicitly calculating the feature map, we can use a kernel function. A kernel function $`k(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)})`$ is defined as
 
-``` math
+$$
 k(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)})=\braket{{\phi}(\boldsymbol{x}^{(i)}),{\phi}(\boldsymbol{x}^{(j)})}.
-```
+$$
 
 This allows us to compute the inner product in the higher-dimensional feature space indirectly, without ever having to compute $`{\phi}(\boldsymbol{x})`$ explicitly. This approach is commonly known as the kernel trick.
 
@@ -1925,35 +1925,35 @@ By using the kernel function directly within algorithms, we avoid the computatio
 
 To illustrate the kernel trick, let’s consider a simple example in a $`d`$-dimensional input space, where $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})^{\top}`$. Suppose we use the polynomial kernel of degree $`2`$, defined as
 
-``` math
-\displaystyle k(\boldsymbol{x},\boldsymbol{z})= \displaystyle(\boldsymbol{x}^{\top}\boldsymbol{z})^{2}
-```
+$$
+k(\boldsymbol{x},\boldsymbol{z})= (\boldsymbol{x}^{\top}\boldsymbol{z})^{2}
+$$
 
-``` math
-\displaystyle= \displaystyle(\boldsymbol{x}_{1}\boldsymbol{z}_{1}+\cdots+\boldsymbol{x}_{d}\boldsymbol{z}_{d})^{2}
-```
+$$
+= (\boldsymbol{x}_{1}\boldsymbol{z}_{1}+\cdots+\boldsymbol{x}_{d}\boldsymbol{z}_{d})^{2}
+$$
 
-``` math
-\displaystyle= \displaystyle\sum_{i=1}^{d}\sum_{j=1}^{d}\boldsymbol{x}_{i}\boldsymbol{z}_{i}\boldsymbol{x}_{j}\boldsymbol{z}_{j}
-```
+$$
+= \sum_{i=1}^{d}\sum_{j=1}^{d}\boldsymbol{x}_{i}\boldsymbol{z}_{i}\boldsymbol{x}_{j}\boldsymbol{z}_{j}
+$$
 
-``` math
-\displaystyle= \displaystyle[\boldsymbol{x}_{1}^{2},\cdots,\boldsymbol{x}_{d}^{2},\sqrt{2}\boldsymbol{x}_{1}\boldsymbol{x}_{2},\cdots,\sqrt{2}\boldsymbol{x}_{d}\boldsymbol{x}_{d-1}]
-```
+$$
+= [\boldsymbol{x}_{1}^{2},\cdots,\boldsymbol{x}_{d}^{2},\sqrt{2}\boldsymbol{x}_{1}\boldsymbol{x}_{2},\cdots,\sqrt{2}\boldsymbol{x}_{d}\boldsymbol{x}_{d-1}]
+$$
 
-``` math
-\displaystyle[\boldsymbol{z}_{1}^{2},\cdots,\boldsymbol{z}_{d}^{2},\sqrt{2}\boldsymbol{z}_{1}\boldsymbol{z}_{2},\cdots,\sqrt{2}\boldsymbol{z}_{d}\boldsymbol{z}_{d-1}]^{\top}
-```
+$$
+[\boldsymbol{z}_{1}^{2},\cdots,\boldsymbol{z}_{d}^{2},\sqrt{2}\boldsymbol{z}_{1}\boldsymbol{z}_{2},\cdots,\sqrt{2}\boldsymbol{z}_{d}\boldsymbol{z}_{d-1}]^{\top}
+$$
 
-``` math
-\displaystyle= \displaystyle{\phi}(\boldsymbol{x})^{\top}{\phi}(\boldsymbol{z}).
-```
+$$
+= {\phi}(\boldsymbol{x})^{\top}{\phi}(\boldsymbol{z}).
+$$
 
 Here, we see that the feature mapping, which comprises all second-order terms, takes the form as
 
-``` math
+$$
 {\phi}(\boldsymbol{x})=[\boldsymbol{x}_{1}^{2},\cdots,\boldsymbol{x}_{d}^{2},\sqrt{2}\boldsymbol{x}_{1}\boldsymbol{x}_{2},\cdots,\sqrt{2}\boldsymbol{x}_{d}\boldsymbol{x}_{d-1}]^{\top}.
-```
+$$
 
 Notably, directly computing the kernel function $`(\boldsymbol{x}^{\top}\boldsymbol{z})^{2}`$ for a large $`d`$ is much more efficient than explicitly calculating the feature map $`{\phi}(\boldsymbol{x})`$ and then taking the inner product $`{\phi}(\boldsymbol{x})^{\top}{\phi}(\boldsymbol{z})`$. Specifically, using the kernel function only requires $`\mathcal{O}(d)`$ time, since it involves computing the dot product in the original input space $`\mathbb{R}^{d}`$. In contrast, if we were to explicitly compute the transformed feature vectors $`{\phi}(\boldsymbol{x})`$ and their inner product, the time complexity could increase to $`\mathcal{O}(D)`$, where $`D`$ is the dimensionality of the feature space after mapping. For this example of a polynomial kernel with degree $`2`$, $`D`$ can grow to $`\mathcal{O}(d^{2})`$. This demonstrates the computational efficiency of using the kernel trick.
 
@@ -1965,61 +1965,61 @@ To understand why many machine learning algorithms rely primarily on the inner p
 
 Let’s start with a linear regression model with the training dataset $`\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{n}`$, where the parameters are determined by minimizing a regularized sum-of-squares error function
 
-``` math
+$$
 \mathcal{L}(\boldsymbol{w})=\frac{1}{2}\sum_{i=1}^{n}\left(\boldsymbol{w}^{\top}{\phi}(\boldsymbol{x}^{(i)})-y^{(i)}\right)^{2}+\frac{\lambda}{2}\boldsymbol{w}^{\top}\boldsymbol{w},
-```
+$$
 
 where $`\boldsymbol{w}^{\top}`$ refers to the transpose of model parameters $`\boldsymbol{w}`$, $`{\phi}(\boldsymbol{x}^{(i)})`$ represents the feature mapping of the input $`\boldsymbol{x}^{(i)}`$, and $`\lambda\geq 0`$ is the regularization factor that helps prevent overfitting.
 
 To find the optimal $`\boldsymbol{w}`$, we set the gradient of $`\mathcal{L}(\boldsymbol{w})`$ with respect to $`\boldsymbol{w}`$ to zero, i.e.,
 
-``` math
+$$
 \frac{\partial\mathcal{L}(\boldsymbol{w})}{\partial\boldsymbol{w}}=\sum_{i=1}^{n}\left(\boldsymbol{w}^{\top}{\phi}(\boldsymbol{x}^{(i)})-y^{(i)}\right){\phi}(\boldsymbol{x}^{(i)})+\lambda\boldsymbol{w}=0,
-```
+$$
 
 From this, we see that the solution for $`\boldsymbol{w}`$ can be expressed as a linear combination of the training data’s feature vectors
 
-``` math
+$$
 \boldsymbol{w}=-\frac{1}{\lambda}\sum_{i=1}^{n}(\boldsymbol{w}^{\top}{\phi}(\boldsymbol{x}^{(i)})-y^{(i)}){\phi}(\boldsymbol{x}^{(i)})=\sum_{i=1}^{n}\boldsymbol{a}^{(i)}{\phi}(\boldsymbol{x}^{(i)}):=\boldsymbol{\Phi}^{\top}\boldsymbol{a},
-```
+$$
 
 where $`\boldsymbol{\Phi}=[{\phi}(\boldsymbol{x}^{(1)}),\cdots,{\phi}(\boldsymbol{x}^{(n)})]^{\top}`$ is the design matrix, whose $`i`$-th row is given by $`{\phi}(\boldsymbol{x}^{(i)})^{\top}`$. Here, the coefficients $`\boldsymbol{a}^{(i)}`$ are functions of $`\boldsymbol{w}`$, defined as
 
-``` math
+$$
 \boldsymbol{a}^{(i)}=-\frac{1}{\lambda}(\boldsymbol{w}^{\top}{\phi}(\boldsymbol{x}^{(i)})-y^{(i)}).
-```
+$$
 
 Thus, instead of directly optimizing $`\boldsymbol{w}`$, we can reformulate the problem in terms of the parameter vector $`\boldsymbol{a}`$, giving rise to a dual representation. By substituting $`\boldsymbol{w}=\boldsymbol{\Phi}^{\top}\boldsymbol{a}`$ into the original objective function $`\mathcal{L}(\boldsymbol{w})`$ in Eqn. ([3.6](#Ch3.E6 "Equation 3.6 ‣ 3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), we obtain
 
-``` math
+$$
 \mathcal{L}(\boldsymbol{a})=\frac{1}{2}\boldsymbol{a}^{\top}\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}\boldsymbol{a}-\boldsymbol{a}^{\top}\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}\boldsymbol{y}+\frac{1}{2}\boldsymbol{y}^{\top}\boldsymbol{y}+\frac{\lambda}{2}\boldsymbol{a}^{\top}\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}\boldsymbol{y},
-```
+$$
 
 where $`\boldsymbol{y}=(y^{(1)},\cdots,y^{(n)})^{\top}`$ denotes the vector representation of $`n`$ training labels. We define the kernel matrix $`{K}=\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}`$, where each element is given by
 
-``` math
+$$
 {K}_{ij}={\phi}(\boldsymbol{x}^{(i)})^{\top}{\phi}(\boldsymbol{x}^{(j)})=k(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)}),
-```
+$$
 
 using kernel function $`k(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ defined by Eqn. ([3.3](#Ch3.E3 "Equation 3.3 ‣ 3.1.1 Motivation of kernel methods ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). The objective function in terms of $`\boldsymbol{a}`$ simplifies to
 
-``` math
+$$
 \mathcal{L}(\boldsymbol{a})=\frac{1}{2}\boldsymbol{a}^{\top}{K}^{2}\boldsymbol{a}-\boldsymbol{a}^{\top}{K}\boldsymbol{y}+\frac{1}{2}y^{\top}\boldsymbol{y}+\frac{\lambda}{2}\boldsymbol{a}^{\top}{K}\boldsymbol{y},
-```
+$$
 
 Setting the gradient of $`\mathcal{L}(\boldsymbol{a})`$ with respect to $`\boldsymbol{a}`$ to zero give us
 
-``` math
+$$
 \boldsymbol{a}=({K}+\lambda\mathbb{I}_{n})^{-1}\boldsymbol{y},
-```
+$$
 
 where $`\mathbb{I}_{n}`$ is the identity matrix of size $`n\times n`$.
 
 Now, using this dual formulation, we can derive the prediction for a new input $`\boldsymbol{x}`$. Substituting $`\boldsymbol{w}=\boldsymbol{\Phi}^{\top}\boldsymbol{a}`$ in Eqn. ([3.8](#Ch3.E8 "Equation 3.8 ‣ 3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the prediction of $`\boldsymbol{x}`$ is given by
 
-``` math
+$$
 y(\boldsymbol{x})=\boldsymbol{w}^{\top}{\phi}(\boldsymbol{x})=\langle\boldsymbol{\Phi}^{\top}\boldsymbol{a},{\phi}(\boldsymbol{x})\rangle=\boldsymbol{k}(\boldsymbol{x})^{\top}({K}+\lambda\mathbb{I}_{n})^{-1}\boldsymbol{y},
-```
+$$
 
 where $`\boldsymbol{k}(\boldsymbol{x})\in\mathbb{R}^{n}`$ is a vector with elements $`\boldsymbol{k}_{i}(\boldsymbol{x})=k(\boldsymbol{x}^{(i)},\boldsymbol{x})={\phi}(\boldsymbol{x}^{(i)})^{\top}{\phi}(\boldsymbol{x})`$. This shows that the dual formulation allows us to express the solution entirely in terms of the kernel function $`k(\boldsymbol{x},\boldsymbol{x}^{\prime})`$, rather than explicitly working with the feature map $`{\phi}(\boldsymbol{x})`$. This is particularly advantageous because it enables us to work in high-dimensional or even infinite-dimensional feature spaces implicitly.
 
@@ -2031,9 +2031,9 @@ In the dual formulation, we determine the parameter vector $`\boldsymbol{a}`$ by
 
 To utilize the kernel trick in machine learning algorithms, it is essential to construct valid kernel functions. One approach is to start with a feature mapping $`{\phi}(\boldsymbol{x})`$ and then derive the corresponding kernel. For a one-dimensional input space, the kernel function is defined as
 
-``` math
+$$
 k(\boldsymbol{x},\boldsymbol{x}^{\prime})={\phi}(\boldsymbol{x})^{\top}{\phi}(\boldsymbol{x}^{\prime})=\sum_{i=1}^{D}\langle{\phi}_{i}(\boldsymbol{x}),{\phi}_{i}(\boldsymbol{x}^{\prime})\rangle,
-```
+$$
 
 where $`{\phi}_{i}(\boldsymbol{x})`$ are the basis functions of the feature map.
 
@@ -2043,15 +2043,15 @@ Alternatively, kernels can be constructed directly without explicitly defining a
 
 Let $`\mathcal{X}\subset\mathbb{R}^{d}`$ be a compact set and let $`k:\mathcal{X}\times\mathcal{X}\to\mathbb{R}`$ be a continuous and symmetric function. Then, $`k`$ admits a uniformly convergent expansion of the form
 
-``` math
+$$
 k(\boldsymbol{x},\boldsymbol{x}^{\prime})=\sum_{i=0}^{\infty}a_{i}\langle{\phi}_{i}(\boldsymbol{x}),{\phi}_{i}(\boldsymbol{x}^{\prime})\rangle
-```
+$$
 
 with $`a_{i}>0`$ if and only if for any square-integrable function $`c`$, the following condition holds:
 
-``` math
+$$
 \int_{\mathcal{X}}\int_{\mathcal{X}}c(\boldsymbol{x})c(\boldsymbol{x}^{\prime})k(\boldsymbol{x},\boldsymbol{x}^{\prime})\mathrm{d}\boldsymbol{x}\mathrm{d}\boldsymbol{x}^{\prime}\geq 0.
-```
+$$
 
 Mercer’s condition is crucial because it ensures that the optimization problem for algorithms like support vector machines (SVM) remains convex ([Mohri, 2018](#bib.bib130)), guaranteeing convergence to a global minimum. A condition equivalent to Mercer’s condition (under the assumptions of the theorem) is that the kernel $`k(\cdot,\cdot)`$ be positive definite symmetric. This property is more general since it does not require any assumption about $`\mathcal{X}`$.
 
@@ -2066,11 +2066,11 @@ Below, we present several commonly used positive definite symmetric kernels.
 ###### Example 3.3 (Polynomial kernels).
 
 A polynomial kernel of degree $`m\in\mathbb{N}`$ with a constant $`c>0`$ is defined as
-``` math
+$$
 k(\boldsymbol{x},\boldsymbol{x}^{\prime})=(\boldsymbol{x}\cdot\boldsymbol{x}^{\prime}+c)^{m},\quad\forall\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathbb{R}^{d}.
-```
+$$
 (3.18) This kernel maps the input space to a higher-dimensional space of dimension $`\binom{d+m}{m}`$. For instance, in a two-dimensional input space ($`d=2`$) and with $`m=2`$, the kernel expands as follows
-``` math
+$$
 k(\boldsymbol{x},\boldsymbol{x}^{\prime})=(\boldsymbol{x}_{1}\boldsymbol{x}_{1}^{\prime}+\boldsymbol{x}_{2}\boldsymbol{x}_{2}^{\prime}+c)^{2}=\left[\begin{array}[]{c}\boldsymbol{x}_{1}^{2}\\
 \boldsymbol{x}_{2}^{2}\\
 \sqrt{2}~\boldsymbol{x}_{1}\boldsymbol{x}_{2}\\
@@ -2082,7 +2082,7 @@ c\end{array}\right]\cdot\left[\begin{array}[]{c}\boldsymbol{x}_{1}^{{}^{\prime}2
 \sqrt{2c}~\boldsymbol{x}_{1}^{\prime}\\
 \sqrt{2c}~\boldsymbol{x}_{2}^{\prime}\\
 c\end{array}\right]
-```
+$$
 (3.19) In other words, this kernel corresponds to an inner product in a higher-dimensional space of dimension 6.
 
 Thus, the features corresponding to a second-degree polynomial are the original features ($`\boldsymbol{x}_{1}`$ and $`\boldsymbol{x}_{2}`$), as well as products of these features, and the constant feature. More generally, the features associated with a polynomial kernel of degree $`m`$ are all the monomials of degree at most $`m`$ based on the original features.
@@ -2090,9 +2090,9 @@ Thus, the features corresponding to a second-degree polynomial are the original 
 ###### Example 3.4 (Gaussian kernels).
 
 The Gaussian kernel (or Radial Basis Function, RBF) is one of the most widely used kernels, defined as
-``` math
+$$
 \forall\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathbb{R}^{d},~~~k(\boldsymbol{x},\boldsymbol{x}^{\prime})=\exp\left(-\frac{\|\boldsymbol{x}-\boldsymbol{x}^{\prime}\|}{2\sigma^{2}}\right),
-```
+$$
 (3.20) where $`\sigma>0`$ controls the width of the Gaussian function.
 
 Gaussian kernels are particularly effective in capturing complex non-linear patterns due to their infinite-dimensional feature space.
@@ -2100,9 +2100,9 @@ Gaussian kernels are particularly effective in capturing complex non-linear patt
 ###### Example 3.5 (Sigmoid kernels).
 
 The sigmoid kernel over $`\mathbb{R}^{d}`$ is defined as:
-``` math
+$$
 k(\boldsymbol{x},\boldsymbol{x}^{\prime})=\Tanh(a\cdot(\boldsymbol{x}\cdot\boldsymbol{x}^{\prime})+b),\quad\forall\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathbb{R}^{d},
-```
+$$
 (3.21) where $`a,b>0`$ are constants, and $`\Tanh(c)=\frac{e^{c}-e^{-c}}{e^{c}+e^{-c}}`$ is the hyperbolic tangent function, which squashes an arbitrary constant $`c\in\mathbb{R}`$ to a value between $`-1`$ and $`1`$.
 
 This kernel is related to neural networks, as it resembles the activation function commonly used in multi-layer perceptrons as will be introduced in the next chapter. Using the sigmoid kernel with support vector machines results in a model similar to a simple neural network.
@@ -2130,13 +2130,13 @@ The key difference between quantum kernel machines and classical kernel machines
 
 Given an $`N`$-qubit quantum system initialized in state $`|{\psi}\rangle`$, let $`\boldsymbol{x}\in\mathcal{X}\subset\mathbb{R}^{d}`$ be classical data. The quantum feature map is defined as the mapping
 
-``` math
-\displaystyle\phi:\mathcal{X}\to\mathcal{F},
-```
+$$
+\phi:\mathcal{X}\to\mathcal{F},
+$$
 
-``` math
-\displaystyle\phi(\boldsymbol{x})= \displaystyle|{{\phi}(\boldsymbol{x})}\rangle\langle{{\phi}(\boldsymbol{x})}|=\rho(\boldsymbol{x}),
-```
+$$
+\phi(\boldsymbol{x})= |{{\phi}(\boldsymbol{x})}\rangle\langle{{\phi}(\boldsymbol{x})}|=\rho(\boldsymbol{x}),
+$$
 
 where $`\mathcal{F}`$ is the space of complex-valued $`2^{N}\times 2^{N}`$ matrices equipped with the Hilbert-Schmidt inner product $`\braket{\rho,\sigma}=\mathop{\text{Tr}}(\rho\sigma)`$ for $`\rho,\sigma\in\mathcal{F}`$. In addition, the state $`|{{\phi}(\boldsymbol{x})}\rangle`$ can be implemented by applying a data-encoding quantum circuit $`U(\boldsymbol{x})`$ introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") on an initial state $`|{\psi}\rangle`$, leading to the expression of $`|{{\phi}(\boldsymbol{x})}\rangle=U(\boldsymbol{x})|{\psi}\rangle`$.
 
@@ -2146,27 +2146,27 @@ Recall that one way of constructing kernels is adopting the inner product of the
 
 Let $`\phi`$ be a quantum feature map over the domain $`\mathcal{X}`$. The quantum kernel $`k_{Q}`$ is the inner product between two quantum feature maps $`\rho(\boldsymbol{x})`$ and $`\rho(\boldsymbol{x}^{\prime})`$ for data points $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$,
 
-``` math
-\displaystyle k_{Q}:\mathcal{X}\times\mathcal{X}\to\mathbb{R},
-```
+$$
+k_{Q}:\mathcal{X}\times\mathcal{X}\to\mathbb{R},
+$$
 
-``` math
-\displaystyle k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})= \displaystyle\mathop{\text{Tr}}(\rho(\boldsymbol{x})\rho(\boldsymbol{x}^{\prime}))=\left|\braket{{\phi}(\boldsymbol{x})|{\phi}(\boldsymbol{x}^{\prime})}\right|^{2}.
-```
+$$
+k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})= \mathop{\text{Tr}}(\rho(\boldsymbol{x})\rho(\boldsymbol{x}^{\prime}))=\left|\braket{{\phi}(\boldsymbol{x})|{\phi}(\boldsymbol{x}^{\prime})}\right|^{2}.
+$$
 
 To justify the term ‘kernel’, we need to show that the quantum kernel is indeed a positive definite function. A quantum kernel can be expressed as the product of a complex-valued kernel $`\hat{k}_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})=\braket{{\phi}(\boldsymbol{x})|{\phi}(\boldsymbol{x}^{\prime})}\in\mathbb{C}`$ and its complex conjugate $`\hat{k}_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})^{*}=\braket{{\phi}(\boldsymbol{x})|{\phi}(\boldsymbol{x}^{\prime})}^{*}=\braket{{\phi}(\boldsymbol{x}^{\prime})|{\phi}(\boldsymbol{x})}`$. Since the product of two kernels is known to be a valid kernel, it suffices to show that $`\hat{k}_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is a valid complex-valued kernel and satisfies positive definiteness. For any $`\boldsymbol{x}^{(i)}\in\mathcal{X}`$, $`i=1,\cdots,n`$, and any coefficients $`c_{i}\in\mathbb{C}`$, we have
 
-``` math
-\displaystyle\sum_{i,j}c_{i}c_{j}^{*}\left(\hat{k}_{Q}(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)})\right)= \displaystyle\sum_{i,j}c_{i}c_{j}^{*}\braket{{\phi}(\boldsymbol{x}^{(i)})|{\phi}(\boldsymbol{x}^{(j)})}
-```
+$$
+\sum_{i,j}c_{i}c_{j}^{*}\left(\hat{k}_{Q}(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)})\right)= \sum_{i,j}c_{i}c_{j}^{*}\braket{{\phi}(\boldsymbol{x}^{(i)})|{\phi}(\boldsymbol{x}^{(j)})}
+$$
 
-``` math
-\displaystyle= \displaystyle\left(\sum_{i}c_{i}\langle{{\phi}(\boldsymbol{x}^{(i)})}|\right)\left(\sum_{j}c_{j}^{*}|{{\phi}(\boldsymbol{x}^{(j)})}\rangle\right)
-```
+$$
+= \left(\sum_{i}c_{i}\langle{{\phi}(\boldsymbol{x}^{(i)})}|\right)\left(\sum_{j}c_{j}^{*}|{{\phi}(\boldsymbol{x}^{(j)})}\rangle\right)
+$$
 
-``` math
-\displaystyle= \displaystyle\left\|\sum_{i}c_{i}^{*}|{{\phi}(\boldsymbol{x}^{(i)})}\rangle\right\|^{2}\geq 0.
-```
+$$
+= \left\|\sum_{i}c_{i}^{*}|{{\phi}(\boldsymbol{x}^{(i)})}\rangle\right\|^{2}\geq 0.
+$$
 
 This inequality confirms that $`\hat{k}_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ satisfies Mercer’s condition to be a valid kernel as illustrated in Eqn. ([3.17](#Ch3.E17 "Equation 3.17 ‣ Fact 3.1 (Mercer’s condition). ‣ 3.1.3 Kernel construction ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Therefore, the quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is also a valid kernel.
 
@@ -2187,10 +2187,10 @@ Below is a simple example of a quantum kernel with an angle encoding feature map
 
 ###### Example 3.8 (Single-qubit kernel).
 
-Consider an embedding that encodes a scalar input $`x\in\mathbb{R}`$ into the quantum state of a single qubit. The embedding is implemented by the Pauli-X rotation gate $`\mathop{\text{RX}}(x)=e^{-ix\sigma_{x}/2}`$, where $`\sigma_{x}`$ is the Pauli-X operator. The quantum feature map is then given by $`\phi:x\to\rho(x)=|{\phi(x)}\rangle\langle{\psi(x)}|`$ with $`\displaystyle|{\phi(x)}\rangle=`$ $`\displaystyle e^{-ix\sigma_{x}/2}|{0}\rangle`$ $`\displaystyle=`$ $`\displaystyle\left(\cos(x)\mathbb{I}-i\sin(x)\sigma_{x}\right)|{0}\rangle`$ $`\displaystyle=`$ $`\displaystyle\cos(x)|{0}\rangle-i\sin(x)|{1}\rangle,`$ (3.25) and hence the quantum kernel yields
-``` math
+Consider an embedding that encodes a scalar input $`x\in\mathbb{R}`$ into the quantum state of a single qubit. The embedding is implemented by the Pauli-X rotation gate $`\mathop{\text{RX}}(x)=e^{-ix\sigma_{x}/2}`$, where $`\sigma_{x}`$ is the Pauli-X operator. The quantum feature map is then given by $`\phi:x\to\rho(x)=|{\phi(x)}\rangle\langle{\psi(x)}|`$ with $`|{\phi(x)}\rangle=`$ $`e^{-ix\sigma_{x}/2}|{0}\rangle`$ $`=`$ $`\left(\cos(x)\mathbb{I}-i\sin(x)\sigma_{x}\right)|{0}\rangle`$ $`=`$ $`\cos(x)|{0}\rangle-i\sin(x)|{1}\rangle,`$ (3.25) and hence the quantum kernel yields
+$$
 k(x,x^{\prime})=\left|\cos\left(\frac{x}{2}\right)\cos\left(\frac{x^{\prime}}{2}\right)+\sin\left(\frac{x}{2}\right)\sin\left(\frac{x^{\prime}}{2}\right)\right|^{2}=\cos\left(\frac{x-x^{\prime}}{2}\right)^{2},
-```
+$$
 which is a translation invariant squared cosine kernel.
 
 #### 3.2.3 Relation between quantum and classical kernel machines
@@ -2251,13 +2251,13 @@ In the following examples, we will first review the various encoding strategies 
 ###### Example 3.9 (Quantum kernel with basis encoding).
 
 Given a classical binary vector $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\{0,1\}^{d}`$, the quantum feature mapping related to basis encoding refers to
-``` math
+$$
 |{{\phi}(\boldsymbol{x})}\rangle=|{\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d}}\rangle,
-```
+$$
 (3.26) and the induced quantum kernel yields
-``` math
+$$
 k(\boldsymbol{x},\boldsymbol{x}^{\prime})=|\braket{{\phi}(\boldsymbol{x})|{\phi}(\boldsymbol{x}^{\prime})}|^{2}=\delta_{\boldsymbol{x}\boldsymbol{x}^{\prime}},
-```
+$$
 (3.27) where $`\delta_{\boldsymbol{x}\boldsymbol{x}^{\prime}}=1`$ if $`\boldsymbol{x}=\boldsymbol{x}^{\prime}`$ and otherwise $`0`$.
 
 The basis encoding requires $`N=d`$ qubits. This kernel function is a very strict similarity measure on input space, and arguably not the best choice of data encoding for quantum machine learning tasks.
@@ -2265,13 +2265,13 @@ The basis encoding requires $`N=d`$ qubits. This kernel function is a very stric
 ###### Example 3.10 (Quantum kernel with amplitude encoding).
 
 Given a vector $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathbb{R}^{d}`$, the quantum feature mapping related to amplitude encoding refers to
-``` math
+$$
 |{{\phi}(\boldsymbol{x})}\rangle=\sum_{i=1}^{d}\frac{\boldsymbol{x}_{i}}{\|\boldsymbol{x}\|_{2}}|{i}\rangle,
-```
+$$
 (3.28) where $`\|\boldsymbol{x}\|_{2}`$ is the Euclidean norm. The related quantum kernel is given by
-``` math
+$$
 k(\boldsymbol{x},\boldsymbol{x}^{\prime})=|\braket{\boldsymbol{x}|\boldsymbol{x}^{\prime}}|^{2}=|\langle\boldsymbol{x},\boldsymbol{x}^{\prime}\rangle|^{2}.
-```
+$$
 (3.29)
 
 The amplitude encoding requires $`N=\lceil\log 2(d)\rceil`$ qubits. This encoding strategy leads to an identity feature map, which can be implemented by a non-trivial quantum circuit (for obvious reasons also known as “arbitrary state preparation”), which takes time $`\mathcal{O}(d)`$ in the worst case. Besides, this quantum kernel does not add much power to a linear model in the original feature space, and it is more of interest for theoretical investigations that want to eliminate the effect of the feature map.
@@ -2279,14 +2279,14 @@ The amplitude encoding requires $`N=\lceil\log 2(d)\rceil`$ qubits. This encodin
 ###### Example 3.11 (Quantum kernel with angle encoding).
 
 Given a vector $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathbb{R}^{d}`$, the quantum feature mapping related to angle encoding refers to
-``` math
+$$
 |{{\phi}(\boldsymbol{x})}\rangle=W_{d}e^{-i\boldsymbol{x}_{d}G_{d}}W_{d}\cdots W_{2}e^{-i\boldsymbol{x}_{1}G_{1}}W_{1}|{0}\rangle^{\otimes d},
-```
+$$
 (3.30) where $`W_{0},\cdots,W_{d}`$ are arbitrary unitary evolutions, and $`G_{i}`$ is $`d_{i}\leq d`$-dimensional Hermitian operator called the generating Hamiltonian. For a special case in which $`W_{i}=\mathbb{I}`$ and $`G_{i}`$ refers to the Pauli-X operators $`\sigma_{x}`$ acting on the $`i`$-th qubit, the quantum feature mapping refers to
-``` math
+$$
 |{{\phi}(\boldsymbol{x})}\rangle=\bigotimes_{i=1}^{d}\exp\left(-i\frac{\boldsymbol{x}_{i}}{2}\sigma_{x}\right)|{0}\rangle^{\otimes d},
-```
-(3.31) and the related quantum kernel is given by $`\displaystyle k(\boldsymbol{x},\boldsymbol{x}^{\prime})=`$ $`\displaystyle\prod_{i=1}^{d}\left|\sin(\boldsymbol{x}_{i})\sin(\boldsymbol{x}_{i}^{\prime})+\cos(\boldsymbol{x}^{(i)})\cos(\boldsymbol{x}_{i}^{\prime})\right|^{2}`$ $`\displaystyle=`$ $`\displaystyle\prod_{i=1}^{d}\left|\cos(\boldsymbol{x}_{i}-\boldsymbol{x}_{i}^{\prime})\right|^{2}.`$ (3.32)
+$$
+(3.31) and the related quantum kernel is given by $`k(\boldsymbol{x},\boldsymbol{x}^{\prime})=`$ $`\prod_{i=1}^{d}\left|\sin(\boldsymbol{x}_{i})\sin(\boldsymbol{x}_{i}^{\prime})+\cos(\boldsymbol{x}^{(i)})\cos(\boldsymbol{x}_{i}^{\prime})\right|^{2}`$ $`=`$ $`\prod_{i=1}^{d}\left|\cos(\boldsymbol{x}_{i}-\boldsymbol{x}_{i}^{\prime})\right|^{2}.`$ (3.32)
 
 The angle encoding requires $`d`$-qubit, mapping the classical data to $`2^{d}`$-dimensional Hilbert space. One merit of angle encoding is introducing non-linearity, which is crucial for transforming low-dimensional, non-linearly separable data into higher-dimensional, linearly separable representations—a property essential for effective kernel-based machine learning. Additionally, angle encoding is well-suited for implementation on modern devices featuring limited qubits and circuit depth, making it practical for exploring the practical utility of near-term quantum computers.
 
@@ -2296,15 +2296,15 @@ The quantum kernels related to different data encoding strategies have a resembl
 
 Let $`\mathcal{X}=\mathbb{R}^{d}`$ and $`U(\boldsymbol{x})`$ be a quantum circuit that encodes the data inputs $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathcal{X}`$ into a $`d`$-qubit quantum state $`|{\phi(\boldsymbol{x})}\rangle`$ via gates of the form $`e^{-i\boldsymbol{x}_{i}G}`$ for $`i=1,\cdots,d`$. Without loss of generality, $`G`$ is assumed to be a $`m\leq 2^{d}`$-dimensional diagonal operator with spectrum $`\lambda_{1},\cdots,\lambda_{m}`$. Between such data-encoding gates, and before and after the entire encoding circuit, arbitrary unitary evolutions $`W_{1},\cdots,W_{d+1}`$ can be applied, so that
 
-``` math
+$$
 U(\boldsymbol{x})=W_{d+1}e^{-i\boldsymbol{x}_{d}G_{d}}W_{d}\cdots W_{2}e^{-i\boldsymbol{x}_{1}G_{1}}W_{1}.
-```
+$$
 
 The quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ can be written as
 
-``` math
+$$
 k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})=\sum_{\boldsymbol{s},\boldsymbol{t}\in\Omega}e^{i\boldsymbol{s}\boldsymbol{x}}e^{i\boldsymbol{t}\boldsymbol{x}^{\prime}}c_{\boldsymbol{s}\boldsymbol{t}},
-```
+$$
 
 where $`\Omega\subset\mathbb{R}^{d}`$, and $`c_{\boldsymbol{s}\boldsymbol{t}}\in\mathbb{C}`$. For every $`\boldsymbol{s},\boldsymbol{t}\in\Omega`$, we have $`-\boldsymbol{s},-\boldsymbol{t}\in\Omega`$ and $`c_{\boldsymbol{s}\boldsymbol{t}}=c_{-\boldsymbol{s}-\boldsymbol{t}}^{*}`$, which guarantees that the quantum kernel is real-valued.
 
@@ -2312,59 +2312,59 @@ where $`\Omega\subset\mathbb{R}^{d}`$, and $`c_{\boldsymbol{s}\boldsymbol{t}}\in
 
 The assumption that the generator $`G`$ is diagonal could be made without loss of generality because one can diagonalize Hermitian operators as $`G=Ve^{-i\boldsymbol{x}_{i}\Sigma}V^{\dagger}`$ with
 
-``` math
+$$
 e^{-i\boldsymbol{x}_{i}\Sigma}=\left(\begin{matrix}e^{-i\boldsymbol{x}_{i}\lambda_{1}}&0&\cdots&0\\
 0&e^{-i\boldsymbol{x}_{i}\lambda_{2}}&\cdots&0\\
 \cdots&\cdots&~&~\\
 0&\cdots&0&e^{-i\boldsymbol{x}_{i}\lambda_{m}}\\
 \end{matrix}\right),
-```
+$$
 
 where $`V^{\dagger}`$ refers to the conjugate transpose of the matrix $`V`$, $`\lambda_{1},\cdots,\lambda_{m}`$ are the eigenvalues of $`G`$. Formally, $`V,V^{\dagger}`$ can be absorbed into the arbitrary circuits $`W_{i+1}`$ and $`W_{i}`$ before and after the encoding gate. In this regard, the quantum kernel can be written down as the inner product between the feature state of the specific forms in Eqn. ([3.30](#Ch3.E30 "Equation 3.30 ‣ Example 3.11 (Quantum kernel with angle encoding). ‣ 3.2.4 Concrete examples of quantum kernels ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), i.e.,
 
-``` math
-\displaystyle k(\boldsymbol{x},\boldsymbol{x}^{\prime})
-```
+$$
+k(\boldsymbol{x},\boldsymbol{x}^{\prime})
+$$
 
-``` math
-\displaystyle= \displaystyle\left|\braket{{\phi}(\boldsymbol{x}^{\prime})|{\phi}(\boldsymbol{x})}\right|
-```
+$$
+= \left|\braket{{\phi}(\boldsymbol{x}^{\prime})|{\phi}(\boldsymbol{x})}\right|
+$$
 
-``` math
-\displaystyle= \displaystyle\Big|\langle{\boldsymbol{0}}|W_{1}^{\dagger}(e^{-i\boldsymbol{x}_{1}^{\prime}\Sigma})^{\dagger}\cdots(e^{-i\boldsymbol{x}_{d}^{\prime}\Sigma})^{\dagger}W_{d+1}^{\dagger}W_{d+1}e^{-i\boldsymbol{x}_{d}\Sigma}\cdots e^{-i\boldsymbol{x}_{1}\Sigma}W_{1}|{\boldsymbol{0}}\rangle\Big|^{2}
-```
+$$
+= \Big|\langle{\boldsymbol{0}}|W_{1}^{\dagger}(e^{-i\boldsymbol{x}_{1}^{\prime}\Sigma})^{\dagger}\cdots(e^{-i\boldsymbol{x}_{d}^{\prime}\Sigma})^{\dagger}W_{d+1}^{\dagger}W_{d+1}e^{-i\boldsymbol{x}_{d}\Sigma}\cdots e^{-i\boldsymbol{x}_{1}\Sigma}W_{1}|{\boldsymbol{0}}\rangle\Big|^{2}
+$$
 
-``` math
-\displaystyle= \displaystyle\left|\langle{\boldsymbol{0}}|W_{1}^{\dagger}(e^{-i\boldsymbol{x}_{1}^{\prime}\Sigma})^{\dagger}\cdots(e^{-i\boldsymbol{x}_{d}^{\prime}\Sigma})^{\dagger}e^{-i\boldsymbol{x}_{d}\Sigma}\cdots e^{-i\boldsymbol{x}_{1}\Sigma}W_{1}|{\boldsymbol{0}}\rangle\right|^{2}
-```
+$$
+= \left|\langle{\boldsymbol{0}}|W_{1}^{\dagger}(e^{-i\boldsymbol{x}_{1}^{\prime}\Sigma})^{\dagger}\cdots(e^{-i\boldsymbol{x}_{d}^{\prime}\Sigma})^{\dagger}e^{-i\boldsymbol{x}_{d}\Sigma}\cdots e^{-i\boldsymbol{x}_{1}\Sigma}W_{1}|{\boldsymbol{0}}\rangle\right|^{2}
+$$
 
-``` math
-\displaystyle= \displaystyle\Bigg|\sum_{j_{1},\cdots,j_{d}=1}^{m}\sum_{k_{1},\cdots,k_{d}=1}^{m}e^{-i(\lambda_{j_{1}}\boldsymbol{x}_{1}-\lambda_{k_{1}}\boldsymbol{x}_{1}^{\prime}+\cdots+\lambda_{j_{d}}\boldsymbol{x}_{d}-\lambda_{k_{d}}\boldsymbol{x}_{d}^{\prime})}
-```
+$$
+= \Bigg|\sum_{j_{1},\cdots,j_{d}=1}^{m}\sum_{k_{1},\cdots,k_{d}=1}^{m}e^{-i(\lambda_{j_{1}}\boldsymbol{x}_{1}-\lambda_{k_{1}}\boldsymbol{x}_{1}^{\prime}+\cdots+\lambda_{j_{d}}\boldsymbol{x}_{d}-\lambda_{k_{d}}\boldsymbol{x}_{d}^{\prime})}
+$$
 
-``` math
-\displaystyle\times\left(W^{(1k_{1})}_{1}\cdots W^{(k_{d-1}k_{d})}_{d}\right)^{*}W^{(j_{d}j_{d-1})}_{d}\cdots W^{(j_{1}1)}_{1}\Bigg|^{2}
-```
+$$
+\times\left(W^{(1k_{1})}_{1}\cdots W^{(k_{d-1}k_{d})}_{d}\right)^{*}W^{(j_{d}j_{d-1})}_{d}\cdots W^{(j_{1}1)}_{1}\Bigg|^{2}
+$$
 
-``` math
-\displaystyle= \displaystyle\left|\sum_{\boldsymbol{j}}\sum_{\boldsymbol{k}}e^{-i(\Lambda_{\boldsymbol{j}}\boldsymbol{x}-\Lambda_{\boldsymbol{k}}\boldsymbol{x}^{\prime})}(\omega_{\boldsymbol{k}})^{*}\omega_{\boldsymbol{j}}\right|^{2}
-```
+$$
+= \left|\sum_{\boldsymbol{j}}\sum_{\boldsymbol{k}}e^{-i(\Lambda_{\boldsymbol{j}}\boldsymbol{x}-\Lambda_{\boldsymbol{k}}\boldsymbol{x}^{\prime})}(\omega_{\boldsymbol{k}})^{*}\omega_{\boldsymbol{j}}\right|^{2}
+$$
 
-``` math
-\displaystyle= \displaystyle\sum_{\boldsymbol{j}}\sum_{\boldsymbol{k}}\sum_{\boldsymbol{h}}\sum_{\boldsymbol{l}}e^{-i(\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}})\boldsymbol{x}}e^{i(\Lambda_{\boldsymbol{k}}-\Lambda_{\boldsymbol{h}})\boldsymbol{x}^{\prime}}(\omega_{\boldsymbol{k}}\omega_{\boldsymbol{h}})^{*}\omega_{\boldsymbol{j}}\omega_{\boldsymbol{l}},
-```
+$$
+= \sum_{\boldsymbol{j}}\sum_{\boldsymbol{k}}\sum_{\boldsymbol{h}}\sum_{\boldsymbol{l}}e^{-i(\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}})\boldsymbol{x}}e^{i(\Lambda_{\boldsymbol{k}}-\Lambda_{\boldsymbol{h}})\boldsymbol{x}^{\prime}}(\omega_{\boldsymbol{k}}\omega_{\boldsymbol{h}})^{*}\omega_{\boldsymbol{j}}\omega_{\boldsymbol{l}},
+$$
 
 Here, the scalars $`W^{(ab)}_{i}`$ refer to the element $`\langle{a}|W_{i}|{b}\rangle`$ of the unitary operator $`W_{i}`$, the bold multi-index $`\boldsymbol{j}`$ summarizes the set $`(j_{1},\cdots,j_{d})`$ and $`\Lambda_{j}`$ is a vector containing the eigenvalues selected by the multi-index (and similarly for $`\boldsymbol{k},\boldsymbol{h},\boldsymbol{l}`$ ).
 
 We can now summarize all terms where $`\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}}=\boldsymbol{s}`$ and $`\Lambda_{\boldsymbol{k}}-\Lambda_{\boldsymbol{h}}=\boldsymbol{t}`$, in other words where the differences of eigenvalues amount to the same vectors $`\boldsymbol{s},\boldsymbol{t}`$. Then
 
-``` math
-\displaystyle k(\boldsymbol{x},\boldsymbol{x}^{\prime}) \displaystyle=\sum_{\boldsymbol{s},\boldsymbol{t}\in\Omega}e^{-i\boldsymbol{s}\boldsymbol{x}}e^{i\boldsymbol{t}\boldsymbol{x}^{\prime}}\sum_{\boldsymbol{j},\boldsymbol{l}:\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}}=\boldsymbol{s}}\sum_{\boldsymbol{k},\boldsymbol{h}:\Lambda_{\boldsymbol{k}}-\Lambda_{\boldsymbol{h}}=\boldsymbol{t}}\omega_{\boldsymbol{j}}\omega_{\boldsymbol{l}}(\omega_{\boldsymbol{k}}\omega_{\boldsymbol{h}})^{*}
-```
+$$
+k(\boldsymbol{x},\boldsymbol{x}^{\prime}) =\sum_{\boldsymbol{s},\boldsymbol{t}\in\Omega}e^{-i\boldsymbol{s}\boldsymbol{x}}e^{i\boldsymbol{t}\boldsymbol{x}^{\prime}}\sum_{\boldsymbol{j},\boldsymbol{l}:\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}}=\boldsymbol{s}}\sum_{\boldsymbol{k},\boldsymbol{h}:\Lambda_{\boldsymbol{k}}-\Lambda_{\boldsymbol{h}}=\boldsymbol{t}}\omega_{\boldsymbol{j}}\omega_{\boldsymbol{l}}(\omega_{\boldsymbol{k}}\omega_{\boldsymbol{h}})^{*}
+$$
 
-``` math
-\displaystyle=\sum_{\boldsymbol{s},\boldsymbol{t}\in\Omega}e^{-i\boldsymbol{s}\boldsymbol{x}}e^{i\boldsymbol{t}\boldsymbol{x}^{\prime}}c_{\boldsymbol{s}\boldsymbol{t}}.
-```
+$$
+=\sum_{\boldsymbol{s},\boldsymbol{t}\in\Omega}e^{-i\boldsymbol{s}\boldsymbol{x}}e^{i\boldsymbol{t}\boldsymbol{x}^{\prime}}c_{\boldsymbol{s}\boldsymbol{t}}.
+$$
 
 The frequency set $`\Omega`$ contains all vectors $`\{\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}}\}`$ with $`\Lambda_{\boldsymbol{j}}=(\lambda_{j_{1}},\cdots,\lambda_{j_{d}})`$ and $`\lambda_{j_{1}},\cdots,\lambda_{j_{d}}\in[1,\cdots,m]`$. ∎
 
@@ -2433,9 +2433,9 @@ It is important to note that if exact mathematical equality were required, Merce
 
 Let $`k:\mathcal{X}\times\mathcal{X}\to\mathbb{R}`$ be a kernel function. Then, for any $`\varepsilon\geq 0`$ there exists $`N\in\mathbb{N}`$ and a quantum feature mapping $`\rho_{N}`$ onto the Hilbert space of quantum states of $`N`$ qubits such that
 
-``` math
+$$
 |k(\boldsymbol{x},\boldsymbol{x}^{\prime})-2^{N}\mathop{\text{Tr}}(\rho_{N}(\boldsymbol{x})\rho_{N}(\boldsymbol{x})^{\prime})+1|<\varepsilon
-```
+$$
 
 for almost all $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$.
 
@@ -2466,13 +2466,13 @@ The output of Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantu
 
 Let $`\boldsymbol{r}\in\mathcal{\ell}_{1}^{d}\subset\mathbb{R}^{d}`$ be a unit vector with respect to the $`1`$-norm, i.e., $`\|\boldsymbol{r}\|_{1}=1`$. Take $`N=\lceil\log_{4}(d+1)\rceil`$ and pad $`\boldsymbol{r}`$ with zeros until its length is $`4^{N}-1`$. Let $`(P_{i})_{i=1}^{4^{N}-1}`$ be the set of all Pauli matrices on $`N`$ qubits, excluding the identity. Then Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") prepares the following state as a classical mixture
 
-``` math
-\displaystyle\rho(\cdot): \displaystyle\mathcal{\ell}_{1}^{d}\to\text{Herm}(2^{N}),
-```
+$$
+\rho(\cdot): \mathcal{\ell}_{1}^{d}\to\text{Herm}(2^{N}),
+$$
 
-``` math
-\displaystyle\boldsymbol{r}\mapsto\rho_{\boldsymbol{r}}=\frac{\mathbb{I}+\sum_{i=1}^{4^{N}-1}\boldsymbol{r}_{i}P_{i}}{2^{N}}.
-```
+$$
+\boldsymbol{r}\mapsto\rho_{\boldsymbol{r}}=\frac{\mathbb{I}+\sum_{i=1}^{4^{N}-1}\boldsymbol{r}_{i}P_{i}}{2^{N}}.
+$$
 
 The total runtime complexity $`t`$ of Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") fulfills $`t\leq\mathcal{O}(\text{poly}(d))`$.
 
@@ -2480,19 +2480,19 @@ The total runtime complexity $`t`$ of Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.
 
 The proof begins by expanding the state as follows
 
-``` math
+$$
 \frac{\mathbb{I}+\sum_{i=1}^{4^{N}-1}\boldsymbol{r}_{i}P_{i}}{2^{N}}=\frac{1}{2^{N}}\left(\sum_{i=1}^{4^{N}-1}|\boldsymbol{r}_{i}|\mathbb{I}+\sum_{i=1}^{4^{N}-1}\boldsymbol{r}_{i}P_{i}\right),
-```
+$$
 
 where the first equality follows that $`\|\boldsymbol{r}\|_{1}=1`$ and $`\boldsymbol{r}\in\mathbb{R}^{4^{N}-1}`$. Rewriting the above equation using $`\mbox{sign}(\boldsymbol{r}_{i})`$ yields
 
-``` math
-\displaystyle\frac{\mathbb{I}+\sum_{i=1}^{4^{N}-1}\boldsymbol{r}_{i}P_{i}}{2^{N}}= \displaystyle\frac{1}{2^{N}}\left(\sum_{i=1}^{4^{N}-1}|\boldsymbol{r}_{i}|\mathbb{I}+\sum_{i=1}^{4^{N}-1}|\boldsymbol{r}_{i}|\mbox{sign}(\boldsymbol{r}_{i})P_{i}\right)
-```
+$$
+\frac{\mathbb{I}+\sum_{i=1}^{4^{N}-1}\boldsymbol{r}_{i}P_{i}}{2^{N}}= \frac{1}{2^{N}}\left(\sum_{i=1}^{4^{N}-1}|\boldsymbol{r}_{i}|\mathbb{I}+\sum_{i=1}^{4^{N}-1}|\boldsymbol{r}_{i}|\mbox{sign}(\boldsymbol{r}_{i})P_{i}\right)
+$$
 
-``` math
-\displaystyle= \displaystyle\frac{1}{2^{N}}\sum_{i=1}^{4^{N}-1}|\boldsymbol{r}_{i}|\left(\mathbb{I}+\mbox{sign}(\boldsymbol{r}_{i})P_{i}\right)\succeq 0.
-```
+$$
+= \frac{1}{2^{N}}\sum_{i=1}^{4^{N}-1}|\boldsymbol{r}_{i}|\left(\mathbb{I}+\mbox{sign}(\boldsymbol{r}_{i})P_{i}\right)\succeq 0.
+$$
 
 Here, it is used that $`\sum_{i}|\boldsymbol{r}_{i}|=\|\boldsymbol{r}\|_{1}=1`$ and $`\mathbb{I}\pm P_{i}\geq 0`$ for all Pauli operators $`P_{i}`$. Notice that efficiently preparing $`\mathbb{I}+P_{i}`$ can be achieved by rotating each qubit’s $`|{0}\rangle`$ basis state to the corresponding Pauli basis and flipping the necessary qubits individually. Since this state is a convex combination of quantum states, it can be efficiently prepared by mixing, when the number of terms is polynomial. ∎
 
@@ -2500,9 +2500,9 @@ Here, it is used that $`\sum_{i}|\boldsymbol{r}_{i}|=\|\boldsymbol{r}\|_{1}=1`$ 
 
 Let $`\boldsymbol{r},\boldsymbol{r}^{\prime}\in\mathbb{R}^{d}`$ be unit vectors with respect to the $`1`$-norm, i.e., $`\|\boldsymbol{r}\|_{1}=\|\boldsymbol{r}^{\prime}\|_{1}=1`$. For the states $`\rho_{\boldsymbol{r}},\rho_{\boldsymbol{r}}^{\prime}`$ produced in Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the following identity holds
 
-``` math
-\displaystyle\braket{\boldsymbol{r},\boldsymbol{r}^{\prime}}=2^{N}\mathop{\text{Tr}}(\rho_{\boldsymbol{r}}\rho_{\boldsymbol{r}}^{\prime})-1.
-```
+$$
+\braket{\boldsymbol{r},\boldsymbol{r}^{\prime}}=2^{N}\mathop{\text{Tr}}(\rho_{\boldsymbol{r}}\rho_{\boldsymbol{r}}^{\prime})-1.
+$$
 
 ###### Proof of Lemma [3.15](#Ch3.Thmtheorem15 "Lemma 3.15 (Euclidean inner products). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
@@ -2510,21 +2510,21 @@ The proof utilizes the following principles: (1) The trace is linear, and the tr
 
 Expanding the trace of $`\rho_{\boldsymbol{r}}\rho_{\boldsymbol{r}^{\prime}}`$, we have
 
-``` math
-\displaystyle\mathop{\text{Tr}}(\rho_{\boldsymbol{r}}\rho_{\boldsymbol{r}^{\prime}})= \displaystyle\mathop{\text{Tr}}\left(\frac{1}{4^{N}}\left(\mathbb{I}+\sum_{j=1}^{4^{N}-1}\boldsymbol{r}_{j}P_{j}\right)\left(\mathbb{I}+\sum_{k=1}^{4^{N}-1}\boldsymbol{r}_{k}^{\prime}P_{k}\right)\right),
-```
+$$
+\mathop{\text{Tr}}(\rho_{\boldsymbol{r}}\rho_{\boldsymbol{r}^{\prime}})= \mathop{\text{Tr}}\left(\frac{1}{4^{N}}\left(\mathbb{I}+\sum_{j=1}^{4^{N}-1}\boldsymbol{r}_{j}P_{j}\right)\left(\mathbb{I}+\sum_{k=1}^{4^{N}-1}\boldsymbol{r}_{k}^{\prime}P_{k}\right)\right),
+$$
 
 which could be simplified as
 
-``` math
+$$
 \mathop{\text{Tr}}(\rho_{\boldsymbol{r}}\rho_{\boldsymbol{r}^{\prime}})=\frac{1}{4^{N}}\mathop{\text{Tr}}\left(\mathbb{I}+\sum_{j=1}^{4^{N}-1}\boldsymbol{r}_{j}\boldsymbol{r}_{j}^{\prime}P_{j}^{2}+\sum_{k\neq j}^{4^{N}-1}\boldsymbol{r}_{j}\boldsymbol{r}_{k}^{\prime}P_{j}P_{k}\right).
-```
+$$
 
 Using the properties of Pauli operators, the trace becomes
 
-``` math
+$$
 \mathop{\text{Tr}}(\rho_{\boldsymbol{r}}\rho_{\boldsymbol{r}^{\prime}})=\frac{1}{4^{N}}\left(\mathop{\text{Tr}}\left(\mathbb{I}\right)+\mathop{\text{Tr}}\left(\sum_{j=1}^{4^{N}-1}\boldsymbol{r}_{j}\boldsymbol{r}_{j}^{\prime}\mathbb{I}\right)\right)=\frac{1+\braket{\boldsymbol{r},\boldsymbol{r}^{\prime}}}{2^{N}}.
-```
+$$
 
 This completes the proof. ∎
 
@@ -2536,21 +2536,21 @@ With these results in place, we now present the proof of Theorem [3.13](#Ch3.Th
 
 The proof follows from a corollary of Mercer’s theorem and the universality of quantum computing. First, by a direct corollary of the Mercer’s Theorem (i.e., Fact [3.1](#Ch3.Thmtheorem1 "Fact 3.1 (Mercer’s condition). ‣ 3.1.3 Kernel construction ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) which states that an arbitrary kernel $`k`$ admits a uniformly convergent expansion of the form in Eqn. ([3.16](#Ch3.E16 "Equation 3.16 ‣ Fact 3.1 (Mercer’s condition). ‣ 3.1.3 Kernel construction ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it is ensured that there exists a finite-dimensional feature map $`\Phi_{m}:\mathcal{X}\to\mathbb{R}^{m}`$ such that
 
-``` math
+$$
 \left|k(\boldsymbol{x},\boldsymbol{x}^{\prime})-\braket{\Phi_{m}(\boldsymbol{x}),\Phi_{m}(\boldsymbol{x}^{\prime})}\right|<\varepsilon.
-```
+$$
 
 Without loss of generality, it is assumed that $`\|\Phi_{m}(\boldsymbol{x})\|=1`$ for all $`x\in\mathcal{X}`$. The quantum state $`\rho_{\Phi_{m}}`$ can then be prepared, which requires $`\lceil\log_{4}(m+1)\rceil`$ qubits. By preparing two such states—one for $`\Phi_{m}(\boldsymbol{x})`$ and one for $`\Phi_{m}(\boldsymbol{x}^{\prime})`$—their inner product can be computed as the Hilbert-Schmidt inner product of the quantum states, as shown in Lemma [3.15](#Ch3.Thmtheorem15 "Lemma 3.15 (Euclidean inner products). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). This leads to
 
-``` math
+$$
 \braket{\Phi_{m}(\boldsymbol{x}),\Phi_{m}(\boldsymbol{x}^{\prime})}=2^{N}\mathop{\text{Tr}}\left(\rho_{\Phi_{m}(\boldsymbol{x})}\rho_{\Phi_{m}(\boldsymbol{x}^{\prime})}\right)-1.
-```
+$$
 
 For reference, it is noted that $`\mathop{\text{Tr}}\left(\rho_{\Phi_{m}(\boldsymbol{x})}\rho_{\Phi_{m}(\boldsymbol{x}^{\prime})}\right)`$ can be computed using the SWAP test to an additive precision determined by the number of measurement shots. This allows us to approximate the result efficiently to any desired polynomial additive precision. Consequently, it follows that
 
-``` math
+$$
 \left|k(\boldsymbol{x},\boldsymbol{x}^{\prime})-2^{N}\mathop{\text{Tr}}\left(\rho_{\Phi_{m}(\boldsymbol{x})}\rho_{\Phi_{m}(\boldsymbol{x}^{\prime})}\right)+1\right|<\varepsilon,
-```
+$$
 
 for almost all $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$. This completes the proof. ∎
 
@@ -2568,35 +2568,35 @@ For comprehensive, in this section, we first elucidate the generalization error 
 
 We begin by reviewing the optimal learning models based on the specified kernel machines which could be either classical or quantum, as discussed in Chapter [3.1.2](#Ch3.S1.SS2 "3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Suppose we have obtained $`n`$ training examples $`\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{n}`$ with $`\boldsymbol{x}^{(i)}\in\mathbb{R}^{d}`$ and $`y^{(i)}=f(\boldsymbol{x}^{(i)})\in\mathbb{R}`$, where $`f`$ is the target function. After training on this data, there exists a machine learning algorithm that outputs $`h(\boldsymbol{x})=\boldsymbol{w}^{\dagger}\phi(\boldsymbol{x})`$, where $`\phi(\boldsymbol{x})\in\mathbb{C}^{D}`$ refers to the hidden feature map corresponding the classical/quantum kernel function $`k(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)})={K}_{ij}=\phi(\boldsymbol{x}^{(i)})\cdot\phi(\boldsymbol{x}^{(j)})`$. More precisely, considering the mean square error as the loss function for such a task, we have
 
-``` math
+$$
 \mathcal{L}(\boldsymbol{w},\boldsymbol{x})=\lambda\boldsymbol{w}^{\dagger}\boldsymbol{w}+\sum_{i=1}^{n}\left(\boldsymbol{w}^{\dagger}\phi(\boldsymbol{x}^{(i)})-y^{(i)}\right)^{2},
-```
+$$
 
 where $`\lambda\geq 0`$ is the regularization parameters for avoiding over-fitting.
 
 Then the optimal parameters for optimizing this loss function refer to
 
-``` math
+$$
 \boldsymbol{w}^{*}=\arg\min_{\boldsymbol{w}\in\Theta}\mathcal{L}(\boldsymbol{w},\boldsymbol{x}).
-```
+$$
 
 As discussed in Chapter [3.1.2](#Ch3.S1.SS2 "3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the optimal solution $`\boldsymbol{w}^{*}`$ in Eqn. ([3.52](#Ch3.E52 "Equation 3.52 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) has the explicit form of
 
-``` math
+$$
 \boldsymbol{w}^{*}=\boldsymbol{\Phi}^{\dagger}({K}+\lambda\mathbb{I}_{n})^{-1}\boldsymbol{y}=\sum_{i=1}^{n}\sum_{j=1}^{n}\phi(\boldsymbol{x}^{(i)})(({K}+\lambda\mathbb{I}_{n})^{-1})_{ij}y^{(j)},
-```
+$$
 
 where $`\boldsymbol{y}=[y^{(1)},...,y^{(n)}]^{\top}`$ refers to the vector of labels and $`K\in\mathbb{R}^{n\times n}`$ is the kernel matrix, and the second equality follows that $`\boldsymbol{\Phi}=[\phi(\boldsymbol{x}^{(1)}),\cdots,\phi(\boldsymbol{x}^{(n)})]^{\dagger}`$. Moreover, the norm of the optimal parameters has a simple form for the case of $`\lambda\to 0`$, i.e.,
 
-``` math
+$$
 \|\boldsymbol{w}^{*}\|_{2}^{2}=\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y}.
-```
+$$
 
 We now expose the prediction error of these learning models, i.e.,
 
-``` math
+$$
 \epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x})=\left|f(\boldsymbol{x})-(\boldsymbol{w}^{*})^{\dagger}{\phi}(\boldsymbol{x})\right|,
-```
+$$
 
 which is uniquely determined by the kernel matrix $`K`$ and the hyper-parameter $`\lambda`$ as shown in Eqn. ([3.53](#Ch3.E53 "Equation 3.53 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). In particular, we will focus on discussing the upper bound on the expected prediction error, which is the sum of training error and generalization error.
 
@@ -2606,15 +2606,15 @@ We now will separately give a rough derivation of the upper bound of training er
 
 $`\bullet`$ Training error. Employing the convexity of function and Jensen’s inequality, the training error yields
 
-``` math
-\displaystyle\frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})\leq\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left((\boldsymbol{w}^{*})^{\dagger}\phi(\boldsymbol{x}^{(i)})-y^{(i)}\right)^{2}}.
-```
+$$
+\frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})\leq\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left((\boldsymbol{w}^{*})^{\dagger}\phi(\boldsymbol{x}^{(i)})-y^{(i)}\right)^{2}}.
+$$
 
 Moreover, combining with the expression for the optimal $`\boldsymbol{w}^{*}`$ given in Eqn. ([3.53](#Ch3.E53 "Equation 3.53 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), we can obtain the upper bound of training error in terms of the kernel matrix $`K`$ and hyper-parameter $`\lambda`$, i.e.,
 
-``` math
+$$
 \frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})\leq\sqrt{\frac{\lambda^{2}\boldsymbol{y}^{\top}(K+\lambda\mathbb{I}_{n})^{-2}\boldsymbol{y}}{n}}.
-```
+$$
 
 We can see that when $`\lambda=0`$ and $`K`$ are invertible, the training error is zero. However, the hyper-parameter is usually set as $`\lambda>0`$ in practice.
 
@@ -2624,43 +2624,43 @@ $`\bullet`$ Generalization error. The derivation of generalization error is more
 
 Let $`\mathcal{G}`$ be a family of function mappings from a set $`\mathcal{Z}`$ to $`[0,1]`$. Then for any $`\delta>0`$, with probability at least $`1-\delta`$ over identical and independent draw of $`n`$ samples from $`\mathcal{Z}:\boldsymbol{z}^{(1)},\cdots,\boldsymbol{z}^{(n)}`$, we have for all $`g\in\mathcal{G}`$,
 
-``` math
+$$
 \mathbb{E}_{\boldsymbol{z}}g(\boldsymbol{z})\leq\frac{1}{n}\sum_{i=1}^{n}g(\boldsymbol{z}^{(i)})+2\mathbb{E}_{\sigma}\left[\sup_{g\in\mathcal{G}}\frac{1}{n}\sum_{i=1}^{n}\sigma_{i}g(\boldsymbol{z}^{(i)})\right]+3\sqrt{\frac{\log(2/\delta)}{2n}},
-```
+$$
 
 where $`\sigma_{1},\cdots,\sigma_{n}`$ are in independent and uniform random variables over $`\{1,-1\}`$.
 
 For kernel functions defined in Eqn. ([3.55](#Ch3.E55 "Equation 3.55 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the set $`\mathcal{Z}`$ refers to the space of input vector with $`\boldsymbol{z}^{(i)}=\boldsymbol{x}^{(i)}`$ drawn from some input distribution. Each function $`g`$ would be equal to $`\epsilon_{\boldsymbol{w}}/\alpha`$ for some $`\boldsymbol{w}`$, where $`\epsilon_{\boldsymbol{w}}`$ is defined in Eqn. ([3.55](#Ch3.E55 "Equation 3.55 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and $`\alpha`$ is a normalization factor such that the range of $`\epsilon_{\boldsymbol{w}}/\alpha`$ is $`[0,1]`$. Without loss of generality, we assume that $`\alpha=1`$. For any specific parameter $`\boldsymbol{w}`$, consider the special case of $`\mathcal{G}`$ with setting $`\mathcal{G}_{\boldsymbol{w}}=\{\epsilon_{\boldsymbol{v}}~|~\forall~\|\boldsymbol{v}\|\leq\|\boldsymbol{w}\|\}`$. Then we have the upper bound of generalization error for the optimal parameter,
 
-``` math
-\displaystyle\mathbb{E}_{\boldsymbol{x}}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x})-\frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})
-```
+$$
+\mathbb{E}_{\boldsymbol{x}}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x})-\frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})
+$$
 
-``` math
-\displaystyle\leq \displaystyle 2\mathbb{E}_{\sigma}\left[\sup_{\|\boldsymbol{v}\|\leq\|\boldsymbol{w}^{*}\|}\frac{1}{n}\sum_{i=1}^{n}\sigma_{i}\epsilon_{\boldsymbol{v}}(\boldsymbol{x}^{(i)})\right]+3\sqrt{\frac{\log(2\|\boldsymbol{w}^{*}\|/\delta)}{2n}}.
-```
+$$
+\leq 2\mathbb{E}_{\sigma}\left[\sup_{\|\boldsymbol{v}\|\leq\|\boldsymbol{w}^{*}\|}\frac{1}{n}\sum_{i=1}^{n}\sigma_{i}\epsilon_{\boldsymbol{v}}(\boldsymbol{x}^{(i)})\right]+3\sqrt{\frac{\log(2\|\boldsymbol{w}^{*}\|/\delta)}{2n}}.
+$$
 
 Moreover, applying Talagrand’s contraction lemma ([Mohri, 2018](#bib.bib130)) to the first term on the right-hand side, we have
 
-``` math
-\displaystyle\mathbb{E}_{\sigma}\left[\sup_{\|\boldsymbol{v}\|\leq\|\boldsymbol{w}^{*}\|}\frac{1}{n}\sum_{i=1}^{n}\sigma_{i}\epsilon_{\boldsymbol{v}}(\boldsymbol{x}^{(i)})\right]\leq \displaystyle\mathbb{E}_{\sigma}\left[\sup_{\|\boldsymbol{v}\|\leq\|\boldsymbol{w}^{*}\|}\frac{1}{n}\sum_{i=1}^{n}\sigma_{i}(\boldsymbol{w}^{*})^{\dagger}{\phi}(\boldsymbol{x}^{(i)})\right]
-```
+$$
+\mathbb{E}_{\sigma}\left[\sup_{\|\boldsymbol{v}\|\leq\|\boldsymbol{w}^{*}\|}\frac{1}{n}\sum_{i=1}^{n}\sigma_{i}\epsilon_{\boldsymbol{v}}(\boldsymbol{x}^{(i)})\right]\leq \mathbb{E}_{\sigma}\left[\sup_{\|\boldsymbol{v}\|\leq\|\boldsymbol{w}^{*}\|}\frac{1}{n}\sum_{i=1}^{n}\sigma_{i}(\boldsymbol{w}^{*})^{\dagger}{\phi}(\boldsymbol{x}^{(i)})\right]
+$$
 
-``` math
-\displaystyle\leq \displaystyle\sqrt{\frac{\|\boldsymbol{w}^{*}\|^{2}}{n}},
-```
+$$
+\leq \sqrt{\frac{\|\boldsymbol{w}^{*}\|^{2}}{n}},
+$$
 
 where the first inequality follows that $`\epsilon_{\boldsymbol{v}}(\boldsymbol{x}^{(i)})`$ is Lipschitz continuous with respect to $`(\boldsymbol{w}^{*})^{\dagger}\cdot{\phi}(\boldsymbol{x}^{(i)})`$ with Lipschitz constant $`1`$, the second inequality follows direct algebra operation. For the detailed simplification processes, refer to Lemma 1 of [Huang et al. (2021a)](#bib.bib135).
 
 In conjunction with Eqn. ([3.60](#Ch3.Ex24 "In Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), Eqn. ([3.61](#Ch3.Ex25 "In Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), and the expression of the optimal parameter $`\boldsymbol{w}^{*}`$ given in Eqn. ([3.53](#Ch3.E53 "Equation 3.53 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), we can reach the final upper bound of generalization error in terms of the kernel matrix, i.e.,
 
-``` math
-\displaystyle\mathbb{E}_{\boldsymbol{x}}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x})-\frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})
-```
+$$
+\mathbb{E}_{\boldsymbol{x}}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x})-\frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})
+$$
 
-``` math
-\displaystyle\leq \displaystyle 5\cdot\frac{\boldsymbol{y}^{\top}(K+\lambda\mathbb{I}_{n})^{-1}K(K+\lambda\mathbb{I}_{n})^{-1}\boldsymbol{y}}{n}+3\sqrt{\frac{\log(2/\delta)}{2n}}.
-```
+$$
+\leq 5\cdot\frac{\boldsymbol{y}^{\top}(K+\lambda\mathbb{I}_{n})^{-1}K(K+\lambda\mathbb{I}_{n})^{-1}\boldsymbol{y}}{n}+3\sqrt{\frac{\log(2/\delta)}{2n}}.
+$$
 
 For the case of $`\lambda=0`$, the first term in the generalization error bound has a simple form of $`5\cdot\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y}/n`$.
 
@@ -2674,9 +2674,9 @@ We remark that the derived upper bound of the prediction error applies to both c
 
 Using the above theoretical results of generalization error for general kernel machines, we now elucidate how to access the potential quantum advantage of quantum kernels. For a clear understanding, we focus on the case of $`\lambda=0`$ in which the prediction error bound has a simple form of $`\mathcal{O}(\sqrt{\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y}/n}+\sqrt{\log(1/\delta)/n})`$ as shown in Eqn. ([3.64](#Ch3.E64 "Equation 3.64 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). In particular, this bound has a key dependence on two quantities, namely (1) the size of training data $`n`$; (2) the kernel-dependent term $`\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y}`$, which we denote as
 
-``` math
+$$
 s_{K}(\boldsymbol{y})=\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y},
-```
+$$
 
 in the following discussion for simplification.
 
@@ -2699,9 +2699,9 @@ Based on the above discussion, we are now in the position to analyze the potenti
 
 From the second condition, we can see that the potential advantage for the quantum kernel $`K_{Q}`$ to predict better than a classical kernel $`K_{C}`$ depends on the largest possible separation between $`s_{Q}(\boldsymbol{y})`$ and $`s_{C}(\boldsymbol{y})`$ for a dataset. [Huang et al. (2021a)](#bib.bib135) define a geometry metric, namely asymmetric geometric difference, to characterize this separation for a fixed training dataset, which is given by
 
-``` math
+$$
 g_{CQ}=g(K_{C}||K_{Q})=\sqrt{\left\|\sqrt{K_{Q}}(K_{C}^{-1})\sqrt{K_{Q}}\right\|_{\infty}},
-```
+$$
 
 where $`\|\cdot\|_{\infty}`$ is the spectral norm of the resulting matrix and we assume $`\mathop{\text{Tr}}(K_{Q})=\mathop{\text{Tr}}(K_{C})=n`$. The geometric difference $`g(K_{C}||K_{Q})`$ can be computed on a classical computer by performing a singular value decomposition of the $`n\times n`$ matrices $`K_{C}`$ and $`K_{Q}`$ in time at most order $`n^{3}`$.
 
@@ -2715,9 +2715,9 @@ Subsequently, to incorporate the provided data, a label-specific test can be per
 
 We now elucidate how to explicitly construct such a data set to enable the maximal separation between the model complexity of quantum kernels and classical kernels, as indicated by the geometry test in Figure [3.5](#Ch3.F5 "Figure 3.5 ‣ Quantum kernels with prediction advantages ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). To separate between quantum and classical models related to kernel matrix $`K_{Q}`$ and $`K_{C}`$, we consider that the ratio between $`s_{C}`$ and $`s_{Q}`$ is as large as possible for a particular choice of targets $`y^{(1)},\cdots,y^{(n)}`$. This could be achieved by solving the optimization problem
 
-``` math
+$$
 \min_{\boldsymbol{y}\in\mathbb{R}^{n}}\frac{s_{C}}{s_{Q}}=\min_{\boldsymbol{y}\in\mathbb{R}^{n}}\frac{\boldsymbol{y}^{\top}K_{C}^{-1}\boldsymbol{y}}{\boldsymbol{y}^{\top}K_{Q}^{-1}\boldsymbol{y}},
-```
+$$
 
 which has an exact solution given by a generalized eigenvalue problem. The solution is given by $`\boldsymbol{y}=\sqrt{K_{Q}}\boldsymbol{v}`$, where $`\boldsymbol{v}`$ is the eigenvector of $`\sqrt{K_{Q}}K_{C}^{-1}\sqrt{K_{Q}}`$ corresponding to the eigenvalue $`g^{2}=\|\sqrt{K_{Q}}K_{C}^{-1}\sqrt{K_{Q}}\|_{\infty}`$. This guarantees that $`s_{C}=g^{2}s_{Q}`$, and note that by definition of $`g,s_{C}\leq g^{2}s_{Q}`$. Hence this dataset fully utilized the geometric difference between the quantum and classical space. Finally, we can turn this dataset, which maps input $`\boldsymbol{x}`$ to a real value $`{y}_{Q}`$, into a classification task by replacing $`y_{Q}`$ with $`+1`$ if $`y_{Q}>\mbox{median}(y^{(1)},\cdots,y^{(n)})`$ and $`-1`$ if $`y_{Q}\leq\mbox{median}(y^{(1)},\cdots,y^{(n)})`$. The constructed dataset will yield the largest separation between quantum and classical models from a learning theoretic sense, as the model complexity fully saturates the geometric difference. If there is no quantum advantage in this dataset, there will likely be none.
 
@@ -2729,25 +2729,25 @@ As explained in Chapter. [3.2](#Ch3.S2 "3.2 Quantum Kernel Machines ‣ Chapter
 
 The complete quantum circuit architecture for this process is illustrated in Figure [3.2](#Ch3.F2 "Figure 3.2 ‣ 3.2.1 Motivations for quantum kernel machines ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Mathematically, the process is expressed as:
 
-``` math
-\displaystyle\braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})U(\boldsymbol{x})^{\dagger}OU(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}
-```
+$$
+\braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})U(\boldsymbol{x})^{\dagger}OU(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}
+$$
 
-``` math
-\displaystyle= \displaystyle\braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})U(\boldsymbol{x})^{\dagger}|{0}\rangle^{\otimes N}\langle{0}|^{\otimes N}U(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}
-```
+$$
+= \braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})U(\boldsymbol{x})^{\dagger}|{0}\rangle^{\otimes N}\langle{0}|^{\otimes N}U(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}
+$$
 
-``` math
-\displaystyle= \displaystyle\left|\braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}\right|^{2}
-```
+$$
+= \left|\braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}\right|^{2}
+$$
 
-``` math
-\displaystyle= \displaystyle\left|\braket{{\phi}(\boldsymbol{x})|{\phi}(\boldsymbol{x}^{\prime})}\right|^{2}
-```
+$$
+= \left|\braket{{\phi}(\boldsymbol{x})|{\phi}(\boldsymbol{x}^{\prime})}\right|^{2}
+$$
 
-``` math
-\displaystyle= \displaystyle k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime}).
-```
+$$
+= k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime}).
+$$
 
 This approach allows the quantum kernel estimation to use the same number of qubits required for the quantum feature mapping of the classical vector $`\boldsymbol{x}`$.
 
@@ -3212,16 +3212,16 @@ The perceptron model, first introduced by ([McCulloch and Pitts, 1943](#bib.bib1
 
 A single-layer perceptron comprises three fundamental components: input neurons, a weighted layer, and an output neuron as illustrated in Figure [4.1](#Ch4.F1 "Figure 4.1 ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Given a $`d`$-dimensional input vector $`\boldsymbol{x}\in\mathbb{R}^{d}`$, the input layer consists of $`d`$ neurons, each representing the feature $`\boldsymbol{x}_{i}`$ for $`\forall i\in[d]`$. This input is processed through a weighted summation, i.e.,
 
-``` math
+$$
 z=\boldsymbol{w}^{\top}\boldsymbol{x},
-```
+$$
 
 where $`\boldsymbol{w}^{\top}`$ is the transpose of the weight vector and $`z`$ is the output of the weighted layer. A non-linear activation function is then applied to produce the output neuron $`\hat{y}`$. For the standard perceptron model, the sign function is typically used as the activation function:
 
-``` math
+$$
 \hat{y}=f(z)=\left\{\begin{aligned} 1,&\quad{}\text{if}\quad z\geq 0,\\
 -1,&\quad{}\text{if}\quad z<0.\end{aligned}\right.
-```
+$$
 
 <figure id="Ch4.F1" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/perceptron.png" id="Ch4.F1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:286/200;" width="286" height="200" alt="Refer to caption" />
@@ -3230,9 +3230,9 @@ where $`\boldsymbol{w}^{\top}`$ is the transpose of the weight vector and $`z`$ 
 
 The perceptron learns from input data by iteratively adjusting its trainable parameters $`\boldsymbol{w}`$. In particular, let $`\mathcal{D}=\{(\boldsymbol{x}^{(a)},y^{(a)})\}_{a=1}^{n}`$ be the training dataset, where $`\boldsymbol{x}^{(a)}`$ represents the input features of the $`a`$-th example, and $`y^{(a)}\in\{-1,1\}`$ denotes the corresponding label. When the perceptron outputs a prediction $`\hat{y}^{(s)}`$, the parameters are updated accordingly, i.e.,
 
-``` math
-\displaystyle\boldsymbol{w}\leftarrow{} \displaystyle\boldsymbol{w}+(y^{(s)}-\hat{y}^{(s)})\boldsymbol{x}^{(s)}.
-```
+$$
+\boldsymbol{w}\leftarrow{} \boldsymbol{w}+(y^{(s)}-\hat{y}^{(s)})\boldsymbol{x}^{(s)}.
+$$
 
 The training process is repeated iteratively until the error reaches a predefined threshold.
 
@@ -3246,75 +3246,75 @@ Suppose the training data consists of unit vectors separated by a margin of $`\g
 
 Consider the initial parameter of the perceptron $`\boldsymbol{w}=\boldsymbol{0}`$. Since the training dataset is linearly separable by a margin of $`\gamma`$, there exists a unit vector $`\boldsymbol{w}^{*}`$ such that $`y^{(i)}{\boldsymbol{w}^{*}}^{\top}\boldsymbol{x}^{(i)}\geq{}\gamma`$ for all samples $`i\in[n]`$. Let $`\boldsymbol{x}^{(s,t)}`$ be the sample that is misclassified in the $`t`$-th step, which is then used for adjusting the parameter. Let $`\boldsymbol{w}(t)`$ be the parameter after the $`t`$-th step. Using Eqn. ([4.3](#Ch4.E3 "Equation 4.3 ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it can be shown that
 
-``` math
-\displaystyle{\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t)-{\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t-1)
-```
+$$
+{\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t)-{\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t-1)
+$$
 
-``` math
-\displaystyle={} \displaystyle\left(y^{(s,t)}-\hat{y}^{(s,t)}\right){\boldsymbol{w}^{*}}^{\top}\boldsymbol{x}^{(s,t)}
-```
+$$
+={} \left(y^{(s,t)}-\hat{y}^{(s,t)}\right){\boldsymbol{w}^{*}}^{\top}\boldsymbol{x}^{(s,t)}
+$$
 
-``` math
-\displaystyle={} \displaystyle 2y^{(s,t)}{\boldsymbol{w}^{*}}^{\top}\boldsymbol{x}^{(s,t)}\geq{}2\gamma,
-```
+$$
+={} 2y^{(s,t)}{\boldsymbol{w}^{*}}^{\top}\boldsymbol{x}^{(s,t)}\geq{}2\gamma,
+$$
 
 where Eqn. ([4.4](#Ch4.E4 "Equation 4.4 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by noticing the sample $`(\boldsymbol{x}^{(s,t)},y^{(s,t)})`$ is misclassified with $`\hat{y}^{(s,t)}\neq y^{(s,t)}`$ and $`{y}^{(s,t)},\hat{y}^{(s,t)}\in\{-1,1\}`$. By considering the initialization $`\boldsymbol{w}(0)=\boldsymbol{0}`$, the norm of the parameter after the $`t`$-th step can be bounded by
 
-``` math
-\displaystyle\left\|\boldsymbol{w}(t)\right\|\geq{} \displaystyle\left|{\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t)\right|
-```
+$$
+\left\|\boldsymbol{w}(t)\right\|\geq{} \left|{\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t)\right|
+$$
 
-``` math
-\displaystyle={} \displaystyle\left|{\boldsymbol{w}^{*}}^{\top}\sum_{t^{\prime}=1}^{t}\left(\boldsymbol{w}(t^{\prime})-\boldsymbol{w}(t^{\prime}-1)\right)\right|
-```
+$$
+={} \left|{\boldsymbol{w}^{*}}^{\top}\sum_{t^{\prime}=1}^{t}\left(\boldsymbol{w}(t^{\prime})-\boldsymbol{w}(t^{\prime}-1)\right)\right|
+$$
 
-``` math
-\displaystyle\geq{} \displaystyle 2\gamma t,
-```
+$$
+\geq{} 2\gamma t,
+$$
 
 where Eqn. ([4.5](#Ch4.E5 "Equation 4.5 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is follows from the condition $`\|\boldsymbol{w}^{*}\|=1`$. Eqn. ([4.7](#Ch4.E7 "Equation 4.7 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by using the result in Eqn. ([4.4](#Ch4.E4 "Equation 4.4 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). On the other hand,
 
-``` math
-\displaystyle\left\|\boldsymbol{w}(t)\right\|^{2}-\left\|\boldsymbol{w}(t-1)\right\|^{2}
-```
+$$
+\left\|\boldsymbol{w}(t)\right\|^{2}-\left\|\boldsymbol{w}(t-1)\right\|^{2}
+$$
 
-``` math
-\displaystyle={} \displaystyle\left\|\boldsymbol{w}(t-1)+\left(y^{(s,t)}-\hat{y}^{(s,t)}\right)\boldsymbol{x}^{(s,t)}\right\|^{2}-\left\|\boldsymbol{w}(t-1)\right\|^{2}
-```
+$$
+={} \left\|\boldsymbol{w}(t-1)+\left(y^{(s,t)}-\hat{y}^{(s,t)}\right)\boldsymbol{x}^{(s,t)}\right\|^{2}-\left\|\boldsymbol{w}(t-1)\right\|^{2}
+$$
 
-``` math
-\displaystyle={} \displaystyle\left\|\boldsymbol{w}(t-1)+2y^{(s,t)}\boldsymbol{x}^{(s,t)}\right\|^{2}-\left\|\boldsymbol{w}(t-1)\right\|^{2}
-```
+$$
+={} \left\|\boldsymbol{w}(t-1)+2y^{(s,t)}\boldsymbol{x}^{(s,t)}\right\|^{2}-\left\|\boldsymbol{w}(t-1)\right\|^{2}
+$$
 
-``` math
-\displaystyle={} \displaystyle 4\|\boldsymbol{x}^{(s,t)}\|^{2}+4\boldsymbol{w}(t-1)^{\top}y^{(s,t)}\boldsymbol{x}^{(s,t)}
-```
+$$
+={} 4\|\boldsymbol{x}^{(s,t)}\|^{2}+4\boldsymbol{w}(t-1)^{\top}y^{(s,t)}\boldsymbol{x}^{(s,t)}
+$$
 
-``` math
-\displaystyle\leq{} \displaystyle 4+4\boldsymbol{w}(t-1)^{\top}y^{(s,t)}\boldsymbol{x}^{(s,t)}
-```
+$$
+\leq{} 4+4\boldsymbol{w}(t-1)^{\top}y^{(s,t)}\boldsymbol{x}^{(s,t)}
+$$
 
-``` math
-\displaystyle\leq{} \displaystyle 4,
-```
+$$
+\leq{} 4,
+$$
 
 where Eqn. ([4.8](#Ch4.E8 "Equation 4.8 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from the weight update rule in Eqn. ([4.3](#Ch4.E3 "Equation 4.3 ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Eqn. ([4.9](#Ch4.E9 "Equation 4.9 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by noticing that $`y^{(s,t)}\neq\hat{y}^{(s,t)}`$ and $`y^{(s,t)},\hat{y}^{(s,t)}\in\{-1,1\}`$. Eqn. ([4.10](#Ch4.E10 "Equation 4.10 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from the condition $`\|\boldsymbol{x}^{(i)}\|=1`$ for all samples. Eqn. ([4.11](#Ch4.E11 "Equation 4.11 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by noticing that the sample $`(\boldsymbol{x}^{(s,t)},y^{(s,t)})`$ is misclassified by the perceptron with the parameter $`\boldsymbol{w}(t-1)`$, *i.e.*
 
-``` math
+$$
 y^{(s,t)}\boldsymbol{w}(t-1)^{\top}\boldsymbol{x}^{(s,t)}\leq 0.
-```
+$$
 
 Thus, after $`t`$ steps, the parameter is bounded by
 
-``` math
-\displaystyle\|\boldsymbol{w}(t)\|\leq 2\sqrt{t}.
-```
+$$
+\|\boldsymbol{w}(t)\|\leq 2\sqrt{t}.
+$$
 
 Combining Eqn. ([4.7](#Ch4.E7 "Equation 4.7 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Eqn. ([4.12](#Ch4.E12 "Equation 4.12 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it can be shown that
 
-``` math
-\displaystyle t\leq{} \displaystyle\frac{1}{\gamma^{2}}.
-```
+$$
+t\leq{} \frac{1}{\gamma^{2}}.
+$$
 
 ∎
 
@@ -3331,21 +3331,21 @@ The multilayer perceptron (MLP) is a fully connected neural network architecture
 
 The mathematical expression of MLP is as follows. Let $`\boldsymbol{x}^{(a,1)}`$ be the $`a`$-th input data and $`\ell=1`$ denote the input layer. Define $`L`$ as the number of total layers. The forward propagation at the $`(\ell+1)`$-th layer $`\forall\ell\in\{1,2,...,L-2\}`$ yields
 
-``` math
-\displaystyle\boldsymbol{z}^{(a,\ell+1)}={} \displaystyle{W}^{(\ell)}\boldsymbol{x}^{(a,\ell)}+\boldsymbol{b}^{(\ell)},
-```
+$$
+\boldsymbol{z}^{(a,\ell+1)}={} {W}^{(\ell)}\boldsymbol{x}^{(a,\ell)}+\boldsymbol{b}^{(\ell)},
+$$
 
-``` math
-\displaystyle\boldsymbol{x}^{(a,\ell+1)}={} \displaystyle\sigma(\boldsymbol{z}^{(a,\ell+1)}),
-```
+$$
+\boldsymbol{x}^{(a,\ell+1)}={} \sigma(\boldsymbol{z}^{(a,\ell+1)}),
+$$
 
 where $`\sigma`$ represents the non-linear activation function, and $`W^{(\ell)}`$ and $`\boldsymbol{b}^{(\ell)}`$ denotes trainable weight and the bias term, respectively. Similar to the notation $`z`$ in the perceptron in Chapter [4.1.1](#Ch4.S1.SS1 "4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), $`\boldsymbol{z}^{(a,\ell+1)}`$ denotes the output of the linear sum in the $`\ell+1`$-th layer, which is expressed in a more generalized vector form. Therefore, the parameter for the weighted linear sum is represented in matrix form as $`W^{(\ell)}`$. Various methodologies have been proposed for implementing non-linear activations, with some common approaches summarized in Table [4.1](#Ch4.T1 "Table 4.1 ‣ 4.1.2 Multilayer perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
 After passing through $`L-2`$ hidden layers, the output of MLP given by the equation below serves as the prediction to approximate the target label $`\boldsymbol{y}^{(a)}`$, i.e.,
 
-``` math
+$$
 \hat{\boldsymbol{y}}^{(a)}={\rm softmax}(\boldsymbol{x}^{(a,L)}):=\frac{\left(\exp(\boldsymbol{x}^{(a,L)}_{1}),\cdots,\exp(\boldsymbol{x}^{(a,L)}_{p})\right)^{\top}}{\sum_{i=1}^{p}\exp(\boldsymbol{x}^{(a,L)}_{i})},
-```
+$$
 
 with $`p`$ here denotes the dimension of $`\boldsymbol{x}^{(a,L)}`$.
 
@@ -3375,21 +3375,21 @@ with $`p`$ here denotes the dimension of $`\boldsymbol{x}^{(a,L)}`$.
 
 Next, we provide a toy example of binary classification to explain the MLP learning procedure. Let $`\{(\boldsymbol{x}^{(a)},\boldsymbol{y}^{(a)})\}_{a\in\mathcal{D}}`$ be the training dataset $`\mathcal{D}`$, where $`\boldsymbol{x}^{(a)}`$ is the feature vector and $`\boldsymbol{y}^{(a)}\in\{(1,0)^{\top},(0,1)^{\top}\}`$ is the label for two categories. Consider the MLP with one hidden layer. The prediction can be expressed as follows:
 
-``` math
-\displaystyle\hat{\boldsymbol{y}}^{(a)}={} \displaystyle{\rm softmax}(\boldsymbol{x}^{(a,3)})={\rm softmax}\circ\sigma\left(\boldsymbol{z}^{(a,3)}\right)
-```
+$$
+\hat{\boldsymbol{y}}^{(a)}={} {\rm softmax}(\boldsymbol{x}^{(a,3)})={\rm softmax}\circ\sigma\left(\boldsymbol{z}^{(a,3)}\right)
+$$
 
-``` math
-\displaystyle={} \displaystyle{\rm softmax}\circ\sigma\left({W}^{(2)}\boldsymbol{x}^{(a,2)}+\boldsymbol{b}^{(2)}\right)
-```
+$$
+={} {\rm softmax}\circ\sigma\left({W}^{(2)}\boldsymbol{x}^{(a,2)}+\boldsymbol{b}^{(2)}\right)
+$$
 
-``` math
-\displaystyle={} \displaystyle{\rm softmax}\circ\sigma\left({W}^{(2)}\sigma\left(\boldsymbol{z}^{(a,2)}\right)+\boldsymbol{b}^{(2)}\right)
-```
+$$
+={} {\rm softmax}\circ\sigma\left({W}^{(2)}\sigma\left(\boldsymbol{z}^{(a,2)}\right)+\boldsymbol{b}^{(2)}\right)
+$$
 
-``` math
-\displaystyle={} \displaystyle{\rm softmax}\circ\sigma\left({W}^{(2)}\sigma\left(W^{(1)}\boldsymbol{x}^{(a,1)}+\boldsymbol{b}^{(1)}\right)+\boldsymbol{b}^{(2)}\right),
-```
+$$
+={} {\rm softmax}\circ\sigma\left({W}^{(2)}\sigma\left(W^{(1)}\boldsymbol{x}^{(a,1)}+\boldsymbol{b}^{(1)}\right)+\boldsymbol{b}^{(2)}\right),
+$$
 
 where $`\circ`$ denotes the function composition. We use $`\sigma(x)=1/(1+\exp(-x))`$ as the non-linear activation function.
 
@@ -3400,57 +3400,57 @@ where $`\circ`$ denotes the function composition. We use $`\sigma(x)=1/(1+\exp(-
 
 MLP learns from the given dataset by minimizing the loss function with respect to the parameters $`\boldsymbol{\theta}=({W}^{(1)},{W}^{(2)},\boldsymbol{b}^{(1)},\boldsymbol{b}^{(2)})`$, which is defined as the $`\ell_{2}`$ norm distance between the prediction and the label,
 
-``` math
-\displaystyle{\mathcal{L}}(\boldsymbol{\theta})={} \displaystyle\frac{1}{|\mathcal{D}|}\sum_{a\in\mathcal{D}}{\mathcal{L}}^{(a)}(\boldsymbol{\theta})=\frac{1}{2|\mathcal{D}|}\sum_{a\in\mathcal{D}}\left\|\hat{\boldsymbol{y}}^{(a)}(\boldsymbol{\theta})-\boldsymbol{y}^{(a)}\right\|^{2}.
-```
+$$
+{\mathcal{L}}(\boldsymbol{\theta})={} \frac{1}{|\mathcal{D}|}\sum_{a\in\mathcal{D}}{\mathcal{L}}^{(a)}(\boldsymbol{\theta})=\frac{1}{2|\mathcal{D}|}\sum_{a\in\mathcal{D}}\left\|\hat{\boldsymbol{y}}^{(a)}(\boldsymbol{\theta})-\boldsymbol{y}^{(a)}\right\|^{2}.
+$$
 
 We use gradient descent with learning rate $`\eta`$ to optimize the parameters:
 
-``` math
+$$
 \boldsymbol{\theta}(t+1)=\boldsymbol{\theta}(t)-\eta\nabla_{\boldsymbol{\theta}}{\mathcal{L}}(\boldsymbol{\theta}(t)).
-```
+$$
 
 As illustrated in Figure [4.3](#Ch4.F3 "Figure 4.3 ‣ 4.1.2 Multilayer perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the gradient is computed using backpropagation ([LeCun et al., 1988](#bib.bib182)) as follows. First, the gradient with respect to the output layer is given by
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial\hat{\boldsymbol{y}}^{(a)}}={} \displaystyle\hat{\boldsymbol{y}}^{(a)}-\boldsymbol{y}^{(a)},
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial\hat{\boldsymbol{y}}^{(a)}}={} \hat{\boldsymbol{y}}^{(a)}-\boldsymbol{y}^{(a)},
+$$
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,3)}}={} \displaystyle\frac{\partial\hat{\boldsymbol{y}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,3)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial\hat{\boldsymbol{y}}^{(a)}}={}\left[{\rm diag}\left(\hat{\boldsymbol{y}}^{(a)}\right)-\hat{\boldsymbol{y}}^{(a)}{\hat{\boldsymbol{y}}}^{(a)\top}\right]\frac{\partial{\mathcal{L}}^{(a)}}{\partial\hat{\boldsymbol{y}}^{(a)}},
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,3)}}={} \frac{\partial\hat{\boldsymbol{y}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,3)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial\hat{\boldsymbol{y}}^{(a)}}={}\left[{\rm diag}\left(\hat{\boldsymbol{y}}^{(a)}\right)-\hat{\boldsymbol{y}}^{(a)}{\hat{\boldsymbol{y}}}^{(a)\top}\right]\frac{\partial{\mathcal{L}}^{(a)}}{\partial\hat{\boldsymbol{y}}^{(a)}},
+$$
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}={} \displaystyle\frac{\partial{\boldsymbol{x}}^{(a,3)}}{\partial{\boldsymbol{z}}^{(a,3)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,3)}}={}{\rm diag}\left[\left(\boldsymbol{1}-\boldsymbol{z}^{(a,3)}\right)\odot\boldsymbol{z}^{(a,3)}\right]\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,3)}},
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}={} \frac{\partial{\boldsymbol{x}}^{(a,3)}}{\partial{\boldsymbol{z}}^{(a,3)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,3)}}={}{\rm diag}\left[\left(\boldsymbol{1}-\boldsymbol{z}^{(a,3)}\right)\odot\boldsymbol{z}^{(a,3)}\right]\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,3)}},
+$$
 
 where $`\boldsymbol{1}`$ denotes the vector $`(1,1,\cdots,1)^{\top}`$, and $`\odot`$ denotes the element-wise multiplication (Hadamard product). For convenience, we omit the dimension of $`\boldsymbol{1}`$ here, which has the same dimension with $`\boldsymbol{z}^{(a,3)}`$. Next, the gradient with respect to the hidden layer can be obtained using the chain rule:
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,2)}}={} \displaystyle\frac{\partial{\boldsymbol{z}}^{(a,3)}}{\partial{\boldsymbol{x}}^{(a,2)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}={}W^{(2)}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}},
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,2)}}={} \frac{\partial{\boldsymbol{z}}^{(a,3)}}{\partial{\boldsymbol{x}}^{(a,2)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}={}W^{(2)}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}},
+$$
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial{W}^{(2)}}={} \displaystyle\frac{\partial{\boldsymbol{z}}^{(a,3)}}{\partial{W}^{(2)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}={}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}{\boldsymbol{x}^{(a,2)\top}},
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial{W}^{(2)}}={} \frac{\partial{\boldsymbol{z}}^{(a,3)}}{\partial{W}^{(2)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}={}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}{\boldsymbol{x}^{(a,2)\top}},
+$$
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial\boldsymbol{b}^{(2)}}={} \displaystyle\frac{\partial{\boldsymbol{z}}^{(a,3)}}{\partial\boldsymbol{b}^{(2)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}={}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}},
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial\boldsymbol{b}^{(2)}}={} \frac{\partial{\boldsymbol{z}}^{(a,3)}}{\partial\boldsymbol{b}^{(2)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}}={}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,3)}},
+$$
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial\boldsymbol{z}^{(a,2)}}={} \displaystyle\frac{\partial{\boldsymbol{x}}^{(a,2)}}{\partial\boldsymbol{z}^{(a,2)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,2)}}={}{\rm diag}\left[\left(\boldsymbol{1}-\boldsymbol{z}^{(a,2)}\right)\odot\boldsymbol{z}^{(a,2)}\right]\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,2)}}.
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial\boldsymbol{z}^{(a,2)}}={} \frac{\partial{\boldsymbol{x}}^{(a,2)}}{\partial\boldsymbol{z}^{(a,2)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,2)}}={}{\rm diag}\left[\left(\boldsymbol{1}-\boldsymbol{z}^{(a,2)}\right)\odot\boldsymbol{z}^{(a,2)}\right]\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{x}}^{(a,2)}}.
+$$
 
 The gradient with respect to the parameters for the input layer is derived similarly:
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial{W}^{(1)}}={} \displaystyle\frac{\partial{\boldsymbol{z}}^{(a,2)}}{\partial{W}^{(1)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,2)}}={}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,2)}}{\boldsymbol{x}^{(a,1)\top}},
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial{W}^{(1)}}={} \frac{\partial{\boldsymbol{z}}^{(a,2)}}{\partial{W}^{(1)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,2)}}={}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,2)}}{\boldsymbol{x}^{(a,1)\top}},
+$$
 
-``` math
-\displaystyle\frac{\partial{\mathcal{L}}^{(a)}}{\partial\boldsymbol{b}^{(1)}}={} \displaystyle\frac{\partial{\boldsymbol{z}}^{(a,2)}}{\partial\boldsymbol{b}^{(1)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,2)}}={}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,2)}}.
-```
+$$
+\frac{\partial{\mathcal{L}}^{(a)}}{\partial\boldsymbol{b}^{(1)}}={} \frac{\partial{\boldsymbol{z}}^{(a,2)}}{\partial\boldsymbol{b}^{(1)}}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,2)}}={}\frac{\partial{\mathcal{L}}^{(a)}}{\partial{\boldsymbol{z}}^{(a,2)}}.
+$$
 
 After multiple training epochs, the loss function converges to a value below a predefined threshold, which leads to a small classification error.
 
@@ -3460,9 +3460,9 @@ Compared to single-layer perceptrons, MLP can model non-linear relationships by 
 
 Let $`\mathcal{C}(\mathcal{X},\mathbb{R}^{m})`$ denote the set of continuous functions from a subset $`\mathcal{X}`$ of a Euclidean space $`\mathbb{R}^{n}`$ to a Euclidean space $`\mathbb{R}^{m}`$. Denote by $`\sigma`$ a function that is not polynomial. Then for every $`n,m\in\mathbb{N}`$, compact set $`\mathcal{K}\subseteq\mathbb{R}^{n}`$, $`f\in\mathcal{C}(\mathcal{K},\mathbb{R}^{m})`$, and $`\epsilon>0`$, there exist $`k\in\mathbb{N}`$, $`A\in\mathbb{R}^{k\times n}`$, $`\boldsymbol{b}\in\mathbb{R}^{k}`$, and $`C\in\mathbb{R}^{m\times k}`$ such that
 
-``` math
+$$
 \mathop{\sup}_{\boldsymbol{x}\in\mathcal{X}}\left\|f(\boldsymbol{x})-g(\boldsymbol{x})\right\|<\epsilon,
-```
+$$
 
 where $`g(\boldsymbol{x})=C\sigma(A\boldsymbol{x}+\boldsymbol{b})`$.
 
@@ -3499,61 +3499,61 @@ Grover search finds a solution to the unstructured search problem with high prob
 
 Let the superposition of the solution state be
 
-``` math
-\displaystyle|{\rm target}\rangle={} \displaystyle\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}|x\rangle.
-```
+$$
+|{\rm target}\rangle={} \frac{1}{\sqrt{M}}\sum_{x:f(x)=1}|x\rangle.
+$$
 
 Similarly, the superposition of the states outside the solution set is given by
 
-``` math
-\displaystyle|{\rm other}\rangle={} \displaystyle\frac{1}{\sqrt{2^{N}-M}}\sum_{x|f(x)=0}|x\rangle.
-```
+$$
+|{\rm other}\rangle={} \frac{1}{\sqrt{2^{N}-M}}\sum_{x|f(x)=0}|x\rangle.
+$$
 
 Thus, the initial uniform superposition state can be expressed as
 
-``` math
-\displaystyle|\phi_{0}\rangle={} \displaystyle\sqrt{\frac{M}{2^{N}}}|{\rm target}\rangle+\sqrt{\frac{2^{N}-M}{2^{N}}}|{\rm other}\rangle:=\alpha_{0}|{\rm target}\rangle+\beta_{0}|{\rm other}\rangle.
-```
+$$
+|\phi_{0}\rangle={} \sqrt{\frac{M}{2^{N}}}|{\rm target}\rangle+\sqrt{\frac{2^{N}-M}{2^{N}}}|{\rm other}\rangle:=\alpha_{0}|{\rm target}\rangle+\beta_{0}|{\rm other}\rangle.
+$$
 
 In principle, the coefficient associated with the target state is expected to increase during the quantum state evolution, such that the solution could be obtained through quantum measurement with high probability. The dynamics of these coefficients can be described as follows:
 
-``` math
-\displaystyle\alpha_{k}={} \displaystyle\langle{\rm target}|\phi_{k}\rangle
-```
+$$
+\alpha_{k}={} \langle{\rm target}|\phi_{k}\rangle
+$$
 
-``` math
-\displaystyle={} \displaystyle\langle{\rm target}|H^{\otimes N}U_{0}H^{\otimes N}U_{f}|\phi_{k-1}\rangle
-```
+$$
+={} \langle{\rm target}|H^{\otimes N}U_{0}H^{\otimes N}U_{f}|\phi_{k-1}\rangle
+$$
 
-``` math
-\displaystyle={} \displaystyle\langle{\rm target}|\left(2|\phi_{0}\rangle\langle\phi_{0}|-\mathbb{I}\right)U_{f}\left(\alpha_{k-1}|{\rm target}\rangle+\beta_{k-1}|{\rm other}\rangle\right)
-```
+$$
+={} \langle{\rm target}|\left(2|\phi_{0}\rangle\langle\phi_{0}|-\mathbb{I}\right)U_{f}\left(\alpha_{k-1}|{\rm target}\rangle+\beta_{k-1}|{\rm other}\rangle\right)
+$$
 
-``` math
-\displaystyle={} \displaystyle\langle{\rm target}|\left(2|\phi_{0}\rangle\langle\phi_{0}|-\mathbb{I}\right)\left(-\alpha_{k-1}|{\rm target}\rangle+\beta_{k-1}|{\rm other}\rangle\right)
-```
+$$
+={} \langle{\rm target}|\left(2|\phi_{0}\rangle\langle\phi_{0}|-\mathbb{I}\right)\left(-\alpha_{k-1}|{\rm target}\rangle+\beta_{k-1}|{\rm other}\rangle\right)
+$$
 
-``` math
-\displaystyle={} \displaystyle\left(1-2\alpha_{0}^{2}\right)\alpha_{k-1}+2\alpha_{0}\beta_{0}\beta_{k-1},
-```
+$$
+={} \left(1-2\alpha_{0}^{2}\right)\alpha_{k-1}+2\alpha_{0}\beta_{0}\beta_{k-1},
+$$
 
-``` math
-\displaystyle\beta_{k}={} \displaystyle\langle{\rm other}|\phi_{k}\rangle
-```
+$$
+\beta_{k}={} \langle{\rm other}|\phi_{k}\rangle
+$$
 
-``` math
-\displaystyle={} \displaystyle\langle{\rm other}|\left(2|\phi_{0}\rangle\langle\phi_{0}|-\mathbb{I}\right)\left(-\alpha_{k-1}|{\rm target}\rangle+\beta_{k-1}|{\rm other}\rangle\right)
-```
+$$
+={} \langle{\rm other}|\left(2|\phi_{0}\rangle\langle\phi_{0}|-\mathbb{I}\right)\left(-\alpha_{k-1}|{\rm target}\rangle+\beta_{k-1}|{\rm other}\rangle\right)
+$$
 
-``` math
-\displaystyle={} \displaystyle\left(2\beta_{0}^{2}-1\right)\beta_{k-1}-2\alpha_{0}\beta_{0}\alpha_{k-1}.
-```
+$$
+={} \left(2\beta_{0}^{2}-1\right)\beta_{k-1}-2\alpha_{0}\beta_{0}\alpha_{k-1}.
+$$
 
 Let the angle $`\theta=\arccos\sqrt{\frac{2^{N}-M}{2^{N}}}`$, then by induction, it can be shown that
 
-``` math
+$$
 \alpha_{k}=\sin[(2k+1)\theta],\quad\beta_{k}=\cos[(2k+1)\theta].
-```
+$$
 
 To ensure that the coefficient $`\alpha_{m}=\mathcal{O}(1)`$, there is a condition $`(2m+1)\theta\approx\pi/2`$. Therefore, $`m=\mathcal{O}(1/\theta)=\mathcal{O}(\sqrt{\frac{2^{N}}{M}})`$ suffices to obtain the solution with high probability.
 
@@ -3571,27 +3571,27 @@ For the sample $`(\boldsymbol{x}^{(i)},y^{(i)})=([0,0,1,0],1)`$, the correspondi
 
 Next, we introduce the oracle models. We assume the existence of a quantum oracle $`U`$ for encoding training data as the corresponding quantum state, i.e.,
 
-``` math
-\displaystyle U|i\rangle|0\rangle={} \displaystyle|i\rangle|z^{(i)}\rangle\ ,\ U^{\dagger}|i\rangle|z^{(i)}\rangle=|i\rangle|0\rangle.
-```
+$$
+U|i\rangle|0\rangle={} |i\rangle|z^{(i)}\rangle\ ,\ U^{\dagger}|i\rangle|z^{(i)}\rangle=|i\rangle|0\rangle.
+$$
 
 Due to the linearity of unitary,
 
-``` math
-\displaystyle U\sum_{i=0}^{d-1}\frac{1}{\sqrt{d}}|i\rangle|0\rangle={} \displaystyle\sum_{i=0}^{d-1}\frac{1}{\sqrt{d}}|i\rangle|z^{(i)}\rangle.
-```
+$$
+U\sum_{i=0}^{d-1}\frac{1}{\sqrt{d}}|i\rangle|0\rangle={} \sum_{i=0}^{d-1}\frac{1}{\sqrt{d}}|i\rangle|z^{(i)}\rangle.
+$$
 
 In addition to the input oracle $`U`$ described in Eqn. ([4.15](#Ch4.E15 "Equation 4.15 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the quantum perceptron model employs another oracle to distinguish between correctly classified and misclassified quantum states. Specifically, the oracle $`{F}_{\boldsymbol{w}}^{\prime}`$ satisfies
 
-``` math
-\displaystyle{F}_{\boldsymbol{w}}^{\prime}|z^{(i)}\rangle={} \displaystyle(-1)^{f(\boldsymbol{w},z^{(i)})}|z^{(i)}\rangle,
-```
+$$
+{F}_{\boldsymbol{w}}^{\prime}|z^{(i)}\rangle={} (-1)^{f(\boldsymbol{w},z^{(i)})}|z^{(i)}\rangle,
+$$
 
 where $`f:(\boldsymbol{w},z^{(i)})\rightarrow\{0,1\}`$. The function outputs $`1`$ if the current perceptron model with weight $`\boldsymbol{w}`$ misclassifies the training sample $`z^{(j)}`$; otherwise, it outputs $`0`$. Furthermore, we define
 
-``` math
-\displaystyle F_{\boldsymbol{w}}={} \displaystyle U^{\dagger}(\mathbb{I}\otimes{F}_{\boldsymbol{w}}^{\prime})U,
-```
+$$
+F_{\boldsymbol{w}}={} U^{\dagger}(\mathbb{I}\otimes{F}_{\boldsymbol{w}}^{\prime})U,
+$$
 
 which is used as the oracle $`U_{f}`$ in the Grover search. The online quantum perceptron procedure is given in Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The query complexity of the online quantum perceptron is provided in Theorem [4.5](#Ch4.Thmtheorem5 "Theorem 4.5 (Online quantum perceptron ( , )). ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
@@ -3622,15 +3622,15 @@ which is used as the oracle $`U_{f}`$ in the Grover search. The online quantum p
 
 Consider a training dataset that consists of unit vectors $`\{\boldsymbol{x}^{(1)},\cdots,\boldsymbol{x}^{(d)}\}`$ and labels $`\{{y}^{(1)},\cdots,{y}^{(d)}\}`$ with a margin $`\gamma`$, Denote by $`n_{\rm quant}`$ the number of queries to $`F_{\boldsymbol{w}}`$ needed to learn the weight $`\boldsymbol{w}`$, such that the training dataset is perfectly classified with probability at least $`1-\epsilon`$, then
 
-``` math
+$$
 n_{\rm quant}\in\mathcal{O}\left(\frac{\sqrt{d}}{\gamma^{2}}\log\frac{1}{\gamma^{2}\epsilon}\right).
-```
+$$
 
 For the classical case where the training vectors are uniformly sampled from the training dataset, the number of queries to $`f_{\boldsymbol{w}}`$ is bounded by
 
-``` math
+$$
 \Omega({d})\ni n_{\rm class}\in\mathcal{O}\left(\frac{{d}}{\gamma^{2}}\log\frac{1}{\gamma^{2}\epsilon}\right).
-```
+$$
 
 ###### Proof of Theorem [4.5](#Ch4.Thmtheorem5 "Theorem 4.5 (Online quantum perceptron ( , )). ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
@@ -3650,9 +3650,9 @@ The procedure of Steps [5](#alg3.l5 "In Algorithm 3 ‣ 4.2.2 Online quantum per
 
 First, let $`m_{c}=d\lceil\log(1/\epsilon\gamma^{2})\rceil`$ be the number of samples drawn from the dataset uniformly in each iteration of training. Suppose these samples are classified correctly, then the probability that the entire dataset is classified correctly is
 
-``` math
-\displaystyle\Pr(\text{Correct classification})\geq{} \displaystyle 1-\left(1-\frac{1}{d}\right)^{m_{c}}\geq 1-\exp\left(-\frac{m_{c}}{d}\right)\geq 1-\epsilon\gamma^{2}.
-```
+$$
+\Pr(\text{Correct classification})\geq{} 1-\left(1-\frac{1}{d}\right)^{m_{c}}\geq 1-\exp\left(-\frac{m_{c}}{d}\right)\geq 1-\epsilon\gamma^{2}.
+$$
 
 ∎
 
@@ -3660,45 +3660,45 @@ First, let $`m_{c}=d\lceil\log(1/\epsilon\gamma^{2})\rceil`$ be the number of sa
 
 For convenience, denote $`\theta_{a}:=\arccos\sqrt{\frac{d-d_{0}}{d}}`$, where $`d_{0}`$ the number of misclassified samples in the dataset according to the current model. Let $`d_{1}:=\lceil\log_{c}\frac{1}{\sin(2\sin^{-1}(1/\sqrt{d}))}\rceil`$. Here, an exponential expansion strategy is used in Steps [6](#alg3.l6 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[14](#alg3.l14 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") to handle the scenario of unknown $`d_{0}`$. Namely, quantum operations in the Grover search are repeated for $`m`$ times, where $`m`$ is drawn from an exponentially expanded set $`{0,\cdots,\lceil c^{j}\rceil-1}`$ uniformly for a predefined $`c\in(1,2)`$ and $`j=1,\cdots,d_{1}`$. It can be shown that this strategy can find a misclassified sample before the convergence of Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with an average probability at least $`1/4`$:
 
-``` math
-\displaystyle\Pr\left(f(\boldsymbol{w},z^{(q)})=1\right)={} \displaystyle\sum_{j=1}^{d_{1}}\frac{1}{\lceil c^{j}\rceil}\sum_{m=0}^{\lceil c^{j}\rceil-1}\sin^{2}((2m+1)\theta_{a})
-```
+$$
+\Pr\left(f(\boldsymbol{w},z^{(q)})=1\right)={} \sum_{j=1}^{d_{1}}\frac{1}{\lceil c^{j}\rceil}\sum_{m=0}^{\lceil c^{j}\rceil-1}\sin^{2}((2m+1)\theta_{a})
+$$
 
-``` math
-\displaystyle\geq{} \displaystyle\frac{1}{\lceil c^{d_{1}}\rceil}\sum_{m=0}^{\lceil c^{d_{1}}\rceil-1}\sin^{2}((2m+1)\theta_{a})
-```
+$$
+\geq{} \frac{1}{\lceil c^{d_{1}}\rceil}\sum_{m=0}^{\lceil c^{d_{1}}\rceil-1}\sin^{2}((2m+1)\theta_{a})
+$$
 
-``` math
-\displaystyle={} \displaystyle\frac{1}{2}\left[1-\frac{\sin(4\lceil c^{d_{1}}\rceil\theta_{a})}{2\lceil c^{d_{1}}\rceil\sin(2\theta_{a})}\right]
-```
+$$
+={} \frac{1}{2}\left[1-\frac{\sin(4\lceil c^{d_{1}}\rceil\theta_{a})}{2\lceil c^{d_{1}}\rceil\sin(2\theta_{a})}\right]
+$$
 
-``` math
-\displaystyle\geq{} \displaystyle\frac{1}{4}.
-```
+$$
+\geq{} \frac{1}{4}.
+$$
 
 The procedure of Steps [6](#alg3.l6 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[14](#alg3.l14 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is repeated for $`k=1,\cdots,\lceil\log_{3/4}\gamma^{2}\epsilon\rceil`$ iterations to accumulate the success probability. The probability of finding a misclassified sample in Steps [5](#alg3.l5 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[15](#alg3.l15 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") before the convergence of Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is at least
 
-``` math
-\displaystyle 1-\left(1-\frac{1}{4}\right)^{\lceil\log_{3/4}\epsilon\gamma^{2}\rceil}\geq{} \displaystyle 1-\epsilon\gamma^{2}.
-```
+$$
+1-\left(1-\frac{1}{4}\right)^{\lceil\log_{3/4}\epsilon\gamma^{2}\rceil}\geq{} 1-\epsilon\gamma^{2}.
+$$
 
 Finally, the query complexity $`Q`$ of Steps [5](#alg3.l5 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[15](#alg3.l15 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") in Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") can be upper bounded as follows:
 
-``` math
-\displaystyle Q\leq{} \displaystyle\sum_{k=1}^{\lceil\log_{3/4}\gamma^{2}\epsilon\rceil}\sum_{j=1}^{d_{1}}c^{j}
-```
+$$
+Q\leq{} \sum_{k=1}^{\lceil\log_{3/4}\gamma^{2}\epsilon\rceil}\sum_{j=1}^{d_{1}}c^{j}
+$$
 
-``` math
-\displaystyle\leq{} \displaystyle\left(1+\log_{3/4}\gamma^{2}\epsilon\right)\frac{c}{1-c}\left[1-c^{d_{1}}\right]
-```
+$$
+\leq{} \left(1+\log_{3/4}\gamma^{2}\epsilon\right)\frac{c}{1-c}\left[1-c^{d_{1}}\right]
+$$
 
-``` math
-\displaystyle\leq{} \displaystyle\left(1+\log_{3/4}\gamma^{2}\epsilon\right)\frac{c^{2}}{c-1}\left[\frac{1}{\sin(2\sin^{-1}(1/\sqrt{d}))}-1\right]
-```
+$$
+\leq{} \left(1+\log_{3/4}\gamma^{2}\epsilon\right)\frac{c^{2}}{c-1}\left[\frac{1}{\sin(2\sin^{-1}(1/\sqrt{d}))}-1\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\mathcal{O}(\sqrt{d}\log\frac{1}{\epsilon\gamma^{2}}).
-```
+$$
+={} \mathcal{O}(\sqrt{d}\log\frac{1}{\epsilon\gamma^{2}}).
+$$
 
 ∎
 
@@ -3762,19 +3762,19 @@ Model circuit. QNNs employ variational quantum circuits (VQCs), a.k.a, ansatzes,
 
 ###### Example 4.8.
 
-Hardware-efficient circuits incorporate several widely adopted ansatzes. Single-qubit rotations $`\{\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}\}`$ are used to construct parameterized single-qubit unitaries. The entangled unitary layer can be implemented using two-qubit gates such as $`\displaystyle U_{\rm ent}={}`$ $`\displaystyle\bigotimes_{n=1}^{\lceil\frac{N}{2}\rceil}U(2n-1+k\%2,2n+k\%2)\quad{\text{for the $k$-th layer}},`$ $`\displaystyle U_{\rm ent}={}`$ $`\displaystyle\bigotimes_{n=1}^{\lceil\frac{N}{2}\rceil}U(2n-1,2n)\bigotimes_{n=1}^{\lceil\frac{N-1}{2}\rceil}U(2n,2n+1),`$ where $`U\in\{CX,CZ\}`$.
+Hardware-efficient circuits incorporate several widely adopted ansatzes. Single-qubit rotations $`\{\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}\}`$ are used to construct parameterized single-qubit unitaries. The entangled unitary layer can be implemented using two-qubit gates such as $`U_{\rm ent}={}`$ $`\bigotimes_{n=1}^{\lceil\frac{N}{2}\rceil}U(2n-1+k\%2,2n+k\%2)\quad{\text{for the $k$-th layer}},`$ $`U_{\rm ent}={}`$ $`\bigotimes_{n=1}^{\lceil\frac{N}{2}\rceil}U(2n-1,2n)\bigotimes_{n=1}^{\lceil\frac{N-1}{2}\rceil}U(2n,2n+1),`$ where $`U\in\{CX,CZ\}`$.
 
 Measurement. After implementing the model circuit, the quantum state is measured using specific observables, denoted as $`O`$, to extract classical information. The choice of observables depends on the experimental objectives. In the case of a variational quantum eigensolver, where the goal is to find the ground state and energy of a given Hamiltonian, the observable is chosen to be the target Hamiltonian itself. In quantum machine learning applications involving classical data, the measurement outcomes are used to approximate label information, which typically lacks direct physical significance. As a result, the observable can, in principle, be any Hermitian operator. However, for practical experimental considerations, a linear combination of Pauli-Z operators is commonly used as the observable:
 
-``` math
+$$
 O=\sum_{j=1}^{N}\boldsymbol{c}_{j}\mathbb{I}^{\otimes(j-1)}\otimes Z_{j}\otimes\mathbb{I}^{\otimes(N-j)},
-```
+$$
 
 where $`\boldsymbol{c}\in\mathbb{R}^{N}`$ is a weight vector. The measurement outcome of QNN can be expressed as a function of $`\boldsymbol{\theta}`$, i.e.,
 
-``` math
-\displaystyle f(\boldsymbol{\theta};\rho_{\rm in},V,O)={} \displaystyle\mathop{\text{Tr}}\left[OV(\boldsymbol{\theta})\rho_{\rm in}V(\boldsymbol{\theta})^{\dagger}\right].
-```
+$$
+f(\boldsymbol{\theta};\rho_{\rm in},V,O)={} \mathop{\text{Tr}}\left[OV(\boldsymbol{\theta})\rho_{\rm in}V(\boldsymbol{\theta})^{\dagger}\right].
+$$
 
 Training of QNNs. As a QML framework, the optimization of QNNs amounts to updating parameters $`\boldsymbol{\theta}`$ using gradient-based methods. Due to the linearity of quantum mechanics and the unitary evolution constraint, for certain cases, the acquisition of gradients can be elegantly performed using the parameter-shift rule.
 
@@ -3782,9 +3782,9 @@ Training of QNNs. As a QML framework, the optimization of QNNs amounts to updati
 
 Suppose the gate $`G_{j}(\boldsymbol{\theta}_{j})`$ in a VQC $`V(\boldsymbol{\theta})`$ has a unitary Hamiltonian $`H_{j}`$, then the corresponding gradient could be obtained as
 
-``` math
+$$
 \frac{\partial f}{\partial\boldsymbol{\theta}_{j}}(\boldsymbol{\theta})=\frac{1}{2}\left[f\left(\boldsymbol{\theta}+\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)-f\left(\boldsymbol{\theta}-\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)\right],
-```
+$$
 
 where the function $`f`$ follows the Eqn. ([4.21](#Ch4.E21 "Equation 4.21 ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and the one-hot vector $`\boldsymbol{e}^{(j)}`$ has the same dimension with $`\boldsymbol{\theta}`$ with the $`j`$-th element being $`1`$.
 
@@ -3792,71 +3792,71 @@ where the function $`f`$ follows the Eqn. ([4.21](#Ch4.E21 "Equation 4.21 ‣ 4
 
 For convenience, we denote the detailed structure of VQC as
 
-``` math
+$$
 V(\boldsymbol{\theta})=\prod_{i=L}^{1}G_{i}(\boldsymbol{\theta}_{i})W_{i},
-```
+$$
 
 where $`L`$ is the number of parameters in VQC, $`G_{i}`$ is the parameterized gate, and $`W_{i}`$ is the fixed gate. By assumption, the gate takes the form as
 
-``` math
+$$
 G_{j}(\boldsymbol{\theta}_{j})=\exp(-iH_{j}\boldsymbol{\theta}_{j}/2),
-```
+$$
 
 where the Hamiltonian $`H_{j}`$ is a unitary. For convenience, unnecessary parameterized and fixed gates can be merged into the state $`\rho_{\rm in}`$ and the observable $`O`$, i.e.,
 
-``` math
-\displaystyle\rho_{\rm in}^{\prime}={} \displaystyle W_{j}\left(\prod_{i=j-1}^{1}G_{i}(\boldsymbol{\theta}_{i})W_{i}\right)\rho_{\rm in}\left(\prod_{i=1}^{j-1}W_{i}^{\dagger}G_{i}(\boldsymbol{\theta}_{i})^{\dagger}\right)W_{j}^{\dagger},
-```
+$$
+\rho_{\rm in}^{\prime}={} W_{j}\left(\prod_{i=j-1}^{1}G_{i}(\boldsymbol{\theta}_{i})W_{i}\right)\rho_{\rm in}\left(\prod_{i=1}^{j-1}W_{i}^{\dagger}G_{i}(\boldsymbol{\theta}_{i})^{\dagger}\right)W_{j}^{\dagger},
+$$
 
-``` math
-\displaystyle O^{\prime}={} \displaystyle\left(\prod_{i=j}^{L}W_{i}^{\dagger}G_{i}(\boldsymbol{\theta}_{i})^{\dagger}\right)O\left(\prod_{i=L}^{j}G_{i}(\boldsymbol{\theta}_{i})W_{i}\right).
-```
+$$
+O^{\prime}={} \left(\prod_{i=j}^{L}W_{i}^{\dagger}G_{i}(\boldsymbol{\theta}_{i})^{\dagger}\right)O\left(\prod_{i=L}^{j}G_{i}(\boldsymbol{\theta}_{i})W_{i}\right).
+$$
 
 It can be shown that
 
-``` math
-\displaystyle f(\boldsymbol{\theta})={} \displaystyle\mathop{\text{Tr}}\left[OV(\boldsymbol{\theta})\rho_{\rm in}V(\boldsymbol{\theta})^{\dagger}\right]
-```
+$$
+f(\boldsymbol{\theta})={} \mathop{\text{Tr}}\left[OV(\boldsymbol{\theta})\rho_{\rm in}V(\boldsymbol{\theta})^{\dagger}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\mathop{\text{Tr}}\left[O^{\prime}G_{j}(\boldsymbol{\theta}_{j})\rho_{\rm in}^{\prime}G_{j}(\boldsymbol{\theta}_{j})^{\dagger}\right]
-```
+$$
+={} \mathop{\text{Tr}}\left[O^{\prime}G_{j}(\boldsymbol{\theta}_{j})\rho_{\rm in}^{\prime}G_{j}(\boldsymbol{\theta}_{j})^{\dagger}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\mathop{\text{Tr}}\left[O^{\prime}\exp(-iH_{j}\boldsymbol{\theta}_{j}/2)\rho_{\rm in}^{\prime}\exp(iH_{j}\boldsymbol{\theta}_{j}/2)\right]
-```
+$$
+={} \mathop{\text{Tr}}\left[O^{\prime}\exp(-iH_{j}\boldsymbol{\theta}_{j}/2)\rho_{\rm in}^{\prime}\exp(iH_{j}\boldsymbol{\theta}_{j}/2)\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\cos^{2}\frac{\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]+\frac{i}{2}\sin\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]+\sin^{2}\frac{\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right],
-```
+$$
+={} \cos^{2}\frac{\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]+\frac{i}{2}\sin\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]+\sin^{2}\frac{\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right],
+$$
 
 where $`[A,B]:=AB-BA`$ denotes the commutator.
 
 After some calculations from Eqn. ([4.22](#Ch4.E22 "Equation 4.22 ‣ Proof of Theorem . ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it can be shown that
 
-``` math
-\displaystyle f\left(\boldsymbol{\theta}+\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)={} \displaystyle\frac{1-\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]+\frac{i}{2}\cos\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]
-```
+$$
+f\left(\boldsymbol{\theta}+\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)={} \frac{1-\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]+\frac{i}{2}\cos\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]
+$$
 
-``` math
-\displaystyle+{} \displaystyle\frac{1+\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right]
-```
+$$
++{} \frac{1+\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right]
+$$
 
-``` math
-\displaystyle f\left(\boldsymbol{\theta}-\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)={} \displaystyle\frac{1+\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]-\frac{i}{2}\cos\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]
-```
+$$
+f\left(\boldsymbol{\theta}-\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)={} \frac{1+\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]-\frac{i}{2}\cos\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]
+$$
 
-``` math
-\displaystyle+{} \displaystyle\frac{1-\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right]
-```
+$$
++{} \frac{1-\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right]
+$$
 
-``` math
-\displaystyle\frac{\partial f}{\partial\theta_{j}}(\boldsymbol{\theta})={} \displaystyle-\frac{1}{2}\sin\boldsymbol{\theta}_{j}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]+\frac{i}{2}\cos\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]
-```
+$$
+\frac{\partial f}{\partial\theta_{j}}(\boldsymbol{\theta})={} -\frac{1}{2}\sin\boldsymbol{\theta}_{j}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]+\frac{i}{2}\cos\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]
+$$
 
-``` math
-\displaystyle+{} \displaystyle\frac{1}{2}\sin\boldsymbol{\theta}_{j}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right].
-```
+$$
++{} \frac{1}{2}\sin\boldsymbol{\theta}_{j}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right].
+$$
 
 Comparing the above equations, Theorem [4.9](#Ch4.Thmtheorem9 "Theorem 4.9 (Parameter-shift rule ( , )). ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is proved.
 
@@ -3866,33 +3866,33 @@ Comparing the above equations, Theorem [4.9](#Ch4.Thmtheorem9 "Theorem 4.9 (Par
 
 In this section, we present an example in which a QNN is employed for discriminative learning. Specifically, we focus on binary classification, where the label $`y^{(i)}=\pm 1`$ corresponds to the input state $`\rho^{(i)}`$. In the case of classical data, the state $`\rho^{(i)}=|\psi(\boldsymbol{x}^{(i)})\rangle\langle\psi(\boldsymbol{x}^{(i)})|`$ can be generated from the classical vector $`\boldsymbol{x}^{(i)}`$ using a read-in approach
 
-``` math
+$$
 |\psi(\boldsymbol{x}^{(i)})\rangle=U_{\phi}(\boldsymbol{x}^{(i)})|0\rangle,
-```
+$$
 
 where a simple feature map can be constructed via angle encoding, as introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"),
 
-``` math
+$$
 U_{\phi}(\boldsymbol{x}^{(i)})=\bigotimes_{n=1}^{N}\mathop{\text{RY}}(\boldsymbol{x}_{n}^{(i)})=\bigotimes_{n=1}^{N}\exp(-iY\boldsymbol{x}_{n}^{(i)}/2).
-```
+$$
 
 Denote by $`O`$ and $`V(\boldsymbol{\theta})`$ the quantum observable and the VQC, respectively. The prediction function of the QNN is given by
 
-``` math
+$$
 \hat{y}^{(i)}(\boldsymbol{\theta})=\mathop{\text{Tr}}[OV(\boldsymbol{\theta})\rho^{(i)}V(\boldsymbol{\theta})^{\dagger}].
-```
+$$
 
 In the binary classification task, the QNN learns by training the parameter $`\boldsymbol{\theta}`$ to minimize the distance between the label $`y^{(i)}`$ and the prediction $`\hat{y}^{(i)}(\boldsymbol{\theta})`$. Specifically, the mean square error (MSE) is used as the loss function:
 
-``` math
+$$
 \boldsymbol{\theta}^{*}={\rm argmin}\mathcal{L}(\boldsymbol{\theta}),\ \text{where }\mathcal{L}(\boldsymbol{\theta})=\sum_{i=1}^{n}\ell(\boldsymbol{\theta},\boldsymbol{x}^{(i)},y^{(i)})=\frac{1}{2}\sum_{i=1}^{n}\left(\hat{y}^{(i)}(\boldsymbol{\theta})-y^{(i)}\right)^{2}.
-```
+$$
 
 The gradient of the loss in Eqn. ([4.26](#Ch4.E26 "Equation 4.26 ‣ 4.3.2 Discriminative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) can be calculated via the chain rule, i.e.,
 
-``` math
+$$
 \nabla_{\boldsymbol{\theta}}\mathcal{L}(\boldsymbol{\theta})=\sum_{i=1}^{n}\left(\hat{y}^{(i)}(\boldsymbol{\theta})-y^{(i)}\right)\nabla_{\boldsymbol{\theta}}\hat{y}^{(i)}(\boldsymbol{\theta}),
-```
+$$
 
 where the gradient of the prediction $`\hat{y}^{(i)}`$ can be obtained by using the parameter-shift rule in Theorem [4.9](#Ch4.Thmtheorem9 "Theorem 4.9 (Parameter-shift rule ( , )). ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Consequently, a variety of gradient-based optimization algorithms, such as stochastic gradient descent ([Amari, 1993](#bib.bib177)), Adagrad ([Duchi et al., 2011](#bib.bib194)), and Adam ([Kingma, 2014](#bib.bib195)), can be employed to train QNNs.
 
@@ -3915,39 +3915,39 @@ To illustrate the training and sampling processes of QGAN, we present two exampl
 
 We begin by introducing the quantum patch GAN, which consists of a quantum generator, as illustrated in Figure [4.7](#Ch4.F7 "Figure 4.7 ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), a classical discriminator, and a classical optimizer. Both the learning and sampling processes of an image are performed in patches, involving $`T`$ sub-generators. For the $`t`$-th sub-generator, the model takes a latent state $`\boldsymbol{z}`$ as input and generates a sample $`G_{t}(\boldsymbol{z})`$. Specifically, the latent state is prepared from the initial state $`|0\rangle^{\otimes N}`$ using a single-qubit rotation layer, where the parameters $`\{\boldsymbol{\alpha}_{n}\}_{n=1}^{N}`$ are sampled from the uniform distribution over $`[0,2\pi)`$. The latent state is then processed through an $`N`$-qubit hardware-efficient circuit $`U_{G_{t}}(\boldsymbol{\theta})`$, which leads to the state
 
-``` math
+$$
 |\psi_{t}(\boldsymbol{z})\rangle=U_{G_{t}}(\boldsymbol{\theta})|\boldsymbol{z}\rangle.
-```
+$$
 
 To perform non-linear operations, partial measurements are conducted, and a subsystem $`\mathcal{A}`$ (ancillary qubits) is traced out from the state $`|\psi_{t}(\boldsymbol{z})\rangle`$. The resulting mixed state is
 
-``` math
+$$
 \rho_{t}(\boldsymbol{z})=\frac{\mathop{\text{Tr}}_{\mathcal{A}}\left[\Pi\otimes\mathbb{I}|\psi_{t}(\boldsymbol{z})\rangle\langle\psi_{t}(\boldsymbol{z})|\right]}{\mathop{\text{Tr}}\left[\Pi\otimes\mathbb{I}|\psi_{t}(\boldsymbol{z})\rangle\langle\psi_{t}(\boldsymbol{z})|\right]},
-```
+$$
 
 where $`\Pi`$ is the projective operator acting on the subsystem $`\mathcal{A}`$. Subsequently, the mixed state $`\rho_{t}(\boldsymbol{z})`$ is measured in the computational basis to obtain the sample $`G_{t}(\boldsymbol{z})`$. Specifically, let $`\Pr(J=j):=\mathop{\text{Tr}}[|j\rangle\langle j|\rho_{t}(\boldsymbol{z})]`$, where the probabilities of the outcomes can be estimated by the measurement. The sample $`G_{t}(\boldsymbol{z})`$ is then defined as
 
-``` math
-\displaystyle G_{t}(\boldsymbol{z})={} \displaystyle[\Pr(J=0),\cdots,\Pr(J=j),\cdots,\Pr(J=2^{N-N_{\mathcal{A}}}-1)],
-```
+$$
+G_{t}(\boldsymbol{z})={} [\Pr(J=0),\cdots,\Pr(J=j),\cdots,\Pr(J=2^{N-N_{\mathcal{A}}}-1)],
+$$
 
 where $`N_{\mathcal{A}}`$ is the number of qubits in $`\mathcal{A}`$. Finally, the complete image is reconstructed by aggregating these samples from all sub-generators as follows:
 
-``` math
+$$
 G(\boldsymbol{z})=[G_{1}(\boldsymbol{z}),\cdots,G_{T}(\boldsymbol{z})].
-```
+$$
 
 In principle, the discriminator $`D`$ in a quantum patch GAN can be any classical neural network that takes the training data $`\boldsymbol{x}`$ or the generated sample $`G(\boldsymbol{z})`$ as input, with the output
 
-``` math
+$$
 D(\boldsymbol{x}),\ D(G(\boldsymbol{z}))\in[0,1].
-```
+$$
 
 Let $`\boldsymbol{\gamma}`$ and $`\boldsymbol{\theta}`$ denote the parameters of the discriminator $`D`$ and the generator $`G`$, respectively. The optimization problem for the quantum patch GAN can be formulated as:
 
-``` math
-\displaystyle\min_{\boldsymbol{\theta}}\max_{\boldsymbol{\gamma}}\mathcal{L}(D_{\boldsymbol{\gamma}}(G_{\boldsymbol{\theta}}(\boldsymbol{z})),D_{\boldsymbol{\gamma}}(\boldsymbol{x})):=\mathop{\mathbb{E}}_{\boldsymbol{x}}\left[\log D_{\boldsymbol{\gamma}}(\boldsymbol{x})\right]+\mathop{\mathbb{E}}_{\boldsymbol{z}}\left[\log(1-D_{\boldsymbol{\gamma}}(G_{\boldsymbol{\theta}}(\boldsymbol{z})))\right].
-```
+$$
+\min_{\boldsymbol{\theta}}\max_{\boldsymbol{\gamma}}\mathcal{L}(D_{\boldsymbol{\gamma}}(G_{\boldsymbol{\theta}}(\boldsymbol{z})),D_{\boldsymbol{\gamma}}(\boldsymbol{x})):=\mathop{\mathbb{E}}_{\boldsymbol{x}}\left[\log D_{\boldsymbol{\gamma}}(\boldsymbol{x})\right]+\mathop{\mathbb{E}}_{\boldsymbol{z}}\left[\log(1-D_{\boldsymbol{\gamma}}(G_{\boldsymbol{\theta}}(\boldsymbol{z})))\right].
+$$
 
 Similar to quantum discriminative learning, the quantum patch GAN can be trained using gradient-based optimization algorithms.
 
@@ -3960,55 +3960,55 @@ Similar to quantum discriminative learning, the quantum patch GAN can be trained
 
 As illustrated in Figure [4.8](#Ch4.F8 "Figure 4.8 ‣ Quantum batch GAN ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the quantum batch GAN differs from the quantum patch GAN by employing a quantum discriminator. In a quantum batch GAN, all qubits are divided into two registers: the index register, consisting of $`N_{I}`$ qubits, and the feature register, consisting of $`N_{F}`$ qubits. The qubits in the feature register are further partitioned into three parts: $`N_{D}`$ qubits for generating quantum samples, $`N_{A_{G}}`$ qubits for implementing non-linear operations in the generator $`G_{\boldsymbol{\theta}}`$, and $`N_{A_{D}}`$ qubits for implementing non-linear operations in the discriminator $`D_{\boldsymbol{\gamma}}`$. For a batch with size $`|B_{k}|=2^{N_{I}}`$, two oracles are used to encode the information of latent vectors and training samples:
 
-``` math
-\displaystyle|0\rangle_{I}\otimes|0\rangle_{F}\xrightarrow{U_{\boldsymbol{z}}}{} \displaystyle\frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{z}^{(i)}\rangle_{F},
-```
+$$
+|0\rangle_{I}\otimes|0\rangle_{F}\xrightarrow{U_{\boldsymbol{z}}}{} \frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{z}^{(i)}\rangle_{F},
+$$
 
-``` math
-\displaystyle|0\rangle_{I}\otimes|0\rangle_{F}\xrightarrow{U_{\boldsymbol{x}}}{} \displaystyle\frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{x}^{(i)}\rangle_{F}.
-```
+$$
+|0\rangle_{I}\otimes|0\rangle_{F}\xrightarrow{U_{\boldsymbol{x}}}{} \frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{x}^{(i)}\rangle_{F}.
+$$
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2g0LlMzLlNTMy5TU1N4Mi5wMi5waWMxIiBjbGFzcz0ibHR4X3BpY3R1cmUiIGhlaWdodD0iMTI2LjUiIG92ZXJmbG93PSJ2aXNpYmxlIiB2ZXJzaW9uPSIxLjEiIHZpZXdib3g9IjAgMCA0NzcuMzggMTI2LjUiIHdpZHRoPSI0NzcuMzgiPjxnIHN0eWxlPSItLWx0eC1zdHJva2UtY29sb3I6IzAwMDAwMDstLWx0eC1maWxsLWNvbG9yOiMwMDAwMDA7IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC40cHQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTI2LjUpIG1hdHJpeCgxIDAgMCAtMSAwIDApIj48ZyBzdHlsZT0iLS1sdHgtZmlsbC1jb2xvcjojNjA2MDYwOyIgZmlsbD0iIzYwNjA2MCIgZmlsbC1vcGFjaXR5PSIxLjAiPjxwYXRoIHN0eWxlPSJzdHJva2U6bm9uZSIgZD0iTSAwIDUuOTEgTCAwIDEyMC41OSBDIDAgMTIzLjg1IDIuNjQgMTI2LjUgNS45MSAxMjYuNSBMIDQ3MS40NyAxMjYuNSBDIDQ3NC43MyAxMjYuNSA0NzcuMzggMTIzLjg1IDQ3Ny4zOCAxMjAuNTkgTCA0NzcuMzggNS45MSBDIDQ3Ny4zOCAyLjY0IDQ3NC43MyAwIDQ3MS40NyAwIEwgNS45MSAwIEMgMi42NCAwIDAgMi42NCAwIDUuOTEgWiIgLz48L2c+PGcgc3R5bGU9Ii0tbHR4LWZpbGwtY29sb3I6I0Y5RjlGOTsiIGZpbGw9IiNGOUY5RjkiIGZpbGwtb3BhY2l0eT0iMS4wIj48cGF0aCBzdHlsZT0ic3Ryb2tlOm5vbmUiIGQ9Ik0gMS45NyA1LjkxIEwgMS45NyAxMDUuMDggTCA0NzUuNDEgMTA1LjA4IEwgNDc1LjQxIDUuOTEgQyA0NzUuNDEgMy43MyA0NzMuNjUgMS45NyA0NzEuNDcgMS45NyBMIDUuOTEgMS45NyBDIDMuNzMgMS45NyAxLjk3IDMuNzMgMS45NyA1LjkxIFoiIC8+PC9nPjxnIGZpbGwtb3BhY2l0eT0iMS4wIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjAgMC4wIDAuMCAxLjAgMjEuNjUgMTEwLjk4KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjAuNjllbTstLWx0eC1mby1kZXB0aDowZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9IjkuNjEiIG92ZXJmbG93PSJ2aXNpYmxlIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAwIDkuNjEpIiB3aWR0aD0iNDM0LjA3Ij48c3BhbiBjbGFzcz0ibHR4X2ZvcmVpZ25vYmplY3RfY29udGFpbmVyIj48c3BhbiBjbGFzcz0ibHR4X2ZvcmVpZ25vYmplY3RfY29udGVudCI+CjxzcGFuIGlkPSJDaDQuUzMuU1MzLlNTU3gyLnAyLnBpYzEuMSIgY2xhc3M9Imx0eF9pbmxpbmUtYmxvY2sgbHR4X21pbmlwYWdlIGx0eF9hbGlnbl9ib3R0b20iIHN0eWxlPSJ3aWR0aDozMS4zN2VtOyI+CjxzcGFuIGlkPSJDaDQuUzMuU1MzLlNTU3gyLnAyLnBpYzEuMS4xIiBjbGFzcz0ibHR4X3AiPjxzcGFuIGlkPSJDaDQuUzMuU1MzLlNTU3gyLnAyLnBpYzEuMS4xLjEiIGNsYXNzPSJsdHhfdGV4dCIgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiNGRkZGRkY7Ij5SZW1hcms8L3NwYW4+PC9zcGFuPgo8L3NwYW4+PC9zcGFuPjwvc3Bhbj48L2ZvcmVpZ25vYmplY3Q+PC9nPjxnIGZpbGwtb3BhY2l0eT0iMS4wIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjAgMC4wIDAuMCAxLjAgMjEuNjUgMTcuMjQpIj48Zm9yZWlnbm9iamVjdCBzdHlsZT0iLS1sdHgtZm8td2lkdGg6MzEuMzdlbTstLWx0eC1mby1oZWlnaHQ6NS40OWVtOy0tbHR4LWZvLWRlcHRoOjAuMjVlbTtmb250LXNpemU6MTBwdDsiIGhlaWdodD0iNzkuNDkiIG92ZXJmbG93PSJ2aXNpYmxlIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAwIDc2LjAzKSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2g0LlMzLlNTMy5TU1N4Mi5wMi5waWMxLjIiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2g0LlMzLlNTMy5TU1N4Mi5wMi5waWMxLjIuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2g0LlMzLlNTMy5TU1N4Mi5wMi5waWMxLjIuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyI+Rm9yIGRhdGEgd2l0aCA8bWF0aCBpZD0iQ2g0LlMzLlNTMy5TU1N4Mi5wMi5waWMxLm0xIiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9Ik0iIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPk08L21pPjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+TTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+IGZlYXR1cmVzLCBzdGF0ZSBwcmVwYXJhdGlvbiBmb3IgYW1wbGl0dWRlIGVuY29kaW5nIGluIDxtYXRoIGlkPSJDaDQuUzMuU1MzLlNTU3gyLnAyLnBpYzEubTIiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iVV97XGJte3h9fSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtc3ViPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+VTwvbWk+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj7wnZKZPC9taT48L21zdWI+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5VX3tcYm17eH19PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4gcmVxdWlyZXMgPG1hdGggaWQ9IkNoNC5TMy5TUzMuU1NTeDIucDIucGljMS5tMyIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJcdGlsZGV7XG1hdGhjYWx7T319KDJee05fe0l9fU0pIiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1yb3c+PG1vdmVyIGFjY2VudD0idHJ1ZSI+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgY2xhc3M9Imx0eF9mb250X21hdGhjYWxpZ3JhcGhpYyIgbWF0aGNvbG9yPSIjMDAwMDAwIj7wnZKqPC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPn48L21vPjwvbW92ZXI+PG1vIGxzcGFjZT0iMGVtIiByc3BhY2U9IjBlbSI+4oCLPC9tbz48bXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+KDwvbW8+PG1yb3c+PG1zdXA+PG1uIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4yPC9tbj48bXN1Yj48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPk48L21pPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+STwvbWk+PC9tc3ViPjwvbXN1cD48bW8gbHNwYWNlPSIwZW0iIHJzcGFjZT0iMGVtIj7igIs8L21vPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+TTwvbWk+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4pPC9tbz48L21yb3c+PC9tcm93Pjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+XHRpbGRle1xtYXRoY2Fse099fSgyXntOX3tJfX1NKTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+IG11bHRpLWNvbnRyb2xsZWQgcXVhbnR1bSBnYXRlcywgd2hpY2ggaXMgaW5mZWFzaWJsZSBmb3IgY3VycmVudCBxdWFudHVtIGRldmljZXMuIFRoaXMgY2hhbGxlbmdlIGNhbiBiZSBhZGRyZXNzZWQgYnkgZW1wbG95aW5nIHByZS10cmFpbmVkIHNoYWxsb3cgY2lyY3VpdCBhcHByb3hpbWF0aW9ucyBvZiB0aGUgZ2l2ZW4gb3JhY2xlwqA8Y2l0ZSBjbGFzcz0ibHR4X2NpdGUgbHR4X2NpdGVtYWNyb19jaXRlcCI+KDxhIGhyZWY9IiNiaWIuYmliMjAwIiB0aXRsZSBjbGFzcz0ibHR4X3JlZiI+QmVuZWRldHRpIGV0wqBhbC4sIDIwMTlhPC9hPik8L2NpdGU+Ljwvc3Bhbj48L3NwYW4+Cjwvc3Bhbj48L3NwYW4+PC9zcGFuPjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvc3ZnPg==" id="Ch4.S3.SS3.SSSx2.p2.pic1" class="ltx_picture" />
 
 After the encoding stage, a PQC $`U_{G}(\boldsymbol{\theta})`$ and the corresponding partial measurement are employed as the quantum generator. Thus, the generated state corresponding to $`|B_{k}|`$ fake samples is obtained as follows:
 
-``` math
-\displaystyle\frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{z}^{(i)}\rangle_{F}
-```
+$$
+\frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{z}^{(i)}\rangle_{F}
+$$
 
-``` math
-\displaystyle\xrightarrow{U_{G}(\boldsymbol{\theta})}{} \displaystyle\frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes\left(U_{G}(\boldsymbol{\theta})\otimes\mathbb{I}_{2^{N_{A_{D}}}}|\boldsymbol{z}^{(i)}\rangle_{F}\right):=|\psi(\boldsymbol{z})\rangle
-```
+$$
+\xrightarrow{U_{G}(\boldsymbol{\theta})}{} \frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes\left(U_{G}(\boldsymbol{\theta})\otimes\mathbb{I}_{2^{N_{A_{D}}}}|\boldsymbol{z}^{(i)}\rangle_{F}\right):=|\psi(\boldsymbol{z})\rangle
+$$
 
-``` math
-\displaystyle\xrightarrow{\Pi_{A_{G}}}{} \displaystyle\frac{\mathbb{I}_{2^{N_{I}}}\otimes\Pi_{A_{G}}\otimes\mathbb{I}_{2^{N_{D}+N_{A_{D}}}}|\psi(\boldsymbol{z})\rangle}{\mathop{\text{Tr}}\left[\mathbb{I}_{2^{N_{I}}}\otimes\Pi_{A_{G}}\otimes\mathbb{I}_{2^{N_{D}+N_{A_{D}}}}|\psi(\boldsymbol{z})\rangle\langle\psi(\boldsymbol{z})|\right]}:=|G_{\boldsymbol{\theta}}(\boldsymbol{z})\rangle,
-```
+$$
+\xrightarrow{\Pi_{A_{G}}}{} \frac{\mathbb{I}_{2^{N_{I}}}\otimes\Pi_{A_{G}}\otimes\mathbb{I}_{2^{N_{D}+N_{A_{D}}}}|\psi(\boldsymbol{z})\rangle}{\mathop{\text{Tr}}\left[\mathbb{I}_{2^{N_{I}}}\otimes\Pi_{A_{G}}\otimes\mathbb{I}_{2^{N_{D}+N_{A_{D}}}}|\psi(\boldsymbol{z})\rangle\langle\psi(\boldsymbol{z})|\right]}:=|G_{\boldsymbol{\theta}}(\boldsymbol{z})\rangle,
+$$
 
 where the partial measurement $`\Pi_{A_{G}}=(|0\rangle\langle 0|)^{\otimes N_{A_{G}}}`$ serves as the non-linear operation. In the sampling stage, the reconstructed image is generated similarly to the quantum patch GAN. Specifically, the $`i`$-th image $`G_{\boldsymbol{\theta}}(\boldsymbol{z}^{(i)})`$ in the batch is
 
-``` math
-\displaystyle G_{\boldsymbol{\theta}}(\boldsymbol{z}^{(i)})={} \displaystyle\left[\Pr(J=0|I=i),\cdots,\Pr(J=2^{N_{D}}-1|I=i)\right],
-```
+$$
+G_{\boldsymbol{\theta}}(\boldsymbol{z}^{(i)})={} \left[\Pr(J=0|I=i),\cdots,\Pr(J=2^{N_{D}}-1|I=i)\right],
+$$
 
 where
 
-``` math
-\displaystyle\Pr(J=j|I=i)={} \displaystyle\mathop{\text{Tr}}\left[|i\rangle_{I}|j\rangle_{F}\langle i|_{I}\langle j|_{F}|G(\boldsymbol{z})\rangle\langle G(\boldsymbol{z})|\right].
-```
+$$
+\Pr(J=j|I=i)={} \mathop{\text{Tr}}\left[|i\rangle_{I}|j\rangle_{F}\langle i|_{I}\langle j|_{F}|G(\boldsymbol{z})\rangle\langle G(\boldsymbol{z})|\right].
+$$
 
 Finally, we introduce the training stage. A quantum discriminator is applied to either the fake generated state $`|G_{\boldsymbol{\theta}}(\boldsymbol{z})\rangle`$ or the real data state $`|\boldsymbol{x}\rangle`$. Similar to the quantum generator, the quantum discriminator $`D_{\boldsymbol{\gamma}}`$ consists of a PQC $`U_{D}(\boldsymbol{\gamma})`$, followed by the corresponding partial measurement. In the case of the real state, the state evolution proceeds as follows:
 
-``` math
-\displaystyle\frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{x}^{(i)}\rangle_{F}
-```
+$$
+\frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{x}^{(i)}\rangle_{F}
+$$
 
-``` math
-\displaystyle\xrightarrow{U_{D}(\boldsymbol{\gamma})}{} \displaystyle\frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes\left(\mathbb{I}_{2^{N_{A_{G}}}}\otimes U_{D}(\boldsymbol{\gamma})|\boldsymbol{x}^{(i)}\rangle_{F}\right):=|\psi(\boldsymbol{x})\rangle
-```
+$$
+\xrightarrow{U_{D}(\boldsymbol{\gamma})}{} \frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes\left(\mathbb{I}_{2^{N_{A_{G}}}}\otimes U_{D}(\boldsymbol{\gamma})|\boldsymbol{x}^{(i)}\rangle_{F}\right):=|\psi(\boldsymbol{x})\rangle
+$$
 
-``` math
-\displaystyle\xrightarrow{\Pi_{A_{D}}}{} \displaystyle\frac{\mathbb{I}_{2^{N-N_{A_{D}}}}\otimes\Pi_{A_{G}}|\psi(\boldsymbol{x})\rangle}{\mathop{\text{Tr}}\left[\mathbb{I}_{2^{N-N_{A_{D}}}}\otimes\Pi_{A_{G}}|\psi(\boldsymbol{x})\rangle\langle\psi(\boldsymbol{x})|\right]}:=|D_{\boldsymbol{\gamma}}(\boldsymbol{x})\rangle,
-```
+$$
+\xrightarrow{\Pi_{A_{D}}}{} \frac{\mathbb{I}_{2^{N-N_{A_{D}}}}\otimes\Pi_{A_{G}}|\psi(\boldsymbol{x})\rangle}{\mathop{\text{Tr}}\left[\mathbb{I}_{2^{N-N_{A_{D}}}}\otimes\Pi_{A_{G}}|\psi(\boldsymbol{x})\rangle\langle\psi(\boldsymbol{x})|\right]}:=|D_{\boldsymbol{\gamma}}(\boldsymbol{x})\rangle,
+$$
 
 where the partial measurement is $`\Pi_{A_{G}}=(|0\rangle\langle 0|)^{\otimes N_{A_{D}}}`$. The classical description $`D_{\boldsymbol{\gamma}}(\boldsymbol{x})`$ is generated similarly to Eqn. ([4.36](#Ch4.E36 "Equation 4.36 ‣ Quantum batch GAN ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). The generated state $`G_{\boldsymbol{\theta}}|\boldsymbol{z}\rangle`$ undergoes the same procedure to obtain the description $`D_{\boldsymbol{\gamma}}(G_{\boldsymbol{\theta}}(\boldsymbol{z}))`$. These classical vectors are then used in the loss function in Eqn. ([4.33](#Ch4.E33 "Equation 4.33 ‣ Quantum patch GAN ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to train parameters $`\boldsymbol{\theta}`$ and $`\boldsymbol{\gamma}`$.
 
@@ -4033,27 +4033,27 @@ The expressivity and generalization are deeply interconnected within the framewo
 
 Consider the training dataset $`\mathcal{D}=\{(\boldsymbol{x}^{(i)},{y}^{(i)})\}_{i=1}^{n}\in\mathcal{X}\times\mathcal{Y}`$ sampled independently from an unknown distribution $`\mathcal{P}`$, a learning algorithm $`\mathcal{A}`$ aims to use the dataset $`\mathcal{D}`$ to infer a hypothesis $`h_{\boldsymbol{\theta}^{*}}:\mathcal{X}\to\mathcal{Y}`$ from the hypothesis space $`\mathcal{H}`$ that could accurately predict all labels of $`\boldsymbol{x}\in\mathcal{X}`$ following the distribution $`\mathcal{P}`$. This amounts to identifying an optimal hypothesis in $`\mathcal{H}`$ minimizing the expected risk
 
-``` math
+$$
 R(h)=\mathbb{E}_{(\boldsymbol{x},{y})\sim\mathcal{P}}\ell(h_{\boldsymbol{\theta}^{*}}(\boldsymbol{x}),{y}),
-```
+$$
 
 where $`\ell(\cdot,\cdot)`$ refers to the per-sample loss predefined by the learner. Unfortunately, the inaccessible distribution $`\mathcal{P}`$ forbids us to assess the expected risk directly. In practice, $`\mathcal{A}`$ alternatively learns an empirical hypothesis $`h_{\hat{\boldsymbol{\theta}}}\in\mathcal{H}`$, as the global minimizer of the (regularized) loss function
 
-``` math
+$$
 \mathcal{L}(\boldsymbol{\theta},\mathcal{D})=\frac{1}{n}\sum_{i=1}^{n}\ell(h_{\boldsymbol{\theta}}(\boldsymbol{x}^{(i)}),{y}^{(i)})+\mathcal{R}(\boldsymbol{\theta}),
-```
+$$
 
 where $`\mathcal{R}(\boldsymbol{\theta})`$ refers to an optional regularizer, as will be detailed in the following. Moreover, the first term on the right-hand side refers to the empirical risk
 
-``` math
+$$
 R_{\ERM}(h_{\hat{\boldsymbol{\theta}}})=\frac{1}{n}\sum_{i=1}^{n}\ell(h_{\hat{\boldsymbol{\theta}}}(\boldsymbol{x}^{(i)}),{y}^{(i)}),
-```
+$$
 
 which is also known as the training error. To address the intractability of $`R(h_{\hat{\boldsymbol{\theta}}})`$, one can decompose it into two measurable terms,
 
-``` math
+$$
 R(h_{\hat{\boldsymbol{\theta}}})=R_{\ERM}(h_{\hat{\boldsymbol{\theta}}})+R_{\Gene}(h_{\hat{\boldsymbol{\theta}}}),
-```
+$$
 
 where $`R_{\Gene}(h_{\hat{\boldsymbol{\theta}}})=R(h_{\hat{\boldsymbol{\theta}}})-R_{\ERM}(h_{\hat{\boldsymbol{\theta}}})`$ refers to the generalization error. In this regard, achieving a small prediction error requires the learning model to achieve both a small training error and a small generalization error.
 
@@ -4080,15 +4080,15 @@ In this chapter, we analyze the generalization error of QNNs through a specific 
 
 To elucidate the specific definition of the covering number, we first review the general structures of QNNs. Define $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$ as the $`N`$-qubit input quantum states, $`O\in\mathbb{C}^{2^{N}\times 2^{N}}`$ as the quantum observable, $`U(\boldsymbol{\theta})=\prod_{l=1}^{N_{g}}u_{l}(\boldsymbol{\theta})\in\mathcal{U}(2^{N})`$ as the applied ansatz, where $`\boldsymbol{\theta}\in\Theta`$ are the trainable parameters living in the parameter space $`\Theta`$, $`u_{l}(\boldsymbol{\theta})\in\mathcal{U}(2^{k})`$ refers to the $`l`$-th quantum gate operated with at most $`k`$-qubits with $`k\leq N`$, and $`\mathcal{U}(2^{N})`$ stands for the unitary group in dimension $`2^{N}`$. In general, $`U(\boldsymbol{\theta})`$ is formed by $`N_{gt}`$ trainable gates and $`N_{g}-N_{gt}`$ fixed gates, e.g., $`\Theta\subset[0,2\pi)^{N_{gt}}`$. Under the above definitions, the explicit form of the output of QNN under the ideal scenarios is
 
-``` math
+$$
 h(\boldsymbol{\theta},O,\rho):=\mathop{\text{Tr}}\left(U(\boldsymbol{\theta})^{\dagger}OU(\boldsymbol{\theta})\rho\right).
-```
+$$
 
 Given the training data set $`\mathcal{D}=\{(\rho^{(i)},{y}^{(i)})\}_{i=1}^{n}`$ and loss function $`\mathcal{L}(\boldsymbol{\theta},\mathcal{D})`$ defined in Eqn. ([4.39](#Ch4.E39 "Equation 4.39 ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), QNN is optimized to find a good approximation $`h^{*}(\boldsymbol{\theta},O,\rho)=\arg\min_{h(\boldsymbol{\theta},O,\rho)\in\mathcal{H}}\mathcal{L}(\boldsymbol{\theta},\mathcal{D})`$ that can well approximate the target concept, where $`\mathcal{H}`$ refers to the hypothesis space of QNNs with
 
-``` math
+$$
 \mathcal{H}=\left\{\mathop{\text{Tr}}\left(U(\boldsymbol{\theta})^{\dagger}OU(\boldsymbol{\theta})\rho\right)\Big|\boldsymbol{\theta}\in\Theta\right\}.
-```
+$$
 
 An intuition about how the hypothesis space $`\mathcal{H}`$ affects the performance of QNNs is depicted in Figure [4.9](#Ch4.F9 "Figure 4.9 ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). When $`\mathcal{H}`$ has a modest size and covers the target concepts, the estimated hypothesis could well approximate the target concept. By contrast, when the complexity of $`\mathcal{H}`$ is too low, there exists a large gap between the estimated hypothesis and the target concept. An effective measure to evaluate the complexity of $`\mathcal{H}`$ is covering number, an advanced tool broadly used in statistical learning theory, to bound the complexity of $`\mathcal{H}`$ and measure the expressivity of QNNs.
 
@@ -4105,9 +4105,9 @@ The geometric interpretation of the covering number is depicted in Figure [4.11
 
 Following the convention of [Du et al. (2022c)](#bib.bib201), we now give a step-by-step analysis of the model complexity of the hypothesis space $`\mathcal{H}`$ of QNNs defined in Eqn. ([4.43](#Ch4.E43 "Equation 4.43 ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). We will show that the covering number of QNNs is controlled by their structural factors, including the number of parameterized gates $`N_{gt}`$, the number of qubits $`k`$ the gates acting on, and the type of the quantum observable $`O`$. In the end, we first look at a simpler hypothesis space consisting of the operator group
 
-``` math
+$$
 \mathcal{H}_{\Circ}:=\left\{U(\boldsymbol{\theta})^{\dagger}OU(\boldsymbol{\theta})\big|\boldsymbol{\theta}\in\Theta\right\},
-```
+$$
 
 where we remove the factor of input states $`\rho`$ compared to the hypothesis space $`\mathcal{H}`$ related to QNNs. Actually, the covering number of $`\mathcal{H}`$ under the metric $`d`$ could be connected to the covering number of $`\mathcal{H}_{\Circ}`$ under the related metric $`d_{\Circ}`$ through employing their Lipschitz properties, which is encapsulated in the following Fact.
 
@@ -4115,15 +4115,15 @@ where we remove the factor of input states $`\rho`$ compared to the hypothesis s
 
 Let $`(\mathcal{H}_{1},d_{1})`$ and $`(\mathcal{H}_{2},d_{2})`$ be two metric spaces satisfying $`f:\mathcal{H}_{1}\to\mathcal{H}_{2}`$ be bi-Lipschitz such that
 
-``` math
+$$
 c_{l}d_{1}(\boldsymbol{x},\boldsymbol{z})\leq d_{2}(f(\boldsymbol{x}),f(\boldsymbol{z}))\leq c_{r}d_{1}(\boldsymbol{x},\boldsymbol{z}),~\forall\boldsymbol{x},\boldsymbol{z}\in\mathcal{H}_{1}.
-```
+$$
 
 Then their covering number obey
 
-``` math
+$$
 \mathcal{N}(\mathcal{H}_{1},2\epsilon/c_{l},d_{1})\leq\mathcal{N}(\mathcal{H}_{2},\epsilon,d_{2})\leq\mathcal{N}(\mathcal{H}_{1},\epsilon/c_{r},d_{1}),
-```
+$$
 
 where the left inequality requires $`\epsilon\leq c_{l}c_{u}/2`$ with $`c_{u}`$ being the upper bound of the distance between any two points in $`\mathcal{H}_{1}`$, namely, $`d_{1}(\boldsymbol{x},\boldsymbol{z})\leq c_{u}`$ for $`\boldsymbol{x},\boldsymbol{z}\in\mathcal{H}_{1}`$.
 
@@ -4133,9 +4133,9 @@ Fact [4.11](#Ch4.Thmtheorem11 "Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Ex
 
 Suppose that the employed $`N`$-qubit quantum circuit containing in total $`N_{g}`$ gates with $`N_{g}>N`$, each gate $`u_{i}(\boldsymbol{\theta})`$ acting on most $`k`$ qubits, and $`N_{gt}\leq N_{g}`$ gates in $`U(\boldsymbol{\theta})`$ are trainable. The $`\epsilon`$-covering number for the operator group $`\mathcal{H}_{\Circ}`$ in Eqn. ([4.44](#Ch4.E44 "Equation 4.44 ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) with respect to the operator-norm distance obeys
 
-``` math
+$$
 \mathcal{N}(\mathcal{H}_{\Circ},\epsilon,\|\cdot\|)\leq\left(\frac{7N_{gt}\|O\|}{\epsilon}\right)^{2^{2k}N_{gt}},
-```
+$$
 
 where $`\|O\|`$ denotes the operator norm of $`O`$.
 
@@ -4143,37 +4143,37 @@ where $`\|O\|`$ denotes the operator norm of $`O`$.
 
 To measure the covering number the operator group of $`\mathcal{H}_{\Circ}=\{U(\boldsymbol{\theta})^{\dagger}OU(\boldsymbol{\theta})\big|\boldsymbol{\theta}\in\Theta\}`$, one could first consider a fixed $`\epsilon`$-covering $`\mathcal{S}`$ for the set $`\mathcal{N}(U(2^{k}),\epsilon,\|\cdot\|)`$ of all possible gates and define the set
 
-``` math
+$$
 \tilde{\mathcal{S}}:=\left\{\prod_{i\in\{N_{gt}\}}{u}_{i}(\boldsymbol{\theta}_{i})\prod_{j\in\{N_{g}-N_{gt}\}}{u}_{j}\Big|{u}_{i}(\boldsymbol{\theta}_{i})\in\mathcal{S}\right\},
-```
+$$
 
 where $`{u}_{i}(\boldsymbol{\theta}_{i})`$ and $`{u}_{j}`$ specify the trainable and fixed quantum gates in the employed quantum circuit, respectively. Note that for any circuit $`{U}(\boldsymbol{\theta})=\prod_{i=1}^{N_{g}}{u}_{i}(\boldsymbol{\theta}_{i})`$, one can always find a $`{U}_{\epsilon}(\boldsymbol{\theta})\in\tilde{\mathcal{S}}`$ where each $`{u}_{i}(\boldsymbol{\theta}_{i})`$ of trainable gates is replaced with the nearest element in the covering set $`\mathcal{S}`$, and the discrepancy $`\|{U}(\boldsymbol{\theta})^{\dagger}O{U}(\boldsymbol{\theta})-{U}_{\epsilon}(\boldsymbol{\theta})^{\dagger}O{U}_{\epsilon}(\boldsymbol{\theta})\|`$ satisfies
 
-``` math
-\displaystyle\|{U}(\boldsymbol{\theta})^{\dagger}O{U}(\boldsymbol{\theta})-{U}_{\epsilon}(\boldsymbol{\theta})^{\dagger}O{U}_{\epsilon}(\boldsymbol{\theta})\|
-```
+$$
+\|{U}(\boldsymbol{\theta})^{\dagger}O{U}(\boldsymbol{\theta})-{U}_{\epsilon}(\boldsymbol{\theta})^{\dagger}O{U}_{\epsilon}(\boldsymbol{\theta})\|
+$$
 
-``` math
-\displaystyle\leq \displaystyle\|{U}-{U}_{\epsilon}\|\|O\|
-```
+$$
+\leq \|{U}-{U}_{\epsilon}\|\|O\|
+$$
 
-``` math
-\displaystyle\leq \displaystyle N_{gt}\|O\|\epsilon,
-```
+$$
+\leq N_{gt}\|O\|\epsilon,
+$$
 
 where the first inequality uses the triangle inequality, and the second inequality follows from $`\|{U}-{U}_{\epsilon}\|\leq N_{gt}\epsilon`$.
 
 Therefore, by Definition [4.10](#Ch4.Thmtheorem10 "Definition 4.10 (Covering number). ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), $`\tilde{\mathcal{S}}`$ forms an $`N_{gt}\|O\|\epsilon`$-covering set for $`\mathcal{H}_{\Circ}`$. An upper bound for the group $`\mathcal{S}`$, as established by [Barthel and Lu (2018, Lemma 1)](#bib.bib202), gives $`|\mathcal{S}|\leq\left(\frac{7}{\epsilon}\right)^{2^{2k}}`$. Since there are $`|\mathcal{S}|^{N_{gt}}`$ combinations for the gates in $`\tilde{\mathcal{S}}`$, it follows that $`|\tilde{\mathcal{S}}|\leq\left(\frac{7}{\epsilon}\right)^{2^{2k}N_{gt}}`$ and the covering number for $`\mathcal{H}_{\Circ}`$ satisfies
 
-``` math
+$$
 \mathcal{N}(\mathcal{H}_{\Circ},N_{gt}\|O\|\epsilon,\|\cdot\|)\leq\left(\frac{7}{\epsilon}\right)^{2^{2k}N_{gt}}.
-```
+$$
 
 An equivalent representation of the above inequality is
 
-``` math
+$$
 \mathcal{N}(\mathcal{H}_{\Circ},\epsilon,\|\cdot\|)\leq\left(\frac{7N_{gt}\|O\|}{\epsilon}\right)^{2^{2k}N_{gt}}.
-```
+$$
 
 ∎
 
@@ -4183,9 +4183,9 @@ With the established covering number of operator group $`\mathcal{H}_{\Circ}`$, 
 
 For $`0<\epsilon<1/10`$, the covering number of the hypothesis space $`\mathcal{H}`$ in Eqn. ([4.43](#Ch4.E43 "Equation 4.43 ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) yields
 
-``` math
+$$
 \mathcal{N}(\mathcal{H},\epsilon,|\cdot|)\leq\left(\frac{7N_{gt}\|O\|}{\epsilon}\right)^{2^{2k}N_{gt}},
-```
+$$
 
 where $`\|O\|`$ denotes the operator norm of $`O`$.
 
@@ -4195,43 +4195,43 @@ The intuition of the proof is as follows. Recall the definition of the hypothesi
 
 The Lipschitz constant $`c_{r}`$ in Eqn. ([4.45](#Ch4.E45 "Equation 4.45 ‣ Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived as a prerequisite for establishing the upper bound of $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$. Define $`{U}\in\mathcal{U}(2^{N})`$ as the employed quantum circuit composed of $`N_{g}`$ gates, i.e., $`{U}=\prod_{i=1}^{N_{g}}{u}_{l}`$. Let $`{U}_{\epsilon}`$ be the quantum circuit where each of the $`N_{g}`$ gates is replaced by the nearest element in the covering set. The relation between the distance $`d_{2}(\mathop{\text{Tr}}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}\rho),\mathop{\text{Tr}}({U}^{\dagger}O{U}\rho))`$ and the distance $`d_{1}({U}_{\epsilon},{U})`$ yields
 
-``` math
-\displaystyle d_{2}(\mathop{\text{Tr}}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}\rho),\mathop{\text{Tr}}({U}^{\dagger}O{U}\rho))
-```
+$$
+d_{2}(\mathop{\text{Tr}}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}\rho),\mathop{\text{Tr}}({U}^{\dagger}O{U}\rho))
+$$
 
-``` math
-\displaystyle= \displaystyle|\mathop{\text{Tr}}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}\rho)-\mathop{\text{Tr}}({U}^{\dagger}O{U}\rho)|
-```
+$$
+= |\mathop{\text{Tr}}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}\rho)-\mathop{\text{Tr}}({U}^{\dagger}O{U}\rho)|
+$$
 
-``` math
-\displaystyle= \displaystyle\left|\mathop{\text{Tr}}\left(({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}-{U}^{\dagger}O{U})\rho\right)\right|
-```
+$$
+= \left|\mathop{\text{Tr}}\left(({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}-{U}^{\dagger}O{U})\rho\right)\right|
+$$
 
-``` math
-\displaystyle\leq \displaystyle\left\|{U}_{\epsilon}^{\dagger}O{U}_{\epsilon}-{U}^{\dagger}O{U}\right\|\mathop{\text{Tr}}(\rho)
-```
+$$
+\leq \left\|{U}_{\epsilon}^{\dagger}O{U}_{\epsilon}-{U}^{\dagger}O{U}\right\|\mathop{\text{Tr}}(\rho)
+$$
 
-``` math
-\displaystyle= \displaystyle d_{1}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon},{U}^{\dagger}O{U}),
-```
+$$
+= d_{1}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon},{U}^{\dagger}O{U}),
+$$
 
 where the first equality comes from the explicit form of the hypothesis, the first inequality uses the Cauchy-Schwartz inequality, and the last inequality employs $`\mathop{\text{Tr}}(\rho)=1`$ and
 
-``` math
+$$
 \left\|{U}_{\epsilon}^{\dagger}O{U}_{\epsilon}-{U}^{\dagger}O{U}\right\|=d_{1}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon},{U}^{\dagger}O{U}).
-```
+$$
 
 The above equation indicates $`c_{r}=1`$. Combining the above result with Lemma [4.11](#Ch4.Thmtheorem11 "Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") (i.e., Eqn. ([4.45](#Ch4.E45 "Equation 4.45 ‣ Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"))) and Lemma [4.12](#Ch4.Thmtheorem12 "Lemma 4.12. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we obtain
 
-``` math
+$$
 \mathcal{N}(\mathcal{H},\epsilon,|\cdot|)\leq\mathcal{N}(\mathcal{H}_{\Circ},\epsilon,\|\cdot\|)\leq\left(\frac{7N_{gt}\|O\|}{\epsilon}\right)^{2^{2k}N_{gt}}.
-```
+$$
 
 This relation ensures
 
-``` math
+$$
 \mathcal{N}(\mathcal{H},\epsilon,|\cdot|)\leq\left(\frac{7N_{gt}\|O\|}{\epsilon}\right)^{2^{2k}N_{gt}}.
-```
+$$
 
 ∎
 
@@ -4245,23 +4245,23 @@ As the relation between generalization error and covering number is well-establi
 
 Assume that the loss function $`\ell`$ defined in Eqn. ([4.38](#Ch4.E38 "Equation 4.38 ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is $`L_{1}`$-Lipschitz and upper bounded by a constant $`C`$, the QNN-based learning algorithm outputs a hypothesis $`h_{\hat{\boldsymbol{\theta}}}`$ from the training dataset $`\mathcal{S}`$ of size $`n`$. Following the notations of risk $`R_{\Gene}(h_{\hat{\boldsymbol{\theta}}})=R(h_{\hat{\boldsymbol{\theta}}})-R_{\ERM}(h_{\hat{\boldsymbol{\theta}}})`$ defined in Eqn. ([4.41](#Ch4.E41 "Equation 4.41 ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), for $`0<\epsilon<1/10`$, with probability at least $`1-\delta`$ with $`\delta\in(0,1)`$, we have
 
-``` math
+$$
 R_{\Gene}(h_{\hat{\boldsymbol{\theta}}})\leq\mathcal{O}\left(\frac{8L+c+24L\sqrt{N_{gt}}\cdot 2^{k}}{\sqrt{n}}\right).
-```
+$$
 
 ###### Proof sketch of Theorem [4.14](#Ch4.Thmtheorem14 "Theorem 4.14. ‣ Generalization error of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
 Recall that the bound of generalization error in terms of Rademacher complexity has been established by [Kakade et al. (2008)](#bib.bib203) as follows
 
-``` math
+$$
 R_{\Gene}(h_{\hat{\boldsymbol{\theta}}})\leq 2L_{1}\mathcal{R}(\mathcal{H}_{QNN})+3C\sqrt{\frac{\ln(2/\delta)}{2n}},
-```
+$$
 
 where $`\mathcal{R}(\mathcal{H}_{QNN})`$ represents the empirical Rademacher complexity of the hypothesis space of QNNs. Furthermore, the relationship between Rademacher complexity and covering number can be derived using the Dudley entropy integral bound [Dudley (1967)](#bib.bib204), which is given by
 
-``` math
+$$
 \mathcal{R}(\mathcal{H})\leq\inf_{\alpha>0}\left(4\alpha+\frac{12}{\sqrt{n}}\int_{\alpha}^{1}\sqrt{\ln\mathcal{N}(\mathcal{H}_{|\mathcal{S}},\epsilon,\|\cdot\|_{2})}\mathrm{d}\epsilon\right),
-```
+$$
 
 where $`\mathcal{H}_{|\mathcal{S}}`$ denotes the set of vectors formed by the hypothesis with $`n`$ examples in the dataset $`\mathcal{S}`$. In this regard, the generalization error bound in Eqn. ([4.57](#Ch4.E57 "Equation 4.57 ‣ Theorem 4.14. ‣ Generalization error of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) could be obtained by combining the Eqn. ([4.58](#Ch4.E58 "Equation 4.58 ‣ Proof sketch of Theorem . ‣ Generalization error of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Eqn. ([4.59](#Ch4.E59 "Equation 4.59 ‣ Proof sketch of Theorem . ‣ Generalization error of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) with direct but tedious calculations, which is omitted here. For details of the calculations, please refer to the proof of Theorem 2 in [Du et al. (2022c)](#bib.bib201). ∎
 
@@ -4273,15 +4273,15 @@ The parameters in QNNs are often trained using gradient-based optimizers. As suc
 
 We begin by introducing some basic notations. For convenience, let $`L`$ denote the number of parameters in the QNN $`V(\boldsymbol{\theta})`$. Consider the loss function defined as the measurement outcome of an $`N`$-qubit quantum state $`\rho`$ after applying the QNN operation, i.e.,
 
-``` math
+$$
 f(\boldsymbol{\theta})=\mathop{\text{Tr}}\left[OV(\boldsymbol{\theta})\rho V(\boldsymbol{\theta})^{\dagger}\right],
-```
+$$
 
 Then, the mathematical formulation of the BP phenomenon is given by
 
-``` math
+$$
 \mathbb{E}_{\mathcal{P}}\left[\frac{\partial f}{\partial\theta_{k}}\right]=0,\quad{\rm Var}_{\mathcal{P}}\left[\frac{\partial f}{\partial\theta_{k}}\right]=\exp(-\alpha N)\cdot\beta,
-```
+$$
 
 where $`\mathcal{P}`$ represents the probability distribution of the quantum circuit, and $`\alpha,\beta>0`$ are constants. In the case where the circuit $`V(\boldsymbol{\theta})`$ has a random structure with a polynomial number of single-qubit rotations and CNOT or CZ gates in $`N`$, a uniform distribution over the parameter space can approximate a 2-design for the unitary $`V(\boldsymbol{\theta})`$ ([Harrow and Low, 2009](#bib.bib209); [Haferkamp, 2022](#bib.bib210)). Moreover, a unitary sampled from an exact 2-design exhibits the following statistical properties.
 
@@ -4289,33 +4289,33 @@ where $`\mathcal{P}`$ represents the probability distribution of the quantum cir
 
 Let $`\{W_{y}\}_{y\in Y}\subset\mathcal{U}(d)`$ form a unitary $`2`$-design, and let $`A,B,C,D:\mathcal{H}_{w}\rightarrow\mathcal{H}_{w}`$ be arbitrary linear operator. Then
 
-``` math
-\displaystyle\frac{1}{|Y|}\sum_{y\in Y}\mathop{\text{Tr}}[W_{y}AW_{y}^{\dagger}B]=\frac{\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[B]}{d},
-```
+$$
+\frac{1}{|Y|}\sum_{y\in Y}\mathop{\text{Tr}}[W_{y}AW_{y}^{\dagger}B]=\frac{\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[B]}{d},
+$$
 
-``` math
-\displaystyle\frac{1}{|Y|}\sum_{y\in Y}\mathop{\text{Tr}}[W_{y}AW_{y}^{\dagger}B]\mathop{\text{Tr}}[W_{y}CW_{y}^{\dagger}D]
-```
+$$
+\frac{1}{|Y|}\sum_{y\in Y}\mathop{\text{Tr}}[W_{y}AW_{y}^{\dagger}B]\mathop{\text{Tr}}[W_{y}CW_{y}^{\dagger}D]
+$$
 
-``` math
-\displaystyle={} \displaystyle\frac{1}{d^{2}-1}\left(\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[D]\right)
-```
+$$
+={} \frac{1}{d^{2}-1}\left(\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[D]\right)
+$$
 
-``` math
-\displaystyle-{} \displaystyle\frac{1}{d(d^{2}-1)}\left(\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[D]\right),
-```
+$$
+-{} \frac{1}{d(d^{2}-1)}\left(\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[D]\right),
+$$
 
-``` math
-\displaystyle\frac{1}{|Y|}\sum_{y\in Y}\mathop{\text{Tr}}[W_{y}AW_{y}^{\dagger}BW_{y}CW_{y}^{\dagger}D]
-```
+$$
+\frac{1}{|Y|}\sum_{y\in Y}\mathop{\text{Tr}}[W_{y}AW_{y}^{\dagger}BW_{y}CW_{y}^{\dagger}D]
+$$
 
-``` math
-\displaystyle={} \displaystyle\frac{1}{d^{2}-1}\left(\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[D]\right)
-```
+$$
+={} \frac{1}{d^{2}-1}\left(\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[D]\right)
+$$
 
-``` math
-\displaystyle-{} \displaystyle\frac{1}{d(d^{2}-1)}\left(\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[D]\right).
-```
+$$
+-{} \frac{1}{d(d^{2}-1)}\left(\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[D]\right).
+$$
 
 Fact [4.15](#Ch4.Thmtheorem15 "Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") can be derived from Facts [C.4](#A3.Thmtheorem4 "Fact C.4 (Average over unitary 1-design ( , )). ‣ Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [C.5](#A3.Thmtheorem5 "Fact C.5 (Average over unitary 2-design ( , )). ‣ Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") in Appendix [C](#A3 "Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which provides a more detailed discussion of unitary designs, potentially of independent interest. By applying Fact [4.15](#Ch4.Thmtheorem15 "Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), it can be shown that QNNs with quantum circuits forming $`2`$-designs exhibit barren plateau loss landscapes.
 
@@ -4323,119 +4323,119 @@ Fact [4.15](#Ch4.Thmtheorem15 "Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of qua
 
 Consider the loss function given in Eqn. ([4.60](#Ch4.E60 "Equation 4.60 ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), where the QNN $`V(\boldsymbol{\theta})=\prod_{j=1}^{L}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$ with fixed gate $`W_{j}`$ and variational gate $`V_{j}(\boldsymbol{\theta}_{j})=\exp(-i\boldsymbol{\theta}_{j}H_{j}/2)`$. Suppose all hermitian matrices $`\{H_{j}\}`$ are traceless. For a integer $`k\in[1,L]`$, denote $`U_{-}=\prod_{j=1}^{k-1}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$ and $`U_{+}=\prod_{j=k+1}^{L}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$. Then, if both $`U_{-}`$ and $`U_{+}`$ form $`2`$-designs, there is
 
-``` math
-\displaystyle\mathbb{E}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]=0,\quad{\rm Var}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]\approx{} \displaystyle\frac{1}{2^{3N+1}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}\left[H_{j}^{2}\right].
-```
+$$
+\mathbb{E}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]=0,\quad{\rm Var}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]\approx{} \frac{1}{2^{3N+1}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}\left[H_{j}^{2}\right].
+$$
 
 ###### Proof of Theorem [4.16](#Ch4.Thmtheorem16 "Theorem 4.16 (Adapted from ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
 By using notations $`U_{-}`$ and $`U_{+}`$, the function $`f(\boldsymbol{\theta})`$ in Eqn. ([4.60](#Ch4.E60 "Equation 4.60 ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) can be expressed as:
 
-``` math
-\displaystyle f={} \displaystyle\mathop{\text{Tr}}\left[OV\rho V^{\dagger}\right]
-```
+$$
+f={} \mathop{\text{Tr}}\left[OV\rho V^{\dagger}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\mathop{\text{Tr}}\left[OU_{-}V_{k}W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}V_{k}^{\dagger}U_{-}^{\dagger}\right]
-```
+$$
+={} \mathop{\text{Tr}}\left[OU_{-}V_{k}W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}V_{k}^{\dagger}U_{-}^{\dagger}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\mathop{\text{Tr}}\left[U_{-}^{\dagger}OU_{-}V_{k}W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}V_{k}^{\dagger}\right]
-```
+$$
+={} \mathop{\text{Tr}}\left[U_{-}^{\dagger}OU_{-}V_{k}W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}V_{k}^{\dagger}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\mathop{\text{Tr}}\left[O^{\prime}\exp(-i\boldsymbol{\theta}_{k}H_{k}/2)\rho^{\prime}\exp(i\boldsymbol{\theta}_{k}H_{k}/2)\right],
-```
+$$
+={} \mathop{\text{Tr}}\left[O^{\prime}\exp(-i\boldsymbol{\theta}_{k}H_{k}/2)\rho^{\prime}\exp(i\boldsymbol{\theta}_{k}H_{k}/2)\right],
+$$
 
 where $`O^{\prime}:=U_{-}^{\dagger}OU_{-}`$ and $`\rho^{\prime}:=W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}`$. Thus, the gradient could be calculated as
 
-``` math
-\displaystyle\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}={} \displaystyle\frac{i}{2}\mathop{\text{Tr}}\left[O^{\prime}\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right].
-```
+$$
+\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}={} \frac{i}{2}\mathop{\text{Tr}}\left[O^{\prime}\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right].
+$$
 
 The expectation of the gradient is zero since
 
-``` math
-\displaystyle\mathop{\mathbb{E}}_{U_{+},U_{-}}\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}={} \displaystyle\mathbb{E}\frac{i}{2}\mathop{\text{Tr}}\left[O^{\prime}\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right]
-```
+$$
+\mathop{\mathbb{E}}_{U_{+},U_{-}}\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}={} \mathbb{E}\frac{i}{2}\mathop{\text{Tr}}\left[O^{\prime}\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\mathop{\mathbb{E}}_{U_{+},U_{-}}\frac{i}{2}\mathop{\text{Tr}}\left[U_{-}^{\dagger}OU_{-}\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right]
-```
+$$
+={} \mathop{\mathbb{E}}_{U_{+},U_{-}}\frac{i}{2}\mathop{\text{Tr}}\left[U_{-}^{\dagger}OU_{-}\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\mathop{\mathbb{E}}_{U_{+}}\frac{i}{2^{N+1}}\mathop{\text{Tr}}\left[O\right]\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right]
-```
+$$
+={} \mathop{\mathbb{E}}_{U_{+}}\frac{i}{2^{N+1}}\mathop{\text{Tr}}\left[O\right]\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle 0,
-```
+$$
+={} 0,
+$$
 
 where Eqn. ([4.66](#Ch4.E66 "Equation 4.66 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from Eqn. ([4.62](#Ch4.E62 "Equation 4.62 ‣ Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), and Eqn. ([4.67](#Ch4.E67 "Equation 4.67 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by noticing $`\mathop{\text{Tr}}[[A,B]]=\mathop{\text{Tr}}[AB-BA]=0`$. Therefore, the variance of the gradient equals to the expectation of its square, i.e.,
 
-``` math
-\displaystyle\mathop{{\rm Var}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]={} \displaystyle\mathop{\mathbb{E}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]^{2}
-```
+$$
+\mathop{{\rm Var}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]={} \mathop{\mathbb{E}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]^{2}
+$$
 
-``` math
-\displaystyle={} \displaystyle-\frac{1}{4}\mathbb{E}_{U_{+},U_{-}}\mathop{\text{Tr}}\left[U_{-}^{\dagger}OU_{-}\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right]^{2}
-```
+$$
+={} -\frac{1}{4}\mathbb{E}_{U_{+},U_{-}}\mathop{\text{Tr}}\left[U_{-}^{\dagger}OU_{-}\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]\right]^{2}
+$$
 
-``` math
-\displaystyle={} \displaystyle-\frac{1}{4\times(2^{2N}-1)}\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right]
-```
+$$
+={} -\frac{1}{4\times(2^{2N}-1)}\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right]
+$$
 
-``` math
-\displaystyle+{} \displaystyle\frac{1}{2^{N+2}\left(2^{2N}-1\right)}\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[O\right]^{2}\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right]
-```
+$$
++{} \frac{1}{2^{N+2}\left(2^{2N}-1\right)}\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[O\right]^{2}\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle-\frac{1}{4\times\left(2^{2N}-1\right)}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right],
-```
+$$
+={} -\frac{1}{4\times\left(2^{2N}-1\right)}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right],
+$$
 
 where Eqn. ([4.68](#Ch4.E68 "Equation 4.68 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from Eqn. ([4.63](#Ch4.E63 "Equation 4.63 ‣ Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), and Eqn. ([4.69](#Ch4.E69 "Equation 4.69 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from $`{\rm Tr}[O]=0`$. Further, it can be shown that
 
-``` math
-\displaystyle\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right]
-```
+$$
+\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle 2\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left(V_{k}\rho^{\prime}V_{k}^{\dagger}H_{k}\right)^{2}\right]-2\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left(V_{k}\rho^{\prime}V_{k}^{\dagger}\right)^{2}\left(H_{k}\right)^{2}\right]
-```
+$$
+={} 2\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left(V_{k}\rho^{\prime}V_{k}^{\dagger}H_{k}\right)^{2}\right]-2\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left(V_{k}\rho^{\prime}V_{k}^{\dagger}\right)^{2}\left(H_{k}\right)^{2}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle 2\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left(V_{k}W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}V_{k}^{\dagger}H_{k}\right)^{2}\right]
-```
+$$
+={} 2\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left(V_{k}W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}V_{k}^{\dagger}H_{k}\right)^{2}\right]
+$$
 
-``` math
-\displaystyle-{} \displaystyle 2\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left(V_{k}W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}V_{k}^{\dagger}\right)^{2}\left(H_{k}\right)^{2}\right]
-```
+$$
+-{} 2\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left(V_{k}W_{k}U_{+}\rho U_{+}^{\dagger}W_{k}^{\dagger}V_{k}^{\dagger}\right)^{2}\left(H_{k}\right)^{2}\right]
+$$
 
-``` math
-\displaystyle={} \displaystyle\frac{2}{2^{2N}-1}\left\{\mathop{\text{Tr}}[\rho]^{2}\mathop{\text{Tr}}[H_{k}^{2}]+\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}[H_{k}]^{2}\right\}
-```
+$$
+={} \frac{2}{2^{2N}-1}\left\{\mathop{\text{Tr}}[\rho]^{2}\mathop{\text{Tr}}[H_{k}^{2}]+\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}[H_{k}]^{2}\right\}
+$$
 
-``` math
-\displaystyle-{} \displaystyle\frac{2}{2^{N}(2^{2N}-1)}\left\{\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}\left[H_{k}^{2}\right]+\mathop{\text{Tr}}[\rho]^{2}\mathop{\text{Tr}}[H_{k}]^{2}\right\}
-```
+$$
+-{} \frac{2}{2^{N}(2^{2N}-1)}\left\{\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}\left[H_{k}^{2}\right]+\mathop{\text{Tr}}[\rho]^{2}\mathop{\text{Tr}}[H_{k}]^{2}\right\}
+$$
 
-``` math
-\displaystyle-{} \displaystyle\frac{2}{2^{N}}\mathop{\text{Tr}}\left[H_{k}^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]
-```
+$$
+-{} \frac{2}{2^{N}}\mathop{\text{Tr}}\left[H_{k}^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]
+$$
 
-``` math
-\displaystyle\approx{} \displaystyle-\frac{2^{N+1}}{2^{2N}-1}\mathop{\text{Tr}}\left[H_{k}^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right],
-```
+$$
+\approx{} -\frac{2^{N+1}}{2^{2N}-1}\mathop{\text{Tr}}\left[H_{k}^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right],
+$$
 
 where Eqn. ([4.70](#Ch4.E70 "Equation 4.70 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from Eqn. ([4.62](#Ch4.E62 "Equation 4.62 ‣ Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Eqn. ([4.64](#Ch4.E64 "Equation 4.64 ‣ Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Eqn. ([4.71](#Ch4.E71 "Equation 4.71 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by ignoring minor terms and using $`{\rm Tr}[H_{k}]=0`$. Combining Eqn. ([4.69](#Ch4.E69 "Equation 4.69 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Eqn. ([4.71](#Ch4.E71 "Equation 4.71 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it can be shown that
 
-``` math
-\displaystyle\mathop{{\rm Var}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]\approx{} \displaystyle\frac{2^{N}}{2\times\left(2^{2N}-1\right)^{2}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[H_{k}^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]
-```
+$$
+\mathop{{\rm Var}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]\approx{} \frac{2^{N}}{2\times\left(2^{2N}-1\right)^{2}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[H_{k}^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]
+$$
 
-``` math
-\displaystyle\approx{} \displaystyle\frac{1}{2^{3N+1}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}\left[H_{k}^{2}\right].
-```
+$$
+\approx{} \frac{1}{2^{3N+1}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}\left[H_{k}^{2}\right].
+$$
 
 Thus, Theorem [4.16](#Ch4.Thmtheorem16 "Theorem 4.16 (Adapted from ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is proved.
 
@@ -4449,17 +4449,17 @@ Since the barren plateau could seriously affect the trainability of scaled QNNs 
 
 Suppose the observable has a local form in the Pauli basis decomposition. For QNNs employing $`N`$-qubit shallow hardware-efficient circuits with logarithmic depths, the variance of the gradient has the lower bound
 
-``` math
+$$
 {\rm Var}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]\geq\Omega\left(\frac{1}{{\rm poly}(N)}\right).
-```
+$$
 
 ###### Fact 4.18 (Gaussian initializations help to escape the BP region, informal version adapted from [Zhang et al. (2022b)](#bib.bib215)).
 
 Suppose the observable is the tensor product of Pauli matrices $`\sigma_{\boldsymbol{i}}=\sigma_{i_{1}}\otimes\cdots\otimes\sigma_{i_{N}}`$, where the number of non-identity matrices in $`\{\sigma_{i_{1}},\cdots,\sigma_{i_{N}}\}`$ is $`S`$. For QNNs employing $`N`$-qubit shallow hardware-efficient circuits with the depth $`L`$, the gradient norm has the lower bound
 
-``` math
+$$
 \mathop{\mathbb{E}}\limits_{\boldsymbol{\theta}}\|\nabla_{\boldsymbol{\theta}}f\|^{2}\geq\frac{L}{S^{S}(L+2)^{S+1}}{\rm Tr}\left[\sigma_{\boldsymbol{j}}\rho_{\rm in}\right]^{2},
-```
+$$
 
 where $`S`$ is the number of non-zero elements in $`\boldsymbol{i}`$, and the index $`\boldsymbol{j}=(j_{1},j_{2},\cdots,j_{N})`$ such that $`j_{m}=0,\forall i_{m}=0`$ and $`j_{m}=3,\forall i_{m}\neq 0`$. The expectation is taken with the Gaussian distribution $`\mathcal{N}\left(0,\frac{1}{4S(L+2)}\right)`$ for the parameters $`\boldsymbol{\theta}`$.
 
@@ -5383,9 +5383,9 @@ To handle sequential data, such as natural language, Transformers employ tokeniz
 
 For Transformer, tokens are mapped to high-dimensional real vector representations via embedding ([Vaswani, 2017](#bib.bib100)), as highlighted by the solid box “Embeddings/Projections” in Figure [5.1](#Ch5.F1 "Figure 5.1 ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Let $`d_{\mathrm{token}}`$ denote the dictionary’s token count and $`d_{\mathrm{model}}`$ represent the embedding vector dimension. We define the set containing all token embedding vectors in the dictionary as
 
-``` math
+$$
 \mathcal{W}\coloneqq\{\mathcal{W}_{j}\in\mathbb{R}^{d_{\mathrm{model}}}:\mathcal{W}_{j}\text{ is the embedding of token }j\in[d_{\mathrm{token}}]\}.
-```
+$$
 
 An $`\ell`$-length sentence is represented as a sequence of vectors $`\{S_{j}\}_{j=1}^{\ell}`$, where $`S_{j}\in\mathcal{W}`$. Mathematically, this sequence can be interpreted as a real matrix $`S\in\mathbb{R}^{\ell\times d_{\mathrm{model}}}`$ whose $`j`$-th row $`S_{j}`$ representing the $`j`$-th token.
 
@@ -5413,18 +5413,18 @@ Given a sequence $`S\in\mathbb{R}^{\ell\times d}`$, we define the three new matr
 
 The attention block computes the matrix $`G^{\mathrm{soft}}\in\mathbb{R}^{\ell\times d}`$ via
 
-``` math
-\displaystyle\mathrm{Attention}(Q,K,V)=\mathrm{softmax}(QK^{\top}/\alpha_{0})V\eqqcolon G^{\mathrm{soft}},
-```
+$$
+\mathrm{Attention}(Q,K,V)=\mathrm{softmax}(QK^{\top}/\alpha_{0})V\eqqcolon G^{\mathrm{soft}},
+$$
 
 where $`\alpha_{0}>0`$ is a scaling factor, and $`\mathrm{softmax}(\cdot)`$ is a row-wise nonlinear transformation such that $`\mathrm{softmax}(\boldsymbol{z})_{j}\coloneqq e^{\boldsymbol{z}_{j}}/(\sum_{k\in[\ell]}e^{\boldsymbol{z}_{k}})`$ for $`\boldsymbol{z}\in\mathbb{R}^{\ell}`$ and $`j\in[\ell]`$. The row-wise softmax application ensures the controlled attention distribution. The scaling factor $`\alpha_{0}=\sqrt{d}`$ empirically prevents excessive value amplification, particularly when input matrix rows have zero mean and unit standard deviation.
 
 For decoder-only architectures, masked self-attention is employed, strategically hiding tokens subsequent to the current query token, i.e.,
 
-``` math
-\displaystyle M_{jk}=\begin{cases}0&\quad k\leq j,\\
+$$
+M_{jk}=\begin{cases}0&\quad k\leq j,\\
 -\infty&\quad k>j.\end{cases}
-```
+$$
 
 Conceptually, the mask $`M`$ is applied to the scaled dot product $`QK^{\top}/\alpha_{0}`$ in Eq. ([5.1](#Ch5.E1 "Equation 5.1 ‣ 5.1.2 Self-attention ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) before the softmax operation. Specifically, the matrix in the softmax operation is modified as $`QK^{\top}/\alpha_{0}+M`$.
 
@@ -5438,15 +5438,15 @@ Residual connections (the arrows bypassing the main components, such as the atte
 
 For the $`j`$-th token in an $`\ell`$-length sentence, the residual connection generates $`G^{\mathrm{soft}}_{j}+S_{j}\in\mathbb{R}^{d}`$ for $`\forall j\in[\ell]`$, which is subsequently normalized to standardize the vector representation. Let
 
-``` math
+$$
 \bar{s}_{j}:=\frac{1}{d}(\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}),\dots,\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}))\in\mathbb{R}^{d},
-```
+$$
 
 where $`\varsigma:=\sqrt{\frac{1}{d}\sum_{k=1}^{d}((G^{\mathrm{soft}}_{j}+S_{j}-\bar{s}_{j})_{k})^{2}}`$. The complete residual connection with the layer normalization $`\mathrm{LN}(\cdot,\cdot)`$ can be expressed as
 
-``` math
-\displaystyle\mathrm{LN}_{\gamma,\beta}(G^{\mathrm{soft}}_{j},S_{j})=\gamma\frac{G^{\mathrm{soft}}_{j}+S_{j}-\bar{s}_{j}}{\varsigma}+\beta,
-```
+$$
+\mathrm{LN}_{\gamma,\beta}(G^{\mathrm{soft}}_{j},S_{j})=\gamma\frac{G^{\mathrm{soft}}_{j}+S_{j}-\bar{s}_{j}}{\varsigma}+\beta,
+$$
 
 where $`\gamma`$ and $`\beta`$ denote the scale and bias parameters, respectively.
 
@@ -5454,15 +5454,15 @@ where $`\gamma`$ and $`\beta`$ denote the scale and bias parameters, respectivel
 
 Recall the definitions of fully-connected neural networks (FFN) in Chapter [4.1](#Ch4.S1 "4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Transformers employ a two-layer fully connected transformation (yellow box in Figure [5.1](#Ch5.F1 "Figure 5.1 ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to proceed with the output of residual connection, i.e.,
 
-``` math
-\displaystyle\mathrm{FFN}(\mathrm{LN}(z_{j},S_{j}))=\sigma(\mathrm{LN}(G^{\mathrm{soft}}_{j},S_{j})M_{1}+b_{1})M_{2}+b_{2},
-```
+$$
+\mathrm{FFN}(\mathrm{LN}(z_{j},S_{j}))=\sigma(\mathrm{LN}(G^{\mathrm{soft}}_{j},S_{j})M_{1}+b_{1})M_{2}+b_{2},
+$$
 
 where $`M_{1}\in\mathbb{R}^{d\times d^{\prime}},M_{2}\in\mathbb{R}^{d^{\prime}\times d}`$ are linear transformation matrices, and $`b_{1},b_{2}`$ are vectors. In most practical cases, $`d^{\prime}=4d`$. Here $`\sigma(x)`$ is an activation function, such as $`\tanh(x)`$ and $`\mathrm{ReLU}(x)=\max(0,x)`$. Another activation function that has been widely used in Transformers is the Gaussian Error Linear Units function (GELU), i.e.,
 
-``` math
-\displaystyle\mathrm{GELU}(x)=x\cdot\frac{1}{2}\left(1+\mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right).
-```
+$$
+\mathrm{GELU}(x)=x\cdot\frac{1}{2}\left(1+\mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right).
+$$
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2g1LlMxLlNTNC5wMi5waWMxIiBjbGFzcz0ibHR4X3BpY3R1cmUiIGhlaWdodD0iMTYyLjQiIG92ZXJmbG93PSJ2aXNpYmxlIiB2ZXJzaW9uPSIxLjEiIHZpZXdib3g9IjAgMCA0NzcuMzggMTYyLjQiIHdpZHRoPSI0NzcuMzgiPjxnIHN0eWxlPSItLWx0eC1zdHJva2UtY29sb3I6IzAwMDAwMDstLWx0eC1maWxsLWNvbG9yOiMwMDAwMDA7IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC40cHQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTYyLjQpIG1hdHJpeCgxIDAgMCAtMSAwIDApIj48ZyBzdHlsZT0iLS1sdHgtZmlsbC1jb2xvcjojMDAwMEJGOyIgZmlsbD0iIzAwMDBCRiIgZmlsbC1vcGFjaXR5PSIxLjAiPjxwYXRoIHN0eWxlPSJzdHJva2U6bm9uZSIgZD0iTSAwIDUuOTEgTCAwIDE1Ni40OSBDIDAgMTU5Ljc1IDIuNjQgMTYyLjQgNS45MSAxNjIuNCBMIDQ3MS40NyAxNjIuNCBDIDQ3NC43MyAxNjIuNCA0NzcuMzggMTU5Ljc1IDQ3Ny4zOCAxNTYuNDkgTCA0NzcuMzggNS45MSBDIDQ3Ny4zOCAyLjY0IDQ3NC43MyAwIDQ3MS40NyAwIEwgNS45MSAwIEMgMi42NCAwIDAgMi42NCAwIDUuOTEgWiIgLz48L2c+PGcgc3R5bGU9Ii0tbHR4LWZpbGwtY29sb3I6I0YyRjJGRjsiIGZpbGw9IiNGMkYyRkYiIGZpbGwtb3BhY2l0eT0iMS4wIj48cGF0aCBzdHlsZT0ic3Ryb2tlOm5vbmUiIGQ9Ik0gMS45NyA1LjkxIEwgMS45NyAxMzguMjkgTCA0NzUuNDEgMTM4LjI5IEwgNDc1LjQxIDUuOTEgQyA0NzUuNDEgMy43MyA0NzMuNjUgMS45NyA0NzEuNDcgMS45NyBMIDUuOTEgMS45NyBDIDMuNzMgMS45NyAxLjk3IDMuNzMgMS45NyA1LjkxIFoiIC8+PC9nPjxnIGZpbGwtb3BhY2l0eT0iMS4wIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjAgMC4wIDAuMCAxLjAgMjEuNjUgMTQ2Ljg4KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjAuNjllbTstLWx0eC1mby1kZXB0aDowLjE5ZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9IjEyLjMiIG92ZXJmbG93PSJ2aXNpYmxlIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAwIDkuNjEpIiB3aWR0aD0iNDM0LjA3Ij48c3BhbiBjbGFzcz0ibHR4X2ZvcmVpZ25vYmplY3RfY29udGFpbmVyIj48c3BhbiBjbGFzcz0ibHR4X2ZvcmVpZ25vYmplY3RfY29udGVudCI+CjxzcGFuIGlkPSJDaDUuUzEuU1M0LnAyLnBpYzEuMSIgY2xhc3M9Imx0eF9pbmxpbmUtYmxvY2sgbHR4X21pbmlwYWdlIGx0eF9hbGlnbl9ib3R0b20iIHN0eWxlPSJ3aWR0aDozMS4zN2VtOyI+CjxzcGFuIGlkPSJDaDUuUzEuU1M0LnAyLnBpYzEuMS4xIiBjbGFzcz0ibHR4X3AiPjxzcGFuIGlkPSJDaDUuUzEuU1M0LnAyLnBpYzEuMS4xLjEiIGNsYXNzPSJsdHhfdGV4dCIgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiNGRkZGRkY7Ij5TaW5nbGUtaGVhZCBhbmQgc2luZ2xlLWJsb2NrIFRyYW5zZm9ybWVyPC9zcGFuPjwvc3Bhbj4KPC9zcGFuPjwvc3Bhbj48L3NwYW4+PC9mb3JlaWdub2JqZWN0PjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDE2LjQ3KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjcuOTVlbTstLWx0eC1mby1kZXB0aDowLjE5ZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9IjExMi43IiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCAxMTAuMDEpIiB3aWR0aD0iNDM0LjA3Ij48c3BhbiBjbGFzcz0ibHR4X2ZvcmVpZ25vYmplY3RfY29udGFpbmVyIj48c3BhbiBjbGFzcz0ibHR4X2ZvcmVpZ25vYmplY3RfY29udGVudCI+CjxzcGFuIGlkPSJDaDUuUzEuU1M0LnAyLnBpYzEuMiIgY2xhc3M9Imx0eF9pbmxpbmUtYmxvY2sgbHR4X21pbmlwYWdlIGx0eF9hbGlnbl9ib3R0b20iIHN0eWxlPSJ3aWR0aDozMS4zN2VtOyI+CjxzcGFuIGlkPSJDaDUuUzEuU1M0LnAyLnBpYzEuMi4xIiBjbGFzcz0ibHR4X3AiPjxzcGFuIGlkPSJDaDUuUzEuU1M0LnAyLnBpYzEuMi4xLjEiIGNsYXNzPSJsdHhfdGV4dCIgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7Ij5CeSBpbnRlZ3JhdGluZyBhbGwgaW5ncmVkaWVudHMgaW50cm9kdWNlZCBpbiBDaGFwdGVyc8KgPGEgaHJlZj0iI0NoNS5TMS5TUzEiIHRpdGxlPSI1LjEuMSBUb2tlbml6YXRpb24gYW5kIGVtYmVkZGluZyDigKMgNS4xIENsYXNzaWNhbCBUcmFuc2Zvcm1lciDigKMgQ2hhcHRlciA1IFF1YW50dW0gVHJhbnNmb3JtZXIg4oCjIFF1YW50dW0gTWFjaGluZSBMZWFybmluZ0EgSGFuZHMtb24gVHV0b3JpYWwgZm9yIE1hY2hpbmUgTGVhcm5pbmcgUHJhY3RpdGlvbmVycyBhbmQgUmVzZWFyY2hlcnMiIGNsYXNzPSJsdHhfcmVmIj48c3BhbiBjbGFzcz0ibHR4X3RleHQgbHR4X3JlZl90YWciPjUuMS4xPC9zcGFuPjwvYT4sIHdlIHJlYWNoIG91dCB0aGUgZXhwbGljaXQgZm9ybSBvZiBzaW5nbGUtaGVhZCBhbmQgc2luZ2xlLWJsb2NrIFRyYW5zZm9ybWVyLCBpLmUuLDwvc3Bhbj48L3NwYW4+CjxzcGFuIGlkPSJDaDUuUzEuRUd4ODMiIGNsYXNzPSJsdHhfZXF1YXRpb25ncm91cCBsdHhfZXFuX2FsaWduIGx0eF9lcW5fdGFibGUiPgoKPHNwYW4gaWQ9IkNoNS5FNSI+PHNwYW4gY2xhc3M9Imx0eF9lcXVhdGlvbiBsdHhfZXFuX3JvdyBsdHhfYWxpZ25fYmFzZWxpbmUiPgo8c3BhbiBjbGFzcz0ibHR4X2Vxbl9jZWxsIGx0eF9lcW5fY2VudGVyX3BhZGxlZnQiPjwvc3Bhbj4KPHNwYW4gY2xhc3M9Imx0eF90ZCBsdHhfYWxpZ25fcmlnaHQgbHR4X2Vxbl9jZWxsIj48bWF0aCBpZD0iQ2g1LkU1Lm0xIiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9IlxkaXNwbGF5c3R5bGVcbWF0aHJte1RyYW5zZm9ybWVyfShTLGopOj1cbWF0aHJte0xOfShcbWF0aHJte0ZGTn0oXG1hdGhybXtMTn0oXG1hdGhybXtBdHRlbnRpb259KFMsaikpKSkuIiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1yb3c+PG1yb3c+PG1yb3c+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5UcmFuc2Zvcm1lcjwvbWk+PG1vPuKBoTwvbW8+PG1yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPig8L21vPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+UzwvbWk+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4sPC9tbz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPmo8L21pPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4pPC9tbz48L21yb3c+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+Oj08L21vPjxtcm93PjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+TE48L21pPjxtbz7igaE8L21vPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4oPC9tbz48bXJvdz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPkZGTjwvbWk+PG1vPuKBoTwvbW8+PG1yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPig8L21vPjxtcm93PjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+TE48L21pPjxtbz7igaE8L21vPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4oPC9tbz48bXJvdz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPkF0dGVudGlvbjwvbWk+PG1vPuKBoTwvbW8+PG1yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPig8L21vPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+UzwvbWk+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4sPC9tbz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPmo8L21pPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4pPC9tbz48L21yb3c+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4pPC9tbz48L21yb3c+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4pPC9tbz48L21yb3c+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4pPC9tbz48L21yb3c+PC9tcm93PjwvbXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBsc3BhY2U9IjBlbSIgbWF0aGNvbG9yPSIjMDAwMDAwIj4uPC9tbz48L21yb3c+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5cZGlzcGxheXN0eWxlXG1hdGhybXtUcmFuc2Zvcm1lcn0oUyxqKTo9XG1hdGhybXtMTn0oXG1hdGhybXtGRk59KFxtYXRocm17TE59KFxtYXRocm17QXR0ZW50aW9ufShTLGopKSkpLjwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+PC9zcGFuPgo8c3BhbiBjbGFzcz0ibHR4X2Vxbl9jZWxsIGx0eF9lcW5fY2VudGVyX3BhZHJpZ2h0Ij48L3NwYW4+CjxzcGFuIHJvd3NwYW49IjEiIGNsYXNzPSJsdHhfZXFuX2NlbGwgbHR4X2Vxbl9lcW5vIGx0eF9hbGlnbl9taWRkbGUgbHR4X2FsaWduX3JpZ2h0Ij48c3BhbiBjbGFzcz0ibHR4X3RhZyBsdHhfdGFnX2VxdWF0aW9uIGx0eF9hbGlnbl9yaWdodCI+KDUuNSk8L3NwYW4+PC9zcGFuPjwvc3Bhbj48L3NwYW4+Cjwvc3Bhbj4KPHNwYW4gaWQ9IkNoNS5TMS5TUzQucDIucGljMS4yLjIiIGNsYXNzPSJsdHhfcCI+PHNwYW4gaWQ9IkNoNS5TMS5TUzQucDIucGljMS4yLjIuMSIgY2xhc3M9Imx0eF90ZXh0IiBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiPkZvciB0aGUgZmluYWwgb3V0cHV0LCBpLmUuLCB0byBwcmVkaWN0IHRoZSBuZXh0IHRva2VuLCBvbmUgY2FuIGltcGxlbWVudCB0aGUgc29mdG1heCBmdW5jdGlvbiB0byBtYWtlIHRoZSB2ZWN0b3IgaW50byBhIGRpc3RyaWJ1dGlvbiA8bWF0aCBpZD0iQ2g1LlMxLlNTNC5wMi5waWMxLm0xIiBjbGFzcz0ibHR4X21hdGhfdW5wYXJzZWQiIGFsdHRleHQ9IlxtYXRocm17UHJ9KFxjZG90fFNfezF9LFxkb3RzLFNfe2otMX0pIiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1yb3c+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5QcjwvbWk+PG1yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPig8L21vPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGxzcGFjZT0iMGVtIiBtYXRoY29sb3I9IiMwMDAwMDAiIHJzcGFjZT0iMGVtIj7ii4U8L21vPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGZlbmNlPSJmYWxzZSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMTY3ZW0iIHN0cmV0Y2h5PSJmYWxzZSI+fDwvbW8+PG1zdWI+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5TPC9taT48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjE8L21uPjwvbXN1Yj48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPiw8L21vPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgbWF0aHZhcmlhbnQ9Im5vcm1hbCI+4oCmPC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPiw8L21vPjxtc3ViPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+UzwvbWk+PG1yb3c+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5qPC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPuKIkjwvbW8+PG1uIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4xPC9tbj48L21yb3c+PC9tc3ViPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4pPC9tbz48L21yb3c+PC9tcm93Pjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+XG1hdGhybXtQcn0oXGNkb3R8U197MX0sXGRvdHMsU197ai0xfSk8L2Fubm90YXRpb24+PC9zZW1hbnRpY3M+PC9tYXRoPiwgd2hlcmUgdGhlIGRpbWVuc2lvbiBpcyB0aGUgc2l6ZSBvZiB0aGUgdG9rZW4gZGljdGlvbmFyeSA8bWF0aCBpZD0iQ2g1LlMxLlNTNC5wMi5waWMxLm0yIiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9ImRfe1xtYXRocm17dG9rZW59fSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtc3ViPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+ZDwvbWk+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj50b2tlbjwvbWk+PC9tc3ViPjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+ZF97XG1hdGhybXt0b2tlbn19PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4sIGFuZCBzYW1wbGUgZnJvbSB0aGlzIGRpc3RyaWJ1dGlvbi48L3NwYW4+PC9zcGFuPgo8L3NwYW4+PC9zcGFuPjwvc3Bhbj48L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48L3N2Zz4=" id="Ch5.S1.SS4.p2.pic1" class="ltx_picture" />
 
@@ -5472,9 +5472,9 @@ In modern architectures, multiple computational blocks are applied iteratively. 
 
 Upon the architecture of Transformer, its *optimization* involves training the model to achieve high performance on a given task. When applied to language processing tasks, a feasible loss function of the Transformer is the cross entropy between the predicted probability distribution and the correct distribution. Mathematically, given a $`\ell`$-length sequence $`\{S_{1},\dots,S_{\ell}\}`$ as input, the loss function can be written as
 
-``` math
-\displaystyle\mathcal{L}=-\frac{1}{\ell}\sum_{j=1}^{\ell}\Pr(S_{j}|S_{1},\dots,S_{j-1}),
-```
+$$
+\mathcal{L}=-\frac{1}{\ell}\sum_{j=1}^{\ell}\Pr(S_{j}|S_{1},\dots,S_{j-1}),
+$$
 
 where $`\Pr(S_{j}|S_{1},\dots,S_{j-1})`$ is the predicted probability of the correct $`S_{j}`$ coming out of the softmax layer, based on the previous tokens.
 
@@ -5500,9 +5500,9 @@ Following the explicit form of the single-head and single-layer Transformer in E
 
 Mathematically, given any $`A\in\{W_{q},W_{k},W_{v},M_{1},M_{2},S\}`$ corresponding to an $`N`$-qubit operator, $`\alpha,\varepsilon\geq 0`$ and $`a\in\mathbb{N}`$, there exists a $`(a+N)`$-qubit unitary $`U_{A}`$ referring to the $`(\alpha,a,\varepsilon)`$-block-encoding of $`A`$ with
 
-``` math
-\displaystyle\|A-\alpha(\langle{0}|^{\otimes a} \displaystyle\otimes\mathbb{I}_{2^{N}})U_{A}(|{0}\rangle^{\otimes a}\otimes\mathbb{I}_{2^{N}})\|\leq\varepsilon,
-```
+$$
+\|A-\alpha(\langle{0}|^{\otimes a} \otimes\mathbb{I}_{2^{N}})U_{A}(|{0}\rangle^{\otimes a}\otimes\mathbb{I}_{2^{N}})\|\leq\varepsilon,
+$$
 
 where $`\|\cdot\|`$ represents the spectral norm.
 
@@ -5521,9 +5521,9 @@ Under the above assumptions about access to the read-in protocols, the following
 
 For a single-head and single-block Transformer depicted in Figure [5.2](#Ch5.F2 "Figure 5.2 ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), suppose its embedding dimension is $`d`$ and its input sequence $`S`$ has the length $`\ell=2^{N}`$. Under Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") about the input oracles, for the index $`j\in[\ell]`$, one can construct an $`\epsilon`$-accurate quantum circuit for the quantum state proportional to
 
-``` math
-\displaystyle\sum_{k=1}^{d}\mathrm{Transformer}(S,j)_{k}|{k}\rangle,
-```
+$$
+\sum_{k=1}^{d}\mathrm{Transformer}(S,j)_{k}|{k}\rangle,
+$$
 
 by using $`{\mathcal{\tilde{O}}}(dN^{2}\alpha_{s}\alpha_{w}\log^{2}(1/\epsilon))`$ times of the input block encodings.
 
@@ -5535,9 +5535,9 @@ Roadmap. In the remainder of this section, we detail the implementation of quant
 
 We now describe how to achieve the quantum self-attention block, aiming to complete the computation
 
-``` math
+$$
 \mathrm{Attention}(Q,K,V)=\mathrm{softmax}(QK^{\top}/\alpha_{0})V\eqqcolon G^{\mathrm{soft}}
-```
+$$
 
 in Eqn. ([5.1](#Ch5.E1 "Equation 5.1 ‣ 5.1.2 Self-attention ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) on quantum computers. More specifically, under Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the quantum self-attention block outputs a block encoding of a matrix $`G`$ whose $`j`$-th row is the same as the output of the classical attention block, as described in the following theorem.
 
@@ -5595,33 +5595,33 @@ Moreover, for a polynomial function $`g_{r}(x)=\sum_{j=0}^{r}c_{j}x^{j}`$ with c
 
 To achieve this implementation, we construct two state-preparation unitaries $`P_{L}`$ and $`P_{R}`$, which act on $`\lceil\log(r+1)\rceil`$ qubits such that
 
-``` math
-\displaystyle P_{L}:\ |{0^{\lceil\log(r+1)\rceil}}\rangle \displaystyle\to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}|{j}\rangle,
-```
+$$
+P_{L}:\ |{0^{\lceil\log(r+1)\rceil}}\rangle \to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}|{j}\rangle,
+$$
 
-``` math
-\displaystyle P_{R}:\ |{0^{\lceil\log(r+1)\rceil}}\rangle \displaystyle\to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}e^{i\theta_{j}}|{j}\rangle,
-```
+$$
+P_{R}:\ |{0^{\lceil\log(r+1)\rceil}}\rangle \to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}e^{i\theta_{j}}|{j}\rangle,
+$$
 
 where $`C=\sum_{j=1}^{r}|c_{j}|`$ and $`|c_{j}|e^{i\theta_{j}}=c_{j}`$. These two unitaries encode the polynomial coefficients $`\{c_{j}\}`$ into the quantum circuit, which is needed for block encoding via the linear combination of unitaries indicated in [Fact 2.21](#Ch2.Thmtheorem21 "Fact 2.21. ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Note that the construction of $`P_{L}`$ and $`P_{R}`$ is efficient for small $`r`$, as the corresponding circuit is $`\mathcal{O}(r)`$-depth with only elementary quantum gates ([Sun et al., 2023](#bib.bib125); [Zhang et al., 2022a](#bib.bib124)).
 
 For $`j\in[r]`$, let $`U_{A^{j}}`$ be the $`(1,ja+(j-1)N)`$-encoding of
 
-``` math
+$$
 (A/\alpha)^{\circ j}:=\underbrace{(A/\alpha)\circ(A/\alpha)\circ\cdots\circ(A/\alpha)}_{j-1\ \text{times of Hadamard product}},
-```
+$$
 
 which is constructed by iteratively applying [lemma 2.25](#Ch2.Thmtheorem25 "Lemma 2.25 (Hadamard product of the block encoding unitaries, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). For simplicity, these block encodings $`U_{A^{j}}`$ can also be considered as $`(1,ra+(r-1)N)`$-encoding of $`(A/\alpha)^{\circ j}`$. Then, we construct a $`(ra+rN+\lceil\log(r+1)\rceil)`$-qubit unitary $`W=\sum_{j=1}^{r}|j\rangle\langle j|\otimes U_{A^{j}}+(\mathbb{I}_{2^{\lceil\log(r+1)\rceil}}-\sum_{j=1}^{r}|j\rangle\langle j|)\otimes\mathbb{I}_{2^{(ra+rN)}}`$. Taking the linear combination of block encodings via [Fact 2.21](#Ch2.Thmtheorem21 "Fact 2.21. ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we can implement a $`(C,ra+(r-1)N+\lceil\log(r+1)\rceil)`$-encoding of $`f_{r}\circ(A/\alpha)`$.
 
 To implement element-wise functions including constant terms, we also need access to the block encoding of a matrix whose elements are all $`1`$. Notice that this matrix can be written as the linear combination of the identity matrix and the reflection operator, i.e.,
 
-``` math
-\displaystyle\sum_{k,k^{\prime}\in[2^{N}]}|k\rangle\langle k^{\prime}| \displaystyle=\frac{2^{N}}{2}\left(\mathbb{I}_{2^{N}}-(\mathbb{I}_{2^{N}}-\frac{2}{2^{N}}\sum_{k,k^{\prime}\in[2^{N}]}|{k}\rangle\langle{k^{\prime}}|)\right)
-```
+$$
+\sum_{k,k^{\prime}\in[2^{N}]}|k\rangle\langle k^{\prime}| =\frac{2^{N}}{2}\left(\mathbb{I}_{2^{N}}-(\mathbb{I}_{2^{N}}-\frac{2}{2^{N}}\sum_{k,k^{\prime}\in[2^{N}]}|{k}\rangle\langle{k^{\prime}}|)\right)
+$$
 
-``` math
-\displaystyle=\frac{2^{N}}{2}\biggl(\mathbb{I}_{2^{N}}-H^{\otimes N}\left(\mathbb{I}_{2^{N}}-2|{0^{N}}\rangle\langle{0^{N}}|\right)H^{\otimes N}\biggl),
-```
+$$
+=\frac{2^{N}}{2}\biggl(\mathbb{I}_{2^{N}}-H^{\otimes N}\left(\mathbb{I}_{2^{N}}-2|{0^{N}}\rangle\langle{0^{N}}|\right)H^{\otimes N}\biggl),
+$$
 
 where $`H`$ is the Hadamard gate. Define $`U_{\mathrm{ref}}=|0\rangle\langle 0|\otimes\mathbb{I}_{2^{N}}+|1\rangle\langle 1|\otimes(H^{\otimes N}(\mathbb{I}_{2^{N}}-2|0^{N}\rangle\langle 0^{N}|)H^{\otimes N})`$. By direct computation, one can show that $`U_{0}=(XH\otimes\mathbb{I}_{2^{N}})U_{\mathrm{ref}}(H\otimes\mathbb{I}_{2^{N}})`$ is an $`(2^{N},1)`$-encoding of $`\sum_{k,k^{\prime}}|k\rangle\langle k^{\prime}|`$. One can achieve the element-wise function by following the same steps as above and taking linear combinations among $`U_{0},\dots,U_{A^{r}}`$. One point to notice is that we can only construct $`(2^{N},1)`$-encoding of the matrix whose elements are all $`1`$ since the spectral norm of this matrix is $`2^{N}`$. Therefore, we encode $`2^{N}c_{0}`$ into the state instead of $`c_{0}`$ to amplify the constant term. ∎
 
@@ -5631,9 +5631,9 @@ Supported by the above lemma, we can complete Step II (i.e., the quantum softmax
 
 Given an $`(\alpha,a)`$-encoding $`U_{A}`$ of a matrix $`A\in\mathbb{R}^{\ell\times\ell}`$, a positive integer $`d`$, and an index $`j\in[\ell]`$, one can prepare a state-encoding of
 
-``` math
+$$
 |{A_{j}}\rangle\coloneqq\sum_{k=1}^{\ell}\sqrt{\mathrm{softmax}\left(A/\alpha\right)_{jk}}|{k}\rangle=\frac{1}{\sqrt{Z_{j}}}\sum_{k=1}^{\ell}\exp\circ\Big(\frac{A}{2\alpha}\Big)_{jk}|{k}\rangle,
-```
+$$
 
 where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(A/\alpha)_{jk}`$.
 
@@ -5641,23 +5641,23 @@ where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(A/\alpha)_{jk}`$.
 
 We first construct the block encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that Taylor expansion of $`\exp(x)`$ contains a constant term $`1`$. This can be achieved with [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [Fact 5.4](#Ch5.Thmtheorem4 "Fact 5.4. ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Here, since we are only focusing on the $`j`$-th row, instead of taking linear combination with the matrix whose elements are all $`1`$, we take sum with the matrix whose $`j`$-th row elements are all $`1`$ and else are $`0`$. This enables us to have a better dependency on $`\ell`$, i.e., from $`\ell`$ to $`\sqrt{\ell}`$. For index $`j\in[\ell]`$, let $`U_{j}:|{0}\rangle\rightarrow|{j}\rangle`$. One can achieve this by changing Eqn. ([5.12](#Ch5.E12 "Equation 5.12 ‣ Proof of Lemma . ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to the following,
 
-``` math
-\displaystyle\sum_{k}|j\rangle\langle k|=\frac{\sqrt{\ell}}{2}(U_{j}H^{\otimes N}-U_{j}\left(\mathbb{I}_{2^{N}}-2|{0^{N}}\rangle\langle{0^{N}}|\right)H^{\otimes N}).
-```
+$$
+\sum_{k}|j\rangle\langle k|=\frac{\sqrt{\ell}}{2}(U_{j}H^{\otimes N}-U_{j}\left(\mathbb{I}_{2^{N}}-2|{0^{N}}\rangle\langle{0^{N}}|\right)H^{\otimes N}).
+$$
 
 Following the same steps in [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can achieve the construction. There are two error terms in this step. Denote $`U_{f\circ(A)}`$ as the constructed block encoding unitary. By [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and some additional calculation, one can show that $`U_{f\circ(A)}`$ is a block-encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that $`\exp\circ(\frac{A}{2\alpha})_{jk}=\exp\circ(\frac{A}{2\alpha})^{\top}_{kj}`$. With unitary $`U_{f\circ(A)}^{\dagger}(I\otimes U_{j})`$ and amplitude amplification, one can prepare a state-encoding of the target state
 
-``` math
-\displaystyle|{A_{j}}\rangle\coloneqq\frac{1}{\sqrt{Z_{j}}}\sum_{k=1}^{\ell}\exp\circ\Big(\frac{A}{2\alpha}\Big)_{jk}|{k}\rangle,
-```
+$$
+|{A_{j}}\rangle\coloneqq\frac{1}{\sqrt{Z_{j}}}\sum_{k=1}^{\ell}\exp\circ\Big(\frac{A}{2\alpha}\Big)_{jk}|{k}\rangle,
+$$
 
 where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(A/\alpha)_{jk}`$ is the normalization factor of softmax function for the $`j`$-th row. ∎
 
 Step III. Finally, we implement the matrix multiplication with $`V`$. This can be easily achieved by using Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), with $`U_{f(QK^{\top})}^{\dagger}`$ and $`U_{V}`$. Consequently, we obtain an encoded quantum state analogous to
 
-``` math
-\displaystyle\sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}|{k}\rangle.
-```
+$$
+\sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}|{k}\rangle.
+$$
 
 Combining the results of Steps I, II, and III, we are now ready to present the proof of Theorem [5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
@@ -5667,23 +5667,23 @@ In the first step, we construct the block encoding of matrix $`QK^{\top}`$ and $
 
 By [theorem 5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), using $`U_{QK^{\top}}`$ one can prepare a state-encoding of the state
 
-``` math
+$$
 \sum_{k=1}^{\ell}\sqrt{\mathrm{softmax}(QK^{\top}/\alpha_{0})_{jk}}|{k}\rangle,
-```
+$$
 
 where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(QK^{\top}/\alpha_{0})_{jk}`$. Remember that state encoding is also a block encoding. By [lemma 2.25](#Ch2.Thmtheorem25 "Lemma 2.25 (Hadamard product of the block encoding unitaries, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can construct a block encoding of a matrix whose $`j`$-th column is
 
-``` math
+$$
 [\mathrm{softmax}(QK^{\top}/\alpha_{0})_{j1},\dots,\mathrm{softmax}(QK^{\top}/\alpha_{0})_{j\ell}]
-```
+$$
 
 ignoring other columns. Let this block-encoding unitary be $`U_{f(QK^{\top})}`$.
 
 Last, by exploiting Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") again, with $`U_{f(QK^{\top})}^{\dagger}`$ and $`U_{V}`$, we obtain an encoded quantum state analogous to
 
-``` math
+$$
 \sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}|{k}\rangle.
-```
+$$
 
 ∎
 
@@ -5703,9 +5703,9 @@ First, to approximate the exponential function, we move beyond using a matrix wh
 
 Second, after approximating the function, for index $`j\in[\ell]`$, we multiply the block encoding with a projector $`\sum_{k,k\leq j}|{k}\rangle\langle{k}|`$ to mask the elements. Though the projector $`\sum_{k\in\mathcal{S}}|{k}\rangle\langle{k}|`$ for $`\mathcal{S}\subseteq[\ell]`$ is not unitary in general, one can construct a block encoding of the projector by noticing that it can be written by the linear combination of two unitaries:
 
-``` math
-\displaystyle\sum_{k\in\mathcal{S}}|{k}\rangle\langle{k}|=\frac{1}{2}\mathbb{I}+\frac{1}{2}\Big(2\sum_{k\in\mathcal{S}}|{k}\rangle\langle{k}|-\mathbb{I}\Big).
-```
+$$
+\sum_{k\in\mathcal{S}}|{k}\rangle\langle{k}|=\frac{1}{2}\mathbb{I}+\frac{1}{2}\Big(2\sum_{k\in\mathcal{S}}|{k}\rangle\langle{k}|-\mathbb{I}\Big).
+$$
 
 Define $`U_{\rm proj}\coloneqq|{0}\rangle\langle{0}|\otimes\mathbb{I}+|1\rangle\langle 1|\otimes(2\sum_{k\in\mathcal{S}}|k\rangle\langle k|-\mathbb{I})`$. One can easily verify that $`(H\otimes\mathbb{I})U_{\rm proj}(H\otimes\mathbb{I})`$ is a $`(1,1,0)`$-encoding of $`\sum_{k\in\mathcal{S}}|k\rangle\langle k|`$, where $`H`$ is the Hadamard gate. The following steps follow the same with [theorem 5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [theorem 5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). ∎
 
@@ -5719,9 +5719,9 @@ In this subsection, we discuss how to implement the residual connection with lay
 
 Given access to the block encoding of the matrix $`G`$ in Theorem [5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), One can construct a quantum-encoded state
 
-``` math
+$$
 \sum_{k=1}^{d}\mathrm{LN}(G^{\mathrm{soft}}_{j},S_{j})_{k}|{k}\rangle=\frac{1}{\varsigma}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})|{k}\rangle,
-```
+$$
 
 where $`\bar{s}_{j}\coloneqq\frac{1}{d}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk})`$ and $`\varsigma\coloneqq\sqrt{\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})^{2}}`$.
 
@@ -5729,9 +5729,9 @@ where $`\bar{s}_{j}\coloneqq\frac{1}{d}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{
 
 As shown in [theorem 5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we can construct a block-encoding of a matrix $`G`$ whose $`j`$-th row is the same row as that of $`G^{\mathrm{soft}}`$. By Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we are given $`U_{s}`$ which is an $`(\alpha_{s},a_{s})`$-encoding of $`S`$. By Lemma [2.24](#Ch2.Thmtheorem24 "Fact 2.24 (Linear combination of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with the state preparation pair $`(P,P)`$ such that
 
-``` math
+$$
 P|{0}\rangle=\frac{1}{\sqrt{\alpha_{g}+\alpha_{s}}}(\sqrt{\alpha_{g}}|{0}\rangle+\sqrt{\alpha_{s}}|{1}\rangle),
-```
+$$
 
 one can construct a quantum circuit $`U_{\mathrm{res}}`$ which is an $`(\alpha_{g}+\alpha_{s},a_{g}+1)`$-encoding of an $`\ell\times d`$ matrix whose $`j`$-th row is the same as that of $`G^{\mathrm{soft}}+S`$.
 
@@ -5739,29 +5739,29 @@ Now we consider how to create a block encoding of a diagonal matrix $`\bar{s}_{j
 
 With $`U_{j}:|{0}\rangle\rightarrow|{j}\rangle`$, one can prepare the state
 
-``` math
-\displaystyle U_{\mathrm{res}}^{\dagger}(\mathbb{I}\otimes U_{j})|{0}\rangle|{0}\rangle=\frac{1}{\alpha_{g}+\alpha_{s}}|{0}\rangle\sum_{k=1}^{d}\psi_{k}|{k}\rangle+\sqrt{1-\frac{\sum_{k}\psi_{k}^{2}}{(\alpha_{g}+\alpha_{s})^{2}}}|{1}\rangle|{\mathrm{bad}}\rangle.
-```
+$$
+U_{\mathrm{res}}^{\dagger}(\mathbb{I}\otimes U_{j})|{0}\rangle|{0}\rangle=\frac{1}{\alpha_{g}+\alpha_{s}}|{0}\rangle\sum_{k=1}^{d}\psi_{k}|{k}\rangle+\sqrt{1-\frac{\sum_{k}\psi_{k}^{2}}{(\alpha_{g}+\alpha_{s})^{2}}}|{1}\rangle|{\mathrm{bad}}\rangle.
+$$
 
 By the diagonal block encoding of amplitudes mentioned as [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), this can be converted to a block encoding of the diagonal matrix $`\diag(G_{j1}+S_{j1},\dots,G_{jd}+S_{jd})`$.
 
 By taking the linear combination as [Fact 2.24](#Ch2.Thmtheorem24 "Fact 2.24 (Linear combination of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with state preparation pair $`(P_{1},P_{2})`$, where
 
-``` math
+$$
 P_{1}|{0}\rangle=\frac{1}{\sqrt{1+1/\sqrt{d}}}(|{0}\rangle+\frac{1}{\sqrt{d}}|{1}\rangle)
-```
+$$
 
 and
 
-``` math
+$$
 P_{2}|{0}\rangle=\frac{1}{\sqrt{1+1/\sqrt{d}}}(|{0}\rangle-\frac{1}{\sqrt{d}}|{1}\rangle),
-```
+$$
 
 one can construct a block encoding of $`\mathrm{diag}(G_{j1}+S_{j1}-\bar{s}_{j},\dots,G_{jd}+S_{jd}-\bar{s}_{j})`$, and we call it $`U_{\mathrm{LN}}`$. Then the unitary $`U_{\mathrm{LN}}(\mathbb{I}\otimes H^{\log d})`$ is an state-encoding of the state
 
-``` math
+$$
 \frac{1}{\varsigma}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})|{k}\rangle,
-```
+$$
 
 where $`\varsigma\coloneqq\sqrt{\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})^{2}}`$. ∎
 
@@ -5789,9 +5789,9 @@ In the following theorem, we consider how to implement the two-layer feedforward
 
 Assume we have access to $`(\alpha,a)`$-state encoding of an $`N`$-qubit state $`|{\psi}\rangle=\sum_{k=1}^{2^{N}}\psi_{k}|{k}\rangle`$, where $`\{\psi_{k}\}`$ are real and $`\mathopen{\|}\psi\mathclose{\|}_{2}=1`$. Further, assume access to $`(\alpha_{m},a_{m})`$-encodings $`U_{M_{1}}`$ and $`U_{M_{2}}`$ of weight matrices $`M_{1}\in\mathbb{R}^{d^{\prime}\times d}`$ and $`M_{2}\in\mathbb{R}^{d\times d^{\prime}}`$. Let the activation function be $`\mathrm{GELU}(x)\coloneqq x\cdot\frac{1}{2}(1+\mathrm{erf}(\frac{x}{\sqrt{2}}))`$. One can prepare a state-encoding of the state
 
-``` math
-\displaystyle|{\phi}\rangle=\frac{1}{C}\sum_{k=1}^{d}\Big(M_{2}\cdot\mathrm{GELU}(M_{1}\cdot\psi)\Big)_{k}|{k}\rangle,
-```
+$$
+|{\phi}\rangle=\frac{1}{C}\sum_{k=1}^{d}\Big(M_{2}\cdot\mathrm{GELU}(M_{1}\cdot\psi)\Big)_{k}|{k}\rangle,
+$$
 
 where $`C`$ is the normalization factor.
 
@@ -5799,27 +5799,27 @@ where $`C`$ is the normalization factor.
 
 We have
 
-``` math
-\displaystyle(\mathbb{I}_{2^{a}}\otimes U_{M_{1}})(\mathbb{I}_{2^{a_{m}}}\otimes U_{\psi})|{0^{a+a_{m}+N}}\rangle=\frac{1}{\alpha\alpha_{m}}|{0^{a+a_{m}}}\rangleM_{1}|{\psi}\rangle+|{\widetilde{\perp}}\rangle,
-```
+$$
+(\mathbb{I}_{2^{a}}\otimes U_{M_{1}})(\mathbb{I}_{2^{a_{m}}}\otimes U_{\psi})|{0^{a+a_{m}+N}}\rangle=\frac{1}{\alpha\alpha_{m}}|{0^{a+a_{m}}}\rangleM_{1}|{\psi}\rangle+|{\widetilde{\perp}}\rangle,
+$$
 
 where $`|{\widetilde{\perp}}\rangle`$ is an unnormalized orthogonal state. For the case $`d^{\prime}\geq\ell`$, this can be achieved by padding ancilla qubits to the initial state. By [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can construct a block encoding of the diagonal matrix $`\diag((M_{1}\psi)_{1},\dots,(M_{1}\psi)_{d^{\prime}})`$. Note that the $`\mathrm{GELU}`$ function does not have a constant term, and is suitable to use the importance-weighted amplitude transformation as in [Rattew and Rebentrost (2023)](#bib.bib87). Instead of directly implementing the GELU function, we first implement the function $`f(x)=\frac{1}{2}(1+\mathrm{erf}(\frac{x}{\sqrt{2}}))`$. Note that the value of $`|\mathrm{erf}(x)|`$ is upper bounded by $`1`$. By [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with function $`\frac{1}{4}(1+\mathrm{erf}(\alpha\alpha_{m}\frac{x}{\sqrt{2}}))`$, one can construct a block encoding of matrix $`\diag(f(M_{1}\psi)_{1},\dots,f(M_{1}\psi)_{d^{\prime}})`$.
 
 Let the previously constructed block-encoding unitary be $`U_{f(x)}`$. We have
 
-``` math
-\displaystyle U_{f(x)}(\mathbb{I}\otimes U_{M_{1}})(\mathbb{I}\otimes U_{\psi})|{0}\rangle|{0}\rangle=\frac{1}{2\alpha\alpha_{m}}|{0}\rangle\sum_{k}\mathrm{GELU}(M_{1}\psi)_{k}|{k}\rangle+|{\widetilde{\perp^{\prime}}}\rangle,
-```
+$$
+U_{f(x)}(\mathbb{I}\otimes U_{M_{1}})(\mathbb{I}\otimes U_{\psi})|{0}\rangle|{0}\rangle=\frac{1}{2\alpha\alpha_{m}}|{0}\rangle\sum_{k}\mathrm{GELU}(M_{1}\psi)_{k}|{k}\rangle+|{\widetilde{\perp^{\prime}}}\rangle,
+$$
 
 where $`|{\widetilde{\perp^{\prime}}}\rangle`$ is an unnormalized orthogonal state. Finally, by implementing the block-encoding unitary $`U_{M_{2}}`$, we have
 
-``` math
-\displaystyle(\mathbb{I}\otimes U_{M_{2}})(\mathbb{I}\otimes U_{f(x)})(\mathbb{I}\otimes U_{M_{1}})(\mathbb{I}\otimes U_{\psi})|{0}\rangle|{0}\rangle
-```
+$$
+(\mathbb{I}\otimes U_{M_{2}})(\mathbb{I}\otimes U_{f(x)})(\mathbb{I}\otimes U_{M_{1}})(\mathbb{I}\otimes U_{\psi})|{0}\rangle|{0}\rangle
+$$
 
-``` math
-\displaystyle= \displaystyle\frac{C}{2\alpha\alpha^{2}_{m}}|{0}\rangle\sum_{k=1}^{d}\Big(M_{2}\cdot\mathrm{GELU}(M_{1}\cdot\psi)\Big)_{k}|{k}\rangle+|{\widetilde{\perp^{\prime\prime}}}\rangle,
-```
+$$
+= \frac{C}{2\alpha\alpha^{2}_{m}}|{0}\rangle\sum_{k=1}^{d}\Big(M_{2}\cdot\mathrm{GELU}(M_{1}\cdot\psi)\Big)_{k}|{k}\rangle+|{\widetilde{\perp^{\prime\prime}}}\rangle,
+$$
 
 where $`C`$ is the normalization factor, and $`|{\widetilde{\perp}^{\prime\prime}}\rangle`$ is an unnormalized orthogonal state. ∎
 
@@ -5985,11 +5985,11 @@ Next, we compute attention scores by multiplying $`Q`$ and $`K^{\top}`$, then ap
 
 The attention weight would be:
 
-``` math
+$$
 \text{softmax}\left(\frac{Q\cdot K^{\top}}{\sqrt{4}}\right)=\begin{bmatrix}0.324&0.467&0.209\\
 0.305&0.515&0.180\\
 0.346&0.432&0.222\end{bmatrix}.
-```
+$$
 
 The final output captures how each word relates to every other word in the sentence. In this case, “sleeps” pays most attention to “cat” (0.432), some attention to “The” (0.346), and less attention to itself (0.222). Finally, we use these scores to create a weighted sum of the values:
 
@@ -5999,11 +5999,11 @@ The final output captures how each word relates to every other word in the sente
 
 The final output is
 
-``` math
+$$
 \text{output}=\begin{bmatrix}1.536&1.519&1.265&1.157\\
 1.566&1.536&1.261&1.137\\
 1.512&1.507&1.269&1.174\end{bmatrix}.
-```
+$$
 
 ### 5.5 Bibliographic Remarks
 
@@ -6217,10 +6217,10 @@ Employing the definition of cumulative distribution function, we have
 
 |  |  |  |  |  |
 |----|----|----|----|----|
-|  | $`\displaystyle\mathbb{P}\{X\geq t\}=`$ | $`\displaystyle\int_{t}^{\infty}p(x)\mathrm{d}t`$ |  |  |
-|  | $`\displaystyle\leq`$ | $`\displaystyle\int_{t}^{\infty}p(x)\frac{x}{t}\mathrm{d}t`$ |  |  |
-|  | $`\displaystyle\leq`$ | $`\displaystyle\frac{\int_{0}^{\infty}p(x)x\mathrm{d}}{t}`$ |  |  |
-|  | $`\displaystyle\leq`$ | $`\displaystyle\frac{\mathbb{E}X}{t},`$ |  | (B.3) |
+|  | $`\mathbb{P}\{X\geq t\}=`$ | $`\int_{t}^{\infty}p(x)\mathrm{d}t`$ |  |  |
+|  | $`\leq`$ | $`\int_{t}^{\infty}p(x)\frac{x}{t}\mathrm{d}t`$ |  |  |
+|  | $`\leq`$ | $`\frac{\int_{0}^{\infty}p(x)x\mathrm{d}}{t}`$ |  |  |
+|  | $`\leq`$ | $`\frac{\mathbb{E}X}{t},`$ |  | (B.3) |
 
 where the first inequality follows that $`x/t>1`$ in the interval $`x\in[t,\infty]`$, and the second inequality employs the positiveness of integral term $`p(x)x/t`$. ∎
 
@@ -6229,7 +6229,7 @@ Using Markov’s inequality, it follows that if $`\phi`$ is a strictly monotonic
 |  |  |  |  |
 |----|----|----|----|
 |  | 
-``` math
+$$
 \mathbb{P}\{X\geq t\}=\mathbb{P}\{\phi(X)\geq\phi(t)\}\leq\frac{\mathbb{E}\phi(X)}{\phi(t)}.
 ``` |  | (B.4) |
 
@@ -6252,9 +6252,9 @@ Utilizing the extention of Markov’s inequality in Eqn. ([B.4](#A2.E4 "Equatio
 
 |  |  |  |  |  |
 |----|----|----|----|----|
-|  | $`\displaystyle\mathbb{P}\{|X-\mathbb{E}X|\geq t\}=`$ | $`\displaystyle\mathbb{P}\{|X-\mathbb{E}X|^{2}\geq t^{2}\}`$ |  |  |
-|  | $`\displaystyle\leq`$ | $`\displaystyle\frac{\mathbb{E}(X-\mathbb{E}X)^{2}}{t^{2}}`$ |  |  |
-|  | $`\displaystyle=`$ | $`\displaystyle\frac{\Var(X)}{t^{2}}.`$ |  | (B.6) |
+|  | $`\mathbb{P}\{|X-\mathbb{E}X|\geq t\}=`$ | $`\mathbb{P}\{|X-\mathbb{E}X|^{2}\geq t^{2}\}`$ |  |  |
+|  | $`\leq`$ | $`\frac{\mathbb{E}(X-\mathbb{E}X)^{2}}{t^{2}}`$ |  |  |
+|  | $`=`$ | $`\frac{\Var(X)}{t^{2}}.`$ |  | (B.6) |
 
 ∎
 
@@ -6302,8 +6302,8 @@ where $`\sigma^{2}=\frac{1}{n}\sum_{i=1}^{n}\Var(X_{i})`$. Chernoff’s bounding
 
 |  |  |  |  |  |
 |----|----|----|----|----|
-|  | $`\displaystyle\mathbb{P}\left\{S_{n}-\mathbb{E}S_{n}\geq t\right\}\leq`$ | $`\displaystyle e^{-st}\mathbb{E}\left[\exp\left(s\sum_{i=1}^{n}(X_{i}-\mathbb{E}X_{i})\right)\right]`$ |  |  |
-|  | $`\displaystyle=`$ | $`\displaystyle e^{-st}\prod_{i=1}^{n}\mathbb{E}\left[\exp\left(s(X_{i}-\mathbb{E}X_{i})\right)\right]\quad\mbox{(by independence)}.`$ |  | (B.11) |
+|  | $`\mathbb{P}\left\{S_{n}-\mathbb{E}S_{n}\geq t\right\}\leq`$ | $`e^{-st}\mathbb{E}\left[\exp\left(s\sum_{i=1}^{n}(X_{i}-\mathbb{E}X_{i})\right)\right]`$ |  |  |
+|  | $`=`$ | $`e^{-st}\prod_{i=1}^{n}\mathbb{E}\left[\exp\left(s(X_{i}-\mathbb{E}X_{i})\right)\right]\quad\mbox{(by independence)}.`$ |  | (B.11) |
 
 Now, the challenge then becomes finding a good upper bound for the moment generating function of the random variables $`X_{i}-\mathbb{E}X_{i}`$. For bounded random variables, one of the most elegant results is Hoeffding’s inequality [Hoeffding (1994)](#bib.bib314).
 
@@ -6380,7 +6380,7 @@ Let $`\mu`$ be the Haar measure on the space $`\mathcal{U}(d)`$. Then, a finite 
     Let $`P_{t,t}(U)`$ be the polynomial with at most $`t`$ degrees of elements from $`U`$ and at most $`t`$ degrees of elements from $`U^{\dagger}`$. Then
 
     ``` math
-    \displaystyle\frac{1}{|\mathcal{S}|}\sum_{U\in\mathcal{S}}P_{t,t}(U)={} \displaystyle\int_{\mathcal{U}(d)}P_{t,t}(U)d\mu(U).
+    \frac{1}{|\mathcal{S}|}\sum_{U\in\mathcal{S}}P_{t,t}(U)={} \int_{\mathcal{U}(d)}P_{t,t}(U)d\mu(U).
     ```
 
 ###### Corollary C.3.
@@ -6394,24 +6394,24 @@ We remark that invariant properties of the Haar measure lead to several useful f
 Let $`\mathcal{S}`$ be a set of unitary $`1`$-design on $`\mathcal{U}(d)`$ and $`\mu`$ be the corresponding Haar measure. Then
 
 ``` math
-\displaystyle\frac{1}{|\mathcal{S}|}\sum_{U\in\mathcal{S}}U_{ij}U^{*}_{i^{\prime}j^{\prime}}={} \displaystyle\int_{\mathcal{U}(d)}U_{ij}U^{*}_{i^{\prime}j^{\prime}}d\mu(U)=\frac{1}{d}\delta_{ii^{\prime}}\delta_{jj^{\prime}}.
-```
+\frac{1}{|\mathcal{S}|}\sum_{U\in\mathcal{S}}U_{ij}U^{*}_{i^{\prime}j^{\prime}}={} \int_{\mathcal{U}(d)}U_{ij}U^{*}_{i^{\prime}j^{\prime}}d\mu(U)=\frac{1}{d}\delta_{ii^{\prime}}\delta_{jj^{\prime}}.
+$$
 
 ###### Fact C.5 (Average over unitary $`2`$-design ([Puchała and Miszczak, 2017](#bib.bib321))).
 
 Let $`\mathcal{S}`$ be a set of unitary $`2`$-design on $`\mathcal{U}(d)`$ and $`\mu`$ be the corresponding Haar measure. Then
 
-``` math
-\displaystyle\frac{1}{|\mathcal{S}|}\sum_{U\in\mathcal{S}}U_{i_{1}j_{1}}U_{i_{2}j_{2}}U^{*}_{i_{1}^{\prime}j_{1}^{\prime}}U^{*}_{i_{2}^{\prime}j_{2}^{\prime}}={}\int_{\mathcal{U}(d)}U_{i_{1}j_{1}}U_{i_{2}j_{2}}U^{*}_{i_{1}^{\prime}j_{1}^{\prime}}U^{*}_{i_{2}^{\prime}j_{2}^{\prime}}d\mu(U)
-```
+$$
+\frac{1}{|\mathcal{S}|}\sum_{U\in\mathcal{S}}U_{i_{1}j_{1}}U_{i_{2}j_{2}}U^{*}_{i_{1}^{\prime}j_{1}^{\prime}}U^{*}_{i_{2}^{\prime}j_{2}^{\prime}}={}\int_{\mathcal{U}(d)}U_{i_{1}j_{1}}U_{i_{2}j_{2}}U^{*}_{i_{1}^{\prime}j_{1}^{\prime}}U^{*}_{i_{2}^{\prime}j_{2}^{\prime}}d\mu(U)
+$$
 
-``` math
-\displaystyle={} \displaystyle\frac{1}{d^{2}-1}\left(\delta_{i_{1}i_{1}^{\prime}}\delta_{i_{2}i_{2}^{\prime}}\delta_{j_{1}j_{1}^{\prime}}\delta_{j_{2}j_{2}^{\prime}}+\delta_{i_{1}i_{2}^{\prime}}\delta_{i_{2}i_{1}^{\prime}}\delta_{j_{1}j_{2}^{\prime}}\delta_{j_{2}j_{1}^{\prime}}\right)
-```
+$$
+={} \frac{1}{d^{2}-1}\left(\delta_{i_{1}i_{1}^{\prime}}\delta_{i_{2}i_{2}^{\prime}}\delta_{j_{1}j_{1}^{\prime}}\delta_{j_{2}j_{2}^{\prime}}+\delta_{i_{1}i_{2}^{\prime}}\delta_{i_{2}i_{1}^{\prime}}\delta_{j_{1}j_{2}^{\prime}}\delta_{j_{2}j_{1}^{\prime}}\right)
+$$
 
-``` math
-\displaystyle-{} \displaystyle\frac{1}{d(d^{2}-1)}\left(\delta_{i_{1}i_{1}^{\prime}}\delta_{i_{2}i_{2}^{\prime}}\delta_{j_{1}j_{2}^{\prime}}\delta_{j_{2}j_{1}^{\prime}}+\delta_{i_{1}i_{2}^{\prime}}\delta_{i_{2}i_{1}^{\prime}}\delta_{j_{1}j_{1}^{\prime}}\delta_{j_{2}j_{2}^{\prime}}\right).
-```
+$$
+-{} \frac{1}{d(d^{2}-1)}\left(\delta_{i_{1}i_{1}^{\prime}}\delta_{i_{2}i_{2}^{\prime}}\delta_{j_{1}j_{2}^{\prime}}\delta_{j_{2}j_{1}^{\prime}}+\delta_{i_{1}i_{2}^{\prime}}\delta_{i_{2}i_{1}^{\prime}}\delta_{j_{1}j_{1}^{\prime}}\delta_{j_{2}j_{2}^{\prime}}\right).
+$$
 
 How big is a unitary $`t`$-design? [Roy and Scott (2009)](#bib.bib322) have proved that, for instance, the size of unitary $`1`$-design and unitary $`2`$-design scale polynomially to the dimension of the unitary space.
 
@@ -6425,17 +6425,17 @@ For a system with $`N`$ qubits, the dimension of the unitary space is $`d=2^{N}`
 
 Let $`\mu`$ be the Haar measure on the space $`\mathcal{U}(d)`$. We denote the moment superoperator $`\Phi_{\nu}^{(t)}(A):=\int_{\mathcal{U}(d)}U^{\otimes t}A(U^{{\dagger}})^{\otimes t}`$. Denote by $`M_{n}(\mathcal{C})`$ the $`n\times n`$ complex matrices. Denote by $`\|\Phi\|_{\diamond}:=\max_{X;\|X\|_{1}\leq 1}\|(\Phi\otimes\mathcal{I}_{n})X\|_{1}`$ the diamond norm for the linear transformation $`\Phi:M_{n}(\mathcal{C})\rightarrow M_{m}(\mathcal{C})`$ and $`X\in M_{n^{2}}(\mathcal{C})`$. Then, a probability distribution $`\nu`$ on $`\mathcal{U}(d)`$ is an $`\epsilon`$-approximate unitary $`t`$-design if
 
-``` math
-\displaystyle\left\|\Phi_{\nu}^{(t)}-\Phi_{\mu}^{(t)}\right\|_{\diamond}\leq{} \displaystyle\frac{\epsilon}{d^{t}}.
-```
+$$
+\left\|\Phi_{\nu}^{(t)}-\Phi_{\mu}^{(t)}\right\|_{\diamond}\leq{} \frac{\epsilon}{d^{t}}.
+$$
 
 ###### Fact C.8 (Random quantum circuits form approximate unitary designs, informal version from [Haferkamp (2022)](#bib.bib210)).
 
 For the number of qubits $`N\geq\mathcal{O}(\log t)`$, alternative layered random quantum circuits with Haar-random unitary gates sampled from $`\mathcal{U}(4)`$ lead to an $`\epsilon`$-approximate unitary $`t`$-design when the circuit depth
 
-``` math
-\displaystyle k\geq{} \displaystyle\mathcal{O}\left(t^{4+o(1)}\left(Nt+\log\frac{1}{\epsilon}\right)\right),
-```
+$$
+k\geq{} \mathcal{O}\left(t^{4+o(1)}\left(Nt+\log\frac{1}{\epsilon}\right)\right),
+$$
 
 where the term $`o(1)\rightarrow 0`$ when $`t\rightarrow\infty`$.
 

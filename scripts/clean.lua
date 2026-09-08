@@ -90,6 +90,9 @@ end
 -- \langle cannot merge with the following letter.
 function Math(el)
   local t = el.text
+  -- \displaystyle is redundant in a display block and doubles up when we join
+  -- aligned equation rows, which can trip up GitHub's KaTeX.
+  t = t:gsub("\\displaystyle%s*", "")
   t = t:gsub("\\ketbra%s*(%b{})%s*(%b{})", "|%1\\rangle\\langle%2|")
   t = t:gsub("\\braket%s*(%b{})%s*(%b{})", "\\langle%1|%2\\rangle")
   t = t:gsub("\\ket%s*(%b{})", "|%1\\rangle")

@@ -105,6 +105,12 @@ def absolutize_urls(html: str, base_url: str) -> str:
     return re.sub(r'(src|href)="([^"]*)"', repl, html)
 
 
+def display_math_to_dollars(text: str) -> str:
+    """Convert pandoc's ``` math fenced blocks to $$...$$ for GitHub."""
+    pattern = re.compile(r"^``` ?math\n(.*?)\n```$", re.MULTILINE | re.DOTALL)
+    return pattern.sub(lambda m: f"$$\n{m.group(1)}\n$$", text)
+
+
 def html_to_markdown(html: str) -> str:
     """Convert HTML to GitHub-flavored Markdown, keeping math as $...$.
 
@@ -326,7 +332,9 @@ def add_paper(arxiv_id: str) -> bool:
         return False
 
     markdown = build_front_matter(versioned_id, meta)
-    markdown += html_to_markdown(absolutize_urls(extract_article(html), source_url))
+    markdown += display_math_to_dollars(
+        html_to_markdown(absolutize_urls(extract_article(html), source_url))
+    )
 
     md_path = MD_DIR / f"{stem}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)
