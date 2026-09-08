@@ -12,7 +12,15 @@ function Link(el)
   end
   -- Drop the ltx_ref class/id so GFM can emit [text](target) instead of raw HTML.
   el.attr = pandoc.Attr()
+  -- Drop the verbose LaTeXML breadcrumb tooltip repeated on every cross-reference.
+  el.title = ""
   return el
+end
+
+-- Drop text superscripts (author-byline footnote/affiliation markers); math
+-- exponents live in Math nodes and are unaffected.
+function Superscript(_el)
+  return {}
 end
 
 -- Gather every row of a table across its head, bodies, and foot.

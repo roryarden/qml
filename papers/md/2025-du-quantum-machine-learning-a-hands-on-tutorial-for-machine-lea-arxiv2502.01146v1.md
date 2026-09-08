@@ -30,14 +30,14 @@ A Hands-on Tutorial for Machine Learning Practitioners and Researchers
 
 Yuxuan Du    Xinbiao Wang    Naixu Guo    Zhan Yu    Yang Qian    Kaining Zhang    Min-Hsiu Hsieh    Patrick Rebentrost    Dacheng Tao
 
-<sup>1</sup> College of Computing and Data Science, Nanyang Technological University, 639798, Singapore\
-<sup>2</sup> Centre for Quantum Technologies, National University of Singapore, 117543, Singapore\
-<sup>3</sup> Hon Hai Research Institute, Taipei, 114, Taiwan\
-<sup>†</sup> duyuxuan123@gmail.com\
-<sup>↿</sup> min-hsiu.hsieh@foxconn.com\
-<sup>⟂</sup> cqtfpr@nus.edu.sg\
-<sup>‡</sup> dacheng.tao@ntu.edu.sg\
-<sup>∗</sup> Equal contributions\
+College of Computing and Data Science, Nanyang Technological University, 639798, Singapore\
+Centre for Quantum Technologies, National University of Singapore, 117543, Singapore\
+Hon Hai Research Institute, Taipei, 114, Taiwan\
+duyuxuan123@gmail.com\
+min-hsiu.hsieh@foxconn.com\
+cqtfpr@nus.edu.sg\
+dacheng.tao@ntu.edu.sg\
+Equal contributions\
 
 ## Abstract
 
@@ -45,100 +45,100 @@ This tutorial intends to introduce readers with a background in AI to quantum ma
 
 ###### Contents
 
-1.  [Preface](#Chx2 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-2.  [1 Introduction](#Ch1 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    1.  [1.1 A First Glimpse of Quantum Machine Learning](#Ch1.S1 "In Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [1.1.1 Quantum computers](#Ch1.S1.SS1 "In 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [1.1.2 Different measures of quantum advantages](#Ch1.S1.SS2 "In 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [1.1.3 Explored tasks in quantum machine learning](#Ch1.S1.SS3 "In 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    2.  [1.2 Progress of Quantum Machine Learning](#Ch1.S2 "In Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [1.2.1 Progress of quantum computers](#Ch1.S2.SS1 "In 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [1.2.2 Progress of quantum machine learning under FTQC](#Ch1.S2.SS2 "In 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [1.2.3 Progress of quantum machine learning under NISQ](#Ch1.S2.SS3 "In 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        4.  [1.2.4 A brief review of quantum machine learning](#Ch1.S2.SS4 "In 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    3.  [1.3 Organization of This Tutorial](#Ch1.S3 "In Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-3.  [2 Basics of Quantum Computing](#Ch2 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    1.  [2.1 From Classical Bits to Quantum Bits](#Ch2.S1 "In Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [2.1.1 Classical bits](#Ch2.S1.SS1 "In 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [2.1.2 Quantum bits (Qubits)](#Ch2.S1.SS2 "In 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [2.1.3 Density matrix](#Ch2.S1.SS3 "In 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    2.  [2.2 From Digital Logical Circuit to Quantum Circuit Model](#Ch2.S2 "In Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [2.2.1 Classical digital logical circuit](#Ch2.S2.SS1 "In 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [2.2.2 Quantum circuit](#Ch2.S2.SS2 "In 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    3.  [2.3 Quantum Read-in and Read-out protocols](#Ch2.S3 "In Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [2.3.1 Quantum read-in protocols](#Ch2.S3.SS1 "In 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [2.3.2 Quantum read-out protocols](#Ch2.S3.SS2 "In 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    4.  [2.4 Quantum Linear Algebra](#Ch2.S4 "In Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [2.4.1 Block encoding](#Ch2.S4.SS1 "In 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [2.4.2 Basic arithmetic for block encodings](#Ch2.S4.SS2 "In 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [2.4.3 Quantum singular value transformation](#Ch2.S4.SS3 "In 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    5.  [2.5 Code Demonstration](#Ch2.S5 "In Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [2.5.1 Read-in implementations](#Ch2.S5.SS1 "In 2.5 Code Demonstration ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [2.5.2 Block encoding](#Ch2.S5.SS2 "In 2.5 Code Demonstration ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    6.  [2.6 Bibliographic Remarks](#Ch2.S6 "In Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [2.6.1 Advanced quantum read-in protocols](#Ch2.S6.SS1 "In 2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [2.6.2 Advanced quantum read-out protocols](#Ch2.S6.SS2 "In 2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [2.6.3 Advanced quantum linear algebra](#Ch2.S6.SS3 "In 2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-4.  [3 Quantum Kernel Methods](#Ch3 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    1.  [3.1 Classical Kernel Machines](#Ch3.S1 "In Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [3.1.1 Motivation of kernel methods](#Ch3.S1.SS1 "In 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [3.1.2 Dual representation](#Ch3.S1.SS2 "In 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [3.1.3 Kernel construction](#Ch3.S1.SS3 "In 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    2.  [3.2 Quantum Kernel Machines](#Ch3.S2 "In Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [3.2.1 Motivations for quantum kernel machines](#Ch3.S2.SS1 "In 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [3.2.2 Quantum feature maps and quantum kernel machines](#Ch3.S2.SS2 "In 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [3.2.3 Relation between quantum and classical kernel machines](#Ch3.S2.SS3 "In 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        4.  [3.2.4 Concrete examples of quantum kernels](#Ch3.S2.SS4 "In 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    3.  [3.3 Theoretical Foundations of Quantum Kernel Machines](#Ch3.S3 "In Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [3.3.1 Expressivity of quantum kernel machines](#Ch3.S3.SS1 "In 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [3.3.2 Generalization of quantum kernel machines](#Ch3.S3.SS2 "In 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    4.  [3.4 Code Demonstration](#Ch3.S4 "In Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [3.4.1 Classification on MNIST dataset](#Ch3.S4.SS1 "In 3.4 Code Demonstration ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    5.  [3.5 Bibliographic Remarks](#Ch3.S5 "In Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [3.5.1 Quantum kernel design](#Ch3.S5.SS1 "In 3.5 Bibliographic Remarks ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [3.5.2 Theoretical studies of quantum kernels](#Ch3.S5.SS2 "In 3.5 Bibliographic Remarks ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [3.5.3 Applications of quantum kernels](#Ch3.S5.SS3 "In 3.5 Bibliographic Remarks ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-5.  [4 Quantum Neural Networks](#Ch4 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    1.  [4.1 Classical Neural Networks](#Ch4.S1 "In Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [4.1.1 Perceptron](#Ch4.S1.SS1 "In 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [4.1.2 Multilayer perceptron](#Ch4.S1.SS2 "In 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    2.  [4.2 Fault-tolerant Quantum Perceptron](#Ch4.S2 "In Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [4.2.1 Grover search](#Ch4.S2.SS1 "In 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [4.2.2 Online quantum perceptron with quadratic speedups](#Ch4.S2.SS2 "In 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    3.  [4.3 Near-term Quantum Neural Networks](#Ch4.S3 "In Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [4.3.1 General framework](#Ch4.S3.SS1 "In 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [4.3.2 Discriminative learning with QNNs](#Ch4.S3.SS2 "In 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [4.3.3 Generative learning with QNNs](#Ch4.S3.SS3 "In 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    4.  [4.4 Theoretical Foundations of Quantum Neural Networks](#Ch4.S4 "In Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [4.4.1 Expressivity and generalization of quantum neural networks](#Ch4.S4.SS1 "In 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [4.4.2 Trainability of quantum neural networks](#Ch4.S4.SS2 "In 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    5.  [4.5 Code Demonstration](#Ch4.S5 "In Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [4.5.1 Quantum classifier](#Ch4.S5.SS1 "In 4.5 Code Demonstration ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [4.5.2 Quantum patch GAN](#Ch4.S5.SS2 "In 4.5 Code Demonstration ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    6.  [4.6 Bibliographic Remarks](#Ch4.S6 "In Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [4.6.1 Discriminative learning with QNN](#Ch4.S6.SS1 "In 4.6 Bibliographic Remarks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [4.6.2 Generative learning with QNNs](#Ch4.S6.SS2 "In 4.6 Bibliographic Remarks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-6.  [5 Quantum Transformer](#Ch5 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    1.  [5.1 Classical Transformer](#Ch5.S1 "In Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [5.1.1 Tokenization and embedding](#Ch5.S1.SS1 "In 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [5.1.2 Self-attention](#Ch5.S1.SS2 "In 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [5.1.3 Residual connection](#Ch5.S1.SS3 "In 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        4.  [5.1.4 Feed-forward network](#Ch5.S1.SS4 "In 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        5.  [5.1.5 Optimization and inference](#Ch5.S1.SS5 "In 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    2.  [5.2 Fault-tolerant Quantum Transformer](#Ch5.S2 "In Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [5.2.1 Quantum self-attention](#Ch5.S2.SS1 "In 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [5.2.2 Quantum residual connection and layer normalization](#Ch5.S2.SS2 "In 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        3.  [5.2.3 Quantum feedforward neural network](#Ch5.S2.SS3 "In 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    3.  [5.3 Runtime Analysis with Quadratic Speedups](#Ch5.S3 "In Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        1.  [5.3.1 Overview](#Ch5.S3.SS1 "In 5.3 Runtime Analysis with Quadratic Speedups ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-        2.  [5.3.2 Numerical evidence](#Ch5.S3.SS2 "In 5.3 Runtime Analysis with Quadratic Speedups ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    4.  [5.4 Code Demonstration](#Ch5.S4 "In Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-    5.  [5.5 Bibliographic Remarks](#Ch5.S5 "In Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-7.  [6 Conclusion](#Ch6 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-8.  [A Notations Summary](#A1 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-9.  [B Concentration Inequality](#A2 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-10. [C Haar Measure and Unitary t-design](#A3 "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
-11. [References](#bib "In Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")
+1.  [Preface](#Chx2)
+2.  [1 Introduction](#Ch1)
+    1.  [1.1 A First Glimpse of Quantum Machine Learning](#Ch1.S1)
+        1.  [1.1.1 Quantum computers](#Ch1.S1.SS1)
+        2.  [1.1.2 Different measures of quantum advantages](#Ch1.S1.SS2)
+        3.  [1.1.3 Explored tasks in quantum machine learning](#Ch1.S1.SS3)
+    2.  [1.2 Progress of Quantum Machine Learning](#Ch1.S2)
+        1.  [1.2.1 Progress of quantum computers](#Ch1.S2.SS1)
+        2.  [1.2.2 Progress of quantum machine learning under FTQC](#Ch1.S2.SS2)
+        3.  [1.2.3 Progress of quantum machine learning under NISQ](#Ch1.S2.SS3)
+        4.  [1.2.4 A brief review of quantum machine learning](#Ch1.S2.SS4)
+    3.  [1.3 Organization of This Tutorial](#Ch1.S3)
+3.  [2 Basics of Quantum Computing](#Ch2)
+    1.  [2.1 From Classical Bits to Quantum Bits](#Ch2.S1)
+        1.  [2.1.1 Classical bits](#Ch2.S1.SS1)
+        2.  [2.1.2 Quantum bits (Qubits)](#Ch2.S1.SS2)
+        3.  [2.1.3 Density matrix](#Ch2.S1.SS3)
+    2.  [2.2 From Digital Logical Circuit to Quantum Circuit Model](#Ch2.S2)
+        1.  [2.2.1 Classical digital logical circuit](#Ch2.S2.SS1)
+        2.  [2.2.2 Quantum circuit](#Ch2.S2.SS2)
+    3.  [2.3 Quantum Read-in and Read-out protocols](#Ch2.S3)
+        1.  [2.3.1 Quantum read-in protocols](#Ch2.S3.SS1)
+        2.  [2.3.2 Quantum read-out protocols](#Ch2.S3.SS2)
+    4.  [2.4 Quantum Linear Algebra](#Ch2.S4)
+        1.  [2.4.1 Block encoding](#Ch2.S4.SS1)
+        2.  [2.4.2 Basic arithmetic for block encodings](#Ch2.S4.SS2)
+        3.  [2.4.3 Quantum singular value transformation](#Ch2.S4.SS3)
+    5.  [2.5 Code Demonstration](#Ch2.S5)
+        1.  [2.5.1 Read-in implementations](#Ch2.S5.SS1)
+        2.  [2.5.2 Block encoding](#Ch2.S5.SS2)
+    6.  [2.6 Bibliographic Remarks](#Ch2.S6)
+        1.  [2.6.1 Advanced quantum read-in protocols](#Ch2.S6.SS1)
+        2.  [2.6.2 Advanced quantum read-out protocols](#Ch2.S6.SS2)
+        3.  [2.6.3 Advanced quantum linear algebra](#Ch2.S6.SS3)
+4.  [3 Quantum Kernel Methods](#Ch3)
+    1.  [3.1 Classical Kernel Machines](#Ch3.S1)
+        1.  [3.1.1 Motivation of kernel methods](#Ch3.S1.SS1)
+        2.  [3.1.2 Dual representation](#Ch3.S1.SS2)
+        3.  [3.1.3 Kernel construction](#Ch3.S1.SS3)
+    2.  [3.2 Quantum Kernel Machines](#Ch3.S2)
+        1.  [3.2.1 Motivations for quantum kernel machines](#Ch3.S2.SS1)
+        2.  [3.2.2 Quantum feature maps and quantum kernel machines](#Ch3.S2.SS2)
+        3.  [3.2.3 Relation between quantum and classical kernel machines](#Ch3.S2.SS3)
+        4.  [3.2.4 Concrete examples of quantum kernels](#Ch3.S2.SS4)
+    3.  [3.3 Theoretical Foundations of Quantum Kernel Machines](#Ch3.S3)
+        1.  [3.3.1 Expressivity of quantum kernel machines](#Ch3.S3.SS1)
+        2.  [3.3.2 Generalization of quantum kernel machines](#Ch3.S3.SS2)
+    4.  [3.4 Code Demonstration](#Ch3.S4)
+        1.  [3.4.1 Classification on MNIST dataset](#Ch3.S4.SS1)
+    5.  [3.5 Bibliographic Remarks](#Ch3.S5)
+        1.  [3.5.1 Quantum kernel design](#Ch3.S5.SS1)
+        2.  [3.5.2 Theoretical studies of quantum kernels](#Ch3.S5.SS2)
+        3.  [3.5.3 Applications of quantum kernels](#Ch3.S5.SS3)
+5.  [4 Quantum Neural Networks](#Ch4)
+    1.  [4.1 Classical Neural Networks](#Ch4.S1)
+        1.  [4.1.1 Perceptron](#Ch4.S1.SS1)
+        2.  [4.1.2 Multilayer perceptron](#Ch4.S1.SS2)
+    2.  [4.2 Fault-tolerant Quantum Perceptron](#Ch4.S2)
+        1.  [4.2.1 Grover search](#Ch4.S2.SS1)
+        2.  [4.2.2 Online quantum perceptron with quadratic speedups](#Ch4.S2.SS2)
+    3.  [4.3 Near-term Quantum Neural Networks](#Ch4.S3)
+        1.  [4.3.1 General framework](#Ch4.S3.SS1)
+        2.  [4.3.2 Discriminative learning with QNNs](#Ch4.S3.SS2)
+        3.  [4.3.3 Generative learning with QNNs](#Ch4.S3.SS3)
+    4.  [4.4 Theoretical Foundations of Quantum Neural Networks](#Ch4.S4)
+        1.  [4.4.1 Expressivity and generalization of quantum neural networks](#Ch4.S4.SS1)
+        2.  [4.4.2 Trainability of quantum neural networks](#Ch4.S4.SS2)
+    5.  [4.5 Code Demonstration](#Ch4.S5)
+        1.  [4.5.1 Quantum classifier](#Ch4.S5.SS1)
+        2.  [4.5.2 Quantum patch GAN](#Ch4.S5.SS2)
+    6.  [4.6 Bibliographic Remarks](#Ch4.S6)
+        1.  [4.6.1 Discriminative learning with QNN](#Ch4.S6.SS1)
+        2.  [4.6.2 Generative learning with QNNs](#Ch4.S6.SS2)
+6.  [5 Quantum Transformer](#Ch5)
+    1.  [5.1 Classical Transformer](#Ch5.S1)
+        1.  [5.1.1 Tokenization and embedding](#Ch5.S1.SS1)
+        2.  [5.1.2 Self-attention](#Ch5.S1.SS2)
+        3.  [5.1.3 Residual connection](#Ch5.S1.SS3)
+        4.  [5.1.4 Feed-forward network](#Ch5.S1.SS4)
+        5.  [5.1.5 Optimization and inference](#Ch5.S1.SS5)
+    2.  [5.2 Fault-tolerant Quantum Transformer](#Ch5.S2)
+        1.  [5.2.1 Quantum self-attention](#Ch5.S2.SS1)
+        2.  [5.2.2 Quantum residual connection and layer normalization](#Ch5.S2.SS2)
+        3.  [5.2.3 Quantum feedforward neural network](#Ch5.S2.SS3)
+    3.  [5.3 Runtime Analysis with Quadratic Speedups](#Ch5.S3)
+        1.  [5.3.1 Overview](#Ch5.S3.SS1)
+        2.  [5.3.2 Numerical evidence](#Ch5.S3.SS2)
+    4.  [5.4 Code Demonstration](#Ch5.S4)
+    5.  [5.5 Bibliographic Remarks](#Ch5.S5)
+7.  [6 Conclusion](#Ch6)
+8.  [A Notations Summary](#A1)
+9.  [B Concentration Inequality](#A2)
+10. [C Haar Measure and Unitary t-design](#A3)
+11. [References](#bib)
 
 ## Preface
 
@@ -167,7 +167,7 @@ These staggering costs present a critical barrier to the future growth of AI. Qu
 
 ### 1.1 A First Glimpse of Quantum Machine Learning
 
-So, what exactly is quantum machine learning (QML)? In its simplest terms, the focus of this tutorial on QML can be summarized as follows (see Chapter [1.1.3](#Ch1.S1.SS3 "1.1.3 Explored tasks in quantum machine learning ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for the systematic overview).
+So, what exactly is quantum machine learning (QML)? In its simplest terms, the focus of this tutorial on QML can be summarized as follows (see Chapter [1.1.3](#Ch1.S1.SS3) for the systematic overview).
 
 The three key elements in the above interpretation are: quantum processors, specified tasks, and advantages. In what follows, let us elucidate the specific meaning of each of these terms, providing the necessary foundation for a deeper understanding of the mechanisms and potential of QML.
 
@@ -184,7 +184,7 @@ However, as a universal computing device, the potential of quantum computers ext
 <figcaption>Figure 1.1: The paradigm between classical and quantum computing. The mechanisms between classical and quantum computing are very similar, where both of them involve input, computation, and output. In classical computing, the input refers to a bit-string, the computation part refers to the digital logic circuits, and the output also refers to a bit-string. In quantum computing, the input is a single- or multi-qubit state. The computation involves quantum circuits. And the output of quantum computers requires quantum measurement, which aims to extract information from the quantum world to the classical world.</figcaption>
 </figure>
 
-An intuitive way to understand why quantum computers can outperform classical computers is by comparing their fundamental components. As illustrated in Figure [1.1](#Ch1.F1 "Figure 1.1 ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), both types of computers consist of three fundamental components: input, the computational process, and the output. The implementation of these three components in classical and quantum computing is summarized in Table [1.1](#Ch1.T1 "Table 1.1 ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+An intuitive way to understand why quantum computers can outperform classical computers is by comparing their fundamental components. As illustrated in Figure [1.1](#Ch1.F1), both types of computers consist of three fundamental components: input, the computational process, and the output. The implementation of these three components in classical and quantum computing is summarized in Table [1.1](#Ch1.T1).
 
 <figure id="Ch1.T1" class="ltx_table">
 <table id="Ch1.T1.4" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -220,7 +220,7 @@ The advantages of quantum computers stem primarily from the key distinctions bet
 
   Bits versus Qubits. A classical bit is a binary unit that takes on a value of either $`0`$ or $`1`$. In contrast, a quantum bit, or qubit, can exist in a superposition of both $`0`$ and $`1`$ simultaneously, represented by a two-dimensional vector where the entries correspond to the probabilities of the qubit being in each state.
 
-  Furthermore, while classical bits follow the Cartesian product rule, qubits adhere to the tensor product rule. This distinction implies that an $`N`$-qubit system is described by a $`2^{N}`$-dimensional vector, allowing quantum systems to encode information exponentially with $`N`$—far surpassing the capacity of classical bits. Table [1.2](#Ch1.T2 "Table 1.2 ‣ 1st item ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") summarizes the mathematical expressions of classical and quantum bits.
+  Furthermore, while classical bits follow the Cartesian product rule, qubits adhere to the tensor product rule. This distinction implies that an $`N`$-qubit system is described by a $`2^{N}`$-dimensional vector, allowing quantum systems to encode information exponentially with $`N`$—far surpassing the capacity of classical bits. Table [1.2](#Ch1.T2) summarizes the mathematical expressions of classical and quantum bits.
 
   <figure id="Ch1.T2" class="ltx_table">
   <table id="Ch1.T2.4" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -270,19 +270,19 @@ The advantages of quantum computers stem primarily from the key distinctions bet
 
 - <span id="Ch1.S1.I1.i2">•</span>
 
-  Digital logic circuits versus quantum circuits. Classical computers rely on digital logic circuits composed of logic gates that perform operations on bits in a deterministic manner, as illustrated in Figure [1.1](#Ch1.F1 "Figure 1.1 ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In contrast, quantum circuits consist of quantum gates, which act on single or multiple qubits to modify their states—the probability amplitudes $`a_{1},...,a_{2^{N}}`$, as shown in Table [1.2](#Ch1.T2 "Table 1.2 ‣ 1st item ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Owing to the universality of quantum gates, for any given input qubit state, there always exists a specific quantum circuit capable of transforming the input state into one corresponding to the target solution—a particular probability distribution. For certain probability distributions, a quantum computer can use a polynomial number of quantum gates relative to the qubit count $`N`$ to generate the distribution, whereas classical computers require an exponential number of gates with $`N`$ to achieve the same result. This difference underpins the quantum advantage.
+  Digital logic circuits versus quantum circuits. Classical computers rely on digital logic circuits composed of logic gates that perform operations on bits in a deterministic manner, as illustrated in Figure [1.1](#Ch1.F1). In contrast, quantum circuits consist of quantum gates, which act on single or multiple qubits to modify their states—the probability amplitudes $`a_{1},...,a_{2^{N}}`$, as shown in Table [1.2](#Ch1.T2). Owing to the universality of quantum gates, for any given input qubit state, there always exists a specific quantum circuit capable of transforming the input state into one corresponding to the target solution—a particular probability distribution. For certain probability distributions, a quantum computer can use a polynomial number of quantum gates relative to the qubit count $`N`$ to generate the distribution, whereas classical computers require an exponential number of gates with $`N`$ to achieve the same result. This difference underpins the quantum advantage.
 
 - <span id="Ch1.S1.I1.i3">•</span>
 
   The readout process in quantum computing differs fundamentally from that in classical computing, as it involves quantum measurements, which extract information from a quantum system and translate it into a form that can be interpreted by classical systems. For problems in quantum physics and chemistry, quantum measurements can reveal far more useful information than classical simulations of the same systems, enabling significant runtime speedups in obtaining the desired physical properties.
 
-The formal definitions of quantum computing are presented in Chapter [2](#Ch2 "Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). As we will see, the power of quantum computers is primarily determined by two factors: the number of qubits and the quantum gates, as well as their respective qualities. The term “qualities” refers to the fact that fabricating quantum computers is highly challenging, as both qubits and quantum gates are prone to errors. These qualities are measured using various physical metrics. One commonly used metric is quantum volume $`V_{Q}`$ ([Cross et al., 2019](#bib.bib16)), which quantifies a quantum computer’s capabilities by accounting for both its error rates and overall performance. Mathematically, the quantum volume represents the maximum size of square quantum circuits that the computer can successfully implement to achieve the heavy output generation problem, i.e.,
+The formal definitions of quantum computing are presented in Chapter [2](#Ch2). As we will see, the power of quantum computers is primarily determined by two factors: the number of qubits and the quantum gates, as well as their respective qualities. The term “qualities” refers to the fact that fabricating quantum computers is highly challenging, as both qubits and quantum gates are prone to errors. These qualities are measured using various physical metrics. One commonly used metric is quantum volume $`V_{Q}`$ ([Cross et al., 2019](#bib.bib16)), which quantifies a quantum computer’s capabilities by accounting for both its error rates and overall performance. Mathematically, the quantum volume represents the maximum size of square quantum circuits that the computer can successfully implement to achieve the heavy output generation problem, i.e.,
 
 $$
 \log_{2}(V_{Q})=\arg\max_{m}\min(m,d(m)),
 $$
 
-where $`m\leq N`$ is a number of qubits selected from the given $`N`$-qubit quantum computer, and $`d(m)`$ is the number of qubits in the largest square circuits for which we can reliably sample heavy outputs with probability greater than $`2/3`$. The heavy output generation problem discussed here stems from proposals aimed at demonstrating quantum advantage. That is, if a quantum computer is of sufficiently high quality, we should expect to observe heavy outputs frequently across a range of random quantum circuit families. For illustration, Table [1.3](#Ch1.T3 "Table 1.3 ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") summarizes the progress of quantum computers as of 2024.
+where $`m\leq N`$ is a number of qubits selected from the given $`N`$-qubit quantum computer, and $`d(m)`$ is the number of qubits in the largest square circuits for which we can reliably sample heavy outputs with probability greater than $`2/3`$. The heavy output generation problem discussed here stems from proposals aimed at demonstrating quantum advantage. That is, if a quantum computer is of sufficiently high quality, we should expect to observe heavy outputs frequently across a range of random quantum circuit families. For illustration, Table [1.3](#Ch1.T3) summarizes the progress of quantum computers as of 2024.
 
 <figure id="Ch1.T3" class="ltx_table">
 <table id="Ch1.T3.4" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -409,7 +409,7 @@ What are the main areas of focus in QML? QML research is extensive and can be br
 
   </div>
 
-The classification above is not exhaustive. As illustrated in Figure [1.2](#Ch1.F2 "Figure 1.2 ‣ 1.1.3 Explored tasks in quantum machine learning ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), each sector can be further subdivided based on various learning paradigms, such as discriminative vs. generative learning or supervised, unsupervised, and semi-supervised learning. Additionally, each sector can be further categorized according to different application domains, such as finance, healthcare, and logistics.
+The classification above is not exhaustive. As illustrated in Figure [1.2](#Ch1.F2), each sector can be further subdivided based on various learning paradigms, such as discriminative vs. generative learning or supervised, unsupervised, and semi-supervised learning. Additionally, each sector can be further categorized according to different application domains, such as finance, healthcare, and logistics.
 
 ### 1.2 Progress of Quantum Machine Learning
 
@@ -417,7 +417,7 @@ Huge efforts have been made to the QC and QQ sectors to determine which tasks an
 
 #### 1.2.1 Progress of quantum computers
 
-The novelty and inherent challenges of utilizing quantum physics for computation have driven the development of various computational architectures, giving rise to the formalized concept of circuit-based quantum computers, as discussed in Chapter [1.1.1](#Ch1.S1.SS1 "1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In pursuit of this goal, numerous companies and organizations are striving to establish their architecture as the leading approach and to be the first to demonstrate practical utility or quantum advantage on a large-scale quantum device.
+The novelty and inherent challenges of utilizing quantum physics for computation have driven the development of various computational architectures, giving rise to the formalized concept of circuit-based quantum computers, as discussed in Chapter [1.1.1](#Ch1.S1.SS1). In pursuit of this goal, numerous companies and organizations are striving to establish their architecture as the leading approach and to be the first to demonstrate practical utility or quantum advantage on a large-scale quantum device.
 
 Common architectures currently include superconducting qubits (employed by IBM and Google), ion-trap systems (pioneered by IonQ), and Rydberg atom systems (developed by QuEra), each offering distinct advantages ([Cheng et al., 2023](#bib.bib26)). Specifically, superconducting qubits excel in scalability and fast gate operations ([Huang et al., 2020a](#bib.bib27)), while ion-trap systems are known for their high coherence times, precise control over individual qubits, and full connectivity of all qubits ([Bruzewicz et al., 2019](#bib.bib28)). Moreover, Rydberg atom systems enable flexible qubit connectivity through highly controllable interactions ([Morgado and Whitlock, 2021](#bib.bib29)). Besides these architectures, integrated photonic quantum computers are emerging as promising alternatives for robust and scalable quantum computation.
 
@@ -454,13 +454,13 @@ The exponential runtime speedup achieved by the HHL algorithm has garnered signi
 
 Another milestone in FTQC-based QML algorithms is the quantum singular value transformation (QSVT), proposed by [Gilyén et al. (2019)](#bib.bib38). QSVT enables polynomial transformations of the singular values of a linear operator embedded within a unitary matrix, offering a unifying framework for various quantum algorithms. It has connected and enhanced a broad range of quantum techniques, including amplitude amplification, quantum linear system solvers, and quantum simulation methods. Compared to the HHL algorithm for solving linear equations, QSVT provides improved scaling factors, making it a more efficient tool for addressing these problems in the context of QML.
 
-In addition to advancements in linear equation solving, another promising line of research in FTQC-based QML focuses on leveraging quantum computing to enhance deep neural networks (DNNs) rather than traditional machine learning models. This research track has two main areas of focus. The first is the acceleration of DNN optimization, with notable examples including the development of efficient quantum algorithms for dissipative differential equations to expedite (stochastic) gradient descent, as well as Quantum Langevin dynamics for optimization ([Chen et al., 2023](#bib.bib39); [Liu et al., 2024a](#bib.bib40)). The second area centers on advancing Transformers using quantum computing. In Chapter [5](#Ch5 "Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will discuss in detail how quantum computing can be employed to accelerate Transformers during the inference stage.
+In addition to advancements in linear equation solving, another promising line of research in FTQC-based QML focuses on leveraging quantum computing to enhance deep neural networks (DNNs) rather than traditional machine learning models. This research track has two main areas of focus. The first is the acceleration of DNN optimization, with notable examples including the development of efficient quantum algorithms for dissipative differential equations to expedite (stochastic) gradient descent, as well as Quantum Langevin dynamics for optimization ([Chen et al., 2023](#bib.bib39); [Liu et al., 2024a](#bib.bib40)). The second area centers on advancing Transformers using quantum computing. In Chapter [5](#Ch5), we will discuss in detail how quantum computing can be employed to accelerate Transformers during the inference stage.
 
 #### 1.2.3 Progress of quantum machine learning under NISQ
 
-The work conducted by [Havlíček et al. (2019)](#bib.bib43) marked a pivotal moment for QML in the NISQ era. This study demonstrated the implementation of quantum kernel methods and quantum neural networks (QNNs) on a 5-qubit superconducting quantum computer, highlighting potential quantum advantages from the perspective of complexity theory. Unlike the aforementioned FTQC algorithms, quantum kernel methods and QNNs are flexible and can be effectively adapted to the limited quantum resources available in the NISQ era. These demonstrations, along with advancements in quantum hardware, sparked significant interest in exploring QML applications using NISQ quantum devices. We will delve into quantum kernel methods and QNNs in Chapter [3](#Ch3 "Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and Chapter [4](#Ch4 "Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), respectively.
+The work conducted by [Havlíček et al. (2019)](#bib.bib43) marked a pivotal moment for QML in the NISQ era. This study demonstrated the implementation of quantum kernel methods and quantum neural networks (QNNs) on a 5-qubit superconducting quantum computer, highlighting potential quantum advantages from the perspective of complexity theory. Unlike the aforementioned FTQC algorithms, quantum kernel methods and QNNs are flexible and can be effectively adapted to the limited quantum resources available in the NISQ era. These demonstrations, along with advancements in quantum hardware, sparked significant interest in exploring QML applications using NISQ quantum devices. We will delve into quantum kernel methods and QNNs in Chapter [3](#Ch3) and Chapter [4](#Ch4), respectively.
 
-As shown in Figure [1.4](#Ch1.F4 "Figure 1.4 ‣ 1.2.3 Progress of quantum machine learning under NISQ ‣ 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the mechanisms of QNNs and deep neural networks (DNNs) are almost the same, whereas the only difference is the way of implementing the trainable model. This difference gives the potential of quantum learning models to solve complex problems beyond the reach of classical neural networks, opening new frontiers in many fields. Roughly speaking, research in QNNs and quantum kernel methods has primarily focused on three key areas: (I) quantum learning models and applications, (II) the adaptation of advanced AI topics to QML, and (III) theoretical foundations of quantum learning models. A brief overview of each category is provided below.
+As shown in Figure [1.4](#Ch1.F4), the mechanisms of QNNs and deep neural networks (DNNs) are almost the same, whereas the only difference is the way of implementing the trainable model. This difference gives the potential of quantum learning models to solve complex problems beyond the reach of classical neural networks, opening new frontiers in many fields. Roughly speaking, research in QNNs and quantum kernel methods has primarily focused on three key areas: (I) quantum learning models and applications, (II) the adaptation of advanced AI topics to QML, and (III) theoretical foundations of quantum learning models. A brief overview of each category is provided below.
 
 <figure id="Ch1.F4" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/DNNvsQNN.png" id="Ch1.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:471/180;" width="471" height="180" alt="Refer to caption" />
@@ -475,7 +475,7 @@ From an application perspective, QML models implemented on NISQ devices have bee
 
 \(II\) Adaptation of advanced AI topics to QML. Beyond model design, advanced topics from AI have been extended to QML, aiming to enhance the performance and robustness of different QML models. Examples include quantum architecture search ([Du et al., 2022a](#bib.bib49)) (the quantum equivalent of neural architecture search), advanced optimization techniques ([Stokes et al., 2020](#bib.bib50)), and pruning methods to reduce the complexity of quantum models ([Sim et al., 2021](#bib.bib51); [Wang et al., 2023a](#bib.bib52)). Other areas of active research include adversarial learning ([Lu et al., 2020](#bib.bib53)), continual learning ([Jiang et al., 2022](#bib.bib54)), differential privacy ([Du et al., 2021a](#bib.bib55); [Watkins et al., 2023](#bib.bib56)), distributed learning ([Du et al., 2022b](#bib.bib57)), federated learning ([Ren et al., 2023](#bib.bib58)), and interpretability within the context of QML ([Pira and Ferrie, 2024](#bib.bib59)). These techniques have the potential to significantly improve the efficiency and effectiveness of QML models, addressing some of the current limitations of NISQ devices.
 
-\(III\) Theoretical foundations. Quantum learning theory ([Banchi et al., 2023](#bib.bib60)) has garnered increasing attention, aiming to compare the capabilities of different QML models and to identify the theoretical advantages of QML over classical machine learning models. As shown in Figure [1.5](#Ch1.F5 "Figure 1.5 ‣ 1.2.3 Progress of quantum machine learning under NISQ ‣ 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the learnability of QML models can be evaluated across three key dimensions: expressivity, trainability, and generalization capabilities. Below, we provide a brief overview of each measure.
+\(III\) Theoretical foundations. Quantum learning theory ([Banchi et al., 2023](#bib.bib60)) has garnered increasing attention, aiming to compare the capabilities of different QML models and to identify the theoretical advantages of QML over classical machine learning models. As shown in Figure [1.5](#Ch1.F5), the learnability of QML models can be evaluated across three key dimensions: expressivity, trainability, and generalization capabilities. Below, we provide a brief overview of each measure.
 
 <figure id="Ch1.F5" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/QLT.png" id="Ch1.F5.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:381/158;" width="381" height="158" alt="Refer to caption" />
@@ -500,7 +500,7 @@ The combination of advancements in model design, application domains, and theore
 
 Unlike quantum hardware, where the number of qubits has rapidly scaled from zero to thousands, the development of QML algorithms—and quantum algorithms more broadly—has taken an inverse trajectory, transitioning from FTQC to NISQ devices. This shift reflects the move from idealized theoretical frameworks to practical implementations. The convergence of quantum hardware and QML algorithms, where the quantum resources required by these algorithms become attainable on real quantum computers, enables researchers to experimentally evaluate the power and limitations of various quantum algorithms.
 
-Based on the minimum quantum resources required to complete learning tasks, we distinguish between FTQC algorithms, discussed in Chapter [1.2.2](#Ch1.S2.SS2 "1.2.2 Progress of quantum machine learning under FTQC ‣ 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), and NISQ algorithms, including QNNs and quantum kernel methods, in Chapter [1.2.3](#Ch1.S2.SS3 "1.2.3 Progress of quantum machine learning under NISQ ‣ 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). FTQC-based QML algorithms necessitate error-corrected quantum computers with tens of billions of qubits—an achievement that remains far from realization. In contrast, QNNs and quantum kernels are more flexible and can be executed on both NISQ and FTQC devices, depending on the available resources.
+Based on the minimum quantum resources required to complete learning tasks, we distinguish between FTQC algorithms, discussed in Chapter [1.2.2](#Ch1.S2.SS2), and NISQ algorithms, including QNNs and quantum kernel methods, in Chapter [1.2.3](#Ch1.S2.SS3). FTQC-based QML algorithms necessitate error-corrected quantum computers with tens of billions of qubits—an achievement that remains far from realization. In contrast, QNNs and quantum kernels are more flexible and can be executed on both NISQ and FTQC devices, depending on the available resources.
 
 As quantum hardware continues to progress, the development of QML algorithms must evolve in tandem. A promising direction is to integrate FTQC algorithms with QNNs and quantum kernel methods, creating new QML algorithms that can be run on current quantum processors while offering enhanced quantum advantages across various tasks.
 
@@ -508,9 +508,9 @@ As quantum hardware continues to progress, the development of QML algorithms mus
 
 To encourage and enable computer scientists to engage with the rapidly growing field of quantum AI, we provide this hands-on tutorial that revisits QML algorithms from a computer science perspective. With this aim, the tutorial is designed to balance theory, practical implementations, and applications, making it suitable for both researchers and practitioners with a background in classical machine learning. The tutorial is divided into the following chapters:
 
-Chapter [2](#Ch2 "Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"): Basics of Quantum Computing. Before delving into QML, this chapter lays the groundwork by introducing the fundamental concepts of quantum computing. It covers the transition from classical bits to quantum bits, explains quantum circuit models, illustrates how quantum systems interface with classical systems through quantum read-in and read-out mechanisms, and presents some fundamental concepts of quantum linear algebra. By the end of this chapter, you will understand that a solid grasp of linear algebra is all you need to comprehend the basics of quantum computing.
+Chapter [2](#Ch2): Basics of Quantum Computing. Before delving into QML, this chapter lays the groundwork by introducing the fundamental concepts of quantum computing. It covers the transition from classical bits to quantum bits, explains quantum circuit models, illustrates how quantum systems interface with classical systems through quantum read-in and read-out mechanisms, and presents some fundamental concepts of quantum linear algebra. By the end of this chapter, you will understand that a solid grasp of linear algebra is all you need to comprehend the basics of quantum computing.
 
-Chapters [3](#Ch3 "Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), [4](#Ch4 "Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [5](#Ch5 "Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"): Classical ML Models Extended to Quantum Frameworks. Each of these chapters follows a consistent structure, starting with a review of the classical model and progressing to its quantum extension—Quantum kernel methods in Chapter [3](#Ch3 "Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), Quantum neural networks in Chapter [4](#Ch4 "Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), and Quantum Transformers in Chapter [5](#Ch5 "Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). This unified structure enables readers to clearly understand how classical machine learning models can be translated into quantum implementations and how quantum computers may offer computational advantages.
+Chapters [3](#Ch3), [4](#Ch4) and [5](#Ch5): Classical ML Models Extended to Quantum Frameworks. Each of these chapters follows a consistent structure, starting with a review of the classical model and progressing to its quantum extension—Quantum kernel methods in Chapter [3](#Ch3), Quantum neural networks in Chapter [4](#Ch4), and Quantum Transformers in Chapter [5](#Ch5). This unified structure enables readers to clearly understand how classical machine learning models can be translated into quantum implementations and how quantum computers may offer computational advantages.
 
 Appendix. The Appendix serves as a supplementary resource, providing a summary of notations and essential mathematical tools that are omitted from the main text for brevity. In particular, it includes basic introduction of concentration inequalities, the Haar measure, and other foundational concepts relevant to the tutorial.
 
@@ -540,7 +540,7 @@ To provide a clear and comprehensive learning experience, each chapter is compos
 
 In this chapter, we introduce the fundamental concepts of quantum computation, such as quantum states, quantum circuits, and quantum measurements, along with key topics in quantum machine learning, including quantum read-in, quantum read-out, and quantum linear algebra. These foundational elements are essential for understanding quantum machine learning algorithms and will be repeatedly referenced throughout the subsequent chapters.
 
-This chapter is organized as follows: Chapter [2.1](#Ch2.S1 "2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") introduces quantum bits and their mathematical representations; Chapter [2.2](#Ch2.S2 "2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") covers quantum circuits, including quantum gates, quantum channels, and quantum measurements; Chapter [2.3](#Ch2.S3 "2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") discusses how to encode classical data into quantum systems and extract classical information from quantum states; Chapter [2.4](#Ch2.S4 "2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") delves into quantum linear algebra; Chapter [2.5](#Ch2.S5 "2.5 Code Demonstration ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") provides practical coding exercises to reinforce these concepts; and finally, Chapter [2.6](#Ch2.S6 "2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") presents recent advancements in efficient quantum read-in and read-out techniques for further exploration.
+This chapter is organized as follows: Chapter [2.1](#Ch2.S1) introduces quantum bits and their mathematical representations; Chapter [2.2](#Ch2.S2) covers quantum circuits, including quantum gates, quantum channels, and quantum measurements; Chapter [2.3](#Ch2.S3) discusses how to encode classical data into quantum systems and extract classical information from quantum states; Chapter [2.4](#Ch2.S4) delves into quantum linear algebra; Chapter [2.5](#Ch2.S5) provides practical coding exercises to reinforce these concepts; and finally, Chapter [2.6](#Ch2.S6) presents recent advancements in efficient quantum read-in and read-out techniques for further exploration.
 
 ### 2.1 From Classical Bits to Quantum Bits
 
@@ -577,7 +577,7 @@ $$
 
 where $`\langle{0}\rvert\equiv\boldsymbol{e}_{0}^{\top}\equiv[1,0]`$, $`\langle{1}\rvert\equiv\boldsymbol{e}_{1}^{\top}\equiv[0,1]`$, and the symbol ‘$`\top`$’ denotes the transpose operation.
 
-The physical interpretation of coefficients $`\{\boldsymbol{a}_{i}\}`$ is probability amplitudes. Namely, when we intend to extract information from the qubit state $`\lvert{\boldsymbol{a}}\rangle`$ into the classical form, quantum measurements are applied to this state, where the probability of sampling the basis $`\lvert{0}\rangle`$ ($`\lvert{1}\rangle`$) is $`|\boldsymbol{a}_{1}|^{2}`$ $`(|\boldsymbol{a}_{2}|^{2})`$. Recall that the classical bit only permits the deterministic status with ‘$`0`$’ or ‘$`1`$’, while the qubit state in Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is the superposition of the two status ‘$`\lvert{0}\rangle`$’ and ‘$`\lvert{1}\rangle`$’.
+The physical interpretation of coefficients $`\{\boldsymbol{a}_{i}\}`$ is probability amplitudes. Namely, when we intend to extract information from the qubit state $`\lvert{\boldsymbol{a}}\rangle`$ into the classical form, quantum measurements are applied to this state, where the probability of sampling the basis $`\lvert{0}\rangle`$ ($`\lvert{1}\rangle`$) is $`|\boldsymbol{a}_{1}|^{2}`$ $`(|\boldsymbol{a}_{2}|^{2})`$. Recall that the classical bit only permits the deterministic status with ‘$`0`$’ or ‘$`1`$’, while the qubit state in Eqn. ([2.2](#Ch2.E2)) is the superposition of the two status ‘$`\lvert{0}\rangle`$’ and ‘$`\lvert{1}\rangle`$’.
 
 Two-qubit state. The two qubits obey the tensor product rule, i.e.,
 
@@ -595,7 +595,7 @@ $$
 
 which differs from the classical bits yielding the Cartesian product rule.
 
-For instance, let the first qubit follow Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and the second qubit state be $`\lvert{\boldsymbol{b}}\rangle=\boldsymbol{b}_{1}\lvert{0}\rangle+\boldsymbol{b}_{2}\lvert{1}\rangle`$ with $`|\boldsymbol{b}_{1}|^{2}+|\boldsymbol{b}_{2}|^{2}=1`$. The two-qubit state formed by $`\lvert{\boldsymbol{a}}\rangle`$ and $`\lvert{\boldsymbol{b}}\rangle`$ is defined as
+For instance, let the first qubit follow Eqn. ([2.2](#Ch2.E2)) and the second qubit state be $`\lvert{\boldsymbol{b}}\rangle=\boldsymbol{b}_{1}\lvert{0}\rangle+\boldsymbol{b}_{2}\lvert{1}\rangle`$ with $`|\boldsymbol{b}_{1}|^{2}+|\boldsymbol{b}_{2}|^{2}=1`$. The two-qubit state formed by $`\lvert{\boldsymbol{a}}\rangle`$ and $`\lvert{\boldsymbol{b}}\rangle`$ is defined as
 
 $$
 \lvert{\boldsymbol{a}}\rangle\otimes\lvert{\boldsymbol{b}}\rangle=\boldsymbol{a}_{1}\boldsymbol{b}_{1}\lvert{0}\rangle\otimes\lvert{0}\rangle+\boldsymbol{a}_{1}\boldsymbol{b}_{2}\lvert{0}\rangle\otimes\lvert{1}\rangle+\boldsymbol{a}_{2}\boldsymbol{b}_{1}\lvert{1}\rangle\otimes\lvert{0}\rangle+\boldsymbol{a}_{2}\boldsymbol{b}_{2}\lvert{1}\rangle\otimes\lvert{1}\rangle\in\mathbb{C}^{4}~,
@@ -641,7 +641,7 @@ If the state can be expressed in this form, it is referred to as seperable.
 
 ###### Example 2.3.
 
-(GHZ state). A typical example of an entangled $`N`$-qubit state is the Greenberger-Horne-Zeilinger (GHZ) state ([Greenberger et al., 1989](#bib.bib66)), which is a generalization of the two-qubit Bell state (see Example [2.1](#Ch2.Thmtheorem1 "Example 2.1. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to a maximally entangled $`N`$-qubit state. The general form of an $`N`$-qubit GHZ state is: $`\lvert{\text{GHZ}_{N}}\rangle=\frac{1}{\sqrt{2}}\left(\lvert{0}\rangle^{\otimes N}+\lvert{1}\rangle^{\otimes N}\right).`$ (2.10) For $`N=3`$, the GHZ state is:
+(GHZ state). A typical example of an entangled $`N`$-qubit state is the Greenberger-Horne-Zeilinger (GHZ) state ([Greenberger et al., 1989](#bib.bib66)), which is a generalization of the two-qubit Bell state (see Example [2.1](#Ch2.Thmtheorem1)) to a maximally entangled $`N`$-qubit state. The general form of an $`N`$-qubit GHZ state is: $`\lvert{\text{GHZ}_{N}}\rangle=\frac{1}{\sqrt{2}}\left(\lvert{0}\rangle^{\otimes N}+\lvert{1}\rangle^{\otimes N}\right).`$ (2.10) For $`N=3`$, the GHZ state is:
 $$
 \lvert{\text{GHZ}_{3}}\rangle=\frac{1}{\sqrt{2}}\left(\lvert{000}\rangle+\lvert{111}\rangle\right).
 $$
@@ -651,7 +651,7 @@ A key property of the entangled states (e.g., Bell states and GHZ states) is tha
 
 #### 2.1.3 Density matrix
 
-Another description of quantum states is through density matrix or density operators. The reason for establishing density operators instead of Dirac notations arises from the imperfection of physical systems. Specifically, Dirac notations introduced in Chapter [2.1.2](#Ch2.S1.SS2 "2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") are used to describe ‘ideal’ quantum states (i.e., pure states), where the operated qubits are isolated from the environment. Alternatively, when the operated qubits interact with the environment unavoidably, the density operators are employed to describe the behavior of quantum states living in this open system. As such, density operators describe more general quantum states.
+Another description of quantum states is through density matrix or density operators. The reason for establishing density operators instead of Dirac notations arises from the imperfection of physical systems. Specifically, Dirac notations introduced in Chapter [2.1.2](#Ch2.S1.SS2) are used to describe ‘ideal’ quantum states (i.e., pure states), where the operated qubits are isolated from the environment. Alternatively, when the operated qubits interact with the environment unavoidably, the density operators are employed to describe the behavior of quantum states living in this open system. As such, density operators describe more general quantum states.
 
 Mathematically, an $`N`$-qubit density operator, denoted by $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$, presents a mixture of $`m`$ quantum pure states $`\lvert{\psi_{i}}\rangle\in\mathbb{C}^{2^{N}}`$ with probability $`p_{i}\in[0,1]`$ and $`\sum_{i=1}^{m}p_{i}=1`$, i.e.,
 
@@ -687,7 +687,7 @@ From the perspective of computer science, the density operator $`\rho`$ is just 
 
     For any nonzero vector $`\lvert{v}\rangle\in\mathbb{C}^{n}`$, $`\langle{v}\rvertA\lvert{v}\rangle\geq 0`$, where $`\langle{v}\rvertA\lvert{v}\rangle`$ represents the quadratic form of $`A`$ with respect to $`\lvert{v}\rangle`$.
 
-When $`m=1`$, the density operator $`\rho`$ amounts to a pure state with $`\rho=\lvert{\psi_{1}}\rangle\langle{\psi_{1}}\rvert`$. When $`m>1`$, the density operator $`\rho`$ describes a ‘mixed’ quantum state, where the rank of $`\rho`$ is larger than $`1`$. A simple criterion to discriminate the pure states with the mixed states is as follows: the pure state with $`m=1`$ yields $`\mathop{\text{Tr}}(\rho^{n})=\mathop{\text{Tr}}(\rho)=1`$ for any $`n\in\mathbb{N}_{+}`$; the mixed state with $`m>1`$ satisfies $`\mathop{\text{Tr}}(\rho^{n})<\mathop{\text{Tr}}(\rho)=1`$ for any $`n\in\mathbb{N}_{+}\setminus\{1\}`$. Similar to the Definition [2.2](#Ch2.Thmtheorem2 "Definition 2.2. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for entanglement of pure states, we can define the entanglement of mixed states.
+When $`m=1`$, the density operator $`\rho`$ amounts to a pure state with $`\rho=\lvert{\psi_{1}}\rangle\langle{\psi_{1}}\rvert`$. When $`m>1`$, the density operator $`\rho`$ describes a ‘mixed’ quantum state, where the rank of $`\rho`$ is larger than $`1`$. A simple criterion to discriminate the pure states with the mixed states is as follows: the pure state with $`m=1`$ yields $`\mathop{\text{Tr}}(\rho^{n})=\mathop{\text{Tr}}(\rho)=1`$ for any $`n\in\mathbb{N}_{+}`$; the mixed state with $`m>1`$ satisfies $`\mathop{\text{Tr}}(\rho^{n})<\mathop{\text{Tr}}(\rho)=1`$ for any $`n\in\mathbb{N}_{+}\setminus\{1\}`$. Similar to the Definition [2.2](#Ch2.Thmtheorem2) for entanglement of pure states, we can define the entanglement of mixed states.
 
 ###### Definition 2.5.
 
@@ -717,7 +717,7 @@ In this case, $`\mathop{\text{Tr}}(\rho^{2})=0.5<\mathop{\text{Tr}}(\rho)=1`$, i
 
 ### 2.2 From Digital Logical Circuit to Quantum Circuit Model
 
-To process quantum states, we need to introduce quantum computation, a fundamental model of which is the quantum circuit model. In this section, we will begin with classical computation in Chapter [2.2.1](#Ch2.S2.SS1 "2.2.1 Classical digital logical circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and transit to details about the quantum circuit model in Chapter [2.2.2](#Ch2.S2.SS2 "2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), including quantum gates, quantum channel, and quantum measurements.
+To process quantum states, we need to introduce quantum computation, a fundamental model of which is the quantum circuit model. In this section, we will begin with classical computation in Chapter [2.2.1](#Ch2.S2.SS1) and transit to details about the quantum circuit model in Chapter [2.2.2](#Ch2.S2.SS2), including quantum gates, quantum channel, and quantum measurements.
 
 #### 2.2.1 Classical digital logical circuit
 
@@ -729,7 +729,7 @@ Logic gates are the basic components of a digital circuit. They take binary inpu
 
 1.  <span id="Ch2.S2.I1.i1">1.</span>
 
-    NOT Gate: This gate inverts the input bit, i.e., it produces $`1`$ if the input is $`0`$, and vice versa. Its truth table is shown in Table [2.1](#Ch2.T1 "Table 2.1 ‣ Item 1 ‣ Logic gates ‣ 2.2.1 Classical digital logical circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers");
+    NOT Gate: This gate inverts the input bit, i.e., it produces $`1`$ if the input is $`0`$, and vice versa. Its truth table is shown in Table [2.1](#Ch2.T1);
 
     <figure id="Ch2.T1" class="ltx_table">
     <table id="Ch2.T1.4" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -753,7 +753,7 @@ Logic gates are the basic components of a digital circuit. They take binary inpu
 
 2.  <span id="Ch2.S2.I1.i2">2.</span>
 
-    AND Gate: Produces an output of $`1`$ only if both input bits are $`1`$; otherwise, it outputs $`0`$. The truth table is shown in Table [2.2](#Ch2.T2 "Table 2.2 ‣ Item 2 ‣ Logic gates ‣ 2.2.1 Classical digital logical circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers");
+    AND Gate: Produces an output of $`1`$ only if both input bits are $`1`$; otherwise, it outputs $`0`$. The truth table is shown in Table [2.2](#Ch2.T2);
 
     <figure id="Ch2.T2" class="ltx_table">
     <table id="Ch2.T2.4" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -790,7 +790,7 @@ Logic gates are the basic components of a digital circuit. They take binary inpu
 
 3.  <span id="Ch2.S2.I1.i3">3.</span>
 
-    OR Gate: Outputs $`1`$ if at least one input is $`1`$. The truth table is shown in Table [2.3](#Ch2.T3 "Table 2.3 ‣ Item 3 ‣ Logic gates ‣ 2.2.1 Classical digital logical circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers");
+    OR Gate: Outputs $`1`$ if at least one input is $`1`$. The truth table is shown in Table [2.3](#Ch2.T3);
 
     <figure id="Ch2.T3" class="ltx_table">
     <table id="Ch2.T3.4" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -827,7 +827,7 @@ Logic gates are the basic components of a digital circuit. They take binary inpu
 
 4.  <span id="Ch2.S2.I1.i4">4.</span>
 
-    XOR Gate: Produces an output of $`1`$ if the inputs are different, and $`0`$ otherwise. The truth table is shown in Table [2.4](#Ch2.T4 "Table 2.4 ‣ Item 4 ‣ Logic gates ‣ 2.2.1 Classical digital logical circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+    XOR Gate: Produces an output of $`1`$ if the inputs are different, and $`0`$ otherwise. The truth table is shown in Table [2.4](#Ch2.T4).
 
     <figure id="Ch2.T4" class="ltx_table">
     <table id="Ch2.T4.4" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -874,7 +874,7 @@ Classical digital logical circuits provide the essential framework for understan
 
 ##### Quantum gate
 
-Recall that the computational toolkit for classical computers is logic gates, e.g., NOT, AND, OR, and XOR, which are applied to the single bit or multiple bits to accomplish computation. Similarly, the computational toolkit for quantum computers (or quantum circuits) is quantum gate, which operates on qubits introduced in Chapter [2.1.2](#Ch2.S1.SS2 "2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") to complete the computation. In the following, we will introduce both single-qubit and multi-qubit gates.
+Recall that the computational toolkit for classical computers is logic gates, e.g., NOT, AND, OR, and XOR, which are applied to the single bit or multiple bits to accomplish computation. Similarly, the computational toolkit for quantum computers (or quantum circuits) is quantum gate, which operates on qubits introduced in Chapter [2.1.2](#Ch2.S1.SS2) to complete the computation. In the following, we will introduce both single-qubit and multi-qubit gates.
 
 <figure id="Ch2.F1" class="ltx_figure">
 
@@ -895,7 +895,7 @@ $$
 
 where $`\hat{\rho}=\lvert{\hat{\boldsymbol{a}}}\rangle\langle{\hat{\boldsymbol{a}}}\rvert`$ and $`\rho=\lvert{\boldsymbol{a}}\rangle\langle{\boldsymbol{a}}\rvert`$.
 
-Several common single-qubit gates, including Pauli-X, Pauli-Y, Pauli-Z, Hadamard, and rotational single-qubit gates about the X, Y, and Z axes ($`\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}`$), are illustrated in Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). According to Theorem 4.1 in ([Nielsen and Chuang, 2011](#bib.bib8)), any unitary operation on a single qubit can be decomposed into a sequence of rotations as:
+Several common single-qubit gates, including Pauli-X, Pauli-Y, Pauli-Z, Hadamard, and rotational single-qubit gates about the X, Y, and Z axes ($`\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}`$), are illustrated in Figure [2.1](#Ch2.F1). According to Theorem 4.1 in ([Nielsen and Chuang, 2011](#bib.bib8)), any unitary operation on a single qubit can be decomposed into a sequence of rotations as:
 
 $$
 U=\mathop{\text{RZ}}(\alpha)\mathop{\text{RY}}(\beta)\mathop{\text{RZ}}(\gamma),
@@ -908,9 +908,9 @@ where $`\alpha,\beta,\gamma\in[0,2\pi)`$, up to a global phase shift.
 <figcaption>Figure 2.2: The evolution of the single-qubit state decomposed into the quantum gates.</figcaption>
 </figure>
 
-The evolution from $`\lvert{\boldsymbol{a}}\rangle`$ to $`\lvert{\hat{\boldsymbol{a}}}\rangle`$ can be visualized using a quantum circuit diagram, as illustrated in Figure [2.2](#Ch2.F2 "Figure 2.2 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The wire in the circuit represents a qubit, which evolves from the initial state $`\lvert{\boldsymbol{a}}\rangle`$ on the left to the final state $`\lvert{\hat{\boldsymbol{a}}}\rangle`$ on the right. Gates are applied sequentially from left to right along the wire.
+The evolution from $`\lvert{\boldsymbol{a}}\rangle`$ to $`\lvert{\hat{\boldsymbol{a}}}\rangle`$ can be visualized using a quantum circuit diagram, as illustrated in Figure [2.2](#Ch2.F2). The wire in the circuit represents a qubit, which evolves from the initial state $`\lvert{\boldsymbol{a}}\rangle`$ on the left to the final state $`\lvert{\hat{\boldsymbol{a}}}\rangle`$ on the right. Gates are applied sequentially from left to right along the wire.
 
-Multi-qubit gates. The evolution of the $`N`$-qubit quantum state can be effectively generalized by the single-qubit case. That is, the unitary operator $`U\in\mathbb{C}^{2^{N}\times 2^{N}}`$ evolves an $`N`$-qubit state $`\lvert{\psi}\rangle`$ in Eqn. ([2.7](#Ch2.E7 "Equation 2.7 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) as
+Multi-qubit gates. The evolution of the $`N`$-qubit quantum state can be effectively generalized by the single-qubit case. That is, the unitary operator $`U\in\mathbb{C}^{2^{N}\times 2^{N}}`$ evolves an $`N`$-qubit state $`\lvert{\psi}\rangle`$ in Eqn. ([2.7](#Ch2.E7)) as
 
 $$
 \lvert{\widehat{\psi}}\rangle=U\lvert{\psi}\rangle\in\mathbb{C}^{2^{N}}~.
@@ -918,11 +918,11 @@ $$
 
 The evolution of $`\lvert{\psi}\rangle`$ under the density operator representation is denoted by $`\hat{\rho}=U\rho U^{\dagger}`$, where $`\hat{\rho}=\lvert{\widehat{\psi}}\rangle\langle{\widehat{\psi}}\rvert`$ and $`\rho=\lvert{\psi}\rangle\langle{\psi}\rvert`$.
 
-Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") includes two significant multi-qubit gates: the controlled-Z (CZ) gate and the controlled-NOT (CNOT) gate. For instance, the CNOT gate operates on two qubits: a control qubit (top line) and a target qubit (bottom line). If the control qubit is $`0`$, the target qubit remains unchanged; if the control qubit is $`1`$, the target qubit is flipped.
+Figure [2.1](#Ch2.F1) includes two significant multi-qubit gates: the controlled-Z (CZ) gate and the controlled-NOT (CNOT) gate. For instance, the CNOT gate operates on two qubits: a control qubit (top line) and a target qubit (bottom line). If the control qubit is $`0`$, the target qubit remains unchanged; if the control qubit is $`1`$, the target qubit is flipped.
 
 ###### Example 2.7.
 
-(State evolved by multi-qubit gates). Figure [2.3](#Ch2.F3 "Figure 2.3 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") illustrates the evolution of a 3-qubit state $`\lvert{\psi}\rangle`$ under a multi-qubit circuit consisting of multi-qubit gates. Each wire represents a qubit, and the evolution occurs from left to right. Starting with the initial state $`\lvert{\psi}\rangle=\lvert{000}\rangle`$, a Hadamard gate is applied to the first qubit, followed by two CNOT gates: one acting on the first and second qubits, and the other acting on the second and third qubits. The final evolved state, shown on the right, is the GHZ state introduced in Example [2.3](#Ch2.Thmtheorem3 "Example 2.3. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), i.e., $`\lvert{\widehat{\psi}}\rangle=U\lvert{\psi}\rangle=\frac{1}{\sqrt{2}}(\lvert{000}\rangle+\lvert{111}\rangle)`$. The entire unitary operation can be represented as:
+(State evolved by multi-qubit gates). Figure [2.3](#Ch2.F3) illustrates the evolution of a 3-qubit state $`\lvert{\psi}\rangle`$ under a multi-qubit circuit consisting of multi-qubit gates. Each wire represents a qubit, and the evolution occurs from left to right. Starting with the initial state $`\lvert{\psi}\rangle=\lvert{000}\rangle`$, a Hadamard gate is applied to the first qubit, followed by two CNOT gates: one acting on the first and second qubits, and the other acting on the second and third qubits. The final evolved state, shown on the right, is the GHZ state introduced in Example [2.3](#Ch2.Thmtheorem3), i.e., $`\lvert{\widehat{\psi}}\rangle=U\lvert{\psi}\rangle=\frac{1}{\sqrt{2}}(\lvert{000}\rangle+\lvert{111}\rangle)`$. The entire unitary operation can be represented as:
 $$
 U=(\mathop{\text{H}}\otimes\mathbb{I}_{4})(\mathop{\text{CNOT}}\otimes\mathbb{I}_{2})(\mathbb{I}_{2}\otimes\mathop{\text{CNOT}}).
 $$
@@ -933,7 +933,7 @@ $$
 <figcaption>Figure 2.3: The decomposition of the multi-qubit circuit $U$ in the case of $N=3$.</figcaption>
 </figure>
 
-A universal quantum gate set. While many single and multi-qubit gates exist, it is sufficient to use a universal set of gates to construct any unitary operation. As proved in Chapter 4.5.2 of Ref. ([Nielsen and Chuang, 2011](#bib.bib8)), any unitary operator $`U`$ in Eqn. ([2.18](#Ch2.E18 "Equation 2.18 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) can be decomposed into the single-qubit and two-qubit gates with a certain arrangement.
+A universal quantum gate set. While many single and multi-qubit gates exist, it is sufficient to use a universal set of gates to construct any unitary operation. As proved in Chapter 4.5.2 of Ref. ([Nielsen and Chuang, 2011](#bib.bib8)), any unitary operator $`U`$ in Eqn. ([2.18](#Ch2.E18)) can be decomposed into the single-qubit and two-qubit gates with a certain arrangement.
 
 ###### Fact 2.8 (Solovay-Kitaev theorem, ([Dawson and Nielsen, 2005](#bib.bib68))).
 
@@ -951,7 +951,7 @@ $$
 
 with $`c\approx 4`$.
 
-A commonly used universal gate set includes single-qubit rotations $`\mathop{\text{RX}}(\theta)`$, $`\mathop{\text{RY}}(\theta)`$, $`\mathop{\text{RZ}}(\theta)`$, and two-qubit gates such as the $`\mathop{\text{CNOT}}`$ gate. As illustrated in Figure [1.1](#Ch1.F1 "Figure 1.1 ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), any ideal quantum computation can be represented by a unitary operator. This universal gate set provides a practical and foundational toolkit for implementing arbitrary quantum algorithms.
+A commonly used universal gate set includes single-qubit rotations $`\mathop{\text{RX}}(\theta)`$, $`\mathop{\text{RY}}(\theta)`$, $`\mathop{\text{RZ}}(\theta)`$, and two-qubit gates such as the $`\mathop{\text{CNOT}}`$ gate. As illustrated in Figure [1.1](#Ch1.F1), any ideal quantum computation can be represented by a unitary operator. This universal gate set provides a practical and foundational toolkit for implementing arbitrary quantum algorithms.
 
 ##### Quantum channels
 
@@ -1071,7 +1071,7 @@ Having acknowledged the motivation and definition of quantum channels, it is nat
 
 ###### Theorem 2.15.
 
-([Wilde, 2011](#bib.bib69)) Let $`\mathcal{N}(\cdot):\mathcal{L}(\mathcal{H}_{A})\rightarrow\mathcal{L}(\mathcal{H}_{B})`$ be a quantum channel defined in Eqn. ([2.22](#Ch2.E22 "Equation 2.22 ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Let $`\mathcal{H}_{E}`$ be the Hilbert space of an auxiliary system. Denote the input state as $`\rho`$ (i.e., a density operator $`\rho\in\mathbb{C}^{\text{dim}(\mathcal{H}_{A})\times\text{dim}(\mathcal{H}_{A})}`$). Then there exists a unitary $`U:\mathcal{L}(\mathcal{H}_{A}\otimes\mathcal{H}_{E})\rightarrow\mathcal{L}(\mathcal{H}_{B}\otimes\mathcal{H}_{E})`$ and a normalized vector (i.e., a pure state) $`\lvert{\varphi}\rangle\in\mathbb{C}^{\text{dim}(\mathcal{H}_{E})}`$ such that
+([Wilde, 2011](#bib.bib69)) Let $`\mathcal{N}(\cdot):\mathcal{L}(\mathcal{H}_{A})\rightarrow\mathcal{L}(\mathcal{H}_{B})`$ be a quantum channel defined in Eqn. ([2.22](#Ch2.E22)). Let $`\mathcal{H}_{E}`$ be the Hilbert space of an auxiliary system. Denote the input state as $`\rho`$ (i.e., a density operator $`\rho\in\mathbb{C}^{\text{dim}(\mathcal{H}_{A})\times\text{dim}(\mathcal{H}_{A})}`$). Then there exists a unitary $`U:\mathcal{L}(\mathcal{H}_{A}\otimes\mathcal{H}_{E})\rightarrow\mathcal{L}(\mathcal{H}_{B}\otimes\mathcal{H}_{E})`$ and a normalized vector (i.e., a pure state) $`\lvert{\varphi}\rangle\in\mathbb{C}^{\text{dim}(\mathcal{H}_{E})}`$ such that
 
 $$
 \mathcal{N}(\mathcal{\rho})=\text{Tr}_{E}\left(U(\rho\otimes\lvert{\varphi}\rangle\langle{\varphi}\rvert)U^{\dagger}\right)~,
@@ -1079,7 +1079,7 @@ $$
 
 where $`\text{Tr}_{E}(\cdot)`$ denotes the partial trace over the ancillary Hilbert space $`\mathcal{H}_{E}`$, and the dimension of $`\mathcal{H}_{E}`$ depends on the rank of the Kraus representation of $`\mathcal{N}`$.
 
-###### Proof sketch of Theorem [2.15](#Ch2.Thmtheorem15 "Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof sketch of Theorem [2.15](#Ch2.Thmtheorem15).
 
 We extend the system to include an ancillary Hilbert space $`\mathcal{H}_{E}`$, representing the environment. The combined space $`\mathcal{H}_{A}\otimes\mathcal{H}_{E}`$ forms a closed physical system, where the evolution of the quantum state can be described by a unitary operator $`U`$ acting on $`\mathcal{H}_{B}\otimes\mathcal{H}_{E}`$.
 
@@ -1091,18 +1091,18 @@ $$
 
 where $`V:\mathcal{H}_{A}\to\mathcal{H}_{B}\otimes\mathcal{H}_{E}`$ is an isometry operator embedding the input state into the larger Hilbert space. For simplicity, assume $`\mathcal{H}_{A}=\mathcal{H}_{B}`$. The isometry operator $`V`$ can always be embedded into a unitary operator $`U`$ acting on $`\mathcal{H}_{B}\otimes\mathcal{H}_{E}`$, ensuring that $`U`$ captures the reversible evolution of the extended system.
 
-Next, we augment the input state $`\rho`$ by introducing an ancillary state $`\lvert{\varphi}\rangle\in\mathcal{H}_{E}`$, yielding the combined state $`\rho\otimes\lvert{\varphi}\rangle\langle{\varphi}\rvert`$. Substituting this augmented state and the unitary operator $`U`$ into the isometric extension in Eqn. ([2.37](#Ch2.E37 "Equation 2.37 ‣ Proof sketch of Theorem . ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) gives Eqn. ([2.36](#Ch2.E36 "Equation 2.36 ‣ Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Theorem [2.15](#Ch2.Thmtheorem15 "Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is thereby proven. ∎
+Next, we augment the input state $`\rho`$ by introducing an ancillary state $`\lvert{\varphi}\rangle\in\mathcal{H}_{E}`$, yielding the combined state $`\rho\otimes\lvert{\varphi}\rangle\langle{\varphi}\rvert`$. Substituting this augmented state and the unitary operator $`U`$ into the isometric extension in Eqn. ([2.37](#Ch2.E37)) gives Eqn. ([2.36](#Ch2.E36)). Theorem [2.15](#Ch2.Thmtheorem15) is thereby proven. ∎
 
-The translation between the unitary operation and the quantum channels described by Theorem [2.15](#Ch2.Thmtheorem15 "Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") can be visually explained, as shown in Figure [2.4](#Ch2.F4 "Figure 2.4 ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In this diagram, the first wire corresponds to the original input state $`\rho`$, while the second wire represents the initial state $`\lvert{\varphi}\rangle`$ of the environment. To determine the output of the quantum channel $`\mathcal{N}`$ applied to $`\rho`$, an $`\mathcal{N}`$-induced unitary operation $`U`$ is performed on the combined system, followed by a partial trace over the environment to discard its information.
+The translation between the unitary operation and the quantum channels described by Theorem [2.15](#Ch2.Thmtheorem15) can be visually explained, as shown in Figure [2.4](#Ch2.F4). In this diagram, the first wire corresponds to the original input state $`\rho`$, while the second wire represents the initial state $`\lvert{\varphi}\rangle`$ of the environment. To determine the output of the quantum channel $`\mathcal{N}`$ applied to $`\rho`$, an $`\mathcal{N}`$-induced unitary operation $`U`$ is performed on the combined system, followed by a partial trace over the environment to discard its information.
 
 <figure id="Ch2.F4" class="ltx_figure">
 
-<figcaption>Figure 2.4: The evolution of quantum states based on Theorem <a href="#Ch2.Thmtheorem15" title="Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers">2.15</a>.</figcaption>
+<figcaption>Figure 2.4: The evolution of quantum states based on Theorem <a href="#Ch2.Thmtheorem15">2.15</a>.</figcaption>
 </figure>
 
 ##### Quantum measurements
 
-In addition to quantum gates and quantum channels that manipulate quantum states, another special operation in quantum circuits is measurement. The aim of quantum measurements is to extract quantum information of the evolved state into the classical form. The quantum circuit diagram, which describes applying a unitary $`U`$ followed by the quantum measurement to a single-qubit state $`\lvert{\boldsymbol{a}}\rangle`$, is shown in Figure [2.5](#Ch2.F5 "Figure 2.5 ‣ Quantum measurements ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In particular, both types of measurements are depicted by the ‘meter’ symbol.
+In addition to quantum gates and quantum channels that manipulate quantum states, another special operation in quantum circuits is measurement. The aim of quantum measurements is to extract quantum information of the evolved state into the classical form. The quantum circuit diagram, which describes applying a unitary $`U`$ followed by the quantum measurement to a single-qubit state $`\lvert{\boldsymbol{a}}\rangle`$, is shown in Figure [2.5](#Ch2.F5). In particular, both types of measurements are depicted by the ‘meter’ symbol.
 
 <figure id="Ch2.F5" class="ltx_figure">
 
@@ -1129,7 +1129,7 @@ $$
 \text{1)}\Pi_{i}\Pi_{j}=\delta_{ij};~\text{2)}\Pi^{\dagger}_{i}=\Pi;~\text{3)}\Pi^{2}_{i}=\Pi;~\text{4)}\sum_{i}\Pi_{i}=\mathbb{I}_{2^{N}}.
 $$
 
-A special set of projectors is defined as $`\Pi_{i}=\lvert{i}\rangle\langle{i}\rvert`$ for $`\forall i\in[2^{N}]`$, which measures the probability corresponding to the basis state $`\lvert{i}\rangle`$. For example, given the single-qubit state $`\lvert{\boldsymbol{\alpha}}\rangle`$ in Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the probability to measure the computational basis state $`\lvert{i}\rangle`$ is
+A special set of projectors is defined as $`\Pi_{i}=\lvert{i}\rangle\langle{i}\rvert`$ for $`\forall i\in[2^{N}]`$, which measures the probability corresponding to the basis state $`\lvert{i}\rangle`$. For example, given the single-qubit state $`\lvert{\boldsymbol{\alpha}}\rangle`$ in Eqn. ([2.2](#Ch2.E2)), the probability to measure the computational basis state $`\lvert{i}\rangle`$ is
 
 $$
 \Pr(i)=|\braket{v_{i}|\boldsymbol{\alpha}}|^{2}=|\alpha_{i}|^{2}~.
@@ -1151,13 +1151,13 @@ We remark that the main difference between projective measurements and POVM elem
 
 ### 2.3 Quantum Read-in and Read-out protocols
 
-The terms quantum read-in and read-out refer to the processes of transferring information between classical systems and quantum systems. These are fundamental steps in the workflow of quantum machine learning shown in Figure [1.1](#Ch1.F1 "Figure 1.1 ‣ 1.1.1 Quantum computers ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), responsible for loading data and extracting results.
+The terms quantum read-in and read-out refer to the processes of transferring information between classical systems and quantum systems. These are fundamental steps in the workflow of quantum machine learning shown in Figure [1.1](#Ch1.F1), responsible for loading data and extracting results.
 
 Quantum read-in and read-out pose significant bottlenecks in leveraging quantum computing to address classical computational tasks. As emphasized in ([Aaronson, 2015](#bib.bib41)), while quantum algorithms can offer exponential speed-ups in specific problem domains, these advantages can be negated if the processes of loading classical data into quantum systems (read-in) or extracting results from quantum systems (read-out) are inefficient. Specifically, the high-dimensional nature of quantum states and the constraints on measurement precision often lead to overheads that scale poorly with problem size. These challenges underscore the importance of optimizing quantum read-in and read-out protocols to realize the full potential of quantum computing. Below is a detailed introduction to quantum read-int and read-out protocols, including the basic concept and several typical algorithms.
 
 #### 2.3.1 Quantum read-in protocols
 
-Quantum read-in refers to the process of encoding classical information into quantum systems that can be manipulated by a quantum computer, which can be regarded as the classical-to-quantum mapping. It acts as a bridge to utilize quantum algorithms to solve classical problems in quantum computing. Here, we will introduce several typical encoding methods, including basis encoding, amplitude encoding, angle encoding, and quantum random access memory. Some easy-to-use demonstrations are provided in Chapter [2.5](#Ch2.S5 "2.5 Code Demonstration ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+Quantum read-in refers to the process of encoding classical information into quantum systems that can be manipulated by a quantum computer, which can be regarded as the classical-to-quantum mapping. It acts as a bridge to utilize quantum algorithms to solve classical problems in quantum computing. Here, we will introduce several typical encoding methods, including basis encoding, amplitude encoding, angle encoding, and quantum random access memory. Some easy-to-use demonstrations are provided in Chapter [2.5](#Ch2.S5).
 
 ##### Basis encoding
 
@@ -1177,7 +1177,7 @@ where $`\lvert{0}\rangle^{\otimes N}`$ represents an initial state of all qubits
 
 ###### Example 2.16.
 
-(Basis encoding). Consider encoding the integer $`6`$, which has the binary representation $`\boldsymbol{x}=(1,1,0)`$. The corresponding quantum state is $`\lvert{110}\rangle`$. This state can be implemented by applying $`X`$ gates to the first and second qubits, as shown in Figure [2.6](#Ch2.F6 "Figure 2.6 ‣ Basis encoding ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+(Basis encoding). Consider encoding the integer $`6`$, which has the binary representation $`\boldsymbol{x}=(1,1,0)`$. The corresponding quantum state is $`\lvert{110}\rangle`$. This state can be implemented by applying $`X`$ gates to the first and second qubits, as shown in Figure [2.6](#Ch2.F6).
 
 <figure id="Ch2.F6" class="ltx_figure">
 
@@ -1204,7 +1204,7 @@ with $`\lvert{i}\rangle`$ representing the $`N`$-qubit computational basis state
 
 (Amplitude encoding). Consider encoding a normalized vector $`\boldsymbol{x}=(\boldsymbol{x}_{0},\boldsymbol{x}_{1})\in\mathbb{C}^{2}`$ into the quantum state $`\lvert{\psi}\rangle=\boldsymbol{x}_{0}\lvert{0}\rangle+\boldsymbol{x}_{1}\lvert{1}\rangle`$. This can be achieved by applying a rotation gate $`U=R_{Y}(\theta)`$ to the initial state $`\lvert{0}\rangle`$, where $`\theta=2\arccos(\boldsymbol{x}_{0})`$.
 
-Amplitude encoding is highly efficient because it allows an exponentially large vector of length $`2^{N}`$ to be represented using only $`N`$ qubits. However, preparing this quantum state requires constructing a unitary transformation $`U`$ such that $`\lvert{\psi}\rangle=U\lvert{0}\rangle^{\otimes N}`$. Efficiently finding such transformations can be challenging and is an active area of research (see Chapter [2.6](#Ch2.S6 "2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for the discussions).
+Amplitude encoding is highly efficient because it allows an exponentially large vector of length $`2^{N}`$ to be represented using only $`N`$ qubits. However, preparing this quantum state requires constructing a unitary transformation $`U`$ such that $`\lvert{\psi}\rangle=U\lvert{0}\rangle^{\otimes N}`$. Efficiently finding such transformations can be challenging and is an active area of research (see Chapter [2.6](#Ch2.S6) for the discussions).
 
 ##### Angle encoding
 
@@ -1218,7 +1218,7 @@ $$
 \lvert{\psi}\rangle=\bigotimes_{i=0}^{N-1}R_{\sigma}(\boldsymbol{x}_{i})\lvert{0}\rangle^{\otimes N}=\bigotimes_{i=0}^{N-1}\exp\left(-i\frac{\boldsymbol{x}_{i}}{2}\sigma\right)\lvert{0}\rangle^{\otimes N},
 $$
 
-where $`\sigma\in\{X,Y,Z\}`$ denotes a Pauli operator, as defined in Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Since Pauli rotation gates are $`2\pi`$-periodic, it is essential to scale each element $`\boldsymbol{x}_{i}`$ into the range $`[0,\pi)`$ to ensure that different values are encoded into distinct quantum states.
+where $`\sigma\in\{X,Y,Z\}`$ denotes a Pauli operator, as defined in Figure [2.1](#Ch2.F1). Since Pauli rotation gates are $`2\pi`$-periodic, it is essential to scale each element $`\boldsymbol{x}_{i}`$ into the range $`[0,\pi)`$ to ensure that different values are encoded into distinct quantum states.
 
 A key advantage of angle encoding is its ability to introduce nonlinearity. By mapping classical data into the parameters of quantum rotation gates, angle encoding leverages trigonometric functions to naturally capture non-linear relationships. This property is particularly important in quantum machine learning, where nonlinearity is essential for models to learn complex patterns in data, such as non-linearly separable decision boundaries.
 
@@ -1238,14 +1238,14 @@ $$
 $$
 \lvert{\mathcal{D}}\rangle=\frac{1}{\sqrt{2}}\left(\lvert{0}\rangle_{a}\lvert{10}\rangle_{d}+\lvert{1}\rangle_{a}\lvert{11}\rangle_{d}\right).
 $$
-(2.49) The corresponding quantum circuit for implementing this state is shown in Fig. [2.7](#Ch2.F7 "Figure 2.7 ‣ Quantum Random Access Memory (QRAM) ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+(2.49) The corresponding quantum circuit for implementing this state is shown in Fig. [2.7](#Ch2.F7).
 
 <figure id="Ch2.F7" class="ltx_figure">
 
 <figcaption>Figure 2.7: Example of QRAM encoding for the dataset $\mathcal{D}=\{2,3\}$.</figcaption>
 </figure>
 
-QRAM allows the dataset $`\mathcal{D}`$ to be stored in a coherent quantum superposition, enabling simultaneous access to all data items through the entanglement of address and data qubits. While QRAM is theoretically powerful, its practical implementation remains a significant challenge due to the need for a large number of qubits and quantum operations (see Chapter [2.6](#Ch2.S6 "2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for the discussion).
+QRAM allows the dataset $`\mathcal{D}`$ to be stored in a coherent quantum superposition, enabling simultaneous access to all data items through the entanglement of address and data qubits. While QRAM is theoretically powerful, its practical implementation remains a significant challenge due to the need for a large number of qubits and quantum operations (see Chapter [2.6](#Ch2.S6) for the discussion).
 
 #### 2.3.2 Quantum read-out protocols
 
@@ -1299,7 +1299,7 @@ $$
 
 To fully reconstruct $`\rho`$, the quantum state must theoretically be measured in all $`4^{N}-1`$ Pauli bases to estimate each $`c_{i}`$.
 
-A key limitation of linear inversion is that it does not guarantee a valid density matrix, as the estimated quantum state may lack properties such as positive semi-definiteness in Definition [2.4](#Ch2.Thmtheorem4 "Definition 2.4. ‣ 2.1.3 Density matrix ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), especially with limited measurements.
+A key limitation of linear inversion is that it does not guarantee a valid density matrix, as the estimated quantum state may lack properties such as positive semi-definiteness in Definition [2.4](#Ch2.Thmtheorem4), especially with limited measurements.
 
 Maximum Likelihood Estimation (MLE). To ensure physical constraints on the quantum state during reconstruction, MLE is introduced. MLE reconstructs $`\rho`$ by maximizing the likelihood of observing the measurement outcomes, subject to the constraints that $`\rho`$ is Hermitian, positive semi-definite, and trace one. The likelihood function is given by
 
@@ -1405,11 +1405,11 @@ Shadow tomography requires exponentially fewer measurements compared to full qua
 
 ### 2.4 Quantum Linear Algebra
 
-We next introduce quantum linear algebra, a potent toolbox for designing various FTQC-based algorithms introduced in Chapter [1.2.2](#Ch1.S2.SS2 "1.2.2 Progress of quantum machine learning under FTQC ‣ 1.2 Progress of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). For clarity, we start with the definition of block encoding in Chapter [2.4.1](#Ch2.S4.SS1 "2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which is about how to implement a matrix on the quantum computer. Based on this, we introduce some basic arithmetic rules for block encodings in Chapter [2.4.2](#Ch2.S4.SS2 "2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), like the multiplication, linear combination, and the Hadamard product. Finally, in Chapter [2.4.3](#Ch2.S4.SS3 "2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we introduce the quantum singular value transformation method, which enables one to implement functions onto singular values of block-encoded matrices.
+We next introduce quantum linear algebra, a potent toolbox for designing various FTQC-based algorithms introduced in Chapter [1.2.2](#Ch1.S2.SS2). For clarity, we start with the definition of block encoding in Chapter [2.4.1](#Ch2.S4.SS1), which is about how to implement a matrix on the quantum computer. Based on this, we introduce some basic arithmetic rules for block encodings in Chapter [2.4.2](#Ch2.S4.SS2), like the multiplication, linear combination, and the Hadamard product. Finally, in Chapter [2.4.3](#Ch2.S4.SS3), we introduce the quantum singular value transformation method, which enables one to implement functions onto singular values of block-encoded matrices.
 
 #### 2.4.1 Block encoding
 
-For many computational problems, such as solving linear equations, we need to deal with a non-unitary matrix $`A`$. However, remember that quantum gates as discussed in Chapter [2.2](#Ch2.S2 "2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") are unitaries. Therefore, if we want to solve these problems on quantum computers, it is essential to consider how to encode the matrix $`A`$ into a unitary. This challenge can be addressed by the block encoding technique.
+For many computational problems, such as solving linear equations, we need to deal with a non-unitary matrix $`A`$. However, remember that quantum gates as discussed in Chapter [2.2](#Ch2.S2) are unitaries. Therefore, if we want to solve these problems on quantum computers, it is essential to consider how to encode the matrix $`A`$ into a unitary. This challenge can be addressed by the block encoding technique.
 
 ###### Definition 2.20 (Block encoding, [Gilyén et al. (2019)](#bib.bib38)).
 
@@ -1426,7 +1426,7 @@ Here, $`\|\cdot\|`$ represents the spectral norm, i.e., the largest singular val
 <figcaption>Figure 2.8: Quantum circuit for block encoding.</figcaption>
 </figure>
 
-The circuit implementation of the block encoding is illustrated in Figure [2.8](#Ch2.F8 "Figure 2.8 ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The scaled matrix $`A/\alpha`$ interacts with the state $`\lvert{\psi}\rangle`$ if the first qubit registers are measured as $`\lvert{0}\rangle`$. By definition, we have $`\alpha\geq\|A\|`$ and any unitary $`U`$ is an $`(1,0,0)`$-block encoding of itself.
+The circuit implementation of the block encoding is illustrated in Figure [2.8](#Ch2.F8). The scaled matrix $`A/\alpha`$ interacts with the state $`\lvert{\psi}\rangle`$ if the first qubit registers are measured as $`\lvert{0}\rangle`$. By definition, we have $`\alpha\geq\|A\|`$ and any unitary $`U`$ is an $`(1,0,0)`$-block encoding of itself.
 
 ###### Fact 2.21.
 
@@ -1502,7 +1502,7 @@ These results can be verified via direct computation. Another arithmetic rule br
 
 With $`N\in\mathbb{N}`$, consider two matrices $`A,B\in\mathbb{C}^{2^{N}\times 2^{N}}`$, and assume that we have an $`(\alpha,a,\delta)`$-encoding $`U_{A}`$ of matrix $`A`$ and $`(\beta,b,\epsilon)`$-encoding $`U_{B}`$ of matrix $`B`$, then we can construct an $`(\alpha\beta,a+b+N,\alpha\epsilon+\beta\delta)`$-encoding of matrix $`A\circ B`$ corresponding to the Hadamard product of $`A`$ and $`B`$.
 
-###### Proof sketch of Lemma [2.25](#Ch2.Thmtheorem25 "Lemma 2.25 (Hadamard product of the block encoding unitaries, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof sketch of Lemma [2.25](#Ch2.Thmtheorem25).
 
 For simplicity, we only consider the perfect case, i.e., no errors. Refer to Ref. ([Guo et al., 2024a](#bib.bib83)) for the proof details under the more general cases.
 
@@ -1554,17 +1554,17 @@ In the following, we introduce some applications of QSVT method. There are sever
 
 Let $`U_{A}`$ be a $`(1,a,0)`$-block encoding of matrix $`A`$. Further, for simplicity, assume the nonzero singular values of $`A`$ are lower bounded by $`\delta>0`$. Let $`0\leq\epsilon\leq\delta\leq\frac{1}{2}`$. One can construct a $`(1/\delta,a+2,\epsilon)`$-block encoding of $`A^{-1}`$ by using $`\mathcal{\tilde{O}}(\frac{1}{\delta}\log(\frac{1}{\epsilon}))`$ times of $`U_{A}`$ and $`U_{A}^{\dagger}`$.
 
-###### Proof sketch of Lemma [2.27](#Ch2.Thmtheorem27 "Lemma 2.27 (Matrix inversion, simplified ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof sketch of Lemma [2.27](#Ch2.Thmtheorem27).
 
 This can be achieved by finding a good polynomial approximation for the function $`1/x`$. One can not find such a polynomial on the whole interval $`[-1,1]`$, however, such a polynomial exists on the interval $`[-1,-\delta]\cup[\delta,1]`$ for some $`\delta>0`$. ∎
 
-The second application of QSVT is the nonlinear amplitude transformation. As mentioned in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), to deal with classical data, there are several ways to encode them into quantum. Here, we focus on the amplitude encoding case described in Chapter [2.3.1](#Ch2.S3.SS1.SSSx2 "Amplitude encoding ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), especially for the real amplitudes. The nonlinear transformation is achieved by combining the diagonal block encoding and QSVT.
+The second application of QSVT is the nonlinear amplitude transformation. As mentioned in Chapter [2.3.1](#Ch2.S3.SS1), to deal with classical data, there are several ways to encode them into quantum. Here, we focus on the amplitude encoding case described in Chapter [2.3.1](#Ch2.S3.SS1.SSSx2), especially for the real amplitudes. The nonlinear transformation is achieved by combining the diagonal block encoding and QSVT.
 
 ###### Fact 2.28 (Diagonal block encoding of amplitudes, [Guo et al. (2024b)](#bib.bib86); [Rattew and Rebentrost (2023)](#bib.bib87)).
 
 Given a state preparation unitary $`U_{\psi}`$ of an $`N`$-qubit state $`\lvert{\psi}\rangle=\sum_{j=1}^{2^{N}}\psi_{j}\lvert{j}\rangle`$, where $`\{\psi_{j}\}`$ are real, $`\mathopen{\|}\psi\mathclose{\|}_{2}=1`$, one can construct an $`(1,N+2,\epsilon)`$-encoding of the diagonal matrix $`A=\mathrm{diag}(\psi_{1},\dots,\psi_{d})`$ with $`\mathcal{O}(N)`$ circuit depth and $`\mathcal{O}(1)`$ times of controlled-$`U`$ and controlled-$`U^{\dagger}`$.
 
-As a straightforward generalization, one can replace the state preparation unitary with the general state preparation encoding, mentioned in Definition [2.22](#Ch2.Thmtheorem22 "Definition 2.22 (State preparation encoding ( ) ). ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). By constructing the block encoding of amplitudes, one can implement many functions onto these amplitudes via QSVT. A direct application is performing the neural network on the quantum computer, as will be detailed in Chapter [5.2](#Ch5.S2 "5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+As a straightforward generalization, one can replace the state preparation unitary with the general state preparation encoding, mentioned in Definition [2.22](#Ch2.Thmtheorem22). By constructing the block encoding of amplitudes, one can implement many functions onto these amplitudes via QSVT. A direct application is performing the neural network on the quantum computer, as will be detailed in Chapter [5.2](#Ch5.S2).
 
 ### 2.5 Code Demonstration
 
@@ -1572,7 +1572,7 @@ This section provides code implementations for key techniques introduced earlier
 
 #### 2.5.1 Read-in implementations
 
-This subsection demonstrates toy examples of implementing data encoding methods in quantum computing, as discussed in earlier sections. Specifically, we cover basis encoding, amplitude encoding, and angle encoding from Chapter [2.3.1](#Ch2.S3.SS1.SSSx3 "Angle encoding ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). These examples aim to provide readers with hands-on experience in applying quantum data encoding techniques.
+This subsection demonstrates toy examples of implementing data encoding methods in quantum computing, as discussed in earlier sections. Specifically, we cover basis encoding, amplitude encoding, and angle encoding from Chapter [2.3.1](#Ch2.S3.SS1.SSSx3). These examples aim to provide readers with hands-on experience in applying quantum data encoding techniques.
 
 ##### Basis encoding
 
@@ -1694,7 +1694,7 @@ PennyLane provides built-in support for angle encoding via the ‘AngleEmbedding
 
 #### 2.5.2 Block encoding
 
-Here, we provide an example of how we may construct a block encoding. We construct the block encoding via the linear combination, as [Fact 2.21](#Ch2.Thmtheorem21 "Fact 2.21. ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). We use PennyLane to keep consistency, yet there are many other platforms that are available as well. Please note that it is time-consuming to do the Pauli decomposition (for an $`N`$-qubit matrix, it takes time $`\mathcal{O}(N4^{N})`$), so we suggest not trying a large matrix with this method.
+Here, we provide an example of how we may construct a block encoding. We construct the block encoding via the linear combination, as [Fact 2.21](#Ch2.Thmtheorem21). We use PennyLane to keep consistency, yet there are many other platforms that are available as well. Please note that it is time-consuming to do the Pauli decomposition (for an $`N`$-qubit matrix, it takes time $`\mathcal{O}(N4^{N})`$), so we suggest not trying a large matrix with this method.
 
 [⬇](data:text/plain;base64,aW1wb3J0IG51bXB5IGFzIG5wCmltcG9ydCBwZW5ueWxhbmUgYXMgcW1sCmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHQKCmEgPSAwLjM2CmIgPSAwLjY0CgojIG1hdHJpeCB0byBiZSBkZWNvbXBvc2VkCkEgPSBucC5hcnJheSgKICAgIFtbYSwgIDAsIDAsICBiXSwKICAgICBbMCwgLWEsIGIsICAwXSwKICAgICBbMCwgIGIsIGEsICAwXSwKICAgICBbYiwgIDAsIDAsIC1hXV0KKQoKIyBkZWNvbXBvc2UgdGhlIG1hdHJpeCBpbnRvIHN1bSBvZiBQYXVsaSBzdHJpbmdzCkxDVSA9IHFtbC5wYXVsaV9kZWNvbXBvc2UoQSkKTENVX2NvZWZmcywgTENVX29wcyA9IExDVS50ZXJtcygpCgojIG5vcm1hbGl6ZWQgc3F1YXJlIHJvb3RzIG9mIGNvZWZmaWNpZW50cwphbHBoYXMgPSAobnAuc3FydChMQ1VfY29lZmZzKSAvIG5wLmxpbmFsZy5ub3JtKG5wLnNxcnQoTENVX2NvZWZmcykpKQoKZGV2ID0gcW1sLmRldmljZSgiZGVmYXVsdC5xdWJpdCIsIHdpcmVzPTMpCgojIHVuaXRhcmllcwpvcHMgPSBMQ1Vfb3BzCiMgcmVsYWJlbGluZyB3aXJlczogMCAtLT4gMSwgYW5kIDEgLS0+IDIKdW5pdGFyaWVzID0gW3FtbC5tYXBfd2lyZXMob3AsIHswOiAxLCAxOiAyfSkgZm9yIG9wIGluIG9wc10KCkBxbWwucW5vZGUoZGV2KQpkZWYgbGN1X2NpcmN1aXQoKTogICMgYmxvY2tfZW5jb2RlCiAgICAjIFBSRVAKICAgIHFtbC5TdGF0ZVByZXAoYWxwaGFzLCB3aXJlcz0wKQoKICAgICMgU0VMCiAgICBxbWwuU2VsZWN0KHVuaXRhcmllcywgY29udHJvbD0wKQoKICAgICMgUFJFUF9kYWdnZXIKICAgIHFtbC5hZGpvaW50KHFtbC5TdGF0ZVByZXAoYWxwaGFzLCB3aXJlcz0wKSkKICAgIHJldHVybiBxbWwuc3RhdGUoKQoKcHJpbnQobnAucmVhbChucC5yb3VuZChvdXRwdXRfbWF0cml4LDIpKSk=)
 
@@ -1790,7 +1790,7 @@ We end this chapter by discussing the recent advancements in efficiently impleme
 
 Although conventional read-in protocols offer feasible solutions for encoding classical data into quantum computers, they typically face two key challenges that limit their broad applicability for solving practical learning problems. To address these limitations, initial efforts have been made to develop more advanced quantum read-in protocols.
 
-Challenge I: high demand for quantum resources. Encoding methods like amplitude encoding and basis encoding presented in Chapter [2.3.2](#Ch2.S3.SS2 "2.3.2 Quantum read-out protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") generally suffer from high quantum resource requirements. While amplitude encoding is highly compact in terms of qubit requirements, the trade-off is the requirement of an exponential number of quantum gates with the data size to prepare an exact amplitude-encoded state. In contrast, while basis encoding can be implemented with a small number of quantum gates, it requires a large number of qubits proportional to the input size. The high demand for either quantum gates or qubit counts makes these basic encoding strategies infeasible for practical use.
+Challenge I: high demand for quantum resources. Encoding methods like amplitude encoding and basis encoding presented in Chapter [2.3.2](#Ch2.S3.SS2) generally suffer from high quantum resource requirements. While amplitude encoding is highly compact in terms of qubit requirements, the trade-off is the requirement of an exponential number of quantum gates with the data size to prepare an exact amplitude-encoded state. In contrast, while basis encoding can be implemented with a small number of quantum gates, it requires a large number of qubits proportional to the input size. The high demand for either quantum gates or qubit counts makes these basic encoding strategies infeasible for practical use.
 
 Challenge II: insufficient nonlinearity. While quantum mechanics is inherently linear, most practical machine learning models require nonlinearity to capture complex data patterns effectively. Conventional encoding methods like angle encoding introduce some degree of nonlinearity; however, the representational power remains limited due to the linear nature of quantum operations and limited circuit depth.
 
@@ -1826,7 +1826,7 @@ A natural consideration is to generalize the singular value transformation to th
 
 Another approach is to broaden the range of functions that can be implemented by quantum linear algebra. Quantum phase processing, proposed by ([Wang et al., 2023b](#bib.bib120)), can directly apply arbitrary trigonometric transformations to eigenphases of a unitary operator. Similar results have been independently obtained by [Motlagh and Wiebe (2024)](#bib.bib121). In addition, [Rossi and Chuang (2022)](#bib.bib122) investigates how to implement multivariate functions. For the application, a representative example is the multivariate state preparation achieved by ([Mori et al., 2024](#bib.bib123)), enabling the amplitude encoding of classical multivariate data.
 
-In Chapter [2.4](#Ch2.S4 "2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we introduce the concept of diagonal block encoding, which can convert a state preparation unitary into a block encoding. As the efficient construction of block encodings is a prerequisite for achieving end-to-end quantum advantage, an important research direction is to investigate which types of matrices can be efficiently prepared. By leveraging state-of-the-art techniques in quantum state preparation ([Zhang et al., 2022a](#bib.bib124); [Sun et al., 2023](#bib.bib125)) and the linear combination of unitaries ([Childs and Wiebe, 2012](#bib.bib126)), it is possible to efficiently construct block encodings for certain classes of matrices ([Guseynov and Liu, 2024](#bib.bib127); [Guseynov et al., 2024](#bib.bib128)). Additionally, explicit constructions have been explored for specific types of sparse matrices ([Camps et al., 2023](#bib.bib129)).
+In Chapter [2.4](#Ch2.S4), we introduce the concept of diagonal block encoding, which can convert a state preparation unitary into a block encoding. As the efficient construction of block encodings is a prerequisite for achieving end-to-end quantum advantage, an important research direction is to investigate which types of matrices can be efficiently prepared. By leveraging state-of-the-art techniques in quantum state preparation ([Zhang et al., 2022a](#bib.bib124); [Sun et al., 2023](#bib.bib125)) and the linear combination of unitaries ([Childs and Wiebe, 2012](#bib.bib126)), it is possible to efficiently construct block encodings for certain classes of matrices ([Guseynov and Liu, 2024](#bib.bib127); [Guseynov et al., 2024](#bib.bib128)). Additionally, explicit constructions have been explored for specific types of sparse matrices ([Camps et al., 2023](#bib.bib129)).
 
 ## Chapter 3 Quantum Kernel Methods
 
@@ -1838,7 +1838,7 @@ In contrast, quantum mechanics is known for generating complex, non-intuitive pa
 
 These insights motivate the development of quantum kernel methods, where both the hidden feature map and the kernel function are implemented on a quantum computer. By harnessing the unique properties of quantum mechanics, such as superposition and entanglement, quantum kernel methods have the potential to surpass their classical counterparts in specific machine learning tasks, particularly those involving highly complex or subtle patterns. This could result in more powerful models with enhanced generalization capabilities.
 
-In this chapter, we provide a step-by-step explanation of the transition from classical kernel machines to quantum kernel machines in Chapter [3.1](#Ch3.S1 "3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and Chapter [3.2](#Ch3.S2 "3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Moreover, we discuss the theoretical foundation of quantum kernel machines in Chapter [3.3](#Ch3.S3 "3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") from the aspects of expressivity and generalization of quantum kernel machines. Finally, we demonstrate simple yet illustrative code implementations on MNIST dataset.
+In this chapter, we provide a step-by-step explanation of the transition from classical kernel machines to quantum kernel machines in Chapter [3.1](#Ch3.S1) and Chapter [3.2](#Ch3.S2). Moreover, we discuss the theoretical foundation of quantum kernel machines in Chapter [3.3](#Ch3.S3) from the aspects of expressivity and generalization of quantum kernel machines. Finally, we demonstrate simple yet illustrative code implementations on MNIST dataset.
 
 ### 3.1 Classical Kernel Machines
 
@@ -1849,7 +1849,7 @@ In this chapter, we provide a step-by-step explanation of the transition from cl
 <figcaption>Figure 3.1: Various distributions of data points. The left and middle panels show the cases where data points can and cannot be separated by a straight line. The right panel shows that the kernel function could map the linearly inseparable data points into the high dimensional linearly separable data points.</figcaption>
 </figure>
 
-Before delving into kernel machines, it is essential to first understand the motivation behind kernel methods. In many machine learning tasks, particularly in classification, the goal is to find a decision boundary that best separates different classes of data. When the data is linearly separable, this boundary can be represented as a straight line (in 2D), a plane (in 3D), or a hyperplane (in higher dimensions), as illustrated in Figure [3.1](#Ch3.F1 "Figure 3.1 ‣ 3.1.1 Motivation of kernel methods ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")(a). Mathematically, given an input space $`\mathcal{X}\subset\mathbb{R}^{d}`$ with $`d\geq 1`$ and a target or output space $`\mathcal{Y}=\{+1,-1\}`$, we consider a training dataset $`\mathcal{D}=\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{n}\in(\mathcal{X}\times\mathcal{Y})^{n}`$ where each data point $`\boldsymbol{x}^{(i)}\in\mathcal{X}`$ is associated with a label $`y^{(i)}\in\mathcal{Y}`$. For the dataset to be linearly separable, there must exist a vector $`\boldsymbol{w}\in\mathbb{R}^{d}`$ and a bias term $`b\in\mathbb{R}`$ such that
+Before delving into kernel machines, it is essential to first understand the motivation behind kernel methods. In many machine learning tasks, particularly in classification, the goal is to find a decision boundary that best separates different classes of data. When the data is linearly separable, this boundary can be represented as a straight line (in 2D), a plane (in 3D), or a hyperplane (in higher dimensions), as illustrated in Figure [3.1](#Ch3.F1)(a). Mathematically, given an input space $`\mathcal{X}\subset\mathbb{R}^{d}`$ with $`d\geq 1`$ and a target or output space $`\mathcal{Y}=\{+1,-1\}`$, we consider a training dataset $`\mathcal{D}=\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{n}\in(\mathcal{X}\times\mathcal{Y})^{n}`$ where each data point $`\boldsymbol{x}^{(i)}\in\mathcal{X}`$ is associated with a label $`y^{(i)}\in\mathcal{Y}`$. For the dataset to be linearly separable, there must exist a vector $`\boldsymbol{w}\in\mathbb{R}^{d}`$ and a bias term $`b\in\mathbb{R}`$ such that
 
 $$
 \forall i\in[n],\quad y^{(i)}(\boldsymbol{w}^{\top}\boldsymbol{x}^{(i)}+b)\geq 0,
@@ -1857,7 +1857,7 @@ $$
 
 where $`\boldsymbol{w}^{\top}\boldsymbol{x}^{(i)}`$ represents the inner product of vectors $`\boldsymbol{w}`$ and $`\boldsymbol{x}^{(i)}`$. This means that a hyperplane defined by $`(\boldsymbol{w},b)`$ can perfectly separate the two classes.
 
-However, in real-world scenarios, data is often not linearly separable, as shown in Figure [3.1](#Ch3.F1 "Figure 3.1 ‣ 3.1.1 Motivation of kernel methods ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")(b). The decision boundary required to separate classes may be curved or highly complex. Traditional linear models struggle with such non-linear data because they are inherently limited to creating only linear decision boundaries. This limitation highlights the need for more flexible approaches.
+However, in real-world scenarios, data is often not linearly separable, as shown in Figure [3.1](#Ch3.F1)(b). The decision boundary required to separate classes may be curved or highly complex. Traditional linear models struggle with such non-linear data because they are inherently limited to creating only linear decision boundaries. This limitation highlights the need for more flexible approaches.
 
 To address the challenge of non-linear data, one effective strategy is to transform the input data into a higher-dimensional space where the data may become linearly separable. This transformation is known as feature mapping, denoted by
 
@@ -1867,7 +1867,7 @@ $$
 
 where the original input space $`\mathcal{X}`$ is mapped to a higher-dimensional feature space $`\mathbb{R}^{D}`$ with $`D\geq d`$. The idea is that, in this higher-dimensional space, complex patterns in the original data can be more easily identified using linear models.
 
-However, explicitly computing the feature map $`\phi(\boldsymbol{x})`$ in Eqn. ([3.2](#Ch3.E2 "Equation 3.2 ‣ 3.1.1 Motivation of kernel methods ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) can be computationally expensive, especially if the feature space is high-dimensional or even infinite-dimensional. Fortunately, many machine learning algorithms for tasks like classification or regression depend primarily on the inner product between data points, which will be explained in Chapter [3.1.2](#Ch3.S1.SS2 "3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In the feature space, this inner product is given by $`\braket{{\phi}(\boldsymbol{x}^{(i)}),{\phi}(\boldsymbol{x}^{(j)})}`$.
+However, explicitly computing the feature map $`\phi(\boldsymbol{x})`$ in Eqn. ([3.2](#Ch3.E2)) can be computationally expensive, especially if the feature space is high-dimensional or even infinite-dimensional. Fortunately, many machine learning algorithms for tasks like classification or regression depend primarily on the inner product between data points, which will be explained in Chapter [3.1.2](#Ch3.S1.SS2). In the feature space, this inner product is given by $`\braket{{\phi}(\boldsymbol{x}^{(i)}),{\phi}(\boldsymbol{x}^{(j)})}`$.
 
 To circumvent the computational cost of explicitly calculating the feature map, we can use a kernel function. A kernel function $`k(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)})`$ is defined as
 
@@ -1943,7 +1943,7 @@ $$
 \boldsymbol{a}^{(i)}=-\frac{1}{\lambda}(\boldsymbol{w}^{\top}{\phi}(\boldsymbol{x}^{(i)})-y^{(i)}).
 $$
 
-Thus, instead of directly optimizing $`\boldsymbol{w}`$, we can reformulate the problem in terms of the parameter vector $`\boldsymbol{a}`$, giving rise to a dual representation. By substituting $`\boldsymbol{w}=\boldsymbol{\Phi}^{\top}\boldsymbol{a}`$ into the original objective function $`\mathcal{L}(\boldsymbol{w})`$ in Eqn. ([3.6](#Ch3.E6 "Equation 3.6 ‣ 3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), we obtain
+Thus, instead of directly optimizing $`\boldsymbol{w}`$, we can reformulate the problem in terms of the parameter vector $`\boldsymbol{a}`$, giving rise to a dual representation. By substituting $`\boldsymbol{w}=\boldsymbol{\Phi}^{\top}\boldsymbol{a}`$ into the original objective function $`\mathcal{L}(\boldsymbol{w})`$ in Eqn. ([3.6](#Ch3.E6)), we obtain
 
 $$
 \mathcal{L}(\boldsymbol{a})=\frac{1}{2}\boldsymbol{a}^{\top}\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}\boldsymbol{a}-\boldsymbol{a}^{\top}\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}\boldsymbol{y}+\frac{1}{2}\boldsymbol{y}^{\top}\boldsymbol{y}+\frac{\lambda}{2}\boldsymbol{a}^{\top}\boldsymbol{\Phi}\boldsymbol{\Phi}^{\top}\boldsymbol{y},
@@ -1955,7 +1955,7 @@ $$
 {K}_{ij}={\phi}(\boldsymbol{x}^{(i)})^{\top}{\phi}(\boldsymbol{x}^{(j)})=k(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)}),
 $$
 
-using kernel function $`k(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ defined by Eqn. ([3.3](#Ch3.E3 "Equation 3.3 ‣ 3.1.1 Motivation of kernel methods ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). The objective function in terms of $`\boldsymbol{a}`$ simplifies to
+using kernel function $`k(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ defined by Eqn. ([3.3](#Ch3.E3)). The objective function in terms of $`\boldsymbol{a}`$ simplifies to
 
 $$
 \mathcal{L}(\boldsymbol{a})=\frac{1}{2}\boldsymbol{a}^{\top}{K}^{2}\boldsymbol{a}-\boldsymbol{a}^{\top}{K}\boldsymbol{y}+\frac{1}{2}y^{\top}\boldsymbol{y}+\frac{\lambda}{2}\boldsymbol{a}^{\top}{K}\boldsymbol{y},
@@ -1969,7 +1969,7 @@ $$
 
 where $`\mathbb{I}_{n}`$ is the identity matrix of size $`n\times n`$.
 
-Now, using this dual formulation, we can derive the prediction for a new input $`\boldsymbol{x}`$. Substituting $`\boldsymbol{w}=\boldsymbol{\Phi}^{\top}\boldsymbol{a}`$ in Eqn. ([3.8](#Ch3.E8 "Equation 3.8 ‣ 3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the prediction of $`\boldsymbol{x}`$ is given by
+Now, using this dual formulation, we can derive the prediction for a new input $`\boldsymbol{x}`$. Substituting $`\boldsymbol{w}=\boldsymbol{\Phi}^{\top}\boldsymbol{a}`$ in Eqn. ([3.8](#Ch3.E8)), the prediction of $`\boldsymbol{x}`$ is given by
 
 $$
 y(\boldsymbol{x})=\boldsymbol{w}^{\top}{\phi}(\boldsymbol{x})=\langle\boldsymbol{\Phi}^{\top}\boldsymbol{a},{\phi}(\boldsymbol{x})\rangle=\boldsymbol{k}(\boldsymbol{x})^{\top}({K}+\lambda\mathbb{I}_{n})^{-1}\boldsymbol{y},
@@ -2063,7 +2063,7 @@ This kernel is related to neural networks, as it resembles the activation functi
 
 #### 3.2.1 Motivations for quantum kernel machines
 
-To effectively introduce quantum kernel machines, it is essential to recognize the limitations of classical kernel machines. As discussed in Chapter [3.1](#Ch3.S1 "3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), classical kernel machines rely on manually tailored feature mappings, such as polynomials or radial basis functions. However, these mappings may fail to capture the complex patterns behind the dataset. Quantum kernel machines emerge as a promising alternative, as they perform feature mapping using quantum circuits, enabling them to explore exponentially larger feature spaces that are otherwise infeasible for classical computation.
+To effectively introduce quantum kernel machines, it is essential to recognize the limitations of classical kernel machines. As discussed in Chapter [3.1](#Ch3.S1), classical kernel machines rely on manually tailored feature mappings, such as polynomials or radial basis functions. However, these mappings may fail to capture the complex patterns behind the dataset. Quantum kernel machines emerge as a promising alternative, as they perform feature mapping using quantum circuits, enabling them to explore exponentially larger feature spaces that are otherwise infeasible for classical computation.
 
 <figure id="Ch3.F2" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/QK_CK.png" id="Ch3.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:457/254;" width="457" height="254" alt="Refer to caption" />
@@ -2088,9 +2088,9 @@ $$
 \phi(\boldsymbol{x})= \lvert{{\phi}(\boldsymbol{x})}\rangle\langle{{\phi}(\boldsymbol{x})}\rvert=\rho(\boldsymbol{x}),
 $$
 
-where $`\mathcal{F}`$ is the space of complex-valued $`2^{N}\times 2^{N}`$ matrices equipped with the Hilbert-Schmidt inner product $`\braket{\rho,\sigma}=\mathop{\text{Tr}}(\rho\sigma)`$ for $`\rho,\sigma\in\mathcal{F}`$. In addition, the state $`\lvert{{\phi}(\boldsymbol{x})}\rangle`$ can be implemented by applying a data-encoding quantum circuit $`U(\boldsymbol{x})`$ introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") on an initial state $`\lvert{\psi}\rangle`$, leading to the expression of $`\lvert{{\phi}(\boldsymbol{x})}\rangle=U(\boldsymbol{x})\lvert{\psi}\rangle`$.
+where $`\mathcal{F}`$ is the space of complex-valued $`2^{N}\times 2^{N}`$ matrices equipped with the Hilbert-Schmidt inner product $`\braket{\rho,\sigma}=\mathop{\text{Tr}}(\rho\sigma)`$ for $`\rho,\sigma\in\mathcal{F}`$. In addition, the state $`\lvert{{\phi}(\boldsymbol{x})}\rangle`$ can be implemented by applying a data-encoding quantum circuit $`U(\boldsymbol{x})`$ introduced in Chapter [2.3.1](#Ch2.S3.SS1) on an initial state $`\lvert{\psi}\rangle`$, leading to the expression of $`\lvert{{\phi}(\boldsymbol{x})}\rangle=U(\boldsymbol{x})\lvert{\psi}\rangle`$.
 
-Recall that one way of constructing kernels is adopting the inner product of the defined feature mappings. Using the Hilbert-Schmidt inner product from Definition [3.6](#Ch3.Thmtheorem6 "Definition 3.6 (Quantum feature map). ‣ 3.2.2 Quantum feature maps and quantum kernel machines ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the quantum kernel is defined as follows.
+Recall that one way of constructing kernels is adopting the inner product of the defined feature mappings. Using the Hilbert-Schmidt inner product from Definition [3.6](#Ch3.Thmtheorem6), the quantum kernel is defined as follows.
 
 ###### Definition 3.7 (Quantum Kernel).
 
@@ -2118,20 +2118,20 @@ $$
 = \left\|\sum_{i}c_{i}^{*}\lvert{{\phi}(\boldsymbol{x}^{(i)})}\rangle\right\|^{2}\geq 0.
 $$
 
-This inequality confirms that $`\hat{k}_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ satisfies Mercer’s condition to be a valid kernel as illustrated in Eqn. ([3.17](#Ch3.E17 "Equation 3.17 ‣ Fact 3.1 (Mercer’s condition). ‣ 3.1.3 Kernel construction ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Therefore, the quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is also a valid kernel.
+This inequality confirms that $`\hat{k}_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ satisfies Mercer’s condition to be a valid kernel as illustrated in Eqn. ([3.17](#Ch3.E17)). Therefore, the quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is also a valid kernel.
 
 <figure id="Ch3.F3" class="ltx_figure">
 
 <figcaption>Figure 3.3: Two methods for computing the inner product of the kernel. (a) Loschmidt echo test. (b) Swap test.</figcaption>
 </figure>
 
-The inner product between quantum states can be efficiently estimated on quantum computers using techniques such as Loschmidt echo test ([Kusumoto et al., 2021](#bib.bib131)) and SWAP test ([Blank et al., 2020](#bib.bib132)). Both methods correspond to distinct quantum circuit architectures, as illustrated in Figure [3.3](#Ch3.F3 "Figure 3.3 ‣ 3.2.2 Quantum feature maps and quantum kernel machines ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+The inner product between quantum states can be efficiently estimated on quantum computers using techniques such as Loschmidt echo test ([Kusumoto et al., 2021](#bib.bib131)) and SWAP test ([Blank et al., 2020](#bib.bib132)). Both methods correspond to distinct quantum circuit architectures, as illustrated in Figure [3.3](#Ch3.F3).
 
 One key merit of quantum kernels is that their derivation does not require the explicit representation of the quantum feature maps. Instead, it relies only on the construction of the associated quantum circuits. This aligns with the essence of kernel methods: while feature mappings can be computationally complex, the kernel function itself must remain efficient to evaluate.
 
 Below, we outline the core steps for constructing a quantum kernel.
 
-Below is a simple example of a quantum kernel with an angle encoding feature map introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+Below is a simple example of a quantum kernel with an angle encoding feature map introduced in Chapter [2.3.1](#Ch2.S3.SS1).
 
 ###### Example 3.8 (Single-qubit kernel).
 
@@ -2143,7 +2143,7 @@ which is a translation invariant squared cosine kernel.
 
 #### 3.2.3 Relation between quantum and classical kernel machines
 
-An intuitive way to understand the connections and differences between classical and quantum kernel machines is by comparing their fundamental components. As illustrated in Figure [3.2](#Ch3.F2 "Figure 3.2 ‣ 3.2.1 Motivations for quantum kernel machines ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), both types of kernel machines involve four fundamental components: input, feature mapping, kernel matrix, and the computation process. Table [3.1](#Ch3.T1 "Table 3.1 ‣ 3.2.3 Relation between quantum and classical kernel machines ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") summarizes how these components are implemented in classical and quantum kernel machines.
+An intuitive way to understand the connections and differences between classical and quantum kernel machines is by comparing their fundamental components. As illustrated in Figure [3.2](#Ch3.F2), both types of kernel machines involve four fundamental components: input, feature mapping, kernel matrix, and the computation process. Table [3.1](#Ch3.T1) summarizes how these components are implemented in classical and quantum kernel machines.
 
 <figure id="Ch3.T1" class="ltx_table">
 <table id="Ch3.T1.2" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -2192,7 +2192,7 @@ The main distinctions between classical and quantum kernel machines lie in the c
 
 To better understand the concept of a quantum kernel, let’s examine the kernels associated with common information encoding strategies used in quantum machine learning. It is important to note that some kernels cannot be efficiently computed on classical computers ([Liu et al., 2021b](#bib.bib133)). While such results are significant, the question of which quantum kernels are practically useful for real-world problems remains an open challenge.
 
-In the following examples, we will first review the various encoding strategies introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), and then present the corresponding quantum kernels.
+In the following examples, we will first review the various encoding strategies introduced in Chapter [2.3.1](#Ch2.S3.SS1), and then present the corresponding quantum kernels.
 
 ###### Example 3.9 (Quantum kernel with basis encoding).
 
@@ -2236,7 +2236,7 @@ $$
 
 The angle encoding requires $`d`$-qubit, mapping the classical data to $`2^{d}`$-dimensional Hilbert space. One merit of angle encoding is introducing non-linearity, which is crucial for transforming low-dimensional, non-linearly separable data into higher-dimensional, linearly separable representations—a property essential for effective kernel-based machine learning. Additionally, angle encoding is well-suited for implementation on modern devices featuring limited qubits and circuit depth, making it practical for exploring the practical utility of near-term quantum computers.
 
-The quantum kernels related to different data encoding strategies have a resemblance to kernels from the classical machine learning literature. This means that sometimes up to an absolute square value, they can be identified with standard kernels such as the polynomial or Gaussian kernel. For the special case of angle encoding, the resemblance to classical kernels is because the employed quantum circuit does not employ any entangled quantum gates such that it can be simulated classically. We now discuss the general form of the quantum kernels induced by quantum feature maps from angle encoding in Eqn. ([3.30](#Ch3.E30 "Equation 3.30 ‣ Example 3.11 (Quantum kernel with angle encoding). ‣ 3.2.4 Concrete examples of quantum kernels ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). We focus on the simplified case that each input $`\boldsymbol{x}^{(i)}`$ is only encoded once and that all the encoding Hamiltonians are the same, i.e., $`G_{1}=\cdots=G_{d}=G`$.
+The quantum kernels related to different data encoding strategies have a resemblance to kernels from the classical machine learning literature. This means that sometimes up to an absolute square value, they can be identified with standard kernels such as the polynomial or Gaussian kernel. For the special case of angle encoding, the resemblance to classical kernels is because the employed quantum circuit does not employ any entangled quantum gates such that it can be simulated classically. We now discuss the general form of the quantum kernels induced by quantum feature maps from angle encoding in Eqn. ([3.30](#Ch3.E30)). We focus on the simplified case that each input $`\boldsymbol{x}^{(i)}`$ is only encoded once and that all the encoding Hamiltonians are the same, i.e., $`G_{1}=\cdots=G_{d}=G`$.
 
 ###### Theorem 3.12 (Fourier representation of the quantum kernel).
 
@@ -2254,7 +2254,7 @@ $$
 
 where $`\Omega\subset\mathbb{R}^{d}`$, and $`c_{\boldsymbol{s}\boldsymbol{t}}\in\mathbb{C}`$. For every $`\boldsymbol{s},\boldsymbol{t}\in\Omega`$, we have $`-\boldsymbol{s},-\boldsymbol{t}\in\Omega`$ and $`c_{\boldsymbol{s}\boldsymbol{t}}=c_{-\boldsymbol{s}-\boldsymbol{t}}^{*}`$, which guarantees that the quantum kernel is real-valued.
 
-###### Proof sketch of Theorem [3.12](#Ch3.Thmtheorem12 "Theorem 3.12 (Fourier representation of the quantum kernel). ‣ 3.2.4 Concrete examples of quantum kernels ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof sketch of Theorem [3.12](#Ch3.Thmtheorem12).
 
 The assumption that the generator $`G`$ is diagonal could be made without loss of generality because one can diagonalize Hermitian operators as $`G=Ve^{-i\boldsymbol{x}_{i}\Sigma}V^{\dagger}`$ with
 
@@ -2266,7 +2266,7 @@ e^{-i\boldsymbol{x}_{i}\Sigma}=\left(\begin{matrix}e^{-i\boldsymbol{x}_{i}\lambd
 \end{matrix}\right),
 $$
 
-where $`V^{\dagger}`$ refers to the conjugate transpose of the matrix $`V`$, $`\lambda_{1},\cdots,\lambda_{m}`$ are the eigenvalues of $`G`$. Formally, $`V,V^{\dagger}`$ can be absorbed into the arbitrary circuits $`W_{i+1}`$ and $`W_{i}`$ before and after the encoding gate. In this regard, the quantum kernel can be written down as the inner product between the feature state of the specific forms in Eqn. ([3.30](#Ch3.E30 "Equation 3.30 ‣ Example 3.11 (Quantum kernel with angle encoding). ‣ 3.2.4 Concrete examples of quantum kernels ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), i.e.,
+where $`V^{\dagger}`$ refers to the conjugate transpose of the matrix $`V`$, $`\lambda_{1},\cdots,\lambda_{m}`$ are the eigenvalues of $`G`$. Formally, $`V,V^{\dagger}`$ can be absorbed into the arbitrary circuits $`W_{i+1}`$ and $`W_{i}`$ before and after the encoding gate. In this regard, the quantum kernel can be written down as the inner product between the feature state of the specific forms in Eqn. ([3.30](#Ch3.E30)), i.e.,
 
 $$
 k(\boldsymbol{x},\boldsymbol{x}^{\prime})
@@ -2314,7 +2314,7 @@ $$
 
 The frequency set $`\Omega`$ contains all vectors $`\{\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}}\}`$ with $`\Lambda_{\boldsymbol{j}}=(\lambda_{j_{1}},\cdots,\lambda_{j_{d}})`$ and $`\lambda_{j_{1}},\cdots,\lambda_{j_{d}}\in[1,\cdots,m]`$. ∎
 
-We summarize the various strategies for the construction of quantum feature mappings and quantum kernels in Table [3.2](#Ch3.T2 "Table 3.2 ‣ 3.2.4 Concrete examples of quantum kernels ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+We summarize the various strategies for the construction of quantum feature mappings and quantum kernels in Table [3.2](#Ch3.T2).
 
 <figure id="Ch3.T2" class="ltx_table">
 <table id="Ch3.T2.2" class="ltx_tabular ltx_centering ltx_align_middle">
@@ -2356,18 +2356,18 @@ We summarize the various strategies for the construction of quantum feature mapp
 
 ### 3.3 Theoretical Foundations of Quantum Kernel Machines
 
-In this section, we take a step further to explore the theoretical foundations of quantum kernels. Specifically, we focus on two crucial aspects: the expressivity and generalization properties of quantum kernel machines. As shown in Figure [3.4](#Ch3.F4 "Figure 3.4 ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), these two aspects are essential for understanding the potential advantages of quantum kernels over classical learning approaches and their inherent limitations. For ease of understanding, this section emphasizes the fundamental concepts necessary for evaluating the power and limitation of quantum kernels instead of exhaustively reviewing all theoretical results.
+In this section, we take a step further to explore the theoretical foundations of quantum kernels. Specifically, we focus on two crucial aspects: the expressivity and generalization properties of quantum kernel machines. As shown in Figure [3.4](#Ch3.F4), these two aspects are essential for understanding the potential advantages of quantum kernels over classical learning approaches and their inherent limitations. For ease of understanding, this section emphasizes the fundamental concepts necessary for evaluating the power and limitation of quantum kernels instead of exhaustively reviewing all theoretical results.
 
 <figure id="Ch3.F4" class="ltx_figure">
 
 <figcaption>Figure 3.4: The expressivity and generalization ability of quantum kernels. Expressivity concerns the size of the hypothesis space $\mathcal{H}_{Q}$ represented by quantum kernels, where $\mathcal{H}$ refers to the whole hypothesis space. Generalization ability considers the learned hypothesis that could predict the unseen data accurately features a small distance with the target concept.</figcaption>
 </figure>
 
-The outline of this chapter is as follows. In Chapter [3.3.1](#Ch3.S3.SS1 "3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will discuss the expressivity of quantum kernels, which refers to the diversity of feature spaces that quantum kernels can represent. The achieved insights will help identify tasks that are particularly well-suited for quantum kernels. Then, in Chapter [3.3.2](#Ch3.S3.SS2 "3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will examine the potential advantage of quantum kernels in terms of generalization error compared to all classical kernel machines. This analysis highlights their ability to accurately predict labels or values for unseen data.
+The outline of this chapter is as follows. In Chapter [3.3.1](#Ch3.S3.SS1), we will discuss the expressivity of quantum kernels, which refers to the diversity of feature spaces that quantum kernels can represent. The achieved insights will help identify tasks that are particularly well-suited for quantum kernels. Then, in Chapter [3.3.2](#Ch3.S3.SS2), we will examine the potential advantage of quantum kernels in terms of generalization error compared to all classical kernel machines. This analysis highlights their ability to accurately predict labels or values for unseen data.
 
 #### 3.3.1 Expressivity of quantum kernel machines
 
-Quantum kernels, as discussed in Chapter [3.2](#Ch3.S2 "3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), are constructed by explicitly defining quantum feature mappings. In this context, the expressivity of quantum kernel machines refers to the types of functions that quantum feature mappings can approximate and the kinds of correlations that quantum kernels can effectively model.
+Quantum kernels, as discussed in Chapter [3.2](#Ch3.S2), are constructed by explicitly defining quantum feature mappings. In this context, the expressivity of quantum kernel machines refers to the types of functions that quantum feature mappings can approximate and the kinds of correlations that quantum kernels can effectively model.
 
 Following the conventions of [Gil-Fuster et al. (2024)](#bib.bib134), we demonstrate that any kernel function can be approximated using finitely deep quantum circuits by showing that the associated feature mapping can also be approximated using quantum circuits. This conclusion rests on two key theoretical foundations: Mercer’s feature space construction and the universality of quantum circuits. Together, these principles establish the theoretical feasibility of realizing any kernel function as a quantum kernel.
 
@@ -2383,17 +2383,17 @@ $$
 
 for almost all $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$.
 
-Theorem [3.13](#Ch3.Thmtheorem13 "Theorem 3.13 (Approximate universality of finite-dimensional quantum feature maps). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), instead of discussing the $`\varepsilon`$-approximation of quantum kernels in the form $`|k(\boldsymbol{x},\boldsymbol{x}^{\prime})-\mathop{\text{Tr}}(\rho_{N}(\boldsymbol{x})\rho_{N}(\boldsymbol{x})^{\prime})|<\varepsilon`$, introduces additional multiplicative and additive factors, expressed as $`|k(\boldsymbol{x},\boldsymbol{x}^{\prime})-2^{N}\mathop{\text{Tr}}(\rho_{N}(\boldsymbol{x})\rho_{N}(\boldsymbol{x}^{\prime}))+1|<\varepsilon`$. These additional factors, explained below, do not impede the universality of the theorem.
+Theorem [3.13](#Ch3.Thmtheorem13), instead of discussing the $`\varepsilon`$-approximation of quantum kernels in the form $`|k(\boldsymbol{x},\boldsymbol{x}^{\prime})-\mathop{\text{Tr}}(\rho_{N}(\boldsymbol{x})\rho_{N}(\boldsymbol{x})^{\prime})|<\varepsilon`$, introduces additional multiplicative and additive factors, expressed as $`|k(\boldsymbol{x},\boldsymbol{x}^{\prime})-2^{N}\mathop{\text{Tr}}(\rho_{N}(\boldsymbol{x})\rho_{N}(\boldsymbol{x}^{\prime}))+1|<\varepsilon`$. These additional factors, explained below, do not impede the universality of the theorem.
 
-Moreover, the statement that Eqn. ([3.40](#Ch3.E40 "Equation 3.40 ‣ Theorem 3.13 (Approximate universality of finite-dimensional quantum feature maps). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) holds for almost all $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$ stems from measure theory. It signifies that the inequality is valid “except on sets of measure zero,” or equivalently “with probability 1.” In other words, while adversarial instances of $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$ may exist for which the inequality does not hold, such instances are so sparse that the probability of encountering them when sampling from the relevant probability distribution is zero.
+Moreover, the statement that Eqn. ([3.40](#Ch3.E40)) holds for almost all $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$ stems from measure theory. It signifies that the inequality is valid “except on sets of measure zero,” or equivalently “with probability 1.” In other words, while adversarial instances of $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$ may exist for which the inequality does not hold, such instances are so sparse that the probability of encountering them when sampling from the relevant probability distribution is zero.
 
-Last, Theorem [3.13](#Ch3.Thmtheorem13 "Theorem 3.13 (Approximate universality of finite-dimensional quantum feature maps). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") establishes that any kernel function can be approximated as a quantum kernel up to a multiplicative and an additive factor using a finite number of qubits.
+Last, Theorem [3.13](#Ch3.Thmtheorem13) establishes that any kernel function can be approximated as a quantum kernel up to a multiplicative and an additive factor using a finite number of qubits.
 
-Before presenting the proof of this theorem, let us first introduce Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which maps classical vectors to quantum states. These quantum states can then be used to evaluate Euclidean inner products as quantum kernels. Then, we demonstrate Lemma [3.14](#Ch3.Thmtheorem14 "Lemma 3.14 (Correctness and runtime of Algorithm ). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and Lemma [3.15](#Ch3.Thmtheorem15 "Lemma 3.15 (Euclidean inner products). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which separately formalize the correctness and runtime complexity of Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), as well as establish the relationship between the Euclidean inner product of encoded real vectors and the Hilbert-Schmidt inner product of the corresponding quantum states.
+Before presenting the proof of this theorem, let us first introduce Algorithm [1](#alg1), which maps classical vectors to quantum states. These quantum states can then be used to evaluate Euclidean inner products as quantum kernels. Then, we demonstrate Lemma [3.14](#Ch3.Thmtheorem14) and Lemma [3.15](#Ch3.Thmtheorem15), which separately formalize the correctness and runtime complexity of Algorithm [1](#alg1), as well as establish the relationship between the Euclidean inner product of encoded real vectors and the Hilbert-Schmidt inner product of the corresponding quantum states.
 
 <figure id="alg1" class="ltx_float ltx_float_algorithm ltx_framed ltx_framed_top">
 <p>Input: a unit vector with 1-norm $\boldsymbol{r}\in\ell^{d}_{1}$.<br />
-Output: Quantum state $\rho_{\boldsymbol{r}}\propto\mathbb{I}+\sum_{i=1}^{d}\boldsymbol{r}_{i}P_{i}$. $\triangleright$ See Lemma <a href="#Ch3.Thmtheorem14" title="Lemma 3.14 (Correctness and runtime of Algorithm ). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers">3.14</a>.</p>
+Output: Quantum state $\rho_{\boldsymbol{r}}\propto\mathbb{I}+\sum_{i=1}^{d}\boldsymbol{r}_{i}P_{i}$. $\triangleright$ See Lemma <a href="#Ch3.Thmtheorem14">3.14</a>.</p>
 <br />
 
 1: Set $N=\lceil\log_{4}(d+1)\rceil$.
@@ -2404,11 +2404,11 @@ Output: Quantum state $\rho_{\boldsymbol{r}}\propto\mathbb{I}+\sum_{i=1}^{d}\bol
 <figcaption>Algorithm 1 Classical to quantum embedding (C2QE)</figcaption>
 </figure>
 
-The output of Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), $`\frac{1}{2^{N}}(\mathbb{I}\pm P)`$, is a single (pure) eigenstate of a Pauli operator $`P`$ with eigenvalue $`\pm 1`$. However, since Line $`3`$ involves sampling an index $`i\in\{1,\cdots,4^{N}-1\}`$, Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is inherently random, and the resulting quantum state is a classical mixture of pure states.
+The output of Algorithm [1](#alg1), $`\frac{1}{2^{N}}(\mathbb{I}\pm P)`$, is a single (pure) eigenstate of a Pauli operator $`P`$ with eigenvalue $`\pm 1`$. However, since Line $`3`$ involves sampling an index $`i\in\{1,\cdots,4^{N}-1\}`$, Algorithm [1](#alg1) is inherently random, and the resulting quantum state is a classical mixture of pure states.
 
-###### Lemma 3.14 (Correctness and runtime of Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")).
+###### Lemma 3.14 (Correctness and runtime of Algorithm [1](#alg1)).
 
-Let $`\boldsymbol{r}\in\mathcal{\ell}_{1}^{d}\subset\mathbb{R}^{d}`$ be a unit vector with respect to the $`1`$-norm, i.e., $`\|\boldsymbol{r}\|_{1}=1`$. Take $`N=\lceil\log_{4}(d+1)\rceil`$ and pad $`\boldsymbol{r}`$ with zeros until its length is $`4^{N}-1`$. Let $`(P_{i})_{i=1}^{4^{N}-1}`$ be the set of all Pauli matrices on $`N`$ qubits, excluding the identity. Then Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") prepares the following state as a classical mixture
+Let $`\boldsymbol{r}\in\mathcal{\ell}_{1}^{d}\subset\mathbb{R}^{d}`$ be a unit vector with respect to the $`1`$-norm, i.e., $`\|\boldsymbol{r}\|_{1}=1`$. Take $`N=\lceil\log_{4}(d+1)\rceil`$ and pad $`\boldsymbol{r}`$ with zeros until its length is $`4^{N}-1`$. Let $`(P_{i})_{i=1}^{4^{N}-1}`$ be the set of all Pauli matrices on $`N`$ qubits, excluding the identity. Then Algorithm [1](#alg1) prepares the following state as a classical mixture
 
 $$
 \rho(\cdot): \mathcal{\ell}_{1}^{d}\to\text{Herm}(2^{N}),
@@ -2418,9 +2418,9 @@ $$
 \boldsymbol{r}\mapsto\rho_{\boldsymbol{r}}=\frac{\mathbb{I}+\sum_{i=1}^{4^{N}-1}\boldsymbol{r}_{i}P_{i}}{2^{N}}.
 $$
 
-The total runtime complexity $`t`$ of Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") fulfills $`t\leq\mathcal{O}(\text{poly}(d))`$.
+The total runtime complexity $`t`$ of Algorithm [1](#alg1) fulfills $`t\leq\mathcal{O}(\text{poly}(d))`$.
 
-###### Proof of Lemma [3.14](#Ch3.Thmtheorem14 "Lemma 3.14 (Correctness and runtime of Algorithm ). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Lemma [3.14](#Ch3.Thmtheorem14).
 
 The proof begins by expanding the state as follows
 
@@ -2442,13 +2442,13 @@ Here, it is used that $`\sum_{i}|\boldsymbol{r}_{i}|=\|\boldsymbol{r}\|_{1}=1`$ 
 
 ###### Lemma 3.15 (Euclidean inner products).
 
-Let $`\boldsymbol{r},\boldsymbol{r}^{\prime}\in\mathbb{R}^{d}`$ be unit vectors with respect to the $`1`$-norm, i.e., $`\|\boldsymbol{r}\|_{1}=\|\boldsymbol{r}^{\prime}\|_{1}=1`$. For the states $`\rho_{\boldsymbol{r}},\rho_{\boldsymbol{r}}^{\prime}`$ produced in Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the following identity holds
+Let $`\boldsymbol{r},\boldsymbol{r}^{\prime}\in\mathbb{R}^{d}`$ be unit vectors with respect to the $`1`$-norm, i.e., $`\|\boldsymbol{r}\|_{1}=\|\boldsymbol{r}^{\prime}\|_{1}=1`$. For the states $`\rho_{\boldsymbol{r}},\rho_{\boldsymbol{r}}^{\prime}`$ produced in Algorithm [1](#alg1), the following identity holds
 
 $$
 \braket{\boldsymbol{r},\boldsymbol{r}^{\prime}}=2^{N}\mathop{\text{Tr}}(\rho_{\boldsymbol{r}}\rho_{\boldsymbol{r}}^{\prime})-1.
 $$
 
-###### Proof of Lemma [3.15](#Ch3.Thmtheorem15 "Lemma 3.15 (Euclidean inner products). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Lemma [3.15](#Ch3.Thmtheorem15).
 
 The proof utilizes the following principles: (1) The trace is linear, and the trace of a tensor product equals the product of traces. (2) All Pauli words are traceless except for the identity, and each Pauli operator is its own inverse. Hence, the product of distinct Pauli operators is also traceless.
 
@@ -2472,19 +2472,19 @@ $$
 
 This completes the proof. ∎
 
-Lemma [3.15](#Ch3.Thmtheorem15 "Lemma 3.15 (Euclidean inner products). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") clarifies the origin of the extra factors in Theorem [3.13](#Ch3.Thmtheorem13 "Theorem 3.13 (Approximate universality of finite-dimensional quantum feature maps). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In particular, the $`2^{N}`$ multiplicative factor is unproblematic, as $`N\leq\mathcal{O}(\log(d))`$ and the methods are designed to scale polynomially with $`d`$. Moreover, the quantum state $`\rho_{\boldsymbol{r}}`$ is generally mixed but can be efficiently prepared. The mapping is injective but not surjective.
+Lemma [3.15](#Ch3.Thmtheorem15) clarifies the origin of the extra factors in Theorem [3.13](#Ch3.Thmtheorem13). In particular, the $`2^{N}`$ multiplicative factor is unproblematic, as $`N\leq\mathcal{O}(\log(d))`$ and the methods are designed to scale polynomially with $`d`$. Moreover, the quantum state $`\rho_{\boldsymbol{r}}`$ is generally mixed but can be efficiently prepared. The mapping is injective but not surjective.
 
-With these results in place, we now present the proof of Theorem [3.13](#Ch3.Thmtheorem13 "Theorem 3.13 (Approximate universality of finite-dimensional quantum feature maps). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+With these results in place, we now present the proof of Theorem [3.13](#Ch3.Thmtheorem13).
 
-###### Proof of Theorem [3.13](#Ch3.Thmtheorem13 "Theorem 3.13 (Approximate universality of finite-dimensional quantum feature maps). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Theorem [3.13](#Ch3.Thmtheorem13).
 
-The proof follows from a corollary of Mercer’s theorem and the universality of quantum computing. First, by a direct corollary of the Mercer’s Theorem (i.e., Fact [3.1](#Ch3.Thmtheorem1 "Fact 3.1 (Mercer’s condition). ‣ 3.1.3 Kernel construction ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) which states that an arbitrary kernel $`k`$ admits a uniformly convergent expansion of the form in Eqn. ([3.16](#Ch3.E16 "Equation 3.16 ‣ Fact 3.1 (Mercer’s condition). ‣ 3.1.3 Kernel construction ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it is ensured that there exists a finite-dimensional feature map $`\Phi_{m}:\mathcal{X}\to\mathbb{R}^{m}`$ such that
+The proof follows from a corollary of Mercer’s theorem and the universality of quantum computing. First, by a direct corollary of the Mercer’s Theorem (i.e., Fact [3.1](#Ch3.Thmtheorem1)) which states that an arbitrary kernel $`k`$ admits a uniformly convergent expansion of the form in Eqn. ([3.16](#Ch3.E16)), it is ensured that there exists a finite-dimensional feature map $`\Phi_{m}:\mathcal{X}\to\mathbb{R}^{m}`$ such that
 
 $$
 \left|k(\boldsymbol{x},\boldsymbol{x}^{\prime})-\braket{\Phi_{m}(\boldsymbol{x}),\Phi_{m}(\boldsymbol{x}^{\prime})}\right|<\varepsilon.
 $$
 
-Without loss of generality, it is assumed that $`\|\Phi_{m}(\boldsymbol{x})\|=1`$ for all $`x\in\mathcal{X}`$. The quantum state $`\rho_{\Phi_{m}}`$ can then be prepared, which requires $`\lceil\log_{4}(m+1)\rceil`$ qubits. By preparing two such states—one for $`\Phi_{m}(\boldsymbol{x})`$ and one for $`\Phi_{m}(\boldsymbol{x}^{\prime})`$—their inner product can be computed as the Hilbert-Schmidt inner product of the quantum states, as shown in Lemma [3.15](#Ch3.Thmtheorem15 "Lemma 3.15 (Euclidean inner products). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). This leads to
+Without loss of generality, it is assumed that $`\|\Phi_{m}(\boldsymbol{x})\|=1`$ for all $`x\in\mathcal{X}`$. The quantum state $`\rho_{\Phi_{m}}`$ can then be prepared, which requires $`\lceil\log_{4}(m+1)\rceil`$ qubits. By preparing two such states—one for $`\Phi_{m}(\boldsymbol{x})`$ and one for $`\Phi_{m}(\boldsymbol{x}^{\prime})`$—their inner product can be computed as the Hilbert-Schmidt inner product of the quantum states, as shown in Lemma [3.15](#Ch3.Thmtheorem15). This leads to
 
 $$
 \braket{\Phi_{m}(\boldsymbol{x}),\Phi_{m}(\boldsymbol{x}^{\prime})}=2^{N}\mathop{\text{Tr}}\left(\rho_{\Phi_{m}(\boldsymbol{x})}\rho_{\Phi_{m}(\boldsymbol{x}^{\prime})}\right)-1.
@@ -2498,7 +2498,7 @@ $$
 
 for almost all $`\boldsymbol{x},\boldsymbol{x}^{\prime}\in\mathcal{X}`$. This completes the proof. ∎
 
-We remark that Theorem [3.13](#Ch3.Thmtheorem13 "Theorem 3.13 (Approximate universality of finite-dimensional quantum feature maps). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") does not aim to demonstrate any quantum advantage but rather establishes the ultimate expressivity of quantum kernels. The theorem guarantees the existence of a quantum kernel using a finite number of qubits but does not address how quickly the number of required qubits grows with increasing computational complexity of the kernel function $`k`$ or with decreasing approximation error $`\varepsilon>0`$. The number of qubits $`N`$ will depend on certain properties of the kernel $`k`$ and the approximation error $`\varepsilon`$. For instance, if the required number of qubits scales exponentially with these parameters, Theorem [3.13](#Ch3.Thmtheorem13 "Theorem 3.13 (Approximate universality of finite-dimensional quantum feature maps). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") would have limited practical utility. Similarly, the time required to find such a quantum kernel approximation-independent of the memory and runtime requirements for preparing the feature vectors and computing their inner product—must also be considered.
+We remark that Theorem [3.13](#Ch3.Thmtheorem13) does not aim to demonstrate any quantum advantage but rather establishes the ultimate expressivity of quantum kernels. The theorem guarantees the existence of a quantum kernel using a finite number of qubits but does not address how quickly the number of required qubits grows with increasing computational complexity of the kernel function $`k`$ or with decreasing approximation error $`\varepsilon>0`$. The number of qubits $`N`$ will depend on certain properties of the kernel $`k`$ and the approximation error $`\varepsilon`$. For instance, if the required number of qubits scales exponentially with these parameters, Theorem [3.13](#Ch3.Thmtheorem13) would have limited practical utility. Similarly, the time required to find such a quantum kernel approximation-independent of the memory and runtime requirements for preparing the feature vectors and computing their inner product—must also be considered.
 
 #### 3.3.2 Generalization of quantum kernel machines
 
@@ -2508,7 +2508,7 @@ For comprehensive, in this section, we first elucidate the generalization error 
 
 ##### Generalization error bound for kernel machines
 
-We begin by reviewing the optimal learning models based on the specified kernel machines which could be either classical or quantum, as discussed in Chapter [3.1.2](#Ch3.S1.SS2 "3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Suppose we have obtained $`n`$ training examples $`\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{n}`$ with $`\boldsymbol{x}^{(i)}\in\mathbb{R}^{d}`$ and $`y^{(i)}=f(\boldsymbol{x}^{(i)})\in\mathbb{R}`$, where $`f`$ is the target function. After training on this data, there exists a machine learning algorithm that outputs $`h(\boldsymbol{x})=\boldsymbol{w}^{\dagger}\phi(\boldsymbol{x})`$, where $`\phi(\boldsymbol{x})\in\mathbb{C}^{D}`$ refers to the hidden feature map corresponding the classical/quantum kernel function $`k(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)})={K}_{ij}=\phi(\boldsymbol{x}^{(i)})\cdot\phi(\boldsymbol{x}^{(j)})`$. More precisely, considering the mean square error as the loss function for such a task, we have
+We begin by reviewing the optimal learning models based on the specified kernel machines which could be either classical or quantum, as discussed in Chapter [3.1.2](#Ch3.S1.SS2). Suppose we have obtained $`n`$ training examples $`\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{n}`$ with $`\boldsymbol{x}^{(i)}\in\mathbb{R}^{d}`$ and $`y^{(i)}=f(\boldsymbol{x}^{(i)})\in\mathbb{R}`$, where $`f`$ is the target function. After training on this data, there exists a machine learning algorithm that outputs $`h(\boldsymbol{x})=\boldsymbol{w}^{\dagger}\phi(\boldsymbol{x})`$, where $`\phi(\boldsymbol{x})\in\mathbb{C}^{D}`$ refers to the hidden feature map corresponding the classical/quantum kernel function $`k(\boldsymbol{x}^{(i)},\boldsymbol{x}^{(j)})={K}_{ij}=\phi(\boldsymbol{x}^{(i)})\cdot\phi(\boldsymbol{x}^{(j)})`$. More precisely, considering the mean square error as the loss function for such a task, we have
 
 $$
 \mathcal{L}(\boldsymbol{w},\boldsymbol{x})=\lambda\boldsymbol{w}^{\dagger}\boldsymbol{w}+\sum_{i=1}^{n}\left(\boldsymbol{w}^{\dagger}\phi(\boldsymbol{x}^{(i)})-y^{(i)}\right)^{2},
@@ -2522,7 +2522,7 @@ $$
 \boldsymbol{w}^{*}=\arg\min_{\boldsymbol{w}\in\Theta}\mathcal{L}(\boldsymbol{w},\boldsymbol{x}).
 $$
 
-As discussed in Chapter [3.1.2](#Ch3.S1.SS2 "3.1.2 Dual representation ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the optimal solution $`\boldsymbol{w}^{*}`$ in Eqn. ([3.52](#Ch3.E52 "Equation 3.52 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) has the explicit form of
+As discussed in Chapter [3.1.2](#Ch3.S1.SS2), the optimal solution $`\boldsymbol{w}^{*}`$ in Eqn. ([3.52](#Ch3.E52)) has the explicit form of
 
 $$
 \boldsymbol{w}^{*}=\boldsymbol{\Phi}^{\dagger}({K}+\lambda\mathbb{I}_{n})^{-1}\boldsymbol{y}=\sum_{i=1}^{n}\sum_{j=1}^{n}\phi(\boldsymbol{x}^{(i)})(({K}+\lambda\mathbb{I}_{n})^{-1})_{ij}y^{(j)},
@@ -2540,7 +2540,7 @@ $$
 \epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x})=\left|f(\boldsymbol{x})-(\boldsymbol{w}^{*})^{\dagger}{\phi}(\boldsymbol{x})\right|,
 $$
 
-which is uniquely determined by the kernel matrix $`K`$ and the hyper-parameter $`\lambda`$ as shown in Eqn. ([3.53](#Ch3.E53 "Equation 3.53 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). In particular, we will focus on discussing the upper bound on the expected prediction error, which is the sum of training error and generalization error.
+which is uniquely determined by the kernel matrix $`K`$ and the hyper-parameter $`\lambda`$ as shown in Eqn. ([3.53](#Ch3.E53)). In particular, we will focus on discussing the upper bound on the expected prediction error, which is the sum of training error and generalization error.
 
 We now will separately give a rough derivation of the upper bound of training error and generalization error, which present the necessary steps for the derivation for a clear exposition and omit the specific details that could be found in [Huang et al. (2021a)](#bib.bib135).
 
@@ -2550,7 +2550,7 @@ $$
 \frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})\leq\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left((\boldsymbol{w}^{*})^{\dagger}\phi(\boldsymbol{x}^{(i)})-y^{(i)}\right)^{2}}.
 $$
 
-Moreover, combining with the expression for the optimal $`\boldsymbol{w}^{*}`$ given in Eqn. ([3.53](#Ch3.E53 "Equation 3.53 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), we can obtain the upper bound of training error in terms of the kernel matrix $`K`$ and hyper-parameter $`\lambda`$, i.e.,
+Moreover, combining with the expression for the optimal $`\boldsymbol{w}^{*}`$ given in Eqn. ([3.53](#Ch3.E53)), we can obtain the upper bound of training error in terms of the kernel matrix $`K`$ and hyper-parameter $`\lambda`$, i.e.,
 
 $$
 \frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})\leq\sqrt{\frac{\lambda^{2}\boldsymbol{y}^{\top}(K+\lambda\mathbb{I}_{n})^{-2}\boldsymbol{y}}{n}}.
@@ -2570,7 +2570,7 @@ $$
 
 where $`\sigma_{1},\cdots,\sigma_{n}`$ are in independent and uniform random variables over $`\{1,-1\}`$.
 
-For kernel functions defined in Eqn. ([3.55](#Ch3.E55 "Equation 3.55 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the set $`\mathcal{Z}`$ refers to the space of input vector with $`\boldsymbol{z}^{(i)}=\boldsymbol{x}^{(i)}`$ drawn from some input distribution. Each function $`g`$ would be equal to $`\epsilon_{\boldsymbol{w}}/\alpha`$ for some $`\boldsymbol{w}`$, where $`\epsilon_{\boldsymbol{w}}`$ is defined in Eqn. ([3.55](#Ch3.E55 "Equation 3.55 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and $`\alpha`$ is a normalization factor such that the range of $`\epsilon_{\boldsymbol{w}}/\alpha`$ is $`[0,1]`$. Without loss of generality, we assume that $`\alpha=1`$. For any specific parameter $`\boldsymbol{w}`$, consider the special case of $`\mathcal{G}`$ with setting $`\mathcal{G}_{\boldsymbol{w}}=\{\epsilon_{\boldsymbol{v}}~|~\forall~\|\boldsymbol{v}\|\leq\|\boldsymbol{w}\|\}`$. Then we have the upper bound of generalization error for the optimal parameter,
+For kernel functions defined in Eqn. ([3.55](#Ch3.E55)), the set $`\mathcal{Z}`$ refers to the space of input vector with $`\boldsymbol{z}^{(i)}=\boldsymbol{x}^{(i)}`$ drawn from some input distribution. Each function $`g`$ would be equal to $`\epsilon_{\boldsymbol{w}}/\alpha`$ for some $`\boldsymbol{w}`$, where $`\epsilon_{\boldsymbol{w}}`$ is defined in Eqn. ([3.55](#Ch3.E55)) and $`\alpha`$ is a normalization factor such that the range of $`\epsilon_{\boldsymbol{w}}/\alpha`$ is $`[0,1]`$. Without loss of generality, we assume that $`\alpha=1`$. For any specific parameter $`\boldsymbol{w}`$, consider the special case of $`\mathcal{G}`$ with setting $`\mathcal{G}_{\boldsymbol{w}}=\{\epsilon_{\boldsymbol{v}}~|~\forall~\|\boldsymbol{v}\|\leq\|\boldsymbol{w}\|\}`$. Then we have the upper bound of generalization error for the optimal parameter,
 
 $$
 \mathbb{E}_{\boldsymbol{x}}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x})-\frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})
@@ -2592,7 +2592,7 @@ $$
 
 where the first inequality follows that $`\epsilon_{\boldsymbol{v}}(\boldsymbol{x}^{(i)})`$ is Lipschitz continuous with respect to $`(\boldsymbol{w}^{*})^{\dagger}\cdot{\phi}(\boldsymbol{x}^{(i)})`$ with Lipschitz constant $`1`$, the second inequality follows direct algebra operation. For the detailed simplification processes, refer to Lemma 1 of [Huang et al. (2021a)](#bib.bib135).
 
-In conjunction with Eqn. ([3.60](#Ch3.Ex24 "In Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), Eqn. ([3.61](#Ch3.Ex25 "In Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), and the expression of the optimal parameter $`\boldsymbol{w}^{*}`$ given in Eqn. ([3.53](#Ch3.E53 "Equation 3.53 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), we can reach the final upper bound of generalization error in terms of the kernel matrix, i.e.,
+In conjunction with Eqn. ([3.60](#Ch3.Ex24)), Eqn. ([3.61](#Ch3.Ex25)), and the expression of the optimal parameter $`\boldsymbol{w}^{*}`$ given in Eqn. ([3.53](#Ch3.E53)), we can reach the final upper bound of generalization error in terms of the kernel matrix, i.e.,
 
 $$
 \mathbb{E}_{\boldsymbol{x}}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x})-\frac{1}{n}\sum_{i=1}^{n}\epsilon_{\boldsymbol{w}^{*}}(\boldsymbol{x}^{(i)})
@@ -2610,7 +2610,7 @@ We remark that the derived upper bound of the prediction error applies to both c
 
 ##### Quantum kernels with prediction advantages
 
-Using the above theoretical results of generalization error for general kernel machines, we now elucidate how to access the potential quantum advantage of quantum kernels. For a clear understanding, we focus on the case of $`\lambda=0`$ in which the prediction error bound has a simple form of $`\mathcal{O}(\sqrt{\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y}/n}+\sqrt{\log(1/\delta)/n})`$ as shown in Eqn. ([3.64](#Ch3.E64 "Equation 3.64 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). In particular, this bound has a key dependence on two quantities, namely (1) the size of training data $`n`$; (2) the kernel-dependent term $`\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y}`$, which we denote as
+Using the above theoretical results of generalization error for general kernel machines, we now elucidate how to access the potential quantum advantage of quantum kernels. For a clear understanding, we focus on the case of $`\lambda=0`$ in which the prediction error bound has a simple form of $`\mathcal{O}(\sqrt{\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y}/n}+\sqrt{\log(1/\delta)/n})`$ as shown in Eqn. ([3.64](#Ch3.E64)). In particular, this bound has a key dependence on two quantities, namely (1) the size of training data $`n`$; (2) the kernel-dependent term $`\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y}`$, which we denote as
 
 $$
 s_{K}(\boldsymbol{y})=\boldsymbol{y}^{\top}K^{-1}\boldsymbol{y},
@@ -2628,7 +2628,7 @@ Based on the above discussion, we are now in the position to analyze the potenti
 
 - <span id="Ch3.S3.I1.i2">•</span>
 
-  According to Eqn. ([3.65](#Ch3.E65 "Equation 3.65 ‣ Quantum kernels with prediction advantages ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the quantity $`s_{Q}(\boldsymbol{y})`$ related to the quantum kernel $`K_{Q}`$ must be the minimal over all efficient classical models, namely $`s_{Q}(\boldsymbol{y})\leq s_{C}(\boldsymbol{y})`$ for any $`K_{C}\in\mathcal{C}`$ with $`s_{C}(\boldsymbol{y})`$ being the $`K_{C}`$ related quantity.
+  According to Eqn. ([3.65](#Ch3.E65)), the quantity $`s_{Q}(\boldsymbol{y})`$ related to the quantum kernel $`K_{Q}`$ must be the minimal over all efficient classical models, namely $`s_{Q}(\boldsymbol{y})\leq s_{C}(\boldsymbol{y})`$ for any $`K_{C}\in\mathcal{C}`$ with $`s_{C}(\boldsymbol{y})`$ being the $`K_{C}`$ related quantity.
 
 <figure id="Ch3.F5" class="ltx_figure">
 
@@ -2643,15 +2643,15 @@ $$
 
 where $`\|\cdot\|_{\infty}`$ is the spectral norm of the resulting matrix and we assume $`\mathop{\text{Tr}}(K_{Q})=\mathop{\text{Tr}}(K_{C})=n`$. The geometric difference $`g(K_{C}||K_{Q})`$ can be computed on a classical computer by performing a singular value decomposition of the $`n\times n`$ matrices $`K_{C}`$ and $`K_{Q}`$ in time at most order $`n^{3}`$.
 
-Figure [3.5](#Ch3.F5 "Figure 3.5 ‣ Quantum kernels with prediction advantages ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") presents a detailed flowchart for evaluating the potential quantum prediction advantage using the defined geometric difference $`g_{CQ}`$ in a machine learning task. The input consists of $`n`$ data samples, along with both quantum and classical methods, each associated with its respective kernel. The tests are conducted as a function of $`n`$ to highlight the role of data size in determining the potential for a prediction advantage.
+Figure [3.5](#Ch3.F5) presents a detailed flowchart for evaluating the potential quantum prediction advantage using the defined geometric difference $`g_{CQ}`$ in a machine learning task. The input consists of $`n`$ data samples, along with both quantum and classical methods, each associated with its respective kernel. The tests are conducted as a function of $`n`$ to highlight the role of data size in determining the potential for a prediction advantage.
 
 First, the geometric quantity $`g_{CQ}`$ is evaluated, which quantifies the potential for a separation between quantum and classical predictions, without yet considering the actual function to be learned. Specifically, a large value of $`g_{CQ}\propto\sqrt{n}`$ suggests the possibility of a quantum prediction advantage. If the test is passed, an adversarial dataset that saturates this limit can be constructed. In particular, there exists a dataset with $`s_{C}=g_{CQ}^{2}s_{Q}`$, where the quantum model exhibits superior prediction performance, as will be described in the subsequent context.
 
-Subsequently, to incorporate the provided data, a label-specific test can be performed using the model complexities $`s_{C}`$ and $`s_{Q}`$. For quantum kernels and classical learning models, when $`s_{Q}\ll n`$ and $`s_{C}\propto n`$, a prediction advantage for quantum models is possible, as supported by the generalization bound in Eqn. ([3.64](#Ch3.E64 "Equation 3.64 ‣ Generalization error bound for kernel machines ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). In contrast, if $`g_{CQ}`$ is small such as $`g_{CQ}\ll\sqrt{n}`$, the classical learning model will likely have a similar or better model complexity $`s_{C}(\boldsymbol{y})`$ compared to the quantum model. In this case, the classical model’s prediction performance will be competitive or superior, and the classical model would likely be preferred.
+Subsequently, to incorporate the provided data, a label-specific test can be performed using the model complexities $`s_{C}`$ and $`s_{Q}`$. For quantum kernels and classical learning models, when $`s_{Q}\ll n`$ and $`s_{C}\propto n`$, a prediction advantage for quantum models is possible, as supported by the generalization bound in Eqn. ([3.64](#Ch3.E64)). In contrast, if $`g_{CQ}`$ is small such as $`g_{CQ}\ll\sqrt{n}`$, the classical learning model will likely have a similar or better model complexity $`s_{C}(\boldsymbol{y})`$ compared to the quantum model. In this case, the classical model’s prediction performance will be competitive or superior, and the classical model would likely be preferred.
 
 ##### Construction of dataset with maximal quantum advantage
 
-We now elucidate how to explicitly construct such a data set to enable the maximal separation between the model complexity of quantum kernels and classical kernels, as indicated by the geometry test in Figure [3.5](#Ch3.F5 "Figure 3.5 ‣ Quantum kernels with prediction advantages ‣ 3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). To separate between quantum and classical models related to kernel matrix $`K_{Q}`$ and $`K_{C}`$, we consider that the ratio between $`s_{C}`$ and $`s_{Q}`$ is as large as possible for a particular choice of targets $`y^{(1)},\cdots,y^{(n)}`$. This could be achieved by solving the optimization problem
+We now elucidate how to explicitly construct such a data set to enable the maximal separation between the model complexity of quantum kernels and classical kernels, as indicated by the geometry test in Figure [3.5](#Ch3.F5). To separate between quantum and classical models related to kernel matrix $`K_{Q}`$ and $`K_{C}`$, we consider that the ratio between $`s_{C}`$ and $`s_{Q}`$ is as large as possible for a particular choice of targets $`y^{(1)},\cdots,y^{(n)}`$. This could be achieved by solving the optimization problem
 
 $$
 \min_{\boldsymbol{y}\in\mathbb{R}^{n}}\frac{s_{C}}{s_{Q}}=\min_{\boldsymbol{y}\in\mathbb{R}^{n}}\frac{\boldsymbol{y}^{\top}K_{C}^{-1}\boldsymbol{y}}{\boldsymbol{y}^{\top}K_{Q}^{-1}\boldsymbol{y}},
@@ -2663,9 +2663,9 @@ which has an exact solution given by a generalized eigenvalue problem. The solut
 
 In this section, we explore the practical implementation of a quantum kernel. Before diving into concrete code examples, we discuss an efficient strategy for estimating the quantum kernel in practice.
 
-As explained in Chapter. [3.2](#Ch3.S2 "3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one method for estimating the quantum kernel is the SWAP test, which is resource-intensive. Alternatively, we can encode the classical data vector $`\boldsymbol{x}`$ using a unitary operation $`U(\boldsymbol{x})`$ and apply the inverse embedding of $`\boldsymbol{x}^{\prime}`$ using $`U(\boldsymbol{x}^{\prime})^{\dagger}`$ on the same qubits. The quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is then estimated by measuring the expectation of the projector $`O=(\lvert{0}\rangle\langle{0}\rvert)^{\otimes N}`$ on the zero state.
+As explained in Chapter. [3.2](#Ch3.S2), one method for estimating the quantum kernel is the SWAP test, which is resource-intensive. Alternatively, we can encode the classical data vector $`\boldsymbol{x}`$ using a unitary operation $`U(\boldsymbol{x})`$ and apply the inverse embedding of $`\boldsymbol{x}^{\prime}`$ using $`U(\boldsymbol{x}^{\prime})^{\dagger}`$ on the same qubits. The quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is then estimated by measuring the expectation of the projector $`O=(\lvert{0}\rangle\langle{0}\rvert)^{\otimes N}`$ on the zero state.
 
-The complete quantum circuit architecture for this process is illustrated in Figure [3.2](#Ch3.F2 "Figure 3.2 ‣ 3.2.1 Motivations for quantum kernel machines ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Mathematically, the process is expressed as:
+The complete quantum circuit architecture for this process is illustrated in Figure [3.2](#Ch3.F2). Mathematically, the process is expressed as:
 
 $$
 \braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})U(\boldsymbol{x})^{\dagger}OU(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}
@@ -2841,7 +2841,7 @@ To better understand the structure of the dataset, we visualize the training dat
 
 24 visualize_dataset(X_train, y_train)
 
-The resulting t-SNE visualization is shown in Figure [3.6](#Ch3.F6 "Figure 3.6 ‣ 3.4.1 Classification on MNIST dataset ‣ 3.4 Code Demonstration ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+The resulting t-SNE visualization is shown in Figure [3.6](#Ch3.F6).
 
 <figure id="Ch3.F6" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/mnist36.png" id="Ch3.F6.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:467/350;" width="467" height="350" alt="Refer to caption" />
@@ -2966,7 +2966,7 @@ Next, we visualize the quantum kernel matrix to gain insight into its structure.
 
 38 visualize_kernel(X_train, y_train, 10)
 
-The resulting kernel matrix is shown in Figure [3.7](#Ch3.F7 "Figure 3.7 ‣ 3.4.1 Classification on MNIST dataset ‣ 3.4 Code Demonstration ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+The resulting kernel matrix is shown in Figure [3.7](#Ch3.F7).
 
 <figure id="Ch3.F7" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/kernel_mat.png" id="Ch3.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:324/243;" width="324" height="243" alt="Refer to caption" />
@@ -3100,7 +3100,7 @@ Despite these advances, the studies on expressive power and universality approxi
 
 To narrow this gap, [Gil-Fuster et al. (2024)](#bib.bib134) examined the expressive power of efficient quantum kernels that can be implemented on quantum computers within polynomial time. Their work provides a detailed analysis of the types of kernels that are achievable with a polynomial number of qubits and within polynomial time, offering insights into the feasibility and practical utility of quantum kernels in real-world scenarios.
 
-However, alongside the exploration of expressive power, a significant challenge known as exponential kernel concentration has been identified. [Thanasilp et al. (2022)](#bib.bib144) identified four key factors contributing to this issue: high expressivity of data embeddings, global measurements, entanglement, and noise. To address this limitation, substantial research has focused on designing advanced quantum kernels to mitigate exponential kernel concentration, as discussed in Chapter [3.5.1](#Ch3.S5.SS1 "3.5.1 Quantum kernel design ‣ 3.5 Bibliographic Remarks ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+However, alongside the exploration of expressive power, a significant challenge known as exponential kernel concentration has been identified. [Thanasilp et al. (2022)](#bib.bib144) identified four key factors contributing to this issue: high expressivity of data embeddings, global measurements, entanglement, and noise. To address this limitation, substantial research has focused on designing advanced quantum kernels to mitigate exponential kernel concentration, as discussed in Chapter [3.5.1](#Ch3.S5.SS1).
 
 ##### Generalization of quantum kernels
 
@@ -3136,7 +3136,7 @@ Quantum neural networks (QNNs) ([Jeswal and Chakraverty, 2019](#bib.bib166)) of
 
 Despite these promising features, there are challenges in realizing the full potential of QNNs, such as quantum noise ([Peters et al., 2021](#bib.bib168)) and the requirement for scalable quantum hardware ([Acharya et al., 2024](#bib.bib169)). Nonetheless, ongoing advancements in quantum hardware and algorithm design promise QNNs to address the inefficiencies of classical models, especially in areas such as quantum many-body physics ([Gardas et al., 2018](#bib.bib170)) and quantum chemistry ([Cao et al., 2019](#bib.bib171)).
 
-In this chapter, to provide a systematic overview, we begin by outlining the structure and function of classical neural networks in Chapter [4.1](#Ch4.S1 "4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), before transitioning to fault-tolerant and near-term quantum neural networks in Chapters [4.2](#Ch4.S2 "4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [4.3](#Ch4.S3 "4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), respectively. We also discuss the theoretical foundations of QNNs in Chapter [4.4](#Ch4.S4 "4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), focusing on trainability, expressivity, and generalization capabilities. Finally, we provide illustrative code implementations of QNNs using the wine ([Dua and Graff, 2017](#bib.bib172)) and MNIST datasets ([LeCun et al., 1998](#bib.bib173)) in Chapter [4.5](#Ch4.S5 "4.5 Code Demonstration ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+In this chapter, to provide a systematic overview, we begin by outlining the structure and function of classical neural networks in Chapter [4.1](#Ch4.S1), before transitioning to fault-tolerant and near-term quantum neural networks in Chapters [4.2](#Ch4.S2) and [4.3](#Ch4.S3), respectively. We also discuss the theoretical foundations of QNNs in Chapter [4.4](#Ch4.S4), focusing on trainability, expressivity, and generalization capabilities. Finally, we provide illustrative code implementations of QNNs using the wine ([Dua and Graff, 2017](#bib.bib172)) and MNIST datasets ([LeCun et al., 1998](#bib.bib173)) in Chapter [4.5](#Ch4.S5).
 
 ### 4.1 Classical Neural Networks
 
@@ -3148,7 +3148,7 @@ After nearly a century of exploration, neural networks have undergone remarkable
 
 The perceptron model, first introduced by ([McCulloch and Pitts, 1943](#bib.bib174)), is widely regarded as a foundational structure in artificial neural networks, inspiring architectures ranging from convolutional neural networks (CNNs) ([LeCun et al., 1989](#bib.bib178)) and residual neural networks (ResNets) ([He et al., 2016](#bib.bib179)) to transformers ([Vaswani, 2017](#bib.bib100)). Due to its fundamental role, we next introduce the mechanism of single-layer perceptrons.
 
-A single-layer perceptron comprises three fundamental components: input neurons, a weighted layer, and an output neuron as illustrated in Figure [4.1](#Ch4.F1 "Figure 4.1 ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Given a $`d`$-dimensional input vector $`\boldsymbol{x}\in\mathbb{R}^{d}`$, the input layer consists of $`d`$ neurons, each representing the feature $`\boldsymbol{x}_{i}`$ for $`\forall i\in[d]`$. This input is processed through a weighted summation, i.e.,
+A single-layer perceptron comprises three fundamental components: input neurons, a weighted layer, and an output neuron as illustrated in Figure [4.1](#Ch4.F1). Given a $`d`$-dimensional input vector $`\boldsymbol{x}\in\mathbb{R}^{d}`$, the input layer consists of $`d`$ neurons, each representing the feature $`\boldsymbol{x}_{i}`$ for $`\forall i\in[d]`$. This input is processed through a weighted summation, i.e.,
 
 $$
 z=\boldsymbol{w}^{\top}\boldsymbol{x},
@@ -3174,15 +3174,15 @@ $$
 
 The training process is repeated iteratively until the error reaches a predefined threshold.
 
-Perceptrons can perfectly classify linearly separable data with a finite number of mistakes, as stated in Theorem [4.1](#Ch4.Thmtheorem1 "Theorem 4.1 (Convergence of perceptrons ( , )). ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+Perceptrons can perfectly classify linearly separable data with a finite number of mistakes, as stated in Theorem [4.1](#Ch4.Thmtheorem1).
 
 ###### Theorem 4.1 (Convergence of perceptrons ([Novikoff, 1962](#bib.bib180))).
 
 Suppose the training data consists of unit vectors separated by a margin of $`\gamma`$ with labels $`y^{(i)}\in\{-1,1\}`$. Then there exists a perceptron training algorithm that achieves zero error with at most $`\mathcal{O}(\frac{1}{\gamma^{2}})`$ mistakes.
 
-###### Proof of Theorem [4.1](#Ch4.Thmtheorem1 "Theorem 4.1 (Convergence of perceptrons ( , )). ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Theorem [4.1](#Ch4.Thmtheorem1).
 
-Consider the initial parameter of the perceptron $`\boldsymbol{w}=\boldsymbol{0}`$. Since the training dataset is linearly separable by a margin of $`\gamma`$, there exists a unit vector $`\boldsymbol{w}^{*}`$ such that $`y^{(i)}{\boldsymbol{w}^{*}}^{\top}\boldsymbol{x}^{(i)}\geq{}\gamma`$ for all samples $`i\in[n]`$. Let $`\boldsymbol{x}^{(s,t)}`$ be the sample that is misclassified in the $`t`$-th step, which is then used for adjusting the parameter. Let $`\boldsymbol{w}(t)`$ be the parameter after the $`t`$-th step. Using Eqn. ([4.3](#Ch4.E3 "Equation 4.3 ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it can be shown that
+Consider the initial parameter of the perceptron $`\boldsymbol{w}=\boldsymbol{0}`$. Since the training dataset is linearly separable by a margin of $`\gamma`$, there exists a unit vector $`\boldsymbol{w}^{*}`$ such that $`y^{(i)}{\boldsymbol{w}^{*}}^{\top}\boldsymbol{x}^{(i)}\geq{}\gamma`$ for all samples $`i\in[n]`$. Let $`\boldsymbol{x}^{(s,t)}`$ be the sample that is misclassified in the $`t`$-th step, which is then used for adjusting the parameter. Let $`\boldsymbol{w}(t)`$ be the parameter after the $`t`$-th step. Using Eqn. ([4.3](#Ch4.E3)), it can be shown that
 
 $$
 {\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t)-{\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t-1)
@@ -3196,7 +3196,7 @@ $$
 ={} 2y^{(s,t)}{\boldsymbol{w}^{*}}^{\top}\boldsymbol{x}^{(s,t)}\geq{}2\gamma,
 $$
 
-where Eqn. ([4.4](#Ch4.E4 "Equation 4.4 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by noticing the sample $`(\boldsymbol{x}^{(s,t)},y^{(s,t)})`$ is misclassified with $`\hat{y}^{(s,t)}\neq y^{(s,t)}`$ and $`{y}^{(s,t)},\hat{y}^{(s,t)}\in\{-1,1\}`$. By considering the initialization $`\boldsymbol{w}(0)=\boldsymbol{0}`$, the norm of the parameter after the $`t`$-th step can be bounded by
+where Eqn. ([4.4](#Ch4.E4)) is derived by noticing the sample $`(\boldsymbol{x}^{(s,t)},y^{(s,t)})`$ is misclassified with $`\hat{y}^{(s,t)}\neq y^{(s,t)}`$ and $`{y}^{(s,t)},\hat{y}^{(s,t)}\in\{-1,1\}`$. By considering the initialization $`\boldsymbol{w}(0)=\boldsymbol{0}`$, the norm of the parameter after the $`t`$-th step can be bounded by
 
 $$
 \left\|\boldsymbol{w}(t)\right\|\geq{} \left|{\boldsymbol{w}^{*}}^{\top}\boldsymbol{w}(t)\right|
@@ -3210,7 +3210,7 @@ $$
 \geq{} 2\gamma t,
 $$
 
-where Eqn. ([4.5](#Ch4.E5 "Equation 4.5 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is follows from the condition $`\|\boldsymbol{w}^{*}\|=1`$. Eqn. ([4.7](#Ch4.E7 "Equation 4.7 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by using the result in Eqn. ([4.4](#Ch4.E4 "Equation 4.4 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). On the other hand,
+where Eqn. ([4.5](#Ch4.E5)) is follows from the condition $`\|\boldsymbol{w}^{*}\|=1`$. Eqn. ([4.7](#Ch4.E7)) is derived by using the result in Eqn. ([4.4](#Ch4.E4)). On the other hand,
 
 $$
 \left\|\boldsymbol{w}(t)\right\|^{2}-\left\|\boldsymbol{w}(t-1)\right\|^{2}
@@ -3236,7 +3236,7 @@ $$
 \leq{} 4,
 $$
 
-where Eqn. ([4.8](#Ch4.E8 "Equation 4.8 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from the weight update rule in Eqn. ([4.3](#Ch4.E3 "Equation 4.3 ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Eqn. ([4.9](#Ch4.E9 "Equation 4.9 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by noticing that $`y^{(s,t)}\neq\hat{y}^{(s,t)}`$ and $`y^{(s,t)},\hat{y}^{(s,t)}\in\{-1,1\}`$. Eqn. ([4.10](#Ch4.E10 "Equation 4.10 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from the condition $`\|\boldsymbol{x}^{(i)}\|=1`$ for all samples. Eqn. ([4.11](#Ch4.E11 "Equation 4.11 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by noticing that the sample $`(\boldsymbol{x}^{(s,t)},y^{(s,t)})`$ is misclassified by the perceptron with the parameter $`\boldsymbol{w}(t-1)`$, *i.e.*
+where Eqn. ([4.8](#Ch4.E8)) follows from the weight update rule in Eqn. ([4.3](#Ch4.E3)). Eqn. ([4.9](#Ch4.E9)) is derived by noticing that $`y^{(s,t)}\neq\hat{y}^{(s,t)}`$ and $`y^{(s,t)},\hat{y}^{(s,t)}\in\{-1,1\}`$. Eqn. ([4.10](#Ch4.E10)) follows from the condition $`\|\boldsymbol{x}^{(i)}\|=1`$ for all samples. Eqn. ([4.11](#Ch4.E11)) is derived by noticing that the sample $`(\boldsymbol{x}^{(s,t)},y^{(s,t)})`$ is misclassified by the perceptron with the parameter $`\boldsymbol{w}(t-1)`$, *i.e.*
 
 $$
 y^{(s,t)}\boldsymbol{w}(t-1)^{\top}\boldsymbol{x}^{(s,t)}\leq 0.
@@ -3248,7 +3248,7 @@ $$
 \|\boldsymbol{w}(t)\|\leq 2\sqrt{t}.
 $$
 
-Combining Eqn. ([4.7](#Ch4.E7 "Equation 4.7 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Eqn. ([4.12](#Ch4.E12 "Equation 4.12 ‣ Proof of Theorem . ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it can be shown that
+Combining Eqn. ([4.7](#Ch4.E7)) and Eqn. ([4.12](#Ch4.E12)), it can be shown that
 
 $$
 t\leq{} \frac{1}{\gamma^{2}}.
@@ -3256,7 +3256,7 @@ $$
 
 ∎
 
-Since the parameters are used in an inner product operation, as shown in Eqn. ([4.1](#Ch4.E1 "Equation 4.1 ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the single-layer perceptron can be considered as a basic kernel method employing the identity feature mapping. Consequently, the single-layer perceptron can only classify linearly separable data and is inadequate for handling more complex tasks, such as the XOR problem ([Rosenblatt, 1958](#bib.bib181)). This limitation has driven the development of advanced neural networks, such as multilayer perceptrons (MLPs) ([Gardner and Dorling, 1998](#bib.bib175)), which can capture non-linear relationships by incorporating non-linear activation functions and multi-layer structures.
+Since the parameters are used in an inner product operation, as shown in Eqn. ([4.1](#Ch4.E1)), the single-layer perceptron can be considered as a basic kernel method employing the identity feature mapping. Consequently, the single-layer perceptron can only classify linearly separable data and is inadequate for handling more complex tasks, such as the XOR problem ([Rosenblatt, 1958](#bib.bib181)). This limitation has driven the development of advanced neural networks, such as multilayer perceptrons (MLPs) ([Gardner and Dorling, 1998](#bib.bib175)), which can capture non-linear relationships by incorporating non-linear activation functions and multi-layer structures.
 
 #### 4.1.2 Multilayer perceptron
 
@@ -3265,7 +3265,7 @@ Since the parameters are used in an inner product operation, as shown in Eqn. (
 <figcaption>Figure 4.2: Illustration of a multilayer perceptron with two hidden layers. Dashed lines denote softmax operations.</figcaption>
 </figure>
 
-The multilayer perceptron (MLP) is a fully connected neural network architecture consisting of three components: the input layer, hidden layers, and output layer, as illustrated in Figure [4.2](#Ch4.F2 "Figure 4.2 ‣ 4.1.2 Multilayer perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Similar to the single-layer perceptron introduced in Chapter [4.1.1](#Ch4.S1.SS1 "4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the neurons in the MLP are connected through weighted sums, followed by non-linear activation functions.
+The multilayer perceptron (MLP) is a fully connected neural network architecture consisting of three components: the input layer, hidden layers, and output layer, as illustrated in Figure [4.2](#Ch4.F2). Similar to the single-layer perceptron introduced in Chapter [4.1.1](#Ch4.S1.SS1), the neurons in the MLP are connected through weighted sums, followed by non-linear activation functions.
 
 The mathematical expression of MLP is as follows. Let $`\boldsymbol{x}^{(a,1)}`$ be the $`a`$-th input data and $`\ell=1`$ denote the input layer. Define $`L`$ as the number of total layers. The forward propagation at the $`(\ell+1)`$-th layer $`\forall\ell\in\{1,2,...,L-2\}`$ yields
 
@@ -3277,7 +3277,7 @@ $$
 \boldsymbol{x}^{(a,\ell+1)}={} \sigma(\boldsymbol{z}^{(a,\ell+1)}),
 $$
 
-where $`\sigma`$ represents the non-linear activation function, and $`W^{(\ell)}`$ and $`\boldsymbol{b}^{(\ell)}`$ denotes trainable weight and the bias term, respectively. Similar to the notation $`z`$ in the perceptron in Chapter [4.1.1](#Ch4.S1.SS1 "4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), $`\boldsymbol{z}^{(a,\ell+1)}`$ denotes the output of the linear sum in the $`\ell+1`$-th layer, which is expressed in a more generalized vector form. Therefore, the parameter for the weighted linear sum is represented in matrix form as $`W^{(\ell)}`$. Various methodologies have been proposed for implementing non-linear activations, with some common approaches summarized in Table [4.1](#Ch4.T1 "Table 4.1 ‣ 4.1.2 Multilayer perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+where $`\sigma`$ represents the non-linear activation function, and $`W^{(\ell)}`$ and $`\boldsymbol{b}^{(\ell)}`$ denotes trainable weight and the bias term, respectively. Similar to the notation $`z`$ in the perceptron in Chapter [4.1.1](#Ch4.S1.SS1), $`\boldsymbol{z}^{(a,\ell+1)}`$ denotes the output of the linear sum in the $`\ell+1`$-th layer, which is expressed in a more generalized vector form. Therefore, the parameter for the weighted linear sum is represented in matrix form as $`W^{(\ell)}`$. Various methodologies have been proposed for implementing non-linear activations, with some common approaches summarized in Table [4.1](#Ch4.T1).
 
 After passing through $`L-2`$ hidden layers, the output of MLP given by the equation below serves as the prediction to approximate the target label $`\boldsymbol{y}^{(a)}`$, i.e.,
 
@@ -3348,7 +3348,7 @@ $$
 \boldsymbol{\theta}(t+1)=\boldsymbol{\theta}(t)-\eta\nabla_{\boldsymbol{\theta}}{\mathcal{L}}(\boldsymbol{\theta}(t)).
 $$
 
-As illustrated in Figure [4.3](#Ch4.F3 "Figure 4.3 ‣ 4.1.2 Multilayer perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the gradient is computed using backpropagation ([LeCun et al., 1988](#bib.bib182)) as follows. First, the gradient with respect to the output layer is given by
+As illustrated in Figure [4.3](#Ch4.F3), the gradient is computed using backpropagation ([LeCun et al., 1988](#bib.bib182)) as follows. First, the gradient with respect to the output layer is given by
 
 $$
 \frac{\partial{\mathcal{L}}^{(a)}}{\partial\hat{\boldsymbol{y}}^{(a)}}={} \hat{\boldsymbol{y}}^{(a)}-\boldsymbol{y}^{(a)},
@@ -3392,7 +3392,7 @@ $$
 
 After multiple training epochs, the loss function converges to a value below a predefined threshold, which leads to a small classification error.
 
-Compared to single-layer perceptrons, MLP can model non-linear relationships by employing hidden layers and activation functions. This enables them to learn abstract representations by capturing the complex patterns inherent in the data. Mathematically, the power of MLPs is guaranteed by the universal approximation theorem, as stated in Theorem [4.2](#Ch4.Thmtheorem2 "Fact 4.2 (Universal Approximation Theorem, informal version adapted from ( ) ). ‣ 4.1.2 Multilayer perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which asserts that a single hidden layer is sufficient to approximate any arbitrary continuous function.
+Compared to single-layer perceptrons, MLP can model non-linear relationships by employing hidden layers and activation functions. This enables them to learn abstract representations by capturing the complex patterns inherent in the data. Mathematically, the power of MLPs is guaranteed by the universal approximation theorem, as stated in Theorem [4.2](#Ch4.Thmtheorem2), which asserts that a single hidden layer is sufficient to approximate any arbitrary continuous function.
 
 ###### Fact 4.2 (Universal Approximation Theorem, informal version adapted from [Hornik et al. (1989)](#bib.bib183)).
 
@@ -3406,13 +3406,13 @@ where $`g(\boldsymbol{x})=C\sigma(A\boldsymbol{x}+\boldsymbol{b})`$.
 
 ### 4.2 Fault-tolerant Quantum Perceptron
 
-The primary aim of advancing quantum machine learning is to harness the computational advantages of quantum mechanics to enhance performance across various learning tasks. As outlined in Chapter [1.1.2](#Ch1.S1.SS2 "1.1.2 Different measures of quantum advantages ‣ 1.1 A First Glimpse of Quantum Machine Learning ‣ Chapter 1 Introduction ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), these advantages manifest in several ways, including reduced runtime, lower query complexity, and improved sample efficiency compared to classical models. A notable example of this is the quantum perceptron model ([Kapoor et al., 2016](#bib.bib187)). As a FTQC-based QML algorithm grounded in the Grover search, quantum perceptron offers a quadratic improvement in the query complexity during the training over its classical counterpart. For comprehensiveness, we first introduce the Grover search algorithm, followed by a detailed explanation of the quantum perceptron model.
+The primary aim of advancing quantum machine learning is to harness the computational advantages of quantum mechanics to enhance performance across various learning tasks. As outlined in Chapter [1.1.2](#Ch1.S1.SS2), these advantages manifest in several ways, including reduced runtime, lower query complexity, and improved sample efficiency compared to classical models. A notable example of this is the quantum perceptron model ([Kapoor et al., 2016](#bib.bib187)). As a FTQC-based QML algorithm grounded in the Grover search, quantum perceptron offers a quadratic improvement in the query complexity during the training over its classical counterpart. For comprehensiveness, we first introduce the Grover search algorithm, followed by a detailed explanation of the quantum perceptron model.
 
 #### 4.2.1 Grover search
 
 Grover search ([Grover, 1996](#bib.bib12)) provides runtime speedups for unstructured search problems, which have broad applications in cryptography, quantum machine learning, and constraint satisfaction problems. Unlike classical search methods that require $`\mathcal{O}(d)`$ queries for a dataset with $`d`$ entries, Grover’s algorithm can identify the target element with high probability using only $`\mathcal{O}(\sqrt{d})`$ queries to a quantum oracle. Consequently, quantum algorithms incorporating Grover search have the potential to achieve a quadratic speedup over classical approaches.
 
-In general, a search task can be abstracted as a function $`f({x})`$ such that $`f({x})=1`$ if $`{x}`$ belongs to the solution set of the search problem, and $`f({x})=0`$ otherwise. We consider a dataset consisting of $`d=2^{N}`$ elements, where each element is represented by the quantum state $`|{x}\rangle`$ with $`x=0,1,\cdots,d-1`$. In this process, two key quantum oracles are introduced. The first oracle, $`U_{0}=2(|0\rangle\langle 0|)^{\otimes N}-\mathbb{I}_{d}`$, applies a phase shift of $`e^{i\pi}=-1`$ to all quantum states except $`|0\rangle^{\otimes N}`$, which remains unchanged. The second oracle, $`U_{f}`$, operates in a similar manner: it applies a phase shift of $`-1`$ to quantum states that belong to the solution set while leaving all other states unaffected. The procedure for Grover search is described in Algorithm [2](#alg2 "Algorithm 2 ‣ 4.2.1 Grover search ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+In general, a search task can be abstracted as a function $`f({x})`$ such that $`f({x})=1`$ if $`{x}`$ belongs to the solution set of the search problem, and $`f({x})=0`$ otherwise. We consider a dataset consisting of $`d=2^{N}`$ elements, where each element is represented by the quantum state $`|{x}\rangle`$ with $`x=0,1,\cdots,d-1`$. In this process, two key quantum oracles are introduced. The first oracle, $`U_{0}=2(|0\rangle\langle 0|)^{\otimes N}-\mathbb{I}_{d}`$, applies a phase shift of $`e^{i\pi}=-1`$ to all quantum states except $`|0\rangle^{\otimes N}`$, which remains unchanged. The second oracle, $`U_{f}`$, operates in a similar manner: it applies a phase shift of $`-1`$ to quantum states that belong to the solution set while leaving all other states unaffected. The procedure for Grover search is described in Algorithm [2](#alg2).
 
 <figure id="alg2" class="ltx_float ltx_float_algorithm ltx_framed ltx_framed_top">
 1: Quantum oracles $U_{f}$ and $U_{0}$. The size of the dataset and the solution set, denoted by $d=2^{N}$ and $M$, respectively.
@@ -3429,7 +3429,7 @@ In general, a search task can be abstracted as a function $`f({x})`$ such that $
 
 Grover search finds a solution to the unstructured search problem with high probability in time $`\mathcal{O}(\sqrt{\frac{d}{M}}(\log d+T_{f}))`$, where $`d`$ is the size of the dataset, $`M`$ is the size of the solution set, and $`T_{f}`$ denotes the time complexity of implementing the oracle $`U_{f}`$.
 
-###### Proof of Theorem [4.3](#Ch4.Thmtheorem3 "Theorem 4.3 (Time complexity of Grover search). ‣ 4.2.1 Grover search ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Theorem [4.3](#Ch4.Thmtheorem3).
 
 Let the superposition of the solution state be
 
@@ -3495,7 +3495,7 @@ To ensure that the coefficient $`\alpha_{m}=\mathcal{O}(1)`$, there is a conditi
 
 #### 4.2.2 Online quantum perceptron with quadratic speedups
 
-As stated in Theorem [4.1](#Ch4.Thmtheorem1 "Theorem 4.1 (Convergence of perceptrons ( , )). ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), for a linearly separable dataset with a margin $`\gamma`$, a perceptron model can achieve perfect classification after making $`\mathcal{O}(1/\gamma^{2})`$ mistakes during training. In classical approaches, identifying a sample that is misclassified by the current model may require up to $`\mathcal{O}(d)`$ queries, where $`d`$ denotes the size of the training dataset. In contrast, the quantum perceptron model ([Kapoor et al., 2016](#bib.bib187)) can identify misclassified samples more efficiently by employing the Grover search algorithm, achieving a quadratic speed-up in the query complexity.
+As stated in Theorem [4.1](#Ch4.Thmtheorem1), for a linearly separable dataset with a margin $`\gamma`$, a perceptron model can achieve perfect classification after making $`\mathcal{O}(1/\gamma^{2})`$ mistakes during training. In classical approaches, identifying a sample that is misclassified by the current model may require up to $`\mathcal{O}(d)`$ queries, where $`d`$ denotes the size of the training dataset. In contrast, the quantum perceptron model ([Kapoor et al., 2016](#bib.bib187)) can identify misclassified samples more efficiently by employing the Grover search algorithm, achieving a quadratic speed-up in the query complexity.
 
 To begin, we introduce the setup of the input data. We consider the classification of a dataset $`\{z^{(i)}\}_{i=1}^{d}=\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{d}`$, where the label $`y^{(i)}\in\{-1,1\}`$. For convenience, we assume that the number of samples is a power of $`2`$, i.e., $`d=2^{N}`$. Each data vector $`\boldsymbol{x}^{(i)}`$ is assumed to be represented by using $`B`$ bits. The information of each sample $`z^{(i)}`$ is stored in the quantum state $`|z^{(i)}\rangle`$ by using $`B+1`$ qubits.
 
@@ -3515,7 +3515,7 @@ $$
 U\sum_{i=0}^{d-1}\frac{1}{\sqrt{d}}|i\rangle|0\rangle={} \sum_{i=0}^{d-1}\frac{1}{\sqrt{d}}|i\rangle|z^{(i)}\rangle.
 $$
 
-In addition to the input oracle $`U`$ described in Eqn. ([4.15](#Ch4.E15 "Equation 4.15 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the quantum perceptron model employs another oracle to distinguish between correctly classified and misclassified quantum states. Specifically, the oracle $`{F}_{\boldsymbol{w}}^{\prime}`$ satisfies
+In addition to the input oracle $`U`$ described in Eqn. ([4.15](#Ch4.E15)), the quantum perceptron model employs another oracle to distinguish between correctly classified and misclassified quantum states. Specifically, the oracle $`{F}_{\boldsymbol{w}}^{\prime}`$ satisfies
 
 $$
 {F}_{\boldsymbol{w}}^{\prime}|z^{(i)}\rangle={} (-1)^{f(\boldsymbol{w},z^{(i)})}|z^{(i)}\rangle,
@@ -3527,7 +3527,7 @@ $$
 F_{\boldsymbol{w}}={} U^{\dagger}(\mathbb{I}\otimes{F}_{\boldsymbol{w}}^{\prime})U,
 $$
 
-which is used as the oracle $`U_{f}`$ in the Grover search. The online quantum perceptron procedure is given in Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The query complexity of the online quantum perceptron is provided in Theorem [4.5](#Ch4.Thmtheorem5 "Theorem 4.5 (Online quantum perceptron ( , )). ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+which is used as the oracle $`U_{f}`$ in the Grover search. The online quantum perceptron procedure is given in Algorithm [3](#alg3). The query complexity of the online quantum perceptron is provided in Theorem [4.5](#Ch4.Thmtheorem5).
 
 <figure id="alg3" class="ltx_float ltx_float_algorithm ltx_framed ltx_framed_top">
 1: Linearly separable dataset $\{z^{(i)}\}_{i=1}^{d}=\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{d}$, where $d=2^{N}$. Margin threshold $\gamma$. Constants $\epsilon\in(0,1)$ and $c\in(1,2)$.
@@ -3566,9 +3566,9 @@ $$
 \Omega({d})\ni n_{\rm class}\in\mathcal{O}\left(\frac{{d}}{\gamma^{2}}\log\frac{1}{\gamma^{2}\epsilon}\right).
 $$
 
-###### Proof of Theorem [4.5](#Ch4.Thmtheorem5 "Theorem 4.5 (Online quantum perceptron ( , )). ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Theorem [4.5](#Ch4.Thmtheorem5).
 
-The main idea of the quantum perceptron model in Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is to replace the procedure of finding the misclassified sample in classical perceptrons with the Grover search. Due to convergence result for perceptrons in Theorem [4.1](#Ch4.Thmtheorem1 "Theorem 4.1 (Convergence of perceptrons ( , )). ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), $`h=1,\cdots,\lceil\frac{1}{\gamma^{2}}\rceil`$ iterations of Steps ([5](#alg3.l5 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[15](#alg3.l15 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) suffice to update the weight $`\boldsymbol{w}`$ towards the case of perfect classification. Therefore, Theorem [4.5](#Ch4.Thmtheorem5 "Theorem 4.5 (Online quantum perceptron ( , )). ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is the direct consequence of the following lemmas and Theorem [4.1](#Ch4.Thmtheorem1 "Theorem 4.1 (Convergence of perceptrons ( , )). ‣ 4.1.1 Perceptron ‣ 4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The query complexity of classical perceptrons has the lower bound $`\Omega(d)`$, since the model needs to go through the entire dataset in the worst case.
+The main idea of the quantum perceptron model in Algorithm [3](#alg3) is to replace the procedure of finding the misclassified sample in classical perceptrons with the Grover search. Due to convergence result for perceptrons in Theorem [4.1](#Ch4.Thmtheorem1), $`h=1,\cdots,\lceil\frac{1}{\gamma^{2}}\rceil`$ iterations of Steps ([5](#alg3.l5)-[15](#alg3.l15)) suffice to update the weight $`\boldsymbol{w}`$ towards the case of perfect classification. Therefore, Theorem [4.5](#Ch4.Thmtheorem5) is the direct consequence of the following lemmas and Theorem [4.1](#Ch4.Thmtheorem1). The query complexity of classical perceptrons has the lower bound $`\Omega(d)`$, since the model needs to go through the entire dataset in the worst case.
 
 ∎
 
@@ -3578,9 +3578,9 @@ Given only uniform sampling access to the training dataset, there exists a class
 
 ###### Lemma 4.7.
 
-The procedure of Steps [5](#alg3.l5 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[15](#alg3.l15 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") in Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") either finds a misclassified sample to update the weight $`\boldsymbol{w}`$ or concludes that no such example exists with probability $`1-\epsilon\gamma^{2}`$, using $`\mathcal{O}(\sqrt{d}\log(1/\epsilon\gamma^{2}))`$ queries to $`F_{\boldsymbol{w}}`$.
+The procedure of Steps [5](#alg3.l5)-[15](#alg3.l15) in Algorithm [3](#alg3) either finds a misclassified sample to update the weight $`\boldsymbol{w}`$ or concludes that no such example exists with probability $`1-\epsilon\gamma^{2}`$, using $`\mathcal{O}(\sqrt{d}\log(1/\epsilon\gamma^{2}))`$ queries to $`F_{\boldsymbol{w}}`$.
 
-###### Proof of Lemma [4.6](#Ch4.Thmtheorem6 "Lemma 4.6. ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Lemma [4.6](#Ch4.Thmtheorem6).
 
 First, let $`m_{c}=d\lceil\log(1/\epsilon\gamma^{2})\rceil`$ be the number of samples drawn from the dataset uniformly in each iteration of training. Suppose these samples are classified correctly, then the probability that the entire dataset is classified correctly is
 
@@ -3590,9 +3590,9 @@ $$
 
 ∎
 
-###### Proof of Lemma [4.7](#Ch4.Thmtheorem7 "Lemma 4.7. ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Lemma [4.7](#Ch4.Thmtheorem7).
 
-For convenience, denote $`\theta_{a}:=\arccos\sqrt{\frac{d-d_{0}}{d}}`$, where $`d_{0}`$ the number of misclassified samples in the dataset according to the current model. Let $`d_{1}:=\lceil\log_{c}\frac{1}{\sin(2\sin^{-1}(1/\sqrt{d}))}\rceil`$. Here, an exponential expansion strategy is used in Steps [6](#alg3.l6 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[14](#alg3.l14 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") to handle the scenario of unknown $`d_{0}`$. Namely, quantum operations in the Grover search are repeated for $`m`$ times, where $`m`$ is drawn from an exponentially expanded set $`{0,\cdots,\lceil c^{j}\rceil-1}`$ uniformly for a predefined $`c\in(1,2)`$ and $`j=1,\cdots,d_{1}`$. It can be shown that this strategy can find a misclassified sample before the convergence of Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with an average probability at least $`1/4`$:
+For convenience, denote $`\theta_{a}:=\arccos\sqrt{\frac{d-d_{0}}{d}}`$, where $`d_{0}`$ the number of misclassified samples in the dataset according to the current model. Let $`d_{1}:=\lceil\log_{c}\frac{1}{\sin(2\sin^{-1}(1/\sqrt{d}))}\rceil`$. Here, an exponential expansion strategy is used in Steps [6](#alg3.l6)-[14](#alg3.l14) to handle the scenario of unknown $`d_{0}`$. Namely, quantum operations in the Grover search are repeated for $`m`$ times, where $`m`$ is drawn from an exponentially expanded set $`{0,\cdots,\lceil c^{j}\rceil-1}`$ uniformly for a predefined $`c\in(1,2)`$ and $`j=1,\cdots,d_{1}`$. It can be shown that this strategy can find a misclassified sample before the convergence of Algorithm [3](#alg3) with an average probability at least $`1/4`$:
 
 $$
 \Pr\left(f(\boldsymbol{w},z^{(q)})=1\right)={} \sum_{j=1}^{d_{1}}\frac{1}{\lceil c^{j}\rceil}\sum_{m=0}^{\lceil c^{j}\rceil-1}\sin^{2}((2m+1)\theta_{a})
@@ -3610,13 +3610,13 @@ $$
 \geq{} \frac{1}{4}.
 $$
 
-The procedure of Steps [6](#alg3.l6 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[14](#alg3.l14 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is repeated for $`k=1,\cdots,\lceil\log_{3/4}\gamma^{2}\epsilon\rceil`$ iterations to accumulate the success probability. The probability of finding a misclassified sample in Steps [5](#alg3.l5 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[15](#alg3.l15 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") before the convergence of Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is at least
+The procedure of Steps [6](#alg3.l6)-[14](#alg3.l14) is repeated for $`k=1,\cdots,\lceil\log_{3/4}\gamma^{2}\epsilon\rceil`$ iterations to accumulate the success probability. The probability of finding a misclassified sample in Steps [5](#alg3.l5)-[15](#alg3.l15) before the convergence of Algorithm [3](#alg3) is at least
 
 $$
 1-\left(1-\frac{1}{4}\right)^{\lceil\log_{3/4}\epsilon\gamma^{2}\rceil}\geq{} 1-\epsilon\gamma^{2}.
 $$
 
-Finally, the query complexity $`Q`$ of Steps [5](#alg3.l5 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")-[15](#alg3.l15 "In Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") in Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") can be upper bounded as follows:
+Finally, the query complexity $`Q`$ of Steps [5](#alg3.l5)-[15](#alg3.l15) in Algorithm [3](#alg3) can be upper bounded as follows:
 
 $$
 Q\leq{} \sum_{k=1}^{\lceil\log_{3/4}\gamma^{2}\epsilon\rceil}\sum_{j=1}^{d_{1}}c^{j}
@@ -3647,11 +3647,11 @@ Following recent experimental breakthroughs in superconducting quantum hardware 
 <figcaption>Figure 4.4: Illustration of a QNN. The input state $\rho_{\textrm{in}}$ is prepared using the operation <span class="math inline">$U_{\rm data}$</span>, followed by a variational quantum circuit (VQC) $V(\boldsymbol{\theta})$ and the measurement operation.</figcaption>
 </figure>
 
-In this section, we introduce the basic architecture of QNNs. As illustrated in Figure [4.4](#Ch4.F4 "Figure 4.4 ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), a basic QNN consists of three components: the input, the model circuit, and the measurement.
+In this section, we introduce the basic architecture of QNNs. As illustrated in Figure [4.4](#Ch4.F4), a basic QNN consists of three components: the input, the model circuit, and the measurement.
 
-Input. The QNN uses quantum states $`\rho_{\rm in}`$ as input data. As shown in Table [4.2](#Ch4.T2 "Table 4.2 ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), QNNs can process both classical and quantum data. Specifically, the input states $`\rho_{\rm in}`$ may be introduced from physical processes such as quantum Hamiltonian evolutions or be constructed to encode classical vectors using encoding protocols introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), such as angle encoding and amplitude encoding.
+Input. The QNN uses quantum states $`\rho_{\rm in}`$ as input data. As shown in Table [4.2](#Ch4.T2), QNNs can process both classical and quantum data. Specifically, the input states $`\rho_{\rm in}`$ may be introduced from physical processes such as quantum Hamiltonian evolutions or be constructed to encode classical vectors using encoding protocols introduced in Chapter [2.3.1](#Ch2.S3.SS1), such as angle encoding and amplitude encoding.
 
-Model circuit. QNNs employ variational quantum circuits (VQCs), a.k.a, ansatzes, to extract and learn features from input data. A typical VQC, denoted as $`V(\boldsymbol{\theta})`$, adopts a layered architecture that consists of both parameterized and fixed quantum gates, with the former being trainable. For problem-agnostic implementations, an effective parameterization strategy is to use the parameters $`\boldsymbol{\theta}`$ as the phases of single-qubit rotation gates $`\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}`$, while quantum entanglement is introduced through fixed two-qubit gates, such as $`CX`$ and $`CZ`$. Standard circuit architectures include the hardware-efficient circuit (HEC) ([Kandala et al., 2017a](#bib.bib79)), shown in Figure [4.5](#Ch4.F5 "Figure 4.5 ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), and the quantum convolutional neural network (QCNN) ([Cong et al., 2019](#bib.bib191)), shown in Figure [4.6](#Ch4.F6 "Figure 4.6 ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). For problem-specific applications, such as finding the ground states of molecular Hamiltonians, specialized circuits like the unitary coupled cluster ansatz ([Peruzzo et al., 2014](#bib.bib192)) are employed.
+Model circuit. QNNs employ variational quantum circuits (VQCs), a.k.a, ansatzes, to extract and learn features from input data. A typical VQC, denoted as $`V(\boldsymbol{\theta})`$, adopts a layered architecture that consists of both parameterized and fixed quantum gates, with the former being trainable. For problem-agnostic implementations, an effective parameterization strategy is to use the parameters $`\boldsymbol{\theta}`$ as the phases of single-qubit rotation gates $`\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}`$, while quantum entanglement is introduced through fixed two-qubit gates, such as $`CX`$ and $`CZ`$. Standard circuit architectures include the hardware-efficient circuit (HEC) ([Kandala et al., 2017a](#bib.bib79)), shown in Figure [4.5](#Ch4.F5), and the quantum convolutional neural network (QCNN) ([Cong et al., 2019](#bib.bib191)), shown in Figure [4.6](#Ch4.F6). For problem-specific applications, such as finding the ground states of molecular Hamiltonians, specialized circuits like the unitary coupled cluster ansatz ([Peruzzo et al., 2014](#bib.bib192)) are employed.
 
 <figure id="Ch4.F5" class="ltx_figure">
 
@@ -3720,9 +3720,9 @@ $$
 \frac{\partial f}{\partial\boldsymbol{\theta}_{j}}(\boldsymbol{\theta})=\frac{1}{2}\left[f\left(\boldsymbol{\theta}+\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)-f\left(\boldsymbol{\theta}-\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)\right],
 $$
 
-where the function $`f`$ follows the Eqn. ([4.21](#Ch4.E21 "Equation 4.21 ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and the one-hot vector $`\boldsymbol{e}^{(j)}`$ has the same dimension with $`\boldsymbol{\theta}`$ with the $`j`$-th element being $`1`$.
+where the function $`f`$ follows the Eqn. ([4.21](#Ch4.E21)) and the one-hot vector $`\boldsymbol{e}^{(j)}`$ has the same dimension with $`\boldsymbol{\theta}`$ with the $`j`$-th element being $`1`$.
 
-###### Proof of Theorem [4.9](#Ch4.Thmtheorem9 "Theorem 4.9 (Parameter-shift rule ( , )). ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Theorem [4.9](#Ch4.Thmtheorem9).
 
 For convenience, we denote the detailed structure of VQC as
 
@@ -3766,7 +3766,7 @@ $$
 
 where $`[A,B]:=AB-BA`$ denotes the commutator.
 
-After some calculations from Eqn. ([4.22](#Ch4.E22 "Equation 4.22 ‣ Proof of Theorem . ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it can be shown that
+After some calculations from Eqn. ([4.22](#Ch4.E22)), it can be shown that
 
 $$
 f\left(\boldsymbol{\theta}+\frac{\pi}{2}\boldsymbol{e}^{(j)}\right)={} \frac{1-\sin\boldsymbol{\theta}_{j}}{2}\mathop{\text{Tr}}\left[O^{\prime}\rho_{\rm in}^{\prime}\right]+\frac{i}{2}\cos\boldsymbol{\theta}_{j}\left[[H_{j},O^{\prime}]\rho_{\rm in}^{\prime}\right]
@@ -3792,7 +3792,7 @@ $$
 +{} \frac{1}{2}\sin\boldsymbol{\theta}_{j}\mathop{\text{Tr}}\left[H_{j}O^{\prime}H_{j}\rho_{\rm in}^{\prime}\right].
 $$
 
-Comparing the above equations, Theorem [4.9](#Ch4.Thmtheorem9 "Theorem 4.9 (Parameter-shift rule ( , )). ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is proved.
+Comparing the above equations, Theorem [4.9](#Ch4.Thmtheorem9) is proved.
 
 ∎
 
@@ -3804,7 +3804,7 @@ $$
 |\psi(\boldsymbol{x}^{(i)})\rangle=U_{\phi}(\boldsymbol{x}^{(i)})|0\rangle,
 $$
 
-where a simple feature map can be constructed via angle encoding, as introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"),
+where a simple feature map can be constructed via angle encoding, as introduced in Chapter [2.3.1](#Ch2.S3.SS1),
 
 $$
 U_{\phi}(\boldsymbol{x}^{(i)})=\bigotimes_{n=1}^{N}\mathop{\text{RY}}(\boldsymbol{x}_{n}^{(i)})=\bigotimes_{n=1}^{N}\exp(-iY\boldsymbol{x}_{n}^{(i)}/2).
@@ -3822,13 +3822,13 @@ $$
 \boldsymbol{\theta}^{*}={\rm argmin}\mathcal{L}(\boldsymbol{\theta}),\ \text{where }\mathcal{L}(\boldsymbol{\theta})=\sum_{i=1}^{n}\ell(\boldsymbol{\theta},\boldsymbol{x}^{(i)},y^{(i)})=\frac{1}{2}\sum_{i=1}^{n}\left(\hat{y}^{(i)}(\boldsymbol{\theta})-y^{(i)}\right)^{2}.
 $$
 
-The gradient of the loss in Eqn. ([4.26](#Ch4.E26 "Equation 4.26 ‣ 4.3.2 Discriminative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) can be calculated via the chain rule, i.e.,
+The gradient of the loss in Eqn. ([4.26](#Ch4.E26)) can be calculated via the chain rule, i.e.,
 
 $$
 \nabla_{\boldsymbol{\theta}}\mathcal{L}(\boldsymbol{\theta})=\sum_{i=1}^{n}\left(\hat{y}^{(i)}(\boldsymbol{\theta})-y^{(i)}\right)\nabla_{\boldsymbol{\theta}}\hat{y}^{(i)}(\boldsymbol{\theta}),
 $$
 
-where the gradient of the prediction $`\hat{y}^{(i)}`$ can be obtained by using the parameter-shift rule in Theorem [4.9](#Ch4.Thmtheorem9 "Theorem 4.9 (Parameter-shift rule ( , )). ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Consequently, a variety of gradient-based optimization algorithms, such as stochastic gradient descent ([Amari, 1993](#bib.bib177)), Adagrad ([Duchi et al., 2011](#bib.bib194)), and Adam ([Kingma, 2014](#bib.bib195)), can be employed to train QNNs.
+where the gradient of the prediction $`\hat{y}^{(i)}`$ can be obtained by using the parameter-shift rule in Theorem [4.9](#Ch4.Thmtheorem9). Consequently, a variety of gradient-based optimization algorithms, such as stochastic gradient descent ([Amari, 1993](#bib.bib177)), Adagrad ([Duchi et al., 2011](#bib.bib194)), and Adam ([Kingma, 2014](#bib.bib195)), can be employed to train QNNs.
 
 #### 4.3.3 Generative learning with QNNs
 
@@ -3843,7 +3843,7 @@ To illustrate the training and sampling processes of QGAN, we present two exampl
 
 ##### Quantum patch GAN
 
-We begin by introducing the quantum patch GAN, which consists of a quantum generator, as illustrated in Figure [4.7](#Ch4.F7 "Figure 4.7 ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), a classical discriminator, and a classical optimizer. Both the learning and sampling processes of an image are performed in patches, involving $`T`$ sub-generators. For the $`t`$-th sub-generator, the model takes a latent state $`\boldsymbol{z}`$ as input and generates a sample $`G_{t}(\boldsymbol{z})`$. Specifically, the latent state is prepared from the initial state $`|0\rangle^{\otimes N}`$ using a single-qubit rotation layer, where the parameters $`\{\boldsymbol{\alpha}_{n}\}_{n=1}^{N}`$ are sampled from the uniform distribution over $`[0,2\pi)`$. The latent state is then processed through an $`N`$-qubit hardware-efficient circuit $`U_{G_{t}}(\boldsymbol{\theta})`$, which leads to the state
+We begin by introducing the quantum patch GAN, which consists of a quantum generator, as illustrated in Figure [4.7](#Ch4.F7), a classical discriminator, and a classical optimizer. Both the learning and sampling processes of an image are performed in patches, involving $`T`$ sub-generators. For the $`t`$-th sub-generator, the model takes a latent state $`\boldsymbol{z}`$ as input and generates a sample $`G_{t}(\boldsymbol{z})`$. Specifically, the latent state is prepared from the initial state $`|0\rangle^{\otimes N}`$ using a single-qubit rotation layer, where the parameters $`\{\boldsymbol{\alpha}_{n}\}_{n=1}^{N}`$ are sampled from the uniform distribution over $`[0,2\pi)`$. The latent state is then processed through an $`N`$-qubit hardware-efficient circuit $`U_{G_{t}}(\boldsymbol{\theta})`$, which leads to the state
 
 $$
 |\psi_{t}(\boldsymbol{z})\rangle=U_{G_{t}}(\boldsymbol{\theta})|\boldsymbol{z}\rangle.
@@ -3885,10 +3885,10 @@ Similar to quantum discriminative learning, the quantum patch GAN can be trained
 
 <figure id="Ch4.F8" class="ltx_figure">
 
-<figcaption>Figure 4.8: The main structure of the quantum batch GAN. The figure illustrates the process of generation and training using fake data. The oracle $U_{\boldsymbol{z}}$ for encoding latent vectors, the quantum generator $U_{G}(\boldsymbol{\theta})$, and the quantum discriminator $U_{D}(\boldsymbol{\gamma})$ are applied sequentially to the initial state $|0\rangle^{\otimes N}$. Both $U_{G}$ and $U_{D}$ share the same hardware-efficient structure as shown in Figure <a href="#Ch4.F7" title="Figure 4.7 ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers">4.7</a>. In the case of real data, the operations $U_{\boldsymbol{z}}$ and $U_{G}(\boldsymbol{\theta})$ are replaced by the oracle $U_{\boldsymbol{x}}$.</figcaption>
+<figcaption>Figure 4.8: The main structure of the quantum batch GAN. The figure illustrates the process of generation and training using fake data. The oracle $U_{\boldsymbol{z}}$ for encoding latent vectors, the quantum generator $U_{G}(\boldsymbol{\theta})$, and the quantum discriminator $U_{D}(\boldsymbol{\gamma})$ are applied sequentially to the initial state $|0\rangle^{\otimes N}$. Both $U_{G}$ and $U_{D}$ share the same hardware-efficient structure as shown in Figure <a href="#Ch4.F7">4.7</a>. In the case of real data, the operations $U_{\boldsymbol{z}}$ and $U_{G}(\boldsymbol{\theta})$ are replaced by the oracle $U_{\boldsymbol{x}}$.</figcaption>
 </figure>
 
-As illustrated in Figure [4.8](#Ch4.F8 "Figure 4.8 ‣ Quantum batch GAN ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the quantum batch GAN differs from the quantum patch GAN by employing a quantum discriminator. In a quantum batch GAN, all qubits are divided into two registers: the index register, consisting of $`N_{I}`$ qubits, and the feature register, consisting of $`N_{F}`$ qubits. The qubits in the feature register are further partitioned into three parts: $`N_{D}`$ qubits for generating quantum samples, $`N_{A_{G}}`$ qubits for implementing non-linear operations in the generator $`G_{\boldsymbol{\theta}}`$, and $`N_{A_{D}}`$ qubits for implementing non-linear operations in the discriminator $`D_{\boldsymbol{\gamma}}`$. For a batch with size $`|B_{k}|=2^{N_{I}}`$, two oracles are used to encode the information of latent vectors and training samples:
+As illustrated in Figure [4.8](#Ch4.F8), the quantum batch GAN differs from the quantum patch GAN by employing a quantum discriminator. In a quantum batch GAN, all qubits are divided into two registers: the index register, consisting of $`N_{I}`$ qubits, and the feature register, consisting of $`N_{F}`$ qubits. The qubits in the feature register are further partitioned into three parts: $`N_{D}`$ qubits for generating quantum samples, $`N_{A_{G}}`$ qubits for implementing non-linear operations in the generator $`G_{\boldsymbol{\theta}}`$, and $`N_{A_{D}}`$ qubits for implementing non-linear operations in the discriminator $`D_{\boldsymbol{\gamma}}`$. For a batch with size $`|B_{k}|=2^{N_{I}}`$, two oracles are used to encode the information of latent vectors and training samples:
 
 $$
 |0\rangle_{I}\otimes|0\rangle_{F}\xrightarrow{U_{\boldsymbol{z}}}{} \frac{1}{2^{N_{I}}}\sum_{i}|i\rangle_{I}\otimes|\boldsymbol{z}^{(i)}\rangle_{F},
@@ -3938,22 +3938,22 @@ $$
 \xrightarrow{\Pi_{A_{D}}}{} \frac{\mathbb{I}_{2^{N-N_{A_{D}}}}\otimes\Pi_{A_{G}}|\psi(\boldsymbol{x})\rangle}{\mathop{\text{Tr}}\left[\mathbb{I}_{2^{N-N_{A_{D}}}}\otimes\Pi_{A_{G}}|\psi(\boldsymbol{x})\rangle\langle\psi(\boldsymbol{x})|\right]}:=|D_{\boldsymbol{\gamma}}(\boldsymbol{x})\rangle,
 $$
 
-where the partial measurement is $`\Pi_{A_{G}}=(|0\rangle\langle 0|)^{\otimes N_{A_{D}}}`$. The classical description $`D_{\boldsymbol{\gamma}}(\boldsymbol{x})`$ is generated similarly to Eqn. ([4.36](#Ch4.E36 "Equation 4.36 ‣ Quantum batch GAN ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). The generated state $`G_{\boldsymbol{\theta}}|\boldsymbol{z}\rangle`$ undergoes the same procedure to obtain the description $`D_{\boldsymbol{\gamma}}(G_{\boldsymbol{\theta}}(\boldsymbol{z}))`$. These classical vectors are then used in the loss function in Eqn. ([4.33](#Ch4.E33 "Equation 4.33 ‣ Quantum patch GAN ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to train parameters $`\boldsymbol{\theta}`$ and $`\boldsymbol{\gamma}`$.
+where the partial measurement is $`\Pi_{A_{G}}=(|0\rangle\langle 0|)^{\otimes N_{A_{D}}}`$. The classical description $`D_{\boldsymbol{\gamma}}(\boldsymbol{x})`$ is generated similarly to Eqn. ([4.36](#Ch4.E36)). The generated state $`G_{\boldsymbol{\theta}}|\boldsymbol{z}\rangle`$ undergoes the same procedure to obtain the description $`D_{\boldsymbol{\gamma}}(G_{\boldsymbol{\theta}}(\boldsymbol{z}))`$. These classical vectors are then used in the loss function in Eqn. ([4.33](#Ch4.E33)) to train parameters $`\boldsymbol{\theta}`$ and $`\boldsymbol{\gamma}`$.
 
 ### 4.4 Theoretical Foundations of Quantum Neural Networks
 
-The primary goal of QNNs is to make accurate predictions on unseen data. Achieving this goal depends on three key factors: expressivity, generalization ability, and trainability, as illustrated in Figure [4.9](#Ch4.F9 "Figure 4.9 ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). A thorough analysis of these factors is crucial for understanding the potential advantages and limitations of QNNs compared to classical counterparts. Instead of providing an exhaustive review of all theoretical results, this section focuses on emphasizing key conceptual insights of QNNs.
+The primary goal of QNNs is to make accurate predictions on unseen data. Achieving this goal depends on three key factors: expressivity, generalization ability, and trainability, as illustrated in Figure [4.9](#Ch4.F9). A thorough analysis of these factors is crucial for understanding the potential advantages and limitations of QNNs compared to classical counterparts. Instead of providing an exhaustive review of all theoretical results, this section focuses on emphasizing key conceptual insights of QNNs.
 
 <figure id="Ch4.F9" class="ltx_figure">
 
 <figcaption>Figure 4.9: Overview of the expressivity, generalization ability, and trainability of QNNs. The expressivity of the employed QNNs determines its hypothesis space $\mathcal{H}$ (solid blue ellipse). When $\mathcal{H}$ has a moderate size and encompasses the target concept (solid red star), QNNs can achieve good performance. Conversely, if $\mathcal{H}$ fails to cover the target concept (solid gray star) due to limited expressivity, the performance of QNNs deteriorates. During QNN optimization, a significant challenge arises from the vanishing gradient problem, commonly referred to as the barren plateau. This issue prohibits a good estimation near the target parameters $\boldsymbol{\theta}^{*}$.</figcaption>
 </figure>
 
-As explained in Chapter [3.3](#Ch3.S3 "3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), expressivity refers to a model’s ability to represent a wide range of functions, determining the smallest achievable training error. In Chapter [4.4.1](#Ch4.S4.SS1 "4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will characterize the expressivity of QNNs using the covering number, an advanced tool from statistical learning theory. This analysis will reveal the relationship between the expressivity of QNNs and their structural factors, such as the size of the quantum system and the number of exploited quantum gates. Understanding this connection helps clarify how QNNs’ expressivity scales with their architecture.
+As explained in Chapter [3.3](#Ch3.S3), expressivity refers to a model’s ability to represent a wide range of functions, determining the smallest achievable training error. In Chapter [4.4.1](#Ch4.S4.SS1), we will characterize the expressivity of QNNs using the covering number, an advanced tool from statistical learning theory. This analysis will reveal the relationship between the expressivity of QNNs and their structural factors, such as the size of the quantum system and the number of exploited quantum gates. Understanding this connection helps clarify how QNNs’ expressivity scales with their architecture.
 
-Generalization ability evaluates the discrepancy between a model’s performance on the training data and on unseen test data. In Chapter [4.4.1](#Ch4.S4.SS1 "4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will further explore the relationship between the generalization ability and expressivity of QNNs by deriving a generalization error bound in terms of the covering number. This bound provides insights into how the expressivity of QNNs–specifically their structural factors–may impact their ability to generalize and offers a framework to assess their potential advantages over classical ML models.
+Generalization ability evaluates the discrepancy between a model’s performance on the training data and on unseen test data. In Chapter [4.4.1](#Ch4.S4.SS1), we will further explore the relationship between the generalization ability and expressivity of QNNs by deriving a generalization error bound in terms of the covering number. This bound provides insights into how the expressivity of QNNs–specifically their structural factors–may impact their ability to generalize and offers a framework to assess their potential advantages over classical ML models.
 
-While expressivity and generalization ability are crucial for both quantum kernels and QNNs, trainability emerges as an additional consideration for QNNs due to the introduction of trainable parameters in quantum circuits. This leads to fundamentally different optimization challenges, where many existing results from classical ML models no longer apply. Specifically, trainability refers to a model’s ability to efficiently converge to a good solution during training, directly influencing the computational cost of training. In Chapter [4.4.2](#Ch4.S4.SS2 "4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will introduce a well-known challenge in training QNNs, referred to as the barren plateau problem, where gradients vanish exponentially as the system size increases, making optimization intractable. Additionally, we will discuss various strategies to address this issue, offering practical insights into enhancing the trainability of QNNs.
+While expressivity and generalization ability are crucial for both quantum kernels and QNNs, trainability emerges as an additional consideration for QNNs due to the introduction of trainable parameters in quantum circuits. This leads to fundamentally different optimization challenges, where many existing results from classical ML models no longer apply. Specifically, trainability refers to a model’s ability to efficiently converge to a good solution during training, directly influencing the computational cost of training. In Chapter [4.4.2](#Ch4.S4.SS2), we will introduce a well-known challenge in training QNNs, referred to as the barren plateau problem, where gradients vanish exponentially as the system size increases, making optimization intractable. Additionally, we will discuss various strategies to address this issue, offering practical insights into enhancing the trainability of QNNs.
 
 #### 4.4.1 Expressivity and generalization of quantum neural networks
 
@@ -3993,14 +3993,14 @@ In particular, the expressivity could be directly understood as the size of the 
 
 In general, the cardinality of the hypothesis space is infinity, as the parameters $`\boldsymbol{\theta}`$ are continuous. This makes it hard to compare the expressivity of different learning models. An alternative measure is model complexity, which measures the richness of the hypothesis space through the structural factors of the specific learning models, such as the number of parameters, depth, or architectural design. Remarkably, model complexity is measurable and bounded. In this tutorial, we will employ the covering number to measure the model complexity of QNNs later.
 
-The generalization capability of learning models is directly measured by the generalization error $`R_{\Gene}`$ in Eqn. ([4.41](#Ch4.E41 "Equation 4.41 ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). A good generalization ability means that the learning model predicts well on unseen data as well as on the training data. In this regard, a small generalization error with a small training error implicates a small prediction error, as a small generalization error guarantees that the prediction performance is as well as the training performance.
+The generalization capability of learning models is directly measured by the generalization error $`R_{\Gene}`$ in Eqn. ([4.41](#Ch4.E41)). A good generalization ability means that the learning model predicts well on unseen data as well as on the training data. In this regard, a small generalization error with a small training error implicates a small prediction error, as a small generalization error guarantees that the prediction performance is as well as the training performance.
 
 <figure id="Ch4.F10" class="ltx_figure">
 
 <figcaption>Figure 4.10: Influence of model complexity on generalization error.</figcaption>
 </figure>
 
-In statistical learning theory, it has been well-established that a bias-variance trade-off governs the interplay between model complexity and generalization performance for any learning model, highlighting the delicate balance required for a model to generalize well to unseen data. The relationship is often depicted by a U-shaped curve, as shown in Figure [4.10](#Ch4.F10 "Figure 4.10 ‣ An overview ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). This curve suggests that there exists an optimal level of model complexity for improving the generalization ability of any learning model. When under the point related to optimal expressivity, increasing model complexity improves performance on training data and enhances generalization. However, beyond a certain point, higher complexity leads to overfitting, resulting in poor generalization on test data. For QNNs, identifying this optimal level of complexity is crucial for achieving the best balance between training performance and generalization.
+In statistical learning theory, it has been well-established that a bias-variance trade-off governs the interplay between model complexity and generalization performance for any learning model, highlighting the delicate balance required for a model to generalize well to unseen data. The relationship is often depicted by a U-shaped curve, as shown in Figure [4.10](#Ch4.F10). This curve suggests that there exists an optimal level of model complexity for improving the generalization ability of any learning model. When under the point related to optimal expressivity, increasing model complexity improves performance on training data and enhances generalization. However, beyond a certain point, higher complexity leads to overfitting, resulting in poor generalization on test data. For QNNs, identifying this optimal level of complexity is crucial for achieving the best balance between training performance and generalization.
 
 ##### Expressivity of QNNs
 
@@ -4012,13 +4012,13 @@ $$
 h(\boldsymbol{\theta},O,\rho):=\mathop{\text{Tr}}\left(U(\boldsymbol{\theta})^{\dagger}OU(\boldsymbol{\theta})\rho\right).
 $$
 
-Given the training data set $`\mathcal{D}=\{(\rho^{(i)},{y}^{(i)})\}_{i=1}^{n}`$ and loss function $`\mathcal{L}(\boldsymbol{\theta},\mathcal{D})`$ defined in Eqn. ([4.39](#Ch4.E39 "Equation 4.39 ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), QNN is optimized to find a good approximation $`h^{*}(\boldsymbol{\theta},O,\rho)=\arg\min_{h(\boldsymbol{\theta},O,\rho)\in\mathcal{H}}\mathcal{L}(\boldsymbol{\theta},\mathcal{D})`$ that can well approximate the target concept, where $`\mathcal{H}`$ refers to the hypothesis space of QNNs with
+Given the training data set $`\mathcal{D}=\{(\rho^{(i)},{y}^{(i)})\}_{i=1}^{n}`$ and loss function $`\mathcal{L}(\boldsymbol{\theta},\mathcal{D})`$ defined in Eqn. ([4.39](#Ch4.E39)), QNN is optimized to find a good approximation $`h^{*}(\boldsymbol{\theta},O,\rho)=\arg\min_{h(\boldsymbol{\theta},O,\rho)\in\mathcal{H}}\mathcal{L}(\boldsymbol{\theta},\mathcal{D})`$ that can well approximate the target concept, where $`\mathcal{H}`$ refers to the hypothesis space of QNNs with
 
 $$
 \mathcal{H}=\left\{\mathop{\text{Tr}}\left(U(\boldsymbol{\theta})^{\dagger}OU(\boldsymbol{\theta})\rho\right)\Big|\boldsymbol{\theta}\in\Theta\right\}.
 $$
 
-An intuition about how the hypothesis space $`\mathcal{H}`$ affects the performance of QNNs is depicted in Figure [4.9](#Ch4.F9 "Figure 4.9 ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). When $`\mathcal{H}`$ has a modest size and covers the target concepts, the estimated hypothesis could well approximate the target concept. By contrast, when the complexity of $`\mathcal{H}`$ is too low, there exists a large gap between the estimated hypothesis and the target concept. An effective measure to evaluate the complexity of $`\mathcal{H}`$ is covering number, an advanced tool broadly used in statistical learning theory, to bound the complexity of $`\mathcal{H}`$ and measure the expressivity of QNNs.
+An intuition about how the hypothesis space $`\mathcal{H}`$ affects the performance of QNNs is depicted in Figure [4.9](#Ch4.F9). When $`\mathcal{H}`$ has a modest size and covers the target concepts, the estimated hypothesis could well approximate the target concept. By contrast, when the complexity of $`\mathcal{H}`$ is too low, there exists a large gap between the estimated hypothesis and the target concept. An effective measure to evaluate the complexity of $`\mathcal{H}`$ is covering number, an advanced tool broadly used in statistical learning theory, to bound the complexity of $`\mathcal{H}`$ and measure the expressivity of QNNs.
 
 <figure id="Ch4.F11" class="ltx_figure">
 
@@ -4029,9 +4029,9 @@ An intuition about how the hypothesis space $`\mathcal{H}`$ affects the performa
 
 The covering number $`\mathcal{N}(\mathcal{U},\epsilon,\|\cdot\|)`$ denotes the least cardinality of any subset $`V\subset U`$ that covers $`U`$ at scale $`\epsilon`$ with a norm $`\|\cdot\|`$, i.e., $`\sup_{A\in\mathcal{U}}\min_{B\in\mathcal{V}}\|A-B\|\leq\epsilon`$. Here we use this notion to measure the expressivity of QNNs.
 
-The geometric interpretation of the covering number is depicted in Figure [4.11](#Ch4.F11 "Figure 4.11 ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which refers to the minimum number of spherical balls with radius $`\epsilon`$ that are required to completely cover a given space with possible overlaps. This notion has been employed to study other crucial topics in quantum physics such as Hamiltonian simulation and entangled states. Note that $`\epsilon`$ is a predefined hyper-parameter, i.e., a small constant with $`\epsilon\in(0,1)`$, and is independent of any factor. This convention has been broadly adopted in the regime of machine learning to evaluate the model capacity of various learning models.
+The geometric interpretation of the covering number is depicted in Figure [4.11](#Ch4.F11), which refers to the minimum number of spherical balls with radius $`\epsilon`$ that are required to completely cover a given space with possible overlaps. This notion has been employed to study other crucial topics in quantum physics such as Hamiltonian simulation and entangled states. Note that $`\epsilon`$ is a predefined hyper-parameter, i.e., a small constant with $`\epsilon\in(0,1)`$, and is independent of any factor. This convention has been broadly adopted in the regime of machine learning to evaluate the model capacity of various learning models.
 
-Following the convention of [Du et al. (2022c)](#bib.bib201), we now give a step-by-step analysis of the model complexity of the hypothesis space $`\mathcal{H}`$ of QNNs defined in Eqn. ([4.43](#Ch4.E43 "Equation 4.43 ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). We will show that the covering number of QNNs is controlled by their structural factors, including the number of parameterized gates $`N_{gt}`$, the number of qubits $`k`$ the gates acting on, and the type of the quantum observable $`O`$. In the end, we first look at a simpler hypothesis space consisting of the operator group
+Following the convention of [Du et al. (2022c)](#bib.bib201), we now give a step-by-step analysis of the model complexity of the hypothesis space $`\mathcal{H}`$ of QNNs defined in Eqn. ([4.43](#Ch4.E43)). We will show that the covering number of QNNs is controlled by their structural factors, including the number of parameterized gates $`N_{gt}`$, the number of qubits $`k`$ the gates acting on, and the type of the quantum observable $`O`$. In the end, we first look at a simpler hypothesis space consisting of the operator group
 
 $$
 \mathcal{H}_{\Circ}:=\left\{U(\boldsymbol{\theta})^{\dagger}OU(\boldsymbol{\theta})\big|\boldsymbol{\theta}\in\Theta\right\},
@@ -4055,11 +4055,11 @@ $$
 
 where the left inequality requires $`\epsilon\leq c_{l}c_{u}/2`$ with $`c_{u}`$ being the upper bound of the distance between any two points in $`\mathcal{H}_{1}`$, namely, $`d_{1}(\boldsymbol{x},\boldsymbol{z})\leq c_{u}`$ for $`\boldsymbol{x},\boldsymbol{z}\in\mathcal{H}_{1}`$.
 
-Fact [4.11](#Ch4.Thmtheorem11 "Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") indicates that we can derive the covering number of the metric space $`(\mathcal{H},d)`$ by analyzing the covering number of the metric space $`(\mathcal{H}_{\Circ},d_{\Circ})`$ and the Lipschitz constants of the mapping between $`\mathcal{H}`$ and $`\mathcal{H}_{\Circ}`$. Intuitively, a quantum circuit consisting of a large number of multi-qubit parameterized gates leads to a complicated QNN with a large model complexity. These intuitions are formalized into Theorem [4.13](#Ch4.Thmtheorem13 "Theorem 4.13. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Specifically, the result of the covering number of the metric space $`(\mathcal{H}_{\Circ},d_{\Circ})`$ is encapsulated in Lemma [4.12](#Ch4.Thmtheorem12 "Lemma 4.12. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+Fact [4.11](#Ch4.Thmtheorem11) indicates that we can derive the covering number of the metric space $`(\mathcal{H},d)`$ by analyzing the covering number of the metric space $`(\mathcal{H}_{\Circ},d_{\Circ})`$ and the Lipschitz constants of the mapping between $`\mathcal{H}`$ and $`\mathcal{H}_{\Circ}`$. Intuitively, a quantum circuit consisting of a large number of multi-qubit parameterized gates leads to a complicated QNN with a large model complexity. These intuitions are formalized into Theorem [4.13](#Ch4.Thmtheorem13). Specifically, the result of the covering number of the metric space $`(\mathcal{H}_{\Circ},d_{\Circ})`$ is encapsulated in Lemma [4.12](#Ch4.Thmtheorem12).
 
 ###### Lemma 4.12.
 
-Suppose that the employed $`N`$-qubit quantum circuit containing in total $`N_{g}`$ gates with $`N_{g}>N`$, each gate $`u_{i}(\boldsymbol{\theta})`$ acting on most $`k`$ qubits, and $`N_{gt}\leq N_{g}`$ gates in $`U(\boldsymbol{\theta})`$ are trainable. The $`\epsilon`$-covering number for the operator group $`\mathcal{H}_{\Circ}`$ in Eqn. ([4.44](#Ch4.E44 "Equation 4.44 ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) with respect to the operator-norm distance obeys
+Suppose that the employed $`N`$-qubit quantum circuit containing in total $`N_{g}`$ gates with $`N_{g}>N`$, each gate $`u_{i}(\boldsymbol{\theta})`$ acting on most $`k`$ qubits, and $`N_{gt}\leq N_{g}`$ gates in $`U(\boldsymbol{\theta})`$ are trainable. The $`\epsilon`$-covering number for the operator group $`\mathcal{H}_{\Circ}`$ in Eqn. ([4.44](#Ch4.E44)) with respect to the operator-norm distance obeys
 
 $$
 \mathcal{N}(\mathcal{H}_{\Circ},\epsilon,\|\cdot\|)\leq\left(\frac{7N_{gt}\|O\|}{\epsilon}\right)^{2^{2k}N_{gt}},
@@ -4067,7 +4067,7 @@ $$
 
 where $`\|O\|`$ denotes the operator norm of $`O`$.
 
-###### Proof of Lemma [4.12](#Ch4.Thmtheorem12 "Lemma 4.12. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Lemma [4.12](#Ch4.Thmtheorem12).
 
 To measure the covering number the operator group of $`\mathcal{H}_{\Circ}=\{U(\boldsymbol{\theta})^{\dagger}OU(\boldsymbol{\theta})\big|\boldsymbol{\theta}\in\Theta\}`$, one could first consider a fixed $`\epsilon`$-covering $`\mathcal{S}`$ for the set $`\mathcal{N}(U(2^{k}),\epsilon,\|\cdot\|)`$ of all possible gates and define the set
 
@@ -4091,7 +4091,7 @@ $$
 
 where the first inequality uses the triangle inequality, and the second inequality follows from $`\|{U}-{U}_{\epsilon}\|\leq N_{gt}\epsilon`$.
 
-Therefore, by Definition [4.10](#Ch4.Thmtheorem10 "Definition 4.10 (Covering number). ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), $`\tilde{\mathcal{S}}`$ forms an $`N_{gt}\|O\|\epsilon`$-covering set for $`\mathcal{H}_{\Circ}`$. An upper bound for the group $`\mathcal{S}`$, as established by [Barthel and Lu (2018, Lemma 1)](#bib.bib202), gives $`|\mathcal{S}|\leq\left(\frac{7}{\epsilon}\right)^{2^{2k}}`$. Since there are $`|\mathcal{S}|^{N_{gt}}`$ combinations for the gates in $`\tilde{\mathcal{S}}`$, it follows that $`|\tilde{\mathcal{S}}|\leq\left(\frac{7}{\epsilon}\right)^{2^{2k}N_{gt}}`$ and the covering number for $`\mathcal{H}_{\Circ}`$ satisfies
+Therefore, by Definition [4.10](#Ch4.Thmtheorem10), $`\tilde{\mathcal{S}}`$ forms an $`N_{gt}\|O\|\epsilon`$-covering set for $`\mathcal{H}_{\Circ}`$. An upper bound for the group $`\mathcal{S}`$, as established by [Barthel and Lu (2018, Lemma 1)](#bib.bib202), gives $`|\mathcal{S}|\leq\left(\frac{7}{\epsilon}\right)^{2^{2k}}`$. Since there are $`|\mathcal{S}|^{N_{gt}}`$ combinations for the gates in $`\tilde{\mathcal{S}}`$, it follows that $`|\tilde{\mathcal{S}}|\leq\left(\frac{7}{\epsilon}\right)^{2^{2k}N_{gt}}`$ and the covering number for $`\mathcal{H}_{\Circ}`$ satisfies
 
 $$
 \mathcal{N}(\mathcal{H}_{\Circ},N_{gt}\|O\|\epsilon,\|\cdot\|)\leq\left(\frac{7}{\epsilon}\right)^{2^{2k}N_{gt}}.
@@ -4109,7 +4109,7 @@ With the established covering number of operator group $`\mathcal{H}_{\Circ}`$, 
 
 ###### Theorem 4.13.
 
-For $`0<\epsilon<1/10`$, the covering number of the hypothesis space $`\mathcal{H}`$ in Eqn. ([4.43](#Ch4.E43 "Equation 4.43 ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) yields
+For $`0<\epsilon<1/10`$, the covering number of the hypothesis space $`\mathcal{H}`$ in Eqn. ([4.43](#Ch4.E43)) yields
 
 $$
 \mathcal{N}(\mathcal{H},\epsilon,|\cdot|)\leq\left(\frac{7N_{gt}\|O\|}{\epsilon}\right)^{2^{2k}N_{gt}},
@@ -4117,11 +4117,11 @@ $$
 
 where $`\|O\|`$ denotes the operator norm of $`O`$.
 
-###### Proof of Theorem [4.13](#Ch4.Thmtheorem13 "Theorem 4.13. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Theorem [4.13](#Ch4.Thmtheorem13).
 
-The intuition of the proof is as follows. Recall the definition of the hypothesis space $`\mathcal{H}`$ in Eqn. ([4.43](#Ch4.E43 "Equation 4.43 ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Lemma [4.11](#Ch4.Thmtheorem11 "Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). When $`\mathcal{H}_{1}`$ refers to the hypothesis space $`\mathcal{H}`$ and $`\mathcal{H}_{2}`$ refers to the unitary group $`\mathcal{U}(2^{N})`$, the upper bound of the covering number of $`\mathcal{H}`$, i.e., $`\mathcal{N}(\mathcal{H}_{1},d_{1},\epsilon)`$, can be derived by first quantifying $`c_{r}`$ Eqn. ([4.45](#Ch4.E45 "Equation 4.45 ‣ Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), and then interacting with $`\mathcal{N}(\mathcal{H}_{\Circ},\epsilon,\|\cdot\|)`$ in Lemma [4.12](#Ch4.Thmtheorem12 "Lemma 4.12. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Based on the above observations, the following addresses the upper bound of the covering number $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$.
+The intuition of the proof is as follows. Recall the definition of the hypothesis space $`\mathcal{H}`$ in Eqn. ([4.43](#Ch4.E43)) and Lemma [4.11](#Ch4.Thmtheorem11). When $`\mathcal{H}_{1}`$ refers to the hypothesis space $`\mathcal{H}`$ and $`\mathcal{H}_{2}`$ refers to the unitary group $`\mathcal{U}(2^{N})`$, the upper bound of the covering number of $`\mathcal{H}`$, i.e., $`\mathcal{N}(\mathcal{H}_{1},d_{1},\epsilon)`$, can be derived by first quantifying $`c_{r}`$ Eqn. ([4.45](#Ch4.E45)), and then interacting with $`\mathcal{N}(\mathcal{H}_{\Circ},\epsilon,\|\cdot\|)`$ in Lemma [4.12](#Ch4.Thmtheorem12). Based on the above observations, the following addresses the upper bound of the covering number $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$.
 
-The Lipschitz constant $`c_{r}`$ in Eqn. ([4.45](#Ch4.E45 "Equation 4.45 ‣ Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived as a prerequisite for establishing the upper bound of $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$. Define $`{U}\in\mathcal{U}(2^{N})`$ as the employed quantum circuit composed of $`N_{g}`$ gates, i.e., $`{U}=\prod_{i=1}^{N_{g}}{u}_{l}`$. Let $`{U}_{\epsilon}`$ be the quantum circuit where each of the $`N_{g}`$ gates is replaced by the nearest element in the covering set. The relation between the distance $`d_{2}(\mathop{\text{Tr}}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}\rho),\mathop{\text{Tr}}({U}^{\dagger}O{U}\rho))`$ and the distance $`d_{1}({U}_{\epsilon},{U})`$ yields
+The Lipschitz constant $`c_{r}`$ in Eqn. ([4.45](#Ch4.E45)) is derived as a prerequisite for establishing the upper bound of $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$. Define $`{U}\in\mathcal{U}(2^{N})`$ as the employed quantum circuit composed of $`N_{g}`$ gates, i.e., $`{U}=\prod_{i=1}^{N_{g}}{u}_{l}`$. Let $`{U}_{\epsilon}`$ be the quantum circuit where each of the $`N_{g}`$ gates is replaced by the nearest element in the covering set. The relation between the distance $`d_{2}(\mathop{\text{Tr}}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}\rho),\mathop{\text{Tr}}({U}^{\dagger}O{U}\rho))`$ and the distance $`d_{1}({U}_{\epsilon},{U})`$ yields
 
 $$
 d_{2}(\mathop{\text{Tr}}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon}\rho),\mathop{\text{Tr}}({U}^{\dagger}O{U}\rho))
@@ -4149,7 +4149,7 @@ $$
 \left\|{U}_{\epsilon}^{\dagger}O{U}_{\epsilon}-{U}^{\dagger}O{U}\right\|=d_{1}({U}_{\epsilon}^{\dagger}O{U}_{\epsilon},{U}^{\dagger}O{U}).
 $$
 
-The above equation indicates $`c_{r}=1`$. Combining the above result with Lemma [4.11](#Ch4.Thmtheorem11 "Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") (i.e., Eqn. ([4.45](#Ch4.E45 "Equation 4.45 ‣ Fact 4.11. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"))) and Lemma [4.12](#Ch4.Thmtheorem12 "Lemma 4.12. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we obtain
+The above equation indicates $`c_{r}=1`$. Combining the above result with Lemma [4.11](#Ch4.Thmtheorem11) (i.e., Eqn. ([4.45](#Ch4.E45))) and Lemma [4.12](#Ch4.Thmtheorem12), we obtain
 
 $$
 \mathcal{N}(\mathcal{H},\epsilon,|\cdot|)\leq\mathcal{N}(\mathcal{H}_{\Circ},\epsilon,\|\cdot\|)\leq\left(\frac{7N_{gt}\|O\|}{\epsilon}\right)^{2^{2k}N_{gt}}.
@@ -4163,7 +4163,7 @@ $$
 
 ∎
 
-Theorem [4.13](#Ch4.Thmtheorem13 "Theorem 4.13. ‣ Expressivity of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") indicates that the most decisive factor, which controls the complexity of $`\mathcal{H}`$, is the employed quantum gates in $`U(\boldsymbol{\theta})`$. This claim is ensured by the fact that the term $`2^{2^{k}N_{gt}}`$ exponentially scales the complexity $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$. Meanwhile, the qubits count $`N`$ and the operator norm $`\|O\|`$ polynomially scale the complexity of $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$. These observations suggest a succinct and direct way to compare the expressivity of QNNs with different quantum circuits. Moreover, the dependence of the expressivity of QNNs on the type of quantum gates (denoted by the term $`k`$) demonstrated that the expressivity of QNNs depends on the structure information of ansatz such as the location of different quantum gates and the types of the employed quantum gates. The expressivity measured by the covering number could provide practical guidance for designing the circuit structure of QNNs.
+Theorem [4.13](#Ch4.Thmtheorem13) indicates that the most decisive factor, which controls the complexity of $`\mathcal{H}`$, is the employed quantum gates in $`U(\boldsymbol{\theta})`$. This claim is ensured by the fact that the term $`2^{2^{k}N_{gt}}`$ exponentially scales the complexity $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$. Meanwhile, the qubits count $`N`$ and the operator norm $`\|O\|`$ polynomially scale the complexity of $`\mathcal{N}(\mathcal{H},\epsilon,|\cdot|)`$. These observations suggest a succinct and direct way to compare the expressivity of QNNs with different quantum circuits. Moreover, the dependence of the expressivity of QNNs on the type of quantum gates (denoted by the term $`k`$) demonstrated that the expressivity of QNNs depends on the structure information of ansatz such as the location of different quantum gates and the types of the employed quantum gates. The expressivity measured by the covering number could provide practical guidance for designing the circuit structure of QNNs.
 
 ##### Generalization error of QNNs
 
@@ -4171,13 +4171,13 @@ As the relation between generalization error and covering number is well-establi
 
 ###### Theorem 4.14.
 
-Assume that the loss function $`\ell`$ defined in Eqn. ([4.38](#Ch4.E38 "Equation 4.38 ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is $`L_{1}`$-Lipschitz and upper bounded by a constant $`C`$, the QNN-based learning algorithm outputs a hypothesis $`h_{\hat{\boldsymbol{\theta}}}`$ from the training dataset $`\mathcal{S}`$ of size $`n`$. Following the notations of risk $`R_{\Gene}(h_{\hat{\boldsymbol{\theta}}})=R(h_{\hat{\boldsymbol{\theta}}})-R_{\ERM}(h_{\hat{\boldsymbol{\theta}}})`$ defined in Eqn. ([4.41](#Ch4.E41 "Equation 4.41 ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), for $`0<\epsilon<1/10`$, with probability at least $`1-\delta`$ with $`\delta\in(0,1)`$, we have
+Assume that the loss function $`\ell`$ defined in Eqn. ([4.38](#Ch4.E38)) is $`L_{1}`$-Lipschitz and upper bounded by a constant $`C`$, the QNN-based learning algorithm outputs a hypothesis $`h_{\hat{\boldsymbol{\theta}}}`$ from the training dataset $`\mathcal{S}`$ of size $`n`$. Following the notations of risk $`R_{\Gene}(h_{\hat{\boldsymbol{\theta}}})=R(h_{\hat{\boldsymbol{\theta}}})-R_{\ERM}(h_{\hat{\boldsymbol{\theta}}})`$ defined in Eqn. ([4.41](#Ch4.E41)), for $`0<\epsilon<1/10`$, with probability at least $`1-\delta`$ with $`\delta\in(0,1)`$, we have
 
 $$
 R_{\Gene}(h_{\hat{\boldsymbol{\theta}}})\leq\mathcal{O}\left(\frac{8L+c+24L\sqrt{N_{gt}}\cdot 2^{k}}{\sqrt{n}}\right).
 $$
 
-###### Proof sketch of Theorem [4.14](#Ch4.Thmtheorem14 "Theorem 4.14. ‣ Generalization error of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof sketch of Theorem [4.14](#Ch4.Thmtheorem14).
 
 Recall that the bound of generalization error in terms of Rademacher complexity has been established by [Kakade et al. (2008)](#bib.bib203) as follows
 
@@ -4191,7 +4191,7 @@ $$
 \mathcal{R}(\mathcal{H})\leq\inf_{\alpha>0}\left(4\alpha+\frac{12}{\sqrt{n}}\int_{\alpha}^{1}\sqrt{\ln\mathcal{N}(\mathcal{H}_{|\mathcal{S}},\epsilon,\|\cdot\|_{2})}\mathrm{d}\epsilon\right),
 $$
 
-where $`\mathcal{H}_{|\mathcal{S}}`$ denotes the set of vectors formed by the hypothesis with $`n`$ examples in the dataset $`\mathcal{S}`$. In this regard, the generalization error bound in Eqn. ([4.57](#Ch4.E57 "Equation 4.57 ‣ Theorem 4.14. ‣ Generalization error of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) could be obtained by combining the Eqn. ([4.58](#Ch4.E58 "Equation 4.58 ‣ Proof sketch of Theorem . ‣ Generalization error of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Eqn. ([4.59](#Ch4.E59 "Equation 4.59 ‣ Proof sketch of Theorem . ‣ Generalization error of QNNs ‣ 4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) with direct but tedious calculations, which is omitted here. For details of the calculations, please refer to the proof of Theorem 2 in [Du et al. (2022c)](#bib.bib201). ∎
+where $`\mathcal{H}_{|\mathcal{S}}`$ denotes the set of vectors formed by the hypothesis with $`n`$ examples in the dataset $`\mathcal{S}`$. In this regard, the generalization error bound in Eqn. ([4.57](#Ch4.E57)) could be obtained by combining the Eqn. ([4.58](#Ch4.E58)) and Eqn. ([4.59](#Ch4.E59)) with direct but tedious calculations, which is omitted here. For details of the calculations, please refer to the proof of Theorem 2 in [Du et al. (2022c)](#bib.bib201). ∎
 
 The assumption used in this analysis is quite mild, as the loss functions in QNNs are generally Lipschitz continuous and can be bounded above by a constant $`C`$. This property has been broadly employed to understand the capability of QNNs. The results obtained have three key implications. First, the generalization bound exhibits an exponential dependence on the term $`k`$ and a sublinear dependence on the number of trainable quantum gates $`N_{gt}`$. This observation reflects the quantum version of Occam’s razor ([Haussler and Warmuth, 1987](#bib.bib205)), where the parsimony of the output hypothesis implies greater predictive power. Second, increasing the number of training examples $`n`$ improves the generalization bound. This suggests that incorporating more training data is essential for optimizing complex quantum circuits. Lastly, the sublinear dependence on $`N_{gt}`$ may limit the ability to accurately assess the generalization performance of overparameterized QNNs ([Larocca et al., 2023](#bib.bib206)). Together, these implications provide valuable insights for designing more powerful QNNs.
 
@@ -4245,19 +4245,19 @@ $$
 -{} \frac{1}{d(d^{2}-1)}\left(\mathop{\text{Tr}}[AC]\mathop{\text{Tr}}[BD]+\mathop{\text{Tr}}[A]\mathop{\text{Tr}}[B]\mathop{\text{Tr}}[C]\mathop{\text{Tr}}[D]\right).
 $$
 
-Fact [4.15](#Ch4.Thmtheorem15 "Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") can be derived from Facts [C.4](#A3.Thmtheorem4 "Fact C.4 (Average over unitary 1-design ( , )). ‣ Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [C.5](#A3.Thmtheorem5 "Fact C.5 (Average over unitary 2-design ( , )). ‣ Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") in Appendix [C](#A3 "Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which provides a more detailed discussion of unitary designs, potentially of independent interest. By applying Fact [4.15](#Ch4.Thmtheorem15 "Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), it can be shown that QNNs with quantum circuits forming $`2`$-designs exhibit barren plateau loss landscapes.
+Fact [4.15](#Ch4.Thmtheorem15) can be derived from Facts [C.4](#A3.Thmtheorem4) and [C.5](#A3.Thmtheorem5) in Appendix [C](#A3), which provides a more detailed discussion of unitary designs, potentially of independent interest. By applying Fact [4.15](#Ch4.Thmtheorem15), it can be shown that QNNs with quantum circuits forming $`2`$-designs exhibit barren plateau loss landscapes.
 
 ###### Theorem 4.16 (Adapted from [McClean et al. (2018)](#bib.bib207)).
 
-Consider the loss function given in Eqn. ([4.60](#Ch4.E60 "Equation 4.60 ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), where the QNN $`V(\boldsymbol{\theta})=\prod_{j=1}^{L}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$ with fixed gate $`W_{j}`$ and variational gate $`V_{j}(\boldsymbol{\theta}_{j})=\exp(-i\boldsymbol{\theta}_{j}H_{j}/2)`$. Suppose all hermitian matrices $`\{H_{j}\}`$ are traceless. For a integer $`k\in[1,L]`$, denote $`U_{-}=\prod_{j=1}^{k-1}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$ and $`U_{+}=\prod_{j=k+1}^{L}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$. Then, if both $`U_{-}`$ and $`U_{+}`$ form $`2`$-designs, there is
+Consider the loss function given in Eqn. ([4.60](#Ch4.E60)), where the QNN $`V(\boldsymbol{\theta})=\prod_{j=1}^{L}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$ with fixed gate $`W_{j}`$ and variational gate $`V_{j}(\boldsymbol{\theta}_{j})=\exp(-i\boldsymbol{\theta}_{j}H_{j}/2)`$. Suppose all hermitian matrices $`\{H_{j}\}`$ are traceless. For a integer $`k\in[1,L]`$, denote $`U_{-}=\prod_{j=1}^{k-1}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$ and $`U_{+}=\prod_{j=k+1}^{L}V_{j}(\boldsymbol{\theta}_{j})W_{j}`$. Then, if both $`U_{-}`$ and $`U_{+}`$ form $`2`$-designs, there is
 
 $$
 \mathbb{E}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]=0,\quad{\rm Var}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]\approx{} \frac{1}{2^{3N+1}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}\left[H_{j}^{2}\right].
 $$
 
-###### Proof of Theorem [4.16](#Ch4.Thmtheorem16 "Theorem 4.16 (Adapted from ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Theorem [4.16](#Ch4.Thmtheorem16).
 
-By using notations $`U_{-}`$ and $`U_{+}`$, the function $`f(\boldsymbol{\theta})`$ in Eqn. ([4.60](#Ch4.E60 "Equation 4.60 ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) can be expressed as:
+By using notations $`U_{-}`$ and $`U_{+}`$, the function $`f(\boldsymbol{\theta})`$ in Eqn. ([4.60](#Ch4.E60)) can be expressed as:
 
 $$
 f={} \mathop{\text{Tr}}\left[OV\rho V^{\dagger}\right]
@@ -4299,7 +4299,7 @@ $$
 ={} 0,
 $$
 
-where Eqn. ([4.66](#Ch4.E66 "Equation 4.66 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from Eqn. ([4.62](#Ch4.E62 "Equation 4.62 ‣ Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), and Eqn. ([4.67](#Ch4.E67 "Equation 4.67 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by noticing $`\mathop{\text{Tr}}[[A,B]]=\mathop{\text{Tr}}[AB-BA]=0`$. Therefore, the variance of the gradient equals to the expectation of its square, i.e.,
+where Eqn. ([4.66](#Ch4.E66)) follows from Eqn. ([4.62](#Ch4.E62)), and Eqn. ([4.67](#Ch4.E67)) is derived by noticing $`\mathop{\text{Tr}}[[A,B]]=\mathop{\text{Tr}}[AB-BA]=0`$. Therefore, the variance of the gradient equals to the expectation of its square, i.e.,
 
 $$
 \mathop{{\rm Var}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]={} \mathop{\mathbb{E}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]^{2}
@@ -4321,7 +4321,7 @@ $$
 ={} -\frac{1}{4\times\left(2^{2N}-1\right)}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right],
 $$
 
-where Eqn. ([4.68](#Ch4.E68 "Equation 4.68 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from Eqn. ([4.63](#Ch4.E63 "Equation 4.63 ‣ Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), and Eqn. ([4.69](#Ch4.E69 "Equation 4.69 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from $`{\rm Tr}[O]=0`$. Further, it can be shown that
+where Eqn. ([4.68](#Ch4.E68)) follows from Eqn. ([4.63](#Ch4.E63)), and Eqn. ([4.69](#Ch4.E69)) follows from $`{\rm Tr}[O]=0`$. Further, it can be shown that
 
 $$
 \mathop{\mathbb{E}}_{U_{+}}\mathop{\text{Tr}}\left[\left[V_{k}\rho^{\prime}V_{k}^{\dagger},H_{k}\right]^{2}\right]
@@ -4355,7 +4355,7 @@ $$
 \approx{} -\frac{2^{N+1}}{2^{2N}-1}\mathop{\text{Tr}}\left[H_{k}^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right],
 $$
 
-where Eqn. ([4.70](#Ch4.E70 "Equation 4.70 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) follows from Eqn. ([4.62](#Ch4.E62 "Equation 4.62 ‣ Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Eqn. ([4.64](#Ch4.E64 "Equation 4.64 ‣ Fact 4.15 ( ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Eqn. ([4.71](#Ch4.E71 "Equation 4.71 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is derived by ignoring minor terms and using $`{\rm Tr}[H_{k}]=0`$. Combining Eqn. ([4.69](#Ch4.E69 "Equation 4.69 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and Eqn. ([4.71](#Ch4.E71 "Equation 4.71 ‣ Proof of Theorem . ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), it can be shown that
+where Eqn. ([4.70](#Ch4.E70)) follows from Eqn. ([4.62](#Ch4.E62)) and Eqn. ([4.64](#Ch4.E64)). Eqn. ([4.71](#Ch4.E71)) is derived by ignoring minor terms and using $`{\rm Tr}[H_{k}]=0`$. Combining Eqn. ([4.69](#Ch4.E69)) and Eqn. ([4.71](#Ch4.E71)), it can be shown that
 
 $$
 \mathop{{\rm Var}}_{U_{+},U_{-}}\left[\frac{\partial f}{\partial\boldsymbol{\theta}_{k}}\right]\approx{} \frac{2^{N}}{2\times\left(2^{2N}-1\right)^{2}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[H_{k}^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]
@@ -4365,7 +4365,7 @@ $$
 \approx{} \frac{1}{2^{3N+1}}\mathop{\text{Tr}}\left[O^{2}\right]\mathop{\text{Tr}}\left[\rho^{2}\right]\mathop{\text{Tr}}\left[H_{k}^{2}\right].
 $$
 
-Thus, Theorem [4.16](#Ch4.Thmtheorem16 "Theorem 4.16 (Adapted from ( ) ). ‣ 4.4.2 Trainability of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is proved.
+Thus, Theorem [4.16](#Ch4.Thmtheorem16) is proved.
 
 ∎
 
@@ -4475,7 +4475,7 @@ Step 1: Dataset preparation. We prepare the Wine dataset for the classification 
 
 21 X_train, y_train, X_test, y_test = load_wine()
 
-To better understand the dataset, we apply t-SNE to visualize its distribution. As shown in Figure [4.12](#Ch4.F12 "Figure 4.12 ‣ 4.5.1 Quantum classifier ‣ 4.5 Code Demonstration ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), each data point is projected into a 2D space for visualization, with distinct colors representing different classes.
+To better understand the dataset, we apply t-SNE to visualize its distribution. As shown in Figure [4.12](#Ch4.F12), each data point is projected into a 2D space for visualization, with distinct colors representing different classes.
 
 [⬇](data:text/plain;base64,ZGVmIHZpc3VhbGl6ZV9kYXRhc2V0KFgsIHkpOgogICAgZnJvbSBza2xlYXJuLm1hbmlmb2xkIGltcG9ydCBUU05FCgogICAgdHNuZSA9IFRTTkUobl9jb21wb25lbnRzPTIsIHJhbmRvbV9zdGF0ZT00MiwgcGVycGxleGl0eT0zMCkKCiAgICB3aW5lX3RzbmUgPSB0c25lLmZpdF90cmFuc2Zvcm0oWCkKICAgIGZvciBsYWJlbCBpbiBucC51bmlxdWUoeSk6CiAgICAgICAgaW5kaWNlcyA9IHkgPT0gbGFiZWwKICAgICAgICBwbHQuc2NhdHRlcih3aW5lX3RzbmVbaW5kaWNlcywgMF0sIHdpbmVfdHNuZVtpbmRpY2VzLCAxXSwgZWRnZWNvbG9yPSdibGFjaycsIGNtYXA9J2Nvb2x3YXJtJywgcz0yMCwgbGFiZWw9ZidDbGFzcyB7bGFiZWx9JykKCiAgICAjIEFkZCBsYWJlbHMgYW5kIGxlZ2VuZAogICAgcGx0LnRpdGxlKCJ0LVNORSBWaXN1YWxpemF0aW9uIG9mIFdpbmUgZGF0YXNldCAodHdvIGNsYXNzZXMpIikKICAgIHBsdC54bGFiZWwoInQtU05FIERpbWVuc2lvbiAxIikKICAgIHBsdC55bGFiZWwoInQtU05FIERpbWVuc2lvbiAyIikKICAgIHBsdC5sZWdlbmQoKQoKICAgIHBsdC50aWdodF9sYXlvdXQoKQogICAgcGx0LnNob3coKQp2aXN1YWxpemVfZGF0YXNldChYX3RyYWluLCB5X3RyYWluKQ==)
 
@@ -4522,7 +4522,7 @@ To better understand the dataset, we apply t-SNE to visualize its distribution. 
 <figcaption>Figure 4.12: T-SNE visualization of Wine dataset of the first two classes.</figcaption>
 </figure>
 
-Step 2: Data encoding. To encode the $`13`$ attributes of the Wine dataset into a quantum system, we use angle encoding introduced in Section [2.3.1](#Ch2.S3.SS1.SSSx3 "Angle encoding ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), followed by a layer of CNOT gates acting on neighboring qubits to introduce entanglement.
+Step 2: Data encoding. To encode the $`13`$ attributes of the Wine dataset into a quantum system, we use angle encoding introduced in Section [2.3.1](#Ch2.S3.SS1.SSSx3), followed by a layer of CNOT gates acting on neighboring qubits to introduce entanglement.
 
 [⬇](data:text/plain;base64,ZGVmIGRhdGFfZW5jb2RpbmcoeCk6CiAgICBuX3F1Yml0ID0gbGVuKHgpCiAgICBxbWwuQW5nbGVFbWJlZGRpbmcoZmVhdHVyZXMgPXggLCB3aXJlcyA9IHJhbmdlKG5fcXViaXQpICwgcm90YXRpb24gPSJYIikKICAgIGZvciBpIGluIHJhbmdlKG5fcXViaXQpOgogICAgICAgIGlmIGkrMSA8IG5fcXViaXQ6CiAgICAgICAgICAgIHFtbC5DTk9UKHdpcmVzPVtpLCBpKzFdKQ==)
 
@@ -4570,7 +4570,7 @@ Step 3: Building quantum classifier. With the data encoding in place, we constru
 
 14 circuit = qml.QNode(classifier, dev)
 
-We visualize the whole quantum circuit of 2 layers by drawing the diagram, as shown in Figure [4.13](#Ch4.F13 "Figure 4.13 ‣ 4.5.1 Quantum classifier ‣ 4.5 Code Demonstration ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+We visualize the whole quantum circuit of 2 layers by drawing the diagram, as shown in Figure [4.13](#Ch4.F13).
 
 [⬇](data:text/plain;base64,ZmlnLCBheCA9IHFtbC5kcmF3X21wbChjaXJjdWl0KShucC5waSAqIG5wLnJhbmRvbS5yYW5kbigyLCBuX3F1Yml0LCAzKSwgWF90cmFpblswXSkKZmlnLnNob3coKQ==)
 
@@ -4732,11 +4732,11 @@ After training the QNN, the training and test cost, as well as the accuracy over
 <figcaption>Figure 4.14: The training curve of the quantum classifier.</figcaption>
 </figure>
 
-As demonstrated in Figure [4.14](#Ch4.F14 "Figure 4.14 ‣ 4.5.1 Quantum classifier ‣ 4.5 Code Demonstration ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), this QNN achieves a test accuracy exceeding $`0.8`$. The performance of the QNN could potentially be further enhanced by employing more advanced read-in protocols, as discussed in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which could enable more efficient and expressive representations of the input data. Additionally, optimizing the circuit design, such as adjusting the arrangement of layers or introducing more complex parameterized gates to increase the model’s capacity, as highlighted in Chapter [4.6](#Ch4.S6 "4.6 Bibliographic Remarks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), could further improve the QNN’s ability to capture intricate patterns in the dataset.
+As demonstrated in Figure [4.14](#Ch4.F14), this QNN achieves a test accuracy exceeding $`0.8`$. The performance of the QNN could potentially be further enhanced by employing more advanced read-in protocols, as discussed in Chapter [2.3.1](#Ch2.S3.SS1), which could enable more efficient and expressive representations of the input data. Additionally, optimizing the circuit design, such as adjusting the arrangement of layers or introducing more complex parameterized gates to increase the model’s capacity, as highlighted in Chapter [4.6](#Ch4.S6), could further improve the QNN’s ability to capture intricate patterns in the dataset.
 
 #### 4.5.2 Quantum patch GAN
 
-We next demonstrate how to implement a quantum patch GAN introduced in Chapter [4.3.3](#Ch4.S3.SS3 "4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for the generation of hand-written digits of five. The whole pipeline includes the following steps:
+We next demonstrate how to implement a quantum patch GAN introduced in Chapter [4.3.3](#Ch4.S3.SS3) for the generation of hand-written digits of five. The whole pipeline includes the following steps:
 
 1.  <span id="Ch4.S5.I2.ix1">Step 1</span>
 
@@ -4911,7 +4911,7 @@ Step 2: Building the classical discriminator. The discriminator is a classical n
 
 20 return self.model(img)
 
-Step 3: Defining the quantum patch generator. The generator in the quantum patch GAN consists of parameterized quantum circuits (PQC). These circuits are responsible for generating patches of the target image. Specifically, the PQC follows the layout in Figure [4.7](#Ch4.F7 "Figure 4.7 ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which applies layers of single-qubit rotation gates and entangling gates to the latent state.
+Step 3: Defining the quantum patch generator. The generator in the quantum patch GAN consists of parameterized quantum circuits (PQC). These circuits are responsible for generating patches of the target image. Specifically, the PQC follows the layout in Figure [4.7](#Ch4.F7), which applies layers of single-qubit rotation gates and entangling gates to the latent state.
 
 [⬇](data:text/plain;base64,ZGVmIFBRQyhwYXJhbXMpOgogICAgbl9sYXllciwgbl9xdWJpdCA9IHBhcmFtcy5zaGFwZVswXSwgcGFyYW1zLnNoYXBlWzFdCiAgICBmb3IgaSBpbiByYW5nZShuX2xheWVyKToKICAgICAgICBmb3IgaiBpbiByYW5nZShuX3F1Yml0KToKICAgICAgICAgICAgcW1sLlJvdChwYXJhbXNbaSwgaiwgMF0sIHBhcmFtc1tpLCBqLCAxXSwgcGFyYW1zW2ksIGosIDJdLCB3aXJlcz1qKQogICAgICAgICMgQ29udHJvbCBaIGdhdGVzCiAgICAgICAgZm9yIGogaW4gcmFuZ2Uobl9xdWJpdCAtIDEpOgogICAgICAgICAgICBxbWwuQ1ood2lyZXM9W2osIGogKyAxXSk=)
 
@@ -5244,7 +5244,7 @@ In addition to manually designed architectures, various lightening strategies ha
 
 ##### Theoretical foundations
 
-To gain a deeper understanding of the potential advantages and limitations of QNNs, a crucial research topic is analyzing their learnability. More concisely, the learnability is determined by the interplay of three key aspects: expressivity, trainability, and generalization, as preliminarily introduced in Chapter [4.4](#Ch4.S4 "4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with essential theoretical results. Beyond these foundational insights, an extensive body of research has conducted more comprehensive and detailed investigations into these three aspects, which will be reviewed individually in the following.
+To gain a deeper understanding of the potential advantages and limitations of QNNs, a crucial research topic is analyzing their learnability. More concisely, the learnability is determined by the interplay of three key aspects: expressivity, trainability, and generalization, as preliminarily introduced in Chapter [4.4](#Ch4.S4) with essential theoretical results. Beyond these foundational insights, an extensive body of research has conducted more comprehensive and detailed investigations into these three aspects, which will be reviewed individually in the following.
 
 Expressivity. The expressivity of QNNs refers to their ability to represent complex functions or quantum states efficiently. Universal approximation theorems (UAT) incorporating data re-uploading strategies have been established by [Pérez-Salinas et al. (2020)](#bib.bib89) firstly with subsequent works  ([Schuld et al., 2021](#bib.bib140); [Yu et al., 2022a](#bib.bib230)) in various problem settings. Beyond the UAT, [Sim et al. (2019)](#bib.bib231), [Nakaji and Yamamoto (2021)](#bib.bib232), and [Holmes et al. (2022)](#bib.bib233) analyze the expressivity of QNNs by investigating how well the parameterized quantum circuits used in QNNs can approximate the Haar distribution, a critical measure of expressive capacity in quantum systems. Moreover, [Yu et al. (2022b)](#bib.bib234) analyze the non-asymptotic error bounds of variational quantum circuits for approximating multivariate polynomials and smooth functions.
 
@@ -5290,13 +5290,13 @@ Transformers, introduced by [Vaswani (2017)](#bib.bib100), have become one of th
 
 Despite its many advantages, the transformer architecture has several drawbacks, particularly the required computational resources. As discussed in previous chapters, quantum computing provides unique advantages over classical computing in certain applications by leveraging quantum phenomena such as superposition, entanglement, and interference. These capabilities have inspired researchers to explore whether integrating quantum computing with Transformers could lead to superior performance compared to their classical counterparts in specific tasks.
 
-To figure out this question, in this chapter, we start by introducing the mechanism of Transformers in Chapter [5.1](#Ch5.S1 "5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). We then illustrate how to construct a quantum Transformer on a fault-tolerant quantum computer in Chapter [5.2](#Ch5.S2 "5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). We also analyze the runtime of quantum transformers combined with numerical observations in Chapter [5.3](#Ch5.S3 "5.3 Runtime Analysis with Quadratic Speedups ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), demonstrating a quadratic speedup over the classical counterpart.
+To figure out this question, in this chapter, we start by introducing the mechanism of Transformers in Chapter [5.1](#Ch5.S1). We then illustrate how to construct a quantum Transformer on a fault-tolerant quantum computer in Chapter [5.2](#Ch5.S2). We also analyze the runtime of quantum transformers combined with numerical observations in Chapter [5.3](#Ch5.S3), demonstrating a quadratic speedup over the classical counterpart.
 
 ### 5.1 Classical Transformer
 
-The transformer architecture is designed to predict the next token (formally present in Chapter [5.1.1](#Ch5.S1.SS1 "5.1.1 Tokenization and embedding ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) in a sequence by leveraging sophisticated neural network components. Its modular design—including residual connections, layer normalization, and feed-forward networks (FFNs) as introduced in Chapter [4.1](#Ch4.S1 "4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")—makes it highly scalable and customizable. This versatility has enabled its successful application in large-scale foundation models across diverse domains, including natural language processing, computer vision, reinforcement learning, robotics, and beyond.
+The transformer architecture is designed to predict the next token (formally present in Chapter [5.1.1](#Ch5.S1.SS1)) in a sequence by leveraging sophisticated neural network components. Its modular design—including residual connections, layer normalization, and feed-forward networks (FFNs) as introduced in Chapter [4.1](#Ch4.S1)—makes it highly scalable and customizable. This versatility has enabled its successful application in large-scale foundation models across diverse domains, including natural language processing, computer vision, reinforcement learning, robotics, and beyond.
 
-The full architecture of Transformer is illustrated in Figure [5.1](#Ch5.F1 "Figure 5.1 ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Note that while the original paper by [Vaswani (2017)](#bib.bib100) introduced both encoder and decoder components, contemporary large language models primarily adopt decoder-only architectures, which have demonstrated superior practical performance. Therefore, in the remainder of this section, we focus on detailing the implementation of each building block and discussing the optimization of decoder-only Transformer architectures. To deepen the understanding, a toy example of a classical Transformer with the code demonstration is provided in Chapter [5.4](#Ch5.S4 "5.4 Code Demonstration ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+The full architecture of Transformer is illustrated in Figure [5.1](#Ch5.F1). Note that while the original paper by [Vaswani (2017)](#bib.bib100) introduced both encoder and decoder components, contemporary large language models primarily adopt decoder-only architectures, which have demonstrated superior practical performance. Therefore, in the remainder of this section, we focus on detailing the implementation of each building block and discussing the optimization of decoder-only Transformer architectures. To deepen the understanding, a toy example of a classical Transformer with the code demonstration is provided in Chapter [5.4](#Ch5.S4).
 
 <figure id="Ch5.F1" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/Transformer_full_architecture.png" id="Ch5.F1.g1" class="ltx_graphics ltx_centering ltx_img_square" style="aspect-ratio:429/451;" width="429" height="451" alt="Refer to caption" />
@@ -5307,7 +5307,7 @@ The full architecture of Transformer is illustrated in Figure [5.1](#Ch5.F1 "Fi
 
 To handle sequential data, such as natural language, Transformers employ tokenization to convert it into discrete units. This preprocessing step makes the data compatible with computational models and optimizes it for parallel processing, particularly on GPUs. More concisely, Tokenization breaks a sentence into smaller pieces called *tokens*, which could be words, subwords, or even characters, depending on the tokenization strategy. For example, the sentence “Transformers are amazing!” might become tokens like (“Transform”, “ers”, “are”, “amazing”, “!”) if subwords are used. Modern tokenization methods ([Sennrich et al., 2016](#bib.bib286); [Kudo and Richardson, 2018](#bib.bib287); [Mielke et al., 2021](#bib.bib288)) enable sophisticated mapping of complex inputs into token spaces.
 
-For Transformer, tokens are mapped to high-dimensional real vector representations via embedding ([Vaswani, 2017](#bib.bib100)), as highlighted by the solid box “Embeddings/Projections” in Figure [5.1](#Ch5.F1 "Figure 5.1 ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Let $`d_{\mathrm{token}}`$ denote the dictionary’s token count and $`d_{\mathrm{model}}`$ represent the embedding vector dimension. We define the set containing all token embedding vectors in the dictionary as
+For Transformer, tokens are mapped to high-dimensional real vector representations via embedding ([Vaswani, 2017](#bib.bib100)), as highlighted by the solid box “Embeddings/Projections” in Figure [5.1](#Ch5.F1). Let $`d_{\mathrm{token}}`$ denote the dictionary’s token count and $`d_{\mathrm{model}}`$ represent the embedding vector dimension. We define the set containing all token embedding vectors in the dictionary as
 
 $$
 \mathcal{W}\coloneqq\{\mathcal{W}_{j}\in\mathbb{R}^{d_{\mathrm{model}}}:\mathcal{W}_{j}\text{ is the embedding of token }j\in[d_{\mathrm{token}}]\}.
@@ -5319,7 +5319,7 @@ An $`\ell`$-length sentence is represented as a sequence of vectors $`\{S_{j}\}_
 
 *Self-attention* is a core building block of the transformer architecture, which captures intrinsic correlations among tokens. By allowing each token in a sequence to attend to every other token, Transformer generates attention matrices via the inner-product operations, encoding complex inter-token relationships into a transformative vector representation, colloquially termed “scaled dot-product attention”. The generated attention matrices highlight how relevant each part of the input is to every other part. This allows Transformers to handle contextual dependencies across a variety of data structures.
 
-The self-attention mechanism, as highlighted by the blue or red box in Figure [5.1](#Ch5.F1 "Figure 5.1 ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), involves three parameterized weight matrices: $`W_{q},W_{k}\in\mathbb{R}^{d_{\mathrm{model}}\times d_{k}}`$ and $`W_{v}\in\mathbb{R}^{d_{\mathrm{model}}\times d_{v}}`$.
+The self-attention mechanism, as highlighted by the blue or red box in Figure [5.1](#Ch5.F1), involves three parameterized weight matrices: $`W_{q},W_{k}\in\mathbb{R}^{d_{\mathrm{model}}\times d_{k}}`$ and $`W_{v}\in\mathbb{R}^{d_{\mathrm{model}}\times d_{v}}`$.
 
 Given a sequence $`S\in\mathbb{R}^{\ell\times d}`$, we define the three new matrices after interacting it with three parameterized weight matrices $`W_{q},W_{k},W_{v}`$, i.e.,
 
@@ -5350,7 +5350,7 @@ M_{jk}=\begin{cases}0&\quad k\leq j,\\
 -\infty&\quad k>j.\end{cases}
 $$
 
-Conceptually, the mask $`M`$ is applied to the scaled dot product $`QK^{\top}/\alpha_{0}`$ in Eq. ([5.1](#Ch5.E1 "Equation 5.1 ‣ 5.1.2 Self-attention ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) before the softmax operation. Specifically, the matrix in the softmax operation is modified as $`QK^{\top}/\alpha_{0}+M`$.
+Conceptually, the mask $`M`$ is applied to the scaled dot product $`QK^{\top}/\alpha_{0}`$ in Eq. ([5.1](#Ch5.E1)) before the softmax operation. Specifically, the matrix in the softmax operation is modified as $`QK^{\top}/\alpha_{0}+M`$.
 
 Another crucial technique in Transformer is the multi-head attention, which further extends the self-attention mechanism by computing and concatenating multiple attention matrices, enabling parallel representation learning across different subspaces. In practice, the embedding dimensions are often much larger (e.g., $`d=512`$ or $`d=768`$), with multiple attention heads working simultaneously, each capturing distinct relationships between words in the sequence. This mechanism plays a crucial role in modern AI, as it allows words to dynamically interact with one another within the context of the sequence.
 
@@ -5358,7 +5358,7 @@ While multi-head attention is a pivotal advancement in Transformer architectures
 
 #### 5.1.3 Residual connection
 
-Residual connections (the arrows bypassing the main components, such as the attention and feed-forward layers in Figure [5.1](#Ch5.F1 "Figure 5.1 ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), paired with layer normalization (green box in the figure), provide crucial architectural flexibility and robustness. By enabling direct information flow between layers, they mitigate challenges in training deep neural networks ([He et al., 2015](#bib.bib289); [Ba et al., 2016](#bib.bib290)).
+Residual connections (the arrows bypassing the main components, such as the attention and feed-forward layers in Figure [5.1](#Ch5.F1)), paired with layer normalization (green box in the figure), provide crucial architectural flexibility and robustness. By enabling direct information flow between layers, they mitigate challenges in training deep neural networks ([He et al., 2015](#bib.bib289); [Ba et al., 2016](#bib.bib290)).
 
 For the $`j`$-th token in an $`\ell`$-length sentence, the residual connection generates $`G^{\mathrm{soft}}_{j}+S_{j}\in\mathbb{R}^{d}`$ for $`\forall j\in[\ell]`$, which is subsequently normalized to standardize the vector representation. Let
 
@@ -5376,7 +5376,7 @@ where $`\gamma`$ and $`\beta`$ denote the scale and bias parameters, respectivel
 
 #### 5.1.4 Feed-forward network
 
-Recall the definitions of fully-connected neural networks (FFN) in Chapter [4.1](#Ch4.S1 "4.1 Classical Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Transformers employ a two-layer fully connected transformation (yellow box in Figure [5.1](#Ch5.F1 "Figure 5.1 ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to proceed with the output of residual connection, i.e.,
+Recall the definitions of fully-connected neural networks (FFN) in Chapter [4.1](#Ch4.S1). Transformers employ a two-layer fully connected transformation (yellow box in Figure [5.1](#Ch5.F1)) to proceed with the output of residual connection, i.e.,
 
 $$
 \mathrm{FFN}(\mathrm{LN}(z_{j},S_{j}))=\sigma(\mathrm{LN}(G^{\mathrm{soft}}_{j},S_{j})M_{1}+b_{1})M_{2}+b_{2},
@@ -5410,15 +5410,15 @@ The inference cost is up to $`10`$ times the training cost as large language mod
 
 ### 5.2 Fault-tolerant Quantum Transformer
 
-In this section, we move on to show an end-to-end transformer architecture implementable on a quantum device, which includes all the key building blocks introduced in Chapter [5.1](#Ch5.S1 "5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), and a discussion of the potential runtime speedups of this quantum model. In particular, here we focus on the inference process in which a classical Transformer has already been trained and is queried to predict the single next token.
+In this section, we move on to show an end-to-end transformer architecture implementable on a quantum device, which includes all the key building blocks introduced in Chapter [5.1](#Ch5.S1), and a discussion of the potential runtime speedups of this quantum model. In particular, here we focus on the inference process in which a classical Transformer has already been trained and is queried to predict the single next token.
 
-Recall that in Chapter [5.1](#Ch5.S1 "5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we suppose that the three parameterized matrices in the self-attention mechanism have the same size, i.e., $`W_{q},W_{k},W_{v}\in\mathbb{R}^{d\times d}`$. Besides, the input sequence $`S`$ and the matrix returned by the attention block $`G^{\text{soft}}`$ has the size $`\ell\times d`$. Here, we further suppose the length of the sentence and the dimension of hidden features exponentially scale with $`2`$, i.e., $`\ell=2^{N}`$ and $`\log d\in\mathbb{N^{+}}`$. This setting aligns with the scaling of quantum computing, making it easier to understand. For other cases, padding techniques can be applied to expand the matrix and vector dimensions to conform to this requirement.
+Recall that in Chapter [5.1](#Ch5.S1), we suppose that the three parameterized matrices in the self-attention mechanism have the same size, i.e., $`W_{q},W_{k},W_{v}\in\mathbb{R}^{d\times d}`$. Besides, the input sequence $`S`$ and the matrix returned by the attention block $`G^{\text{soft}}`$ has the size $`\ell\times d`$. Here, we further suppose the length of the sentence and the dimension of hidden features exponentially scale with $`2`$, i.e., $`\ell=2^{N}`$ and $`\log d\in\mathbb{N^{+}}`$. This setting aligns with the scaling of quantum computing, making it easier to understand. For other cases, padding techniques can be applied to expand the matrix and vector dimensions to conform to this requirement.
 
-Since the runtime speedups depend heavily on the capabilities of the available input oracles, it is essential to specify the input oracles used in the quantum Transformer before detailing the algorithms. For the classical Transformers, the memory access to the inputs such as the sentence and the query, key, and value matrices is assumed. In the quantum version, we assume the access of several matrices via block encoding techniques introduced in Chapter [2.4](#Ch2.S4 "2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+Since the runtime speedups depend heavily on the capabilities of the available input oracles, it is essential to specify the input oracles used in the quantum Transformer before detailing the algorithms. For the classical Transformers, the memory access to the inputs such as the sentence and the query, key, and value matrices is assumed. In the quantum version, we assume the access of several matrices via block encoding techniques introduced in Chapter [2.4](#Ch2.S4).
 
 ###### Assumption 5.1 (Input oracles).
 
-Following the explicit form of the single-head and single-layer Transformer in Eqn. ([5.5](#Ch5.E5 "Equation 5.5 ‣ 5.1.4 Feed-forward network ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), there are five parameterized weight matrices, i.e., $`W_{q}`$, $`W_{k}`$, $`W_{v}\in\mathbb{R}^{d\times d}`$ in the attention block, as well as $`M_{1}\in\mathbb{R}^{d^{\prime}\times d}`$ and $`M_{2}\in\mathbb{R}^{d\times d^{\prime}}`$ in FFN. Note that here, $`M_{1}`$ and $`M_{2}`$ are actually the transpose of parameterized matrices in the classical transformer. Quantum Transformer assumes access to these five parameterized weight matrices, as well as the input sequence $`S\in\mathbb{R}^{\ell\times d}`$ via block encoding.
+Following the explicit form of the single-head and single-layer Transformer in Eqn. ([5.5](#Ch5.E5)), there are five parameterized weight matrices, i.e., $`W_{q}`$, $`W_{k}`$, $`W_{v}\in\mathbb{R}^{d\times d}`$ in the attention block, as well as $`M_{1}\in\mathbb{R}^{d^{\prime}\times d}`$ and $`M_{2}\in\mathbb{R}^{d\times d^{\prime}}`$ in FFN. Note that here, $`M_{1}`$ and $`M_{2}`$ are actually the transpose of parameterized matrices in the classical transformer. Quantum Transformer assumes access to these five parameterized weight matrices, as well as the input sequence $`S\in\mathbb{R}^{\ell\times d}`$ via block encoding.
 
 Mathematically, given any $`A\in\{W_{q},W_{k},W_{v},M_{1},M_{2},S\}`$ corresponding to an $`N`$-qubit operator, $`\alpha,\varepsilon\geq 0`$ and $`a\in\mathbb{N}`$, there exists a $`(a+N)`$-qubit unitary $`U_{A}`$ referring to the $`(\alpha,a,\varepsilon)`$-block-encoding of $`A`$ with
 
@@ -5435,11 +5435,11 @@ Under this assumption, we know that the quantum Transformer can access $`U_{S}`$
 <figcaption>Figure 5.2: Overview of the single-layer decoder-only quantum transformer. A quantum transformer consists of a self-attention and a feed-forward network sub-layer, incorporating residual connections with layer normalization. The inputs of the quantum transformer are block encodings of matrices for the input sequence and pre-trained weights, from which the relevant matrices for the transformer are constructed (query $Q$, key $K$, and value $V$). Each of the components accepts the block encoding from the prior component as the input and prepares a block encoding of the target matrix using quantum linear algebra as the output.</figcaption>
 </figure>
 
-Under the above assumptions about access to the read-in protocols, the following theorem indicates how to implement a single-head and single-block transformer architecture in Eqn. ([5.5](#Ch5.E5 "Equation 5.5 ‣ 5.1.4 Feed-forward network ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) on the quantum computer.
+Under the above assumptions about access to the read-in protocols, the following theorem indicates how to implement a single-head and single-block transformer architecture in Eqn. ([5.5](#Ch5.E5)) on the quantum computer.
 
 ###### Theorem 5.2 (Quantum Transformer, informal).
 
-For a single-head and single-block Transformer depicted in Figure [5.2](#Ch5.F2 "Figure 5.2 ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), suppose its embedding dimension is $`d`$ and its input sequence $`S`$ has the length $`\ell=2^{N}`$. Under Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") about the input oracles, for the index $`j\in[\ell]`$, one can construct an $`\epsilon`$-accurate quantum circuit for the quantum state proportional to
+For a single-head and single-block Transformer depicted in Figure [5.2](#Ch5.F2), suppose its embedding dimension is $`d`$ and its input sequence $`S`$ has the length $`\ell=2^{N}`$. Under Assumption [5.1](#Ch5.Thmtheorem1) about the input oracles, for the index $`j\in[\ell]`$, one can construct an $`\epsilon`$-accurate quantum circuit for the quantum state proportional to
 
 $$
 \sum_{k=1}^{d}\mathrm{Transformer}(S,j)_{k}\lvert{k}\rangle,
@@ -5449,7 +5449,7 @@ by using $`{\mathcal{\tilde{O}}}(dN^{2}\alpha_{s}\alpha_{w}\log^{2}(1/\epsilon))
 
 We show this theorem by explicitly designing the quantum circuit for each computation block of the transformer architecture in a coherent way, i.e., without intermediate measurement. In addition, a subsequent transformation of the amplitude-encoded state, followed by measurement in the computational basis, yields the index of the next predicted token based on the probabilities modeled by the Transformer architecture.
 
-Roadmap. In the remainder of this section, we detail the implementation of quantum Transformers, proceeding from the bottom to the top as illustrated in Figure [5.2](#Ch5.F2 "Figure 5.2 ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Specifically, we first demonstrate how to quantize the attention block $`\mathrm{Attention}(S,j)`$ in Chapter [5.2.1](#Ch5.S2.SS1 "5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Next, we present the quantization of residual connections and layer normalization operations (i.e., the operation $`\mathrm{LN}(\mathrm{Attention}(S,j))`$ in Eqn. ([5.5](#Ch5.E5 "Equation 5.5 ‣ 5.1.4 Feed-forward network ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"))) in Chapter [5.2.2](#Ch5.S2.SS2 "5.2.2 Quantum residual connection and layer normalization ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Last, we exhibit the quantization of the fully connected neural network to complete the computation $`\mathrm{LN}(\mathrm{FFN}(\mathrm{LN}(\mathrm{Attention}(S,j))))`$ in Chapter [5.2.3](#Ch5.S2.SS3 "5.2.3 Quantum feedforward neural network ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). This end-to-end approach ensures that the generated quantum state corresponds to the one described in Eqn. ([5.8](#Ch5.E8 "Equation 5.8 ‣ Theorem 5.2 (Quantum Transformer, informal). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")).
+Roadmap. In the remainder of this section, we detail the implementation of quantum Transformers, proceeding from the bottom to the top as illustrated in Figure [5.2](#Ch5.F2). Specifically, we first demonstrate how to quantize the attention block $`\mathrm{Attention}(S,j)`$ in Chapter [5.2.1](#Ch5.S2.SS1). Next, we present the quantization of residual connections and layer normalization operations (i.e., the operation $`\mathrm{LN}(\mathrm{Attention}(S,j))`$ in Eqn. ([5.5](#Ch5.E5))) in Chapter [5.2.2](#Ch5.S2.SS2). Last, we exhibit the quantization of the fully connected neural network to complete the computation $`\mathrm{LN}(\mathrm{FFN}(\mathrm{LN}(\mathrm{Attention}(S,j))))`$ in Chapter [5.2.3](#Ch5.S2.SS3). This end-to-end approach ensures that the generated quantum state corresponds to the one described in Eqn. ([5.8](#Ch5.E8)).
 
 #### 5.2.1 Quantum self-attention
 
@@ -5459,7 +5459,7 @@ $$
 \mathrm{Attention}(Q,K,V)=\mathrm{softmax}(QK^{\top}/\alpha_{0})V\eqqcolon G^{\mathrm{soft}}
 $$
 
-in Eqn. ([5.1](#Ch5.E1 "Equation 5.1 ‣ 5.1.2 Self-attention ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) on quantum computers. More specifically, under Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the quantum self-attention block outputs a block encoding of a matrix $`G`$ whose $`j`$-th row is the same as the output of the classical attention block, as described in the following theorem.
+in Eqn. ([5.1](#Ch5.E1)) on quantum computers. More specifically, under Assumption [5.1](#Ch5.Thmtheorem1), the quantum self-attention block outputs a block encoding of a matrix $`G`$ whose $`j`$-th row is the same as the output of the classical attention block, as described in the following theorem.
 
 ###### Theorem 5.3 (Quantum self-attention).
 
@@ -5481,7 +5481,7 @@ The implementation of the quantum self-attention block can be decomposed into th
 
 In what follows, we iteratively detail the implementation of each step.
 
-Step I. The construction of the block encoding of matrix $`QK^{\top}`$ and $`V`$ builds upon the employment of Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). That is, given access to $`(\alpha,a)`$-encoding $`U_{A}`$ of matrix $`A`$ and $`(\beta,b)`$-encoding $`U_{B}`$ of matrix $`B`$, an $`(\alpha\beta,a+b)`$-encoding can be constructed for the matrix $`AB`$. This result leads to the efficient construction of the block encodings of $`QK^{\top}`$ and $`V`$, i.e.,
+Step I. The construction of the block encoding of matrix $`QK^{\top}`$ and $`V`$ builds upon the employment of Fact [2.23](#Ch2.Thmtheorem23). That is, given access to $`(\alpha,a)`$-encoding $`U_{A}`$ of matrix $`A`$ and $`(\beta,b)`$-encoding $`U_{B}`$ of matrix $`B`$, an $`(\alpha\beta,a+b)`$-encoding can be constructed for the matrix $`AB`$. This result leads to the efficient construction of the block encodings of $`QK^{\top}`$ and $`V`$, i.e.,
 
 - <span id="Ch5.S2.I2.ix1">-</span>
 
@@ -5489,7 +5489,7 @@ Step I. The construction of the block encoding of matrix $`QK^{\top}`$ and $`V`$
 
 - <span id="Ch5.S2.I2.ix2">-</span>
 
-  For the matrix $`QK^{\top}`$, we first use Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") to construct the $`(\alpha_{q},a_{q})`$-encoding $`U_{Q}`$ and $`(\alpha_{k},a_{k})`$-encoding $`U_{K}`$ with $`Q=W_{q}S`$ and $`K=W_{k}S`$, respectively. Then, we use Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") again to construct the $`(\alpha_{0},a_{0})`$-encoding $`U_{QK^{\top}}`$ of $`QK^{\top}`$, where $`\alpha_{0}=\alpha_{s}^{2}\alpha_{w}^{2}`$ and $`a_{0}=2a_{s}+2a_{w}`$. Note that for a real matrix $`M`$ and its block encoding unitary $`U_{M}`$, $`U_{M}^{\dagger}`$ is the block encoding of $`M^{\top}`$.
+  For the matrix $`QK^{\top}`$, we first use Fact [2.23](#Ch2.Thmtheorem23) to construct the $`(\alpha_{q},a_{q})`$-encoding $`U_{Q}`$ and $`(\alpha_{k},a_{k})`$-encoding $`U_{K}`$ with $`Q=W_{q}S`$ and $`K=W_{k}S`$, respectively. Then, we use Fact [2.23](#Ch2.Thmtheorem23) again to construct the $`(\alpha_{0},a_{0})`$-encoding $`U_{QK^{\top}}`$ of $`QK^{\top}`$, where $`\alpha_{0}=\alpha_{s}^{2}\alpha_{w}^{2}`$ and $`a_{0}=2a_{s}+2a_{w}`$. Note that for a real matrix $`M`$ and its block encoding unitary $`U_{M}`$, $`U_{M}^{\dagger}`$ is the block encoding of $`M^{\top}`$.
 
 Step II. Once the unitary $`U_{QK^{\top}}`$ is prepared, we move to implement the quantum algorithm corresponding to the softmax function, i.e., $`\mathrm{softmax}(QK^{\top}/\alpha_{0})`$. Note that the softmax function relies on the exponential function, which is generally resource-intensive to implement on quantum computers. To circumvent this bottleneck, the quantum Transformer uses polynomial functions to approximate the softmax function, as supported by the following fact.
 
@@ -5497,7 +5497,7 @@ Step II. Once the unitary $`U_{QK^{\top}}`$ is prepared, we move to implement th
 
 For $`x\in[-1,1]`$, the function $`f(x)\coloneqq e^{x}`$ can be approximated with error bound $`\epsilon`$ with an $`\mathcal{O}(\log(1/\epsilon))`$-degree polynomial function.
 
-The insight provided by Fact [5.4](#Ch5.Thmtheorem4 "Fact 5.4. ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is to use polynomial functions to approximate the softmax function, i.e., we first approximate $`\exp\circ(QK^{\top}/\alpha_{0})`$ using polynomial functions, then multiply with different coefficients (normalization) for each row.
+The insight provided by Fact [5.4](#Ch5.Thmtheorem4) is to use polynomial functions to approximate the softmax function, i.e., we first approximate $`\exp\circ(QK^{\top}/\alpha_{0})`$ using polynomial functions, then multiply with different coefficients (normalization) for each row.
 
 In this context, the challenge of implementing a quantized softmax function reduces to the implementation of a quantized polynomial function. The key technique for achieving this lies in applying polynomial functions to each element of block-encoded matrices, as detailed in the following lemma.
 
@@ -5507,7 +5507,7 @@ Let $`N,k\in\mathbb{N}`$. Given access to an $`(\alpha,a)`$-encoding of a matrix
 
 Moreover, for a polynomial function $`g_{r}(x)=\sum_{j=0}^{r}c_{j}x^{j}`$ with constant term $`c_{0}`$, one can construct a $`(C^{\prime},b)`$-encoding of $`g_{r}\circ(A/\alpha)`$, where $`C^{\prime}=rc_{0}+C`$.
 
-###### Proof of Lemma [5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Lemma [5.5](#Ch5.Thmtheorem5).
 
 To achieve this implementation, we construct two state-preparation unitaries $`P_{L}`$ and $`P_{R}`$, which act on $`\lceil\log(r+1)\rceil`$ qubits such that
 
@@ -5519,7 +5519,7 @@ $$
 P_{R}:\ \lvert{0^{\lceil\log(r+1)\rceil}}\rangle \to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}e^{i\theta_{j}}\lvert{j}\rangle,
 $$
 
-where $`C=\sum_{j=1}^{r}|c_{j}|`$ and $`|c_{j}|e^{i\theta_{j}}=c_{j}`$. These two unitaries encode the polynomial coefficients $`\{c_{j}\}`$ into the quantum circuit, which is needed for block encoding via the linear combination of unitaries indicated in [Fact 2.21](#Ch2.Thmtheorem21 "Fact 2.21. ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Note that the construction of $`P_{L}`$ and $`P_{R}`$ is efficient for small $`r`$, as the corresponding circuit is $`\mathcal{O}(r)`$-depth with only elementary quantum gates ([Sun et al., 2023](#bib.bib125); [Zhang et al., 2022a](#bib.bib124)).
+where $`C=\sum_{j=1}^{r}|c_{j}|`$ and $`|c_{j}|e^{i\theta_{j}}=c_{j}`$. These two unitaries encode the polynomial coefficients $`\{c_{j}\}`$ into the quantum circuit, which is needed for block encoding via the linear combination of unitaries indicated in [Fact 2.21](#Ch2.Thmtheorem21). Note that the construction of $`P_{L}`$ and $`P_{R}`$ is efficient for small $`r`$, as the corresponding circuit is $`\mathcal{O}(r)`$-depth with only elementary quantum gates ([Sun et al., 2023](#bib.bib125); [Zhang et al., 2022a](#bib.bib124)).
 
 For $`j\in[r]`$, let $`U_{A^{j}}`$ be the $`(1,ja+(j-1)N)`$-encoding of
 
@@ -5527,7 +5527,7 @@ $$
 (A/\alpha)^{\circ j}:=\underbrace{(A/\alpha)\circ(A/\alpha)\circ\cdots\circ(A/\alpha)}_{j-1\ \text{times of Hadamard product}},
 $$
 
-which is constructed by iteratively applying [lemma 2.25](#Ch2.Thmtheorem25 "Lemma 2.25 (Hadamard product of the block encoding unitaries, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). For simplicity, these block encodings $`U_{A^{j}}`$ can also be considered as $`(1,ra+(r-1)N)`$-encoding of $`(A/\alpha)^{\circ j}`$. Then, we construct a $`(ra+rN+\lceil\log(r+1)\rceil)`$-qubit unitary $`W=\sum_{j=1}^{r}|j\rangle\langle j|\otimes U_{A^{j}}+(\mathbb{I}_{2^{\lceil\log(r+1)\rceil}}-\sum_{j=1}^{r}|j\rangle\langle j|)\otimes\mathbb{I}_{2^{(ra+rN)}}`$. Taking the linear combination of block encodings via [Fact 2.21](#Ch2.Thmtheorem21 "Fact 2.21. ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we can implement a $`(C,ra+(r-1)N+\lceil\log(r+1)\rceil)`$-encoding of $`f_{r}\circ(A/\alpha)`$.
+which is constructed by iteratively applying [lemma 2.25](#Ch2.Thmtheorem25). For simplicity, these block encodings $`U_{A^{j}}`$ can also be considered as $`(1,ra+(r-1)N)`$-encoding of $`(A/\alpha)^{\circ j}`$. Then, we construct a $`(ra+rN+\lceil\log(r+1)\rceil)`$-qubit unitary $`W=\sum_{j=1}^{r}|j\rangle\langle j|\otimes U_{A^{j}}+(\mathbb{I}_{2^{\lceil\log(r+1)\rceil}}-\sum_{j=1}^{r}|j\rangle\langle j|)\otimes\mathbb{I}_{2^{(ra+rN)}}`$. Taking the linear combination of block encodings via [Fact 2.21](#Ch2.Thmtheorem21), we can implement a $`(C,ra+(r-1)N+\lceil\log(r+1)\rceil)`$-encoding of $`f_{r}\circ(A/\alpha)`$.
 
 To implement element-wise functions including constant terms, we also need access to the block encoding of a matrix whose elements are all $`1`$. Notice that this matrix can be written as the linear combination of the identity matrix and the reflection operator, i.e.,
 
@@ -5553,15 +5553,15 @@ $$
 
 where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(A/\alpha)_{jk}`$.
 
-###### Proof sketch of Theorem [5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof sketch of Theorem [5.6](#Ch5.Thmtheorem6).
 
-We first construct the block encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that Taylor expansion of $`\exp(x)`$ contains a constant term $`1`$. This can be achieved with [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [Fact 5.4](#Ch5.Thmtheorem4 "Fact 5.4. ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Here, since we are only focusing on the $`j`$-th row, instead of taking linear combination with the matrix whose elements are all $`1`$, we take sum with the matrix whose $`j`$-th row elements are all $`1`$ and else are $`0`$. This enables us to have a better dependency on $`\ell`$, i.e., from $`\ell`$ to $`\sqrt{\ell}`$. For index $`j\in[\ell]`$, let $`U_{j}:\lvert{0}\rangle\rightarrow\lvert{j}\rangle`$. One can achieve this by changing Eqn. ([5.12](#Ch5.E12 "Equation 5.12 ‣ Proof of Lemma . ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to the following,
+We first construct the block encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that Taylor expansion of $`\exp(x)`$ contains a constant term $`1`$. This can be achieved with [lemma 5.5](#Ch5.Thmtheorem5) and [Fact 5.4](#Ch5.Thmtheorem4). Here, since we are only focusing on the $`j`$-th row, instead of taking linear combination with the matrix whose elements are all $`1`$, we take sum with the matrix whose $`j`$-th row elements are all $`1`$ and else are $`0`$. This enables us to have a better dependency on $`\ell`$, i.e., from $`\ell`$ to $`\sqrt{\ell}`$. For index $`j\in[\ell]`$, let $`U_{j}:\lvert{0}\rangle\rightarrow\lvert{j}\rangle`$. One can achieve this by changing Eqn. ([5.12](#Ch5.E12)) to the following,
 
 $$
 \sum_{k}|j\rangle\langle k|=\frac{\sqrt{\ell}}{2}(U_{j}H^{\otimes N}-U_{j}\left(\mathbb{I}_{2^{N}}-2\lvert{0^{N}}\rangle\langle{0^{N}}\rvert\right)H^{\otimes N}).
 $$
 
-Following the same steps in [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can achieve the construction. There are two error terms in this step. Denote $`U_{f\circ(A)}`$ as the constructed block encoding unitary. By [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and some additional calculation, one can show that $`U_{f\circ(A)}`$ is a block-encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that $`\exp\circ(\frac{A}{2\alpha})_{jk}=\exp\circ(\frac{A}{2\alpha})^{\top}_{kj}`$. With unitary $`U_{f\circ(A)}^{\dagger}(I\otimes U_{j})`$ and amplitude amplification, one can prepare a state-encoding of the target state
+Following the same steps in [lemma 5.5](#Ch5.Thmtheorem5), one can achieve the construction. There are two error terms in this step. Denote $`U_{f\circ(A)}`$ as the constructed block encoding unitary. By [lemma 5.5](#Ch5.Thmtheorem5) and some additional calculation, one can show that $`U_{f\circ(A)}`$ is a block-encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that $`\exp\circ(\frac{A}{2\alpha})_{jk}=\exp\circ(\frac{A}{2\alpha})^{\top}_{kj}`$. With unitary $`U_{f\circ(A)}^{\dagger}(I\otimes U_{j})`$ and amplitude amplification, one can prepare a state-encoding of the target state
 
 $$
 \lvert{A_{j}}\rangle\coloneqq\frac{1}{\sqrt{Z_{j}}}\sum_{k=1}^{\ell}\exp\circ\Big(\frac{A}{2\alpha}\Big)_{jk}\lvert{k}\rangle,
@@ -5569,25 +5569,25 @@ $$
 
 where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(A/\alpha)_{jk}`$ is the normalization factor of softmax function for the $`j`$-th row. ∎
 
-Step III. Finally, we implement the matrix multiplication with $`V`$. This can be easily achieved by using Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), with $`U_{f(QK^{\top})}^{\dagger}`$ and $`U_{V}`$. Consequently, we obtain an encoded quantum state analogous to
+Step III. Finally, we implement the matrix multiplication with $`V`$. This can be easily achieved by using Fact [2.23](#Ch2.Thmtheorem23), with $`U_{f(QK^{\top})}^{\dagger}`$ and $`U_{V}`$. Consequently, we obtain an encoded quantum state analogous to
 
 $$
 \sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}\lvert{k}\rangle.
 $$
 
-Combining the results of Steps I, II, and III, we are now ready to present the proof of Theorem [5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+Combining the results of Steps I, II, and III, we are now ready to present the proof of Theorem [5.3](#Ch5.Thmtheorem3).
 
-###### Proof of Theorem [5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Theorem [5.3](#Ch5.Thmtheorem3).
 
-In the first step, we construct the block encoding of matrix $`QK^{\top}`$ and $`V`$. Note that for a real matrix $`M`$ and its block encoding unitary $`U_{M}`$, $`U_{M}^{\dagger}`$ is the block encoding of $`M^{\top}`$. By Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can construct an $`(\alpha_{0},a_{0})`$-encoding $`U_{QK^{\top}}`$ of $`QK^{\top}`$, where $`\alpha_{0}\coloneqq\alpha_{s}^{2}\alpha_{w}^{2}`$ and $`a_{0}=2a_{s}+2a_{w}`$. One can also construct an $`(\alpha_{v},a_{v})`$-encoding $`U_{V}`$ of $`V`$, where $`\alpha_{v}=\alpha_{s}\alpha_{w}`$ and $`a_{v}=a_{s}+a_{w}`$.
+In the first step, we construct the block encoding of matrix $`QK^{\top}`$ and $`V`$. Note that for a real matrix $`M`$ and its block encoding unitary $`U_{M}`$, $`U_{M}^{\dagger}`$ is the block encoding of $`M^{\top}`$. By Fact [2.23](#Ch2.Thmtheorem23), one can construct an $`(\alpha_{0},a_{0})`$-encoding $`U_{QK^{\top}}`$ of $`QK^{\top}`$, where $`\alpha_{0}\coloneqq\alpha_{s}^{2}\alpha_{w}^{2}`$ and $`a_{0}=2a_{s}+2a_{w}`$. One can also construct an $`(\alpha_{v},a_{v})`$-encoding $`U_{V}`$ of $`V`$, where $`\alpha_{v}=\alpha_{s}\alpha_{w}`$ and $`a_{v}=a_{s}+a_{w}`$.
 
-By [theorem 5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), using $`U_{QK^{\top}}`$ one can prepare a state-encoding of the state
+By [theorem 5.6](#Ch5.Thmtheorem6), using $`U_{QK^{\top}}`$ one can prepare a state-encoding of the state
 
 $$
 \sum_{k=1}^{\ell}\sqrt{\mathrm{softmax}(QK^{\top}/\alpha_{0})_{jk}}\lvert{k}\rangle,
 $$
 
-where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(QK^{\top}/\alpha_{0})_{jk}`$. Remember that state encoding is also a block encoding. By [lemma 2.25](#Ch2.Thmtheorem25 "Lemma 2.25 (Hadamard product of the block encoding unitaries, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can construct a block encoding of a matrix whose $`j`$-th column is
+where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(QK^{\top}/\alpha_{0})_{jk}`$. Remember that state encoding is also a block encoding. By [lemma 2.25](#Ch2.Thmtheorem25), one can construct a block encoding of a matrix whose $`j`$-th column is
 
 $$
 [\mathrm{softmax}(QK^{\top}/\alpha_{0})_{j1},\dots,\mathrm{softmax}(QK^{\top}/\alpha_{0})_{j\ell}]
@@ -5595,7 +5595,7 @@ $$
 
 ignoring other columns. Let this block-encoding unitary be $`U_{f(QK^{\top})}`$.
 
-Last, by exploiting Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") again, with $`U_{f(QK^{\top})}^{\dagger}`$ and $`U_{V}`$, we obtain an encoded quantum state analogous to
+Last, by exploiting Fact [2.23](#Ch2.Thmtheorem23) again, with $`U_{f(QK^{\top})}^{\dagger}`$ and $`U_{V}`$, we obtain an encoded quantum state analogous to
 
 $$
 \sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}\lvert{k}\rangle.
@@ -5609,11 +5609,11 @@ Now we consider how to implement the masked self-attention, which is essential f
 
 ###### Corollary 5.7 (Quantum masked self-attention).
 
-For the index $`j\in[\ell]`$, one can construct a block encoding of a matrix $`G^{\mathrm{mask}}`$ such that $`G^{\mathrm{mask}}_{j\star}=(\mathrm{softmax}(\frac{QK^{\top}}{\alpha_{0}}+M)V)_{j\star}`$, where $`M`$ is the masked matrix as Eqn. ([5.2](#Ch5.E2 "Equation 5.2 ‣ 5.1.2 Self-attention ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(\frac{QK^{\top}}{\alpha_{0}}+M)_{jk}`$.
+For the index $`j\in[\ell]`$, one can construct a block encoding of a matrix $`G^{\mathrm{mask}}`$ such that $`G^{\mathrm{mask}}_{j\star}=(\mathrm{softmax}(\frac{QK^{\top}}{\alpha_{0}}+M)V)_{j\star}`$, where $`M`$ is the masked matrix as Eqn. ([5.2](#Ch5.E2)), $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(\frac{QK^{\top}}{\alpha_{0}}+M)_{jk}`$.
 
-###### Proof of Corollary [5.7](#Ch5.Thmtheorem7 "Corollary 5.7 (Quantum masked self-attention). ‣ Extension to implement quantum masked self-attention ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Corollary [5.7](#Ch5.Thmtheorem7).
 
-To achieve masked self-attention, we slightly change the steps mentioned in [theorem 5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+To achieve masked self-attention, we slightly change the steps mentioned in [theorem 5.6](#Ch5.Thmtheorem6).
 
 First, to approximate the exponential function, we move beyond using a matrix where all elements in the $`j`$-th row are set to $`1`$ while other rows remain $`0`$. Instead, we refine this approach by considering only the first $`2^{\lceil\log(j+1)\rceil}`$ elements in the $`j`$-th row to be $`1`$. Note that this matrix can be achieved similarly to the original one. The encoding factor of this matrix is $`2^{\lceil\log(j+1)\rceil/2}`$.
 
@@ -5623,17 +5623,17 @@ $$
 \sum_{k\in\mathcal{S}}\lvert{k}\rangle\langle{k}\rvert=\frac{1}{2}\mathbb{I}+\frac{1}{2}\Big(2\sum_{k\in\mathcal{S}}\lvert{k}\rangle\langle{k}\rvert-\mathbb{I}\Big).
 $$
 
-Define $`U_{\rm proj}\coloneqq\lvert{0}\rangle\langle{0}\rvert\otimes\mathbb{I}+|1\rangle\langle 1|\otimes(2\sum_{k\in\mathcal{S}}|k\rangle\langle k|-\mathbb{I})`$. One can easily verify that $`(H\otimes\mathbb{I})U_{\rm proj}(H\otimes\mathbb{I})`$ is a $`(1,1,0)`$-encoding of $`\sum_{k\in\mathcal{S}}|k\rangle\langle k|`$, where $`H`$ is the Hadamard gate. The following steps follow the same with [theorem 5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [theorem 5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). ∎
+Define $`U_{\rm proj}\coloneqq\lvert{0}\rangle\langle{0}\rvert\otimes\mathbb{I}+|1\rangle\langle 1|\otimes(2\sum_{k\in\mathcal{S}}|k\rangle\langle k|-\mathbb{I})`$. One can easily verify that $`(H\otimes\mathbb{I})U_{\rm proj}(H\otimes\mathbb{I})`$ is a $`(1,1,0)`$-encoding of $`\sum_{k\in\mathcal{S}}|k\rangle\langle k|`$, where $`H`$ is the Hadamard gate. The following steps follow the same with [theorem 5.6](#Ch5.Thmtheorem6) and [theorem 5.3](#Ch5.Thmtheorem3). ∎
 
 One may further achieve the multi-head self-attention case by using the linear combination of unitaries.
 
 #### 5.2.2 Quantum residual connection and layer normalization
 
-In this subsection, we discuss how to implement the residual connection with layer normalization on a quantum computer. We continue based on the result in [theorem 5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") to implement the Layer Norm block shown in Figure [5.2](#Ch5.F2 "Figure 5.2 ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+In this subsection, we discuss how to implement the residual connection with layer normalization on a quantum computer. We continue based on the result in [theorem 5.3](#Ch5.Thmtheorem3) to implement the Layer Norm block shown in Figure [5.2](#Ch5.F2).
 
 ###### Theorem 5.8 (Quantum residual connection with layer normalization).
 
-Given access to the block encoding of the matrix $`G`$ in Theorem [5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), One can construct a quantum-encoded state
+Given access to the block encoding of the matrix $`G`$ in Theorem [5.3](#Ch5.Thmtheorem3), One can construct a quantum-encoded state
 
 $$
 \sum_{k=1}^{d}\mathrm{LN}(G^{\mathrm{soft}}_{j},S_{j})_{k}\lvert{k}\rangle=\frac{1}{\varsigma}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})\lvert{k}\rangle,
@@ -5641,9 +5641,9 @@ $$
 
 where $`\bar{s}_{j}\coloneqq\frac{1}{d}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk})`$ and $`\varsigma\coloneqq\sqrt{\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})^{2}}`$.
 
-###### Proof of sketch of Theorem [5.8](#Ch5.Thmtheorem8 "Theorem 5.8 (Quantum residual connection with layer normalization). ‣ 5.2.2 Quantum residual connection and layer normalization ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of sketch of Theorem [5.8](#Ch5.Thmtheorem8).
 
-As shown in [theorem 5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we can construct a block-encoding of a matrix $`G`$ whose $`j`$-th row is the same row as that of $`G^{\mathrm{soft}}`$. By Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we are given $`U_{s}`$ which is an $`(\alpha_{s},a_{s})`$-encoding of $`S`$. By Lemma [2.24](#Ch2.Thmtheorem24 "Fact 2.24 (Linear combination of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with the state preparation pair $`(P,P)`$ such that
+As shown in [theorem 5.3](#Ch5.Thmtheorem3), we can construct a block-encoding of a matrix $`G`$ whose $`j`$-th row is the same row as that of $`G^{\mathrm{soft}}`$. By Assumption [5.1](#Ch5.Thmtheorem1), we are given $`U_{s}`$ which is an $`(\alpha_{s},a_{s})`$-encoding of $`S`$. By Lemma [2.24](#Ch2.Thmtheorem24) with the state preparation pair $`(P,P)`$ such that
 
 $$
 P\lvert{0}\rangle=\frac{1}{\sqrt{\alpha_{g}+\alpha_{s}}}(\sqrt{\alpha_{g}}\lvert{0}\rangle+\sqrt{\alpha_{s}}\lvert{1}\rangle),
@@ -5651,7 +5651,7 @@ $$
 
 one can construct a quantum circuit $`U_{\mathrm{res}}`$ which is an $`(\alpha_{g}+\alpha_{s},a_{g}+1)`$-encoding of an $`\ell\times d`$ matrix whose $`j`$-th row is the same as that of $`G^{\mathrm{soft}}+S`$.
 
-Now we consider how to create a block encoding of a diagonal matrix $`\bar{s}_{j}\cdot\mathbb{I}`$, where $`\bar{s}_{j}\coloneqq\frac{1}{d}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk})`$. Let us define a unitary $`H^{\log d}\coloneqq H^{\otimes\log d}`$. Note that $`H^{\log d}`$ is a $`(1,0,0)`$-encoding of itself, and the first column of $`H^{\log d}`$ is $`\frac{1}{\sqrt{d}}(1,\dots,1)^{\top}`$. By [Fact 2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can multiply $`G^{\mathrm{soft}}+S`$ with $`H^{\log d}`$ to construct a block encoding of an $`\ell\times d`$ matrix, whose $`(j,1)`$-element is $`\sqrt{d}\bar{s}_{i}`$. One can further move this element to $`(1,1)`$ by switching the first row with the $`j`$-th row. By tensor product with the identity $`\mathbb{I}`$ of $`\log d`$ qubits, one can construct a block encoding of $`\sqrt{d}\bar{s}_{i}\cdot\mathbb{I}`$.
+Now we consider how to create a block encoding of a diagonal matrix $`\bar{s}_{j}\cdot\mathbb{I}`$, where $`\bar{s}_{j}\coloneqq\frac{1}{d}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk})`$. Let us define a unitary $`H^{\log d}\coloneqq H^{\otimes\log d}`$. Note that $`H^{\log d}`$ is a $`(1,0,0)`$-encoding of itself, and the first column of $`H^{\log d}`$ is $`\frac{1}{\sqrt{d}}(1,\dots,1)^{\top}`$. By [Fact 2.23](#Ch2.Thmtheorem23), one can multiply $`G^{\mathrm{soft}}+S`$ with $`H^{\log d}`$ to construct a block encoding of an $`\ell\times d`$ matrix, whose $`(j,1)`$-element is $`\sqrt{d}\bar{s}_{i}`$. One can further move this element to $`(1,1)`$ by switching the first row with the $`j`$-th row. By tensor product with the identity $`\mathbb{I}`$ of $`\log d`$ qubits, one can construct a block encoding of $`\sqrt{d}\bar{s}_{i}\cdot\mathbb{I}`$.
 
 With $`U_{j}:\lvert{0}\rangle\rightarrow\lvert{j}\rangle`$, one can prepare the state
 
@@ -5659,9 +5659,9 @@ $$
 U_{\mathrm{res}}^{\dagger}(\mathbb{I}\otimes U_{j})\lvert{0}\rangle\lvert{0}\rangle=\frac{1}{\alpha_{g}+\alpha_{s}}\lvert{0}\rangle\sum_{k=1}^{d}\psi_{k}\lvert{k}\rangle+\sqrt{1-\frac{\sum_{k}\psi_{k}^{2}}{(\alpha_{g}+\alpha_{s})^{2}}}\lvert{1}\rangle\lvert{\mathrm{bad}}\rangle.
 $$
 
-By the diagonal block encoding of amplitudes mentioned as [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), this can be converted to a block encoding of the diagonal matrix $`\diag(G_{j1}+S_{j1},\dots,G_{jd}+S_{jd})`$.
+By the diagonal block encoding of amplitudes mentioned as [Fact 2.28](#Ch2.Thmtheorem28), this can be converted to a block encoding of the diagonal matrix $`\diag(G_{j1}+S_{j1},\dots,G_{jd}+S_{jd})`$.
 
-By taking the linear combination as [Fact 2.24](#Ch2.Thmtheorem24 "Fact 2.24 (Linear combination of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with state preparation pair $`(P_{1},P_{2})`$, where
+By taking the linear combination as [Fact 2.24](#Ch2.Thmtheorem24) with state preparation pair $`(P_{1},P_{2})`$, where
 
 $$
 P_{1}\lvert{0}\rangle=\frac{1}{\sqrt{1+1/\sqrt{d}}}(\lvert{0}\rangle+\frac{1}{\sqrt{d}}\lvert{1}\rangle)
@@ -5695,9 +5695,9 @@ This lemma implies the following efficient approximation of the GELU function wi
 
 Let $`\epsilon>0`$ and $`\lambda\in\mathcal{O}(1)`$. For every $`k>0`$ and $`x\in[-\lambda,\lambda]`$, the $`\mathrm{GELU}`$ function $`\mathrm{GELU}(kx)\coloneqq kx\cdot\frac{1}{2}(1+\mathrm{erf}(\frac{kx}{\sqrt{2}}))`$ can be approximated with error up to $`\epsilon`$ by a polynomial function with degree $`\mathcal{O}(k\log(\frac{k\lambda}{\epsilon}))`$.
 
-###### Proof of Cororllary [5.10](#Ch5.Thmtheorem10 "Corollary 5.10 (Polynomial approximation of GELU function). ‣ 5.2.3 Quantum feedforward neural network ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of Cororllary [5.10](#Ch5.Thmtheorem10).
 
-It suffices to approximate the error function with precision $`\frac{\epsilon}{k\lambda}`$ by [Fact 5.9](#Ch5.Thmtheorem9 "Fact 5.9 (Polynomial approximation of error function ( , )). ‣ 5.2.3 Quantum feedforward neural network ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). ∎
+It suffices to approximate the error function with precision $`\frac{\epsilon}{k\lambda}`$ by [Fact 5.9](#Ch5.Thmtheorem9). ∎
 
 In the following theorem, we consider how to implement the two-layer feedforward network on quantum computers. As mentioned, the GELU function is widely used in transformer-based models and we explicitly consider it as the activation function in the theorem. Cases for other activation functions like sigmoid follow the same analysis. An example is the $`\mathrm{tanh}(x)`$ function, which can be well approximated by a polynomial for $`x\in[-\pi/2,\pi/2]`$ ([Guo et al., 2024b](#bib.bib86)).
 
@@ -5711,7 +5711,7 @@ $$
 
 where $`C`$ is the normalization factor.
 
-###### Proof of sketch of Theorem [5.11](#Ch5.Thmtheorem11 "Theorem 5.11 (Two-layer feedforward network with GELU function, informal). ‣ 5.2.3 Quantum feedforward neural network ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+###### Proof of sketch of Theorem [5.11](#Ch5.Thmtheorem11).
 
 We have
 
@@ -5719,7 +5719,7 @@ $$
 (\mathbb{I}_{2^{a}}\otimes U_{M_{1}})(\mathbb{I}_{2^{a_{m}}}\otimes U_{\psi})\lvert{0^{a+a_{m}+N}}\rangle=\frac{1}{\alpha\alpha_{m}}\lvert{0^{a+a_{m}}}\rangleM_{1}\lvert{\psi}\rangle+\lvert{\widetilde{\perp}}\rangle,
 $$
 
-where $`\lvert{\widetilde{\perp}}\rangle`$ is an unnormalized orthogonal state. For the case $`d^{\prime}\geq\ell`$, this can be achieved by padding ancilla qubits to the initial state. By [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can construct a block encoding of the diagonal matrix $`\diag((M_{1}\psi)_{1},\dots,(M_{1}\psi)_{d^{\prime}})`$. Note that the $`\mathrm{GELU}`$ function does not have a constant term, and is suitable to use the importance-weighted amplitude transformation as in [Rattew and Rebentrost (2023)](#bib.bib87). Instead of directly implementing the GELU function, we first implement the function $`f(x)=\frac{1}{2}(1+\mathrm{erf}(\frac{x}{\sqrt{2}}))`$. Note that the value of $`|\mathrm{erf}(x)|`$ is upper bounded by $`1`$. By [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with function $`\frac{1}{4}(1+\mathrm{erf}(\alpha\alpha_{m}\frac{x}{\sqrt{2}}))`$, one can construct a block encoding of matrix $`\diag(f(M_{1}\psi)_{1},\dots,f(M_{1}\psi)_{d^{\prime}})`$.
+where $`\lvert{\widetilde{\perp}}\rangle`$ is an unnormalized orthogonal state. For the case $`d^{\prime}\geq\ell`$, this can be achieved by padding ancilla qubits to the initial state. By [Fact 2.28](#Ch2.Thmtheorem28), one can construct a block encoding of the diagonal matrix $`\diag((M_{1}\psi)_{1},\dots,(M_{1}\psi)_{d^{\prime}})`$. Note that the $`\mathrm{GELU}`$ function does not have a constant term, and is suitable to use the importance-weighted amplitude transformation as in [Rattew and Rebentrost (2023)](#bib.bib87). Instead of directly implementing the GELU function, we first implement the function $`f(x)=\frac{1}{2}(1+\mathrm{erf}(\frac{x}{\sqrt{2}}))`$. Note that the value of $`|\mathrm{erf}(x)|`$ is upper bounded by $`1`$. By [Fact 2.28](#Ch2.Thmtheorem28) with function $`\frac{1}{4}(1+\mathrm{erf}(\alpha\alpha_{m}\frac{x}{\sqrt{2}}))`$, one can construct a block encoding of matrix $`\diag(f(M_{1}\psi)_{1},\dots,f(M_{1}\psi)_{d^{\prime}})`$.
 
 Let the previously constructed block-encoding unitary be $`U_{f(x)}`$. We have
 
@@ -5745,19 +5745,19 @@ In this section, we provide a combined analytical and numerical analysis to expl
 
 #### 5.3.1 Overview
 
-Having the quantum implementation of self-attention, residual connection, layer normalization, and feed-forward networks, we are able to construct the quantum transformer by combining these building blocks as in [theorem 5.2](#Ch5.Thmtheorem2 "Theorem 5.2 (Quantum Transformer, informal). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+Having the quantum implementation of self-attention, residual connection, layer normalization, and feed-forward networks, we are able to construct the quantum transformer by combining these building blocks as in [theorem 5.2](#Ch5.Thmtheorem2).
 
-We obtain this final complexity on the basis of the following considerations: the single-head and single-block transformer architecture includes one self-attention, one feed-forward network, and two residual connections with layer normalization, as shown in Figure [5.2](#Ch5.F2 "Figure 5.2 ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+We obtain this final complexity on the basis of the following considerations: the single-head and single-block transformer architecture includes one self-attention, one feed-forward network, and two residual connections with layer normalization, as shown in Figure [5.2](#Ch5.F2).
 
-Starting from the input assumption as Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), for the index $`j\in[\ell]`$, we first construct the block encoding of self-attention matrix, as described in Section [5.2.1](#Ch5.S2.SS1 "5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). This output can be directly the input of the quantum residual connection and layer normalization, as Section [5.2.2](#Ch5.S2.SS2 "5.2.2 Quantum residual connection and layer normalization ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which output is a state encoding. Remind the definition of state encoding as [definition 2.22](#Ch2.Thmtheorem22 "Definition 2.22 (State preparation encoding ( ) ). ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The state encoding can directly be used as the input of the feed-forward network, as [section 5.2.3](#Ch5.S2.SS3 "5.2.3 Quantum feedforward neural network ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Finally, we put the output of the feed-forward network, which is a state encoding, into the residual connection block. This is possible by noticing that state encoding is a specific kind of block encoding. Multiplying the query complexity of these computational blocks, one can achieve final result. The detailed analysis of runtime is referred to [Guo et al. (2024a)](#bib.bib83)
+Starting from the input assumption as Assumption [5.1](#Ch5.Thmtheorem1), for the index $`j\in[\ell]`$, we first construct the block encoding of self-attention matrix, as described in Section [5.2.1](#Ch5.S2.SS1). This output can be directly the input of the quantum residual connection and layer normalization, as Section [5.2.2](#Ch5.S2.SS2), which output is a state encoding. Remind the definition of state encoding as [definition 2.22](#Ch2.Thmtheorem22). The state encoding can directly be used as the input of the feed-forward network, as [section 5.2.3](#Ch5.S2.SS3). Finally, we put the output of the feed-forward network, which is a state encoding, into the residual connection block. This is possible by noticing that state encoding is a specific kind of block encoding. Multiplying the query complexity of these computational blocks, one can achieve final result. The detailed analysis of runtime is referred to [Guo et al. (2024a)](#bib.bib83)
 
-As [theorem 5.2](#Ch5.Thmtheorem2 "Theorem 5.2 (Quantum Transformer, informal). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") shows, the quantum transformer uses $`{\mathcal{\widetilde{O}}}(dN^{2}\alpha_{s}\alpha_{w})`$ times the input block encodings, where $`\alpha_{s}`$ and $`\alpha_{w}`$ are encoding factors. By analyzing naive matrix multiplication, the runtime of classical single-head and single-block Transformer during the inference stage is $`{\mathcal{O}}(\ell d+d^{2})`$, where $`d`$ is the embedding dimension and $`\ell=2^{N}`$ is the input sequence length. From the comparison, we can see that $`\alpha_{s}`$ and $`\alpha_{w}`$ are the dominant factors that affect the potential quantum speedup. We will explore the properties of these two factors via numerical studies.
+As [theorem 5.2](#Ch5.Thmtheorem2) shows, the quantum transformer uses $`{\mathcal{\widetilde{O}}}(dN^{2}\alpha_{s}\alpha_{w})`$ times the input block encodings, where $`\alpha_{s}`$ and $`\alpha_{w}`$ are encoding factors. By analyzing naive matrix multiplication, the runtime of classical single-head and single-block Transformer during the inference stage is $`{\mathcal{O}}(\ell d+d^{2})`$, where $`d`$ is the embedding dimension and $`\ell=2^{N}`$ is the input sequence length. From the comparison, we can see that $`\alpha_{s}`$ and $`\alpha_{w}`$ are the dominant factors that affect the potential quantum speedup. We will explore the properties of these two factors via numerical studies.
 
 #### 5.3.2 Numerical evidence
 
-The encoding factors $`\alpha_{s}`$ and $`\alpha_{w}`$ appear in the block encodings of matrices $`S`$ and $`W_{q},W_{k},W_{v}`$. Recall that the encoding factor $`\alpha`$ is lower bounded by the spectral norm of a block-encoded matrix $`A`$, i.e., $`\alpha\geq\mathopen{\|}A\mathclose{\|}`$. Given access to quantum Random Access Memory (QRAM) and a quantum data structure ([Lloyd et al., 2014](#bib.bib36); [Kerenidis and Prakash, 2016](#bib.bib300)), there are well-known implementations that enable the construction of a block encoding for an arbitrary matrix $`A`$ where the encoding factor is upper bounded by the Frobenius norm $`\mathopen{\|}A\mathclose{\|}_{F}`$. Based on these considerations, we numerically study these two norms of the input matrices of several open-source large language models<sup>11</sup>endnote: <sup>1</sup> Parameters are obtained from the [Hugging Face](https://huggingface.co/) website, which is an open-source platform for machine learning models. to provide upper and lower bound of $`\alpha_{s}`$ and $`\alpha_{w}`$.
+The encoding factors $`\alpha_{s}`$ and $`\alpha_{w}`$ appear in the block encodings of matrices $`S`$ and $`W_{q},W_{k},W_{v}`$. Recall that the encoding factor $`\alpha`$ is lower bounded by the spectral norm of a block-encoded matrix $`A`$, i.e., $`\alpha\geq\mathopen{\|}A\mathclose{\|}`$. Given access to quantum Random Access Memory (QRAM) and a quantum data structure ([Lloyd et al., 2014](#bib.bib36); [Kerenidis and Prakash, 2016](#bib.bib300)), there are well-known implementations that enable the construction of a block encoding for an arbitrary matrix $`A`$ where the encoding factor is upper bounded by the Frobenius norm $`\mathopen{\|}A\mathclose{\|}_{F}`$. Based on these considerations, we numerically study these two norms of the input matrices of several open-source large language modelsendnote: Parameters are obtained from the [Hugging Face](https://huggingface.co/) website, which is an open-source platform for machine learning models. to provide upper and lower bound of $`\alpha_{s}`$ and $`\alpha_{w}`$.
 
-We first investigate the input sequence matrix $`S`$, which introduces the dependency on $`\ell`$. We consider input data in real-world applications sampled from the widely-used Massive Multitask Language Understanding (MMLU) dataset ([Hendrycks et al., 2021](#bib.bib301)) covering 57 subjects across science, technology, engineering, mathematics, the humanities, the social sciences, and more. The scaling of the spectral norm and Frobenius norm of $`S`$ on the MMLU dataset is demonstrated in Figure [5.3](#Ch5.F3 "Figure 5.3 ‣ 5.3.2 Numerical evidence ‣ 5.3 Runtime Analysis with Quadratic Speedups ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). We can find that the matrix norms of the input matrix of all LLMs scale at most as $`\mathcal{O}(\sqrt{\ell})`$.
+We first investigate the input sequence matrix $`S`$, which introduces the dependency on $`\ell`$. We consider input data in real-world applications sampled from the widely-used Massive Multitask Language Understanding (MMLU) dataset ([Hendrycks et al., 2021](#bib.bib301)) covering 57 subjects across science, technology, engineering, mathematics, the humanities, the social sciences, and more. The scaling of the spectral norm and Frobenius norm of $`S`$ on the MMLU dataset is demonstrated in Figure [5.3](#Ch5.F3). We can find that the matrix norms of the input matrix of all LLMs scale at most as $`\mathcal{O}(\sqrt{\ell})`$.
 
 As additional interest, this analysis of the matrix norm provides new insights for the classical tokenization and embedding design. We also observe that comparatively more advanced LLM models like Llama2-7b and Mistral-7b have large variances of matrix norms. This phenomenon is arguably the consequence of the training in those models; the embeddings that frequently appear in the real-world dataset are actively updated at the pre-training stage, and therefore, are more broadly distributed.
 
@@ -5766,7 +5766,7 @@ As additional interest, this analysis of the matrix norm provides new insights f
 <figcaption>Figure 5.3: Scaling of the spectral norm $\|S\|$ and the Frobenius norm $\|S\|_{F}$ with $\ell$ for each model, displayed on logarithmic scales for both axes. For reference, the line $y\propto\sqrt{x}$ is also shown. We use tokens in MMLU dataset and convert them to $S$.</figcaption>
 </figure>
 
-We then compute the spectral and Frobenius norms of weight matrices ($`W_{q},W_{k},W_{v}`$) for the large language models. The result can be seen in Figure [5.4](#Ch5.F4 "Figure 5.4 ‣ 5.3.2 Numerical evidence ‣ 5.3 Runtime Analysis with Quadratic Speedups ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Many of the LLMs below a dimension $`d`$ of $`10^{3}`$ that we have checked have substantially different norms. We observe that for larger models such as Llama2-7b and Mistral-7b, which are close to the current state-of-the-art open-source models, the norms do not change dramatically. Therefore, it is reasonable to assume that the spectral norm and the Frobenius norm of the weight matrices are at most $`\mathcal{O}(\sqrt{d})`$ for advanced LLMs.
+We then compute the spectral and Frobenius norms of weight matrices ($`W_{q},W_{k},W_{v}`$) for the large language models. The result can be seen in Figure [5.4](#Ch5.F4). Many of the LLMs below a dimension $`d`$ of $`10^{3}`$ that we have checked have substantially different norms. We observe that for larger models such as Llama2-7b and Mistral-7b, which are close to the current state-of-the-art open-source models, the norms do not change dramatically. Therefore, it is reasonable to assume that the spectral norm and the Frobenius norm of the weight matrices are at most $`\mathcal{O}(\sqrt{d})`$ for advanced LLMs.
 
 <figure id="Ch5.F4" class="ltx_figure">
 
@@ -5921,9 +5921,9 @@ $$
 
 ### 5.5 Bibliographic Remarks
 
-Transformer architecture has profoundly revolutionized AI and has broad impacts. As classical computing approaches its physical limitations, it is important to ask how we can leverage quantum computers to advance Transformers with better performance and energy efficiency. Besides the fault-tolerant quantum Transformers introduced in Chapter [5.2](#Ch5.S2 "5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), multiple works are advancing this frontier from various perspectives.
+Transformer architecture has profoundly revolutionized AI and has broad impacts. As classical computing approaches its physical limitations, it is important to ask how we can leverage quantum computers to advance Transformers with better performance and energy efficiency. Besides the fault-tolerant quantum Transformers introduced in Chapter [5.2](#Ch5.S2), multiple works are advancing this frontier from various perspectives.
 
-One aspect is to design novel quantum neural network architectures introduced in Chapter [4](#Ch4 "Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with the intuition from the Transformer, especially the design of the self-attention block. In particular, [Li et al. (2023b)](#bib.bib302) proposes the quantum self-attention neural networks and verifies their effectiveness with the synthetic data sets of quantum natural language processing. There are several follow-up works along this direction ([Cherrat et al., 2024](#bib.bib303); [Evans et al., 2024](#bib.bib304); [Widdows et al., 2024](#bib.bib305)).
+One aspect is to design novel quantum neural network architectures introduced in Chapter [4](#Ch4) with the intuition from the Transformer, especially the design of the self-attention block. In particular, [Li et al. (2023b)](#bib.bib302) proposes the quantum self-attention neural networks and verifies their effectiveness with the synthetic data sets of quantum natural language processing. There are several follow-up works along this direction ([Cherrat et al., 2024](#bib.bib303); [Evans et al., 2024](#bib.bib304); [Widdows et al., 2024](#bib.bib305)).
 
 Another research direction is exploring how to utilize quantum processors to advance certain parts of the transformer architecture. Specifically, [Gao et al. (2023)](#bib.bib306) considers how to compute the self-attention matrix under sparse assumption and shows a quadratic quantum speedup. [Liu et al. (2024b)](#bib.bib307) harnesses quantum neural networks to generate weight parameters for the classical model. In addition, [Liu et al. (2024a)](#bib.bib40) devises a quantum algorithm for the training process of large-scale neural networks, implying an exponential speedup under certain conditions. There are several other works that consider machine learning related optimization problems ([Yang et al., 2023](#bib.bib308); [Zhang and Li, 2024](#bib.bib309); [Wang et al., 2024c](#bib.bib310); [Rebentrost et al., 2018b](#bib.bib311)).
 
@@ -6162,7 +6162,7 @@ Let $`X`$ be an arbitrary random variable and the real number $`t>0`$, then
 
 ###### Proof.
 
-Utilizing the extention of Markov’s inequality in Eqn. ([B.4](#A2.E4 "Equation B.4 ‣ Appendix B Concentration Inequality ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) with setting $`\phi(x)=x^{2}`$ yields
+Utilizing the extention of Markov’s inequality in Eqn. ([B.4](#A2.E4)) with setting $`\phi(x)=x^{2}`$ yields
 
 |  |  |  |  |  |
 |----|----|----|----|----|
@@ -6232,7 +6232,7 @@ Let $`X`$ be a random variable with $`\mathbb{E}X=0,a\leq X\leq b`$. Then for $`
 \mathbb{E}[e^{sx}]\leq\exp\left(\frac{s^{2}(b-a)^{2}}{8}\right)
 ``` |  | (B.12) |
 
-This lemma, combined with Eqn. ([B.11](#A2.Ex6 "In Appendix B Concentration Inequality ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) immediately implies Hoeffding’s tail inequality ([Hoeffding, 1994](#bib.bib314)).
+This lemma, combined with Eqn. ([B.11](#A2.Ex6)) immediately implies Hoeffding’s tail inequality ([Hoeffding, 1994](#bib.bib314)).
 
 ###### Theorem B.4.
 
@@ -6260,7 +6260,7 @@ Hoeffding’s inequality, first proven for binomial random variables by [Chernof
 
 In this section, we introduce some basic knowledge of Haar measure ([Haar, 1933](#bib.bib317)) and unitary $`t`$-design ([Dankert et al., 2009](#bib.bib208)), which are extensively employed in group representation theory and quantum information ([Nagy, 1993](#bib.bib318); [Adam, 2013](#bib.bib319)), especially in the analysis of barren plateaus and the trainability of variational quantum algorithms ([Larocca et al., 2024](#bib.bib320)).
 
-We begin with the Haar measure. Roughly speaking, Haar measure is a unique probability measure that generates the uniform distribution over a compact group. In this chapter, we focus on the Haar measure on the unitary space $`\mathcal{U}(d)`$ for convenience. Mathematically, the Haar measure is uniform given by invariant properties in Definition [C.1](#A3.Thmtheorem1 "Definition C.1 (Haar measure on 𝒰(𝑑)). ‣ Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+We begin with the Haar measure. Roughly speaking, Haar measure is a unique probability measure that generates the uniform distribution over a compact group. In this chapter, we focus on the Haar measure on the unitary space $`\mathcal{U}(d)`$ for convenience. Mathematically, the Haar measure is uniform given by invariant properties in Definition [C.1](#A3.Thmtheorem1).
 
 ###### Definition C.1 (Haar measure on $`\mathcal{U}(d)`$).
 
@@ -6278,7 +6278,7 @@ A measure $`\mu`$ is the Haar measure on the unitary space $`\mathcal{U}(d)`$ if
 
     a probability measure, *i.e.* $`\int d\mu(U)=1`$.
 
-As provided in Definition [C.1](#A3.Thmtheorem1 "Definition C.1 (Haar measure on 𝒰(𝑑)). ‣ Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the Haar measure is continuous on the whole space due to left- and right-invariant properties. Therefore, researchers are interested in approximating the Haar measure with the uniform distribution over some finite sets. Specifically, the unitary set whose uniform distribution shares the same $`t`$-th moment with the Haar measure is defined as the unitary $`t`$-design.
+As provided in Definition [C.1](#A3.Thmtheorem1), the Haar measure is continuous on the whole space due to left- and right-invariant properties. Therefore, researchers are interested in approximating the Haar measure with the uniform distribution over some finite sets. Specifically, the unitary set whose uniform distribution shares the same $`t`$-th moment with the Haar measure is defined as the unitary $`t`$-design.
 
 ###### Definition C.2 (Unitary $`2`$-design).
 
@@ -6301,7 +6301,7 @@ Let $`\mu`$ be the Haar measure on the space $`\mathcal{U}(d)`$. Then, a finite 
 
 A unitary $`t`$-design is also a unitary $`(t-1)`$-design.
 
-We remark that invariant properties of the Haar measure lead to several useful formulations of unitary $`t`$-designs provided in Facts [C.4](#A3.Thmtheorem4 "Fact C.4 (Average over unitary 1-design ( , )). ‣ Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [C.5](#A3.Thmtheorem5 "Fact C.5 (Average over unitary 2-design ( , )). ‣ Appendix C Haar Measure and Unitary t-design ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+We remark that invariant properties of the Haar measure lead to several useful formulations of unitary $`t`$-designs provided in Facts [C.4](#A3.Thmtheorem4) and [C.5](#A3.Thmtheorem5).
 
 ###### Fact C.4 (Average over unitary $`1`$-design ([Puchała and Miszczak, 2017](#bib.bib321))).
 
@@ -6355,7 +6355,7 @@ where the term $`o(1)\rightarrow 0`$ when $`t\rightarrow\infty`$.
 
 ###### Notes
 
-1.  [1](#endnote1 "endnote 1 ‣ 5.3.2 Numerical evidence ‣ 5.3 Runtime Analysis with Quadratic Speedups ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") 1 1 1 endnote 1 Parameters are obtained from the Hugging Face website, which is an open-source platform for machine learning models.
+1.  [1](#endnote1) 1 1 1 endnote 1 Parameters are obtained from the Hugging Face website, which is an open-source platform for machine learning models.
 
 ## References
 
