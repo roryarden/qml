@@ -84,3 +84,17 @@ function Str(el)
     return {}
   end
 end
+
+-- Expand Dirac-notation / bold-math macros that GitHub's KaTeX cannot render.
+-- %b{} matches a balanced {..} group; braces are kept so a command like
+-- \langle cannot merge with the following letter.
+function Math(el)
+  local t = el.text
+  t = t:gsub("\\ketbra%s*(%b{})%s*(%b{})", "|%1\\rangle\\langle%2|")
+  t = t:gsub("\\braket%s*(%b{})%s*(%b{})", "\\langle%1|%2\\rangle")
+  t = t:gsub("\\ket%s*(%b{})", "|%1\\rangle")
+  t = t:gsub("\\bra%s*(%b{})", "\\langle%1|")
+  t = t:gsub("\\bm%s*(%b{})", "\\boldsymbol%1")
+  el.text = t
+  return el
+end

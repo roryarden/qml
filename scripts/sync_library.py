@@ -12,8 +12,9 @@ The filename is generated from the metadata as
 Markdown. Any version in the input is ignored; the latest version is used.
 
 Usage:
-    uv run scripts/add_from_arxiv.py 2412.07626
-    uv run scripts/add_from_arxiv.py 1706.03762
+    uv run scripts/sync_library.py                 # process all ids in the index
+    uv run scripts/sync_library.py 2412.07626      # add one paper
+    uv run scripts/sync_library.py 2412.07626 1706.03762   # add several
 """
 
 from __future__ import annotations
@@ -23,6 +24,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -42,7 +44,7 @@ INDEX_HEADER = (
     "Source of truth for the library, keyed by arXiv id. PDFs and Markdown under\n"
     "`pdfs/` and `md/` are a regenerable cache \u2014 rebuild any paper with:\n\n"
     "```sh\n"
-    "uv run scripts/add_from_arxiv.py <arxiv-id>\n"
+    "uv run scripts/sync_library.py <arxiv-id>\n"
     "```\n\n"
     "## Papers\n\n"
     "| Year | Author | Title | arXiv |\n"
@@ -286,24 +288,15 @@ def update_index(meta: dict[str, Any], versioned_id: str) -> None:
     INDEX_PATH.write_text(prefix + "\n" + "\n".join(rows) + "\n", encoding="utf-8")
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "arxiv_id",
-        help="arXiv id, optionally with a version suffix (e.g. 2412.07626v2).",
-    )
-    args = parser.parse_args()
-
-    base_id = re.sub(r"v\d+$", "", args.arxiv_id)
+def add_paper(arxiv_id: str) -> bool:
+    """Download the PDF and write the Markdown + index row for one arXiv id."""
+    base_id = re.sub(r"v\d+$", "", arxiv_id)
 
     print("Fetching metadata from arXiv API ...", file=sys.stderr)
     meta = fetch_metadata(base_id)
     if meta is None:
-        print(
-            f"No arXiv metadata found for {args.arxiv_id}; aborting without writing.",
-            file=sys.stderr,
-        )
-        return 1
+        print(f"No arXiv metadata found for {arxiv_id}; skipping.", file=sys.stderr)
+        return False
 
     match = re.search(r"/abs/(\S+)$", meta["abs_url"])
     versioned_id = match.group(1) if match else base_id
@@ -330,7 +323,7 @@ def main() -> int:
 
     if html is None:
         print(f"No HTML available for {versioned_id}", file=sys.stderr)
-        return 1
+        return False
 
     markdown = build_front_matter(versioned_id, meta)
     markdown += html_to_markdown(absolutize_urls(extract_article(html), source_url))
@@ -342,6 +335,62 @@ def main() -> int:
 
     update_index(meta, versioned_id)
     print(f"Updated index {INDEX_PATH}", file=sys.stderr)
+    return True
+
+
+def read_index_ids() -> list[str]:
+    """Return the arXiv ids linked in papers/index.md, in order, de-duplicated."""
+    if not INDEX_PATH.exists():
+        return []
+    found = re.findall(
+        r"/abs/([0-9]+\.[0-9]+(?:v[0-9]+)?)", INDEX_PATH.read_text(encoding="utf-8")
+    )
+    seen: set[str] = set()
+    unique: list[str] = []
+    for arxiv_id in found:
+        if arxiv_id not in seen:
+            seen.add(arxiv_id)
+            unique.append(arxiv_id)
+    return unique
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "arxiv_ids",
+        nargs="*",
+        help="arXiv ids to add. If omitted, every id in papers/index.md is processed.",
+    )
+    parser.add_argument(
+        "--delay",
+        type=float,
+        default=3.0,
+        help="Seconds to wait between papers when processing several.",
+    )
+    args = parser.parse_args()
+
+    ids = args.arxiv_ids or read_index_ids()
+    if not ids:
+        print(
+            "No arXiv ids given and none found in papers/index.md.", file=sys.stderr
+        )
+        return 1
+
+    failures: list[str] = []
+    for n, arxiv_id in enumerate(ids, start=1):
+        if n > 1:
+            time.sleep(args.delay)
+        print(f"[{n}/{len(ids)}] {arxiv_id}", file=sys.stderr)
+        if not add_paper(arxiv_id):
+            failures.append(arxiv_id)
+
+    if failures:
+        print(
+            f"Done with {len(failures)} failure(s): {', '.join(failures)}",
+            file=sys.stderr,
+        )
+        return 1
+    print(f"Done. {len(ids)} paper(s) processed.", file=sys.stderr)
     return 0
 
 

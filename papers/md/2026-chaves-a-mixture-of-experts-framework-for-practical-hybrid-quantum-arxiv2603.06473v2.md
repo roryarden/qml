@@ -129,10 +129,10 @@ Although quantum computers provide a natural way of working with higher-dimensio
 
 There are multiple strategies for encoding classical data into quantum computers, including amplitude encoding, phase encoding, Z feature maps, ZZ feature maps, and others.
 
-In this work, we chose angle encoding as our encoding method. Angle encoding is widely used in various QML models such as Dressed Quantum Circuits \[[47](#bib.bib46)\], Quantum Kitchen Sinks \[[48](#bib.bib47)\], IQP Variational Classifiers \[[49](#bib.bib48)\], and many others. A general one-qubit state $`\ket{\psi}`$ can be expressed as:
+In this work, we chose angle encoding as our encoding method. Angle encoding is widely used in various QML models such as Dressed Quantum Circuits \[[47](#bib.bib46)\], Quantum Kitchen Sinks \[[48](#bib.bib47)\], IQP Variational Classifiers \[[49](#bib.bib48)\], and many others. A general one-qubit state $`|{\psi}\rangle`$ can be expressed as:
 
 ``` math
-\ket{\psi}=\cos(\frac{\theta}{2})\ket{0}+e^{i\phi}\sin(\frac{\theta}{2})\ket{1}.
+|{\psi}\rangle=\cos(\frac{\theta}{2})|{0}\rangle+e^{i\phi}\sin(\frac{\theta}{2})|{1}\rangle.
 ```
 
 Angle encoding uses the angle $`\theta`$ defined by rotations on an axis of the qubit, such as X or Y, to encode the features of the data.
@@ -140,7 +140,7 @@ Angle encoding uses the angle $`\theta`$ defined by rotations on an axis of the 
 As an example, assume that we are encoding the k-th feature of the j-th data point in our data set, $`\textbf{x}_{k}^{j}`$ using Y-axis rotations. Then the final state representing this feature value is:
 
 ``` math
-\ket{x_k^j}=RY(\theta=x_{k}^{j})\ket{0}=\cos\bigg(\frac{\textbf{x}_k^j}{2}\bigg)\ket{0}+\sin\bigg(\frac{\textbf{x}_k^j}{2}\bigg)\ket{1}.
+|{x_k^j}\rangle=RY(\theta=x_{k}^{j})|{0}\rangle=\cos\bigg(\frac{\textbf{x}_k^j}{2}\bigg)|{0}\rangle+\sin\bigg(\frac{\textbf{x}_k^j}{2}\bigg)|{1}\rangle.
 ```
 
 As shown, this encoding method requires $`n`$ qubits for $`N`$ features. However, alternative formulations such as dense angle encoding \[[50](#bib.bib49)\] allow multiple features to be encoded within a single qubit, though this approach was not used in our work.

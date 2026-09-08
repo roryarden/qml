@@ -4,7 +4,7 @@ Source of truth for the library, keyed by arXiv id. PDFs and Markdown under
 `pdfs/` and `md/` are a regenerable cache — rebuild any paper with:
 
 ```sh
-uv run scripts/add_from_arxiv.py <arxiv-id>
+uv run scripts/sync_library.py <arxiv-id>
 ```
 
 ## Papers
