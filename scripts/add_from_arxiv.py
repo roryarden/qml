@@ -91,6 +91,18 @@ def extract_article(html: str) -> str:
     return match.group(1) if match else html
 
 
+def absolutize_urls(html: str, base_url: str) -> str:
+    """Rewrite relative src/href URLs to absolute so images resolve on GitHub."""
+
+    def repl(match: re.Match[str]) -> str:
+        attr, url = match.group(1), match.group(2)
+        if url.startswith(("http://", "https://", "data:", "#", "mailto:")):
+            return match.group(0)
+        return f'{attr}="{urllib.parse.urljoin(base_url, url)}"'
+
+    return re.sub(r'(src|href)="([^"]*)"', repl, html)
+
+
 def html_to_markdown(html: str) -> str:
     """Convert HTML to GitHub-flavored Markdown, keeping math as $...$.
 
@@ -307,11 +319,13 @@ def main() -> int:
     ]
 
     html = None
-    for url in candidates:
-        print(f"Trying {url} ...", file=sys.stderr)
-        html = fetch(url)
+    source_url = ""
+    for candidate in candidates:
+        print(f"Trying {candidate} ...", file=sys.stderr)
+        html = fetch(candidate)
         if html is not None:
-            print(f"Fetched from {url}", file=sys.stderr)
+            print(f"Fetched from {candidate}", file=sys.stderr)
+            source_url = candidate
             break
 
     if html is None:
@@ -319,7 +333,7 @@ def main() -> int:
         return 1
 
     markdown = build_front_matter(versioned_id, meta)
-    markdown += html_to_markdown(extract_article(html))
+    markdown += html_to_markdown(absolutize_urls(extract_article(html), source_url))
 
     md_path = MD_DIR / f"{stem}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)

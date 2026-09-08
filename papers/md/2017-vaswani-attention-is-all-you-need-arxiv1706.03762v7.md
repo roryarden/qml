@@ -56,7 +56,7 @@ To the best of our knowledge, however, the Transformer is the first transduction
 ## 3 Model Architecture
 
 <figure id="S3.F1" class="ltx_figure">
-<img src="1706.03762v7/Figures/ModalNet-21.png" id="S3.F1.g1" class="ltx_graphics ltx_centering ltx_img_portrait" style="aspect-ratio:912/1344;" width="912" height="1344" alt="Refer to caption" />
+<img src="https://arxiv.org/html/1706.03762v7/Figures/ModalNet-21.png" id="S3.F1.g1" class="ltx_graphics ltx_centering ltx_img_portrait" style="aspect-ratio:912/1344;" width="912" height="1344" alt="Refer to caption" />
 <figcaption>Figure 1: The Transformer - model architecture.</figcaption>
 </figure>
 
@@ -96,9 +96,9 @@ While for small values of $`d_{k}`$ the two mechanisms perform similarly, additi
 
 <figure id="S3.F2" class="ltx_figure">
 <p>Scaled Dot-Product Attention</p>
-<img src="1706.03762v7/Figures/ModalNet-19.png" id="S3.F2.g1" class="ltx_graphics ltx_centering ltx_img_portrait" style="aspect-ratio:267/531;" width="267" height="531" alt="Refer to caption" />
+<img src="https://arxiv.org/html/1706.03762v7/Figures/ModalNet-19.png" id="S3.F2.g1" class="ltx_graphics ltx_centering ltx_img_portrait" style="aspect-ratio:267/531;" width="267" height="531" alt="Refer to caption" />
 <p>Multi-Head Attention</p>
-<img src="1706.03762v7/Figures/ModalNet-20.png" id="S3.F2.g2" class="ltx_graphics ltx_centering ltx_img_portrait" style="aspect-ratio:501/770;" width="501" height="770" alt="Refer to caption" />
+<img src="https://arxiv.org/html/1706.03762v7/Figures/ModalNet-20.png" id="S3.F2.g2" class="ltx_graphics ltx_centering ltx_img_portrait" style="aspect-ratio:501/770;" width="501" height="770" alt="Refer to caption" />
 <figcaption>Figure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel.</figcaption>
 </figure>
 

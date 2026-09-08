@@ -46,12 +46,12 @@ Document content extraction is a critical task in computer vision, underpinning 
 ## 1 Introduction
 
 <figure id="S1.F1" class="ltx_figure">
-<img src="2412.07626v2/radar_0324_new.png" id="S1.F1.g1" class="ltx_graphics ltx_centering ltx_img_square" style="aspect-ratio:596/590;" width="596" height="590" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/radar_0324_new.png" id="S1.F1.g1" class="ltx_graphics ltx_centering ltx_img_square" style="aspect-ratio:596/590;" width="596" height="590" alt="Refer to caption" />
 <figcaption>Figure 1: Results of End-to-End Text Recognition on OmniDocBench across 9 PDF page types.</figcaption>
 </figure>
 
 <figure id="S1.F2" class="ltx_figure">
-<img src="2412.07626v2/Data_diversity.png" id="S1.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:617/345;" width="617" height="345" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/Data_diversity.png" id="S1.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:617/345;" width="617" height="345" alt="Refer to caption" />
 <figcaption>Figure 2: Overview of OmniDocBench Data Diversity. The benchmark includes 9 diverse PDF document types. It supports rich annotation types, including layout annotations (e.g., title, table, figure) and recognition annotations (e.g., text spans, equations, tables). Each page is annotated with 6 page-level attributes (e.g., PDF type, layout type), along with fine-grained 3 text attributes (e.g., language) and 6 tables attributes (Items under “special issues” are treated as individual binary attributes (yes/no)), enabling detailed and robust evaluation.</figcaption>
 </figure>
 
@@ -307,7 +307,7 @@ The following sections detail the data acquisition process, the annotation metho
 During the data acquisition phase, we sourced document pages from diverse origins and used clustering algorithms to initially select visually diverse pages, followed by manual annotation of page attributes to finalize the OmniDocBench pages. Specifically, we collected over 200,000 initial PDF documents from Common Crawl, Google, Baidu search engines, and internal data. Subsequently, we extracted visual features from these document pages using ResNet-50 and performed clustering using Faiss <sup>11</sup> 1 <https://github.com/facebookresearch/faiss>, sampling 6,000 visually diverse pages from 10 cluster centers. Finally, annotators provided page-level attribute annotations, including page type, layout type, and language type, and further balanced the selection to 981 samples for the final dataset. The OmniDocBench dataset includes pages from nine distinct types, multiple layout categories, and various attribute annotations, covering a wide range of real-world scenarios.
 
 <figure id="S3.F3" class="ltx_figure">
-<img src="2412.07626v2/annotation_pipeline.png" id="S3.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:343/159;" width="343" height="159" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/annotation_pipeline.png" id="S3.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:343/159;" width="343" height="159" alt="Refer to caption" />
 <figcaption>Figure 3: Overview of the OmniDocBench dataset construction.</figcaption>
 </figure>
 
@@ -344,7 +344,7 @@ Annotation Attribute Diversity: (1) Text Attributes: All block-level annotations
 To provide a fair and comprehensive evaluation for various models, we proposed an end-to-end evaluation pipeline consisting of several modules, including extraction, matching algorithm, and metric calculation, as shown in Figure [4](#S4.F4 "Figure 4 ‣ 4 OmniDocBench Evaluation Methodology ‣ OmniDocBench: Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations"). It ensures that OmniDocBench automatically performs unified evaluation on document parsing, thereby producing reliable and effective evaluation results.
 
 <figure id="S4.F4" class="ltx_figure">
-<img src="2412.07626v2/Eval_pipeline_small.png" id="S4.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:329/204;" width="329" height="204" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/Eval_pipeline_small.png" id="S4.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:329/204;" width="329" height="204" alt="Refer to caption" />
 <figcaption>Figure 4: OmniDocBench Evaluation Pipeline.</figcaption>
 </figure>
 
@@ -2030,171 +2030,171 @@ Ignore handling. The purpose of this process is to avoid fluctuations in accurac
 Ignore handling is to minimize the impact of varying standards of document parsing on evaluation. Our evaluation dataset aims to more fairly assess the parsing accuracy of various algorithms, and these trivial issues regarding standards are not within our scope of consideration.
 
 <figure id="S5.F1" class="ltx_figure">
-<img src="2412.07626v2/Page_Attribute.png" id="S5.F1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/254;" width="685" height="254" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/Page_Attribute.png" id="S5.F1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/254;" width="685" height="254" alt="Refer to caption" />
 <figcaption>Figure S1: The Data Proportion of Pages for each Attribute in OmniDocBench.</figcaption>
 </figure>
 
 <figure id="S5.F2" class="ltx_figure">
-<img src="2412.07626v2/page_anno_show.png" id="S5.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/400;" width="685" height="400" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/page_anno_show.png" id="S5.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/400;" width="685" height="400" alt="Refer to caption" />
 <figcaption>Figure S2: The Visualization of vary Annotations in OmniDocBench.</figcaption>
 </figure>
 
 <figure id="S5.F3" class="ltx_figure">
-<img src="2412.07626v2/abandon_standard.png" id="S5.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/310;" width="685" height="310" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/abandon_standard.png" id="S5.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/310;" width="685" height="310" alt="Refer to caption" />
 <figcaption>Figure S3: The Vary Standards in parsing Header, Footers, and so on.</figcaption>
 </figure>
 
 <figure id="S5.F4" class="ltx_figure">
-<img src="2412.07626v2/captions_standard.png" id="S5.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/307;" width="685" height="307" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/captions_standard.png" id="S5.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/307;" width="685" height="307" alt="Refer to caption" />
 <figcaption>Figure S4: The Vary Standards in parsing Captions.</figcaption>
 </figure>
 
 <figure id="S5.F5" class="ltx_figure">
-<img src="2412.07626v2/show_pdf_types_1.png" id="S5.F5.g1" class="ltx_graphics ltx_centering ltx_img_portrait" style="aspect-ratio:651/861;" width="651" height="861" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/show_pdf_types_1.png" id="S5.F5.g1" class="ltx_graphics ltx_centering ltx_img_portrait" style="aspect-ratio:651/861;" width="651" height="861" alt="Refer to caption" />
 <figcaption>Figure S5: The Examples of Academic Papers, Books, Textbooks, Notes, and Magazines in OmniDocBench.</figcaption>
 </figure>
 
 <figure id="S5.F6" class="ltx_figure">
-<img src="2412.07626v2/show_pdf_types_2.png" id="S5.F6.g1" class="ltx_graphics ltx_centering ltx_img_square" style="aspect-ratio:685/729;" width="685" height="729" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/show_pdf_types_2.png" id="S5.F6.g1" class="ltx_graphics ltx_centering ltx_img_square" style="aspect-ratio:685/729;" width="685" height="729" alt="Refer to caption" />
 <figcaption>Figure S6: The Examples of Finacial Reports, Newspapers, Example Papers, and Slides in OmniDocBench.</figcaption>
 </figure>
 
 <figure id="S5.F7" class="ltx_figure">
-<img src="2412.07626v2/showcase_layout.png" id="S5.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/322;" width="685" height="322" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/showcase_layout.png" id="S5.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/322;" width="685" height="322" alt="Refer to caption" />
 <figcaption>Figure S7: The Examples of PDF pages with different Layout Types in OmniDocBench.</figcaption>
 </figure>
 
 <figure id="S5.F8" class="ltx_figure">
-<img src="2412.07626v2/showcase_special_issue.png" id="S5.F8.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/321;" width="685" height="321" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/showcase_special_issue.png" id="S5.F8.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/321;" width="685" height="321" alt="Refer to caption" />
 <figcaption>Figure S8: The Examples of PDF pages under Special Issues in OmniDocBench.</figcaption>
 </figure>
 
 <figure id="S5.F9" class="ltx_figure">
-<img src="2412.07626v2/showcase_table_frame.png" id="S5.F9.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/339;" width="685" height="339" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/showcase_table_frame.png" id="S5.F9.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/339;" width="685" height="339" alt="Refer to caption" />
 <figcaption>Figure S9: The Examples of Tables with different Frame in OmniDocBench.</figcaption>
 </figure>
 
 <figure id="S5.F10" class="ltx_figure">
-<img src="2412.07626v2/showcase_table_issue.png" id="S5.F10.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/336;" width="685" height="336" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/showcase_table_issue.png" id="S5.F10.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/336;" width="685" height="336" alt="Refer to caption" />
 <figcaption>Figure S10: The Examples of Tables under Special Issues in OmniDocBench.</figcaption>
 </figure>
 
 <figure id="S5.F11" class="ltx_figure">
-<img src="2412.07626v2/papers.png" id="S5.F11.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/320;" width="685" height="320" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/papers.png" id="S5.F11.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/320;" width="685" height="320" alt="Refer to caption" />
 <figcaption>Figure S11: The Good Model Result and Bad Model Result for Academic Papers.</figcaption>
 </figure>
 
 <figure id="S5.F12" class="ltx_figure">
-<img src="2412.07626v2/book.png" id="S5.F12.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/320;" width="685" height="320" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/book.png" id="S5.F12.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/320;" width="685" height="320" alt="Refer to caption" />
 <figcaption>Figure S12: The Good Model Result and Bad Model Result for Books.</figcaption>
 </figure>
 
 <figure id="S5.F13" class="ltx_figure">
-<img src="2412.07626v2/exam.png" id="S5.F13.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/323;" width="685" height="323" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/exam.png" id="S5.F13.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/323;" width="685" height="323" alt="Refer to caption" />
 <figcaption>Figure S13: The Good Model Result and Bad Model Result for Exam Papers.</figcaption>
 </figure>
 
 <figure id="S5.F14" class="ltx_figure">
-<img src="2412.07626v2/magazine.png" id="S5.F14.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/322;" width="685" height="322" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/magazine.png" id="S5.F14.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/322;" width="685" height="322" alt="Refer to caption" />
 <figcaption>Figure S14: The Good Model Result and Bad Model Result for Magazines.</figcaption>
 </figure>
 
 <figure id="S5.F15" class="ltx_figure">
-<img src="2412.07626v2/newspaper.png" id="S5.F15.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/321;" width="685" height="321" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/newspaper.png" id="S5.F15.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/321;" width="685" height="321" alt="Refer to caption" />
 <figcaption>Figure S15: The Good Model Result and Bad Model Result for Newspaper.</figcaption>
 </figure>
 
 <figure id="S5.F16" class="ltx_figure">
-<img src="2412.07626v2/notes.png" id="S5.F16.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/325;" width="685" height="325" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/notes.png" id="S5.F16.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/325;" width="685" height="325" alt="Refer to caption" />
 <figcaption>Figure S16: The Good Model Result and Bad Model Result for Handwriting Notes.</figcaption>
 </figure>
 
 <figure id="S5.F17" class="ltx_figure">
-<img src="2412.07626v2/Research_report.png" id="S5.F17.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/320;" width="685" height="320" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/Research_report.png" id="S5.F17.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/320;" width="685" height="320" alt="Refer to caption" />
 <figcaption>Figure S17: The Good Model Result and Bad Model Result for Financial Reports.</figcaption>
 </figure>
 
 <figure id="S5.F18" class="ltx_figure">
-<img src="2412.07626v2/slides.png" id="S5.F18.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/329;" width="685" height="329" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/slides.png" id="S5.F18.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/329;" width="685" height="329" alt="Refer to caption" />
 <figcaption>Figure S18: The Good Model Result and Bad Model Result for Slides.</figcaption>
 </figure>
 
 <figure id="S5.F19" class="ltx_figure">
-<img src="2412.07626v2/textbook.png" id="S5.F19.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/322;" width="685" height="322" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/textbook.png" id="S5.F19.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/322;" width="685" height="322" alt="Refer to caption" />
 <figcaption>Figure S19: The Good Model Result and Bad Model Result for Textbooks.</figcaption>
 </figure>
 
 <figure id="S5.F20" class="ltx_figure">
-<img src="2412.07626v2/fuzzy_scan.png" id="S5.F20.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/328;" width="685" height="328" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/fuzzy_scan.png" id="S5.F20.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/328;" width="685" height="328" alt="Refer to caption" />
 <figcaption>Figure S20: The Good Model Result and Bad Model Result for Fuzzy Scan Pages.</figcaption>
 </figure>
 
 <figure id="S5.F21" class="ltx_figure">
-<img src="2412.07626v2/watermark.png" id="S5.F21.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/335;" width="685" height="335" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/watermark.png" id="S5.F21.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/335;" width="685" height="335" alt="Refer to caption" />
 <figcaption>Figure S21: The Good Model Result and Bad Model Result for Pages with Watermark.</figcaption>
 </figure>
 
 <figure id="S5.F22" class="ltx_figure">
-<img src="2412.07626v2/colorful_background.png" id="S5.F22.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/336;" width="685" height="336" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/colorful_background.png" id="S5.F22.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/336;" width="685" height="336" alt="Refer to caption" />
 <figcaption>Figure S22: The Good Model Result and Bad Model Result for Colorful Background Pages.</figcaption>
 </figure>
 
 <figure id="S5.F23" class="ltx_figure">
-<img src="2412.07626v2/single_col.png" id="S5.F23.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/327;" width="685" height="327" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/single_col.png" id="S5.F23.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/327;" width="685" height="327" alt="Refer to caption" />
 <figcaption>Figure S23: The Good Model Result and Bad Model Result for Single Column Pages.</figcaption>
 </figure>
 
 <figure id="S5.F24" class="ltx_figure">
-<img src="2412.07626v2/double_col.png" id="S5.F24.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/326;" width="685" height="326" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/double_col.png" id="S5.F24.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/326;" width="685" height="326" alt="Refer to caption" />
 <figcaption>Figure S24: The Good Model Result and Bad Model Result for Double Column Pages.</figcaption>
 </figure>
 
 <figure id="S5.F25" class="ltx_figure">
-<img src="2412.07626v2/three_col.png" id="S5.F25.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/325;" width="685" height="325" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/three_col.png" id="S5.F25.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/325;" width="685" height="325" alt="Refer to caption" />
 <figcaption>Figure S25: The Good Model Result and Bad Model Result for Three Column Pages.</figcaption>
 </figure>
 
 <figure id="S5.F26" class="ltx_figure">
-<img src="2412.07626v2/complex_layout.png" id="S5.F26.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/323;" width="685" height="323" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/complex_layout.png" id="S5.F26.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/323;" width="685" height="323" alt="Refer to caption" />
 <figcaption>Figure S26: The Good Model Result and Bad Model Result for Complex Layout Pages.</figcaption>
 </figure>
 
 <figure id="S5.F27" class="ltx_figure">
-<img src="2412.07626v2/text_chinese.png" id="S5.F27.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/325;" width="685" height="325" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/text_chinese.png" id="S5.F27.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/325;" width="685" height="325" alt="Refer to caption" />
 <figcaption>Figure S27: The Good Model Result and Bad Model Result for Text Language in Chinese.</figcaption>
 </figure>
 
 <figure id="S5.F28" class="ltx_figure">
-<img src="2412.07626v2/text_english.png" id="S5.F28.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/324;" width="685" height="324" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/text_english.png" id="S5.F28.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/324;" width="685" height="324" alt="Refer to caption" />
 <figcaption>Figure S28: The Good Model Result and Bad Model Result for Text Language in English.</figcaption>
 </figure>
 
 <figure id="S5.F29" class="ltx_figure">
-<img src="2412.07626v2/text_colorful_background.png" id="S5.F29.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/324;" width="685" height="324" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/text_colorful_background.png" id="S5.F29.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/324;" width="685" height="324" alt="Refer to caption" />
 <figcaption>Figure S29: The Good Model Result and Bad Model Result for Text with Colorful Background.</figcaption>
 </figure>
 
 <figure id="S5.F30" class="ltx_figure">
-<img src="2412.07626v2/text_rotate.png" id="S5.F30.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/323;" width="685" height="323" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/text_rotate.png" id="S5.F30.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/323;" width="685" height="323" alt="Refer to caption" />
 <figcaption>Figure S30: The Bad Model Result for Text with Rotation.</figcaption>
 </figure>
 
 <figure id="S5.F31" class="ltx_figure">
-<img src="2412.07626v2/badcase_table_threeline.png" id="S5.F31.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:548/386;" width="548" height="386" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/badcase_table_threeline.png" id="S5.F31.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:548/386;" width="548" height="386" alt="Refer to caption" />
 <figcaption>Figure S31: The Good Model Result and Bad Model Result for Three Line Frame Table.</figcaption>
 </figure>
 
 <figure id="S5.F32" class="ltx_figure">
-<img src="2412.07626v2/badcase_table_noframe.png" id="S5.F32.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:548/408;" width="548" height="408" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/badcase_table_noframe.png" id="S5.F32.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:548/408;" width="548" height="408" alt="Refer to caption" />
 <figcaption>Figure S32: The Good Model Result and Bad Model Result for No Frame Table.</figcaption>
 </figure>
 
 <figure id="S5.F33" class="ltx_figure">
-<img src="2412.07626v2/badcase_table_rotate.png" id="S5.F33.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:548/385;" width="548" height="385" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/badcase_table_rotate.png" id="S5.F33.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:548/385;" width="548" height="385" alt="Refer to caption" />
 <figcaption>Figure S33: The Good Model Result and Bad Model Result for Rotated Table.</figcaption>
 </figure>
 
 <figure id="S5.F34" class="ltx_figure">
-<img src="2412.07626v2/badcase_table_formula.png" id="S5.F34.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/371;" width="685" height="371" alt="Refer to caption" />
+<img src="https://arxiv.org/html/2412.07626v2/badcase_table_formula.png" id="S5.F34.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:685/371;" width="685" height="371" alt="Refer to caption" />
 <figcaption>Figure S34: The Good Model Result and Bad Model Result for Table with Formula.</figcaption>
 </figure>
