@@ -193,31 +193,31 @@ The third is the path length between long-range dependencies in the network. Lea
 </tr>
 <tr id="S4.T1.2.3" class="ltx_tr">
 <td id="S4.T1.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">Self-Attention</td>
-<td id="S4.T1.2.3.2" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>⋅</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n^{2}\cdot d)</annotation></semantics></math></td>
-<td id="S4.T1.2.3.3" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></td>
-<td id="S4.T1.2.3.4" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></td>
+<td id="S4.T1.2.3.2" class="ltx_td ltx_align_center ltx_border_t">$O(n^{2}\cdot d)$</td>
+<td id="S4.T1.2.3.3" class="ltx_td ltx_align_center ltx_border_t">$O(1)$</td>
+<td id="S4.T1.2.3.4" class="ltx_td ltx_align_center ltx_border_t">$O(1)$</td>
 </tr>
 <tr id="S4.T1.2.4" class="ltx_tr">
 <td id="S4.T1.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Recurrent</td>
-<td id="S4.T1.2.4.2" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>⋅</mo><msup><mi>d</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n\cdot d^{2})</annotation></semantics></math></td>
-<td id="S4.T1.2.4.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></td>
-<td id="S4.T1.2.4.4" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></td>
+<td id="S4.T1.2.4.2" class="ltx_td ltx_align_center">$O(n\cdot d^{2})$</td>
+<td id="S4.T1.2.4.3" class="ltx_td ltx_align_center">$O(n)$</td>
+<td id="S4.T1.2.4.4" class="ltx_td ltx_align_center">$O(n)$</td>
 </tr>
 <tr id="S4.T1.2.5" class="ltx_tr">
 <td id="S4.T1.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Convolutional</td>
-<td id="S4.T1.2.5.2" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>⋅</mo><mi>n</mi><mo>⋅</mo><msup><mi>d</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(k\cdot n\cdot d^{2})</annotation></semantics></math></td>
-<td id="S4.T1.2.5.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></td>
-<td id="S4.T1.2.5.4" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(log_{k}(n))</annotation></semantics></math></td>
+<td id="S4.T1.2.5.2" class="ltx_td ltx_align_center">$O(k\cdot n\cdot d^{2})$</td>
+<td id="S4.T1.2.5.3" class="ltx_td ltx_align_center">$O(1)$</td>
+<td id="S4.T1.2.5.4" class="ltx_td ltx_align_center">$O(log_{k}(n))$</td>
 </tr>
 <tr id="S4.T1.2.6" class="ltx_tr">
 <td id="S4.T1.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">Self-Attention (restricted)</td>
-<td id="S4.T1.2.6.2" class="ltx_td ltx_align_center ltx_border_bb"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>⋅</mo><mi>n</mi><mo>⋅</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(r\cdot n\cdot d)</annotation></semantics></math></td>
-<td id="S4.T1.2.6.3" class="ltx_td ltx_align_center ltx_border_bb"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></td>
-<td id="S4.T1.2.6.4" class="ltx_td ltx_align_center ltx_border_bb"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>/</mi><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n/r)</annotation></semantics></math></td>
+<td id="S4.T1.2.6.2" class="ltx_td ltx_align_center ltx_border_bb">$O(r\cdot n\cdot d)$</td>
+<td id="S4.T1.2.6.3" class="ltx_td ltx_align_center ltx_border_bb">$O(1)$</td>
+<td id="S4.T1.2.6.4" class="ltx_td ltx_align_center ltx_border_bb">$O(n/r)$</td>
 </tr>
 </tbody>
 </table>
-<figcaption>Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> is the sequence length, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> is the representation dimension, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> is the kernel size of convolutions and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math> the size of the neighborhood in restricted self-attention.</figcaption>
+<figcaption>Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. $n$ is the sequence length, $d$ is the representation dimension, $k$ is the kernel size of convolutions and $r$ the size of the neighborhood in restricted self-attention.</figcaption>
 </figure>
 
 As noted in Table [1](#S4.T1 "Table 1 ‣ 4 Why Self-Attention ‣ Attention Is All You Need"), a self-attention layer connects all positions with a constant number of sequentially executed operations, whereas a recurrent layer requires $`O(n)`$ sequential operations. In terms of computational complexity, self-attention layers are faster than recurrent layers when the sequence length $`n`$ is smaller than the representation dimensionality $`d`$, which is most often the case with sentence representations used by state-of-the-art models in machine translations, such as word-piece \[[38](#bib.bib38)\] and byte-pair \[[31](#bib.bib31)\] representations. To improve computational performance for tasks involving very long sequences, self-attention could be restricted to considering only a neighborhood of size $`r`$ in the input sequence centered around the respective output position. This would increase the maximum path length to $`O(n/r)`$. We plan to investigate this approach further in future work.
@@ -294,31 +294,31 @@ During training, we employed label smoothing of value $`\epsilon_{ls}=0.1`$ \[[3
 <td id="S6.T2.2.4.3" class="ltx_td ltx_align_center">39.2</td>
 <td id="S6.T2.2.4.4" class="ltx_td"></td>
 <td id="S6.T2.2.4.5" class="ltx_td"></td>
-<td id="S6.T2.2.4.6" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.0</mn><mo>⋅</mo><msup><mn>10</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">1.0\cdot 10^{20}</annotation></semantics></math></td>
+<td id="S6.T2.2.4.6" class="ltx_td ltx_align_center">$1.0\cdot 10^{20}$</td>
 </tr>
 <tr id="S6.T2.2.5" class="ltx_tr">
 <th id="S6.T2.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">GNMT + RL [<a href="#bib.bib38">38</a>]</th>
 <td id="S6.T2.2.5.2" class="ltx_td ltx_align_center">24.6</td>
 <td id="S6.T2.2.5.3" class="ltx_td ltx_align_center">39.92</td>
 <td id="S6.T2.2.5.4" class="ltx_td"></td>
-<td id="S6.T2.2.5.5" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.3</mn><mo>⋅</mo><msup><mn>10</mn><mn>19</mn></msup></mrow><annotation encoding="application/x-tex">2.3\cdot 10^{19}</annotation></semantics></math></td>
-<td id="S6.T2.2.5.6" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.4</mn><mo>⋅</mo><msup><mn>10</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">1.4\cdot 10^{20}</annotation></semantics></math></td>
+<td id="S6.T2.2.5.5" class="ltx_td ltx_align_center">$2.3\cdot 10^{19}$</td>
+<td id="S6.T2.2.5.6" class="ltx_td ltx_align_center">$1.4\cdot 10^{20}$</td>
 </tr>
 <tr id="S6.T2.2.6" class="ltx_tr">
 <th id="S6.T2.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">ConvS2S [<a href="#bib.bib9">9</a>]</th>
 <td id="S6.T2.2.6.2" class="ltx_td ltx_align_center">25.16</td>
 <td id="S6.T2.2.6.3" class="ltx_td ltx_align_center">40.46</td>
 <td id="S6.T2.2.6.4" class="ltx_td"></td>
-<td id="S6.T2.2.6.5" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9.6</mn><mo>⋅</mo><msup><mn>10</mn><mn>18</mn></msup></mrow><annotation encoding="application/x-tex">9.6\cdot 10^{18}</annotation></semantics></math></td>
-<td id="S6.T2.2.6.6" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn><mo>⋅</mo><msup><mn>10</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">1.5\cdot 10^{20}</annotation></semantics></math></td>
+<td id="S6.T2.2.6.5" class="ltx_td ltx_align_center">$9.6\cdot 10^{18}$</td>
+<td id="S6.T2.2.6.6" class="ltx_td ltx_align_center">$1.5\cdot 10^{20}$</td>
 </tr>
 <tr id="S6.T2.2.7" class="ltx_tr">
 <th id="S6.T2.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">MoE [<a href="#bib.bib32">32</a>]</th>
 <td id="S6.T2.2.7.2" class="ltx_td ltx_align_center">26.03</td>
 <td id="S6.T2.2.7.3" class="ltx_td ltx_align_center">40.56</td>
 <td id="S6.T2.2.7.4" class="ltx_td"></td>
-<td id="S6.T2.2.7.5" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.0</mn><mo>⋅</mo><msup><mn>10</mn><mn>19</mn></msup></mrow><annotation encoding="application/x-tex">2.0\cdot 10^{19}</annotation></semantics></math></td>
-<td id="S6.T2.2.7.6" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.2</mn><mo>⋅</mo><msup><mn>10</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">1.2\cdot 10^{20}</annotation></semantics></math></td>
+<td id="S6.T2.2.7.5" class="ltx_td ltx_align_center">$2.0\cdot 10^{19}$</td>
+<td id="S6.T2.2.7.6" class="ltx_td ltx_align_center">$1.2\cdot 10^{20}$</td>
 </tr>
 <tr id="S6.T2.2.8" class="ltx_tr">
 <th id="S6.T2.2.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">Deep-Att + PosUnk Ensemble [<a href="#bib.bib39">39</a>]</th>
@@ -326,37 +326,37 @@ During training, we employed label smoothing of value $`\epsilon_{ls}=0.1`$ \[[3
 <td id="S6.T2.2.8.3" class="ltx_td ltx_align_center ltx_border_t">40.4</td>
 <td id="S6.T2.2.8.4" class="ltx_td ltx_border_t"></td>
 <td id="S6.T2.2.8.5" class="ltx_td ltx_border_t"></td>
-<td id="S6.T2.2.8.6" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8.0</mn><mo>⋅</mo><msup><mn>10</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">8.0\cdot 10^{20}</annotation></semantics></math></td>
+<td id="S6.T2.2.8.6" class="ltx_td ltx_align_center ltx_border_t">$8.0\cdot 10^{20}$</td>
 </tr>
 <tr id="S6.T2.2.9" class="ltx_tr">
 <th id="S6.T2.2.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">GNMT + RL Ensemble [<a href="#bib.bib38">38</a>]</th>
 <td id="S6.T2.2.9.2" class="ltx_td ltx_align_center">26.30</td>
 <td id="S6.T2.2.9.3" class="ltx_td ltx_align_center">41.16</td>
 <td id="S6.T2.2.9.4" class="ltx_td"></td>
-<td id="S6.T2.2.9.5" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.8</mn><mo>⋅</mo><msup><mn>10</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">1.8\cdot 10^{20}</annotation></semantics></math></td>
-<td id="S6.T2.2.9.6" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.1</mn><mo>⋅</mo><msup><mn>10</mn><mn>21</mn></msup></mrow><annotation encoding="application/x-tex">1.1\cdot 10^{21}</annotation></semantics></math></td>
+<td id="S6.T2.2.9.5" class="ltx_td ltx_align_center">$1.8\cdot 10^{20}$</td>
+<td id="S6.T2.2.9.6" class="ltx_td ltx_align_center">$1.1\cdot 10^{21}$</td>
 </tr>
 <tr id="S6.T2.2.10" class="ltx_tr">
 <th id="S6.T2.2.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">ConvS2S Ensemble [<a href="#bib.bib9">9</a>]</th>
 <td id="S6.T2.2.10.2" class="ltx_td ltx_align_center">26.36</td>
 <td id="S6.T2.2.10.3" class="ltx_td ltx_align_center">41.29</td>
 <td id="S6.T2.2.10.4" class="ltx_td"></td>
-<td id="S6.T2.2.10.5" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.7</mn><mo>⋅</mo><msup><mn>10</mn><mn>19</mn></msup></mrow><annotation encoding="application/x-tex">7.7\cdot 10^{19}</annotation></semantics></math></td>
-<td id="S6.T2.2.10.6" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.2</mn><mo>⋅</mo><msup><mn>10</mn><mn>21</mn></msup></mrow><annotation encoding="application/x-tex">1.2\cdot 10^{21}</annotation></semantics></math></td>
+<td id="S6.T2.2.10.5" class="ltx_td ltx_align_center">$7.7\cdot 10^{19}$</td>
+<td id="S6.T2.2.10.6" class="ltx_td ltx_align_center">$1.2\cdot 10^{21}$</td>
 </tr>
 <tr id="S6.T2.2.11" class="ltx_tr">
 <th id="S6.T2.2.11.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">Transformer (base model)</th>
 <td id="S6.T2.2.11.2" class="ltx_td ltx_align_center ltx_border_t">27.3</td>
 <td id="S6.T2.2.11.3" class="ltx_td ltx_align_center ltx_border_t">38.1</td>
 <td id="S6.T2.2.11.4" class="ltx_td ltx_border_t"></td>
-<td colspan="2" id="S6.T2.2.11.5" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.3</mn><mo>⋅</mo><msup><mn>10</mn><mn>18</mn></msup></mrow><annotation encoding="application/x-tex">3.3\cdot 10^{18}</annotation></semantics></math></td>
+<td colspan="2" id="S6.T2.2.11.5" class="ltx_td ltx_align_center ltx_border_t">$3.3\cdot 10^{18}$</td>
 </tr>
 <tr id="S6.T2.2.12" class="ltx_tr">
 <th id="S6.T2.2.12.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">Transformer (big)</th>
 <td id="S6.T2.2.12.2" class="ltx_td ltx_align_center ltx_border_bb">28.4</td>
 <td id="S6.T2.2.12.3" class="ltx_td ltx_align_center ltx_border_bb">41.8</td>
 <td id="S6.T2.2.12.4" class="ltx_td ltx_border_bb"></td>
-<td colspan="2" id="S6.T2.2.12.5" class="ltx_td ltx_align_center ltx_border_bb"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.3</mn><mo>⋅</mo><msup><mn>10</mn><mn>19</mn></msup></mrow><annotation encoding="application/x-tex">2.3\cdot 10^{19}</annotation></semantics></math></td>
+<td colspan="2" id="S6.T2.2.12.5" class="ltx_td ltx_align_center ltx_border_bb">$2.3\cdot 10^{19}$</td>
 </tr>
 </tbody>
 </table>
@@ -378,14 +378,14 @@ Table [2](#S6.T2 "Table 2 ‣ 6.1 Machine Translation ‣ 6 Results ‣ Attentio
 <tbody class="ltx_tbody">
 <tr id="S6.T3.2.1" class="ltx_tr">
 <td id="S6.T3.2.1.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"></td>
-<td rowspan="2" id="S6.T3.2.1.2" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math></td>
-<td rowspan="2" id="S6.T3.2.1.3" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mtext mathvariant="normal">model</mtext></msub><annotation encoding="application/x-tex">d_{\text{model}}</annotation></semantics></math></td>
-<td rowspan="2" id="S6.T3.2.1.4" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mtext mathvariant="normal">ff</mtext></msub><annotation encoding="application/x-tex">d_{\text{ff}}</annotation></semantics></math></td>
-<td rowspan="2" id="S6.T3.2.1.5" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math></td>
-<td rowspan="2" id="S6.T3.2.1.6" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>k</mi></msub><annotation encoding="application/x-tex">d_{k}</annotation></semantics></math></td>
-<td rowspan="2" id="S6.T3.2.1.7" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>v</mi></msub><annotation encoding="application/x-tex">d_{v}</annotation></semantics></math></td>
-<td rowspan="2" id="S6.T3.2.1.8" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mrow><mi>d</mi><mi>r</mi><mi>o</mi><mi>p</mi></mrow></msub><annotation encoding="application/x-tex">P_{drop}</annotation></semantics></math></td>
-<td rowspan="2" id="S6.T3.2.1.9" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ϵ</mi><mrow><mi>l</mi><mi>s</mi></mrow></msub><annotation encoding="application/x-tex">\epsilon_{ls}</annotation></semantics></math></td>
+<td rowspan="2" id="S6.T3.2.1.2" class="ltx_td ltx_align_center ltx_border_t">$N$</td>
+<td rowspan="2" id="S6.T3.2.1.3" class="ltx_td ltx_align_center ltx_border_t">$d_{\text{model}}$</td>
+<td rowspan="2" id="S6.T3.2.1.4" class="ltx_td ltx_align_center ltx_border_t">$d_{\text{ff}}$</td>
+<td rowspan="2" id="S6.T3.2.1.5" class="ltx_td ltx_align_center ltx_border_t">$h$</td>
+<td rowspan="2" id="S6.T3.2.1.6" class="ltx_td ltx_align_center ltx_border_t">$d_{k}$</td>
+<td rowspan="2" id="S6.T3.2.1.7" class="ltx_td ltx_align_center ltx_border_t">$d_{v}$</td>
+<td rowspan="2" id="S6.T3.2.1.8" class="ltx_td ltx_align_center ltx_border_t">$P_{drop}$</td>
+<td rowspan="2" id="S6.T3.2.1.9" class="ltx_td ltx_align_center ltx_border_t">$\epsilon_{ls}$</td>
 <td id="S6.T3.2.1.10" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">train</td>
 <td id="S6.T3.2.1.11" class="ltx_td ltx_align_center ltx_border_t">PPL</td>
 <td id="S6.T3.2.1.12" class="ltx_td ltx_align_center ltx_border_t">BLEU</td>
@@ -396,7 +396,7 @@ Table [2](#S6.T2 "Table 2 ‣ 6.1 Machine Translation ‣ 6 Results ‣ Attentio
 <td id="S6.T3.2.2.2" class="ltx_td ltx_align_center ltx_border_r">steps</td>
 <td id="S6.T3.2.2.3" class="ltx_td ltx_align_center">(dev)</td>
 <td id="S6.T3.2.2.4" class="ltx_td ltx_align_center">(dev)</td>
-<td id="S6.T3.2.2.5" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>×</mi><msup><mn>10</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">\times 10^{6}</annotation></semantics></math></td>
+<td id="S6.T3.2.2.5" class="ltx_td ltx_align_center">$\times 10^{6}$</td>
 </tr>
 <tr id="S6.T3.2.3" class="ltx_tr">
 <td id="S6.T3.2.3.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">base</td>

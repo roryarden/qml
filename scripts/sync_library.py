@@ -29,6 +29,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from html import unescape
 from pathlib import Path
 from typing import Any
 
@@ -116,10 +117,40 @@ def strip_inline_graphics(html: str) -> str:
     return re.sub(r'<img\b[^>]*\bsrc="data:[^"]*"[^>]*>', "", html)
 
 
+def strip_latexml_errors(html: str) -> str:
+    """Drop LaTeXML error nodes (unparsable commands like \\usetikzlibrary)."""
+    return re.sub(
+        r'<(span|div)\b[^>]*class="[^"]*ltx_ERROR[^"]*"[^>]*>.*?</\1>',
+        "",
+        html,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+
+
 def display_math_to_dollars(text: str) -> str:
     """Convert pandoc's ``` math fenced blocks to $$...$$ for GitHub."""
     pattern = re.compile(r"^``` ?math\n(.*?)\n```$", re.MULTILINE | re.DOTALL)
     return pattern.sub(lambda m: f"$$\n{m.group(1)}\n$$", text)
+
+
+def mathml_to_tex(text: str) -> str:
+    """Replace leftover MathML blocks with their x-tex annotation as $...$.
+
+    Only MathML that pandoc could not parse (inside raw HTML tables) survives to
+    this stage; prose math is already handled as AST Math nodes.
+    """
+    def repl(match: re.Match[str]) -> str:
+        annotation = re.search(
+            r'<annotation[^>]*encoding="application/x-tex"[^>]*>(.*?)</annotation>',
+            match.group(0),
+            re.DOTALL,
+        )
+        if annotation is None:
+            return ""
+        tex = unescape(annotation.group(1)).strip()
+        return f"${tex}$" if tex else ""
+
+    return re.sub(r"<math\b.*?</math>", repl, text, flags=re.DOTALL | re.IGNORECASE)
 
 
 def html_to_markdown(html: str) -> str:
@@ -343,8 +374,9 @@ def add_paper(arxiv_id: str) -> bool:
         return False
 
     markdown = build_front_matter(versioned_id, meta)
-    article = absolutize_urls(strip_inline_graphics(extract_article(html)), source_url)
-    markdown += display_math_to_dollars(html_to_markdown(article))
+    article = strip_latexml_errors(strip_inline_graphics(extract_article(html)))
+    article = absolutize_urls(article, source_url)
+    markdown += mathml_to_tex(display_math_to_dollars(html_to_markdown(article)))
 
     md_path = MD_DIR / f"{stem}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)

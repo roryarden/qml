@@ -366,13 +366,13 @@ Reading Order Extraction. Upon completion of the extraction, the start and end p
 <tr id="S4.T2.3.1.1" class="ltx_tr">
 <td rowspan="2" id="S4.T2.3.1.1.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Method Type</td>
 <td rowspan="2" id="S4.T2.3.1.1.2" class="ltx_td ltx_align_left ltx_border_r ltx_border_tt">Methods</td>
-<td colspan="2" id="S4.T2.3.1.1.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Text<sup>Edit</sup><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↓</mo><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></td>
-<td colspan="2" id="S4.T2.3.1.1.4" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Formula<sup>Edit</sup><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↓</mo><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></td>
-<td colspan="2" id="S4.T2.3.1.1.5" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Formula<sup>CDM</sup><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↑</mo><annotation encoding="application/x-tex">\uparrow</annotation></semantics></math></td>
-<td colspan="2" id="S4.T2.3.1.1.6" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Table<sup>TEDS</sup><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↑</mo><annotation encoding="application/x-tex">\uparrow</annotation></semantics></math></td>
-<td colspan="2" id="S4.T2.3.1.1.7" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Table<sup>Edit</sup><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↓</mo><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></td>
-<td colspan="2" id="S4.T2.3.1.1.8" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Read Order<sup>Edit</sup><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↓</mo><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></td>
-<td colspan="2" id="S4.T2.3.1.1.9" class="ltx_td ltx_align_center ltx_border_tt">Overall<sup>Edit</sup><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↓</mo><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></td>
+<td colspan="2" id="S4.T2.3.1.1.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Text<sup>Edit</sup>$\downarrow$</td>
+<td colspan="2" id="S4.T2.3.1.1.4" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Formula<sup>Edit</sup>$\downarrow$</td>
+<td colspan="2" id="S4.T2.3.1.1.5" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Formula<sup>CDM</sup>$\uparrow$</td>
+<td colspan="2" id="S4.T2.3.1.1.6" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Table<sup>TEDS</sup>$\uparrow$</td>
+<td colspan="2" id="S4.T2.3.1.1.7" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Table<sup>Edit</sup>$\downarrow$</td>
+<td colspan="2" id="S4.T2.3.1.1.8" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Read Order<sup>Edit</sup>$\downarrow$</td>
+<td colspan="2" id="S4.T2.3.1.1.9" class="ltx_td ltx_align_center ltx_border_tt">Overall<sup>Edit</sup>$\downarrow$</td>
 </tr>
 <tr id="S4.T2.3.1.2" class="ltx_tr">
 <td id="S4.T2.3.1.2.1" class="ltx_td ltx_align_center ltx_border_t">EN</td>

@@ -22,8 +22,6 @@ abstract: >
   This tutorial intends to introduce readers with a background in AI to quantum machine learning (QML) -- a rapidly evolving field that seeks to leverage the power of quantum computers to reshape the landscape of machine learning. For self-consistency, this tutorial covers foundational principles, representative QML algorithms, their potential applications, and critical aspects such as trainability, generalization, and computational complexity. In addition, practical code demonstrations are provided in https://qml-tutorial.github.io/ to illustrate real-world implementations and facilitate hands-on learning. Together, these elements offer readers a comprehensive overview of the latest advancements in QML. By bridging the gap between classical machine learning and quantum computing, this tutorial serves as a valuable resource for those looking to engage with QML and explore the forefront of AI in the quantum era.
 ---
 
-\usetikzlibrary
-
 shadows
 
 Quantum Machine Learning\
@@ -238,36 +236,36 @@ The advantages of quantum computers stem primarily from the key distinctions bet
   <td id="Ch1.T2.4.1.3" class="ltx_td ltx_align_center ltx_border_tt">Quantum</td>
   </tr>
   <tr id="Ch1.T2.4.2" class="ltx_tr">
-  <td id="Ch1.T2.4.2.1" class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Single bit (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N=1</annotation></semantics></math>)</td>
-  <td id="Ch1.T2.4.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒙</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\boldsymbol{x}\in\{0,1\}</annotation></semantics></math></td>
+  <td id="Ch1.T2.4.2.1" class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Single bit ($N=1$)</td>
+  <td id="Ch1.T2.4.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">$\boldsymbol{x}\in\{0,1\}$</td>
   <td id="Ch1.T2.4.2.3" class="ltx_td ltx_align_center ltx_border_t"><table id="Ch1.T2.4.2.3.1" class="ltx_tabular ltx_align_middle">
   <tbody>
   <tr id="Ch1.T2.4.2.3.1.1" class="ltx_tr">
-  <td id="Ch1.T2.4.2.3.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>2</mn></msub><msup><mo stretchy="false" form="postfix">]</mo><mo>†</mo></msup><mo>∈</mo><msup><mi mathvariant="double-struck">ℂ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">[a_{1},a_{2}]^{\dagger}\in\mathbb{C}^{2}</annotation></semantics></math></td>
+  <td id="Ch1.T2.4.2.3.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center">$[a_{1},a_{2}]^{\dagger}\in\mathbb{C}^{2}$</td>
   </tr>
   <tr id="Ch1.T2.4.2.3.1.2" class="ltx_tr">
-  <td id="Ch1.T2.4.2.3.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center">s.t. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>a</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>a</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a_{1}^{2}+a_{2}^{2}=1</annotation></semantics></math></td>
+  <td id="Ch1.T2.4.2.3.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center">s.t. $a_{1}^{2}+a_{2}^{2}=1$</td>
   </tr>
   </tbody>
   </table></td>
   </tr>
   <tr id="Ch1.T2.4.3" class="ltx_tr">
-  <td id="Ch1.T2.4.3.1" class="ltx_td ltx_align_left ltx_border_b ltx_border_r ltx_border_t">Multiple bits (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N&gt;1</annotation></semantics></math>)</td>
-  <td id="Ch1.T2.4.3.2" class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒙</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">\boldsymbol{x}\in\{0,1\}^{N}</annotation></semantics></math></td>
+  <td id="Ch1.T2.4.3.1" class="ltx_td ltx_align_left ltx_border_b ltx_border_r ltx_border_t">Multiple bits ($N>1$)</td>
+  <td id="Ch1.T2.4.3.2" class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">$\boldsymbol{x}\in\{0,1\}^{N}$</td>
   <td id="Ch1.T2.4.3.3" class="ltx_td ltx_align_center ltx_border_b ltx_border_t"><table id="Ch1.T2.4.3.3.1" class="ltx_tabular ltx_align_middle">
   <tbody>
   <tr id="Ch1.T2.4.3.3.1.1" class="ltx_tr">
-  <td id="Ch1.T2.4.3.3.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center">s.t.<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>2</mn></msub><mo>,</mo><mi>.</mi><mi>.</mi><mi>.</mi><mo>,</mo><msub><mi>a</mi><msup><mn>2</mn><mi>N</mi></msup></msub><msup><mo stretchy="false" form="postfix">]</mo><mo>†</mo></msup><mo>∈</mo><msup><mi mathvariant="double-struck">ℂ</mi><msup><mn>2</mn><mi>N</mi></msup></msup></mrow><annotation encoding="application/x-tex">[a_{1},a_{2},...,a_{2^{N}}]^{\dagger}\in\mathbb{C}^{2^{N}}</annotation></semantics></math></td>
+  <td id="Ch1.T2.4.3.3.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center">s.t.$[a_{1},a_{2},...,a_{2^{N}}]^{\dagger}\in\mathbb{C}^{2^{N}}$</td>
   </tr>
   <tr id="Ch1.T2.4.3.3.1.2" class="ltx_tr">
-  <td id="Ch1.T2.4.3.3.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center">s.t. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>a</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>a</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mi>.</mi><mi>.</mi><mi>.</mi><mo>+</mo><msubsup><mi>a</mi><msup><mn>2</mn><mi>N</mi></msup><mn>2</mn></msubsup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a_{1}^{2}+a_{2}^{2}+...+a_{2^{N}}^{2}=1</annotation></semantics></math></td>
+  <td id="Ch1.T2.4.3.3.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center">s.t. $a_{1}^{2}+a_{2}^{2}+...+a_{2^{N}}^{2}=1$</td>
   </tr>
   </tbody>
   </table></td>
   </tr>
   </tbody>
   </table>
-  <figcaption>Table 1.2: Mathematical representations of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-(quantum) bits in classical and quantum computers. Here the symbols ‘<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>†</mi><annotation encoding="application/x-tex">\dagger</annotation></semantics></math>’ and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math> denote the transpose conjugation and complex space, respectively.</figcaption>
+  <figcaption>Table 1.2: Mathematical representations of $N$-(quantum) bits in classical and quantum computers. Here the symbols ‘$\dagger$’ and $\mathbb{C}$ denote the transpose conjugation and complex space, respectively.</figcaption>
   </figure>
 
 - <span id="Ch1.S1.I1.i2">•</span>
@@ -291,8 +289,8 @@ where $`m\leq N`$ is a number of qubits selected from the given $`N`$-qubit quan
 <tbody>
 <tr id="Ch1.T3.4.1" class="ltx_tr">
 <td id="Ch1.T3.4.1.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Date</td>
-<td id="Ch1.T3.4.1.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mi>Q</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\log_{2}(V_{Q})</annotation></semantics></math></td>
-<td id="Ch1.T3.4.1.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math></td>
+<td id="Ch1.T3.4.1.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">$\log_{2}(V_{Q})$</td>
+<td id="Ch1.T3.4.1.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">$N$</td>
 <td id="Ch1.T3.4.1.4" class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Manufacturer</td>
 <td id="Ch1.T3.4.1.5" class="ltx_td ltx_align_center ltx_border_tt">System Name</td>
 </tr>
@@ -741,12 +739,12 @@ Logic gates are the basic components of a digital circuit. They take binary inpu
     <td id="Ch2.T1.4.1.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_tt">Output (NOT A)</td>
     </tr>
     <tr id="Ch2.T1.4.2" class="ltx_tr">
-    <td id="Ch2.T1.4.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T1.4.2.2" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+    <td id="Ch2.T1.4.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">$0$</td>
+    <td id="Ch2.T1.4.2.2" class="ltx_td ltx_align_center ltx_border_t">$1$</td>
     </tr>
     <tr id="Ch2.T1.4.3" class="ltx_tr">
-    <td id="Ch2.T1.4.3.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T1.4.3.2" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+    <td id="Ch2.T1.4.3.1" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T1.4.3.2" class="ltx_td ltx_align_center">$0$</td>
     </tr>
     </tbody>
     </table>
@@ -766,24 +764,24 @@ Logic gates are the basic components of a digital circuit. They take binary inpu
     <td id="Ch2.T2.4.1.3" class="ltx_td ltx_align_center ltx_border_tt">Output (A AND B)</td>
     </tr>
     <tr id="Ch2.T2.4.2" class="ltx_tr">
-    <td id="Ch2.T2.4.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T2.4.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T2.4.2.3" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+    <td id="Ch2.T2.4.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">$0$</td>
+    <td id="Ch2.T2.4.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">$0$</td>
+    <td id="Ch2.T2.4.2.3" class="ltx_td ltx_align_center ltx_border_t">$0$</td>
     </tr>
     <tr id="Ch2.T2.4.3" class="ltx_tr">
-    <td id="Ch2.T2.4.3.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T2.4.3.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T2.4.3.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+    <td id="Ch2.T2.4.3.1" class="ltx_td ltx_align_center ltx_border_r">$0$</td>
+    <td id="Ch2.T2.4.3.2" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T2.4.3.3" class="ltx_td ltx_align_center">$0$</td>
     </tr>
     <tr id="Ch2.T2.4.4" class="ltx_tr">
-    <td id="Ch2.T2.4.4.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T2.4.4.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T2.4.4.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+    <td id="Ch2.T2.4.4.1" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T2.4.4.2" class="ltx_td ltx_align_center ltx_border_r">$0$</td>
+    <td id="Ch2.T2.4.4.3" class="ltx_td ltx_align_center">$0$</td>
     </tr>
     <tr id="Ch2.T2.4.5" class="ltx_tr">
-    <td id="Ch2.T2.4.5.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T2.4.5.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T2.4.5.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+    <td id="Ch2.T2.4.5.1" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T2.4.5.2" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T2.4.5.3" class="ltx_td ltx_align_center">$1$</td>
     </tr>
     </tbody>
     </table>
@@ -803,24 +801,24 @@ Logic gates are the basic components of a digital circuit. They take binary inpu
     <td id="Ch2.T3.4.1.3" class="ltx_td ltx_align_center ltx_border_tt">Output (A OR B)</td>
     </tr>
     <tr id="Ch2.T3.4.2" class="ltx_tr">
-    <td id="Ch2.T3.4.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T3.4.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T3.4.2.3" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+    <td id="Ch2.T3.4.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">$0$</td>
+    <td id="Ch2.T3.4.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">$0$</td>
+    <td id="Ch2.T3.4.2.3" class="ltx_td ltx_align_center ltx_border_t">$0$</td>
     </tr>
     <tr id="Ch2.T3.4.3" class="ltx_tr">
-    <td id="Ch2.T3.4.3.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T3.4.3.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T3.4.3.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+    <td id="Ch2.T3.4.3.1" class="ltx_td ltx_align_center ltx_border_r">$0$</td>
+    <td id="Ch2.T3.4.3.2" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T3.4.3.3" class="ltx_td ltx_align_center">$1$</td>
     </tr>
     <tr id="Ch2.T3.4.4" class="ltx_tr">
-    <td id="Ch2.T3.4.4.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T3.4.4.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T3.4.4.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+    <td id="Ch2.T3.4.4.1" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T3.4.4.2" class="ltx_td ltx_align_center ltx_border_r">$0$</td>
+    <td id="Ch2.T3.4.4.3" class="ltx_td ltx_align_center">$1$</td>
     </tr>
     <tr id="Ch2.T3.4.5" class="ltx_tr">
-    <td id="Ch2.T3.4.5.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T3.4.5.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T3.4.5.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+    <td id="Ch2.T3.4.5.1" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T3.4.5.2" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T3.4.5.3" class="ltx_td ltx_align_center">$1$</td>
     </tr>
     </tbody>
     </table>
@@ -840,24 +838,24 @@ Logic gates are the basic components of a digital circuit. They take binary inpu
     <td id="Ch2.T4.4.1.3" class="ltx_td ltx_align_center ltx_border_tt">Output (A XOR B)</td>
     </tr>
     <tr id="Ch2.T4.4.2" class="ltx_tr">
-    <td id="Ch2.T4.4.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T4.4.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T4.4.2.3" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+    <td id="Ch2.T4.4.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">$0$</td>
+    <td id="Ch2.T4.4.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">$0$</td>
+    <td id="Ch2.T4.4.2.3" class="ltx_td ltx_align_center ltx_border_t">$0$</td>
     </tr>
     <tr id="Ch2.T4.4.3" class="ltx_tr">
-    <td id="Ch2.T4.4.3.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T4.4.3.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T4.4.3.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+    <td id="Ch2.T4.4.3.1" class="ltx_td ltx_align_center ltx_border_r">$0$</td>
+    <td id="Ch2.T4.4.3.2" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T4.4.3.3" class="ltx_td ltx_align_center">$1$</td>
     </tr>
     <tr id="Ch2.T4.4.4" class="ltx_tr">
-    <td id="Ch2.T4.4.4.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T4.4.4.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
-    <td id="Ch2.T4.4.4.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+    <td id="Ch2.T4.4.4.1" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T4.4.4.2" class="ltx_td ltx_align_center ltx_border_r">$0$</td>
+    <td id="Ch2.T4.4.4.3" class="ltx_td ltx_align_center">$1$</td>
     </tr>
     <tr id="Ch2.T4.4.5" class="ltx_tr">
-    <td id="Ch2.T4.4.5.1" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T4.4.5.2" class="ltx_td ltx_align_center ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
-    <td id="Ch2.T4.4.5.3" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+    <td id="Ch2.T4.4.5.1" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T4.4.5.2" class="ltx_td ltx_align_center ltx_border_r">$1$</td>
+    <td id="Ch2.T4.4.5.3" class="ltx_td ltx_align_center">$0$</td>
     </tr>
     </tbody>
     </table>
@@ -880,7 +878,7 @@ Recall that the computational toolkit for classical computers is logic gates, e.
 
 <figure id="Ch2.F1" class="ltx_figure">
 
-<figcaption>Figure 2.1: The summarization of quantum gates. The table contains the abbreviation, the mathematical form, and the graph representation of a set of universal quantum gates. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> represents the imaginary unit.</figcaption>
+<figcaption>Figure 2.1: The summarization of quantum gates. The table contains the abbreviation, the mathematical form, and the graph representation of a set of universal quantum gates. $i$ represents the imaginary unit.</figcaption>
 </figure>
 
 Single-qubit gates. Single-qubit gates control the evolution of the single-qubit state $`\lvert{\boldsymbol{a}}\rangle`$. Due to the law of quantum mechanics, the evolved state should satisfy the normalization constraint. The implication of this constraint is that the evolution must be a unitary operation. Concretely, denoted $`U\in\mathbb{C}^{2\times 2}`$ as a linear operator and the evolved state as
@@ -932,7 +930,7 @@ $$
 
 <figure id="Ch2.F3" class="ltx_figure">
 
-<figcaption>Figure 2.3: The decomposition of the multi-qubit circuit <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> in the case of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N=3</annotation></semantics></math>.</figcaption>
+<figcaption>Figure 2.3: The decomposition of the multi-qubit circuit $U$ in the case of $N=3$.</figcaption>
 </figure>
 
 A universal quantum gate set. While many single and multi-qubit gates exist, it is sufficient to use a universal set of gates to construct any unitary operation. As proved in Chapter 4.5.2 of Ref. ([Nielsen and Chuang, 2011](#bib.bib8)), any unitary operator $`U`$ in Eqn. ([2.18](#Ch2.E18 "Equation 2.18 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) can be decomposed into the single-qubit and two-qubit gates with a certain arrangement.
@@ -1183,7 +1181,7 @@ where $`\lvert{0}\rangle^{\otimes N}`$ represents an initial state of all qubits
 
 <figure id="Ch2.F6" class="ltx_figure">
 
-<figcaption>Figure 2.6: Example of basis encoding for the integer <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>6</mn><annotation encoding="application/x-tex">6</annotation></semantics></math>.</figcaption>
+<figcaption>Figure 2.6: Example of basis encoding for the integer $6$.</figcaption>
 </figure>
 
 ##### Amplitude encoding
@@ -1244,7 +1242,7 @@ $$
 
 <figure id="Ch2.F7" class="ltx_figure">
 
-<figcaption>Figure 2.7: Example of QRAM encoding for the dataset <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒟</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal{D}=\{2,3\}</annotation></semantics></math>.</figcaption>
+<figcaption>Figure 2.7: Example of QRAM encoding for the dataset $\mathcal{D}=\{2,3\}$.</figcaption>
 </figure>
 
 QRAM allows the dataset $`\mathcal{D}`$ to be stored in a coherent quantum superposition, enabling simultaneous access to all data items through the entanglement of address and data qubits. While QRAM is theoretically powerful, its practical implementation remains a significant challenge due to the need for a large number of qubits and quantum operations (see Chapter [2.6](#Ch2.S6 "2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for the discussion).
@@ -2069,7 +2067,7 @@ To effectively introduce quantum kernel machines, it is essential to recognize t
 
 <figure id="Ch3.F2" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/QK_CK.png" id="Ch3.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:457/254;" width="457" height="254" alt="Refer to caption" />
-<figcaption>Figure 3.2: The paradigm of classical and quantum kernels. Both of the classical and quantum kernels embed the data points from data space <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒳</mi><annotation encoding="application/x-tex">\mathcal{X}</annotation></semantics></math> into high-dimensional space, and then compute the kernel as the inner product of feature maps. The quantum kernel leverages quantum circuits to achieve this goal, as indicated by the blue color.</figcaption>
+<figcaption>Figure 3.2: The paradigm of classical and quantum kernels. Both of the classical and quantum kernels embed the data points from data space $\mathcal{X}$ into high-dimensional space, and then compute the kernel as the inner product of feature maps. The quantum kernel leverages quantum circuits to achieve this goal, as indicated by the blue color.</figcaption>
 </figure>
 
 Another crucial characteristic of quantum kernels is that they can be effectively implemented on near-term quantum devices, making them a practical tool for exploring the utility of near-term quantum technologies.
@@ -2157,23 +2155,23 @@ An intuitive way to understand the connections and differences between classical
 </tr>
 <tr id="Ch3.T1.2.2" class="ltx_tr">
 <td id="Ch3.T1.2.2.1" class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Input</td>
-<td id="Ch3.T1.2.2.2" class="ltx_td ltx_align_left ltx_border_r ltx_border_t">classical data <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msup><mi mathvariant="bold-italic">𝒙</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">\{\boldsymbol{x}^{(i)}\}_{i=1}^{n}\in\mathbb{R}^{d}</annotation></semantics></math></td>
-<td id="Ch3.T1.2.2.3" class="ltx_td ltx_align_left ltx_border_t">classical data <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msup><mi mathvariant="bold-italic">𝒙</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">\{\boldsymbol{x}^{(i)}\}_{i=1}^{n}\in\mathbb{R}^{d}</annotation></semantics></math></td>
+<td id="Ch3.T1.2.2.2" class="ltx_td ltx_align_left ltx_border_r ltx_border_t">classical data $\{\boldsymbol{x}^{(i)}\}_{i=1}^{n}\in\mathbb{R}^{d}$</td>
+<td id="Ch3.T1.2.2.3" class="ltx_td ltx_align_left ltx_border_t">classical data $\{\boldsymbol{x}^{(i)}\}_{i=1}^{n}\in\mathbb{R}^{d}$</td>
 </tr>
 <tr id="Ch3.T1.2.3" class="ltx_tr">
 <td id="Ch3.T1.2.3.1" class="ltx_td ltx_align_left ltx_border_r">Feature</td>
-<td id="Ch3.T1.2.3.2" class="ltx_td ltx_align_left ltx_border_r">Real vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>D</mi></msup></mrow><annotation encoding="application/x-tex">{\phi}(\boldsymbol{x})\in\mathbb{R}^{D}</annotation></semantics></math></td>
-<td id="Ch3.T1.2.3.3" class="ltx_td ltx_align_left">Complex vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mrow><mi>ϕ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℂ</mi><msup><mn>2</mn><mi>N</mi></msup></msup></mrow><annotation encoding="application/x-tex">\lvert{{\phi}(\boldsymbol{x})}\rangle\in\mathbb{C}^{2^{N}}</annotation></semantics></math></td>
+<td id="Ch3.T1.2.3.2" class="ltx_td ltx_align_left ltx_border_r">Real vector ${\phi}(\boldsymbol{x})\in\mathbb{R}^{D}$</td>
+<td id="Ch3.T1.2.3.3" class="ltx_td ltx_align_left">Complex vector $\lvert{{\phi}(\boldsymbol{x})}\rangle\in\mathbb{C}^{2^{N}}$</td>
 </tr>
 <tr id="Ch3.T1.2.4" class="ltx_tr">
 <td id="Ch3.T1.2.4.1" class="ltx_td ltx_align_left ltx_border_r">Kernel</td>
-<td id="Ch3.T1.2.4.2" class="ltx_td ltx_align_left ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-dimensional real matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>C</mi></msub><annotation encoding="application/x-tex">K_{C}</annotation></semantics></math></td>
-<td id="Ch3.T1.2.4.3" class="ltx_td ltx_align_left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-dimensional real matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>Q</mi></msub><annotation encoding="application/x-tex">K_{Q}</annotation></semantics></math></td>
+<td id="Ch3.T1.2.4.2" class="ltx_td ltx_align_left ltx_border_r">$n$-dimensional real matrix $K_{C}$</td>
+<td id="Ch3.T1.2.4.3" class="ltx_td ltx_align_left">$n$-dimensional real matrix $K_{Q}$</td>
 </tr>
 <tr id="Ch3.T1.2.5" class="ltx_tr">
 <td id="Ch3.T1.2.5.1" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r">Computation</td>
-<td id="Ch3.T1.2.5.2" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r">Digital logical circuits <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">{\phi}(\boldsymbol{x})</annotation></semantics></math></td>
-<td id="Ch3.T1.2.5.3" class="ltx_td ltx_align_left ltx_border_bb">Quantum circuits <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mi>ψ</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">U(\boldsymbol{x})\lvert{{\psi}}\rangle</annotation></semantics></math></td>
+<td id="Ch3.T1.2.5.2" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r">Digital logical circuits ${\phi}(\boldsymbol{x})$</td>
+<td id="Ch3.T1.2.5.3" class="ltx_td ltx_align_left ltx_border_bb">Quantum circuits $U(\boldsymbol{x})\lvert{{\psi}}\rangle$</td>
 </tr>
 </tbody>
 </table>
@@ -2325,35 +2323,35 @@ We summarize the various strategies for the construction of quantum feature mapp
 <td id="Ch3.T2.2.1.1" class="ltx_td ltx_align_center ltx_border_tt">Encoding</td>
 <td id="Ch3.T2.2.1.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_tt">Qubits</td>
 <td id="Ch3.T2.2.1.3" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_tt">Dimension</td>
-<td id="Ch3.T2.2.1.4" class="ltx_td ltx_align_center ltx_border_tt">Quantum Kernel <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo>,</mo><msup><mi mathvariant="bold-italic">𝒙</mi><mi>′</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">k(\boldsymbol{x},\boldsymbol{x}^{\prime})</annotation></semantics></math></td>
+<td id="Ch3.T2.2.1.4" class="ltx_td ltx_align_center ltx_border_tt">Quantum Kernel $k(\boldsymbol{x},\boldsymbol{x}^{\prime})$</td>
 </tr>
 <tr id="Ch3.T2.2.2" class="ltx_tr">
 <td id="Ch3.T2.2.2.1" class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Basis encoding</td>
-<td id="Ch3.T2.2.2.2" class="ltx_td ltx_align_left ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math></td>
-<td id="Ch3.T2.2.2.3" class="ltx_td ltx_align_left ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>d</mi></msup><annotation encoding="application/x-tex">2^{d}</annotation></semantics></math></td>
-<td id="Ch3.T2.2.2.4" class="ltx_td ltx_align_left ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>δ</mi><mrow><mi mathvariant="bold-italic">𝒙</mi><mo>,</mo><msup><mi mathvariant="bold-italic">𝒙</mi><mi>′</mi></msup></mrow></msub><annotation encoding="application/x-tex">\delta_{\boldsymbol{x},\boldsymbol{x}^{\prime}}</annotation></semantics></math></td>
+<td id="Ch3.T2.2.2.2" class="ltx_td ltx_align_left ltx_border_r ltx_border_t">$d$</td>
+<td id="Ch3.T2.2.2.3" class="ltx_td ltx_align_left ltx_border_r ltx_border_t">$2^{d}$</td>
+<td id="Ch3.T2.2.2.4" class="ltx_td ltx_align_left ltx_border_t">$\delta_{\boldsymbol{x},\boldsymbol{x}^{\prime}}$</td>
 </tr>
 <tr id="Ch3.T2.2.3" class="ltx_tr">
 <td id="Ch3.T2.2.3.1" class="ltx_td ltx_align_left ltx_border_r">Amplitude encoding</td>
-<td id="Ch3.T2.2.3.2" class="ltx_td ltx_align_left ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌈</mo><msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">⌉</mo></mrow><annotation encoding="application/x-tex">\lceil\log_{2}(d)\rceil</annotation></semantics></math></td>
-<td id="Ch3.T2.2.3.3" class="ltx_td ltx_align_left ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math></td>
-<td id="Ch3.T2.2.3.4" class="ltx_td ltx_align_left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msup><mi mathvariant="bold-italic">𝒙</mi><mo>†</mo></msup><msup><mi mathvariant="bold-italic">𝒙</mi><mi>′</mi></msup><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\boldsymbol{x}^{\dagger}\boldsymbol{x}^{\prime}|^{2}</annotation></semantics></math></td>
+<td id="Ch3.T2.2.3.2" class="ltx_td ltx_align_left ltx_border_r">$\lceil\log_{2}(d)\rceil$</td>
+<td id="Ch3.T2.2.3.3" class="ltx_td ltx_align_left ltx_border_r">$d$</td>
+<td id="Ch3.T2.2.3.4" class="ltx_td ltx_align_left">$|\boldsymbol{x}^{\dagger}\boldsymbol{x}^{\prime}|^{2}$</td>
 </tr>
 <tr id="Ch3.T2.2.4" class="ltx_tr">
 <td id="Ch3.T2.2.4.1" class="ltx_td ltx_align_left ltx_border_r">Angel encoding</td>
-<td id="Ch3.T2.2.4.2" class="ltx_td ltx_align_left ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math></td>
-<td id="Ch3.T2.2.4.3" class="ltx_td ltx_align_left ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>d</mi></msup><annotation encoding="application/x-tex">2^{d}</annotation></semantics></math></td>
-<td id="Ch3.T2.2.4.4" class="ltx_td ltx_align_left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∏</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mo stretchy="false" form="prefix">|</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="bold-italic">𝒙</mi><mi>k</mi></msub><mo>−</mo><msubsup><mi mathvariant="bold-italic">𝒙</mi><mi>k</mi><mi>′</mi></msubsup><mo stretchy="false" form="postfix">)</mo><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\prod_{k=1}^{d}|\cos(\boldsymbol{x}_{k}-\boldsymbol{x}_{k}^{\prime})|^{2}</annotation></semantics></math></td>
+<td id="Ch3.T2.2.4.2" class="ltx_td ltx_align_left ltx_border_r">$d$</td>
+<td id="Ch3.T2.2.4.3" class="ltx_td ltx_align_left ltx_border_r">$2^{d}$</td>
+<td id="Ch3.T2.2.4.4" class="ltx_td ltx_align_left">$\prod_{k=1}^{d}|\cos(\boldsymbol{x}_{k}-\boldsymbol{x}_{k}^{\prime})|^{2}$</td>
 </tr>
 <tr id="Ch3.T2.2.5" class="ltx_tr">
 <td id="Ch3.T2.2.5.1" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r">General angle encoding</td>
-<td id="Ch3.T2.2.5.2" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math></td>
-<td id="Ch3.T2.2.5.3" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>d</mi></msup><annotation encoding="application/x-tex">2^{d}</annotation></semantics></math></td>
-<td id="Ch3.T2.2.5.4" class="ltx_td ltx_align_left ltx_border_bb"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi mathvariant="bold-italic">𝒔</mi><mo>,</mo><mi mathvariant="bold-italic">𝒕</mi><mo>∈</mo><mi mathvariant="normal">Ω</mi></mrow></msub><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi mathvariant="bold-italic">𝒔</mi><mi mathvariant="bold-italic">𝒙</mi></mrow></msup><msup><mi>e</mi><mrow><mi>i</mi><mi mathvariant="bold-italic">𝒕</mi><msup><mi mathvariant="bold-italic">𝒙</mi><mi>′</mi></msup></mrow></msup><msub><mi>c</mi><mrow><mi mathvariant="bold-italic">𝒔</mi><mi mathvariant="bold-italic">𝒕</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\sum_{\boldsymbol{s},\boldsymbol{t}\in\Omega}e^{-i\boldsymbol{s}\boldsymbol{x}}e^{i\boldsymbol{t}\boldsymbol{x}^{\prime}}c_{\boldsymbol{s}\boldsymbol{t}}</annotation></semantics></math></td>
+<td id="Ch3.T2.2.5.2" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r">$d$</td>
+<td id="Ch3.T2.2.5.3" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r">$2^{d}$</td>
+<td id="Ch3.T2.2.5.4" class="ltx_td ltx_align_left ltx_border_bb">$\sum_{\boldsymbol{s},\boldsymbol{t}\in\Omega}e^{-i\boldsymbol{s}\boldsymbol{x}}e^{i\boldsymbol{t}\boldsymbol{x}^{\prime}}c_{\boldsymbol{s}\boldsymbol{t}}$</td>
 </tr>
 </tbody>
 </table>
-<figcaption>Table 3.2: Overview of typical data encoding strategies and their quantum kernels. The input domain is assumed to be the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒙</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="bold-italic">𝒙</mi><mn>1</mn></msub><mo>,</mo><mi>⋯</mi><mo>,</mo><msub><mi mathvariant="bold-italic">𝒙</mi><mi>d</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi mathvariant="script">𝒳</mi><mo>⊂</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathcal{X}\subset\mathbb{R}^{d}</annotation></semantics></math>.</figcaption>
+<figcaption>Table 3.2: Overview of typical data encoding strategies and their quantum kernels. The input domain is assumed to be the $\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathcal{X}\subset\mathbb{R}^{d}$.</figcaption>
 </figure>
 
 ### 3.3 Theoretical Foundations of Quantum Kernel Machines
@@ -2362,7 +2360,7 @@ In this section, we take a step further to explore the theoretical foundations o
 
 <figure id="Ch3.F4" class="ltx_figure">
 
-<figcaption>Figure 3.4: The expressivity and generalization ability of quantum kernels. Expressivity concerns the size of the hypothesis space <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℋ</mi><mi>Q</mi></msub><annotation encoding="application/x-tex">\mathcal{H}_{Q}</annotation></semantics></math> represented by quantum kernels, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℋ</mi><annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics></math> refers to the whole hypothesis space. Generalization ability considers the learned hypothesis that could predict the unseen data accurately features a small distance with the target concept.</figcaption>
+<figcaption>Figure 3.4: The expressivity and generalization ability of quantum kernels. Expressivity concerns the size of the hypothesis space $\mathcal{H}_{Q}$ represented by quantum kernels, where $\mathcal{H}$ refers to the whole hypothesis space. Generalization ability considers the learned hypothesis that could predict the unseen data accurately features a small distance with the target concept.</figcaption>
 </figure>
 
 The outline of this chapter is as follows. In Chapter [3.3.1](#Ch3.S3.SS1 "3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will discuss the expressivity of quantum kernels, which refers to the diversity of feature spaces that quantum kernels can represent. The achieved insights will help identify tasks that are particularly well-suited for quantum kernels. Then, in Chapter [3.3.2](#Ch3.S3.SS2 "3.3.2 Generalization of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will examine the potential advantage of quantum kernels in terms of generalization error compared to all classical kernel machines. This analysis highlights their ability to accurately predict labels or values for unseen data.
@@ -2394,15 +2392,15 @@ Last, Theorem [3.13](#Ch3.Thmtheorem13 "Theorem 3.13 (Approximate universality 
 Before presenting the proof of this theorem, let us first introduce Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which maps classical vectors to quantum states. These quantum states can then be used to evaluate Euclidean inner products as quantum kernels. Then, we demonstrate Lemma [3.14](#Ch3.Thmtheorem14 "Lemma 3.14 (Correctness and runtime of Algorithm ). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and Lemma [3.15](#Ch3.Thmtheorem15 "Lemma 3.15 (Euclidean inner products). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), which separately formalize the correctness and runtime complexity of Algorithm [1](#alg1 "Algorithm 1 ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), as well as establish the relationship between the Euclidean inner product of encoded real vectors and the Hilbert-Schmidt inner product of the corresponding quantum states.
 
 <figure id="alg1" class="ltx_float ltx_float_algorithm ltx_framed ltx_framed_top">
-<p>Input: a unit vector with 1-norm <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒓</mi><mo>∈</mo><msubsup><mi>ℓ</mi><mn>1</mn><mi>d</mi></msubsup></mrow><annotation encoding="application/x-tex">\boldsymbol{r}\in\ell^{d}_{1}</annotation></semantics></math>.<br />
-Output: Quantum state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi mathvariant="bold-italic">𝒓</mi></msub><mo>∝</mo><mi mathvariant="double-struck">𝕀</mi><mo>+</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><msub><mi mathvariant="bold-italic">𝒓</mi><mi>i</mi></msub><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\rho_{\boldsymbol{r}}\propto\mathbb{I}+\sum_{i=1}^{d}\boldsymbol{r}_{i}P_{i}</annotation></semantics></math>. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⊳</mi><annotation encoding="application/x-tex">\triangleright</annotation></semantics></math> See Lemma <a href="#Ch3.Thmtheorem14" title="Lemma 3.14 (Correctness and runtime of Algorithm ). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers">3.14</a>.</p>
+<p>Input: a unit vector with 1-norm $\boldsymbol{r}\in\ell^{d}_{1}$.<br />
+Output: Quantum state $\rho_{\boldsymbol{r}}\propto\mathbb{I}+\sum_{i=1}^{d}\boldsymbol{r}_{i}P_{i}$. $\triangleright$ See Lemma <a href="#Ch3.Thmtheorem14" title="Lemma 3.14 (Correctness and runtime of Algorithm ). ‣ 3.3.1 Expressivity of quantum kernel machines ‣ 3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers">3.14</a>.</p>
 <br />
 
-1: Set <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mo stretchy="false" form="prefix">⌈</mo><msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mn>4</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">⌉</mo></mrow><annotation encoding="application/x-tex">N=\lceil\log_{4}(d+1)\rceil</annotation></semantics></math>.
-2: Pad <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝒓</mi><annotation encoding="application/x-tex">\boldsymbol{r}</annotation></semantics></math> with zeros until its length is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>4</mn><mi>N</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">4^{N}-1</annotation></semantics></math>.
-3: Draw <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><msup><mn>4</mn><mi>N</mi></msup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">i\in\{1,\dots,4^{N}-1\}</annotation></semantics></math> with probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi mathvariant="bold-italic">𝒓</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|\boldsymbol{r}_{i}|</annotation></semantics></math>.
-4: Prepare <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>i</mi></msub><mo>=</mo><mfrac><mn>1</mn><msup><mn>2</mn><mi>N</mi></msup></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi mathvariant="double-struck">𝕀</mi><mo>+</mo><mtext mathvariant="normal">sign</mtext><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="bold-italic">𝒓</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\rho_{i}=\frac{1}{2^{N}}\left(\mathbb{I}+\text{sign}(\boldsymbol{r}_{i})P_{i}\right)</annotation></semantics></math>.
-5: return <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ρ</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\rho_{i}</annotation></semantics></math>.
+1: Set $N=\lceil\log_{4}(d+1)\rceil$.
+2: Pad $\boldsymbol{r}$ with zeros until its length is $4^{N}-1$.
+3: Draw $i\in\{1,\dots,4^{N}-1\}$ with probability $|\boldsymbol{r}_{i}|$.
+4: Prepare $\rho_{i}=\frac{1}{2^{N}}\left(\mathbb{I}+\text{sign}(\boldsymbol{r}_{i})P_{i}\right)$.
+5: return $\rho_{i}$.
 <figcaption>Algorithm 1 Classical to quantum embedding (C2QE)</figcaption>
 </figure>
 
@@ -2972,7 +2970,7 @@ The resulting kernel matrix is shown in Figure [3.7](#Ch3.F7 "Figure 3.7 ‣ 3.
 
 <figure id="Ch3.F7" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/kernel_mat.png" id="Ch3.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:324/243;" width="324" height="243" alt="Refer to caption" />
-<figcaption>Figure 3.7: Visualization of quantum kernel matrix on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>20</mn><annotation encoding="application/x-tex">20</annotation></semantics></math> samples, equally drawn from two classes ‘3’ and ‘6’ in MNIST dataset.</figcaption>
+<figcaption>Figure 3.7: Visualization of quantum kernel matrix on $20$ samples, equally drawn from two classes ‘3’ and ‘6’ in MNIST dataset.</figcaption>
 </figure>
 
 From the visualization, we observe a clear block structure:
@@ -3298,15 +3296,15 @@ with $`p`$ here denotes the dimension of $`\boldsymbol{x}^{(a,L)}`$.
 </tr>
 <tr id="Ch4.T1.2.2" class="ltx_tr">
 <td id="Ch4.T1.2.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">sigmoid function</td>
-<td id="Ch4.T1.2.2.2" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sigma(x)=1/(1+\exp(-x))</annotation></semantics></math></td>
+<td id="Ch4.T1.2.2.2" class="ltx_td ltx_align_center ltx_border_t">$\sigma(x)=1/(1+\exp(-x))$</td>
 </tr>
 <tr id="Ch4.T1.2.3" class="ltx_tr">
 <td id="Ch4.T1.2.3.1" class="ltx_td ltx_align_center ltx_border_r">hyperbolic tangent function</td>
-<td id="Ch4.T1.2.3.2" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">tanh</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sigma(x)=\tanh(x)</annotation></semantics></math></td>
+<td id="Ch4.T1.2.3.2" class="ltx_td ltx_align_center">$\sigma(x)=\tanh(x)$</td>
 </tr>
 <tr id="Ch4.T1.2.4" class="ltx_tr">
 <td id="Ch4.T1.2.4.1" class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">rectified linear unit (ReLU) function</td>
-<td id="Ch4.T1.2.4.2" class="ltx_td ltx_align_center ltx_border_bb"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sigma(x)=\max(0,x)</annotation></semantics></math></td>
+<td id="Ch4.T1.2.4.2" class="ltx_td ltx_align_center ltx_border_bb">$\sigma(x)=\max(0,x)$</td>
 </tr>
 </tbody>
 </table>
@@ -3335,7 +3333,7 @@ where $`\circ`$ denotes the function composition. We use $`\sigma(x)=1/(1+\exp(-
 
 <figure id="Ch4.F3" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/back_propagation.png" id="Ch4.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:238/137;" width="238" height="137" alt="Refer to caption" />
-<figcaption>Figure 4.3: Illustration of backpropagation when calculating the gradient of an MLP with one hidden layer. The index of sample <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> is omitted for simplicity.</figcaption>
+<figcaption>Figure 4.3: Illustration of backpropagation when calculating the gradient of an MLP with one hidden layer. The index of sample $a$ is omitted for simplicity.</figcaption>
 </figure>
 
 MLP learns from the given dataset by minimizing the loss function with respect to the parameters $`\boldsymbol{\theta}=({W}^{(1)},{W}^{(2)},\boldsymbol{b}^{(1)},\boldsymbol{b}^{(2)})`$, which is defined as the $`\ell_{2}`$ norm distance between the prediction and the label,
@@ -3417,13 +3415,13 @@ Grover search ([Grover, 1996](#bib.bib12)) provides runtime speedups for unstru
 In general, a search task can be abstracted as a function $`f({x})`$ such that $`f({x})=1`$ if $`{x}`$ belongs to the solution set of the search problem, and $`f({x})=0`$ otherwise. We consider a dataset consisting of $`d=2^{N}`$ elements, where each element is represented by the quantum state $`|{x}\rangle`$ with $`x=0,1,\cdots,d-1`$. In this process, two key quantum oracles are introduced. The first oracle, $`U_{0}=2(|0\rangle\langle 0|)^{\otimes N}-\mathbb{I}_{d}`$, applies a phase shift of $`e^{i\pi}=-1`$ to all quantum states except $`|0\rangle^{\otimes N}`$, which remains unchanged. The second oracle, $`U_{f}`$, operates in a similar manner: it applies a phase shift of $`-1`$ to quantum states that belong to the solution set while leaving all other states unaffected. The procedure for Grover search is described in Algorithm [2](#alg2 "Algorithm 2 ‣ 4.2.1 Grover search ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
 <figure id="alg2" class="ltx_float ltx_float_algorithm ltx_framed ltx_framed_top">
-1: Quantum oracles <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>f</mi></msub><annotation encoding="application/x-tex">U_{f}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mn>0</mn></msub><annotation encoding="application/x-tex">U_{0}</annotation></semantics></math>. The size of the dataset and the solution set, denoted by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><msup><mn>2</mn><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">d=2^{N}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>, respectively.
+1: Quantum oracles $U_{f}$ and $U_{0}$. The size of the dataset and the solution set, denoted by $d=2^{N}$ and $M$, respectively.
 2: An index corresponds to one of the solution states with high probability.
-3: Initialize a register of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> qubits with the state of uniform superposition:
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><mfrac><mn>1</mn><msqrt><mi>d</mi></msqrt></mfrac><munderover><mo>∑</mo><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><msubsup><mo>⨂</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><mfrac><mrow><mo stretchy="false" form="prefix">|</mo><mn>0</mn><mo stretchy="false" form="postfix">⟩</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mn>1</mn><mo stretchy="false" form="postfix">⟩</mo></mrow><msqrt><mn>2</mn></msqrt></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mo>⨂</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><mo>H</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="prefix">|</mo><mn>0</mn><mo stretchy="false" form="postfix">⟩</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">|\phi_{0}\rangle=\frac{1}{\sqrt{d}}\sum_{x=0}^{d-1}|x\rangle=\bigotimes_{n=1}^{N}\frac{|0\rangle+|1\rangle}{\sqrt{2}}=\left(\bigotimes_{n=1}^{N}\mathop{\text{H}}\right)|0\rangle.</annotation></semantics></math></p>
-4: Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mfrac><mi>π</mi><mn>4</mn></mfrac><msqrt><mfrac><mi>d</mi><mi>M</mi></mfrac></msqrt><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">m=\lfloor\frac{\pi}{4}\sqrt{\frac{d}{M}}-\frac{1}{2}\rfloor</annotation></semantics></math>. Apply the following operation:
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mi>m</mi></msub><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><msup><mo>H</mo><mrow><mi>⊗</mi><mi>N</mi></mrow></msup><msub><mi>U</mi><mn>0</mn></msub><msup><mo>H</mo><mrow><mi>⊗</mi><mi>N</mi></mrow></msup><msub><mi>U</mi><mi>f</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mi>m</mi></msup><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">⟩</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">|\phi_{m}\rangle=\left[{\mathop{\text{H}}}^{\otimes N}U_{0}{\mathop{\text{H}}}^{\otimes N}U_{f}\right]^{m}|\phi_{0}\rangle.</annotation></semantics></math></p>
-5: Measure the state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mi>m</mi></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">|\phi_{m}\rangle</annotation></semantics></math> to generate an index.
+3: Initialize a register of $N$ qubits with the state of uniform superposition:
+<p>$|\phi_{0}\rangle=\frac{1}{\sqrt{d}}\sum_{x=0}^{d-1}|x\rangle=\bigotimes_{n=1}^{N}\frac{|0\rangle+|1\rangle}{\sqrt{2}}=\left(\bigotimes_{n=1}^{N}\mathop{\text{H}}\right)|0\rangle.$</p>
+4: Let $m=\lfloor\frac{\pi}{4}\sqrt{\frac{d}{M}}-\frac{1}{2}\rfloor$. Apply the following operation:
+<p>$|\phi_{m}\rangle=\left[{\mathop{\text{H}}}^{\otimes N}U_{0}{\mathop{\text{H}}}^{\otimes N}U_{f}\right]^{m}|\phi_{0}\rangle.$</p>
+5: Measure the state $|\phi_{m}\rangle$ to generate an index.
 <figcaption>Algorithm 2 Grover search</figcaption>
 </figure>
 
@@ -3532,25 +3530,25 @@ $$
 which is used as the oracle $`U_{f}`$ in the Grover search. The online quantum perceptron procedure is given in Algorithm [3](#alg3 "Algorithm 3 ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The query complexity of the online quantum perceptron is provided in Theorem [4.5](#Ch4.Thmtheorem5 "Theorem 4.5 (Online quantum perceptron ( , )). ‣ 4.2.2 Online quantum perceptron with quadratic speedups ‣ 4.2 Fault-tolerant Quantum Perceptron ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
 <figure id="alg3" class="ltx_float ltx_float_algorithm ltx_framed ltx_framed_top">
-1: Linearly separable dataset <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msup><mi>z</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><msup><mi mathvariant="bold-italic">𝒙</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="postfix">)</mo><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup></mrow><annotation encoding="application/x-tex">\{z^{(i)}\}_{i=1}^{d}=\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{d}</annotation></semantics></math>, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><msup><mn>2</mn><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">d=2^{N}</annotation></semantics></math>. Margin threshold <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>. Constants <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\epsilon\in(0,1)</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c\in(1,2)</annotation></semantics></math>.
-2: Weight <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝒘</mi><annotation encoding="application/x-tex">\boldsymbol{w}</annotation></semantics></math> for a perceptron that correctly classifies the dataset with a margin <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math> with probability at least <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">1-\epsilon</annotation></semantics></math>.
-3: Initialize the weight <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒘</mi><mo>=</mo><mn mathvariant="bold">𝟎</mn></mrow><annotation encoding="application/x-tex">\boldsymbol{w}=\boldsymbol{0}</annotation></semantics></math>.
-4: for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>⋯</mi><mo>,</mo><mo stretchy="false" form="prefix">⌈</mo><mfrac><mn>1</mn><msup><mi>γ</mi><mn>2</mn></msup></mfrac><mo stretchy="false" form="postfix">⌉</mo></mrow><annotation encoding="application/x-tex">h=1,\cdots,\lceil\frac{1}{\gamma^{2}}\rceil</annotation></semantics></math> do
-5:   for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>⋯</mi><mo>,</mo><mo stretchy="false" form="prefix">⌈</mo><msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mn>3</mn><mi>/</mi><mn>4</mn></mrow></msub><msup><mi>γ</mi><mn>2</mn></msup><mi>ϵ</mi><mo stretchy="false" form="postfix">⌉</mo></mrow><annotation encoding="application/x-tex">k=1,\cdots,\lceil\log_{3/4}\gamma^{2}\epsilon\rceil</annotation></semantics></math> do
-6:    for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>⋯</mi><mo>,</mo><mo stretchy="false" form="prefix">⌈</mo><msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>c</mi></msub><mfrac><mn>1</mn><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><msqrt><mi>d</mi></msqrt><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo stretchy="false" form="postfix">⌉</mo></mrow><annotation encoding="application/x-tex">j=1,\cdots,\lceil\log_{c}\frac{1}{\sin(2\sin^{-1}(1/\sqrt{d}))}\rceil</annotation></semantics></math> do
-7:      Draw <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math> uniformly from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>⋯</mi><mo>,</mo><mo stretchy="false" form="prefix">⌈</mo><msup><mi>c</mi><mi>j</mi></msup><mo stretchy="false" form="postfix">⌉</mo><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,\cdots,\lceil c^{j}\rceil-1\}</annotation></semantics></math>.
+1: Linearly separable dataset $\{z^{(i)}\}_{i=1}^{d}=\{(\boldsymbol{x}^{(i)},y^{(i)})\}_{i=1}^{d}$, where $d=2^{N}$. Margin threshold $\gamma$. Constants $\epsilon\in(0,1)$ and $c\in(1,2)$.
+2: Weight $\boldsymbol{w}$ for a perceptron that correctly classifies the dataset with a margin $\gamma$ with probability at least $1-\epsilon$.
+3: Initialize the weight $\boldsymbol{w}=\boldsymbol{0}$.
+4: for $h=1,\cdots,\lceil\frac{1}{\gamma^{2}}\rceil$ do
+5:   for $k=1,\cdots,\lceil\log_{3/4}\gamma^{2}\epsilon\rceil$ do
+6:    for $j=1,\cdots,\lceil\log_{c}\frac{1}{\sin(2\sin^{-1}(1/\sqrt{d}))}\rceil$ do
+7:      Draw $m$ uniformly from $\{0,\cdots,\lceil c^{j}\rceil-1\}$.
 8:      Prepare the quantum state
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><mfrac><mn>1</mn><msqrt><mi>d</mi></msqrt></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo stretchy="false" form="prefix">|</mo><mi>i</mi><mo stretchy="false" form="postfix">⟩</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">|\phi_{0}\rangle=\frac{1}{\sqrt{d}}\sum_{i=0}^{d-1}|i\rangle.</annotation></semantics></math></p>
+<p>$|\phi_{0}\rangle=\frac{1}{\sqrt{d}}\sum_{i=0}^{d-1}|i\rangle.$</p>
 9:      Generate the state
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">⟩</mo><mo stretchy="false" form="prefix">⟨</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">|</mo><mi>−</mi><msub><mi mathvariant="double-struck">𝕀</mi><mi>d</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>⊗</mo><msub><mi mathvariant="double-struck">𝕀</mi><mi>d</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mi mathvariant="bold-italic">𝒘</mi></msub><mo stretchy="true" form="postfix">}</mo></mrow><mi>m</mi></msup><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">⟩</mo><mo stretchy="false" form="prefix">|</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">⟩</mo><mrow><mi>⊗</mi><mi>N</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">|\phi_{1}\rangle=\left\{\left[(2|\phi_{0}\rangle\langle\phi_{0}|-\mathbb{I}_{d})\otimes\mathbb{I}_{d}\right]F_{\boldsymbol{w}}\right\}^{m}|\phi_{0}\rangle|0\rangle^{\otimes N}.</annotation></semantics></math></p>
-10:      Measure the first register of the state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">|\phi_{1}\rangle</annotation></semantics></math> to obtain an outcome <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>.
-11:      if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒘</mi><mo>,</mo><msup><mi>z</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(\boldsymbol{w},z^{(q)})=1</annotation></semantics></math> then
-12:       Update <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒘</mi><mo>←</mo><mi mathvariant="bold-italic">𝒘</mi><mo>+</mo><msup><mi>y</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><msup><mi mathvariant="bold-italic">𝒙</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\boldsymbol{w}\leftarrow\boldsymbol{w}+y^{(q)}\boldsymbol{x}^{(q)}</annotation></semantics></math>.
+<p>$|\phi_{1}\rangle=\left\{\left[(2|\phi_{0}\rangle\langle\phi_{0}|-\mathbb{I}_{d})\otimes\mathbb{I}_{d}\right]F_{\boldsymbol{w}}\right\}^{m}|\phi_{0}\rangle|0\rangle^{\otimes N}.$</p>
+10:      Measure the first register of the state $|\phi_{1}\rangle$ to obtain an outcome $q$.
+11:      if $f(\boldsymbol{w},z^{(q)})=1$ then
+12:       Update $\boldsymbol{w}\leftarrow\boldsymbol{w}+y^{(q)}\boldsymbol{x}^{(q)}$.
 13:      end if
 14:    end for
 15:   end for
 16: end for
-17: Output <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝒘</mi><annotation encoding="application/x-tex">\boldsymbol{w}</annotation></semantics></math>.
+17: Output $\boldsymbol{w}$.
 <figcaption>Algorithm 3 Online quantum perceptron</figcaption>
 </figure>
 
@@ -3646,7 +3644,7 @@ Following recent experimental breakthroughs in superconducting quantum hardware 
 
 <figure id="Ch4.F4" class="ltx_figure">
 
-<figcaption>Figure 4.4: Illustration of a QNN. The input state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ρ</mi><mtext mathvariant="normal">in</mtext></msub><annotation encoding="application/x-tex">\rho_{\textrm{in}}</annotation></semantics></math> is prepared using the operation <span class="math inline">$U_{\rm data}$</span>, followed by a variational quantum circuit (VQC) <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝜽</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">V(\boldsymbol{\theta})</annotation></semantics></math> and the measurement operation.</figcaption>
+<figcaption>Figure 4.4: Illustration of a QNN. The input state $\rho_{\textrm{in}}$ is prepared using the operation <span class="math inline">$U_{\rm data}$</span>, followed by a variational quantum circuit (VQC) $V(\boldsymbol{\theta})$ and the measurement operation.</figcaption>
 </figure>
 
 In this section, we introduce the basic architecture of QNNs. As illustrated in Figure [4.4](#Ch4.F4 "Figure 4.4 ‣ 4.3.1 General framework ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), a basic QNN consists of three components: the input, the model circuit, and the measurement.
@@ -3676,11 +3674,11 @@ Model circuit. QNNs employ variational quantum circuits (VQCs), a.k.a, ansatzes,
 <tr id="Ch4.T2.2.2" class="ltx_tr">
 <td rowspan="2" id="Ch4.T2.2.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Classical data</td>
 <td id="Ch4.T2.2.2.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Angle encoding</td>
-<td id="Ch4.T2.2.2.3" class="ltx_td ltx_align_center ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>⨂</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><mrow><mo stretchy="true" form="prefix">[</mo><mo>RY</mo><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="bold-italic">𝒙</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mn>0</mn><mo stretchy="false" form="postfix">⟩</mo><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\bigotimes_{n=1}^{N}\left[\mathop{\text{RY}}(\boldsymbol{x}_{n})|0\rangle\right]</annotation></semantics></math></td>
+<td id="Ch4.T2.2.2.3" class="ltx_td ltx_align_center ltx_border_t">$\bigotimes_{n=1}^{N}\left[\mathop{\text{RY}}(\boldsymbol{x}_{n})|0\rangle\right]$</td>
 </tr>
 <tr id="Ch4.T2.2.3" class="ltx_tr">
 <td id="Ch4.T2.2.3.1" class="ltx_td ltx_align_center ltx_border_r">Amplitude encoding</td>
-<td id="Ch4.T2.2.3.2" class="ltx_td ltx_align_center"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></msubsup><msub><mi mathvariant="bold-italic">𝒙</mi><mi>i</mi></msub><mi>/</mi><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="bold-italic">𝒙</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">|</mo><mi>i</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{d-1}\boldsymbol{x}_{i}/\|\boldsymbol{x}\|_{2}|i\rangle</annotation></semantics></math></td>
+<td id="Ch4.T2.2.3.2" class="ltx_td ltx_align_center">$\sum_{i=0}^{d-1}\boldsymbol{x}_{i}/\|\boldsymbol{x}\|_{2}|i\rangle$</td>
 </tr>
 <tr id="Ch4.T2.2.4" class="ltx_tr">
 <td rowspan="2" id="Ch4.T2.2.4.1" class="ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t">Quantum data</td>
@@ -3689,11 +3687,11 @@ Model circuit. QNNs employ variational quantum circuits (VQCs), a.k.a, ansatzes,
 </tr>
 <tr id="Ch4.T2.2.5" class="ltx_tr">
 <td id="Ch4.T2.2.5.1" class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">Hamiltonian evolution</td>
-<td id="Ch4.T2.2.5.2" class="ltx_td ltx_align_center ltx_border_bb"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>i</mi><mi>H</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\exp(-iHt)|\phi_{0}\rangle</annotation></semantics></math></td>
+<td id="Ch4.T2.2.5.2" class="ltx_td ltx_align_center ltx_border_bb">$\exp(-iHt)|\phi_{0}\rangle$</td>
 </tr>
 </tbody>
 </table>
-<figcaption>Table 4.2: Examples of classical and quantum data employed in QNNs, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math> denotes the system Hamiltonian, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mi>B</mi></msub><annotation encoding="application/x-tex">k_{B}</annotation></semantics></math> is the Boltzmann constant, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">|\phi_{0}\rangle</annotation></semantics></math> is a predefined initial state.</figcaption>
+<figcaption>Table 4.2: Examples of classical and quantum data employed in QNNs, where $H$ denotes the system Hamiltonian, $k_{B}$ is the Boltzmann constant, and $|\phi_{0}\rangle$ is a predefined initial state.</figcaption>
 </figure>
 
 ###### Example 4.8.
@@ -3840,7 +3838,7 @@ To illustrate the training and sampling processes of QGAN, we present two exampl
 
 <figure id="Ch4.F7" class="ltx_figure">
 
-<figcaption>Figure 4.7: The quantum generator used in the quantum patch GAN, where each <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="bold-italic">𝜽</mi><mrow><mi>ℓ</mi><mo>,</mo><mi>n</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi mathvariant="script">𝒰</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U(\boldsymbol{\theta}_{\ell,n})\in\mathcal{U}(2)</annotation></semantics></math> is a trainable single-qubit unitary.</figcaption>
+<figcaption>Figure 4.7: The quantum generator used in the quantum patch GAN, where each $U(\boldsymbol{\theta}_{\ell,n})\in\mathcal{U}(2)$ is a trainable single-qubit unitary.</figcaption>
 </figure>
 
 ##### Quantum patch GAN
@@ -3887,7 +3885,7 @@ Similar to quantum discriminative learning, the quantum patch GAN can be trained
 
 <figure id="Ch4.F8" class="ltx_figure">
 
-<figcaption>Figure 4.8: The main structure of the quantum batch GAN. The figure illustrates the process of generation and training using fake data. The oracle <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi mathvariant="bold-italic">𝒛</mi></msub><annotation encoding="application/x-tex">U_{\boldsymbol{z}}</annotation></semantics></math> for encoding latent vectors, the quantum generator <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>G</mi></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝜽</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U_{G}(\boldsymbol{\theta})</annotation></semantics></math>, and the quantum discriminator <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>D</mi></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝜸</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U_{D}(\boldsymbol{\gamma})</annotation></semantics></math> are applied sequentially to the initial state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">⟩</mo><mrow><mi>⊗</mi><mi>N</mi></mrow></msup></mrow><annotation encoding="application/x-tex">|0\rangle^{\otimes N}</annotation></semantics></math>. Both <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>G</mi></msub><annotation encoding="application/x-tex">U_{G}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>D</mi></msub><annotation encoding="application/x-tex">U_{D}</annotation></semantics></math> share the same hardware-efficient structure as shown in Figure <a href="#Ch4.F7" title="Figure 4.7 ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers">4.7</a>. In the case of real data, the operations <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi mathvariant="bold-italic">𝒛</mi></msub><annotation encoding="application/x-tex">U_{\boldsymbol{z}}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>G</mi></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝜽</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U_{G}(\boldsymbol{\theta})</annotation></semantics></math> are replaced by the oracle <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi mathvariant="bold-italic">𝒙</mi></msub><annotation encoding="application/x-tex">U_{\boldsymbol{x}}</annotation></semantics></math>.</figcaption>
+<figcaption>Figure 4.8: The main structure of the quantum batch GAN. The figure illustrates the process of generation and training using fake data. The oracle $U_{\boldsymbol{z}}$ for encoding latent vectors, the quantum generator $U_{G}(\boldsymbol{\theta})$, and the quantum discriminator $U_{D}(\boldsymbol{\gamma})$ are applied sequentially to the initial state $|0\rangle^{\otimes N}$. Both $U_{G}$ and $U_{D}$ share the same hardware-efficient structure as shown in Figure <a href="#Ch4.F7" title="Figure 4.7 ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers">4.7</a>. In the case of real data, the operations $U_{\boldsymbol{z}}$ and $U_{G}(\boldsymbol{\theta})$ are replaced by the oracle $U_{\boldsymbol{x}}$.</figcaption>
 </figure>
 
 As illustrated in Figure [4.8](#Ch4.F8 "Figure 4.8 ‣ Quantum batch GAN ‣ 4.3.3 Generative learning with QNNs ‣ 4.3 Near-term Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the quantum batch GAN differs from the quantum patch GAN by employing a quantum discriminator. In a quantum batch GAN, all qubits are divided into two registers: the index register, consisting of $`N_{I}`$ qubits, and the feature register, consisting of $`N_{F}`$ qubits. The qubits in the feature register are further partitioned into three parts: $`N_{D}`$ qubits for generating quantum samples, $`N_{A_{G}}`$ qubits for implementing non-linear operations in the generator $`G_{\boldsymbol{\theta}}`$, and $`N_{A_{D}}`$ qubits for implementing non-linear operations in the discriminator $`D_{\boldsymbol{\gamma}}`$. For a batch with size $`|B_{k}|=2^{N_{I}}`$, two oracles are used to encode the information of latent vectors and training samples:
@@ -3948,7 +3946,7 @@ The primary goal of QNNs is to make accurate predictions on unseen data. Achievi
 
 <figure id="Ch4.F9" class="ltx_figure">
 
-<figcaption>Figure 4.9: Overview of the expressivity, generalization ability, and trainability of QNNs. The expressivity of the employed QNNs determines its hypothesis space <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℋ</mi><annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics></math> (solid blue ellipse). When <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℋ</mi><annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics></math> has a moderate size and encompasses the target concept (solid red star), QNNs can achieve good performance. Conversely, if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℋ</mi><annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics></math> fails to cover the target concept (solid gray star) due to limited expressivity, the performance of QNNs deteriorates. During QNN optimization, a significant challenge arises from the vanishing gradient problem, commonly referred to as the barren plateau. This issue prohibits a good estimation near the target parameters <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="bold-italic">𝜽</mi><mo>*</mo></msup><annotation encoding="application/x-tex">\boldsymbol{\theta}^{*}</annotation></semantics></math>.</figcaption>
+<figcaption>Figure 4.9: Overview of the expressivity, generalization ability, and trainability of QNNs. The expressivity of the employed QNNs determines its hypothesis space $\mathcal{H}$ (solid blue ellipse). When $\mathcal{H}$ has a moderate size and encompasses the target concept (solid red star), QNNs can achieve good performance. Conversely, if $\mathcal{H}$ fails to cover the target concept (solid gray star) due to limited expressivity, the performance of QNNs deteriorates. During QNN optimization, a significant challenge arises from the vanishing gradient problem, commonly referred to as the barren plateau. This issue prohibits a good estimation near the target parameters $\boldsymbol{\theta}^{*}$.</figcaption>
 </figure>
 
 As explained in Chapter [3.3](#Ch3.S3 "3.3 Theoretical Foundations of Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), expressivity refers to a model’s ability to represent a wide range of functions, determining the smallest achievable training error. In Chapter [4.4.1](#Ch4.S4.SS1 "4.4.1 Expressivity and generalization of quantum neural networks ‣ 4.4 Theoretical Foundations of Quantum Neural Networks ‣ Chapter 4 Quantum Neural Networks ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we will characterize the expressivity of QNNs using the covering number, an advanced tool from statistical learning theory. This analysis will reveal the relationship between the expressivity of QNNs and their structural factors, such as the size of the quantum system and the number of exploited quantum gates. Understanding this connection helps clarify how QNNs’ expressivity scales with their architecture.
@@ -4024,7 +4022,7 @@ An intuition about how the hypothesis space $`\mathcal{H}`$ affects the performa
 
 <figure id="Ch4.F11" class="ltx_figure">
 
-<figcaption>Figure 4.11: The geometric intuition of covering number. Covering number concerns the minimum number of spherical balls with radius <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> that occupy the whole space.</figcaption>
+<figcaption>Figure 4.11: The geometric intuition of covering number. Covering number concerns the minimum number of spherical balls with radius $\epsilon$ that occupy the whole space.</figcaption>
 </figure>
 
 ###### Definition 4.10 (Covering number).
@@ -5434,7 +5432,7 @@ Under this assumption, we know that the quantum Transformer can access $`U_{S}`$
 
 <figure id="Ch5.F2" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/QTransformer.png" id="Ch5.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:476/273;" width="476" height="273" alt="Refer to caption" />
-<figcaption>Figure 5.2: Overview of the single-layer decoder-only quantum transformer. A quantum transformer consists of a self-attention and a feed-forward network sub-layer, incorporating residual connections with layer normalization. The inputs of the quantum transformer are block encodings of matrices for the input sequence and pre-trained weights, from which the relevant matrices for the transformer are constructed (query <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>, key <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>, and value <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>). Each of the components accepts the block encoding from the prior component as the input and prepares a block encoding of the target matrix using quantum linear algebra as the output.</figcaption>
+<figcaption>Figure 5.2: Overview of the single-layer decoder-only quantum transformer. A quantum transformer consists of a self-attention and a feed-forward network sub-layer, incorporating residual connections with layer normalization. The inputs of the quantum transformer are block encodings of matrices for the input sequence and pre-trained weights, from which the relevant matrices for the transformer are constructed (query $Q$, key $K$, and value $V$). Each of the components accepts the block encoding from the prior component as the input and prepares a block encoding of the target matrix using quantum linear algebra as the output.</figcaption>
 </figure>
 
 Under the above assumptions about access to the read-in protocols, the following theorem indicates how to implement a single-head and single-block transformer architecture in Eqn. ([5.5](#Ch5.E5 "Equation 5.5 ‣ 5.1.4 Feed-forward network ‣ 5.1 Classical Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) on the quantum computer.
@@ -5765,14 +5763,14 @@ As additional interest, this analysis of the matrix norm provides new insights f
 
 <figure id="Ch5.F3" class="ltx_figure">
 <img src="https://arxiv.org/html/2502.01146v1/MMLU.png" id="Ch5.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" style="aspect-ratio:429/265;" width="429" height="265" alt="Refer to caption" />
-<figcaption>Figure 5.3: Scaling of the spectral norm <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>S</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\|S\|</annotation></semantics></math> and the Frobenius norm <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>S</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">\|S\|_{F}</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℓ</mi><annotation encoding="application/x-tex">\ell</annotation></semantics></math> for each model, displayed on logarithmic scales for both axes. For reference, the line <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∝</mo><msqrt><mi>x</mi></msqrt></mrow><annotation encoding="application/x-tex">y\propto\sqrt{x}</annotation></semantics></math> is also shown. We use tokens in MMLU dataset and convert them to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>.</figcaption>
+<figcaption>Figure 5.3: Scaling of the spectral norm $\|S\|$ and the Frobenius norm $\|S\|_{F}$ with $\ell$ for each model, displayed on logarithmic scales for both axes. For reference, the line $y\propto\sqrt{x}$ is also shown. We use tokens in MMLU dataset and convert them to $S$.</figcaption>
 </figure>
 
 We then compute the spectral and Frobenius norms of weight matrices ($`W_{q},W_{k},W_{v}`$) for the large language models. The result can be seen in Figure [5.4](#Ch5.F4 "Figure 5.4 ‣ 5.3.2 Numerical evidence ‣ 5.3 Runtime Analysis with Quadratic Speedups ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Many of the LLMs below a dimension $`d`$ of $`10^{3}`$ that we have checked have substantially different norms. We observe that for larger models such as Llama2-7b and Mistral-7b, which are close to the current state-of-the-art open-source models, the norms do not change dramatically. Therefore, it is reasonable to assume that the spectral norm and the Frobenius norm of the weight matrices are at most $`\mathcal{O}(\sqrt{d})`$ for advanced LLMs.
 
 <figure id="Ch5.F4" class="ltx_figure">
 
-<figcaption>Figure 5.4: Norms of weight matrices across open-source LLMs. The figure shows the maximum Frobenius norm and spectral norm values among weight matrices <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>q</mi></msub><mo>,</mo><msub><mi>W</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">W_{q},W_{k}</annotation></semantics></math>, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>v</mi></msub><annotation encoding="application/x-tex">W_{v}</annotation></semantics></math> across the eight LLM models.</figcaption>
+<figcaption>Figure 5.4: Norms of weight matrices across open-source LLMs. The figure shows the maximum Frobenius norm and spectral norm values among weight matrices $W_{q},W_{k}$, and $W_{v}$ across the eight LLM models.</figcaption>
 </figure>
 
 Given these numerical experiments it is reasonable to assume that $`\alpha_{s}={\mathcal{O}}(\sqrt{\ell})`$ and $`\alpha_{w}={\mathcal{O}}(\sqrt{d})`$, and we obtain a query complexity of the quantum transformer in $`\widetilde{\mathcal{O}}(d^{\frac{3}{2}}\sqrt{\ell})`$. We continue with a discussion of the possible time complexity. With the QRAM assumption, the input block encodings can be implemented in a polynomially logarithmic time of $`\ell`$. Even without a QRAM assumption, there can be cases when the input sequence is generated efficiently, for example when the sequence is generated from a differential equation, see additional discussions in the supplementary material. In these cases, we demonstrate that a quadratic speedup of the runtime of a single-head and single-block Transformer can be expected.
@@ -5949,35 +5947,35 @@ Moving forward, interdisciplinary collaboration between quantum computing and AI
 <td id="A1.T1.2.1.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">Concept</td>
 </tr>
 <tr id="A1.T1.2.2" class="ltx_tr">
-<td id="A1.T1.2.2.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><msub><mi mathvariant="bold-italic">𝒂</mi><mi>j</mi></msub><mo>,</mo><msub><mi mathvariant="bold-italic">𝒃</mi><mi>j</mi></msub><mo>,</mo><mi>α</mi><mo>,</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">a,b,\boldsymbol{a}_{j},\boldsymbol{b}_{j},\alpha,\beta</annotation></semantics></math></td>
+<td id="A1.T1.2.2.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">$a,b,\boldsymbol{a}_{j},\boldsymbol{b}_{j},\alpha,\beta$</td>
 <td id="A1.T1.2.2.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">Scalars</td>
 </tr>
 <tr id="A1.T1.2.3" class="ltx_tr">
-<td id="A1.T1.2.3.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒙</mi><mo>,</mo><mi mathvariant="bold-italic">𝒚</mi></mrow><annotation encoding="application/x-tex">\boldsymbol{x},\boldsymbol{y}</annotation></semantics></math></td>
+<td id="A1.T1.2.3.1" class="ltx_td ltx_align_left ltx_align_top">$\boldsymbol{x},\boldsymbol{y}$</td>
 <td id="A1.T1.2.3.2" class="ltx_td ltx_align_left ltx_align_top">Vectors</td>
 </tr>
 <tr id="A1.T1.2.4" class="ltx_tr">
-<td id="A1.T1.2.4.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>,</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">W,A</annotation></semantics></math></td>
+<td id="A1.T1.2.4.1" class="ltx_td ltx_align_left ltx_align_top">$W,A$</td>
 <td id="A1.T1.2.4.2" class="ltx_td ltx_align_left ltx_align_top">Matrices</td>
 </tr>
 <tr id="A1.T1.2.5" class="ltx_tr">
-<td id="A1.T1.2.5.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></td>
+<td id="A1.T1.2.5.1" class="ltx_td ltx_align_left ltx_align_top">$\mathbb{R}$</td>
 <td id="A1.T1.2.5.2" class="ltx_td ltx_align_left ltx_align_top">Real Euclidean space</td>
 </tr>
 <tr id="A1.T1.2.6" class="ltx_tr">
-<td id="A1.T1.2.6.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math></td>
+<td id="A1.T1.2.6.1" class="ltx_td ltx_align_left ltx_align_top">$\mathbb{C}$</td>
 <td id="A1.T1.2.6.2" class="ltx_td ltx_align_left ltx_align_top">Complex Euclidean space</td>
 </tr>
 <tr id="A1.T1.2.7" class="ltx_tr">
-<td id="A1.T1.2.7.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb{N}</annotation></semantics></math></td>
+<td id="A1.T1.2.7.1" class="ltx_td ltx_align_left ltx_align_top">$\mathbb{N}$</td>
 <td id="A1.T1.2.7.2" class="ltx_td ltx_align_left ltx_align_top">The set of natural numbers</td>
 </tr>
 <tr id="A1.T1.2.8" class="ltx_tr">
-<td id="A1.T1.2.8.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a]</annotation></semantics></math></td>
-<td id="A1.T1.2.8.2" class="ltx_td ltx_align_left ltx_align_top">The set of integers <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>⋯</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,2,\cdots,a\}</annotation></semantics></math></td>
+<td id="A1.T1.2.8.1" class="ltx_td ltx_align_left ltx_align_top">$[a]$</td>
+<td id="A1.T1.2.8.2" class="ltx_td ltx_align_left ltx_align_top">The set of integers $\{1,2,\cdots,a\}$</td>
 </tr>
 <tr id="A1.T1.2.9" class="ltx_tr">
-<td id="A1.T1.2.9.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">𝔼</mi><mo stretchy="false" form="prefix">[</mo><mi>⋅</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\mathbb{E}[\cdot]</annotation></semantics></math></td>
+<td id="A1.T1.2.9.1" class="ltx_td ltx_align_left ltx_align_top">$\mathbb{E}[\cdot]$</td>
 <td id="A1.T1.2.9.2" class="ltx_td ltx_align_left ltx_align_top">Expectation value of a random variable</td>
 </tr>
 <tr id="A1.T1.2.10" class="ltx_tr">
@@ -5985,116 +5983,116 @@ Moving forward, interdisciplinary collaboration between quantum computing and AI
 <td id="A1.T1.2.10.2" class="ltx_td ltx_align_left ltx_align_top">Variance of a random variable</td>
 </tr>
 <tr id="A1.T1.2.11" class="ltx_tr">
-<td id="A1.T1.2.11.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒪</mi><annotation encoding="application/x-tex">\mathcal{O}</annotation></semantics></math></td>
+<td id="A1.T1.2.11.1" class="ltx_td ltx_align_left ltx_align_top">$\mathcal{O}$</td>
 <td id="A1.T1.2.11.2" class="ltx_td ltx_align_left ltx_align_top">Asymptotic upper bound notation</td>
 </tr>
 <tr id="A1.T1.2.12" class="ltx_tr">
-<td id="A1.T1.2.12.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></td>
+<td id="A1.T1.2.12.1" class="ltx_td ltx_align_left ltx_align_top">$\Omega$</td>
 <td id="A1.T1.2.12.2" class="ltx_td ltx_align_left ltx_align_top">Asymptotic lower bound notation</td>
 </tr>
 <tr id="A1.T1.2.13" class="ltx_tr">
-<td id="A1.T1.2.13.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⊤</mi><annotation encoding="application/x-tex">\top</annotation></semantics></math></td>
+<td id="A1.T1.2.13.1" class="ltx_td ltx_align_left ltx_align_top">$\top$</td>
 <td id="A1.T1.2.13.2" class="ltx_td ltx_align_left ltx_align_top">Transpose operation</td>
 </tr>
 <tr id="A1.T1.2.14" class="ltx_tr">
-<td id="A1.T1.2.14.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>*</mo></mrow><annotation encoding="application/x-tex">a*</annotation></semantics></math></td>
-<td id="A1.T1.2.14.2" class="ltx_td ltx_align_left ltx_align_top">complex conjugate of the number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math></td>
+<td id="A1.T1.2.14.1" class="ltx_td ltx_align_left ltx_align_top">$a*$</td>
+<td id="A1.T1.2.14.2" class="ltx_td ltx_align_left ltx_align_top">complex conjugate of the number $a$</td>
 </tr>
 <tr id="A1.T1.2.15" class="ltx_tr">
-<td id="A1.T1.2.15.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>†</mi><annotation encoding="application/x-tex">\dagger</annotation></semantics></math></td>
+<td id="A1.T1.2.15.1" class="ltx_td ltx_align_left ltx_align_top">$\dagger$</td>
 <td id="A1.T1.2.15.2" class="ltx_td ltx_align_left ltx_align_top">Conjugate Transpose operation</td>
 </tr>
 <tr id="A1.T1.2.16" class="ltx_tr">
-<td id="A1.T1.2.16.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>⋅</mi><mo stretchy="false" form="postfix">⟩</mo><mo stretchy="false" form="prefix">⟨</mo><mi>⋅</mi><mo stretchy="false" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">\lvert{\cdot}\rangle\langle{\cdot}\rvert</annotation></semantics></math></td>
+<td id="A1.T1.2.16.1" class="ltx_td ltx_align_left ltx_align_top">$\lvert{\cdot}\rangle\langle{\cdot}\rvert$</td>
 <td id="A1.T1.2.16.2" class="ltx_td ltx_align_left ltx_align_top">Outer product operation</td>
 </tr>
 <tr id="A1.T1.2.17" class="ltx_tr">
-<td id="A1.T1.2.17.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊙</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A\odot B</annotation></semantics></math></td>
-<td id="A1.T1.2.17.2" class="ltx_td ltx_align_left ltx_align_top">element-wise multiplication (Hadamard product) of matrices <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math></td>
+<td id="A1.T1.2.17.1" class="ltx_td ltx_align_left ltx_align_top">$A\odot B$</td>
+<td id="A1.T1.2.17.2" class="ltx_td ltx_align_left ltx_align_top">element-wise multiplication (Hadamard product) of matrices $A$ and $B$</td>
 </tr>
 <tr id="A1.T1.2.18" class="ltx_tr">
-<td id="A1.T1.2.18.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∘</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">f\circ g</annotation></semantics></math></td>
-<td id="A1.T1.2.18.2" class="ltx_td ltx_align_left ltx_align_top">composition of functions <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math></td>
+<td id="A1.T1.2.18.1" class="ltx_td ltx_align_left ltx_align_top">$f\circ g$</td>
+<td id="A1.T1.2.18.2" class="ltx_td ltx_align_left ltx_align_top">composition of functions $f$ and $g$</td>
 </tr>
 <tr id="A1.T1.2.19" class="ltx_tr">
-<td id="A1.T1.2.19.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mn>0</mn><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mn>1</mn><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>ψ</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\lvert{0}\rangle,\lvert{1}\rangle,\lvert{\psi}\rangle</annotation></semantics></math></td>
+<td id="A1.T1.2.19.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">$\lvert{0}\rangle,\lvert{1}\rangle,\lvert{\psi}\rangle$</td>
 <td id="A1.T1.2.19.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">Pure quantum state in Dirac notation</td>
 </tr>
 <tr id="A1.T1.2.20" class="ltx_tr">
-<td id="A1.T1.2.20.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math></td>
+<td id="A1.T1.2.20.1" class="ltx_td ltx_align_left ltx_align_top">$N$</td>
 <td id="A1.T1.2.20.2" class="ltx_td ltx_align_left ltx_align_top">Number of qubits</td>
 </tr>
 <tr id="A1.T1.2.21" class="ltx_tr">
-<td id="A1.T1.2.21.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msup><mn>0</mn><mi>N</mi></msup><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">⟩</mo><mrow><mi>⊗</mi><mi>N</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\lvert{0^{N}}\rangle,\lvert{0}\rangle^{\otimes N}</annotation></semantics></math></td>
-<td id="A1.T1.2.21.2" class="ltx_td ltx_align_left ltx_align_top">Zero state with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-qubits</td>
+<td id="A1.T1.2.21.1" class="ltx_td ltx_align_left ltx_align_top">$\lvert{0^{N}}\rangle,\lvert{0}\rangle^{\otimes N}$</td>
+<td id="A1.T1.2.21.2" class="ltx_td ltx_align_left ltx_align_top">Zero state with $N$-qubits</td>
 </tr>
 <tr id="A1.T1.2.22" class="ltx_tr">
-<td id="A1.T1.2.22.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="double-struck">𝕀</mi><mi>d</mi></msub><annotation encoding="application/x-tex">\mathbb{I}_{d}</annotation></semantics></math></td>
-<td id="A1.T1.2.22.2" class="ltx_td ltx_align_left ltx_align_top">Identity matrix with the size <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>×</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">d\times d</annotation></semantics></math></td>
+<td id="A1.T1.2.22.1" class="ltx_td ltx_align_left ltx_align_top">$\mathbb{I}_{d}$</td>
+<td id="A1.T1.2.22.2" class="ltx_td ltx_align_left ltx_align_top">Identity matrix with the size $d\times d$</td>
 </tr>
 <tr id="A1.T1.2.23" class="ltx_tr">
-<td id="A1.T1.2.23.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math></td>
+<td id="A1.T1.2.23.1" class="ltx_td ltx_align_left ltx_align_top">$\rho$</td>
 <td id="A1.T1.2.23.2" class="ltx_td ltx_align_left ltx_align_top">Quantum state in density matrix representation</td>
 </tr>
 <tr id="A1.T1.2.24" class="ltx_tr">
-<td id="A1.T1.2.24.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math></td>
+<td id="A1.T1.2.24.1" class="ltx_td ltx_align_left ltx_align_top">$H$</td>
 <td id="A1.T1.2.24.2" class="ltx_td ltx_align_left ltx_align_top">Hamiltonian</td>
 </tr>
 <tr id="A1.T1.2.25" class="ltx_tr">
-<td id="A1.T1.2.25.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>,</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">U,V</annotation></semantics></math></td>
+<td id="A1.T1.2.25.1" class="ltx_td ltx_align_left ltx_align_top">$U,V$</td>
 <td id="A1.T1.2.25.2" class="ltx_td ltx_align_left ltx_align_top">Unitary operator</td>
 </tr>
 <tr id="A1.T1.2.26" class="ltx_tr">
-<td id="A1.T1.2.26.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mi>Z</mi></mrow><annotation encoding="application/x-tex">X,Y,Z</annotation></semantics></math></td>
+<td id="A1.T1.2.26.1" class="ltx_td ltx_align_left ltx_align_top">$X,Y,Z$</td>
 <td id="A1.T1.2.26.2" class="ltx_td ltx_align_left ltx_align_top">Pauli operators</td>
 </tr>
 <tr id="A1.T1.2.27" class="ltx_tr">
-<td id="A1.T1.2.27.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>RX</mo><mo>,</mo><mo>RY</mo><mo>,</mo><mo>RZ</mo></mrow><annotation encoding="application/x-tex">\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}</annotation></semantics></math></td>
-<td id="A1.T1.2.27.2" class="ltx_td ltx_align_left ltx_align_top">Rotation gates along the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> axes, respectively</td>
+<td id="A1.T1.2.27.1" class="ltx_td ltx_align_left ltx_align_top">$\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}$</td>
+<td id="A1.T1.2.27.2" class="ltx_td ltx_align_left ltx_align_top">Rotation gates along the $x$, $y$ and $z$ axes, respectively</td>
 </tr>
 <tr id="A1.T1.2.28" class="ltx_tr">
-<td id="A1.T1.2.28.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>X</mi><mo>,</mo><mi>C</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">CX,CZ</annotation></semantics></math></td>
+<td id="A1.T1.2.28.1" class="ltx_td ltx_align_left ltx_align_top">$CX,CZ$</td>
 <td id="A1.T1.2.28.2" class="ltx_td ltx_align_left ltx_align_top">Controlled-X gate and controlled-Z gate</td>
 </tr>
 <tr id="A1.T1.2.29" class="ltx_tr">
-<td id="A1.T1.2.29.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℰ</mi><annotation encoding="application/x-tex">\mathcal{E}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒩</mi><annotation encoding="application/x-tex">\mathcal{N}</annotation></semantics></math></td>
+<td id="A1.T1.2.29.1" class="ltx_td ltx_align_left ltx_align_top">$\mathcal{E}$, $\mathcal{N}$</td>
 <td id="A1.T1.2.29.2" class="ltx_td ltx_align_left ltx_align_top">Quantum channel</td>
 </tr>
 <tr id="A1.T1.2.30" class="ltx_tr">
-<td id="A1.T1.2.30.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>O</mi><annotation encoding="application/x-tex">O</annotation></semantics></math></td>
+<td id="A1.T1.2.30.1" class="ltx_td ltx_align_left ltx_align_top">$O$</td>
 <td id="A1.T1.2.30.2" class="ltx_td ltx_align_left ltx_align_top">Observable</td>
 </tr>
 <tr id="A1.T1.2.31" class="ltx_tr">
 <td id="A1.T1.2.31.1" class="ltx_td ltx_align_left ltx_align_top"><span class="math inline">$\braket{O}$</span></td>
-<td id="A1.T1.2.31.2" class="ltx_td ltx_align_left ltx_align_top">Expectation of observable <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>O</mi><annotation encoding="application/x-tex">O</annotation></semantics></math></td>
+<td id="A1.T1.2.31.2" class="ltx_td ltx_align_left ltx_align_top">Expectation of observable $O$</td>
 </tr>
 <tr id="A1.T1.2.32" class="ltx_tr">
-<td id="A1.T1.2.32.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">∥</mo><mi>⋅</mi><mo stretchy="true" form="postfix">∥</mo></mrow><mrow><mi>o</mi><mi>p</mi></mrow></msub><annotation encoding="application/x-tex">\left\|\cdot\right\|_{op}</annotation></semantics></math></td>
+<td id="A1.T1.2.32.1" class="ltx_td ltx_align_left ltx_align_top">$\left\|\cdot\right\|_{op}$</td>
 <td id="A1.T1.2.32.2" class="ltx_td ltx_align_left ltx_align_top">Operator norm</td>
 </tr>
 <tr id="A1.T1.2.33" class="ltx_tr">
-<td id="A1.T1.2.33.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math></td>
+<td id="A1.T1.2.33.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">$n$</td>
 <td id="A1.T1.2.33.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">Number of training examples</td>
 </tr>
 <tr id="A1.T1.2.34" class="ltx_tr">
-<td id="A1.T1.2.34.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒟</mi><annotation encoding="application/x-tex">\mathcal{D}</annotation></semantics></math></td>
+<td id="A1.T1.2.34.1" class="ltx_td ltx_align_left ltx_align_top">$\mathcal{D}$</td>
 <td id="A1.T1.2.34.2" class="ltx_td ltx_align_left ltx_align_top">Dataset</td>
 </tr>
 <tr id="A1.T1.2.35" class="ltx_tr">
 <td id="A1.T1.2.35.1" class="ltx_td ltx_align_left ltx_align_top"><span class="math inline">${\rm Tr}(O\rho)$</span></td>
-<td id="A1.T1.2.35.2" class="ltx_td ltx_align_left ltx_align_top">Expectation value of an observable <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>O</mi><annotation encoding="application/x-tex">O</annotation></semantics></math></td>
+<td id="A1.T1.2.35.2" class="ltx_td ltx_align_left ltx_align_top">Expectation value of an observable $O$</td>
 </tr>
 <tr id="A1.T1.2.36" class="ltx_tr">
-<td id="A1.T1.2.36.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝜽</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U(\boldsymbol{\theta})</annotation></semantics></math></td>
+<td id="A1.T1.2.36.1" class="ltx_td ltx_align_left ltx_align_top">$U(\boldsymbol{\theta})$</td>
 <td id="A1.T1.2.36.2" class="ltx_td ltx_align_left ltx_align_top">Parameterized quantum circuit</td>
 </tr>
 <tr id="A1.T1.2.37" class="ltx_tr">
-<td id="A1.T1.2.37.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℒ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝜽</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{L}(\boldsymbol{\theta})</annotation></semantics></math></td>
+<td id="A1.T1.2.37.1" class="ltx_td ltx_align_left ltx_align_top">$\mathcal{L}(\boldsymbol{\theta})$</td>
 <td id="A1.T1.2.37.2" class="ltx_td ltx_align_left ltx_align_top">Loss function</td>
 </tr>
 <tr id="A1.T1.2.38" class="ltx_tr">
-<td id="A1.T1.2.38.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_b"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>∇</mi><mi mathvariant="bold-italic">𝜽</mi></msub><mi mathvariant="script">ℒ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝜽</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\nabla_{\boldsymbol{\theta}}\mathcal{L}(\boldsymbol{\theta})</annotation></semantics></math></td>
-<td id="A1.T1.2.38.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b">Gradient of loss function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℒ</mi><annotation encoding="application/x-tex">\mathcal{L}</annotation></semantics></math> w.r.t parameters <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝜽</mi><annotation encoding="application/x-tex">\boldsymbol{\theta}</annotation></semantics></math></td>
+<td id="A1.T1.2.38.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_b">$\nabla_{\boldsymbol{\theta}}\mathcal{L}(\boldsymbol{\theta})$</td>
+<td id="A1.T1.2.38.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b">Gradient of loss function $\mathcal{L}$ w.r.t parameters $\boldsymbol{\theta}$</td>
 </tr>
 </tbody>
 </table>

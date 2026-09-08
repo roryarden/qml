@@ -91,17 +91,17 @@ The inner repetition loop within the benchmarking protocol was necessary to rend
 <tbody class="ltx_tbody">
 <tr id="S2.T1.2.1.2" class="ltx_tr">
 <th id="S2.T1.2.1.2.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t">QMKL</th>
-<td id="S2.T1.2.1.2.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>123.9</mn><mo>±</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">123.9\pm 0.4</annotation></semantics></math></td>
+<td id="S2.T1.2.1.2.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">$123.9\pm 0.4$</td>
 <td id="S2.T1.2.1.2.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">0.34</td>
 </tr>
 <tr id="S2.T1.2.1.3" class="ltx_tr">
 <th id="S2.T1.2.1.3.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">Genetic Feature Map</th>
-<td id="S2.T1.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>48.4</mn><mo>±</mo><mn>0.2</mn></mrow><annotation encoding="application/x-tex">48.4\pm 0.2</annotation></semantics></math></td>
+<td id="S2.T1.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$48.4\pm 0.2$</td>
 <td id="S2.T1.2.1.3.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.39</td>
 </tr>
 <tr id="S2.T1.2.1.4" class="ltx_tr">
 <th id="S2.T1.2.1.4.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_rr">GQC</th>
-<td id="S2.T1.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn mathvariant="bold">𝟎.𝟎𝟖𝟗</mn><mo mathvariant="bold">±</mo><mn mathvariant="bold">𝟎.𝟎𝟎𝟒</mn></mrow><annotation encoding="application/x-tex">\mathbf{0.089\pm 0.004}</annotation></semantics></math></td>
+<td id="S2.T1.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">$\mathbf{0.089\pm 0.004}$</td>
 <td id="S2.T1.2.1.4.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">4.25</td>
 </tr>
 </tbody>
@@ -179,7 +179,7 @@ The main difference from the base architecture for GQC is that their variational
 
 <figure id="S2.F1" class="ltx_figure">
 
-<figcaption>Figure 1: Circuit used in the architecture as the classifier for 4 qubits with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> layers.</figcaption>
+<figcaption>Figure 1: Circuit used in the architecture as the classifier for 4 qubits with $n$ layers.</figcaption>
 </figure>
 
 #### Feedforward Neural Networks
@@ -370,32 +370,32 @@ Precision and recall are reported in Tables [3](#S3.T3 "Table 3 ‣ 3.3 Validati
 </tr>
 <tr id="S3.T2.2.1.3" class="ltx_tr">
 <th id="S3.T2.2.1.3.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t">XGBoost</th>
-<td id="S3.T2.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.78</mn><mo>±</mo><mn>0.10</mn></mrow><annotation encoding="application/x-tex">0.78\pm 0.10</annotation></semantics></math></td>
+<td id="S3.T2.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">$0.78\pm 0.10$</td>
 <td id="S3.T2.2.1.3.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">0.797</td>
 </tr>
 <tr id="S3.T2.2.1.4" class="ltx_tr">
 <th id="S3.T2.2.1.4.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.5 router threshold</th>
-<td id="S3.T2.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.78</mn><mo>±</mo><mn>0.09</mn></mrow><annotation encoding="application/x-tex">0.78\pm 0.09</annotation></semantics></math></td>
+<td id="S3.T2.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.78\pm 0.09$</td>
 <td id="S3.T2.2.1.4.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.799</td>
 </tr>
 <tr id="S3.T2.2.1.5" class="ltx_tr">
 <th id="S3.T2.2.1.5.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.6 router threshold</th>
-<td id="S3.T2.2.1.5.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn mathvariant="bold">𝟎.𝟕𝟗</mn><mo mathvariant="bold">±</mo><mn mathvariant="bold">𝟎.𝟎𝟗</mn></mrow><annotation encoding="application/x-tex">\mathbf{0.79\pm 0.09}</annotation></semantics></math></td>
+<td id="S3.T2.2.1.5.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$\mathbf{0.79\pm 0.09}$</td>
 <td id="S3.T2.2.1.5.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.813</td>
 </tr>
 <tr id="S3.T2.2.1.6" class="ltx_tr">
 <th id="S3.T2.2.1.6.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.7 router threshold</th>
-<td id="S3.T2.2.1.6.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.79</mn><mo>±</mo><mn>0.08</mn></mrow><annotation encoding="application/x-tex">0.79\pm 0.08</annotation></semantics></math></td>
+<td id="S3.T2.2.1.6.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.79\pm 0.08$</td>
 <td id="S3.T2.2.1.6.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.813</td>
 </tr>
 <tr id="S3.T2.2.1.7" class="ltx_tr">
 <th id="S3.T2.2.1.7.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.8 router threshold</th>
-<td id="S3.T2.2.1.7.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.78</mn><mo>±</mo><mn>0.09</mn></mrow><annotation encoding="application/x-tex">0.78\pm 0.09</annotation></semantics></math></td>
+<td id="S3.T2.2.1.7.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.78\pm 0.09$</td>
 <td id="S3.T2.2.1.7.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.805</td>
 </tr>
 <tr id="S3.T2.2.1.8" class="ltx_tr">
 <th id="S3.T2.2.1.8.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_rr">This model with 0.9 router threshold</th>
-<td id="S3.T2.2.1.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.78</mn><mo>±</mo><mn>0.11</mn></mrow><annotation encoding="application/x-tex">0.78\pm 0.11</annotation></semantics></math></td>
+<td id="S3.T2.2.1.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">$0.78\pm 0.11$</td>
 <td id="S3.T2.2.1.8.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">0.803</td>
 </tr>
 </tbody>
@@ -418,32 +418,32 @@ Precision and recall are reported in Tables [3](#S3.T3 "Table 3 ‣ 3.3 Validati
 </tr>
 <tr id="S3.T3.2.1.3" class="ltx_tr">
 <th id="S3.T3.2.1.3.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t">XGBoost</th>
-<td id="S3.T3.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.081</mn><mo>±</mo><mn>0.059</mn></mrow><annotation encoding="application/x-tex">0.081\pm 0.059</annotation></semantics></math></td>
+<td id="S3.T3.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">$0.081\pm 0.059$</td>
 <td id="S3.T3.2.1.3.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">0.053</td>
 </tr>
 <tr id="S3.T3.2.1.4" class="ltx_tr">
 <th id="S3.T3.2.1.4.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.5 router threshold</th>
-<td id="S3.T3.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn mathvariant="bold">𝟎.𝟏𝟐𝟕</mn><mo mathvariant="bold">±</mo><mn mathvariant="bold">𝟎.𝟏𝟒𝟐</mn></mrow><annotation encoding="application/x-tex">\mathbf{0.127\pm 0.142}</annotation></semantics></math></td>
+<td id="S3.T3.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$\mathbf{0.127\pm 0.142}$</td>
 <td id="S3.T3.2.1.4.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.058</td>
 </tr>
 <tr id="S3.T3.2.1.5" class="ltx_tr">
 <th id="S3.T3.2.1.5.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.6 router threshold</th>
-<td id="S3.T3.2.1.5.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.122</mn><mo>±</mo><mn>0.133</mn></mrow><annotation encoding="application/x-tex">0.122\pm 0.133</annotation></semantics></math></td>
+<td id="S3.T3.2.1.5.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.122\pm 0.133$</td>
 <td id="S3.T3.2.1.5.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.057</td>
 </tr>
 <tr id="S3.T3.2.1.6" class="ltx_tr">
 <th id="S3.T3.2.1.6.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.7 router threshold</th>
-<td id="S3.T3.2.1.6.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.117</mn><mo>±</mo><mn>0.127</mn></mrow><annotation encoding="application/x-tex">0.117\pm 0.127</annotation></semantics></math></td>
+<td id="S3.T3.2.1.6.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.117\pm 0.127$</td>
 <td id="S3.T3.2.1.6.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.058</td>
 </tr>
 <tr id="S3.T3.2.1.7" class="ltx_tr">
 <th id="S3.T3.2.1.7.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.8 router threshold</th>
-<td id="S3.T3.2.1.7.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.099</mn><mo>±</mo><mn>0.089</mn></mrow><annotation encoding="application/x-tex">0.099\pm 0.089</annotation></semantics></math></td>
+<td id="S3.T3.2.1.7.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.099\pm 0.089$</td>
 <td id="S3.T3.2.1.7.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.058</td>
 </tr>
 <tr id="S3.T3.2.1.8" class="ltx_tr">
 <th id="S3.T3.2.1.8.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_rr">This model with 0.9 router threshold</th>
-<td id="S3.T3.2.1.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.092</mn><mo>±</mo><mn>0.076</mn></mrow><annotation encoding="application/x-tex">0.092\pm 0.076</annotation></semantics></math></td>
+<td id="S3.T3.2.1.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">$0.092\pm 0.076$</td>
 <td id="S3.T3.2.1.8.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">0.058</td>
 </tr>
 </tbody>
@@ -466,32 +466,32 @@ Precision and recall are reported in Tables [3](#S3.T3 "Table 3 ‣ 3.3 Validati
 </tr>
 <tr id="S3.T4.2.1.3" class="ltx_tr">
 <th id="S3.T4.2.1.3.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t">XGBoost</th>
-<td id="S3.T4.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn mathvariant="bold">𝟎.𝟗𝟑𝟒</mn><mo mathvariant="bold">±</mo><mn mathvariant="bold">𝟎.𝟎𝟓𝟏</mn></mrow><annotation encoding="application/x-tex">\mathbf{0.934\pm 0.051}</annotation></semantics></math></td>
+<td id="S3.T4.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">$\mathbf{0.934\pm 0.051}$</td>
 <td id="S3.T4.2.1.3.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">0.933</td>
 </tr>
 <tr id="S3.T4.2.1.4" class="ltx_tr">
 <th id="S3.T4.2.1.4.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.5 router threshold</th>
-<td id="S3.T4.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.909</mn><mo>±</mo><mn>0.057</mn></mrow><annotation encoding="application/x-tex">0.909\pm 0.057</annotation></semantics></math></td>
+<td id="S3.T4.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.909\pm 0.057$</td>
 <td id="S3.T4.2.1.4.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.931</td>
 </tr>
 <tr id="S3.T4.2.1.5" class="ltx_tr">
 <th id="S3.T4.2.1.5.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.6 router threshold</th>
-<td id="S3.T4.2.1.5.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.913</mn><mo>±</mo><mn>0.053</mn></mrow><annotation encoding="application/x-tex">0.913\pm 0.053</annotation></semantics></math></td>
+<td id="S3.T4.2.1.5.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.913\pm 0.053$</td>
 <td id="S3.T4.2.1.5.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.931</td>
 </tr>
 <tr id="S3.T4.2.1.6" class="ltx_tr">
 <th id="S3.T4.2.1.6.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.7 router threshold</th>
-<td id="S3.T4.2.1.6.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.915</mn><mo>±</mo><mn>0.049</mn></mrow><annotation encoding="application/x-tex">0.915\pm 0.049</annotation></semantics></math></td>
+<td id="S3.T4.2.1.6.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.915\pm 0.049$</td>
 <td id="S3.T4.2.1.6.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.931</td>
 </tr>
 <tr id="S3.T4.2.1.7" class="ltx_tr">
 <th id="S3.T4.2.1.7.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.8 router threshold</th>
-<td id="S3.T4.2.1.7.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.918</mn><mo>±</mo><mn>0.048</mn></mrow><annotation encoding="application/x-tex">0.918\pm 0.048</annotation></semantics></math></td>
+<td id="S3.T4.2.1.7.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.918\pm 0.048$</td>
 <td id="S3.T4.2.1.7.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.931</td>
 </tr>
 <tr id="S3.T4.2.1.8" class="ltx_tr">
 <th id="S3.T4.2.1.8.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_rr">This model with 0.9 router threshold</th>
-<td id="S3.T4.2.1.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.923</mn><mo>±</mo><mn>0.051</mn></mrow><annotation encoding="application/x-tex">0.923\pm 0.051</annotation></semantics></math></td>
+<td id="S3.T4.2.1.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">$0.923\pm 0.051$</td>
 <td id="S3.T4.2.1.8.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">0.931</td>
 </tr>
 </tbody>
@@ -514,32 +514,32 @@ Precision and recall are reported in Tables [3](#S3.T3 "Table 3 ‣ 3.3 Validati
 </tr>
 <tr id="S3.T5.2.1.3" class="ltx_tr">
 <th id="S3.T5.2.1.3.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t">XGBoost</th>
-<td id="S3.T5.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.770</mn><mo>±</mo><mn>0.096</mn></mrow><annotation encoding="application/x-tex">0.770\pm 0.096</annotation></semantics></math></td>
+<td id="S3.T5.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">$0.770\pm 0.096$</td>
 <td id="S3.T5.2.1.3.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">0.798</td>
 </tr>
 <tr id="S3.T5.2.1.4" class="ltx_tr">
 <th id="S3.T5.2.1.4.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.5 router threshold</th>
-<td id="S3.T5.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.785</mn><mo>±</mo><mn>0.085</mn></mrow><annotation encoding="application/x-tex">0.785\pm 0.085</annotation></semantics></math></td>
+<td id="S3.T5.2.1.4.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.785\pm 0.085$</td>
 <td id="S3.T5.2.1.4.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.799</td>
 </tr>
 <tr id="S3.T5.2.1.5" class="ltx_tr">
 <th id="S3.T5.2.1.5.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.6 router threshold</th>
-<td id="S3.T5.2.1.5.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn mathvariant="bold">𝟎.𝟕𝟗𝟑</mn><mo mathvariant="bold">±</mo><mn mathvariant="bold">𝟎.𝟎𝟖𝟓</mn></mrow><annotation encoding="application/x-tex">\mathbf{0.793\pm 0.085}</annotation></semantics></math></td>
+<td id="S3.T5.2.1.5.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$\mathbf{0.793\pm 0.085}$</td>
 <td id="S3.T5.2.1.5.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.813</td>
 </tr>
 <tr id="S3.T5.2.1.6" class="ltx_tr">
 <th id="S3.T5.2.1.6.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.7 router threshold</th>
-<td id="S3.T5.2.1.6.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.792</mn><mo>±</mo><mn>0.084</mn></mrow><annotation encoding="application/x-tex">0.792\pm 0.084</annotation></semantics></math></td>
+<td id="S3.T5.2.1.6.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.792\pm 0.084$</td>
 <td id="S3.T5.2.1.6.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.813</td>
 </tr>
 <tr id="S3.T5.2.1.7" class="ltx_tr">
 <th id="S3.T5.2.1.7.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr">This model with 0.8 router threshold</th>
-<td id="S3.T5.2.1.7.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.785</mn><mo>±</mo><mn>0.086</mn></mrow><annotation encoding="application/x-tex">0.785\pm 0.086</annotation></semantics></math></td>
+<td id="S3.T5.2.1.7.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">$0.785\pm 0.086$</td>
 <td id="S3.T5.2.1.7.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r">0.806</td>
 </tr>
 <tr id="S3.T5.2.1.8" class="ltx_tr">
 <th id="S3.T5.2.1.8.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_rr">This model with 0.9 router threshold</th>
-<td id="S3.T5.2.1.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.778</mn><mo>±</mo><mn>0.11</mn></mrow><annotation encoding="application/x-tex">0.778\pm 0.11</annotation></semantics></math></td>
+<td id="S3.T5.2.1.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">$0.778\pm 0.11$</td>
 <td id="S3.T5.2.1.8.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r">0.803</td>
 </tr>
 </tbody>
@@ -563,9 +563,9 @@ One of the key points raised regarding the limitations of quantum machine learni
 <td id="S3.T6.2.1.2.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_r ltx_border_t">Execution time</td>
 </tr>
 <tr id="S3.T6.2.1.3" class="ltx_tr">
-<th id="S3.T6.2.1.3.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_rr ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.17</mn><mo>±</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">0.17\pm 0.01</annotation></semantics></math></th>
-<td id="S3.T6.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.92</mn><mo>±</mo><mn>0.11</mn></mrow><annotation encoding="application/x-tex">1.92\pm 0.11</annotation></semantics></math></td>
-<td id="S3.T6.2.1.3.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.649</mn><mo>±</mo><mn>0.007</mn></mrow><annotation encoding="application/x-tex">0.649\pm 0.007</annotation></semantics></math></td>
+<th id="S3.T6.2.1.3.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_rr ltx_border_t">$0.17\pm 0.01$</th>
+<td id="S3.T6.2.1.3.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r ltx_border_t">$1.92\pm 0.11$</td>
+<td id="S3.T6.2.1.3.3" class="ltx_td ltx_align_left ltx_align_top ltx_border_b ltx_border_r ltx_border_t">$0.649\pm 0.007$</td>
 </tr>
 </tbody>
 </table>
