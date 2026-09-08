@@ -105,6 +105,17 @@ def absolutize_urls(html: str, base_url: str) -> str:
     return re.sub(r'(src|href)="([^"]*)"', repl, html)
 
 
+def strip_inline_graphics(html: str) -> str:
+    """Remove LaTeXML inline SVG and base64 data-URI images.
+
+    arXiv renders TikZ diagrams and callout boxes as inline <svg>; pandoc would
+    otherwise base64-encode each into a huge data-URI <img>. Real figure images
+    (http/https <img>) and <figcaption>s are left intact.
+    """
+    html = re.sub(r"<svg\b.*?</svg>", "", html, flags=re.DOTALL | re.IGNORECASE)
+    return re.sub(r'<img\b[^>]*\bsrc="data:[^"]*"[^>]*>', "", html)
+
+
 def display_math_to_dollars(text: str) -> str:
     """Convert pandoc's ``` math fenced blocks to $$...$$ for GitHub."""
     pattern = re.compile(r"^``` ?math\n(.*?)\n```$", re.MULTILINE | re.DOTALL)
@@ -332,9 +343,8 @@ def add_paper(arxiv_id: str) -> bool:
         return False
 
     markdown = build_front_matter(versioned_id, meta)
-    markdown += display_math_to_dollars(
-        html_to_markdown(absolutize_urls(extract_article(html), source_url))
-    )
+    article = absolutize_urls(strip_inline_graphics(extract_article(html)), source_url)
+    markdown += display_math_to_dollars(html_to_markdown(article))
 
     md_path = MD_DIR / f"{stem}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)
