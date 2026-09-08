@@ -577,23 +577,23 @@ $$
 \boldsymbol{a}_{2}\end{bmatrix}\in\mathbb{C}^{2}~,
 $$
 
-where $`|\boldsymbol{a}_{1}|^{2}+|\boldsymbol{a}_{2}|^{2}=1`$ satisfies the normalization constraint. Following conventions in quantum theory, we use Dirac notation to represent vectors ([Nielsen and Chuang, 2011](#bib.bib8)), i.e., $`\boldsymbol{a}`$ is denoted by $`|{\boldsymbol{a}}\rangle`$ (named ‘ket’) with
+where $`|\boldsymbol{a}_{1}|^{2}+|\boldsymbol{a}_{2}|^{2}=1`$ satisfies the normalization constraint. Following conventions in quantum theory, we use Dirac notation to represent vectors ([Nielsen and Chuang, 2011](#bib.bib8)), i.e., $`\boldsymbol{a}`$ is denoted by $`\lvert{\boldsymbol{a}}\rangle`$ (named ‘ket’) with
 
 $$
-|{\boldsymbol{a}}\rangle=\boldsymbol{a}_{1}|{0}\rangle+\boldsymbol{a}_{2}|{1}\rangle~,
+\lvert{\boldsymbol{a}}\rangle=\boldsymbol{a}_{1}\lvert{0}\rangle+\boldsymbol{a}_{2}\lvert{1}\rangle~,
 $$
 
-where $`|{0}\rangle\equiv\boldsymbol{e}_{0}\equiv\begin{bmatrix}1\\
-0\end{bmatrix}`$ and $`|{1}\rangle\equiv\boldsymbol{e}_{1}\equiv\begin{bmatrix}0\\
-1\end{bmatrix}`$ are two computational (unit) basis states. In this representation, the coefficients $`\boldsymbol{a}_{1}`$ and $`\boldsymbol{a}_{2}`$ are referred to as amplitudes. The probabilities of obtaining the outcomes $`0`$ or $`1`$ upon measurement of the qubit are given by $`|\boldsymbol{a}_{1}|^{2}`$ and $`|\boldsymbol{a}_{2}|^{2}`$, respectively. The normalization constraint ensures that these probabilities always sum to one, as required by the probabilistic nature of quantum mechanics. In addition, the conjugated transpose of $`\boldsymbol{a}`$, i.e. $`\boldsymbol{a}^{\dagger}`$, is denoted by $`\langle{\boldsymbol{a}}|`$ (named ‘bra’) with
+where $`\lvert{0}\rangle\equiv\boldsymbol{e}_{0}\equiv\begin{bmatrix}1\\
+0\end{bmatrix}`$ and $`\lvert{1}\rangle\equiv\boldsymbol{e}_{1}\equiv\begin{bmatrix}0\\
+1\end{bmatrix}`$ are two computational (unit) basis states. In this representation, the coefficients $`\boldsymbol{a}_{1}`$ and $`\boldsymbol{a}_{2}`$ are referred to as amplitudes. The probabilities of obtaining the outcomes $`0`$ or $`1`$ upon measurement of the qubit are given by $`|\boldsymbol{a}_{1}|^{2}`$ and $`|\boldsymbol{a}_{2}|^{2}`$, respectively. The normalization constraint ensures that these probabilities always sum to one, as required by the probabilistic nature of quantum mechanics. In addition, the conjugated transpose of $`\boldsymbol{a}`$, i.e. $`\boldsymbol{a}^{\dagger}`$, is denoted by $`\langle{\boldsymbol{a}}\rvert`$ (named ‘bra’) with
 
 $$
-\langle{\boldsymbol{a}}|=\boldsymbol{a}_{1}^{*}\langle{0}|+\boldsymbol{a}_{2}^{*}\langle{1}|\in\mathbb{C}^{2}~,
+\langle{\boldsymbol{a}}\rvert=\boldsymbol{a}_{1}^{*}\langle{0}\rvert+\boldsymbol{a}_{2}^{*}\langle{1}\rvert\in\mathbb{C}^{2}~,
 $$
 
-where $`\langle{0}|\equiv\boldsymbol{e}_{0}^{\top}\equiv[1,0]`$, $`\langle{1}|\equiv\boldsymbol{e}_{1}^{\top}\equiv[0,1]`$, and the symbol ‘$`\top`$’ denotes the transpose operation.
+where $`\langle{0}\rvert\equiv\boldsymbol{e}_{0}^{\top}\equiv[1,0]`$, $`\langle{1}\rvert\equiv\boldsymbol{e}_{1}^{\top}\equiv[0,1]`$, and the symbol ‘$`\top`$’ denotes the transpose operation.
 
-The physical interpretation of coefficients $`\{\boldsymbol{a}_{i}\}`$ is probability amplitudes. Namely, when we intend to extract information from the qubit state $`|{\boldsymbol{a}}\rangle`$ into the classical form, quantum measurements are applied to this state, where the probability of sampling the basis $`|{0}\rangle`$ ($`|{1}\rangle`$) is $`|\boldsymbol{a}_{1}|^{2}`$ $`(|\boldsymbol{a}_{2}|^{2})`$. Recall that the classical bit only permits the deterministic status with ‘$`0`$’ or ‘$`1`$’, while the qubit state in Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is the superposition of the two status ‘$`|{0}\rangle`$’ and ‘$`|{1}\rangle`$’.
+The physical interpretation of coefficients $`\{\boldsymbol{a}_{i}\}`$ is probability amplitudes. Namely, when we intend to extract information from the qubit state $`\lvert{\boldsymbol{a}}\rangle`$ into the classical form, quantum measurements are applied to this state, where the probability of sampling the basis $`\lvert{0}\rangle`$ ($`\lvert{1}\rangle`$) is $`|\boldsymbol{a}_{1}|^{2}`$ $`(|\boldsymbol{a}_{2}|^{2})`$. Recall that the classical bit only permits the deterministic status with ‘$`0`$’ or ‘$`1`$’, while the qubit state in Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) is the superposition of the two status ‘$`\lvert{0}\rangle`$’ and ‘$`\lvert{1}\rangle`$’.
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2gyLlMxLlNTMi5wNC5waWMxIiBjbGFzcz0ibHR4X3BpY3R1cmUiIGhlaWdodD0iMTI1LjczIiBvdmVyZmxvdz0idmlzaWJsZSIgdmVyc2lvbj0iMS4xIiB2aWV3Ym94PSIwIDAgNDc3LjM4IDEyNS43MyIgd2lkdGg9IjQ3Ny4zOCI+PGcgc3R5bGU9Ii0tbHR4LXN0cm9rZS1jb2xvcjojMDAwMDAwOy0tbHR4LWZpbGwtY29sb3I6IzAwMDAwMDsiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjRwdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwxMjUuNzMpIG1hdHJpeCgxIDAgMCAtMSAwIDApIj48ZyBzdHlsZT0iLS1sdHgtZmlsbC1jb2xvcjojNjA2MDYwOyIgZmlsbD0iIzYwNjA2MCIgZmlsbC1vcGFjaXR5PSIxLjAiPjxwYXRoIHN0eWxlPSJzdHJva2U6bm9uZSIgZD0iTSAwIDUuOTEgTCAwIDExOS44MiBDIDAgMTIzLjA4IDIuNjQgMTI1LjczIDUuOTEgMTI1LjczIEwgNDcxLjQ3IDEyNS43MyBDIDQ3NC43MyAxMjUuNzMgNDc3LjM4IDEyMy4wOCA0NzcuMzggMTE5LjgyIEwgNDc3LjM4IDUuOTEgQyA0NzcuMzggMi42NCA0NzQuNzMgMCA0NzEuNDcgMCBMIDUuOTEgMCBDIDIuNjQgMCAwIDIuNjQgMCA1LjkxIFoiIC8+PC9nPjxnIHN0eWxlPSItLWx0eC1maWxsLWNvbG9yOiNGOUY5Rjk7IiBmaWxsPSIjRjlGOUY5IiBmaWxsLW9wYWNpdHk9IjEuMCI+PHBhdGggc3R5bGU9InN0cm9rZTpub25lIiBkPSJNIDEuOTcgNS45MSBMIDEuOTcgMTA0LjMxIEwgNDc1LjQxIDEwNC4zMSBMIDQ3NS40MSA1LjkxIEMgNDc1LjQxIDMuNzMgNDczLjY1IDEuOTcgNDcxLjQ3IDEuOTcgTCA1LjkxIDEuOTcgQyAzLjczIDEuOTcgMS45NyAzLjczIDEuOTcgNS45MSBaIiAvPjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDExMC4yMSkiPjxmb3JlaWdub2JqZWN0IHN0eWxlPSItLWx0eC1mby13aWR0aDozMS4zN2VtOy0tbHR4LWZvLWhlaWdodDowLjY5ZW07LS1sdHgtZm8tZGVwdGg6MGVtO2ZvbnQtc2l6ZToxMHB0OyIgaGVpZ2h0PSI5LjYxIiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA5LjYxKSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMxLlNTMi5wNC5waWMxLjEiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMxLlNTMi5wNC5waWMxLjEuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2gyLlMxLlNTMi5wNC5waWMxLjEuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojRkZGRkZGOyI+UmVtYXJrPC9zcGFuPjwvc3Bhbj4KPC9zcGFuPjwvc3Bhbj48L3NwYW4+PC9mb3JlaWdub2JqZWN0PjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDE2LjQ3KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjUuNDllbTstLWx0eC1mby1kZXB0aDowLjE5ZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9Ijc4LjcyIiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA3Ni4wMykiIHdpZHRoPSI0MzQuMDciPjxzcGFuIGNsYXNzPSJsdHhfZm9yZWlnbm9iamVjdF9jb250YWluZXIiPjxzcGFuIGNsYXNzPSJsdHhfZm9yZWlnbm9iamVjdF9jb250ZW50Ij4KPHNwYW4gaWQ9IkNoMi5TMS5TUzIucDQucGljMS4yIiBjbGFzcz0ibHR4X2lubGluZS1ibG9jayBsdHhfbWluaXBhZ2UgbHR4X2FsaWduX2JvdHRvbSIgc3R5bGU9IndpZHRoOjMxLjM3ZW07Ij4KPHNwYW4gaWQ9IkNoMi5TMS5TUzIucDQucGljMS4yLjEiIGNsYXNzPSJsdHhfcCI+PHNwYW4gaWQ9IkNoMi5TMS5TUzIucDQucGljMS4yLjEuMSIgY2xhc3M9Imx0eF90ZXh0IiBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiPlRoZSA8c3BhbiBpZD0iQ2gyLlMxLlNTMi5wNC5waWMxLjIuMS4xLjEiIGNsYXNzPSJsdHhfdGV4dCBsdHhfZm9udF9pdGFsaWMiPnF1YW50dW0gc3VwZXJwb3NpdGlvbjwvc3Bhbj4gbGVhZHMgdG8gYSBkaXN0aW5jdCBwb3dlciBiZXR3ZWVuIHF1YW50dW0gYW5kIGNsYXNzaWNhbCBjb21wdXRhdGlvbiwgd2hlcmUgdGhlIGZvcm1lciBjYW4gYWNjb21wbGlzaCBjZXJ0YWluIHRhc2tzIHdpdGggcHJvdmFibGUgYWR2YW50YWdlcy48L3NwYW4+PC9zcGFuPgo8L3NwYW4+PC9zcGFuPjwvc3Bhbj48L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48L3N2Zz4=" id="Ch2.S1.SS2.p4.pic1" class="ltx_picture" />
 
@@ -613,22 +613,22 @@ $$
 
 which differs from the classical bits yielding the Cartesian product rule.
 
-For instance, let the first qubit follow Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and the second qubit state be $`|{\boldsymbol{b}}\rangle=\boldsymbol{b}_{1}|{0}\rangle+\boldsymbol{b}_{2}|{1}\rangle`$ with $`|\boldsymbol{b}_{1}|^{2}+|\boldsymbol{b}_{2}|^{2}=1`$. The two-qubit state formed by $`|{\boldsymbol{a}}\rangle`$ and $`|{\boldsymbol{b}}\rangle`$ is defined as
+For instance, let the first qubit follow Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) and the second qubit state be $`\lvert{\boldsymbol{b}}\rangle=\boldsymbol{b}_{1}\lvert{0}\rangle+\boldsymbol{b}_{2}\lvert{1}\rangle`$ with $`|\boldsymbol{b}_{1}|^{2}+|\boldsymbol{b}_{2}|^{2}=1`$. The two-qubit state formed by $`\lvert{\boldsymbol{a}}\rangle`$ and $`\lvert{\boldsymbol{b}}\rangle`$ is defined as
 
 $$
-|{\boldsymbol{a}}\rangle\otimes|{\boldsymbol{b}}\rangle=\boldsymbol{a}_{1}\boldsymbol{b}_{1}|{0}\rangle\otimes|{0}\rangle+\boldsymbol{a}_{1}\boldsymbol{b}_{2}|{0}\rangle\otimes|{1}\rangle+\boldsymbol{a}_{2}\boldsymbol{b}_{1}|{1}\rangle\otimes|{0}\rangle+\boldsymbol{a}_{2}\boldsymbol{b}_{2}|{1}\rangle\otimes|{1}\rangle\in\mathbb{C}^{4}~,
+\lvert{\boldsymbol{a}}\rangle\otimes\lvert{\boldsymbol{b}}\rangle=\boldsymbol{a}_{1}\boldsymbol{b}_{1}\lvert{0}\rangle\otimes\lvert{0}\rangle+\boldsymbol{a}_{1}\boldsymbol{b}_{2}\lvert{0}\rangle\otimes\lvert{1}\rangle+\boldsymbol{a}_{2}\boldsymbol{b}_{1}\lvert{1}\rangle\otimes\lvert{0}\rangle+\boldsymbol{a}_{2}\boldsymbol{b}_{2}\lvert{1}\rangle\otimes\lvert{1}\rangle\in\mathbb{C}^{4}~,
 $$
 
-where the computational basis follows $`|{0}\rangle\otimes|{0}\rangle\equiv\left[\begin{smallmatrix}1\\
+where the computational basis follows $`\lvert{0}\rangle\otimes\lvert{0}\rangle\equiv\left[\begin{smallmatrix}1\\
 0\\
 0\\
-0\end{smallmatrix}\right]`$, $`|{0}\rangle\otimes|{1}\rangle\equiv\left[\begin{smallmatrix}0\\
+0\end{smallmatrix}\right]`$, $`\lvert{0}\rangle\otimes\lvert{1}\rangle\equiv\left[\begin{smallmatrix}0\\
 1\\
 0\\
-0\end{smallmatrix}\right]`$ , $`|{1}\rangle\otimes|{0}\rangle\equiv\left[\begin{smallmatrix}0\\
+0\end{smallmatrix}\right]`$ , $`\lvert{1}\rangle\otimes\lvert{0}\rangle\equiv\left[\begin{smallmatrix}0\\
 0\\
 1\\
-0\end{smallmatrix}\right]`$ , $`|{1}\rangle\otimes|{1}\rangle\equiv\left[\begin{smallmatrix}0\\
+0\end{smallmatrix}\right]`$ , $`\lvert{1}\rangle\otimes\lvert{1}\rangle\equiv\left[\begin{smallmatrix}0\\
 0\\
 0\\
 1\end{smallmatrix}\right]`$, and the coefficients satisfy $`\sum_{i=1}^{2}\sum_{j=1}^{2}|\boldsymbol{a}_{i}\boldsymbol{b}_{j}|^{2}=1`$.
@@ -637,15 +637,15 @@ where the computational basis follows $`|{0}\rangle\otimes|{0}\rangle\equiv\left
 
 ###### Example 2.1.
 
-A typical example of a two-qubit state is the Bell state, which represents a maximally entangled quantum state of two qubits. There are four types of Bell states, expressed as: $`|{\phi^{+}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(|{00}\rangle+|{11}\rangle\right),`$ $`|{\phi^{-}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(|{00}\rangle-|{11}\rangle\right),`$ $`|{\psi^{+}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(|{01}\rangle+|{10}\rangle\right),`$ $`|{\psi^{-}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(|{01}\rangle-|{10}\rangle\right).`$ (2.6) Each Bell state is a superposition of two computational basis states in the four-dimensional Hilbert space.
+A typical example of a two-qubit state is the Bell state, which represents a maximally entangled quantum state of two qubits. There are four types of Bell states, expressed as: $`\lvert{\phi^{+}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(\lvert{00}\rangle+\lvert{11}\rangle\right),`$ $`\lvert{\phi^{-}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(\lvert{00}\rangle-\lvert{11}\rangle\right),`$ $`\lvert{\psi^{+}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(\lvert{01}\rangle+\lvert{10}\rangle\right),`$ $`\lvert{\psi^{-}}\rangle`$ $`=\frac{1}{\sqrt{2}}\left(\lvert{01}\rangle-\lvert{10}\rangle\right).`$ (2.6) Each Bell state is a superposition of two computational basis states in the four-dimensional Hilbert space.
 
-Multi-qubit state. We now generalize the above two-qubit case to the $`N`$-qubit case with $`N>2`$. In particular, an $`N`$-qubit state $`|{\psi}\rangle`$ is a $`2^{N}`$-dimensional vector with
+Multi-qubit state. We now generalize the above two-qubit case to the $`N`$-qubit case with $`N>2`$. In particular, an $`N`$-qubit state $`\lvert{\psi}\rangle`$ is a $`2^{N}`$-dimensional vector with
 
 $$
-|{\psi}\rangle=\sum_{i=1}^{2^{N}}\boldsymbol{c}_{i}|{i}\rangle\in\mathbb{C}^{2^{N}}~,
+\lvert{\psi}\rangle=\sum_{i=1}^{2^{N}}\boldsymbol{c}_{i}\lvert{i}\rangle\in\mathbb{C}^{2^{N}}~,
 $$
 
-where the coefficients satisfy the normalization constraint $`\sum_{i=1}^{2^{N}}|\boldsymbol{c}_{i}|^{2}=1`$ and the symbol ‘$`i`$’ of the computational basis $`|{i}\rangle`$ refers to a bit-string with $`i\in\{0,1\}^{N}`$. As with the single-qubit case, the physical interpretation of coefficients $`\{\boldsymbol{c}_{i}\}`$ is probability amplitudes, where the probability to sample the bit-string ‘$`i`$’ is $`|\boldsymbol{c}_{i}|^{2}`$. When the number of nonzero entries in $`\boldsymbol{c}=[\boldsymbol{c}_{1},...,\boldsymbol{c}_{i},...,\boldsymbol{c}_{2^{N}}]^{\top}`$ is larger than one, which implies that different bit-strings are coexisting coherently, the state $`|{\psi}\rangle`$ is called in superposition.
+where the coefficients satisfy the normalization constraint $`\sum_{i=1}^{2^{N}}|\boldsymbol{c}_{i}|^{2}=1`$ and the symbol ‘$`i`$’ of the computational basis $`\lvert{i}\rangle`$ refers to a bit-string with $`i\in\{0,1\}^{N}`$. As with the single-qubit case, the physical interpretation of coefficients $`\{\boldsymbol{c}_{i}\}`$ is probability amplitudes, where the probability to sample the bit-string ‘$`i`$’ is $`|\boldsymbol{c}_{i}|^{2}`$. When the number of nonzero entries in $`\boldsymbol{c}=[\boldsymbol{c}_{1},...,\boldsymbol{c}_{i},...,\boldsymbol{c}_{2^{N}}]^{\top}`$ is larger than one, which implies that different bit-strings are coexisting coherently, the state $`\lvert{\psi}\rangle`$ is called in superposition.
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2gyLlMxLlNTMi5wMTAucGljMSIgY2xhc3M9Imx0eF9waWN0dXJlIiBoZWlnaHQ9IjMwOS4xNCIgb3ZlcmZsb3c9InZpc2libGUiIHZlcnNpb249IjEuMSIgdmlld2JveD0iMCAwIDQ3Ny4zOCAzMDkuMTQiIHdpZHRoPSI0NzcuMzgiPjxnIHN0eWxlPSItLWx0eC1zdHJva2UtY29sb3I6IzAwMDAwMDstLWx0eC1maWxsLWNvbG9yOiMwMDAwMDA7IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC40cHQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMzA5LjE0KSBtYXRyaXgoMSAwIDAgLTEgMCAwKSI+PGcgc3R5bGU9Ii0tbHR4LWZpbGwtY29sb3I6IzYwNjA2MDsiIGZpbGw9IiM2MDYwNjAiIGZpbGwtb3BhY2l0eT0iMS4wIj48cGF0aCBzdHlsZT0ic3Ryb2tlOm5vbmUiIGQ9Ik0gMCA1LjkxIEwgMCAzMDMuMjQgQyAwIDMwNi41IDIuNjQgMzA5LjE0IDUuOTEgMzA5LjE0IEwgNDcxLjQ3IDMwOS4xNCBDIDQ3NC43MyAzMDkuMTQgNDc3LjM4IDMwNi41IDQ3Ny4zOCAzMDMuMjQgTCA0NzcuMzggNS45MSBDIDQ3Ny4zOCAyLjY0IDQ3NC43MyAwIDQ3MS40NyAwIEwgNS45MSAwIEMgMi42NCAwIDAgMi42NCAwIDUuOTEgWiIgLz48L2c+PGcgc3R5bGU9Ii0tbHR4LWZpbGwtY29sb3I6I0Y5RjlGOTsiIGZpbGw9IiNGOUY5RjkiIGZpbGwtb3BhY2l0eT0iMS4wIj48cGF0aCBzdHlsZT0ic3Ryb2tlOm5vbmUiIGQ9Ik0gMS45NyA1LjkxIEwgMS45NyAyODcuNzIgTCA0NzUuNDEgMjg3LjcyIEwgNDc1LjQxIDUuOTEgQyA0NzUuNDEgMy43MyA0NzMuNjUgMS45NyA0NzEuNDcgMS45NyBMIDUuOTEgMS45NyBDIDMuNzMgMS45NyAxLjk3IDMuNzMgMS45NyA1LjkxIFoiIC8+PC9nPjxnIGZpbGwtb3BhY2l0eT0iMS4wIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjAgMC4wIDAuMCAxLjAgMjEuNjUgMjkzLjYzKSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjAuNjllbTstLWx0eC1mby1kZXB0aDowZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9IjkuNjEiIG92ZXJmbG93PSJ2aXNpYmxlIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAwIDkuNjEpIiB3aWR0aD0iNDM0LjA3Ij48c3BhbiBjbGFzcz0ibHR4X2ZvcmVpZ25vYmplY3RfY29udGFpbmVyIj48c3BhbiBjbGFzcz0ibHR4X2ZvcmVpZ25vYmplY3RfY29udGVudCI+CjxzcGFuIGlkPSJDaDIuUzEuU1MyLnAxMC5waWMxLjEiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMxLlNTMi5wMTAucGljMS4xLjEiIGNsYXNzPSJsdHhfcCI+PHNwYW4gaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEuMS4xLjEiIGNsYXNzPSJsdHhfdGV4dCIgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiNGRkZGRkY7Ij5SZW1hcms8L3NwYW4+PC9zcGFuPgo8L3NwYW4+PC9zcGFuPjwvc3Bhbj48L2ZvcmVpZ25vYmplY3Q+PC9nPjxnIGZpbGwtb3BhY2l0eT0iMS4wIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjAgMC4wIDAuMCAxLjAgMjEuNjUgMTYuNDcpIj48Zm9yZWlnbm9iamVjdCBzdHlsZT0iLS1sdHgtZm8td2lkdGg6MzEuMzdlbTstLWx0eC1mby1oZWlnaHQ6MTguNzVlbTstLWx0eC1mby1kZXB0aDowLjE5ZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9IjI2Mi4xNCIgb3ZlcmZsb3c9InZpc2libGUiIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDAgMjU5LjQ1KSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMxLlNTMi5wMTAucGljMS4yIiBjbGFzcz0ibHR4X2lubGluZS1ibG9jayBsdHhfbWluaXBhZ2UgbHR4X2FsaWduX2JvdHRvbSIgc3R5bGU9IndpZHRoOjMxLjM3ZW07Ij4KPHNwYW4gaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEuMi4xIiBjbGFzcz0ibHR4X3AiPjxzcGFuIGlkPSJDaDIuUzEuU1MyLnAxMC5waWMxLjIuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyI+SW4gcXVhbnR1bSBjb21wdXRpbmcsIGEgYmFzaXMgc3RhdGUgPG1hdGggaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEubTEiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXGtldHtpfSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGZlbmNlPSJmYWxzZSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMTY3ZW0iIHN0cmV0Y2h5PSJmYWxzZSI+fDwvbW8+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5pPC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+4p+pPC9tbz48L21yb3c+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5ca2V0e2l9PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4gcmVmZXJzIHRvIGEgY29tcHV0YXRpb25hbCBiYXNpcyBzdGF0ZSBpbiB0aGUgSGlsYmVydCBzcGFjZSBvZiBhIHF1YW50dW0gc3lzdGVtLiBGb3IgYW4gPG1hdGggaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEubTIiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iTiIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+TjwvbWk+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5OPC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4tcXViaXQgc3lzdGVtLCB0aGUgY29tcHV0YXRpb25hbCBiYXNpcyBzdGF0ZXMgYXJlIHJlcHJlc2VudGVkIGFzIDxtYXRoIGlkPSJDaDIuUzEuU1MyLnAxMC5waWMxLm0zIiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9IlxrZXR7aX1caW5ce1xrZXR7MFxjZG90cyAwfSxca2V0ezBcY2RvdHMgMX0sLi4uLFxrZXR7MVxjZG90cyAxfVx9IiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1yb3c+PG1yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgZmVuY2U9ImZhbHNlIiBtYXRoY29sb3I9IiMwMDAwMDAiIHJzcGFjZT0iMC4xNjdlbSIgc3RyZXRjaHk9ImZhbHNlIj58PC9tbz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPmk8L21pPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj7in6k8L21vPjwvbXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPuKIiDwvbW8+PG1yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPns8L21vPjxtcm93Pjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGZlbmNlPSJmYWxzZSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMTY3ZW0iIHN0cmV0Y2h5PSJmYWxzZSI+fDwvbW8+PG1yb3c+PG1uIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4wPC9tbj48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBsc3BhY2U9IjBlbSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjBlbSI+4ouvPC9tbz48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjA8L21uPjwvbXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+4p+pPC9tbz48L21yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4sPC9tbz48bXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBmZW5jZT0iZmFsc2UiIG1hdGhjb2xvcj0iIzAwMDAwMCIgcnNwYWNlPSIwLjE2N2VtIiBzdHJldGNoeT0iZmFsc2UiPnw8L21vPjxtcm93PjxtbiBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+MDwvbW4+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbHNwYWNlPSIwZW0iIG1hdGhjb2xvcj0iIzAwMDAwMCIgcnNwYWNlPSIwZW0iPuKLrzwvbW8+PG1uIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4xPC9tbj48L21yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPuKfqTwvbW8+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+LDwvbW8+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBtYXRodmFyaWFudD0ibm9ybWFsIj7igKY8L21pPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+LDwvbW8+PG1yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgZmVuY2U9ImZhbHNlIiBtYXRoY29sb3I9IiMwMDAwMDAiIHJzcGFjZT0iMC4xNjdlbSIgc3RyZXRjaHk9ImZhbHNlIj58PC9tbz48bXJvdz48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjE8L21uPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGxzcGFjZT0iMGVtIiBtYXRoY29sb3I9IiMwMDAwMDAiIHJzcGFjZT0iMGVtIj7ii688L21vPjxtbiBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+MTwvbW4+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj7in6k8L21vPjwvbXJvdz48L21yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPn08L21vPjwvbXJvdz48L21yb3c+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5ca2V0e2l9XGluXHtca2V0ezBcY2RvdHMgMH0sXGtldHswXGNkb3RzIDF9LC4uLixca2V0ezFcY2RvdHMgMX1cfTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+LCB3aGVyZSA8bWF0aCBpZD0iQ2gyLlMxLlNTMi5wMTAucGljMS5tNCIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJpIiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5pPC9taT48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPmk8L2Fubm90YXRpb24+PC9zZW1hbnRpY3M+PC9tYXRoPiBpcyB0aGUgYmluYXJ5IHJlcHJlc2VudGF0aW9uIG9mIHRoZSBzdGF0ZSBpbmRleC4gVGhlc2Ugc3RhdGVzIGZvcm0gYW4gb3J0aG9ub3JtYWwgYmFzaXMgb2YgdGhlIDxtYXRoIGlkPSJDaDIuUzEuU1MyLnAxMC5waWMxLm01IiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9IjJee059IiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1zdXA+PG1uIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4yPC9tbj48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPk48L21pPjwvbXN1cD48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPjJee059PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4tZGltZW5zaW9uYWwgSGlsYmVydCBzcGFjZSwgc2F0aXNmeWluZzwvc3Bhbj48L3NwYW4+CjxzcGFuIGlkPSJDaDIuRTgiIGNsYXNzPSJsdHhfZXF1YXRpb24gbHR4X2Vxbl90YWJsZSI+Cgo8c3Bhbj48c3BhbiBjbGFzcz0ibHR4X2VxdWF0aW9uIGx0eF9lcW5fcm93IGx0eF9hbGlnbl9iYXNlbGluZSI+CjxzcGFuIGNsYXNzPSJsdHhfZXFuX2NlbGwgbHR4X2Vxbl9jZW50ZXJfcGFkbGVmdCI+PC9zcGFuPgo8c3BhbiBjbGFzcz0ibHR4X2Vxbl9jZWxsIGx0eF9hbGlnbl9jZW50ZXIiPjxtYXRoIGlkPSJDaDIuRTgubTEiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXGJyYWtldHtpfGp9PVxkZWx0YV97aWp9LFxmb3JhbGwgaSxqXGluWzJee059XS4iIGRpc3BsYXk9ImJsb2NrIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtcm93Pjxtcm93Pjxtcm93Pjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj7in6g8L21vPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+aTwvbWk+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgZmVuY2U9ImZhbHNlIiBsc3BhY2U9IjAuMTcwZW0iIG1hdGhjb2xvcj0iIzAwMDAwMCIgcnNwYWNlPSIwLjMzN2VtIiBzdHJldGNoeT0iZmFsc2UiPnw8L21vPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+ajwvbWk+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPuKfqTwvbW8+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+PTwvbW8+PG1zdWI+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj7OtDwvbWk+PG1yb3c+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5pPC9taT48bW8gbHNwYWNlPSIwZW0iIHJzcGFjZT0iMGVtIj7igIs8L21vPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+ajwvbWk+PC9tcm93PjwvbXN1Yj48L21yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4sPC9tbz48bXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHJzcGFjZT0iMC4xNjdlbSI+4oiAPC9tbz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPmk8L21pPjwvbXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPiw8L21vPjxtcm93PjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+ajwvbWk+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj7iiIg8L21vPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj5bPC9tbz48bXN1cD48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjI8L21uPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+TjwvbWk+PC9tc3VwPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj5dPC9tbz48L21yb3c+PC9tcm93PjwvbXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBsc3BhY2U9IjBlbSIgbWF0aGNvbG9yPSIjMDAwMDAwIj4uPC9tbz48L21yb3c+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5cYnJha2V0e2l8an09XGRlbHRhX3tpan0sXGZvcmFsbCBpLGpcaW5bMl57Tn1dLjwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+PC9zcGFuPgo8c3BhbiBjbGFzcz0ibHR4X2Vxbl9jZWxsIGx0eF9lcW5fY2VudGVyX3BhZHJpZ2h0Ij48L3NwYW4+CjxzcGFuIHJvd3NwYW49IjEiIGNsYXNzPSJsdHhfZXFuX2NlbGwgbHR4X2Vxbl9lcW5vIGx0eF9hbGlnbl9taWRkbGUgbHR4X2FsaWduX3JpZ2h0Ij48c3BhbiBjbGFzcz0ibHR4X3RhZyBsdHhfdGFnX2VxdWF0aW9uIGx0eF9hbGlnbl9yaWdodCI+KDIuOCk8L3NwYW4+PC9zcGFuPjwvc3Bhbj48L3NwYW4+Cjwvc3Bhbj4KPHNwYW4gaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEuMi4yIiBjbGFzcz0ibHR4X3AiPjxzcGFuIGlkPSJDaDIuUzEuU1MyLnAxMC5waWMxLjIuMi4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyI+VGhlc2UgYmFzaXMgc3RhdGVzIGFyZSBmdW5kYW1lbnRhbCBmb3IgcmVwcmVzZW50aW5nIGFuZCBhbmFseXppbmcgcXVhbnR1bSBzdGF0ZXMsIGFzIGFueSBhcmJpdHJhcnkgcXVhbnR1bSBzdGF0ZSBjYW4gYmUgZXhwcmVzc2VkIGFzIGEgbGluZWFyIGNvbWJpbmF0aW9uIG9mIHRoZXNlIGJhc2lzIHN0YXRlcy48L3NwYW4+PC9zcGFuPgo8c3BhbiBpZD0iQ2gyLlMxLlNTMi5wMTAucGljMS4yLjMiIGNsYXNzPSJsdHhfcCI+PHNwYW4gaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEuMi4zLjEiIGNsYXNzPSJsdHhfdGV4dCIgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7Ij5Nb3Jlb3ZlciwgdGhlIHNpemUgb2YgPG1hdGggaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEubTYiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXGJte2N9IiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj7wnZKEPC9taT48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPlxibXtjfTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+IGV4cG9uZW50aWFsbHkgc2NhbGVzIHdpdGggdGhlIG51bWJlciBvZiBxdWJpdHMgPG1hdGggaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEubTciIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iTiIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+TjwvbWk+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5OPC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4sIGF0dHJpYnV0ZWQgdG8gdGhlIHRlbnNvciBwcm9kdWN0IHJ1bGUuIFRoaXMgZXhwb25lbnRpYWwgZGVwZW5kZW5jZSBpcyBhbiBpbmRpc3BlbnNhYmxlIGZhY3RvciB0byBhY2hpZXZlIHF1YW50dW0gc3VwcmVtYWN5IDxjaXRlIGNsYXNzPSJsdHhfY2l0ZSBsdHhfY2l0ZW1hY3JvX2NpdGVwIj4oPGEgaHJlZj0iI2JpYi5iaWIzMSIgdGl0bGUgY2xhc3M9Imx0eF9yZWYiPkFydXRlIGV0wqBhbC4sIDIwMTk8L2E+KTwvY2l0ZT4sIHNpbmNlIGl0IGlzIGV4dHJlbWVseSBleHBlbnNpdmUgYW5kIGV2ZW4gaW50cmFjdGFibGUgdG8gcmVjb3JkIGFsbCBpbmZvcm1hdGlvbiBvZiA8bWF0aCBpZD0iQ2gyLlMxLlNTMi5wMTAucGljMS5tOCIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJcYm17Y30iIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPvCdkoQ8L21pPjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+XGJte2N9PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4gYnkgY2xhc3NpY2FsIGRldmljZXMgZm9yIHRoZSBtb2Rlc3QgbnVtYmVyIG9mIHF1Yml0cywgZS5nLiwgPG1hdGggaWQ9IkNoMi5TMS5TUzIucDEwLnBpYzEubTkiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iTiZndDsxMDAiIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bXJvdz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPk48L21pPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+Jmd0OzwvbW8+PG1uIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj4xMDA8L21uPjwvbXJvdz48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPk4mZ3Q7MTAwPC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4uPC9zcGFuPjwvc3Bhbj4KPC9zcGFuPjwvc3Bhbj48L3NwYW4+PC9mb3JlaWdub2JqZWN0PjwvZz48L2c+PC9zdmc+" id="Ch2.S1.SS2.p10.pic1" class="ltx_picture" />
 
@@ -653,19 +653,19 @@ Entangled multi-qubit state. A fundamental phenomenon in multi-qubit quantum sys
 
 ###### Definition 2.2.
 
-(Entanglement for States in Dirac Notation) An $`N`$-qubit state $`|{\psi}\rangle\in\mathbb{C}^{2^{N}}`$ is entangled if it cannot be expressed as the tensor product of states of its subsystems $`A`$ and $`B`$:
+(Entanglement for States in Dirac Notation) An $`N`$-qubit state $`\lvert{\psi}\rangle\in\mathbb{C}^{2^{N}}`$ is entangled if it cannot be expressed as the tensor product of states of its subsystems $`A`$ and $`B`$:
 
 $$
-|{\psi}\rangle\neq|{\psi_{a}}\rangle\otimes|{\psi_{b}}\rangle,\quad\forall|{\psi_{a}}\rangle\in\mathbb{C}^{2^{N_{A}}},|{\psi_{b}}\rangle\in\mathbb{C}^{2^{N_{B}}},N_{A}+N_{B}=N.
+\lvert{\psi}\rangle\neq\lvert{\psi_{a}}\rangle\otimes\lvert{\psi_{b}}\rangle,\quad\forall\lvert{\psi_{a}}\rangle\in\mathbb{C}^{2^{N_{A}}},\lvert{\psi_{b}}\rangle\in\mathbb{C}^{2^{N_{B}}},N_{A}+N_{B}=N.
 $$
 
 If the state can be expressed in this form, it is referred to as seperable.
 
 ###### Example 2.3.
 
-(GHZ state). A typical example of an entangled $`N`$-qubit state is the Greenberger-Horne-Zeilinger (GHZ) state ([Greenberger et al., 1989](#bib.bib66)), which is a generalization of the two-qubit Bell state (see Example [2.1](#Ch2.Thmtheorem1 "Example 2.1. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to a maximally entangled $`N`$-qubit state. The general form of an $`N`$-qubit GHZ state is: $`|{\text{GHZ}_{N}}\rangle=\frac{1}{\sqrt{2}}\left(|{0}\rangle^{\otimes N}+|{1}\rangle^{\otimes N}\right).`$ (2.10) For $`N=3`$, the GHZ state is:
+(GHZ state). A typical example of an entangled $`N`$-qubit state is the Greenberger-Horne-Zeilinger (GHZ) state ([Greenberger et al., 1989](#bib.bib66)), which is a generalization of the two-qubit Bell state (see Example [2.1](#Ch2.Thmtheorem1 "Example 2.1. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to a maximally entangled $`N`$-qubit state. The general form of an $`N`$-qubit GHZ state is: $`\lvert{\text{GHZ}_{N}}\rangle=\frac{1}{\sqrt{2}}\left(\lvert{0}\rangle^{\otimes N}+\lvert{1}\rangle^{\otimes N}\right).`$ (2.10) For $`N=3`$, the GHZ state is:
 $$
-|{\text{GHZ}_{3}}\rangle=\frac{1}{\sqrt{2}}\left(|{000}\rangle+|{111}\rangle\right).
+\lvert{\text{GHZ}_{3}}\rangle=\frac{1}{\sqrt{2}}\left(\lvert{000}\rangle+\lvert{111}\rangle\right).
 $$
 (2.11)
 
@@ -675,16 +675,16 @@ A key property of the entangled states (e.g., Bell states and GHZ states) is tha
 
 Another description of quantum states is through density matrix or density operators. The reason for establishing density operators instead of Dirac notations arises from the imperfection of physical systems. Specifically, Dirac notations introduced in Chapter [2.1.2](#Ch2.S1.SS2 "2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") are used to describe ‘ideal’ quantum states (i.e., pure states), where the operated qubits are isolated from the environment. Alternatively, when the operated qubits interact with the environment unavoidably, the density operators are employed to describe the behavior of quantum states living in this open system. As such, density operators describe more general quantum states.
 
-Mathematically, an $`N`$-qubit density operator, denoted by $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$, presents a mixture of $`m`$ quantum pure states $`|{\psi_{i}}\rangle\in\mathbb{C}^{2^{N}}`$ with probability $`p_{i}\in[0,1]`$ and $`\sum_{i=1}^{m}p_{i}=1`$, i.e.,
+Mathematically, an $`N`$-qubit density operator, denoted by $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$, presents a mixture of $`m`$ quantum pure states $`\lvert{\psi_{i}}\rangle\in\mathbb{C}^{2^{N}}`$ with probability $`p_{i}\in[0,1]`$ and $`\sum_{i=1}^{m}p_{i}=1`$, i.e.,
 
 $$
 \rho=\sum_{i=1}^{m}p_{i}\rho_{i}~,
 $$
 
-where $`\rho_{i}=|{\psi_{i}}\rangle\langle{\psi_{i}}|\in\mathbb{C}^{2^{N}\times 2^{N}}`$ is the outer product of the pure state $`|{\psi_{i}}\rangle`$. The outer product of two vectors $`|{u}\rangle,|{v}\rangle\in\mathbb{C}^{n}`$ is expressed as
+where $`\rho_{i}=\lvert{\psi_{i}}\rangle\langle{\psi_{i}}\rvert\in\mathbb{C}^{2^{N}\times 2^{N}}`$ is the outer product of the pure state $`\lvert{\psi_{i}}\rangle`$. The outer product of two vectors $`\lvert{u}\rangle,\lvert{v}\rangle\in\mathbb{C}^{n}`$ is expressed as
 
 $$
-|{u}\rangle\langle{v}|=\begin{bmatrix}u_{1}\\
+\lvert{u}\rangle\langle{v}\rvert=\begin{bmatrix}u_{1}\\
 u_{2}\\
 \vdots\\
 u_{n}\end{bmatrix}\begin{bmatrix}v_{1}^{*}&v_{2}^{*}&\cdots&v_{n}^{*}\end{bmatrix}=\begin{bmatrix}u_{1}v_{1}^{*}&u_{1}v_{2}^{*}&\cdots&u_{1}v_{n}^{*}\\
@@ -693,7 +693,7 @@ u_{2}v_{1}^{*}&u_{2}v_{2}^{*}&\cdots&u_{2}v_{n}^{*}\\
 u_{n}v_{1}^{*}&u_{n}v_{2}^{*}&\cdots&u_{n}v_{n}^{*}\end{bmatrix},
 $$
 
-where $`u_{i}`$ and $`v_{i}^{*}`$ are the element of $`|{u}\rangle`$ and the conjugate transpose $`\langle{v}|`$, respectively.
+where $`u_{i}`$ and $`v_{i}^{*}`$ are the element of $`\lvert{u}\rangle`$ and the conjugate transpose $`\langle{v}\rvert`$, respectively.
 
 From the perspective of computer science, the density operator $`\rho`$ is just a positive semi-definite matrix with trace-preserving, i.e., $`\boldsymbol{0}\preceq\rho`$ and $`\mathop{\text{Tr}}(\rho)=1`$.
 
@@ -707,9 +707,9 @@ From the perspective of computer science, the density operator $`\rho`$ is just 
 
 2.  <span id="Ch2.S1.I1.i2">2.</span>
 
-    For any nonzero vector $`|{v}\rangle\in\mathbb{C}^{n}`$, $`\langle{v}|A|{v}\rangle\geq 0`$, where $`\langle{v}|A|{v}\rangle`$ represents the quadratic form of $`A`$ with respect to $`|{v}\rangle`$.
+    For any nonzero vector $`\lvert{v}\rangle\in\mathbb{C}^{n}`$, $`\langle{v}\rvertA\lvert{v}\rangle\geq 0`$, where $`\langle{v}\rvertA\lvert{v}\rangle`$ represents the quadratic form of $`A`$ with respect to $`\lvert{v}\rangle`$.
 
-When $`m=1`$, the density operator $`\rho`$ amounts to a pure state with $`\rho=|{\psi_{1}}\rangle\langle{\psi_{1}}|`$. When $`m>1`$, the density operator $`\rho`$ describes a ‘mixed’ quantum state, where the rank of $`\rho`$ is larger than $`1`$. A simple criterion to discriminate the pure states with the mixed states is as follows: the pure state with $`m=1`$ yields $`\mathop{\text{Tr}}(\rho^{n})=\mathop{\text{Tr}}(\rho)=1`$ for any $`n\in\mathbb{N}_{+}`$; the mixed state with $`m>1`$ satisfies $`\mathop{\text{Tr}}(\rho^{n})<\mathop{\text{Tr}}(\rho)=1`$ for any $`n\in\mathbb{N}_{+}\setminus\{1\}`$. Similar to the Definition [2.2](#Ch2.Thmtheorem2 "Definition 2.2. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for entanglement of pure states, we can define the entanglement of mixed states.
+When $`m=1`$, the density operator $`\rho`$ amounts to a pure state with $`\rho=\lvert{\psi_{1}}\rangle\langle{\psi_{1}}\rvert`$. When $`m>1`$, the density operator $`\rho`$ describes a ‘mixed’ quantum state, where the rank of $`\rho`$ is larger than $`1`$. A simple criterion to discriminate the pure states with the mixed states is as follows: the pure state with $`m=1`$ yields $`\mathop{\text{Tr}}(\rho^{n})=\mathop{\text{Tr}}(\rho)=1`$ for any $`n\in\mathbb{N}_{+}`$; the mixed state with $`m>1`$ satisfies $`\mathop{\text{Tr}}(\rho^{n})<\mathop{\text{Tr}}(\rho)=1`$ for any $`n\in\mathbb{N}_{+}\setminus\{1\}`$. Similar to the Definition [2.2](#Ch2.Thmtheorem2 "Definition 2.2. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for entanglement of pure states, we can define the entanglement of mixed states.
 
 ###### Definition 2.5.
 
@@ -724,15 +724,15 @@ where $`p_{i}\geq 0`$, $`\sum_{i}p_{i}=1`$, and $`\rho_{A}^{(i)}`$ and $`\rho_{B
 ###### Example 2.6.
 
 (Density matrix representations).\
-(i). Consider the single-qubit pure state $`|{\psi}\rangle=\frac{1}{\sqrt{2}}(|{0}\rangle+|{1}\rangle)`$. The corresponding density operator is:
+(i). Consider the single-qubit pure state $`\lvert{\psi}\rangle=\frac{1}{\sqrt{2}}(\lvert{0}\rangle+\lvert{1}\rangle)`$. The corresponding density operator is:
 $$
-\rho=|{\psi}\rangle\langle{\psi}|=\frac{1}{2}\begin{bmatrix}1&1\\
+\rho=\lvert{\psi}\rangle\langle{\psi}\rvert=\frac{1}{2}\begin{bmatrix}1&1\\
 1&1\end{bmatrix}.
 $$
 Here, $`\mathop{\text{Tr}}(\rho^{2})=\mathop{\text{Tr}}(\rho)=1`$, confirming that it is a pure state.\
-(ii). Consider the classical probabilistic mixture of $`|{0}\rangle`$ and $`|{1}\rangle`$, each with equal probability $`p=0.5`$. The density operator is:
+(ii). Consider the classical probabilistic mixture of $`\lvert{0}\rangle`$ and $`\lvert{1}\rangle`$, each with equal probability $`p=0.5`$. The density operator is:
 $$
-\rho=0.5|{0}\rangle\langle{0}|+0.5|{1}\rangle\langle{1}|=\frac{1}{2}\begin{bmatrix}1&0\\
+\rho=0.5\lvert{0}\rangle\langle{0}\rvert+0.5\lvert{1}\rangle\langle{1}\rvert=\frac{1}{2}\begin{bmatrix}1&0\\
 0&1\end{bmatrix}.
 $$
 In this case, $`\mathop{\text{Tr}}(\rho^{2})=0.5<\mathop{\text{Tr}}(\rho)=1`$, indicating it is a mixed state.
@@ -903,19 +903,19 @@ Recall that the computational toolkit for classical computers is logic gates, e.
 <figcaption>Figure 2.1: The summarization of quantum gates. The table contains the abbreviation, the mathematical form, and the graph representation of a set of universal quantum gates. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> represents the imaginary unit.</figcaption>
 </figure>
 
-Single-qubit gates. Single-qubit gates control the evolution of the single-qubit state $`|{\boldsymbol{a}}\rangle`$. Due to the law of quantum mechanics, the evolved state should satisfy the normalization constraint. The implication of this constraint is that the evolution must be a unitary operation. Concretely, denoted $`U\in\mathbb{C}^{2\times 2}`$ as a linear operator and the evolved state as
+Single-qubit gates. Single-qubit gates control the evolution of the single-qubit state $`\lvert{\boldsymbol{a}}\rangle`$. Due to the law of quantum mechanics, the evolved state should satisfy the normalization constraint. The implication of this constraint is that the evolution must be a unitary operation. Concretely, denoted $`U\in\mathbb{C}^{2\times 2}`$ as a linear operator and the evolved state as
 
 $$
-|{\hat{\boldsymbol{a}}}\rangle:=U|{\boldsymbol{a}}\rangle=\hat{\boldsymbol{a}}_{1}|{0}\rangle+\hat{\boldsymbol{a}}_{2}|{1}\rangle\in\mathbb{C}^{2}~,
+\lvert{\hat{\boldsymbol{a}}}\rangle:=U\lvert{\boldsymbol{a}}\rangle=\hat{\boldsymbol{a}}_{1}\lvert{0}\rangle+\hat{\boldsymbol{a}}_{2}\lvert{1}\rangle\in\mathbb{C}^{2}~,
 $$
 
-the summation of coefficients $`|\hat{\boldsymbol{a}}_{1}|^{2}+|\hat{\boldsymbol{a}}_{2}|^{2}=\braket{\hat{\boldsymbol{a}}|\hat{\boldsymbol{a}}}=\braket{\boldsymbol{a}|U^{\dagger}U|\boldsymbol{a}}`$ is equal to $`1`$ if and only if $`U`$ is unitary with $`U^{\dagger}U=UU^{\dagger}=\mathbb{I}_{2}`$. The symbol ‘$`\dagger`$’ denotes the conjugate transpose operation. Under the density operator representation, the evolution of $`|{\boldsymbol{a}}\rangle`$ yields
+the summation of coefficients $`|\hat{\boldsymbol{a}}_{1}|^{2}+|\hat{\boldsymbol{a}}_{2}|^{2}=\braket{\hat{\boldsymbol{a}}|\hat{\boldsymbol{a}}}=\braket{\boldsymbol{a}|U^{\dagger}U|\boldsymbol{a}}`$ is equal to $`1`$ if and only if $`U`$ is unitary with $`U^{\dagger}U=UU^{\dagger}=\mathbb{I}_{2}`$. The symbol ‘$`\dagger`$’ denotes the conjugate transpose operation. Under the density operator representation, the evolution of $`\lvert{\boldsymbol{a}}\rangle`$ yields
 
 $$
 \hat{\rho}=U\rho U^{\dagger}~,
 $$
 
-where $`\hat{\rho}=|{\hat{\boldsymbol{a}}}\rangle\langle{\hat{\boldsymbol{a}}}|`$ and $`\rho=|{\boldsymbol{a}}\rangle\langle{\boldsymbol{a}}|`$.
+where $`\hat{\rho}=\lvert{\hat{\boldsymbol{a}}}\rangle\langle{\hat{\boldsymbol{a}}}\rvert`$ and $`\rho=\lvert{\boldsymbol{a}}\rangle\langle{\boldsymbol{a}}\rvert`$.
 
 Several common single-qubit gates, including Pauli-X, Pauli-Y, Pauli-Z, Hadamard, and rotational single-qubit gates about the X, Y, and Z axes ($`\mathop{\text{RX}},\mathop{\text{RY}},\mathop{\text{RZ}}`$), are illustrated in Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). According to Theorem 4.1 in ([Nielsen and Chuang, 2011](#bib.bib8)), any unitary operation on a single qubit can be decomposed into a sequence of rotations as:
 
@@ -930,17 +930,17 @@ where $`\alpha,\beta,\gamma\in[0,2\pi)`$, up to a global phase shift.
 <figcaption>Figure 2.2: The evolution of the single-qubit state decomposed into the quantum gates.</figcaption>
 </figure>
 
-The evolution from $`|{\boldsymbol{a}}\rangle`$ to $`|{\hat{\boldsymbol{a}}}\rangle`$ can be visualized using a quantum circuit diagram, as illustrated in Figure [2.2](#Ch2.F2 "Figure 2.2 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The wire in the circuit represents a qubit, which evolves from the initial state $`|{\boldsymbol{a}}\rangle`$ on the left to the final state $`|{\hat{\boldsymbol{a}}}\rangle`$ on the right. Gates are applied sequentially from left to right along the wire.
+The evolution from $`\lvert{\boldsymbol{a}}\rangle`$ to $`\lvert{\hat{\boldsymbol{a}}}\rangle`$ can be visualized using a quantum circuit diagram, as illustrated in Figure [2.2](#Ch2.F2 "Figure 2.2 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The wire in the circuit represents a qubit, which evolves from the initial state $`\lvert{\boldsymbol{a}}\rangle`$ on the left to the final state $`\lvert{\hat{\boldsymbol{a}}}\rangle`$ on the right. Gates are applied sequentially from left to right along the wire.
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNS5waWMxIiBjbGFzcz0ibHR4X3BpY3R1cmUiIGhlaWdodD0iMjU1Ljg3IiBvdmVyZmxvdz0idmlzaWJsZSIgdmVyc2lvbj0iMS4xIiB2aWV3Ym94PSIwIDAgNDc3LjM4IDI1NS44NyIgd2lkdGg9IjQ3Ny4zOCI+PGcgc3R5bGU9Ii0tbHR4LXN0cm9rZS1jb2xvcjojMDAwMDAwOy0tbHR4LWZpbGwtY29sb3I6IzAwMDAwMDsiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjRwdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwyNTUuODcpIG1hdHJpeCgxIDAgMCAtMSAwIDApIj48ZyBzdHlsZT0iLS1sdHgtZmlsbC1jb2xvcjojNjA2MDYwOyIgZmlsbD0iIzYwNjA2MCIgZmlsbC1vcGFjaXR5PSIxLjAiPjxwYXRoIHN0eWxlPSJzdHJva2U6bm9uZSIgZD0iTSAwIDUuOTEgTCAwIDI0OS45NyBDIDAgMjUzLjIzIDIuNjQgMjU1Ljg3IDUuOTEgMjU1Ljg3IEwgNDcxLjQ3IDI1NS44NyBDIDQ3NC43MyAyNTUuODcgNDc3LjM4IDI1My4yMyA0NzcuMzggMjQ5Ljk3IEwgNDc3LjM4IDUuOTEgQyA0NzcuMzggMi42NCA0NzQuNzMgMCA0NzEuNDcgMCBMIDUuOTEgMCBDIDIuNjQgMCAwIDIuNjQgMCA1LjkxIFoiIC8+PC9nPjxnIHN0eWxlPSItLWx0eC1maWxsLWNvbG9yOiNGOUY5Rjk7IiBmaWxsPSIjRjlGOUY5IiBmaWxsLW9wYWNpdHk9IjEuMCI+PHBhdGggc3R5bGU9InN0cm9rZTpub25lIiBkPSJNIDEuOTcgNS45MSBMIDEuOTcgMjM0LjQ1IEwgNDc1LjQxIDIzNC40NSBMIDQ3NS40MSA1LjkxIEMgNDc1LjQxIDMuNzMgNDczLjY1IDEuOTcgNDcxLjQ3IDEuOTcgTCA1LjkxIDEuOTcgQyAzLjczIDEuOTcgMS45NyAzLjczIDEuOTcgNS45MSBaIiAvPjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDI0MC4zNikiPjxmb3JlaWdub2JqZWN0IHN0eWxlPSItLWx0eC1mby13aWR0aDozMS4zN2VtOy0tbHR4LWZvLWhlaWdodDowLjY5ZW07LS1sdHgtZm8tZGVwdGg6MGVtO2ZvbnQtc2l6ZToxMHB0OyIgaGVpZ2h0PSI5LjYxIiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA5LjYxKSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNS5waWMxLjEiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNS5waWMxLjEuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNS5waWMxLjEuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojRkZGRkZGOyI+UmVtYXJrPC9zcGFuPjwvc3Bhbj4KPC9zcGFuPjwvc3Bhbj48L3NwYW4+PC9mb3JlaWdub2JqZWN0PjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDEzLjc4KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjE1LjA5ZW07LS1sdHgtZm8tZGVwdGg6MGVtO2ZvbnQtc2l6ZToxMHB0OyIgaGVpZ2h0PSIyMDguODYiIG92ZXJmbG93PSJ2aXNpYmxlIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAwIDIwOC44NikiIHdpZHRoPSI0MzQuMDciPjxzcGFuIGNsYXNzPSJsdHhfZm9yZWlnbm9iamVjdF9jb250YWluZXIiPjxzcGFuIGNsYXNzPSJsdHhfZm9yZWlnbm9iamVjdF9jb250ZW50Ij4KPHNwYW4gaWQ9IkNoMi5TMi5TUzIuU1NTeDEucDUucGljMS4yIiBjbGFzcz0ibHR4X2lubGluZS1ibG9jayBsdHhfbWluaXBhZ2UgbHR4X2FsaWduX2JvdHRvbSIgc3R5bGU9IndpZHRoOjMxLjM3ZW07Ij4KPHNwYW4gaWQ9IkNoMi5TMi5TUzIuU1NTeDEucDUucGljMS4yLjEiIGNsYXNzPSJsdHhfcCI+PHNwYW4gaWQ9IkNoMi5TMi5TUzIuU1NTeDEucDUucGljMS4yLjEuMSIgY2xhc3M9Imx0eF90ZXh0IiBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiPlRoZSBjaXJjdWl0IG1vZGVsIHNlcnZlcyBhcyBhIGZvdW5kYXRpb25hbCBmcmFtZXdvcmsgZm9yIGRlc2NyaWJpbmcgcXVhbnR1bSBjb21wdXRhdGlvbiBkdWUgdG8gaXRzIDxzcGFuIGlkPSJDaDIuUzIuU1MyLlNTU3gxLnA1LnBpYzEuMi4xLjEuMSIgY2xhc3M9Imx0eF90ZXh0IGx0eF9mb250X2l0YWxpYyI+aW50dWl0aXZlPC9zcGFuPiBhbmQgPHNwYW4gaWQ9IkNoMi5TMi5TUzIuU1NTeDEucDUucGljMS4yLjEuMS4yIiBjbGFzcz0ibHR4X3RleHQgbHR4X2ZvbnRfaXRhbGljIj5tb2R1bGFyPC9zcGFuPiBuYXR1cmUsIG1ha2luZyBpdCBhY2Nlc3NpYmxlIGZvciByZXNlYXJjaGVycyBhbmQgcHJhY3RpdGlvbmVycyB0cmFuc2l0aW9uaW5nIGZyb20gY2xhc3NpY2FsIHRvIHF1YW50dW0gY29tcHV0aW5nLiBGaXJzdCwgdGhlIGNpcmN1aXQgbW9kZWwgcHJvdmlkZXMgYSBzdGFuZGFyZGl6ZWQgZ3JhcGhpY2FsIGxhbmd1YWdlIHRvIHJlcHJlc2VudCBjb21wbGV4IHF1YW50dW0gYWxnb3JpdGhtcywgZW5hYmxpbmcgY2xlYXIgdmlzdWFsaXphdGlvbiBvZiB0aGUgY29tcHV0YXRpb25hbCBmbG93IGFuZCBpbnRlcmFjdGlvbnMgYW1vbmcgcXViaXRzLiBTZWNvbmQsIHRoZSBtb2R1bGFyaXR5IG9mIHRoZSBjaXJjdWl0IG1vZGVsIGFsbG93cyBxdWFudHVtIG9wZXJhdGlvbnMgdG8gYmUgZWFzaWx5IGRlY29tcG9zZWQgaW50byBhIHByZS1kZWZpbmVkIGdhdGUgc2V0LCBlbnN1cmluZyBjb21wYXRpYmlsaXR5IGFjcm9zcyBkaWZmZXJlbnQgcXVhbnR1bSBoYXJkd2FyZSBhcmNoaXRlY3R1cmVzLjwvc3Bhbj48L3NwYW4+Cjwvc3Bhbj48L3NwYW4+PC9zcGFuPjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvc3ZnPg==" id="Ch2.S2.SS2.SSSx1.p5.pic1" class="ltx_picture" />
 
-Multi-qubit gates. The evolution of the $`N`$-qubit quantum state can be effectively generalized by the single-qubit case. That is, the unitary operator $`U\in\mathbb{C}^{2^{N}\times 2^{N}}`$ evolves an $`N`$-qubit state $`|{\psi}\rangle`$ in Eqn. ([2.7](#Ch2.E7 "Equation 2.7 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) as
+Multi-qubit gates. The evolution of the $`N`$-qubit quantum state can be effectively generalized by the single-qubit case. That is, the unitary operator $`U\in\mathbb{C}^{2^{N}\times 2^{N}}`$ evolves an $`N`$-qubit state $`\lvert{\psi}\rangle`$ in Eqn. ([2.7](#Ch2.E7 "Equation 2.7 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) as
 
 $$
-|{\widehat{\psi}}\rangle=U|{\psi}\rangle\in\mathbb{C}^{2^{N}}~.
+\lvert{\widehat{\psi}}\rangle=U\lvert{\psi}\rangle\in\mathbb{C}^{2^{N}}~.
 $$
 
-The evolution of $`|{\psi}\rangle`$ under the density operator representation is denoted by $`\hat{\rho}=U\rho U^{\dagger}`$, where $`\hat{\rho}=|{\widehat{\psi}}\rangle\langle{\widehat{\psi}}|`$ and $`\rho=|{\psi}\rangle\langle{\psi}|`$.
+The evolution of $`\lvert{\psi}\rangle`$ under the density operator representation is denoted by $`\hat{\rho}=U\rho U^{\dagger}`$, where $`\hat{\rho}=\lvert{\widehat{\psi}}\rangle\langle{\widehat{\psi}}\rvert`$ and $`\rho=\lvert{\psi}\rangle\langle{\psi}\rvert`$.
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxIiBjbGFzcz0ibHR4X3BpY3R1cmUiIGhlaWdodD0iMTQzLjEiIG92ZXJmbG93PSJ2aXNpYmxlIiB2ZXJzaW9uPSIxLjEiIHZpZXdib3g9IjAgMCA0NzcuMzggMTQzLjEiIHdpZHRoPSI0NzcuMzgiPjxnIHN0eWxlPSItLWx0eC1zdHJva2UtY29sb3I6IzAwMDAwMDstLWx0eC1maWxsLWNvbG9yOiMwMDAwMDA7IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC40cHQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTQzLjEpIG1hdHJpeCgxIDAgMCAtMSAwIDApIj48ZyBzdHlsZT0iLS1sdHgtZmlsbC1jb2xvcjojNjA2MDYwOyIgZmlsbD0iIzYwNjA2MCIgZmlsbC1vcGFjaXR5PSIxLjAiPjxwYXRoIHN0eWxlPSJzdHJva2U6bm9uZSIgZD0iTSAwIDUuOTEgTCAwIDEzNy4yIEMgMCAxNDAuNDYgMi42NCAxNDMuMSA1LjkxIDE0My4xIEwgNDcxLjQ3IDE0My4xIEMgNDc0LjczIDE0My4xIDQ3Ny4zOCAxNDAuNDYgNDc3LjM4IDEzNy4yIEwgNDc3LjM4IDUuOTEgQyA0NzcuMzggMi42NCA0NzQuNzMgMCA0NzEuNDcgMCBMIDUuOTEgMCBDIDIuNjQgMCAwIDIuNjQgMCA1LjkxIFoiIC8+PC9nPjxnIHN0eWxlPSItLWx0eC1maWxsLWNvbG9yOiNGOUY5Rjk7IiBmaWxsPSIjRjlGOUY5IiBmaWxsLW9wYWNpdHk9IjEuMCI+PHBhdGggc3R5bGU9InN0cm9rZTpub25lIiBkPSJNIDEuOTcgNS45MSBMIDEuOTcgMTIxLjY4IEwgNDc1LjQxIDEyMS42OCBMIDQ3NS40MSA1LjkxIEMgNDc1LjQxIDMuNzMgNDczLjY1IDEuOTcgNDcxLjQ3IDEuOTcgTCA1LjkxIDEuOTcgQyAzLjczIDEuOTcgMS45NyAzLjczIDEuOTcgNS45MSBaIiAvPjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDEyNy41OSkiPjxmb3JlaWdub2JqZWN0IHN0eWxlPSItLWx0eC1mby13aWR0aDozMS4zN2VtOy0tbHR4LWZvLWhlaWdodDowLjY5ZW07LS1sdHgtZm8tZGVwdGg6MGVtO2ZvbnQtc2l6ZToxMHB0OyIgaGVpZ2h0PSI5LjYxIiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA5LjYxKSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLjEiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLjEuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLjEuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojRkZGRkZGOyI+UmVtYXJrPC9zcGFuPjwvc3Bhbj4KPC9zcGFuPjwvc3Bhbj48L3NwYW4+PC9mb3JlaWdub2JqZWN0PjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDE2LjQ3KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjYuNzVlbTstLWx0eC1mby1kZXB0aDowLjE5ZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9Ijk2LjA5IiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA5My40KSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLjIiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLjIuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLjIuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyI+SW4gdGhlIHZpZXcgb2YgY29tcHV0ZXIgc2NpZW5jZSwgdGhlIHF1YW50dW0gKGxvZ2ljKSBnYXRlcyBpbiBGaWd1cmUgPGEgaHJlZj0iI0NoMi5GMSIgdGl0bGU9IkZpZ3VyZSAyLjEg4oCjIFF1YW50dW0gZ2F0ZSDigKMgMi4yLjIgUXVhbnR1bSBjaXJjdWl0IOKAoyAyLjIgRnJvbSBEaWdpdGFsIExvZ2ljYWwgQ2lyY3VpdCB0byBRdWFudHVtIENpcmN1aXQgTW9kZWwg4oCjIENoYXB0ZXIgMiBCYXNpY3Mgb2YgUXVhbnR1bSBDb21wdXRpbmcg4oCjIFF1YW50dW0gTWFjaGluZSBMZWFybmluZ0EgSGFuZHMtb24gVHV0b3JpYWwgZm9yIE1hY2hpbmUgTGVhcm5pbmcgUHJhY3RpdGlvbmVycyBhbmQgUmVzZWFyY2hlcnMiIGNsYXNzPSJsdHhfcmVmIj48c3BhbiBjbGFzcz0ibHR4X3RleHQgbHR4X3JlZl90YWciPjIuMTwvc3Bhbj48L2E+IGFyZSB3ZWxsLWRlc2lnbmVkIG1hdHJpY2VzIHdpdGggdGhlIGZvbGxvd2luZyBwcm9wZXJ0aWVzLiBGaXJzdCwgYWxsIHF1YW50dW0gZ2F0ZXMgYXJlIHVuaXRhcnkgKGUuZy4sIDxtYXRoIGlkPSJDaDIuUzIuU1MyLlNTU3gxLnA3LnBpYzEubTEiIGNsYXNzPSJsdHhfbWF0aF91bnBhcnNlZCIgYWx0dGV4dD0iXG1hdGhvcHtcdGV4dHtYfX1cbWF0aG9we1x0ZXh0e1h9fV57XGRhZ2dlcn09XG1hdGhiYntJfV97Mn0iIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bXJvdz48bXRleHQgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPlg8L210ZXh0PjxtdGV4dCBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+WDwvbXRleHQ+PG1zdXA+PG1yb3c+PC9tcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+4oCgPC9tbz48L21zdXA+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj49PC9tbz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPvCdlYA8L21pPjxtc3ViPjxtcm93PjwvbXJvdz48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjI8L21uPjwvbXN1Yj48L21yb3c+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5cbWF0aG9we1x0ZXh0e1h9fVxtYXRob3B7XHRleHR7WH19XntcZGFnZ2VyfT1cbWF0aGJie0l9X3syfTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+KS4gU2Vjb25kLCA8bWF0aCBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLm0yIiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9IlxtYXRob3B7XHRleHR7WH19IiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG10ZXh0IHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5YPC9tdGV4dD48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPlxtYXRob3B7XHRleHR7WH19PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4sIDxtYXRoIGlkPSJDaDIuUzIuU1MyLlNTU3gxLnA3LnBpYzEubTMiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXG1hdGhvcHtcdGV4dHtZfX0iIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bXRleHQgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPlk8L210ZXh0Pjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+XG1hdGhvcHtcdGV4dHtZfX08L2Fubm90YXRpb24+PC9zZW1hbnRpY3M+PC9tYXRoPiwgPG1hdGggaWQ9IkNoMi5TMi5TUzIuU1NTeDEucDcucGljMS5tNCIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJcbWF0aG9we1x0ZXh0e1p9fSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtdGV4dCBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+WjwvbXRleHQ+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5cbWF0aG9we1x0ZXh0e1p9fTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+LCA8bWF0aCBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLm01IiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9IlxtYXRob3B7XHRleHR7SH19IiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG10ZXh0IHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5IPC9tdGV4dD48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPlxtYXRob3B7XHRleHR7SH19PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4gZ2F0ZXMgaGF2ZSB0aGUgZml4ZWQgZm9ybSB3aXRoIHNpemUgPG1hdGggaWQ9IkNoMi5TMi5TUzIuU1NTeDEucDcucGljMS5tNiIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSIyXHRpbWVzIDIiIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bXJvdz48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjI8L21uPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGxzcGFjZT0iMC4yMjJlbSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMjIyZW0iPsOXPC9tbz48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjI8L21uPjwvbXJvdz48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPjJcdGltZXMgMjwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+OyA8bWF0aCBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLm03IiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9IlxtYXRob3B7XHRleHR7Q05PVH19IiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG10ZXh0IHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5DTk9UPC9tdGV4dD48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPlxtYXRob3B7XHRleHR7Q05PVH19PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4sIDxtYXRoIGlkPSJDaDIuUzIuU1MyLlNTU3gxLnA3LnBpYzEubTgiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXG1hdGhvcHtcdGV4dHtDWn19IiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG10ZXh0IHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5DWjwvbXRleHQ+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5cbWF0aG9we1x0ZXh0e0NafX08L2Fubm90YXRpb24+PC9zZW1hbnRpY3M+PC9tYXRoPiwgYW5kIDxtYXRoIGlkPSJDaDIuUzIuU1MyLlNTU3gxLnA3LnBpYzEubTkiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXG1hdGhvcHtcdGV4dHtTV0FQfX0iIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bXRleHQgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPlNXQVA8L210ZXh0Pjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+XG1hdGhvcHtcdGV4dHtTV0FQfX08L2Fubm90YXRpb24+PC9zZW1hbnRpY3M+PC9tYXRoPiBnYXRlcyBoYXZlIHRoZSBmaXhlZCBmb3JtIHdpdGggc2l6ZSA8bWF0aCBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLm0xMCIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSI0XHRpbWVzIDQiIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bXJvdz48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjQ8L21uPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGxzcGFjZT0iMC4yMjJlbSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMjIyZW0iPsOXPC9tbz48bW4gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPjQ8L21uPjwvbXJvdz48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPjRcdGltZXMgNDwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+LiBUaGlyZCwgPG1hdGggaWQ9IkNoMi5TMi5TUzIuU1NTeDEucDcucGljMS5tMTEiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXG1hdGhvcHtcdGV4dHtSWH19KFx0aGV0YSkiIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bXJvdz48bXRleHQgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPlJYPC9tdGV4dD48bW8+4oGhPC9tbz48bXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+KDwvbW8+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj7OuDwvbWk+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPik8L21vPjwvbXJvdz48L21yb3c+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5cbWF0aG9we1x0ZXh0e1JYfX0oXHRoZXRhKTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+LCA8bWF0aCBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLm0xMiIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJcbWF0aG9we1x0ZXh0e1JZfX0oXHRoZXRhKSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtcm93PjxtdGV4dCBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+Ulk8L210ZXh0Pjxtbz7igaE8L21vPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4oPC9tbz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPs64PC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+KTwvbW8+PC9tcm93PjwvbXJvdz48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPlxtYXRob3B7XHRleHR7Ull9fShcdGhldGEpPC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4sIDxtYXRoIGlkPSJDaDIuUzIuU1MyLlNTU3gxLnA3LnBpYzEubTEzIiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9IlxtYXRob3B7XHRleHR7Ulp9fShcdGhldGEpIiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1yb3c+PG10ZXh0IHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5SWjwvbXRleHQ+PG1vPuKBoTwvbW8+PG1yb3c+PG1vIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIiBzdHJldGNoeT0iZmFsc2UiPig8L21vPjxtaSBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCI+zrg8L21pPjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIG1hdGhjb2xvcj0iIzAwMDAwMCIgc3RyZXRjaHk9ImZhbHNlIj4pPC9tbz48L21yb3c+PC9tcm93Pjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+XG1hdGhvcHtcdGV4dHtSWn19KFx0aGV0YSk8L2Fubm90YXRpb24+PC9zZW1hbnRpY3M+PC9tYXRoPiBnYXRlcyBhcmUgbWF0cmljZXMgY29udHJvbGxlZCBieSBhIHNpbmdsZSB2YXJpYWJsZSA8bWF0aCBpZD0iQ2gyLlMyLlNTMi5TU1N4MS5wNy5waWMxLm0xNCIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJcdGhldGEiIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPs64PC9taT48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPlx0aGV0YTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+Ljwvc3Bhbj48L3NwYW4+Cjwvc3Bhbj48L3NwYW4+PC9zcGFuPjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvc3ZnPg==" id="Ch2.S2.SS2.SSSx1.p7.pic1" class="ltx_picture" />
 
@@ -948,7 +948,7 @@ Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣
 
 ###### Example 2.7.
 
-(State evolved by multi-qubit gates). Figure [2.3](#Ch2.F3 "Figure 2.3 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") illustrates the evolution of a 3-qubit state $`|{\psi}\rangle`$ under a multi-qubit circuit consisting of multi-qubit gates. Each wire represents a qubit, and the evolution occurs from left to right. Starting with the initial state $`|{\psi}\rangle=|{000}\rangle`$, a Hadamard gate is applied to the first qubit, followed by two CNOT gates: one acting on the first and second qubits, and the other acting on the second and third qubits. The final evolved state, shown on the right, is the GHZ state introduced in Example [2.3](#Ch2.Thmtheorem3 "Example 2.3. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), i.e., $`|{\widehat{\psi}}\rangle=U|{\psi}\rangle=\frac{1}{\sqrt{2}}(|{000}\rangle+|{111}\rangle)`$. The entire unitary operation can be represented as:
+(State evolved by multi-qubit gates). Figure [2.3](#Ch2.F3 "Figure 2.3 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") illustrates the evolution of a 3-qubit state $`\lvert{\psi}\rangle`$ under a multi-qubit circuit consisting of multi-qubit gates. Each wire represents a qubit, and the evolution occurs from left to right. Starting with the initial state $`\lvert{\psi}\rangle=\lvert{000}\rangle`$, a Hadamard gate is applied to the first qubit, followed by two CNOT gates: one acting on the first and second qubits, and the other acting on the second and third qubits. The final evolved state, shown on the right, is the GHZ state introduced in Example [2.3](#Ch2.Thmtheorem3 "Example 2.3. ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), i.e., $`\lvert{\widehat{\psi}}\rangle=U\lvert{\psi}\rangle=\frac{1}{\sqrt{2}}(\lvert{000}\rangle+\lvert{111}\rangle)`$. The entire unitary operation can be represented as:
 $$
 U=(\mathop{\text{H}}\otimes\mathbb{I}_{4})(\mathop{\text{CNOT}}\otimes\mathbb{I}_{2})(\mathbb{I}_{2}\otimes\mathop{\text{CNOT}}).
 $$
@@ -1027,9 +1027,9 @@ where $`\mathbb{I}_{2^{N}}/{2^{N}}`$ refers to the maximally mixed state and $`p
 
 ###### Example 2.11.
 
-(Single-qubit state with depolarization channel). Consider a single-qubit pure state $`\rho=|{0}\rangle\langle{0}|`$ with the density matrix
+(Single-qubit state with depolarization channel). Consider a single-qubit pure state $`\rho=\lvert{0}\rangle\langle{0}\rvert`$ with the density matrix
 $$
-\rho=|{0}\rangle\langle{0}|=\begin{bmatrix}1&0\\
+\rho=\lvert{0}\rangle\langle{0}\rvert=\begin{bmatrix}1&0\\
 0&0\end{bmatrix}.
 $$
 (2.24) When the depolarizing channel $`\mathcal{N}_{p}`$ acts on this state, the output is given by
@@ -1043,7 +1043,7 @@ $$
 $$
 \mathop{\text{Tr}}(\mathcal{N}_{p}^{2}(\rho))=1-p+\frac{p^{2}}{2}.
 $$
-(2.26) When $`p=0`$, the state remains pure and unchanged. When $`0<p\leq 1`$, the state becomes a mixture of states $`|{0}\rangle`$ and $`|{1}\rangle`$ with $`\mathop{\text{Tr}}(\mathcal{N}_{p}^{2}(\rho))<1`$. When $`p=1`$, the state evolves into the maximally mixed state.
+(2.26) When $`p=0`$, the state remains pure and unchanged. When $`0<p\leq 1`$, the state becomes a mixture of states $`\lvert{0}\rangle`$ and $`\lvert{1}\rangle`$ with $`\mathop{\text{Tr}}(\mathcal{N}_{p}^{2}(\rho))<1`$. When $`p=1`$, the state evolves into the maximally mixed state.
 
 The second type is the Pauli channel, which serves as a dominant noise source in many computing architectures and as a practical model for analyzing error correction ([Flammia and Wallman, 2020](#bib.bib70)).
 
@@ -1061,9 +1061,9 @@ Note that for a single-qubit system, the depolarization channel $`\mathcal{N}_{p
 
 ###### Example 2.13.
 
-(Single-qubit state with Pauli channel). Consider a single-qubit pure state $`\rho=|{0}\rangle\langle{0}|`$ with the density matrix:
+(Single-qubit state with Pauli channel). Consider a single-qubit pure state $`\rho=\lvert{0}\rangle\langle{0}\rvert`$ with the density matrix:
 $$
-\rho=|{0}\rangle\langle{0}|=\begin{bmatrix}1&0\\
+\rho=\lvert{0}\rangle\langle{0}\rvert=\begin{bmatrix}1&0\\
 0&0\end{bmatrix}.
 $$
 (2.28) When the Pauli channel $`\mathcal{N}_{\vec{p}}`$ acts on this state, the output is given by $`\mathcal{N}_{\vec{p}}(\rho)`$ $`=p_{I}\begin{bmatrix}1&0\\
@@ -1081,7 +1081,7 @@ $$
 \mathcal{N}_{\vec{p}}(\rho)=\begin{bmatrix}1-p_{X}&0\\
 0&p_{X}\end{bmatrix}.
 $$
-(2.32) In this scenario, the Pauli channel reduces to the bit-flip channel. • Case 3: For other values of $`\vec{p}`$, the effect of the Pauli channel on the pure state $`|{0}\rangle`$ can be interpreted as a combination of the depolarizing channel and the bit-flip channel.
+(2.32) In this scenario, the Pauli channel reduces to the bit-flip channel. • Case 3: For other values of $`\vec{p}`$, the effect of the Pauli channel on the pure state $`\lvert{0}\rangle`$ can be interpreted as a combination of the depolarizing channel and the bit-flip channel.
 
 To generalize the single-qubit Pauli channel to a multi-qubit Pauli channel, we extend the definition to account for the action of Pauli operators on multiple qubits.
 
@@ -1103,10 +1103,10 @@ Having acknowledged the motivation and definition of quantum channels, it is nat
 
 ###### Theorem 2.15.
 
-([Wilde, 2011](#bib.bib69)) Let $`\mathcal{N}(\cdot):\mathcal{L}(\mathcal{H}_{A})\rightarrow\mathcal{L}(\mathcal{H}_{B})`$ be a quantum channel defined in Eqn. ([2.22](#Ch2.E22 "Equation 2.22 ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Let $`\mathcal{H}_{E}`$ be the Hilbert space of an auxiliary system. Denote the input state as $`\rho`$ (i.e., a density operator $`\rho\in\mathbb{C}^{\text{dim}(\mathcal{H}_{A})\times\text{dim}(\mathcal{H}_{A})}`$). Then there exists a unitary $`U:\mathcal{L}(\mathcal{H}_{A}\otimes\mathcal{H}_{E})\rightarrow\mathcal{L}(\mathcal{H}_{B}\otimes\mathcal{H}_{E})`$ and a normalized vector (i.e., a pure state) $`|{\varphi}\rangle\in\mathbb{C}^{\text{dim}(\mathcal{H}_{E})}`$ such that
+([Wilde, 2011](#bib.bib69)) Let $`\mathcal{N}(\cdot):\mathcal{L}(\mathcal{H}_{A})\rightarrow\mathcal{L}(\mathcal{H}_{B})`$ be a quantum channel defined in Eqn. ([2.22](#Ch2.E22 "Equation 2.22 ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Let $`\mathcal{H}_{E}`$ be the Hilbert space of an auxiliary system. Denote the input state as $`\rho`$ (i.e., a density operator $`\rho\in\mathbb{C}^{\text{dim}(\mathcal{H}_{A})\times\text{dim}(\mathcal{H}_{A})}`$). Then there exists a unitary $`U:\mathcal{L}(\mathcal{H}_{A}\otimes\mathcal{H}_{E})\rightarrow\mathcal{L}(\mathcal{H}_{B}\otimes\mathcal{H}_{E})`$ and a normalized vector (i.e., a pure state) $`\lvert{\varphi}\rangle\in\mathbb{C}^{\text{dim}(\mathcal{H}_{E})}`$ such that
 
 $$
-\mathcal{N}(\mathcal{\rho})=\text{Tr}_{E}\left(U(\rho\otimes|{\varphi}\rangle\langle{\varphi}|)U^{\dagger}\right)~,
+\mathcal{N}(\mathcal{\rho})=\text{Tr}_{E}\left(U(\rho\otimes\lvert{\varphi}\rangle\langle{\varphi}\rvert)U^{\dagger}\right)~,
 $$
 
 where $`\text{Tr}_{E}(\cdot)`$ denotes the partial trace over the ancillary Hilbert space $`\mathcal{H}_{E}`$, and the dimension of $`\mathcal{H}_{E}`$ depends on the rank of the Kraus representation of $`\mathcal{N}`$.
@@ -1123,9 +1123,9 @@ $$
 
 where $`V:\mathcal{H}_{A}\to\mathcal{H}_{B}\otimes\mathcal{H}_{E}`$ is an isometry operator embedding the input state into the larger Hilbert space. For simplicity, assume $`\mathcal{H}_{A}=\mathcal{H}_{B}`$. The isometry operator $`V`$ can always be embedded into a unitary operator $`U`$ acting on $`\mathcal{H}_{B}\otimes\mathcal{H}_{E}`$, ensuring that $`U`$ captures the reversible evolution of the extended system.
 
-Next, we augment the input state $`\rho`$ by introducing an ancillary state $`|{\varphi}\rangle\in\mathcal{H}_{E}`$, yielding the combined state $`\rho\otimes|{\varphi}\rangle\langle{\varphi}|`$. Substituting this augmented state and the unitary operator $`U`$ into the isometric extension in Eqn. ([2.37](#Ch2.E37 "Equation 2.37 ‣ Proof sketch of Theorem . ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) gives Eqn. ([2.36](#Ch2.E36 "Equation 2.36 ‣ Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Theorem [2.15](#Ch2.Thmtheorem15 "Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is thereby proven. ∎
+Next, we augment the input state $`\rho`$ by introducing an ancillary state $`\lvert{\varphi}\rangle\in\mathcal{H}_{E}`$, yielding the combined state $`\rho\otimes\lvert{\varphi}\rangle\langle{\varphi}\rvert`$. Substituting this augmented state and the unitary operator $`U`$ into the isometric extension in Eqn. ([2.37](#Ch2.E37 "Equation 2.37 ‣ Proof sketch of Theorem . ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) gives Eqn. ([2.36](#Ch2.E36 "Equation 2.36 ‣ Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Theorem [2.15](#Ch2.Thmtheorem15 "Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") is thereby proven. ∎
 
-The translation between the unitary operation and the quantum channels described by Theorem [2.15](#Ch2.Thmtheorem15 "Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") can be visually explained, as shown in Figure [2.4](#Ch2.F4 "Figure 2.4 ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In this diagram, the first wire corresponds to the original input state $`\rho`$, while the second wire represents the initial state $`|{\varphi}\rangle`$ of the environment. To determine the output of the quantum channel $`\mathcal{N}`$ applied to $`\rho`$, an $`\mathcal{N}`$-induced unitary operation $`U`$ is performed on the combined system, followed by a partial trace over the environment to discard its information.
+The translation between the unitary operation and the quantum channels described by Theorem [2.15](#Ch2.Thmtheorem15 "Theorem 2.15. ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") can be visually explained, as shown in Figure [2.4](#Ch2.F4 "Figure 2.4 ‣ Quantum channels ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In this diagram, the first wire corresponds to the original input state $`\rho`$, while the second wire represents the initial state $`\lvert{\varphi}\rangle`$ of the environment. To determine the output of the quantum channel $`\mathcal{N}`$ applied to $`\rho`$, an $`\mathcal{N}`$-induced unitary operation $`U`$ is performed on the combined system, followed by a partial trace over the environment to discard its information.
 
 <figure id="Ch2.F4" class="ltx_figure">
 
@@ -1134,7 +1134,7 @@ The translation between the unitary operation and the quantum channels described
 
 ##### Quantum measurements
 
-In addition to quantum gates and quantum channels that manipulate quantum states, another special operation in quantum circuits is measurement. The aim of quantum measurements is to extract quantum information of the evolved state into the classical form. The quantum circuit diagram, which describes applying a unitary $`U`$ followed by the quantum measurement to a single-qubit state $`|{\boldsymbol{a}}\rangle`$, is shown in Figure [2.5](#Ch2.F5 "Figure 2.5 ‣ Quantum measurements ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In particular, both types of measurements are depicted by the ‘meter’ symbol.
+In addition to quantum gates and quantum channels that manipulate quantum states, another special operation in quantum circuits is measurement. The aim of quantum measurements is to extract quantum information of the evolved state into the classical form. The quantum circuit diagram, which describes applying a unitary $`U`$ followed by the quantum measurement to a single-qubit state $`\lvert{\boldsymbol{a}}\rangle`$, is shown in Figure [2.5](#Ch2.F5 "Figure 2.5 ‣ Quantum measurements ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). In particular, both types of measurements are depicted by the ‘meter’ symbol.
 
 <figure id="Ch2.F5" class="ltx_figure">
 
@@ -1143,7 +1143,7 @@ In addition to quantum gates and quantum channels that manipulate quantum states
 
 The quantum measurements can be categorized into two types, i.e., projective measurements and positive operator-valued measures ([Preskill, 1999](#bib.bib71); [Nielsen and Chuang, 2011](#bib.bib8)).
 
-The projective measurement, which is also called the von Neumann measurement, is formally described by the Hermitian operator $`A=\sum_{i}\lambda_{i}|{v_{i}}\rangle\langle{v_{i}}|`$, where $`\{\lambda_{i}\}`$ and $`\{|{v_{i}}\rangle\}`$ refer to the eigenvalues and eigenvectors of $`A`$, respectively. Supported by the Born rule ([Nielsen and Chuang, 2011](#bib.bib8)), when the measurement operator $`A\in\mathbb{C}^{2^{N}\times 2^{N}}`$ is applied to an $`N`$-qubit state $`|{\Phi}\rangle\in\mathbb{C}^{2^{N}}`$, the probability of measuring any one of the eigenvalues in $`\{\lambda_{i}\}`$ is
+The projective measurement, which is also called the von Neumann measurement, is formally described by the Hermitian operator $`A=\sum_{i}\lambda_{i}\lvert{v_{i}}\rangle\langle{v_{i}}\rvert`$, where $`\{\lambda_{i}\}`$ and $`\{\lvert{v_{i}}\rangle\}`$ refer to the eigenvalues and eigenvectors of $`A`$, respectively. Supported by the Born rule ([Nielsen and Chuang, 2011](#bib.bib8)), when the measurement operator $`A\in\mathbb{C}^{2^{N}\times 2^{N}}`$ is applied to an $`N`$-qubit state $`\lvert{\Phi}\rangle\in\mathbb{C}^{2^{N}}`$, the probability of measuring any one of the eigenvalues in $`\{\lambda_{i}\}`$ is
 
 $$
 \Pr(\lambda_{i})=|\braket{v_{i}|\Phi}|^{2}~.
@@ -1152,22 +1152,22 @@ $$
 In the density operator representation, suppose that the state to be measured is $`\rho\in\mathbb{C}^{2^{N}\times 2^{N}}`$, the probability of measuring any one of the eigenvalues in $`\{\lambda_{i}\}`$ is
 
 $$
-\Pr(\lambda_{i})=\mathop{\text{Tr}}(\rho|{v_{i}}\rangle\langle{v_{i}}|).
+\Pr(\lambda_{i})=\mathop{\text{Tr}}(\rho\lvert{v_{i}}\rangle\langle{v_{i}}\rvert).
 $$
 
-Define $`\Pi_{i}=|{v_{i}}\rangle\langle{v_{i}}|`$ as the $`i`$-th projective operator. The complete set of projective operators $`\{\Pi_{i}\}`$ has the following properties
+Define $`\Pi_{i}=\lvert{v_{i}}\rangle\langle{v_{i}}\rvert`$ as the $`i`$-th projective operator. The complete set of projective operators $`\{\Pi_{i}\}`$ has the following properties
 
 $$
 \text{1)}\Pi_{i}\Pi_{j}=\delta_{ij};~\text{2)}\Pi^{\dagger}_{i}=\Pi;~\text{3)}\Pi^{2}_{i}=\Pi;~\text{4)}\sum_{i}\Pi_{i}=\mathbb{I}_{2^{N}}.
 $$
 
-A special set of projectors is defined as $`\Pi_{i}=|{i}\rangle\langle{i}|`$ for $`\forall i\in[2^{N}]`$, which measures the probability corresponding to the basis state $`|{i}\rangle`$. For example, given the single-qubit state $`|{\boldsymbol{\alpha}}\rangle`$ in Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the probability to measure the computational basis state $`|{i}\rangle`$ is
+A special set of projectors is defined as $`\Pi_{i}=\lvert{i}\rangle\langle{i}\rvert`$ for $`\forall i\in[2^{N}]`$, which measures the probability corresponding to the basis state $`\lvert{i}\rangle`$. For example, given the single-qubit state $`\lvert{\boldsymbol{\alpha}}\rangle`$ in Eqn. ([2.2](#Ch2.E2 "Equation 2.2 ‣ 2.1.2 Quantum bits (Qubits) ‣ 2.1 From Classical Bits to Quantum Bits ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")), the probability to measure the computational basis state $`\lvert{i}\rangle`$ is
 
 $$
 \Pr(i)=|\braket{v_{i}|\boldsymbol{\alpha}}|^{2}=|\alpha_{i}|^{2}~.
 $$
 
-The second type of quantum measurement is the positive operator-valued measures (POVM). A POVM is described by a collection of positive operators $`0\preceq E_{i}`$ satisfying $`\sum_{i}E_{i}=\mathbb{I}`$. Each positive operator $`E_{i}`$ is associated with an outcome of measurement. Specifically, applying the measurement $`\{E_{m}\}`$ to the state $`|{\psi}\rangle`$, the probability of outcome $`i`$ is given by
+The second type of quantum measurement is the positive operator-valued measures (POVM). A POVM is described by a collection of positive operators $`0\preceq E_{i}`$ satisfying $`\sum_{i}E_{i}=\mathbb{I}`$. Each positive operator $`E_{i}`$ is associated with an outcome of measurement. Specifically, applying the measurement $`\{E_{m}\}`$ to the state $`\lvert{\psi}\rangle`$, the probability of outcome $`i`$ is given by
 
 $$
 \Pr(i)=|\braket{\psi|E_{i}|\psi}|^{2}.
@@ -1198,20 +1198,20 @@ Quantum read-in refers to the process of encoding classical information into qua
 Basis encoding is a basic method for processing classical data that can be represented in binary form. Given a classical binary vector $`\boldsymbol{x}=(\boldsymbol{x}_{0},\ldots,\boldsymbol{x}_{i},\ldots,\boldsymbol{x}_{N-1})\in\{0,1\}^{N}`$, this encoding technique maps the vector directly into a quantum computational basis state as follows:
 
 $$
-|{\psi}\rangle=|{\boldsymbol{x}_{0},\ldots,\boldsymbol{x}_{N-1}}\rangle.
+\lvert{\psi}\rangle=\lvert{\boldsymbol{x}_{0},\ldots,\boldsymbol{x}_{N-1}}\rangle.
 $$
 
-In this process, $`N`$ qubits are required to represent a binary vector of length $`N`$. To prepare the corresponding quantum state $`|{\psi}\rangle`$, an $`X`$ gate is applied to each qubit where the corresponding bit value is 1. The overall quantum state preparation can be expressed as:
+In this process, $`N`$ qubits are required to represent a binary vector of length $`N`$. To prepare the corresponding quantum state $`\lvert{\psi}\rangle`$, an $`X`$ gate is applied to each qubit where the corresponding bit value is 1. The overall quantum state preparation can be expressed as:
 
 $$
-|{\psi}\rangle=\bigotimes_{i=0}^{N-1}X^{\boldsymbol{x}_{i}}|{0}\rangle^{\otimes N},
+\lvert{\psi}\rangle=\bigotimes_{i=0}^{N-1}X^{\boldsymbol{x}_{i}}\lvert{0}\rangle^{\otimes N},
 $$
 
-where $`|{0}\rangle^{\otimes N}`$ represents an initial state of all qubits set to $`|0\rangle`$, and $`X^{\boldsymbol{x}_{i}}`$ means applying the $`X`$ gate to the $`i`$-th qubit only if $`\boldsymbol{x}_{i}=1`$.
+where $`\lvert{0}\rangle^{\otimes N}`$ represents an initial state of all qubits set to $`|0\rangle`$, and $`X^{\boldsymbol{x}_{i}}`$ means applying the $`X`$ gate to the $`i`$-th qubit only if $`\boldsymbol{x}_{i}=1`$.
 
 ###### Example 2.16.
 
-(Basis encoding). Consider encoding the integer $`6`$, which has the binary representation $`\boldsymbol{x}=(1,1,0)`$. The corresponding quantum state is $`|{110}\rangle`$. This state can be implemented by applying $`X`$ gates to the first and second qubits, as shown in Figure [2.6](#Ch2.F6 "Figure 2.6 ‣ Basis encoding ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
+(Basis encoding). Consider encoding the integer $`6`$, which has the binary representation $`\boldsymbol{x}=(1,1,0)`$. The corresponding quantum state is $`\lvert{110}\rangle`$. This state can be implemented by applying $`X`$ gates to the first and second qubits, as shown in Figure [2.6](#Ch2.F6 "Figure 2.6 ‣ Basis encoding ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
 <figure id="Ch2.F6" class="ltx_figure">
 
@@ -1229,16 +1229,16 @@ $$
 where $`\|\boldsymbol{x}\|_{2}`$ is the Euclidean norm. This ensures that the normalized vector $`\hat{\boldsymbol{x}}`$ satisfies $`\sum_{i=0}^{2^{N}-1}|\hat{\boldsymbol{x}}_{i}|^{2}=1`$. The corresponding quantum state is then expressed as
 
 $$
-|{\psi}\rangle=\sum_{i=0}^{2^{N}-1}\hat{\boldsymbol{x}}_{i}|{i}\rangle
+\lvert{\psi}\rangle=\sum_{i=0}^{2^{N}-1}\hat{\boldsymbol{x}}_{i}\lvert{i}\rangle
 $$
 
-with $`|{i}\rangle`$ representing the $`N`$-qubit computational basis states.
+with $`\lvert{i}\rangle`$ representing the $`N`$-qubit computational basis states.
 
 ###### Example 2.17.
 
-(Amplitude encoding). Consider encoding a normalized vector $`\boldsymbol{x}=(\boldsymbol{x}_{0},\boldsymbol{x}_{1})\in\mathbb{C}^{2}`$ into the quantum state $`|{\psi}\rangle=\boldsymbol{x}_{0}|{0}\rangle+\boldsymbol{x}_{1}|{1}\rangle`$. This can be achieved by applying a rotation gate $`U=R_{Y}(\theta)`$ to the initial state $`|{0}\rangle`$, where $`\theta=2\arccos(\boldsymbol{x}_{0})`$.
+(Amplitude encoding). Consider encoding a normalized vector $`\boldsymbol{x}=(\boldsymbol{x}_{0},\boldsymbol{x}_{1})\in\mathbb{C}^{2}`$ into the quantum state $`\lvert{\psi}\rangle=\boldsymbol{x}_{0}\lvert{0}\rangle+\boldsymbol{x}_{1}\lvert{1}\rangle`$. This can be achieved by applying a rotation gate $`U=R_{Y}(\theta)`$ to the initial state $`\lvert{0}\rangle`$, where $`\theta=2\arccos(\boldsymbol{x}_{0})`$.
 
-Amplitude encoding is highly efficient because it allows an exponentially large vector of length $`2^{N}`$ to be represented using only $`N`$ qubits. However, preparing this quantum state requires constructing a unitary transformation $`U`$ such that $`|{\psi}\rangle=U|{0}\rangle^{\otimes N}`$. Efficiently finding such transformations can be challenging and is an active area of research (see Chapter [2.6](#Ch2.S6 "2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for the discussions).
+Amplitude encoding is highly efficient because it allows an exponentially large vector of length $`2^{N}`$ to be represented using only $`N`$ qubits. However, preparing this quantum state requires constructing a unitary transformation $`U`$ such that $`\lvert{\psi}\rangle=U\lvert{0}\rangle^{\otimes N}`$. Efficiently finding such transformations can be challenging and is an active area of research (see Chapter [2.6](#Ch2.S6 "2.6 Bibliographic Remarks ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") for the discussions).
 
 ##### Angle encoding
 
@@ -1249,7 +1249,7 @@ To address this limitation, an alternative is angle encoding. The core idea of a
 Given a real-valued vector $`\boldsymbol{x}=(\boldsymbol{x}_{0},\ldots,\boldsymbol{x}_{i},\ldots,\boldsymbol{x}_{N-1})\in\mathbb{R}^{N}`$, the encoded quantum state can be represented as:
 
 $$
-|{\psi}\rangle=\bigotimes_{i=0}^{N-1}R_{\sigma}(\boldsymbol{x}_{i})|{0}\rangle^{\otimes N}=\bigotimes_{i=0}^{N-1}\exp\left(-i\frac{\boldsymbol{x}_{i}}{2}\sigma\right)|{0}\rangle^{\otimes N},
+\lvert{\psi}\rangle=\bigotimes_{i=0}^{N-1}R_{\sigma}(\boldsymbol{x}_{i})\lvert{0}\rangle^{\otimes N}=\bigotimes_{i=0}^{N-1}\exp\left(-i\frac{\boldsymbol{x}_{i}}{2}\sigma\right)\lvert{0}\rangle^{\otimes N},
 $$
 
 where $`\sigma\in\{X,Y,Z\}`$ denotes a Pauli operator, as defined in Figure [2.1](#Ch2.F1 "Figure 2.1 ‣ Quantum gate ‣ 2.2.2 Quantum circuit ‣ 2.2 From Digital Logical Circuit to Quantum Circuit Model ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Since Pauli rotation gates are $`2\pi`$-periodic, it is essential to scale each element $`\boldsymbol{x}_{i}`$ into the range $`[0,\pi)`$ to ensure that different values are encoded into distinct quantum states.
@@ -1260,19 +1260,19 @@ A key advantage of angle encoding is its ability to introduce nonlinearity. By m
 
 Basis encoding, amplitude encoding, and angle encoding are generally designed to encode a single item of data at one time, which makes it challenging to process complicated classical datasets. The QRAM ([Giovannetti et al., 2008](#bib.bib42)), analogous to classical RAM, aims to simultaneously store, address, and access multiple quantum states.
 
-QRAM consists of two types of qubits: data qubits for storing classical data and address qubits for addressing. Given a classical dataset $`\mathcal{D}=\{\boldsymbol{x}^{(j)}\}_{j=0}^{M-1}`$ with $`M`$ training examples, assume we separately encode each data item into a quantum state $`|{\boldsymbol{x}^{(j)}}\rangle_{d}`$ using one of the encoding methods above. The QRAM can be constructed as follows: (1) Prepare an $`N_{a}`$-qubit address register where $`N_{a}=\lceil\log_{2}(M)\rceil`$; (2) Associate each data state $`|{\boldsymbol{x}^{(j)}}\rangle_{d}`$ with corresponding address state $`|{j}\rangle_{a}`$. The whole dataset is therefore encoded into a quantum state of the form
+QRAM consists of two types of qubits: data qubits for storing classical data and address qubits for addressing. Given a classical dataset $`\mathcal{D}=\{\boldsymbol{x}^{(j)}\}_{j=0}^{M-1}`$ with $`M`$ training examples, assume we separately encode each data item into a quantum state $`\lvert{\boldsymbol{x}^{(j)}}\rangle_{d}`$ using one of the encoding methods above. The QRAM can be constructed as follows: (1) Prepare an $`N_{a}`$-qubit address register where $`N_{a}=\lceil\log_{2}(M)\rceil`$; (2) Associate each data state $`\lvert{\boldsymbol{x}^{(j)}}\rangle_{d}`$ with corresponding address state $`\lvert{j}\rangle_{a}`$. The whole dataset is therefore encoded into a quantum state of the form
 
 $$
-|{\mathcal{D}}\rangle=\sum_{j=0}^{M-1}\frac{1}{\sqrt{M}}|{j}\rangle_{a}|{\boldsymbol{x}^{(j)}}\rangle_{d}.
+\lvert{\mathcal{D}}\rangle=\sum_{j=0}^{M-1}\frac{1}{\sqrt{M}}\lvert{j}\rangle_{a}\lvert{\boldsymbol{x}^{(j)}}\rangle_{d}.
 $$
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxIiBjbGFzcz0ibHR4X3BpY3R1cmUiIGhlaWdodD0iMTI4LjQiIG92ZXJmbG93PSJ2aXNpYmxlIiB2ZXJzaW9uPSIxLjEiIHZpZXdib3g9IjAgMCA0NzcuMzggMTI4LjQiIHdpZHRoPSI0NzcuMzgiPjxnIHN0eWxlPSItLWx0eC1zdHJva2UtY29sb3I6IzAwMDAwMDstLWx0eC1maWxsLWNvbG9yOiMwMDAwMDA7IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC40cHQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTI4LjQpIG1hdHJpeCgxIDAgMCAtMSAwIDApIj48ZyBzdHlsZT0iLS1sdHgtZmlsbC1jb2xvcjojNjA2MDYwOyIgZmlsbD0iIzYwNjA2MCIgZmlsbC1vcGFjaXR5PSIxLjAiPjxwYXRoIHN0eWxlPSJzdHJva2U6bm9uZSIgZD0iTSAwIDUuOTEgTCAwIDEyMi41IEMgMCAxMjUuNzYgMi42NCAxMjguNCA1LjkxIDEyOC40IEwgNDcxLjQ3IDEyOC40IEMgNDc0LjczIDEyOC40IDQ3Ny4zOCAxMjUuNzYgNDc3LjM4IDEyMi41IEwgNDc3LjM4IDUuOTEgQyA0NzcuMzggMi42NCA0NzQuNzMgMCA0NzEuNDcgMCBMIDUuOTEgMCBDIDIuNjQgMCAwIDIuNjQgMCA1LjkxIFoiIC8+PC9nPjxnIHN0eWxlPSItLWx0eC1maWxsLWNvbG9yOiNGOUY5Rjk7IiBmaWxsPSIjRjlGOUY5IiBmaWxsLW9wYWNpdHk9IjEuMCI+PHBhdGggc3R5bGU9InN0cm9rZTpub25lIiBkPSJNIDEuOTcgNS45MSBMIDEuOTcgMTA2Ljk4IEwgNDc1LjQxIDEwNi45OCBMIDQ3NS40MSA1LjkxIEMgNDc1LjQxIDMuNzMgNDczLjY1IDEuOTcgNDcxLjQ3IDEuOTcgTCA1LjkxIDEuOTcgQyAzLjczIDEuOTcgMS45NyAzLjczIDEuOTcgNS45MSBaIiAvPjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDExMi44OSkiPjxmb3JlaWdub2JqZWN0IHN0eWxlPSItLWx0eC1mby13aWR0aDozMS4zN2VtOy0tbHR4LWZvLWhlaWdodDowLjY5ZW07LS1sdHgtZm8tZGVwdGg6MGVtO2ZvbnQtc2l6ZToxMHB0OyIgaGVpZ2h0PSI5LjYxIiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA5LjYxKSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjEiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjEuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjEuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojRkZGRkZGOyI+UmVtYXJrPC9zcGFuPjwvc3Bhbj4KPC9zcGFuPjwvc3Bhbj48L3NwYW4+PC9mb3JlaWdub2JqZWN0PjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDE2LjQ3KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjUuNjllbTstLWx0eC1mby1kZXB0aDowLjE5ZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9IjgxLjM5IiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA3OC43KSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjIiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjIuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLjIuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyI+VGhlIHN1YnNjcmlwdCA8bWF0aCBpZD0iQ2gyLlMzLlNTMS5TU1N4NC5wMy5waWMxLm0xIiBjbGFzcz0ibHR4X01hdGgiIGFsdHRleHQ9ImQiIGRpc3BsYXk9ImlubGluZSIgaW50ZW50PSI6bGl0ZXJhbCI+PHNlbWFudGljcz48bWkgc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiPmQ8L21pPjxhbm5vdGF0aW9uIGVuY29kaW5nPSJhcHBsaWNhdGlvbi94LXRleCI+ZDwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+IGluIDxtYXRoIGlkPSJDaDIuUzMuU1MxLlNTU3g0LnAzLnBpYzEubTIiIGNsYXNzPSJsdHhfTWF0aCIgYWx0dGV4dD0iXGtldHtcYm17eH1eeyhqKX19X3tkfSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtc3ViPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGZlbmNlPSJmYWxzZSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMTY3ZW0iIHN0cmV0Y2h5PSJmYWxzZSI+fDwvbW8+PG1zdXA+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj7wnZKZPC9taT48bXJvdz48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+KDwvbW8+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5qPC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+KTwvbW8+PC9tcm93PjwvbXN1cD48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+4p+pPC9tbz48L21yb3c+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5kPC9taT48L21zdWI+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5ca2V0e1xibXt4fV57KGopfX1fe2R9PC9hbm5vdGF0aW9uPjwvc2VtYW50aWNzPjwvbWF0aD4gaW5kaWNhdGVzIHRoYXQgdGhpcyBxdWFudHVtIHN0YXRlIHJlc2lkZXMgaW4gdGhlIGRhdGEgcmVnaXN0ZXIsIGRpZmZlcmVudGlhdGluZyBpdCBmcm9tIGFkZHJlc3MgcXViaXRzLCB3aGljaCBhcmUgZGVub3RlZCB3aXRoIHRoZSBzdWJzY3JpcHQgPG1hdGggaWQ9IkNoMi5TMy5TUzEuU1NTeDQucDMucGljMS5tMyIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJhIiBkaXNwbGF5PSJpbmxpbmUiIGludGVudD0iOmxpdGVyYWwiPjxzZW1hbnRpY3M+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5hPC9taT48YW5ub3RhdGlvbiBlbmNvZGluZz0iYXBwbGljYXRpb24veC10ZXgiPmE8L2Fubm90YXRpb24+PC9zZW1hbnRpY3M+PC9tYXRoPiAoZS5nLiwgPG1hdGggaWQ9IkNoMi5TMy5TUzEuU1NTeDQucDMucGljMS5tNCIgY2xhc3M9Imx0eF9NYXRoIiBhbHR0ZXh0PSJca2V0e2p9X3thfSIgZGlzcGxheT0iaW5saW5lIiBpbnRlbnQ9IjpsaXRlcmFsIj48c2VtYW50aWNzPjxtc3ViPjxtcm93PjxtbyBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiIGZlbmNlPSJmYWxzZSIgbWF0aGNvbG9yPSIjMDAwMDAwIiByc3BhY2U9IjAuMTY3ZW0iIHN0cmV0Y2h5PSJmYWxzZSI+fDwvbW8+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5qPC9taT48bW8gc3R5bGU9Ii0tbHR4LWZnLWNvbG9yOiMwMDAwMDA7IiBtYXRoY29sb3I9IiMwMDAwMDAiIHN0cmV0Y2h5PSJmYWxzZSI+4p+pPC9tbz48L21yb3c+PG1pIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojMDAwMDAwOyIgbWF0aGNvbG9yPSIjMDAwMDAwIj5hPC9taT48L21zdWI+PGFubm90YXRpb24gZW5jb2Rpbmc9ImFwcGxpY2F0aW9uL3gtdGV4Ij5ca2V0e2p9X3thfTwvYW5ub3RhdGlvbj48L3NlbWFudGljcz48L21hdGg+KS4gVGhpcyBjb252ZW50aW9uIGhlbHBzIHRvIGRpc3Rpbmd1aXNoIGJldHdlZW4gdGhlIHJvbGVzIG9mIGRhdGEgYW5kIGFkZHJlc3MgcXViaXRzIGluIFFSQU0gb3BlcmF0aW9ucy48L3NwYW4+PC9zcGFuPgo8L3NwYW4+PC9zcGFuPjwvc3Bhbj48L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48L3N2Zz4=" id="Ch2.S3.SS1.SSSx4.p3.pic1" class="ltx_picture" />
 
 ###### Example 2.18.
 
-(QRAM Encoding). Consider a dataset $`\mathcal{D}=\{2,3\}`$. Using basis encoding, each sample is first converted into a two-qubit quantum state: $`\{|{10}\rangle_{d},|{11}\rangle_{d}\}`$. Each data state is then assigned an address state, $`|{0}\rangle_{a}`$ for the first state $`|{10}\rangle_{d}`$ and $`|{1}\rangle_{a}`$ for the second state $`|{11}\rangle_{d}`$. The resulting QRAM-encoded state is:
+(QRAM Encoding). Consider a dataset $`\mathcal{D}=\{2,3\}`$. Using basis encoding, each sample is first converted into a two-qubit quantum state: $`\{\lvert{10}\rangle_{d},\lvert{11}\rangle_{d}\}`$. Each data state is then assigned an address state, $`\lvert{0}\rangle_{a}`$ for the first state $`\lvert{10}\rangle_{d}`$ and $`\lvert{1}\rangle_{a}`$ for the second state $`\lvert{11}\rangle_{d}`$. The resulting QRAM-encoded state is:
 $$
-|{\mathcal{D}}\rangle=\frac{1}{\sqrt{2}}\left(|{0}\rangle_{a}|{10}\rangle_{d}+|{1}\rangle_{a}|{11}\rangle_{d}\right).
+\lvert{\mathcal{D}}\rangle=\frac{1}{\sqrt{2}}\left(\lvert{0}\rangle_{a}\lvert{10}\rangle_{d}+\lvert{1}\rangle_{a}\lvert{11}\rangle_{d}\right).
 $$
 (2.49) The corresponding quantum circuit for implementing this state is shown in Fig. [2.7](#Ch2.F7 "Figure 2.7 ‣ Quantum Random Access Memory (QRAM) ‣ 2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
@@ -1359,7 +1359,7 @@ Solving this typically requires iterative numerical optimization, which can be c
 
 The partial information read-out protocol focuses on extracting specific, task-relevant information from a quantum state without reconstructing the entire density matrix. This protocol is efficient and can be applied to comprehend large-qubit systems. According to the type of collected information, current partial read-out protocols can be categorized into three classes, i.e., sampling, expectation value estimation, and shadow tomography.
 
-Sampling. Sampling involves repeatedly measuring the quantum state in the computational basis to estimate the probability distribution over bit-strings. Given a state $`|{\psi}\rangle`$, the probability of observing a specific computational basis $`|{i}\rangle`$ is given by
+Sampling. Sampling involves repeatedly measuring the quantum state in the computational basis to estimate the probability distribution over bit-strings. Given a state $`\lvert{\psi}\rangle`$, the probability of observing a specific computational basis $`\lvert{i}\rangle`$ is given by
 
 $$
 \Pr(i)=\left|\braket{\psi|i}\right|^{2}.
@@ -1409,7 +1409,7 @@ To estimate the expectation value of each individual Pauli term $`P_{i}`$, the q
 
 - <span id="Ch2.S3.I2.i2">•</span>
 
-  Eigenstates. The eigenstates of $`P_{i}`$ are the tensor products of the eigenstates of the single-qubit Pauli operators $`P_{ij}`$. If $`|{\lambda_{ijk}}\rangle`$ is one of the eigenstate of $`P_{ij}`$, then the corresponding eigenstate of $`P_{i}`$ is $`\bigotimes_{j=1}^{N}|{\lambda_{ijk}}\rangle`$.
+  Eigenstates. The eigenstates of $`P_{i}`$ are the tensor products of the eigenstates of the single-qubit Pauli operators $`P_{ij}`$. If $`\lvert{\lambda_{ijk}}\rangle`$ is one of the eigenstate of $`P_{ij}`$, then the corresponding eigenstate of $`P_{i}`$ is $`\bigotimes_{j=1}^{N}\lvert{\lambda_{ijk}}\rangle`$.
 
 This structure allows $`P_{i}`$ to be analyzed in terms of its simpler single-qubit components, significantly simplifying the process of determining the measurement basis for expectation value estimation. By repeating the measurements $`M`$ times and obtaining the corresponding measurement results $`\{r_{j}\}_{j=1}^{M}`$, the statistical value of $`\braket{P_{i}}`$ can be estimated by
 
@@ -1458,7 +1458,7 @@ For many computational problems, such as solving linear equations, we need to de
 Suppose that $`A`$ is an $`N`$-qubit operator, $`\alpha,\varepsilon\geq 0`$ and $`a\in\mathbb{N}`$. Then we say that the $`(a+N)`$-qubit unitary $`U`$ is an $`(\alpha,a,\varepsilon)`$-block-encoding of $`A`$ if
 
 $$
-\|A-\alpha(\langle{0}|^{\otimes a} \otimes\mathbb{I}_{2^{N}})U(|{0}\rangle^{\otimes a}\otimes\mathbb{I}_{2^{N}})\|\leq\varepsilon.
+\|A-\alpha(\langle{0}\rvert^{\otimes a} \otimes\mathbb{I}_{2^{N}})U(\lvert{0}\rangle^{\otimes a}\otimes\mathbb{I}_{2^{N}})\|\leq\varepsilon.
 $$
 
 Here, $`\|\cdot\|`$ represents the spectral norm, i.e., the largest singular value of the matrix.
@@ -1468,7 +1468,7 @@ Here, $`\|\cdot\|`$ represents the spectral norm, i.e., the largest singular val
 <figcaption>Figure 2.8: Quantum circuit for block encoding.</figcaption>
 </figure>
 
-The circuit implementation of the block encoding is illustrated in Figure [2.8](#Ch2.F8 "Figure 2.8 ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The scaled matrix $`A/\alpha`$ interacts with the state $`|{\psi}\rangle`$ if the first qubit registers are measured as $`|{0}\rangle`$. By definition, we have $`\alpha\geq\|A\|`$ and any unitary $`U`$ is an $`(1,0,0)`$-block encoding of itself.
+The circuit implementation of the block encoding is illustrated in Figure [2.8](#Ch2.F8 "Figure 2.8 ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). The scaled matrix $`A/\alpha`$ interacts with the state $`\lvert{\psi}\rangle`$ if the first qubit registers are measured as $`\lvert{0}\rangle`$. By definition, we have $`\alpha\geq\|A\|`$ and any unitary $`U`$ is an $`(1,0,0)`$-block encoding of itself.
 
 ###### Fact 2.21.
 
@@ -1485,7 +1485,7 @@ U_{\mathrm{SEL}}= \sum_{k}|k\rangle\langle k|\otimes U_{k},
 $$
 
 $$
-U_{\mathrm{PREP}}: |{0}\rangle\rightarrow\frac{1}{\sqrt{\|\vec{\alpha}\|_{1}}}\sum_{k}\sqrt{\alpha_{k}}|{k}\rangle,
+U_{\mathrm{PREP}}: \lvert{0}\rangle\rightarrow\frac{1}{\sqrt{\|\vec{\alpha}\|_{1}}}\sum_{k}\sqrt{\alpha_{k}}\lvert{k}\rangle,
 $$
 
 where $`\vec{\alpha}=(\alpha_{1},\alpha_{2},\dots)`$.
@@ -1496,10 +1496,10 @@ Similar to the definition of block encoding, we can also define the state prepar
 
 ###### Definition 2.22 (State preparation encoding [Guo et al. (2024a)](#bib.bib83)).
 
-We say a unitary $`U_{\psi}`$ is an $`(\alpha,a,\epsilon)`$-state-encoding of an $`N`$-qubit quantum state $`|{\psi}\rangle`$ if
+We say a unitary $`U_{\psi}`$ is an $`(\alpha,a,\epsilon)`$-state-encoding of an $`N`$-qubit quantum state $`\lvert{\psi}\rangle`$ if
 
 $$
-\mathopen{\|}|{\psi}\rangle-\alpha(\langle{0^{a}}|\otimes I)U_{\psi}|{0^{a+N}}\rangle\mathclose{\|}_{\infty}\leq\epsilon,
+\mathopen{\|}\lvert{\psi}\rangle-\alpha(\langle{0^{a}}\rvert\otimes I)U_{\psi}\lvert{0^{a+N}}\rangle\mathclose{\|}_{\infty}\leq\epsilon,
 $$
 
 where $`\|\cdot\|_{\infty}`$ denotes the infinity norm of the given vector.
@@ -1507,10 +1507,10 @@ where $`\|\cdot\|_{\infty}`$ denotes the infinity norm of the given vector.
 More straightforwardly, the $`(\alpha,a,\epsilon)`$-state-encoding $`U_{\psi}`$ prepares the state
 
 $$
-U_{\psi}|{0}\rangle|{0}\rangle=\frac{1}{\alpha}|{0}\rangle|{\psi^{\prime}}\rangle+\sqrt{1-\alpha^{2}}|{1}\rangle|{\mathrm{bad}}\rangle,
+U_{\psi}\lvert{0}\rangle\lvert{0}\rangle=\frac{1}{\alpha}\lvert{0}\rangle\lvert{\psi^{\prime}}\rangle+\sqrt{1-\alpha^{2}}\lvert{1}\rangle\lvert{\mathrm{bad}}\rangle,
 $$
 
-where $`\mathopen{\|}|{\psi^{\prime}}\rangle-|{\psi}\rangle\mathclose{\|}_{\infty}\leq\epsilon`$ and $`|{\mathrm{bad}}\rangle`$ is an arbitrary quantum state. One can further prepare the state $`|{\psi^{\prime}}\rangle`$ by using $`\mathcal{O}(\alpha)`$ times of amplitude amplification ([Brassard et al., 2002](#bib.bib84)). The state preparation encoding can be understood as a specific case of the block encoding, i.e., it is the block encoding of a $`\mathbb{C}^{2^{N}\times 1}`$ matrix.
+where $`\mathopen{\|}\lvert{\psi^{\prime}}\rangle-\lvert{\psi}\rangle\mathclose{\|}_{\infty}\leq\epsilon`$ and $`\lvert{\mathrm{bad}}\rangle`$ is an arbitrary quantum state. One can further prepare the state $`\lvert{\psi^{\prime}}\rangle`$ by using $`\mathcal{O}(\alpha)`$ times of amplitude amplification ([Brassard et al., 2002](#bib.bib84)). The state preparation encoding can be understood as a specific case of the block encoding, i.e., it is the block encoding of a $`\mathbb{C}^{2^{N}\times 1}`$ matrix.
 
 #### 2.4.2 Basic arithmetic for block encodings
 
@@ -1525,11 +1525,11 @@ If $`U`$ is an $`(\alpha,a,\delta)`$-block encoding of an $`N`$-qubit operator $
 Let $`A=\sum_{k}x_{k}A_{k}`$ be an $`s`$-qubit operator with $`\beta\geq\|\vec{x}\|_{1}`$ and $`\varepsilon_{1}>0`$, where $`\vec{x}`$ is the vector of coefficients. Suppose we have access to
 
 $$
-P_{L}|{0}\rangle =\sum_{k}c_{k}|{k}\rangle,
+P_{L}\lvert{0}\rangle =\sum_{k}c_{k}\lvert{k}\rangle,
 $$
 
 $$
-P_{R}|{0}\rangle =\sum_{k}d_{k}|{k}\rangle,
+P_{R}\lvert{0}\rangle =\sum_{k}d_{k}\lvert{k}\rangle,
 $$
 
 $$
@@ -1551,7 +1551,7 @@ For simplicity, we only consider the perfect case, i.e., no errors. Refer to Ref
 The intuition for achieving the Hadamard product is that all the needed elements can be found in the tensor product, i.e.,
 
 $$
-(\langle{0^{a+b}}|\otimes\mathbb{I}_{2^{2N}})(\mathbb{I}_{2^{b}}\otimes U_{A}\otimes\mathbb{I}_{2^{N}})(\mathbb{I}_{2^{a}}\otimes U_{B}\otimes\mathbb{I}_{2^{N}})(|{0^{a+b}}\rangle\otimes\mathbb{I}_{2^{2N}})
+(\langle{0^{a+b}}\rvert\otimes\mathbb{I}_{2^{2N}})(\mathbb{I}_{2^{b}}\otimes U_{A}\otimes\mathbb{I}_{2^{N}})(\mathbb{I}_{2^{a}}\otimes U_{B}\otimes\mathbb{I}_{2^{N}})(\lvert{0^{a+b}}\rangle\otimes\mathbb{I}_{2^{2N}})
 $$
 
 $$
@@ -1567,7 +1567,7 @@ $$
 However, $`P^{\prime}`$ is not a unitary. Instead, we consider $`P=\sum_{i,j=0}^{d-1}|i\rangle\langle i|\otimes|i\oplus j\rangle\langle j|`$, which can be easily constructed by using $`N`$ CNOT gates, i.e., one CNOT gate between each pair of qubits consisting of one qubit from the first register and the corresponding qubit from the second register. By direct computation, we have
 
 $$
-(\mathbb{I}_{2^{N}}\otimes\langle{0^{N}}|)P(A\otimes B)P^{\dagger}(\mathbb{I}_{2^{N}}\otimes|{0^{N}}\rangle)=A\circ B.
+(\mathbb{I}_{2^{N}}\otimes\langle{0^{N}}\rvert)P(A\otimes B)P^{\dagger}(\mathbb{I}_{2^{N}}\otimes\lvert{0^{N}}\rangle)=A\circ B.
 $$
 
 Therefore, by direct computation, one can verify that $`(P\otimes\mathbb{I}_{2^{a+b}})(\mathbb{I}_{2^{b}}\otimes U_{A}\otimes\mathbb{I}_{2^{N}})(\mathbb{I}_{2^{a}}\otimes U_{B}\otimes\mathbb{I}_{2^{N}})(P^{\dagger}\otimes\mathbb{I}_{2^{a+b}})`$ is the desired block encoding. ∎
@@ -1604,7 +1604,7 @@ The second application of QSVT is the nonlinear amplitude transformation. As men
 
 ###### Fact 2.28 (Diagonal block encoding of amplitudes, [Guo et al. (2024b)](#bib.bib86); [Rattew and Rebentrost (2023)](#bib.bib87)).
 
-Given a state preparation unitary $`U_{\psi}`$ of an $`N`$-qubit state $`|{\psi}\rangle=\sum_{j=1}^{2^{N}}\psi_{j}|{j}\rangle`$, where $`\{\psi_{j}\}`$ are real, $`\mathopen{\|}\psi\mathclose{\|}_{2}=1`$, one can construct an $`(1,N+2,\epsilon)`$-encoding of the diagonal matrix $`A=\mathrm{diag}(\psi_{1},\dots,\psi_{d})`$ with $`\mathcal{O}(N)`$ circuit depth and $`\mathcal{O}(1)`$ times of controlled-$`U`$ and controlled-$`U^{\dagger}`$.
+Given a state preparation unitary $`U_{\psi}`$ of an $`N`$-qubit state $`\lvert{\psi}\rangle=\sum_{j=1}^{2^{N}}\psi_{j}\lvert{j}\rangle`$, where $`\{\psi_{j}\}`$ are real, $`\mathopen{\|}\psi\mathclose{\|}_{2}=1`$, one can construct an $`(1,N+2,\epsilon)`$-encoding of the diagonal matrix $`A=\mathrm{diag}(\psi_{1},\dots,\psi_{d})`$ with $`\mathcal{O}(N)`$ circuit depth and $`\mathcal{O}(1)`$ times of controlled-$`U`$ and controlled-$`U^{\dagger}`$.
 
 As a straightforward generalization, one can replace the state preparation unitary with the general state preparation encoding, mentioned in Definition [2.22](#Ch2.Thmtheorem22 "Definition 2.22 (State preparation encoding ( ) ). ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). By constructing the block encoding of amplitudes, one can implement many functions onto these amplitudes via QSVT. A direct application is performing the neural network on the quantum computer, as will be detailed in Chapter [5.2](#Ch5.S2 "5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
@@ -2124,21 +2124,21 @@ Another crucial characteristic of quantum kernels is that they can be effectivel
 
 #### 3.2.2 Quantum feature maps and quantum kernel machines
 
-The key difference between quantum kernel machines and classical kernel machines lies in how the feature mapping is performed. In the quantum context, a feature map refers to the injective encoding of classical data $`\boldsymbol{x}\in\mathbb{R}^{d}`$ into a quantum state $`|{{\phi}(\boldsymbol{x})}\rangle=U(\boldsymbol{x})|{\phi}\rangle`$ on an $`N`$-qubit quantum register, where $`U(\boldsymbol{x})`$ refers to the physical operation or quantum circuit that depends on the data $`\boldsymbol{x}`$. This feature map is implemented on a quantum computer and produces quantum states, which are referred to as quantum feature maps.
+The key difference between quantum kernel machines and classical kernel machines lies in how the feature mapping is performed. In the quantum context, a feature map refers to the injective encoding of classical data $`\boldsymbol{x}\in\mathbb{R}^{d}`$ into a quantum state $`\lvert{{\phi}(\boldsymbol{x})}\rangle=U(\boldsymbol{x})\lvert{\phi}\rangle`$ on an $`N`$-qubit quantum register, where $`U(\boldsymbol{x})`$ refers to the physical operation or quantum circuit that depends on the data $`\boldsymbol{x}`$. This feature map is implemented on a quantum computer and produces quantum states, which are referred to as quantum feature maps.
 
 ###### Definition 3.6 (Quantum feature map).
 
-Given an $`N`$-qubit quantum system initialized in state $`|{\psi}\rangle`$, let $`\boldsymbol{x}\in\mathcal{X}\subset\mathbb{R}^{d}`$ be classical data. The quantum feature map is defined as the mapping
+Given an $`N`$-qubit quantum system initialized in state $`\lvert{\psi}\rangle`$, let $`\boldsymbol{x}\in\mathcal{X}\subset\mathbb{R}^{d}`$ be classical data. The quantum feature map is defined as the mapping
 
 $$
 \phi:\mathcal{X}\to\mathcal{F},
 $$
 
 $$
-\phi(\boldsymbol{x})= |{{\phi}(\boldsymbol{x})}\rangle\langle{{\phi}(\boldsymbol{x})}|=\rho(\boldsymbol{x}),
+\phi(\boldsymbol{x})= \lvert{{\phi}(\boldsymbol{x})}\rangle\langle{{\phi}(\boldsymbol{x})}\rvert=\rho(\boldsymbol{x}),
 $$
 
-where $`\mathcal{F}`$ is the space of complex-valued $`2^{N}\times 2^{N}`$ matrices equipped with the Hilbert-Schmidt inner product $`\braket{\rho,\sigma}=\mathop{\text{Tr}}(\rho\sigma)`$ for $`\rho,\sigma\in\mathcal{F}`$. In addition, the state $`|{{\phi}(\boldsymbol{x})}\rangle`$ can be implemented by applying a data-encoding quantum circuit $`U(\boldsymbol{x})`$ introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") on an initial state $`|{\psi}\rangle`$, leading to the expression of $`|{{\phi}(\boldsymbol{x})}\rangle=U(\boldsymbol{x})|{\psi}\rangle`$.
+where $`\mathcal{F}`$ is the space of complex-valued $`2^{N}\times 2^{N}`$ matrices equipped with the Hilbert-Schmidt inner product $`\braket{\rho,\sigma}=\mathop{\text{Tr}}(\rho\sigma)`$ for $`\rho,\sigma\in\mathcal{F}`$. In addition, the state $`\lvert{{\phi}(\boldsymbol{x})}\rangle`$ can be implemented by applying a data-encoding quantum circuit $`U(\boldsymbol{x})`$ introduced in Chapter [2.3.1](#Ch2.S3.SS1 "2.3.1 Quantum read-in protocols ‣ 2.3 Quantum Read-in and Read-out protocols ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") on an initial state $`\lvert{\psi}\rangle`$, leading to the expression of $`\lvert{{\phi}(\boldsymbol{x})}\rangle=U(\boldsymbol{x})\lvert{\psi}\rangle`$.
 
 Recall that one way of constructing kernels is adopting the inner product of the defined feature mappings. Using the Hilbert-Schmidt inner product from Definition [3.6](#Ch3.Thmtheorem6 "Definition 3.6 (Quantum feature map). ‣ 3.2.2 Quantum feature maps and quantum kernel machines ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), the quantum kernel is defined as follows.
 
@@ -2161,11 +2161,11 @@ $$
 $$
 
 $$
-= \left(\sum_{i}c_{i}\langle{{\phi}(\boldsymbol{x}^{(i)})}|\right)\left(\sum_{j}c_{j}^{*}|{{\phi}(\boldsymbol{x}^{(j)})}\rangle\right)
+= \left(\sum_{i}c_{i}\langle{{\phi}(\boldsymbol{x}^{(i)})}\rvert\right)\left(\sum_{j}c_{j}^{*}\lvert{{\phi}(\boldsymbol{x}^{(j)})}\rangle\right)
 $$
 
 $$
-= \left\|\sum_{i}c_{i}^{*}|{{\phi}(\boldsymbol{x}^{(i)})}\rangle\right\|^{2}\geq 0.
+= \left\|\sum_{i}c_{i}^{*}\lvert{{\phi}(\boldsymbol{x}^{(i)})}\rangle\right\|^{2}\geq 0.
 $$
 
 This inequality confirms that $`\hat{k}_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ satisfies Mercer’s condition to be a valid kernel as illustrated in Eqn. ([3.17](#Ch3.E17 "Equation 3.17 ‣ Fact 3.1 (Mercer’s condition). ‣ 3.1.3 Kernel construction ‣ 3.1 Classical Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")). Therefore, the quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is also a valid kernel.
@@ -2187,7 +2187,7 @@ Below is a simple example of a quantum kernel with an angle encoding feature map
 
 ###### Example 3.8 (Single-qubit kernel).
 
-Consider an embedding that encodes a scalar input $`x\in\mathbb{R}`$ into the quantum state of a single qubit. The embedding is implemented by the Pauli-X rotation gate $`\mathop{\text{RX}}(x)=e^{-ix\sigma_{x}/2}`$, where $`\sigma_{x}`$ is the Pauli-X operator. The quantum feature map is then given by $`\phi:x\to\rho(x)=|{\phi(x)}\rangle\langle{\psi(x)}|`$ with $`|{\phi(x)}\rangle=`$ $`e^{-ix\sigma_{x}/2}|{0}\rangle`$ $`=`$ $`\left(\cos(x)\mathbb{I}-i\sin(x)\sigma_{x}\right)|{0}\rangle`$ $`=`$ $`\cos(x)|{0}\rangle-i\sin(x)|{1}\rangle,`$ (3.25) and hence the quantum kernel yields
+Consider an embedding that encodes a scalar input $`x\in\mathbb{R}`$ into the quantum state of a single qubit. The embedding is implemented by the Pauli-X rotation gate $`\mathop{\text{RX}}(x)=e^{-ix\sigma_{x}/2}`$, where $`\sigma_{x}`$ is the Pauli-X operator. The quantum feature map is then given by $`\phi:x\to\rho(x)=\lvert{\phi(x)}\rangle\langle{\psi(x)}\rvert`$ with $`\lvert{\phi(x)}\rangle=`$ $`e^{-ix\sigma_{x}/2}\lvert{0}\rangle`$ $`=`$ $`\left(\cos(x)\mathbb{I}-i\sin(x)\sigma_{x}\right)\lvert{0}\rangle`$ $`=`$ $`\cos(x)\lvert{0}\rangle-i\sin(x)\lvert{1}\rangle,`$ (3.25) and hence the quantum kernel yields
 $$
 k(x,x^{\prime})=\left|\cos\left(\frac{x}{2}\right)\cos\left(\frac{x^{\prime}}{2}\right)+\sin\left(\frac{x}{2}\right)\sin\left(\frac{x^{\prime}}{2}\right)\right|^{2}=\cos\left(\frac{x-x^{\prime}}{2}\right)^{2},
 $$
@@ -2213,7 +2213,7 @@ An intuitive way to understand the connections and differences between classical
 <tr id="Ch3.T1.2.3" class="ltx_tr">
 <td id="Ch3.T1.2.3.1" class="ltx_td ltx_align_left ltx_border_r">Feature</td>
 <td id="Ch3.T1.2.3.2" class="ltx_td ltx_align_left ltx_border_r">Real vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>D</mi></msup></mrow><annotation encoding="application/x-tex">{\phi}(\boldsymbol{x})\in\mathbb{R}^{D}</annotation></semantics></math></td>
-<td id="Ch3.T1.2.3.3" class="ltx_td ltx_align_left">Complex vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mrow><mi>ϕ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℂ</mi><msup><mn>2</mn><mi>N</mi></msup></msup></mrow><annotation encoding="application/x-tex">|{{\phi}(\boldsymbol{x})}\rangle\in\mathbb{C}^{2^{N}}</annotation></semantics></math></td>
+<td id="Ch3.T1.2.3.3" class="ltx_td ltx_align_left">Complex vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mrow><mi>ϕ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℂ</mi><msup><mn>2</mn><mi>N</mi></msup></msup></mrow><annotation encoding="application/x-tex">\lvert{{\phi}(\boldsymbol{x})}\rangle\in\mathbb{C}^{2^{N}}</annotation></semantics></math></td>
 </tr>
 <tr id="Ch3.T1.2.4" class="ltx_tr">
 <td id="Ch3.T1.2.4.1" class="ltx_td ltx_align_left ltx_border_r">Kernel</td>
@@ -2223,7 +2223,7 @@ An intuitive way to understand the connections and differences between classical
 <tr id="Ch3.T1.2.5" class="ltx_tr">
 <td id="Ch3.T1.2.5.1" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r">Computation</td>
 <td id="Ch3.T1.2.5.2" class="ltx_td ltx_align_left ltx_border_bb ltx_border_r">Digital logical circuits <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">{\phi}(\boldsymbol{x})</annotation></semantics></math></td>
-<td id="Ch3.T1.2.5.3" class="ltx_td ltx_align_left ltx_border_bb">Quantum circuits <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mi>ψ</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">U(\boldsymbol{x})|{{\psi}}\rangle</annotation></semantics></math></td>
+<td id="Ch3.T1.2.5.3" class="ltx_td ltx_align_left ltx_border_bb">Quantum circuits <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒙</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mi>ψ</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">U(\boldsymbol{x})\lvert{{\psi}}\rangle</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -2234,7 +2234,7 @@ The main distinctions between classical and quantum kernel machines lie in the c
 
 - <span id="Ch3.S2.I2.i1">•</span>
 
-  Classical versus quantum feature maps. Quantum feature maps encode data into quantum states, resulting in exponentially large complex-valued vectors $`|{{\phi}(\boldsymbol{x})}\rangle\in\mathbb{C}^{2^{N}}`$, whereas classical feature maps operate in finite-dimensional real-valued spaces $`{\phi}(\boldsymbol{x})\in\mathbb{R}^{D}`$. Although quantum feature maps can theoretically be simulated on classical computers by separating real and imaginary parts, this simulation becomes computationally infeasible as the number of qubits grows. Even feature maps generated by shallow quantum circuits are hard to simulate efficiently on classical hardware, demonstrating the inherent computational complexity of quantum feature maps.
+  Classical versus quantum feature maps. Quantum feature maps encode data into quantum states, resulting in exponentially large complex-valued vectors $`\lvert{{\phi}(\boldsymbol{x})}\rangle\in\mathbb{C}^{2^{N}}`$, whereas classical feature maps operate in finite-dimensional real-valued spaces $`{\phi}(\boldsymbol{x})\in\mathbb{R}^{D}`$. Although quantum feature maps can theoretically be simulated on classical computers by separating real and imaginary parts, this simulation becomes computationally infeasible as the number of qubits grows. Even feature maps generated by shallow quantum circuits are hard to simulate efficiently on classical hardware, demonstrating the inherent computational complexity of quantum feature maps.
 
 - <span id="Ch3.S2.I2.i2">•</span>
 
@@ -2252,7 +2252,7 @@ In the following examples, we will first review the various encoding strategies 
 
 Given a classical binary vector $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\{0,1\}^{d}`$, the quantum feature mapping related to basis encoding refers to
 $$
-|{{\phi}(\boldsymbol{x})}\rangle=|{\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d}}\rangle,
+\lvert{{\phi}(\boldsymbol{x})}\rangle=\lvert{\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d}}\rangle,
 $$
 (3.26) and the induced quantum kernel yields
 $$
@@ -2266,7 +2266,7 @@ The basis encoding requires $`N=d`$ qubits. This kernel function is a very stric
 
 Given a vector $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathbb{R}^{d}`$, the quantum feature mapping related to amplitude encoding refers to
 $$
-|{{\phi}(\boldsymbol{x})}\rangle=\sum_{i=1}^{d}\frac{\boldsymbol{x}_{i}}{\|\boldsymbol{x}\|_{2}}|{i}\rangle,
+\lvert{{\phi}(\boldsymbol{x})}\rangle=\sum_{i=1}^{d}\frac{\boldsymbol{x}_{i}}{\|\boldsymbol{x}\|_{2}}\lvert{i}\rangle,
 $$
 (3.28) where $`\|\boldsymbol{x}\|_{2}`$ is the Euclidean norm. The related quantum kernel is given by
 $$
@@ -2280,11 +2280,11 @@ The amplitude encoding requires $`N=\lceil\log 2(d)\rceil`$ qubits. This encodin
 
 Given a vector $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathbb{R}^{d}`$, the quantum feature mapping related to angle encoding refers to
 $$
-|{{\phi}(\boldsymbol{x})}\rangle=W_{d}e^{-i\boldsymbol{x}_{d}G_{d}}W_{d}\cdots W_{2}e^{-i\boldsymbol{x}_{1}G_{1}}W_{1}|{0}\rangle^{\otimes d},
+\lvert{{\phi}(\boldsymbol{x})}\rangle=W_{d}e^{-i\boldsymbol{x}_{d}G_{d}}W_{d}\cdots W_{2}e^{-i\boldsymbol{x}_{1}G_{1}}W_{1}\lvert{0}\rangle^{\otimes d},
 $$
 (3.30) where $`W_{0},\cdots,W_{d}`$ are arbitrary unitary evolutions, and $`G_{i}`$ is $`d_{i}\leq d`$-dimensional Hermitian operator called the generating Hamiltonian. For a special case in which $`W_{i}=\mathbb{I}`$ and $`G_{i}`$ refers to the Pauli-X operators $`\sigma_{x}`$ acting on the $`i`$-th qubit, the quantum feature mapping refers to
 $$
-|{{\phi}(\boldsymbol{x})}\rangle=\bigotimes_{i=1}^{d}\exp\left(-i\frac{\boldsymbol{x}_{i}}{2}\sigma_{x}\right)|{0}\rangle^{\otimes d},
+\lvert{{\phi}(\boldsymbol{x})}\rangle=\bigotimes_{i=1}^{d}\exp\left(-i\frac{\boldsymbol{x}_{i}}{2}\sigma_{x}\right)\lvert{0}\rangle^{\otimes d},
 $$
 (3.31) and the related quantum kernel is given by $`k(\boldsymbol{x},\boldsymbol{x}^{\prime})=`$ $`\prod_{i=1}^{d}\left|\sin(\boldsymbol{x}_{i})\sin(\boldsymbol{x}_{i}^{\prime})+\cos(\boldsymbol{x}^{(i)})\cos(\boldsymbol{x}_{i}^{\prime})\right|^{2}`$ $`=`$ $`\prod_{i=1}^{d}\left|\cos(\boldsymbol{x}_{i}-\boldsymbol{x}_{i}^{\prime})\right|^{2}.`$ (3.32)
 
@@ -2294,7 +2294,7 @@ The quantum kernels related to different data encoding strategies have a resembl
 
 ###### Theorem 3.12 (Fourier representation of the quantum kernel).
 
-Let $`\mathcal{X}=\mathbb{R}^{d}`$ and $`U(\boldsymbol{x})`$ be a quantum circuit that encodes the data inputs $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathcal{X}`$ into a $`d`$-qubit quantum state $`|{\phi(\boldsymbol{x})}\rangle`$ via gates of the form $`e^{-i\boldsymbol{x}_{i}G}`$ for $`i=1,\cdots,d`$. Without loss of generality, $`G`$ is assumed to be a $`m\leq 2^{d}`$-dimensional diagonal operator with spectrum $`\lambda_{1},\cdots,\lambda_{m}`$. Between such data-encoding gates, and before and after the entire encoding circuit, arbitrary unitary evolutions $`W_{1},\cdots,W_{d+1}`$ can be applied, so that
+Let $`\mathcal{X}=\mathbb{R}^{d}`$ and $`U(\boldsymbol{x})`$ be a quantum circuit that encodes the data inputs $`\boldsymbol{x}=(\boldsymbol{x}_{1},\cdots,\boldsymbol{x}_{d})\in\mathcal{X}`$ into a $`d`$-qubit quantum state $`\lvert{\phi(\boldsymbol{x})}\rangle`$ via gates of the form $`e^{-i\boldsymbol{x}_{i}G}`$ for $`i=1,\cdots,d`$. Without loss of generality, $`G`$ is assumed to be a $`m\leq 2^{d}`$-dimensional diagonal operator with spectrum $`\lambda_{1},\cdots,\lambda_{m}`$. Between such data-encoding gates, and before and after the entire encoding circuit, arbitrary unitary evolutions $`W_{1},\cdots,W_{d+1}`$ can be applied, so that
 
 $$
 U(\boldsymbol{x})=W_{d+1}e^{-i\boldsymbol{x}_{d}G_{d}}W_{d}\cdots W_{2}e^{-i\boldsymbol{x}_{1}G_{1}}W_{1}.
@@ -2331,11 +2331,11 @@ $$
 $$
 
 $$
-= \Big|\langle{\boldsymbol{0}}|W_{1}^{\dagger}(e^{-i\boldsymbol{x}_{1}^{\prime}\Sigma})^{\dagger}\cdots(e^{-i\boldsymbol{x}_{d}^{\prime}\Sigma})^{\dagger}W_{d+1}^{\dagger}W_{d+1}e^{-i\boldsymbol{x}_{d}\Sigma}\cdots e^{-i\boldsymbol{x}_{1}\Sigma}W_{1}|{\boldsymbol{0}}\rangle\Big|^{2}
+= \Big|\langle{\boldsymbol{0}}\rvertW_{1}^{\dagger}(e^{-i\boldsymbol{x}_{1}^{\prime}\Sigma})^{\dagger}\cdots(e^{-i\boldsymbol{x}_{d}^{\prime}\Sigma})^{\dagger}W_{d+1}^{\dagger}W_{d+1}e^{-i\boldsymbol{x}_{d}\Sigma}\cdots e^{-i\boldsymbol{x}_{1}\Sigma}W_{1}\lvert{\boldsymbol{0}}\rangle\Big|^{2}
 $$
 
 $$
-= \left|\langle{\boldsymbol{0}}|W_{1}^{\dagger}(e^{-i\boldsymbol{x}_{1}^{\prime}\Sigma})^{\dagger}\cdots(e^{-i\boldsymbol{x}_{d}^{\prime}\Sigma})^{\dagger}e^{-i\boldsymbol{x}_{d}\Sigma}\cdots e^{-i\boldsymbol{x}_{1}\Sigma}W_{1}|{\boldsymbol{0}}\rangle\right|^{2}
+= \left|\langle{\boldsymbol{0}}\rvertW_{1}^{\dagger}(e^{-i\boldsymbol{x}_{1}^{\prime}\Sigma})^{\dagger}\cdots(e^{-i\boldsymbol{x}_{d}^{\prime}\Sigma})^{\dagger}e^{-i\boldsymbol{x}_{d}\Sigma}\cdots e^{-i\boldsymbol{x}_{1}\Sigma}W_{1}\lvert{\boldsymbol{0}}\rangle\right|^{2}
 $$
 
 $$
@@ -2354,7 +2354,7 @@ $$
 = \sum_{\boldsymbol{j}}\sum_{\boldsymbol{k}}\sum_{\boldsymbol{h}}\sum_{\boldsymbol{l}}e^{-i(\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}})\boldsymbol{x}}e^{i(\Lambda_{\boldsymbol{k}}-\Lambda_{\boldsymbol{h}})\boldsymbol{x}^{\prime}}(\omega_{\boldsymbol{k}}\omega_{\boldsymbol{h}})^{*}\omega_{\boldsymbol{j}}\omega_{\boldsymbol{l}},
 $$
 
-Here, the scalars $`W^{(ab)}_{i}`$ refer to the element $`\langle{a}|W_{i}|{b}\rangle`$ of the unitary operator $`W_{i}`$, the bold multi-index $`\boldsymbol{j}`$ summarizes the set $`(j_{1},\cdots,j_{d})`$ and $`\Lambda_{j}`$ is a vector containing the eigenvalues selected by the multi-index (and similarly for $`\boldsymbol{k},\boldsymbol{h},\boldsymbol{l}`$ ).
+Here, the scalars $`W^{(ab)}_{i}`$ refer to the element $`\langle{a}\rvertW_{i}\lvert{b}\rangle`$ of the unitary operator $`W_{i}`$, the bold multi-index $`\boldsymbol{j}`$ summarizes the set $`(j_{1},\cdots,j_{d})`$ and $`\Lambda_{j}`$ is a vector containing the eigenvalues selected by the multi-index (and similarly for $`\boldsymbol{k},\boldsymbol{h},\boldsymbol{l}`$ ).
 
 We can now summarize all terms where $`\Lambda_{\boldsymbol{j}}-\Lambda_{\boldsymbol{l}}=\boldsymbol{s}`$ and $`\Lambda_{\boldsymbol{k}}-\Lambda_{\boldsymbol{h}}=\boldsymbol{t}`$, in other words where the differences of eigenvalues amount to the same vectors $`\boldsymbol{s},\boldsymbol{t}`$. Then
 
@@ -2494,7 +2494,7 @@ $$
 = \frac{1}{2^{N}}\sum_{i=1}^{4^{N}-1}|\boldsymbol{r}_{i}|\left(\mathbb{I}+\mbox{sign}(\boldsymbol{r}_{i})P_{i}\right)\succeq 0.
 $$
 
-Here, it is used that $`\sum_{i}|\boldsymbol{r}_{i}|=\|\boldsymbol{r}\|_{1}=1`$ and $`\mathbb{I}\pm P_{i}\geq 0`$ for all Pauli operators $`P_{i}`$. Notice that efficiently preparing $`\mathbb{I}+P_{i}`$ can be achieved by rotating each qubit’s $`|{0}\rangle`$ basis state to the corresponding Pauli basis and flipping the necessary qubits individually. Since this state is a convex combination of quantum states, it can be efficiently prepared by mixing, when the number of terms is polynomial. ∎
+Here, it is used that $`\sum_{i}|\boldsymbol{r}_{i}|=\|\boldsymbol{r}\|_{1}=1`$ and $`\mathbb{I}\pm P_{i}\geq 0`$ for all Pauli operators $`P_{i}`$. Notice that efficiently preparing $`\mathbb{I}+P_{i}`$ can be achieved by rotating each qubit’s $`\lvert{0}\rangle`$ basis state to the corresponding Pauli basis and flipping the necessary qubits individually. Since this state is a convex combination of quantum states, it can be efficiently prepared by mixing, when the number of terms is polynomial. ∎
 
 ###### Lemma 3.15 (Euclidean inner products).
 
@@ -2725,7 +2725,7 @@ which has an exact solution given by a generalized eigenvalue problem. The solut
 
 In this section, we explore the practical implementation of a quantum kernel. Before diving into concrete code examples, we discuss an efficient strategy for estimating the quantum kernel in practice.
 
-As explained in Chapter. [3.2](#Ch3.S2 "3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one method for estimating the quantum kernel is the SWAP test, which is resource-intensive. Alternatively, we can encode the classical data vector $`\boldsymbol{x}`$ using a unitary operation $`U(\boldsymbol{x})`$ and apply the inverse embedding of $`\boldsymbol{x}^{\prime}`$ using $`U(\boldsymbol{x}^{\prime})^{\dagger}`$ on the same qubits. The quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is then estimated by measuring the expectation of the projector $`O=(|{0}\rangle\langle{0}|)^{\otimes N}`$ on the zero state.
+As explained in Chapter. [3.2](#Ch3.S2 "3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one method for estimating the quantum kernel is the SWAP test, which is resource-intensive. Alternatively, we can encode the classical data vector $`\boldsymbol{x}`$ using a unitary operation $`U(\boldsymbol{x})`$ and apply the inverse embedding of $`\boldsymbol{x}^{\prime}`$ using $`U(\boldsymbol{x}^{\prime})^{\dagger}`$ on the same qubits. The quantum kernel $`k_{Q}(\boldsymbol{x},\boldsymbol{x}^{\prime})`$ is then estimated by measuring the expectation of the projector $`O=(\lvert{0}\rangle\langle{0}\rvert)^{\otimes N}`$ on the zero state.
 
 The complete quantum circuit architecture for this process is illustrated in Figure [3.2](#Ch3.F2 "Figure 3.2 ‣ 3.2.1 Motivations for quantum kernel machines ‣ 3.2 Quantum Kernel Machines ‣ Chapter 3 Quantum Kernel Methods ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Mathematically, the process is expressed as:
 
@@ -2734,7 +2734,7 @@ $$
 $$
 
 $$
-= \braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})U(\boldsymbol{x})^{\dagger}|{0}\rangle^{\otimes N}\langle{0}|^{\otimes N}U(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}
+= \braket{0^{\otimes N}|U(\boldsymbol{x}^{\prime})U(\boldsymbol{x})^{\dagger}\lvert{0}\rangle^{\otimes N}\langle{0}\rvert^{\otimes N}U(\boldsymbol{x}^{\prime})^{\dagger}U(\boldsymbol{x})|0^{\otimes N}}
 $$
 
 $$
@@ -5005,7 +5005,7 @@ Step 3: Defining the quantum patch generator. The generator in the quantum patch
 
 8 qml.CZ(wires=\[j, j + 1\])
 
-Then, we implement the quantum generator for each patch of an image, i.e., sub-generators. The sub-generator transforms the latent variable $`\boldsymbol{z}`$ into a latent quantum state $`|{\boldsymbol{z}}\rangle`$, applies a PQC, performs partial measurements on the ancillary system $`\mathcal{A}`$, and outputs the probabilities of each computational basis state in the remaining system, which correspond to the generated pixel values.
+Then, we implement the quantum generator for each patch of an image, i.e., sub-generators. The sub-generator transforms the latent variable $`\boldsymbol{z}`$ into a latent quantum state $`\lvert{\boldsymbol{z}}\rangle`$, applies a PQC, performs partial measurements on the ancillary system $`\mathcal{A}`$, and outputs the probabilities of each computational basis state in the remaining system, which correspond to the generated pixel values.
 
 [⬇](data:text/plain;base64,ZGVmIFF1YW50dW1HZW5lcmF0b3IocGFyYW1zLCB6PU5vbmUsIG5fcXViaXRfYT0xKToKICAgIG5fcXViaXQgPSBwYXJhbXMuc2hhcGVbMV0KCiAgICAjIGFuZ2xlIGVuY29kaW5nIG9mIGxhdGVudCBzdGF0ZSB6CiAgICBmb3IgaSBpbiByYW5nZShuX3F1Yml0KToKICAgICAgICBxbWwuUlkoeltpXSwgd2lyZXM9aSkKCiAgICBQUUMocGFyYW1zKQoKICAgICMgcGFydGlhbCBtZWFzdXJlbWVudCBvbiB0aGUgYW5jaWxsYXJ5IHF1Yml0cwogICAgcW1sLm1lYXN1cmUod2lyZXM9bl9xdWJpdC0xKQogICAgcmV0dXJuIHFtbC5wcm9icyh3aXJlcz1yYW5nZShuX3F1Yml0LW5fcXViaXRfYSkp)
 
@@ -5501,7 +5501,7 @@ Following the explicit form of the single-head and single-layer Transformer in E
 Mathematically, given any $`A\in\{W_{q},W_{k},W_{v},M_{1},M_{2},S\}`$ corresponding to an $`N`$-qubit operator, $`\alpha,\varepsilon\geq 0`$ and $`a\in\mathbb{N}`$, there exists a $`(a+N)`$-qubit unitary $`U_{A}`$ referring to the $`(\alpha,a,\varepsilon)`$-block-encoding of $`A`$ with
 
 $$
-\|A-\alpha(\langle{0}|^{\otimes a} \otimes\mathbb{I}_{2^{N}})U_{A}(|{0}\rangle^{\otimes a}\otimes\mathbb{I}_{2^{N}})\|\leq\varepsilon,
+\|A-\alpha(\langle{0}\rvert^{\otimes a} \otimes\mathbb{I}_{2^{N}})U_{A}(\lvert{0}\rangle^{\otimes a}\otimes\mathbb{I}_{2^{N}})\|\leq\varepsilon,
 $$
 
 where $`\|\cdot\|`$ represents the spectral norm.
@@ -5522,7 +5522,7 @@ Under the above assumptions about access to the read-in protocols, the following
 For a single-head and single-block Transformer depicted in Figure [5.2](#Ch5.F2 "Figure 5.2 ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), suppose its embedding dimension is $`d`$ and its input sequence $`S`$ has the length $`\ell=2^{N}`$. Under Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") about the input oracles, for the index $`j\in[\ell]`$, one can construct an $`\epsilon`$-accurate quantum circuit for the quantum state proportional to
 
 $$
-\sum_{k=1}^{d}\mathrm{Transformer}(S,j)_{k}|{k}\rangle,
+\sum_{k=1}^{d}\mathrm{Transformer}(S,j)_{k}\lvert{k}\rangle,
 $$
 
 by using $`{\mathcal{\tilde{O}}}(dN^{2}\alpha_{s}\alpha_{w}\log^{2}(1/\epsilon))`$ times of the input block encodings.
@@ -5596,11 +5596,11 @@ Moreover, for a polynomial function $`g_{r}(x)=\sum_{j=0}^{r}c_{j}x^{j}`$ with c
 To achieve this implementation, we construct two state-preparation unitaries $`P_{L}`$ and $`P_{R}`$, which act on $`\lceil\log(r+1)\rceil`$ qubits such that
 
 $$
-P_{L}:\ |{0^{\lceil\log(r+1)\rceil}}\rangle \to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}|{j}\rangle,
+P_{L}:\ \lvert{0^{\lceil\log(r+1)\rceil}}\rangle \to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}\lvert{j}\rangle,
 $$
 
 $$
-P_{R}:\ |{0^{\lceil\log(r+1)\rceil}}\rangle \to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}e^{i\theta_{j}}|{j}\rangle,
+P_{R}:\ \lvert{0^{\lceil\log(r+1)\rceil}}\rangle \to\frac{1}{\sqrt{C}}\sum_{j=1}^{r}\sqrt{|c_{j}|}e^{i\theta_{j}}\lvert{j}\rangle,
 $$
 
 where $`C=\sum_{j=1}^{r}|c_{j}|`$ and $`|c_{j}|e^{i\theta_{j}}=c_{j}`$. These two unitaries encode the polynomial coefficients $`\{c_{j}\}`$ into the quantum circuit, which is needed for block encoding via the linear combination of unitaries indicated in [Fact 2.21](#Ch2.Thmtheorem21 "Fact 2.21. ‣ 2.4.1 Block encoding ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Note that the construction of $`P_{L}`$ and $`P_{R}`$ is efficient for small $`r`$, as the corresponding circuit is $`\mathcal{O}(r)`$-depth with only elementary quantum gates ([Sun et al., 2023](#bib.bib125); [Zhang et al., 2022a](#bib.bib124)).
@@ -5616,11 +5616,11 @@ which is constructed by iteratively applying [lemma 2.25](#Ch2.Thmtheorem25 "Le
 To implement element-wise functions including constant terms, we also need access to the block encoding of a matrix whose elements are all $`1`$. Notice that this matrix can be written as the linear combination of the identity matrix and the reflection operator, i.e.,
 
 $$
-\sum_{k,k^{\prime}\in[2^{N}]}|k\rangle\langle k^{\prime}| =\frac{2^{N}}{2}\left(\mathbb{I}_{2^{N}}-(\mathbb{I}_{2^{N}}-\frac{2}{2^{N}}\sum_{k,k^{\prime}\in[2^{N}]}|{k}\rangle\langle{k^{\prime}}|)\right)
+\sum_{k,k^{\prime}\in[2^{N}]}|k\rangle\langle k^{\prime}| =\frac{2^{N}}{2}\left(\mathbb{I}_{2^{N}}-(\mathbb{I}_{2^{N}}-\frac{2}{2^{N}}\sum_{k,k^{\prime}\in[2^{N}]}\lvert{k}\rangle\langle{k^{\prime}}\rvert)\right)
 $$
 
 $$
-=\frac{2^{N}}{2}\biggl(\mathbb{I}_{2^{N}}-H^{\otimes N}\left(\mathbb{I}_{2^{N}}-2|{0^{N}}\rangle\langle{0^{N}}|\right)H^{\otimes N}\biggl),
+=\frac{2^{N}}{2}\biggl(\mathbb{I}_{2^{N}}-H^{\otimes N}\left(\mathbb{I}_{2^{N}}-2\lvert{0^{N}}\rangle\langle{0^{N}}\rvert\right)H^{\otimes N}\biggl),
 $$
 
 where $`H`$ is the Hadamard gate. Define $`U_{\mathrm{ref}}=|0\rangle\langle 0|\otimes\mathbb{I}_{2^{N}}+|1\rangle\langle 1|\otimes(H^{\otimes N}(\mathbb{I}_{2^{N}}-2|0^{N}\rangle\langle 0^{N}|)H^{\otimes N})`$. By direct computation, one can show that $`U_{0}=(XH\otimes\mathbb{I}_{2^{N}})U_{\mathrm{ref}}(H\otimes\mathbb{I}_{2^{N}})`$ is an $`(2^{N},1)`$-encoding of $`\sum_{k,k^{\prime}}|k\rangle\langle k^{\prime}|`$. One can achieve the element-wise function by following the same steps as above and taking linear combinations among $`U_{0},\dots,U_{A^{r}}`$. One point to notice is that we can only construct $`(2^{N},1)`$-encoding of the matrix whose elements are all $`1`$ since the spectral norm of this matrix is $`2^{N}`$. Therefore, we encode $`2^{N}c_{0}`$ into the state instead of $`c_{0}`$ to amplify the constant term. ∎
@@ -5632,23 +5632,23 @@ Supported by the above lemma, we can complete Step II (i.e., the quantum softmax
 Given an $`(\alpha,a)`$-encoding $`U_{A}`$ of a matrix $`A\in\mathbb{R}^{\ell\times\ell}`$, a positive integer $`d`$, and an index $`j\in[\ell]`$, one can prepare a state-encoding of
 
 $$
-|{A_{j}}\rangle\coloneqq\sum_{k=1}^{\ell}\sqrt{\mathrm{softmax}\left(A/\alpha\right)_{jk}}|{k}\rangle=\frac{1}{\sqrt{Z_{j}}}\sum_{k=1}^{\ell}\exp\circ\Big(\frac{A}{2\alpha}\Big)_{jk}|{k}\rangle,
+\lvert{A_{j}}\rangle\coloneqq\sum_{k=1}^{\ell}\sqrt{\mathrm{softmax}\left(A/\alpha\right)_{jk}}\lvert{k}\rangle=\frac{1}{\sqrt{Z_{j}}}\sum_{k=1}^{\ell}\exp\circ\Big(\frac{A}{2\alpha}\Big)_{jk}\lvert{k}\rangle,
 $$
 
 where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(A/\alpha)_{jk}`$.
 
 ###### Proof sketch of Theorem [5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
 
-We first construct the block encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that Taylor expansion of $`\exp(x)`$ contains a constant term $`1`$. This can be achieved with [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [Fact 5.4](#Ch5.Thmtheorem4 "Fact 5.4. ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Here, since we are only focusing on the $`j`$-th row, instead of taking linear combination with the matrix whose elements are all $`1`$, we take sum with the matrix whose $`j`$-th row elements are all $`1`$ and else are $`0`$. This enables us to have a better dependency on $`\ell`$, i.e., from $`\ell`$ to $`\sqrt{\ell}`$. For index $`j\in[\ell]`$, let $`U_{j}:|{0}\rangle\rightarrow|{j}\rangle`$. One can achieve this by changing Eqn. ([5.12](#Ch5.E12 "Equation 5.12 ‣ Proof of Lemma . ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to the following,
+We first construct the block encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that Taylor expansion of $`\exp(x)`$ contains a constant term $`1`$. This can be achieved with [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [Fact 5.4](#Ch5.Thmtheorem4 "Fact 5.4. ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). Here, since we are only focusing on the $`j`$-th row, instead of taking linear combination with the matrix whose elements are all $`1`$, we take sum with the matrix whose $`j`$-th row elements are all $`1`$ and else are $`0`$. This enables us to have a better dependency on $`\ell`$, i.e., from $`\ell`$ to $`\sqrt{\ell}`$. For index $`j\in[\ell]`$, let $`U_{j}:\lvert{0}\rangle\rightarrow\lvert{j}\rangle`$. One can achieve this by changing Eqn. ([5.12](#Ch5.E12 "Equation 5.12 ‣ Proof of Lemma . ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers")) to the following,
 
 $$
-\sum_{k}|j\rangle\langle k|=\frac{\sqrt{\ell}}{2}(U_{j}H^{\otimes N}-U_{j}\left(\mathbb{I}_{2^{N}}-2|{0^{N}}\rangle\langle{0^{N}}|\right)H^{\otimes N}).
+\sum_{k}|j\rangle\langle k|=\frac{\sqrt{\ell}}{2}(U_{j}H^{\otimes N}-U_{j}\left(\mathbb{I}_{2^{N}}-2\lvert{0^{N}}\rangle\langle{0^{N}}\rvert\right)H^{\otimes N}).
 $$
 
 Following the same steps in [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can achieve the construction. There are two error terms in this step. Denote $`U_{f\circ(A)}`$ as the constructed block encoding unitary. By [lemma 5.5](#Ch5.Thmtheorem5 "Lemma 5.5 (Element-wise polynomial function of block-encoded matrix). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and some additional calculation, one can show that $`U_{f\circ(A)}`$ is a block-encoding of $`\exp\circ(\frac{A}{2\alpha})`$. Note that $`\exp\circ(\frac{A}{2\alpha})_{jk}=\exp\circ(\frac{A}{2\alpha})^{\top}_{kj}`$. With unitary $`U_{f\circ(A)}^{\dagger}(I\otimes U_{j})`$ and amplitude amplification, one can prepare a state-encoding of the target state
 
 $$
-|{A_{j}}\rangle\coloneqq\frac{1}{\sqrt{Z_{j}}}\sum_{k=1}^{\ell}\exp\circ\Big(\frac{A}{2\alpha}\Big)_{jk}|{k}\rangle,
+\lvert{A_{j}}\rangle\coloneqq\frac{1}{\sqrt{Z_{j}}}\sum_{k=1}^{\ell}\exp\circ\Big(\frac{A}{2\alpha}\Big)_{jk}\lvert{k}\rangle,
 $$
 
 where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(A/\alpha)_{jk}`$ is the normalization factor of softmax function for the $`j`$-th row. ∎
@@ -5656,7 +5656,7 @@ where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(A/\alpha)_{jk}`$ is the normalization f
 Step III. Finally, we implement the matrix multiplication with $`V`$. This can be easily achieved by using Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), with $`U_{f(QK^{\top})}^{\dagger}`$ and $`U_{V}`$. Consequently, we obtain an encoded quantum state analogous to
 
 $$
-\sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}|{k}\rangle.
+\sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}\lvert{k}\rangle.
 $$
 
 Combining the results of Steps I, II, and III, we are now ready to present the proof of Theorem [5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers").
@@ -5668,7 +5668,7 @@ In the first step, we construct the block encoding of matrix $`QK^{\top}`$ and $
 By [theorem 5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), using $`U_{QK^{\top}}`$ one can prepare a state-encoding of the state
 
 $$
-\sum_{k=1}^{\ell}\sqrt{\mathrm{softmax}(QK^{\top}/\alpha_{0})_{jk}}|{k}\rangle,
+\sum_{k=1}^{\ell}\sqrt{\mathrm{softmax}(QK^{\top}/\alpha_{0})_{jk}}\lvert{k}\rangle,
 $$
 
 where $`Z_{j}=\sum_{k=1}^{\ell}\exp\circ(QK^{\top}/\alpha_{0})_{jk}`$. Remember that state encoding is also a block encoding. By [lemma 2.25](#Ch2.Thmtheorem25 "Lemma 2.25 (Hadamard product of the block encoding unitaries, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can construct a block encoding of a matrix whose $`j`$-th column is
@@ -5682,7 +5682,7 @@ ignoring other columns. Let this block-encoding unitary be $`U_{f(QK^{\top})}`$.
 Last, by exploiting Fact [2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") again, with $`U_{f(QK^{\top})}^{\dagger}`$ and $`U_{V}`$, we obtain an encoded quantum state analogous to
 
 $$
-\sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}|{k}\rangle.
+\sum_{k}^{\ell}(\mathrm{softmax}(QK^{\top}/\alpha_{0})V)_{jk}\lvert{k}\rangle.
 $$
 
 ∎
@@ -5701,13 +5701,13 @@ To achieve masked self-attention, we slightly change the steps mentioned in [the
 
 First, to approximate the exponential function, we move beyond using a matrix where all elements in the $`j`$-th row are set to $`1`$ while other rows remain $`0`$. Instead, we refine this approach by considering only the first $`2^{\lceil\log(j+1)\rceil}`$ elements in the $`j`$-th row to be $`1`$. Note that this matrix can be achieved similarly to the original one. The encoding factor of this matrix is $`2^{\lceil\log(j+1)\rceil/2}`$.
 
-Second, after approximating the function, for index $`j\in[\ell]`$, we multiply the block encoding with a projector $`\sum_{k,k\leq j}|{k}\rangle\langle{k}|`$ to mask the elements. Though the projector $`\sum_{k\in\mathcal{S}}|{k}\rangle\langle{k}|`$ for $`\mathcal{S}\subseteq[\ell]`$ is not unitary in general, one can construct a block encoding of the projector by noticing that it can be written by the linear combination of two unitaries:
+Second, after approximating the function, for index $`j\in[\ell]`$, we multiply the block encoding with a projector $`\sum_{k,k\leq j}\lvert{k}\rangle\langle{k}\rvert`$ to mask the elements. Though the projector $`\sum_{k\in\mathcal{S}}\lvert{k}\rangle\langle{k}\rvert`$ for $`\mathcal{S}\subseteq[\ell]`$ is not unitary in general, one can construct a block encoding of the projector by noticing that it can be written by the linear combination of two unitaries:
 
 $$
-\sum_{k\in\mathcal{S}}|{k}\rangle\langle{k}|=\frac{1}{2}\mathbb{I}+\frac{1}{2}\Big(2\sum_{k\in\mathcal{S}}|{k}\rangle\langle{k}|-\mathbb{I}\Big).
+\sum_{k\in\mathcal{S}}\lvert{k}\rangle\langle{k}\rvert=\frac{1}{2}\mathbb{I}+\frac{1}{2}\Big(2\sum_{k\in\mathcal{S}}\lvert{k}\rangle\langle{k}\rvert-\mathbb{I}\Big).
 $$
 
-Define $`U_{\rm proj}\coloneqq|{0}\rangle\langle{0}|\otimes\mathbb{I}+|1\rangle\langle 1|\otimes(2\sum_{k\in\mathcal{S}}|k\rangle\langle k|-\mathbb{I})`$. One can easily verify that $`(H\otimes\mathbb{I})U_{\rm proj}(H\otimes\mathbb{I})`$ is a $`(1,1,0)`$-encoding of $`\sum_{k\in\mathcal{S}}|k\rangle\langle k|`$, where $`H`$ is the Hadamard gate. The following steps follow the same with [theorem 5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [theorem 5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). ∎
+Define $`U_{\rm proj}\coloneqq\lvert{0}\rangle\langle{0}\rvert\otimes\mathbb{I}+|1\rangle\langle 1|\otimes(2\sum_{k\in\mathcal{S}}|k\rangle\langle k|-\mathbb{I})`$. One can easily verify that $`(H\otimes\mathbb{I})U_{\rm proj}(H\otimes\mathbb{I})`$ is a $`(1,1,0)`$-encoding of $`\sum_{k\in\mathcal{S}}|k\rangle\langle k|`$, where $`H`$ is the Hadamard gate. The following steps follow the same with [theorem 5.6](#Ch5.Thmtheorem6 "Theorem 5.6 (Quantum softmax for self-attention, informal). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") and [theorem 5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"). ∎
 
 One may further achieve the multi-head self-attention case by using the linear combination of unitaries.
 
@@ -5720,7 +5720,7 @@ In this subsection, we discuss how to implement the residual connection with lay
 Given access to the block encoding of the matrix $`G`$ in Theorem [5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), One can construct a quantum-encoded state
 
 $$
-\sum_{k=1}^{d}\mathrm{LN}(G^{\mathrm{soft}}_{j},S_{j})_{k}|{k}\rangle=\frac{1}{\varsigma}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})|{k}\rangle,
+\sum_{k=1}^{d}\mathrm{LN}(G^{\mathrm{soft}}_{j},S_{j})_{k}\lvert{k}\rangle=\frac{1}{\varsigma}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})\lvert{k}\rangle,
 $$
 
 where $`\bar{s}_{j}\coloneqq\frac{1}{d}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk})`$ and $`\varsigma\coloneqq\sqrt{\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})^{2}}`$.
@@ -5730,17 +5730,17 @@ where $`\bar{s}_{j}\coloneqq\frac{1}{d}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{
 As shown in [theorem 5.3](#Ch5.Thmtheorem3 "Theorem 5.3 (Quantum self-attention). ‣ 5.2.1 Quantum self-attention ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we can construct a block-encoding of a matrix $`G`$ whose $`j`$-th row is the same row as that of $`G^{\mathrm{soft}}`$. By Assumption [5.1](#Ch5.Thmtheorem1 "Assumption 5.1 (Input oracles). ‣ 5.2 Fault-tolerant Quantum Transformer ‣ Chapter 5 Quantum Transformer ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), we are given $`U_{s}`$ which is an $`(\alpha_{s},a_{s})`$-encoding of $`S`$. By Lemma [2.24](#Ch2.Thmtheorem24 "Fact 2.24 (Linear combination of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with the state preparation pair $`(P,P)`$ such that
 
 $$
-P|{0}\rangle=\frac{1}{\sqrt{\alpha_{g}+\alpha_{s}}}(\sqrt{\alpha_{g}}|{0}\rangle+\sqrt{\alpha_{s}}|{1}\rangle),
+P\lvert{0}\rangle=\frac{1}{\sqrt{\alpha_{g}+\alpha_{s}}}(\sqrt{\alpha_{g}}\lvert{0}\rangle+\sqrt{\alpha_{s}}\lvert{1}\rangle),
 $$
 
 one can construct a quantum circuit $`U_{\mathrm{res}}`$ which is an $`(\alpha_{g}+\alpha_{s},a_{g}+1)`$-encoding of an $`\ell\times d`$ matrix whose $`j`$-th row is the same as that of $`G^{\mathrm{soft}}+S`$.
 
 Now we consider how to create a block encoding of a diagonal matrix $`\bar{s}_{j}\cdot\mathbb{I}`$, where $`\bar{s}_{j}\coloneqq\frac{1}{d}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk})`$. Let us define a unitary $`H^{\log d}\coloneqq H^{\otimes\log d}`$. Note that $`H^{\log d}`$ is a $`(1,0,0)`$-encoding of itself, and the first column of $`H^{\log d}`$ is $`\frac{1}{\sqrt{d}}(1,\dots,1)^{\top}`$. By [Fact 2.23](#Ch2.Thmtheorem23 "Fact 2.23 (Product of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can multiply $`G^{\mathrm{soft}}+S`$ with $`H^{\log d}`$ to construct a block encoding of an $`\ell\times d`$ matrix, whose $`(j,1)`$-element is $`\sqrt{d}\bar{s}_{i}`$. One can further move this element to $`(1,1)`$ by switching the first row with the $`j`$-th row. By tensor product with the identity $`\mathbb{I}`$ of $`\log d`$ qubits, one can construct a block encoding of $`\sqrt{d}\bar{s}_{i}\cdot\mathbb{I}`$.
 
-With $`U_{j}:|{0}\rangle\rightarrow|{j}\rangle`$, one can prepare the state
+With $`U_{j}:\lvert{0}\rangle\rightarrow\lvert{j}\rangle`$, one can prepare the state
 
 $$
-U_{\mathrm{res}}^{\dagger}(\mathbb{I}\otimes U_{j})|{0}\rangle|{0}\rangle=\frac{1}{\alpha_{g}+\alpha_{s}}|{0}\rangle\sum_{k=1}^{d}\psi_{k}|{k}\rangle+\sqrt{1-\frac{\sum_{k}\psi_{k}^{2}}{(\alpha_{g}+\alpha_{s})^{2}}}|{1}\rangle|{\mathrm{bad}}\rangle.
+U_{\mathrm{res}}^{\dagger}(\mathbb{I}\otimes U_{j})\lvert{0}\rangle\lvert{0}\rangle=\frac{1}{\alpha_{g}+\alpha_{s}}\lvert{0}\rangle\sum_{k=1}^{d}\psi_{k}\lvert{k}\rangle+\sqrt{1-\frac{\sum_{k}\psi_{k}^{2}}{(\alpha_{g}+\alpha_{s})^{2}}}\lvert{1}\rangle\lvert{\mathrm{bad}}\rangle.
 $$
 
 By the diagonal block encoding of amplitudes mentioned as [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), this can be converted to a block encoding of the diagonal matrix $`\diag(G_{j1}+S_{j1},\dots,G_{jd}+S_{jd})`$.
@@ -5748,19 +5748,19 @@ By the diagonal block encoding of amplitudes mentioned as [Fact 2.28](#Ch2.Thmt
 By taking the linear combination as [Fact 2.24](#Ch2.Thmtheorem24 "Fact 2.24 (Linear combination of block encoding, ( ) ). ‣ 2.4.2 Basic arithmetic for block encodings ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with state preparation pair $`(P_{1},P_{2})`$, where
 
 $$
-P_{1}|{0}\rangle=\frac{1}{\sqrt{1+1/\sqrt{d}}}(|{0}\rangle+\frac{1}{\sqrt{d}}|{1}\rangle)
+P_{1}\lvert{0}\rangle=\frac{1}{\sqrt{1+1/\sqrt{d}}}(\lvert{0}\rangle+\frac{1}{\sqrt{d}}\lvert{1}\rangle)
 $$
 
 and
 
 $$
-P_{2}|{0}\rangle=\frac{1}{\sqrt{1+1/\sqrt{d}}}(|{0}\rangle-\frac{1}{\sqrt{d}}|{1}\rangle),
+P_{2}\lvert{0}\rangle=\frac{1}{\sqrt{1+1/\sqrt{d}}}(\lvert{0}\rangle-\frac{1}{\sqrt{d}}\lvert{1}\rangle),
 $$
 
 one can construct a block encoding of $`\mathrm{diag}(G_{j1}+S_{j1}-\bar{s}_{j},\dots,G_{jd}+S_{jd}-\bar{s}_{j})`$, and we call it $`U_{\mathrm{LN}}`$. Then the unitary $`U_{\mathrm{LN}}(\mathbb{I}\otimes H^{\log d})`$ is an state-encoding of the state
 
 $$
-\frac{1}{\varsigma}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})|{k}\rangle,
+\frac{1}{\varsigma}\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})\lvert{k}\rangle,
 $$
 
 where $`\varsigma\coloneqq\sqrt{\sum_{k=1}^{d}(G^{\mathrm{soft}}_{jk}+S_{jk}-\bar{s}_{j})^{2}}`$. ∎
@@ -5787,10 +5787,10 @@ In the following theorem, we consider how to implement the two-layer feedforward
 
 ###### Theorem 5.11 (Two-layer feedforward network with GELU function, informal).
 
-Assume we have access to $`(\alpha,a)`$-state encoding of an $`N`$-qubit state $`|{\psi}\rangle=\sum_{k=1}^{2^{N}}\psi_{k}|{k}\rangle`$, where $`\{\psi_{k}\}`$ are real and $`\mathopen{\|}\psi\mathclose{\|}_{2}=1`$. Further, assume access to $`(\alpha_{m},a_{m})`$-encodings $`U_{M_{1}}`$ and $`U_{M_{2}}`$ of weight matrices $`M_{1}\in\mathbb{R}^{d^{\prime}\times d}`$ and $`M_{2}\in\mathbb{R}^{d\times d^{\prime}}`$. Let the activation function be $`\mathrm{GELU}(x)\coloneqq x\cdot\frac{1}{2}(1+\mathrm{erf}(\frac{x}{\sqrt{2}}))`$. One can prepare a state-encoding of the state
+Assume we have access to $`(\alpha,a)`$-state encoding of an $`N`$-qubit state $`\lvert{\psi}\rangle=\sum_{k=1}^{2^{N}}\psi_{k}\lvert{k}\rangle`$, where $`\{\psi_{k}\}`$ are real and $`\mathopen{\|}\psi\mathclose{\|}_{2}=1`$. Further, assume access to $`(\alpha_{m},a_{m})`$-encodings $`U_{M_{1}}`$ and $`U_{M_{2}}`$ of weight matrices $`M_{1}\in\mathbb{R}^{d^{\prime}\times d}`$ and $`M_{2}\in\mathbb{R}^{d\times d^{\prime}}`$. Let the activation function be $`\mathrm{GELU}(x)\coloneqq x\cdot\frac{1}{2}(1+\mathrm{erf}(\frac{x}{\sqrt{2}}))`$. One can prepare a state-encoding of the state
 
 $$
-|{\phi}\rangle=\frac{1}{C}\sum_{k=1}^{d}\Big(M_{2}\cdot\mathrm{GELU}(M_{1}\cdot\psi)\Big)_{k}|{k}\rangle,
+\lvert{\phi}\rangle=\frac{1}{C}\sum_{k=1}^{d}\Big(M_{2}\cdot\mathrm{GELU}(M_{1}\cdot\psi)\Big)_{k}\lvert{k}\rangle,
 $$
 
 where $`C`$ is the normalization factor.
@@ -5800,28 +5800,28 @@ where $`C`$ is the normalization factor.
 We have
 
 $$
-(\mathbb{I}_{2^{a}}\otimes U_{M_{1}})(\mathbb{I}_{2^{a_{m}}}\otimes U_{\psi})|{0^{a+a_{m}+N}}\rangle=\frac{1}{\alpha\alpha_{m}}|{0^{a+a_{m}}}\rangleM_{1}|{\psi}\rangle+|{\widetilde{\perp}}\rangle,
+(\mathbb{I}_{2^{a}}\otimes U_{M_{1}})(\mathbb{I}_{2^{a_{m}}}\otimes U_{\psi})\lvert{0^{a+a_{m}+N}}\rangle=\frac{1}{\alpha\alpha_{m}}\lvert{0^{a+a_{m}}}\rangleM_{1}\lvert{\psi}\rangle+\lvert{\widetilde{\perp}}\rangle,
 $$
 
-where $`|{\widetilde{\perp}}\rangle`$ is an unnormalized orthogonal state. For the case $`d^{\prime}\geq\ell`$, this can be achieved by padding ancilla qubits to the initial state. By [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can construct a block encoding of the diagonal matrix $`\diag((M_{1}\psi)_{1},\dots,(M_{1}\psi)_{d^{\prime}})`$. Note that the $`\mathrm{GELU}`$ function does not have a constant term, and is suitable to use the importance-weighted amplitude transformation as in [Rattew and Rebentrost (2023)](#bib.bib87). Instead of directly implementing the GELU function, we first implement the function $`f(x)=\frac{1}{2}(1+\mathrm{erf}(\frac{x}{\sqrt{2}}))`$. Note that the value of $`|\mathrm{erf}(x)|`$ is upper bounded by $`1`$. By [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with function $`\frac{1}{4}(1+\mathrm{erf}(\alpha\alpha_{m}\frac{x}{\sqrt{2}}))`$, one can construct a block encoding of matrix $`\diag(f(M_{1}\psi)_{1},\dots,f(M_{1}\psi)_{d^{\prime}})`$.
+where $`\lvert{\widetilde{\perp}}\rangle`$ is an unnormalized orthogonal state. For the case $`d^{\prime}\geq\ell`$, this can be achieved by padding ancilla qubits to the initial state. By [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers"), one can construct a block encoding of the diagonal matrix $`\diag((M_{1}\psi)_{1},\dots,(M_{1}\psi)_{d^{\prime}})`$. Note that the $`\mathrm{GELU}`$ function does not have a constant term, and is suitable to use the importance-weighted amplitude transformation as in [Rattew and Rebentrost (2023)](#bib.bib87). Instead of directly implementing the GELU function, we first implement the function $`f(x)=\frac{1}{2}(1+\mathrm{erf}(\frac{x}{\sqrt{2}}))`$. Note that the value of $`|\mathrm{erf}(x)|`$ is upper bounded by $`1`$. By [Fact 2.28](#Ch2.Thmtheorem28 "Fact 2.28 (Diagonal block encoding of amplitudes, ( ) ). ‣ 2.4.3 Quantum singular value transformation ‣ 2.4 Quantum Linear Algebra ‣ Chapter 2 Basics of Quantum Computing ‣ Quantum Machine LearningA Hands-on Tutorial for Machine Learning Practitioners and Researchers") with function $`\frac{1}{4}(1+\mathrm{erf}(\alpha\alpha_{m}\frac{x}{\sqrt{2}}))`$, one can construct a block encoding of matrix $`\diag(f(M_{1}\psi)_{1},\dots,f(M_{1}\psi)_{d^{\prime}})`$.
 
 Let the previously constructed block-encoding unitary be $`U_{f(x)}`$. We have
 
 $$
-U_{f(x)}(\mathbb{I}\otimes U_{M_{1}})(\mathbb{I}\otimes U_{\psi})|{0}\rangle|{0}\rangle=\frac{1}{2\alpha\alpha_{m}}|{0}\rangle\sum_{k}\mathrm{GELU}(M_{1}\psi)_{k}|{k}\rangle+|{\widetilde{\perp^{\prime}}}\rangle,
+U_{f(x)}(\mathbb{I}\otimes U_{M_{1}})(\mathbb{I}\otimes U_{\psi})\lvert{0}\rangle\lvert{0}\rangle=\frac{1}{2\alpha\alpha_{m}}\lvert{0}\rangle\sum_{k}\mathrm{GELU}(M_{1}\psi)_{k}\lvert{k}\rangle+\lvert{\widetilde{\perp^{\prime}}}\rangle,
 $$
 
-where $`|{\widetilde{\perp^{\prime}}}\rangle`$ is an unnormalized orthogonal state. Finally, by implementing the block-encoding unitary $`U_{M_{2}}`$, we have
+where $`\lvert{\widetilde{\perp^{\prime}}}\rangle`$ is an unnormalized orthogonal state. Finally, by implementing the block-encoding unitary $`U_{M_{2}}`$, we have
 
 $$
-(\mathbb{I}\otimes U_{M_{2}})(\mathbb{I}\otimes U_{f(x)})(\mathbb{I}\otimes U_{M_{1}})(\mathbb{I}\otimes U_{\psi})|{0}\rangle|{0}\rangle
+(\mathbb{I}\otimes U_{M_{2}})(\mathbb{I}\otimes U_{f(x)})(\mathbb{I}\otimes U_{M_{1}})(\mathbb{I}\otimes U_{\psi})\lvert{0}\rangle\lvert{0}\rangle
 $$
 
 $$
-= \frac{C}{2\alpha\alpha^{2}_{m}}|{0}\rangle\sum_{k=1}^{d}\Big(M_{2}\cdot\mathrm{GELU}(M_{1}\cdot\psi)\Big)_{k}|{k}\rangle+|{\widetilde{\perp^{\prime\prime}}}\rangle,
+= \frac{C}{2\alpha\alpha^{2}_{m}}\lvert{0}\rangle\sum_{k=1}^{d}\Big(M_{2}\cdot\mathrm{GELU}(M_{1}\cdot\psi)\Big)_{k}\lvert{k}\rangle+\lvert{\widetilde{\perp^{\prime\prime}}}\rangle,
 $$
 
-where $`C`$ is the normalization factor, and $`|{\widetilde{\perp}^{\prime\prime}}\rangle`$ is an unnormalized orthogonal state. ∎
+where $`C`$ is the normalization factor, and $`\lvert{\widetilde{\perp}^{\prime\prime}}\rangle`$ is an unnormalized orthogonal state. ∎
 
 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2g1LlMyLlNTMy5wNy5waWMxIiBjbGFzcz0ibHR4X3BpY3R1cmUiIGhlaWdodD0iMTI1LjczIiBvdmVyZmxvdz0idmlzaWJsZSIgdmVyc2lvbj0iMS4xIiB2aWV3Ym94PSIwIDAgNDc3LjM4IDEyNS43MyIgd2lkdGg9IjQ3Ny4zOCI+PGcgc3R5bGU9Ii0tbHR4LXN0cm9rZS1jb2xvcjojMDAwMDAwOy0tbHR4LWZpbGwtY29sb3I6IzAwMDAwMDsiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjRwdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwxMjUuNzMpIG1hdHJpeCgxIDAgMCAtMSAwIDApIj48ZyBzdHlsZT0iLS1sdHgtZmlsbC1jb2xvcjojNjA2MDYwOyIgZmlsbD0iIzYwNjA2MCIgZmlsbC1vcGFjaXR5PSIxLjAiPjxwYXRoIHN0eWxlPSJzdHJva2U6bm9uZSIgZD0iTSAwIDUuOTEgTCAwIDExOS44MiBDIDAgMTIzLjA4IDIuNjQgMTI1LjczIDUuOTEgMTI1LjczIEwgNDcxLjQ3IDEyNS43MyBDIDQ3NC43MyAxMjUuNzMgNDc3LjM4IDEyMy4wOCA0NzcuMzggMTE5LjgyIEwgNDc3LjM4IDUuOTEgQyA0NzcuMzggMi42NCA0NzQuNzMgMCA0NzEuNDcgMCBMIDUuOTEgMCBDIDIuNjQgMCAwIDIuNjQgMCA1LjkxIFoiIC8+PC9nPjxnIHN0eWxlPSItLWx0eC1maWxsLWNvbG9yOiNGOUY5Rjk7IiBmaWxsPSIjRjlGOUY5IiBmaWxsLW9wYWNpdHk9IjEuMCI+PHBhdGggc3R5bGU9InN0cm9rZTpub25lIiBkPSJNIDEuOTcgNS45MSBMIDEuOTcgMTA0LjMxIEwgNDc1LjQxIDEwNC4zMSBMIDQ3NS40MSA1LjkxIEMgNDc1LjQxIDMuNzMgNDczLjY1IDEuOTcgNDcxLjQ3IDEuOTcgTCA1LjkxIDEuOTcgQyAzLjczIDEuOTcgMS45NyAzLjczIDEuOTcgNS45MSBaIiAvPjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDExMC4yMSkiPjxmb3JlaWdub2JqZWN0IHN0eWxlPSItLWx0eC1mby13aWR0aDozMS4zN2VtOy0tbHR4LWZvLWhlaWdodDowLjY5ZW07LS1sdHgtZm8tZGVwdGg6MGVtO2ZvbnQtc2l6ZToxMHB0OyIgaGVpZ2h0PSI5LjYxIiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA5LjYxKSIgd2lkdGg9IjQzNC4wNyI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRhaW5lciI+PHNwYW4gY2xhc3M9Imx0eF9mb3JlaWdub2JqZWN0X2NvbnRlbnQiPgo8c3BhbiBpZD0iQ2g1LlMyLlNTMy5wNy5waWMxLjEiIGNsYXNzPSJsdHhfaW5saW5lLWJsb2NrIGx0eF9taW5pcGFnZSBsdHhfYWxpZ25fYm90dG9tIiBzdHlsZT0id2lkdGg6MzEuMzdlbTsiPgo8c3BhbiBpZD0iQ2g1LlMyLlNTMy5wNy5waWMxLjEuMSIgY2xhc3M9Imx0eF9wIj48c3BhbiBpZD0iQ2g1LlMyLlNTMy5wNy5waWMxLjEuMS4xIiBjbGFzcz0ibHR4X3RleHQiIHN0eWxlPSItLWx0eC1mZy1jb2xvcjojRkZGRkZGOyI+UmVtYXJrPC9zcGFuPjwvc3Bhbj4KPC9zcGFuPjwvc3Bhbj48L3NwYW4+PC9mb3JlaWdub2JqZWN0PjwvZz48ZyBmaWxsLW9wYWNpdHk9IjEuMCIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wIDAuMCAwLjAgMS4wIDIxLjY1IDE2LjQ3KSI+PGZvcmVpZ25vYmplY3Qgc3R5bGU9Ii0tbHR4LWZvLXdpZHRoOjMxLjM3ZW07LS1sdHgtZm8taGVpZ2h0OjUuNDllbTstLWx0eC1mby1kZXB0aDowLjE5ZW07Zm9udC1zaXplOjEwcHQ7IiBoZWlnaHQ9Ijc4LjcyIiBvdmVyZmxvdz0idmlzaWJsZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA3Ni4wMykiIHdpZHRoPSI0MzQuMDciPjxzcGFuIGNsYXNzPSJsdHhfZm9yZWlnbm9iamVjdF9jb250YWluZXIiPjxzcGFuIGNsYXNzPSJsdHhfZm9yZWlnbm9iamVjdF9jb250ZW50Ij4KPHNwYW4gaWQ9IkNoNS5TMi5TUzMucDcucGljMS4yIiBjbGFzcz0ibHR4X2lubGluZS1ibG9jayBsdHhfbWluaXBhZ2UgbHR4X2FsaWduX2JvdHRvbSIgc3R5bGU9IndpZHRoOjMxLjM3ZW07Ij4KPHNwYW4gaWQ9IkNoNS5TMi5TUzMucDcucGljMS4yLjEiIGNsYXNzPSJsdHhfcCI+PHNwYW4gaWQ9IkNoNS5TMi5TUzMucDcucGljMS4yLjEuMSIgY2xhc3M9Imx0eF90ZXh0IiBzdHlsZT0iLS1sdHgtZmctY29sb3I6IzAwMDAwMDsiPlRoZSBxdWFudHVtIGZlZWRmb3J3YXJkIG5ldHdvcmsgZGlzY3Vzc2VkIGluIHRoaXMgc3Vic2VjdGlvbiBpcyBhIHF1YW50dW0gaW1wbGVtZW50YXRpb24gb2YgdGhlIGNsYXNzaWNhbCBmZWVkZm9yd2FyZCBuZXR3b3JrIHVuZGVyIHRoZSBpbnB1dCBhc3N1bXB0aW9uIG9mIGJsb2NrIGVuY29kaW5nLCB3aGljaCBpcyBlc3NlbnRpYWxseSBkaWZmZXJlbnQgZnJvbSB0aGUgcXVhbnR1bSBhbmFsb2cgb2YgbmV1cmFsIG5ldHdvcmtzIGludHJvZHVjZWQgaW4gPGEgaHJlZj0iI0NoNCIgdGl0bGU9IkNoYXB0ZXIgNCBRdWFudHVtIE5ldXJhbCBOZXR3b3JrcyDigKMgUXVhbnR1bSBNYWNoaW5lIExlYXJuaW5nQSBIYW5kcy1vbiBUdXRvcmlhbCBmb3IgTWFjaGluZSBMZWFybmluZyBQcmFjdGl0aW9uZXJzIGFuZCBSZXNlYXJjaGVycyIgY2xhc3M9Imx0eF9yZWYiPjxzcGFuIGNsYXNzPSJsdHhfdGV4dCBsdHhfcmVmX3RhZyI+Y2hhcHRlcjwvc3Bhbj7CoDxzcGFuIGNsYXNzPSJsdHhfdGV4dCBsdHhfcmVmX3RhZyI+NDwvc3Bhbj48L2E+Ljwvc3Bhbj48L3NwYW4+Cjwvc3Bhbj48L3NwYW4+PC9zcGFuPjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvc3ZnPg==" id="Ch5.S2.SS3.p7.pic1" class="ltx_picture" />
 
@@ -6089,7 +6089,7 @@ Moving forward, interdisciplinary collaboration between quantum computing and AI
 <td id="A1.T1.2.15.2" class="ltx_td ltx_align_left ltx_align_top">Conjugate Transpose operation</td>
 </tr>
 <tr id="A1.T1.2.16" class="ltx_tr">
-<td id="A1.T1.2.16.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>⋅</mi><mo stretchy="false" form="postfix">⟩</mo><mo stretchy="false" form="prefix">⟨</mo><mi>⋅</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|{\cdot}\rangle\langle{\cdot}|</annotation></semantics></math></td>
+<td id="A1.T1.2.16.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>⋅</mi><mo stretchy="false" form="postfix">⟩</mo><mo stretchy="false" form="prefix">⟨</mo><mi>⋅</mi><mo stretchy="false" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">\lvert{\cdot}\rangle\langle{\cdot}\rvert</annotation></semantics></math></td>
 <td id="A1.T1.2.16.2" class="ltx_td ltx_align_left ltx_align_top">Outer product operation</td>
 </tr>
 <tr id="A1.T1.2.17" class="ltx_tr">
@@ -6101,7 +6101,7 @@ Moving forward, interdisciplinary collaboration between quantum computing and AI
 <td id="A1.T1.2.18.2" class="ltx_td ltx_align_left ltx_align_top">composition of functions <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math></td>
 </tr>
 <tr id="A1.T1.2.19" class="ltx_tr">
-<td id="A1.T1.2.19.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mn>0</mn><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mn>1</mn><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>ψ</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">|{0}\rangle,|{1}\rangle,|{\psi}\rangle</annotation></semantics></math></td>
+<td id="A1.T1.2.19.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mn>0</mn><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mn>1</mn><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>ψ</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\lvert{0}\rangle,\lvert{1}\rangle,\lvert{\psi}\rangle</annotation></semantics></math></td>
 <td id="A1.T1.2.19.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">Pure quantum state in Dirac notation</td>
 </tr>
 <tr id="A1.T1.2.20" class="ltx_tr">
@@ -6109,7 +6109,7 @@ Moving forward, interdisciplinary collaboration between quantum computing and AI
 <td id="A1.T1.2.20.2" class="ltx_td ltx_align_left ltx_align_top">Number of qubits</td>
 </tr>
 <tr id="A1.T1.2.21" class="ltx_tr">
-<td id="A1.T1.2.21.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msup><mn>0</mn><mi>N</mi></msup><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">⟩</mo><mrow><mi>⊗</mi><mi>N</mi></mrow></msup></mrow><annotation encoding="application/x-tex">|{0^{N}}\rangle,|{0}\rangle^{\otimes N}</annotation></semantics></math></td>
+<td id="A1.T1.2.21.1" class="ltx_td ltx_align_left ltx_align_top"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msup><mn>0</mn><mi>N</mi></msup><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">⟩</mo><mrow><mi>⊗</mi><mi>N</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\lvert{0^{N}}\rangle,\lvert{0}\rangle^{\otimes N}</annotation></semantics></math></td>
 <td id="A1.T1.2.21.2" class="ltx_td ltx_align_left ltx_align_top">Zero state with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-qubits</td>
 </tr>
 <tr id="A1.T1.2.22" class="ltx_tr">

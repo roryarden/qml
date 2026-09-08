@@ -93,10 +93,10 @@ function Math(el)
   -- \displaystyle is redundant in a display block and doubles up when we join
   -- aligned equation rows, which can trip up GitHub's KaTeX.
   t = t:gsub("\\displaystyle%s*", "")
-  t = t:gsub("\\ketbra%s*(%b{})%s*(%b{})", "|%1\\rangle\\langle%2|")
-  t = t:gsub("\\braket%s*(%b{})%s*(%b{})", "\\langle%1|%2\\rangle")
-  t = t:gsub("\\ket%s*(%b{})", "|%1\\rangle")
-  t = t:gsub("\\bra%s*(%b{})", "\\langle%1|")
+  t = t:gsub("\\ketbra%s*(%b{})%s*(%b{})", "\\lvert%1\\rangle\\langle%2\\rvert")
+  t = t:gsub("\\braket%s*(%b{})%s*(%b{})", "\\langle%1\\vert%2\\rangle")
+  t = t:gsub("\\ket%s*(%b{})", "\\lvert%1\\rangle")
+  t = t:gsub("\\bra%s*(%b{})", "\\langle%1\\rvert")
   t = t:gsub("\\bm%s*(%b{})", "\\boldsymbol%1")
   el.text = t
   return el
