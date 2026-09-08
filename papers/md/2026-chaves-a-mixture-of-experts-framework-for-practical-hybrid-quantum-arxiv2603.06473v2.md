@@ -63,12 +63,9 @@ Each of these components is described in detail in the following subsections, al
 
 Similarly to the base architecture, we also perform epoch training using a linear combination of the loss associated with the reconstruction of the autoencoder, $`\mathcal{L}_{R}`$, and the loss of the classification, $`\mathcal{L}_{C}`$. Our aim is then to minimize the following total loss,
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \mathcal{L}_{total}=\lambda\mathcal{L}_{R}+(1-\lambda)\mathcal{L}_{C},
-``` |  | \(1\) |
+```
 
 where $`\lambda\in[0,1]`$. Further details of each component are provided in the following sections.
 
@@ -118,12 +115,9 @@ Due to the limitation of current hardware, a dimensionality reduction or feature
 
 A feedforward neural net (FNN) with ReLU activation functions is used to encode the data in a lower latent dimension of the data and another FNN is used to decode the data back to its original form. A loss function, $`\mathcal{L}_{R}`$, is then defined to train the model to ensure that the original data can be reconstructed from the encoded one, and MSE (mean-squared error) loss function is used for this:
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \mathcal{L}_{R}=\frac{1}{n}\sum_{i=1}^{n}(\textbf{x}_{i}-\textbf{y}_{i})^{2}
-``` |  | \(2\) |
+```
 
 where $`n`$ is the number of inputs, $`\textbf{y}_{i}`$ is the i-th reconstructed vector, and $`\textbf{x}_{i}`$ is the i-th vector of the input.
 
@@ -137,23 +131,17 @@ There are multiple strategies for encoding classical data into quantum computers
 
 In this work, we chose angle encoding as our encoding method. Angle encoding is widely used in various QML models such as Dressed Quantum Circuits \[[47](#bib.bib46)\], Quantum Kitchen Sinks \[[48](#bib.bib47)\], IQP Variational Classifiers \[[49](#bib.bib48)\], and many others. A general one-qubit state $`\ket{\psi}`$ can be expressed as:
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \ket{\psi}=\cos(\frac{\theta}{2})\ket{0}+e^{i\phi}\sin(\frac{\theta}{2})\ket{1}.
-``` |  | \(3\) |
+```
 
 Angle encoding uses the angle $`\theta`$ defined by rotations on an axis of the qubit, such as X or Y, to encode the features of the data.
 
 As an example, assume that we are encoding the k-th feature of the j-th data point in our data set, $`\textbf{x}_{k}^{j}`$ using Y-axis rotations. Then the final state representing this feature value is:
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \ket{x_k^j}=RY(\theta=x_{k}^{j})\ket{0}=\cos\bigg(\frac{\textbf{x}_k^j}{2}\bigg)\ket{0}+\sin\bigg(\frac{\textbf{x}_k^j}{2}\bigg)\ket{1}.
-``` |  | \(4\) |
+```
 
 As shown, this encoding method requires $`n`$ qubits for $`N`$ features. However, alternative formulations such as dense angle encoding \[[50](#bib.bib49)\] allow multiple features to be encoded within a single qubit, though this approach was not used in our work.
 
@@ -167,21 +155,15 @@ The variational quantum circuits (VQC) is a quantum machine learning model where
 
 The VQC can be expressed as:
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \mathcal{C}(\mathbf{\theta},\mathbf{x})=\Tr[\mathcal{M}\rho(\mathbf{\theta},\mathbf{x})],
-``` |  | \(5\) |
+```
 
 where $`\mathcal{M}`$ is an operator and $`\rho`$ a density matrix where both depends on trainable parameters $`\mathbf{\theta}`$ and input data $`\mathbf{x}`$. Usually, a VQC model will be composed of one or more variational circuits and it will be equipped with a prediction function such that
 
-|     |                                                            |     |       |
-|-----|------------------------------------------------------------|-----|-------|
-|     |                                                            
-       ``` math                                                    
-       y=f_{\text{pred}}(\mathcal{C}(\mathbf{\theta},\mathbf{x}))  
-       ```                                                         |     | \(6\) |
+``` math
+y=f_{\text{pred}}(\mathcal{C}(\mathbf{\theta},\mathbf{x}))
+```
 
 where $`y\in\{+1,-1\}`$ represents the predicted label.
 
@@ -204,12 +186,9 @@ The main difference from the base architecture for GQC is that their variational
 
 One of the main differences between our proposed GQC architecture and the original design lies in the way that the model produces label predictions. In the original GQC, this is done by applying a sign function such that the label is given by the prediction function \[[35](#bib.bib27)\]
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 f_{pred}(\mathcal{C}(\mathbf{\theta},\mathbf{x}))=\frac{\text{sign}[\mathcal{C}(\mathbf{\theta},\mathbf{x})]+1}{2},
-``` |  | \(7\) |
+```
 
 where $`\mathcal{C}(\mathbf{\theta},\mathbf{x})`$ is the cost function defined by an operator.
 
@@ -219,12 +198,9 @@ FNNs were among the first proposed architectures in deep learning. They follow a
 
 As the classification head, a loss function for classification, $`\mathcal{L}_{C}`$, is defined to perform epoch training. In our case, we use a BCELoss defined by the mean of the Binary Cross Entropy between the ground truth and the predicted probabilities. This is defined as:
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \mathcal{L}_{C}=-\frac{1}{n}\sum_{i=1}^{n}y_{i}\log(\hat{p}_i)+(1-y_{i})\log(1-\hat{p}_i),
-``` |  | \(8\) |
+```
 
 where $`n`$ is the total number of inputs, y is the ground truth labels, and $`\hat{\textbf{p}}`$ the predicted probabilities of the classification head.
 
@@ -234,50 +210,35 @@ As mentioned earlier, both the classification head and the autoencoder in our ar
 
 One final step of the architecture is calibration. Modern neural networks are often miscalibrated, meaning that their predicted confidence values do not accurately reflect the true probability of correctness \[[64](#bib.bib55)\]. In mathematical terms, define random variables for the input $`x\in\mathcal{X}`$ and the label $`y\in\mathcal{Y}=\{0,1\}`$ that follows the following joint distribution:
 
-|     |                                               |     |       |
-|-----|-----------------------------------------------|-----|-------|
-|     |                                               
-       ``` math                                       
-       \mathbf{P}(x,y)=\mathbf{P}(y|x)\mathbf{P}(x).  
-       ```                                            |     | \(9\) |
+``` math
+\mathbf{P}(x,y)=\mathbf{P}(y|x)\mathbf{P}(x).
+```
 
 Let $`h(x)=(\hat{y},\hat{p})`$ be a neural network where $`\hat{y}`$ is the class prediction and $`\hat{p}`$ is the probability of correctness. Perfect calibration is defined as
 
-|     |                                                            |     |        |
-|-----|------------------------------------------------------------|-----|--------|
-|     |                                                            
-       ``` math                                                    
-       \mathbf{P}(\hat{y}=y|\hat{p}=p)=p,\qquad\forall p\in[0,1].  
-       ```                                                         |     | \(10\) |
+``` math
+\mathbf{P}(\hat{y}=y|\hat{p}=p)=p,\qquad\forall p\in[0,1].
+```
 
 What this means is that we want the probability of correctness to represent a real probability. For example, if we sample 100 predictions for which the model assigns a confidence of 0.6, then approximately 60 of them should be correct. Since the sampling process is discrete while the random variable $`\hat{p}`$ is continuous, this means that perfect calibration can only be approximated in practice.
 
 In this work, we use a variant of Platt scaling \[[65](#bib.bib64)\], called temperature calibration, consistent with the findings of Guo et al. \[[64](#bib.bib55)\], who showed that it is an effective calibration method in general settings. Temperature calibration consists of obtaining the log-odds of the predicted probability of an evaluation set defined as
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \text{logits}(\hat{p}_{i})=\ln\bigg(\frac{\hat{p}_i}{1-\hat{p}_i}\bigg).
-``` |  | \(11\) |
+```
 
 Then a scaled probability, $`\hat{\pi}`$, is obtained from the logits
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \hat{\pi}_{i}=\frac{1}{1+\exp(\frac{-\text{logits}(\hat{p}_i)}{t})},
-``` |  | \(12\) |
+```
 
 where $`t`$ is a temperature parameter that is going to be minimized according to a negative likelihood loss function (NLL loss), $`\mathcal{L}_{nll}`$, defined by
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \mathcal{L}_{nll}=-\frac{1}{n}\sum_{i=1}^{n}y_{i}\log(\hat{\pi}_{i})+(1-y_{i})\log(1-\hat{\pi}_{i}),
-``` |  | \(13\) |
+```
 
 where $`n`$ is the total number of inputs, $`y`$ the ground truth label, and $`\hat{\pi}`$ the scaled predicted correctness.
 
@@ -301,19 +262,13 @@ Building on the classical formulation of MoE, our work adapts the routing and ex
 
 The combined architecture takes as input two base classifiers $`h^{(1)},h^{(2)}:\mathcal{X}\to[0,1]`$, and a router (or gating) model $`g:\mathcal{X}\to[0,1]`$. In our experiments, the *primary* model $`h^{(1)}`$ is a strong gradient-boosted tree learner such as XGBoost \[[71](#bib.bib65)\] or CatBoost \[[72](#bib.bib66)\], while the *secondary* model $`h^{(2)}`$ is the quantum–classical hybrid architecture described above. Both base models are wrapped in a temperature-calibration layer (Section [2.1](#S2.SS1.SSSx6 "Temperature calibration ‣ 2.1 Quantum Model ‣ 2 Theoretical background and methodology ‣ A Mixture-of-Experts Framework for Practical Hybrid-Quantum Models in Credit Card Fraud Detection")), so that they output calibrated class probabilities
 
-|     |                                                     |     |
-|-----|-----------------------------------------------------|-----|
-|     |                                                     
-       ``` math                                             
-       \hat{\pi}^{(1)}(x)=\mathbf{P}_{h^{(1)}}(y=1\mid x),  
-       ```                                                  |     |
+``` math
+\hat{\pi}^{(1)}(x)=\mathbf{P}_{h^{(1)}}(y=1\mid x),
+```
 
-|     |                                                     |     |
-|-----|-----------------------------------------------------|-----|
-|     |                                                     
-       ``` math                                             
-       \hat{\pi}^{(2)}(x)=\mathbf{P}_{h^{(2)}}(y=1\mid x).  
-       ```                                                  |     |
+``` math
+\hat{\pi}^{(2)}(x)=\mathbf{P}_{h^{(2)}}(y=1\mid x).
+```
 
 Given a labelled training set $`\{(x_{i},y_{i})\}_{i=1}^{N}`$ and a disjoint validation set $`\{(x_{i}^{\mathrm{val}},y_{i}^{\mathrm{val}})\}_{i=1}^{N_{\mathrm{val}}}`$, the training procedure goes as follows: train each base estimator $`h^{(k)}`$ on the training set $`(X_{\mathrm{train}},y_{\mathrm{train}})`$, optionally using the validation set for early stopping; fit a temperature parameter for each base model on the validation set, obtaining calibrated probabilities $`\hat{\pi}^{(k)}(x)`$; see Section [2.1](#S2.SS1.SSSx6 "Temperature calibration ‣ 2.1 Quantum Model ‣ 2 Theoretical background and methodology ‣ A Mixture-of-Experts Framework for Practical Hybrid-Quantum Models in Credit Card Fraud Detection"); using the calibrated probabilities on the validation set, construct targets for the router that indicate where the secondary model outperforms the primary model (details below); train an XGBoost router \[[71](#bib.bib65)\] on the validation features and these router targets.
 
@@ -323,77 +278,53 @@ At test time, the router decides for each input whether to use the primary (clas
 
 Let $`\hat{\pi}^{(1)}_{i}=\hat{p}^{(1)}(x_{i}^{\mathrm{val}})`$ and $`\hat{\pi}^{(2)}_{i}=\hat{p}^{(2)}(x_{i}^{\mathrm{val}})`$ denote the calibrated probabilities of the primary and secondary models on the validation examples, and let $`y_{i}^{\mathrm{val}}\in\{0,1\}`$ be the corresponding labels. First, for each expert $`k\in\{1,2\}`$ we choose an operating threshold $`\tau^{(k)}`$ using Youden’s $`J`$ statistic \[[84](#bib.bib84)\]. For a candidate threshold $`\tau`$, define the true positive rate and false positive rate of model $`k`$ on the validation set as
 
-|  |  |  |
-|----|----|----|
-|  | 
 ``` math
 \mathrm{TPR}^{(k)}(\tau)=\mathbf{P}\big(\hat{\pi}^{(k)}_{i}>\tau\,\big|\,y_{i}^{\mathrm{val}}=1\big),
-``` |  |
+```
 
-|  |  |  |
-|----|----|----|
-|  | 
 ``` math
 \mathrm{FPR}^{(k)}(\tau)=\mathbf{P}\big(\hat{\pi}^{(k)}_{i}>\tau\,\big|\,y_{i}^{\mathrm{val}}=0\big),
-``` |  |
+```
 
 and Youden’s index $`J^{(k)}(\tau)=\mathrm{TPR}^{(k)}(\tau)-\mathrm{FPR}^{(k)}(\tau).`$ We select
 
-|     |                                                  |     |
-|-----|--------------------------------------------------|-----|
-|     |                                                  
-       ``` math                                          
-       \tau^{(k)}=\arg\max_{\tau\in[0,1]}J^{(k)}(\tau),  
-       ```                                               |     |
+``` math
+\tau^{(k)}=\arg\max_{\tau\in[0,1]}J^{(k)}(\tau),
+```
 
 Define the indicator function of the logical proposition $`A`$ as
 
-|     |                                                         |     |        |
-|-----|---------------------------------------------------------|-----|--------|
-|     |                                                         
-       ``` math                                                 
-       \mathbf{1}\{A\}=\begin{cases}1&\text{if $A$ is true},\\  
-       0&\text{if $A$ is false}.\end{cases}                     
-       ```                                                      |     | \(14\) |
+``` math
+\mathbf{1}\{A\}=\begin{cases}1&\text{if $A$ is true},\\
+0&\text{if $A$ is false}.\end{cases}
+```
 
 Then, using these thresholds we convert probabilities into hard predictions
 
-|  |  |  |
-|----|----|----|
-|  | 
 ``` math
 \hat{y}^{(k)}_{i}=\mathbf{1}\big\{\hat{\pi}^{(k)}_{i}>\tau^{(k)}\big\},\qquad k\in\{1,2\},
-``` |  |
+```
 
 and construct a binary router target $`z_{i}\in\{0,1\}`$ that indicates where the secondary model is preferred:
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 z_{i}=\begin{cases}1,&\text{if }\hat{y}^{(2)}_{i}=y_{i}^{\mathrm{val}}\text{ and }\hat{y}^{(1)}_{i}\neq y_{i}^{\mathrm{val}},\\[2.0pt]
 0,&\text{otherwise.}\end{cases}
-``` |  | \(15\) |
+```
 
 In other words, $`z_{i}=1`$ whenever the secondary (quantum) model correctly classifies a validation point that the primary model misclassifies; all other cases, including regions where both models succeed or both fail, are assigned $`z_{i}=0`$. This focuses the router on learning the subset of feature space where the secondary model strictly outperforms the primary model. The router is implemented as an XGBoost classifier \[[71](#bib.bib65)\].
 
 At test time, the router outputs a probability $`g_{i}(x)\in[0,1]`$ that a given input lies in a region where the secondary model is preferred. A user-controlled parameter $`\gamma\in(0,1)`$ (the router threshold) then defines a hard routing decision
 
-|     |                                             |     |
-|-----|---------------------------------------------|-----|
-|     |                                             
-       ``` math                                     
-       r(x)=\mathbf{1}\big\{g_{i}(x)>\gamma\big\},  
-       ```                                          |     |
+``` math
+r(x)=\mathbf{1}\big\{g_{i}(x)>\gamma\big\},
+```
 
 and the final combined probability is given by the hard mixture
 
-|  |  |  |  |
-|----|----|----|----|
-|  | 
 ``` math
 \hat{p}_{\mathrm{comb}}(x)=\big(1-r(x)\big)\,\hat{\pi}^{(1)}(x)+r(x)\,\hat{\pi}^{(2)}(x),
-``` |  | \(16\) |
+```
 
 which reduces to the primary model when $`r(x)=0`$ and to the secondary model when $`r(x)=1`$. This architecture is closely related to the classical mixture-of-experts framework with a gating network \[[77](#bib.bib67)\], and in our experiments yields improved performance and robustness under noisy conditions compared to either expert alone.
 
