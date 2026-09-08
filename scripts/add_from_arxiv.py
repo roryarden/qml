@@ -1,16 +1,19 @@
-"""Fetch the arXiv HTML for a paper and save it as Markdown under papers/md.
+"""Add an arXiv paper to the library from its id.
 
-Tries arXiv's native HTML first, then falls back to ar5iv (LaTeXML), which
-backfills many papers arXiv's own HTML does not cover. The HTML is converted
-to Markdown with pandoc, which maps MathML to LaTeX ($...$).
+Given an arXiv id, this:
+  1. fetches structured metadata from the arXiv API (also an existence check),
+  2. downloads the latest-version PDF into papers/pdfs/,
+  3. fetches the paper's HTML (arXiv native, then ar5iv), converts it to
+     Markdown with pandoc (MathML -> LaTeX), and writes it to papers/md/ with
+     a YAML metadata header.
 
-The output path mirrors the matching PDF's topic folder under papers/pdfs, so
-the id 2412.07626v2 (found in .../benchmarks/...arxiv2412.07626v2.pdf) is saved
-to papers/md/benchmarks/...arxiv2412.07626v2.md.
+The filename is generated from the metadata as
+<year>-<first-author>-<title-slug>-arxiv<id>v<N>, shared by the PDF and the
+Markdown. Any version in the input is ignored; the latest version is used.
 
 Usage:
-    uv run scripts/arxiv_to_markdown.py 2412.07626v2
-    uv run scripts/arxiv_to_markdown.py 1706.03762v7
+    uv run scripts/add_from_arxiv.py 2412.07626
+    uv run scripts/add_from_arxiv.py 1706.03762
 """
 
 from __future__ import annotations
@@ -54,6 +57,19 @@ def fetch(url: str) -> str | None:
     return None
 
 
+def fetch_bytes(url: str) -> bytes | None:
+    """Return the raw response body if the URL responds 200, else None."""
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return response.read()
+    except urllib.error.HTTPError as exc:
+        print(f"  {url} -> HTTP {exc.code}", file=sys.stderr)
+    except urllib.error.URLError as exc:
+        print(f"  {url} -> {exc.reason}", file=sys.stderr)
+    return None
+
+
 def extract_article(html: str) -> str:
     """Return just the LaTeXML article body, dropping arXiv site chrome."""
     match = re.search(
@@ -89,13 +105,35 @@ def html_to_markdown(html: str) -> str:
     return result.stdout
 
 
-def resolve_md_path(arxiv_id: str) -> Path:
-    """Mirror the matching PDF's topic folder; fall back to a flat md name."""
-    needle = f"arxiv{arxiv_id}"
-    for pdf_path in sorted(PDF_DIR.rglob("*.pdf")):
-        if needle in pdf_path.stem:
-            return MD_DIR / pdf_path.relative_to(PDF_DIR).with_suffix(".md")
-    return MD_DIR / f"{arxiv_id}.md"
+def slugify(text: str) -> str:
+    """Lowercase, hyphenate, and strip a string for use in a filename."""
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def build_stem(meta: dict[str, Any], versioned_id: str) -> str:
+    """Build the shared PDF/Markdown filename stem from metadata."""
+    year = meta["published"][:4] if meta["published"] else ""
+    authors = meta["authors"]
+    last_name = slugify(authors[0].split()[-1]) if authors and authors[0] else "unknown"
+    slug = slugify(meta["title"])[:60].strip("-")
+    parts = [p for p in (year, last_name, slug) if p]
+    return "-".join(parts) + f"-arxiv{versioned_id}"
+
+
+def download_pdf(versioned_id: str, pdf_path: Path) -> bool:
+    """Download the PDF for a specific version; return True on success."""
+    url = f"https://arxiv.org/pdf/{versioned_id}"
+    print(f"Downloading PDF {url} ...", file=sys.stderr)
+    data = fetch_bytes(url)
+    if data is None:
+        return False
+    if not data.startswith(b"%PDF"):
+        print("  response was not a PDF; skipping", file=sys.stderr)
+        return False
+    pdf_path.parent.mkdir(parents=True, exist_ok=True)
+    pdf_path.write_bytes(data)
+    print(f"Saved PDF to {pdf_path}", file=sys.stderr)
+    return True
 
 
 def _collapse(text: str | None) -> str:
@@ -186,8 +224,10 @@ def main() -> int:
     )
     args = parser.parse_args()
 
+    base_id = re.sub(r"v\d+$", "", args.arxiv_id)
+
     print("Fetching metadata from arXiv API ...", file=sys.stderr)
-    meta = fetch_metadata(args.arxiv_id)
+    meta = fetch_metadata(base_id)
     if meta is None:
         print(
             f"No arXiv metadata found for {args.arxiv_id}; aborting without writing.",
@@ -195,9 +235,17 @@ def main() -> int:
         )
         return 1
 
+    match = re.search(r"/abs/(\S+)$", meta["abs_url"])
+    versioned_id = match.group(1) if match else base_id
+    stem = build_stem(meta, versioned_id)
+
+    pdf_ok = download_pdf(versioned_id, PDF_DIR / f"{stem}.pdf")
+    if not pdf_ok:
+        print("  PDF download failed; continuing with Markdown", file=sys.stderr)
+
     candidates = [
-        f"https://arxiv.org/html/{args.arxiv_id}",
-        f"https://ar5iv.org/abs/{args.arxiv_id}",
+        f"https://arxiv.org/html/{versioned_id}",
+        f"https://ar5iv.org/abs/{versioned_id}",
     ]
 
     html = None
@@ -209,13 +257,13 @@ def main() -> int:
             break
 
     if html is None:
-        print(f"No HTML available for {args.arxiv_id}", file=sys.stderr)
+        print(f"No HTML available for {versioned_id}", file=sys.stderr)
         return 1
 
-    markdown = build_front_matter(args.arxiv_id, meta)
+    markdown = build_front_matter(versioned_id, meta)
     markdown += html_to_markdown(extract_article(html))
 
-    md_path = resolve_md_path(args.arxiv_id)
+    md_path = MD_DIR / f"{stem}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)
     md_path.write_text(markdown, encoding="utf-8")
     print(f"Saved Markdown to {md_path}", file=sys.stderr)
