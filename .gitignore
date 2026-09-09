@@ -1,1 +1,5 @@
 __pycache__/
+
+# Derived, regenerable artifacts — rebuild on demand with sync_library.py
+papers/pdfs/
+papers/md/
