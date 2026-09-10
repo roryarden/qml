@@ -24,6 +24,10 @@ signals the agent can weigh.
   statistical learning** alongside modern QML.
 - **Quantum for commerce / finance** — payments, fraud detection, classifiers
   for financial data, anomaly detection, risk.
+- **Implications of quantum computing** - discussions of how organizations and
+  the broader society may need to adapt and anticipate the affects of Q-Day.
+  In this angle, post-quantum cryptography, quantum key distribution, and other
+  security and data privacy topics are of relevance.
 
 ## Interesting methods and tools
 
