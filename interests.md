@@ -64,3 +64,17 @@ Not hard exclusions (I'm broadly curious), but deprioritize when a paper is
 - Rank each candidate by fit to the signals above; prefer papers touching
   **QML bottlenecks, QML-on-classical-data, finance/fraud applications, or
   rigorous theory**. Down-weight pure anti-signal topics.
+
+## Note tags (controlled vocabulary)
+
+When writing a per-paper note in `papers/notes/`, choose 3–6 `tags` **only** from
+this list (keep it fixed so the notes stay scannable — extend it deliberately,
+not ad hoc):
+
+`qml-bottlenecks`, `barren-plateaus`, `trainability`, `encoding`,
+`kernel-methods`, `kernel-concentration`, `generative`, `variational`,
+`quantum-neural-networks`, `quantum-transformers`, `nlp`, `federated-learning`,
+`optimization`, `theory`, `generalization`, `statistical-learning`,
+`classical-data`, `finance`, `fraud`, `security`, `privacy`, `qkd`,
+`post-quantum`, `benchmark`, `hardware`, `sensing`, `chemistry-physics`,
+`foundations`.

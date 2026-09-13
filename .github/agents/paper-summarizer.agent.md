@@ -39,8 +39,9 @@ Return **only** Markdown in this structure (no preamble, no file writes):
 - **Problem:** {what question/gap the paper addresses}
 - **Method:** {approach, model, techniques, datasets}
 - **Key results:** {concrete findings, with the paper's own numbers where given}
-- **Limitations / bottlenecks:** {stated weaknesses, open problems, failure modes}
+- **Limitations / open problems:** {stated weaknesses, open problems, failure modes}
 - **Why it matters to me:** {tie explicitly to interests.md — QML bottlenecks,
   QML-on-classical-data, finance/fraud, or rigorous theory; be honest if the fit
   is weak}
+- **Tags:** {3-6 tags chosen only from the controlled vocabulary in interests.md}
 ```

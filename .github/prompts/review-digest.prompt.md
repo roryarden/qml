@@ -19,6 +19,7 @@ scripts/get_digest.py`) before invoking me.
 - Already-curated library (re-review on change): [papers/index.md](../../papers/index.md)
 - Promotion + conversion script: [scripts/sync_library.py](../../scripts/sync_library.py)
 - Per-paper summarizer subagent: [paper-summarizer](../agents/paper-summarizer.agent.md)
+- Canonical per-paper notes: `papers/notes/` — one note per paper, keyed by arXiv id
 - To refresh the digest first (separate task): [refresh-digest](./refresh-digest.prompt.md)
 
 ## Security guardrail (read first)
@@ -83,31 +84,58 @@ regenerate it. Per-paper reading is delegated to the read-only
    claims. These are papers I already value, so surface these updates
    prominently.
 
-5. **Summarize (fan out to subagents).** For **each** paper you synced in step 3
-   and **each** library paper you re-synced in step 4, delegate the deep read to
-   a separate `paper-summarizer` subagent, passing it the paper's Markdown path
-   under `papers/md/`. Run these subagents in parallel where possible. Each
-   subagent reads the paper (read-only) and **returns** a grounded summary; it
-   does not write files. Then **you** (the orchestrator) assemble the returned
-   text into `reading/<YYYY-MM-DD>.md`:
-   - Under "## New summaries", place the returned summary for each newly
-     promoted paper.
-   - Under "## Library updates", place each revised paper's returned summary
-     preceded by the version change and the **what-changed** notes from your
-     step-4 diff, plus whether it's worth a re-read.
+5. **Write a note per paper (fan out to subagents).** For **each** paper synced
+   in step 3 and **each** library paper re-synced in step 4, delegate the deep
+   read to a separate `paper-summarizer` subagent (in parallel where possible).
+   Each subagent reads the paper (read-only) and **returns** a grounded summary
+   plus suggested tags; it does not write files. For each returned summary,
+   **you** (the orchestrator) write a canonical note to `papers/notes/<stem>.md`,
+   where `<stem>` is the paper's `papers/md/` filename with the trailing version
+   dropped (so the note is keyed by the version-less arXiv id and a later
+   revision overwrites it in place). Copy the metadata from the paper's
+   `papers/md/` YAML front matter and use this schema:
 
-   Do not paste the papers' full text into your own context — rely on the
-   subagents' returned summaries. If a subagent's summary looks ungrounded,
-   note that rather than inventing content.
+   ```markdown
+   ---
+   arxiv_id: 2608.24631
+   version: v1
+   title: "..."
+   authors: [First Author, ...]
+   primary_category: quant-ph
+   published: 2026-08-25
+   added: <today's date>
+   relevance: <your 0-5 score>
+   tags: [kernel-methods, fraud, classical-data, theory]
+   full_text: ../md/<full versioned stem>.md
+   ---
 
-6. **Report.** End with a one-paragraph note in chat: how many candidates were
-   scored, which new papers were promoted, which library papers were updated,
-   and anything notable I should look at first.
+   ## Problem
+   ## Method
+   ## Key results
+   ## Limitations / open problems
+   ## Why it matters to me
+   ```
+
+   Choose `tags` only from the controlled vocabulary in `interests.md`. If the
+   note already exists (a revision), overwrite it in place.
+
+6. **Update the reading log (index, not summaries).** In
+   `reading/<YYYY-MM-DD>.md`, below the shortlist table, add a "## Promoted"
+   section listing each newly promoted paper as a one-line link to its note
+   (`Author — Title → [note](../papers/notes/<stem>.md)`), and a "## Library
+   updates" section listing each revised paper's note link preceded by the
+   version bump and the what-changed notes from your step-4 diff. Do **not**
+   paste full summaries into the reading log — the canonical text lives in the
+   note.
+
+7. **Report.** End with a one-paragraph note in chat: how many candidates were
+   scored, which new papers were promoted (with note links), which library
+   papers were updated, and anything notable I should look at first.
 
 ## Constraints
 
-- Only write to `reading/`, and only run the commands named above
-  (`sync_library.py` and read-only `git diff`). Never run `get_digest.py`.
+- Only write to `reading/` and `papers/notes/`, and only run the commands named
+  above (`sync_library.py` and read-only `git diff`). Never run `get_digest.py`.
 - Promote a **new** paper only when it scores **≥ 4** — but there is no cap on
   how many may be promoted.
 - Always re-sync and review papers already in the library that reappear in the
