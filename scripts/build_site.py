@@ -49,7 +49,6 @@ def export_notebook(notebook: Path, out_dir: Path, mode: str) -> None:
             "--mode",
             mode,
             "--no-sandbox",
-            "--show-code",
         ],
         check=True,
     )
