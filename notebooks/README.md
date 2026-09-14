@@ -9,6 +9,8 @@ no backend.
 
 - [`bernstein_vazirani.py`](bernstein_vazirani.py) — the Bernstein–Vazirani
   algorithm, simulated from scratch with NumPy.
+- [`deutsch_jozsa.py`](deutsch_jozsa.py) — the Deutsch–Jozsa algorithm: decide
+  constant vs. balanced in a single quantum query, built from scratch with NumPy.
 
 ## Authoring locally
 
