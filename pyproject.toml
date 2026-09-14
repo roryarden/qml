@@ -7,9 +7,43 @@ authors = [
     { name = "Rory Arden Linerud", email = "roryarden@icloud.com" }
 ]
 requires-python = ">=3.14"
-dependencies = [
-    "marker-pdf>=2.0.0",
-]
 
 [tool.uv]
 package = false
+default-groups = [
+    "dev",
+]
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.40.1",
+    "marimo>=0.24.2",
+    "marker-pdf>=2.0.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "ruff>=0.16.7",
+]
+site = [
+    "marimo>=0.24.2",
+]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+
+[[tool.pyright.executionEnvironments]]
+root = "notebooks"
+reportUnknownParameterType = false
+reportMissingParameterType = false
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+reportUnknownArgumentType = false
+reportUnusedExpression = false
+
+[tool.ruff]
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4"]
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*" = ["B018", "PLR1711"]

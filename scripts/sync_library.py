@@ -111,6 +111,7 @@ def mathml_to_tex(text: str) -> str:
     Only MathML that pandoc could not parse (inside raw HTML tables) survives to
     this stage; prose math is already handled as AST Math nodes.
     """
+
     def repl(match: re.Match[str]) -> str:
         annotation = re.search(
             r'<annotation[^>]*encoding="application/x-tex"[^>]*>(.*?)</annotation>',
@@ -211,10 +212,11 @@ def fetch_metadata(arxiv_id: str) -> dict[str, Any] | None:
         ],
         "published": text("atom:published")[:10],
         "updated": text("atom:updated")[:10],
-        "primary_category": primary.attrib.get("term", "") if primary is not None else "",
+        "primary_category": primary.attrib.get("term", "")
+        if primary is not None
+        else "",
         "categories": [
-            c.attrib.get("term", "")
-            for c in entry.findall("atom:category", ATOM_NS)
+            c.attrib.get("term", "") for c in entry.findall("atom:category", ATOM_NS)
         ],
         "doi": text("arxiv:doi"),
         "journal_ref": text("arxiv:journal_ref"),
@@ -390,9 +392,7 @@ def main() -> int:
 
     ids = args.arxiv_ids or read_index_ids()
     if not ids:
-        print(
-            "No arXiv ids given and none found in papers/index.md.", file=sys.stderr
-        )
+        print("No arXiv ids given and none found in papers/index.md.", file=sys.stderr)
         return 1
 
     failures: list[str] = []

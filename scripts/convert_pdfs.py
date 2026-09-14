@@ -115,8 +115,7 @@ def main() -> int:
         md_path = MD_DIR / pdf_path.relative_to(PDF_DIR).with_suffix(".md")
 
         up_to_date = (
-            md_path.exists()
-            and md_path.stat().st_mtime >= pdf_path.stat().st_mtime
+            md_path.exists() and md_path.stat().st_mtime >= pdf_path.stat().st_mtime
         )
         if up_to_date and not args.force:
             skipped += 1

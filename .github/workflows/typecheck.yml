@@ -1,0 +1,24 @@
+name: Type check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  basedpyright:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      # basedpyright needs the deps installed so imports resolve (unlike ruff).
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Type check
+        run: uv run basedpyright

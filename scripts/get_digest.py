@@ -33,7 +33,7 @@ import sys
 import time
 import urllib.parse
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -58,7 +58,8 @@ def parse_entries(xml: str) -> list[dict[str, Any]]:
     """Parse arXiv Atom results into digest entries."""
     entries: list[dict[str, Any]] = []
     for entry in ET.fromstring(xml).findall("atom:entry", ATOM_NS):
-        def text(tag: str) -> str:
+
+        def text(tag: str, entry: ET.Element = entry) -> str:
             return collapse(entry.findtext(tag, namespaces=ATOM_NS))
 
         abs_url = text("atom:id")
@@ -88,9 +89,7 @@ def parse_entries(xml: str) -> list[dict[str, Any]]:
 
 def ledger_watermark(ledger: dict[str, dict[str, Any]]) -> str | None:
     """Newest arXiv revision timestamp already ingested, or None if empty."""
-    stamps = [
-        e["last_updated"] for e in ledger.values() if e.get("last_updated")
-    ]
+    stamps = [e["last_updated"] for e in ledger.values() if e.get("last_updated")]
     return max(stamps) if stamps else None
 
 
@@ -197,7 +196,7 @@ def main() -> int:
         print("arXiv query failed; digest not updated.", file=sys.stderr)
         return 1
 
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = datetime.now(UTC).strftime("%Y-%m-%d")
     new_entries, revised_entries = merge_entries(ledger, fetched)
 
     # digest.json holds exactly what changed in this run (new + revised).
