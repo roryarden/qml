@@ -7,7 +7,7 @@ generates an ``index.html`` gallery that links to each one. The resulting
 
 Usage:
     uv run --group site python scripts/build_site.py
-    uv run --group site python scripts/build_site.py --mode run
+    uv run --group site python scripts/build_site.py --mode edit
 """
 
 from __future__ import annotations
@@ -49,6 +49,7 @@ def export_notebook(notebook: Path, out_dir: Path, mode: str) -> None:
             "--mode",
             mode,
             "--no-sandbox",
+            "--show-code",
         ],
         check=True,
     )
@@ -121,8 +122,8 @@ def main() -> int:
     parser.add_argument(
         "--mode",
         choices=("edit", "run"),
-        default="edit",
-        help="'edit' ships an editable notebook; 'run' ships a read-only app.",
+        default="run",
+        help="'run' ships a read-only app (default); 'edit' is editable.",
     )
     args = parser.parse_args()
     return build(args.output, args.mode)
