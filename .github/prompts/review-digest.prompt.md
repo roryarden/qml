@@ -15,7 +15,7 @@ scripts/get_digest.py`) before invoking me.
 ## Inputs
 
 - My research profile: [interests.md](../../interests.md)
-- Candidates to review (as-is): [papers/digest.md](../../papers/digest.md)
+- Candidates to review (as-is): [papers/digest.json](../../papers/digest.json)
 - Already-curated library (re-review on change): [papers/index.md](../../papers/index.md)
 - Promotion + conversion script: [scripts/sync_library.py](../../scripts/sync_library.py)
 - Per-paper summarizer subagent: [paper-summarizer](../agents/paper-summarizer.agent.md)
@@ -35,9 +35,12 @@ regenerate it. Per-paper reading is delegated to the read-only
 
 ## Steps
 
-1. **Read and score.** Read `interests.md`, then read `papers/digest.md`. If the
-   digest has no paper entries, report "Nothing to review in the current digest."
-   and stop. Otherwise score each entry from **0–5** on fit to my
+1. **Read and score.** Read `interests.md`, then read `papers/digest.json` (a
+   JSON object with `retrieved`, `counts`, and a `papers` array; each paper
+   carries `title`, `authors`, `abstract`, `primary_category`, `versioned_id`,
+   and a `change` field of "new" or "revised"). If the `papers` array is empty,
+   report "Nothing to review in the current digest." and stop. Otherwise score
+   each paper from **0–5** on fit to my
    interests, weighting: QML bottlenecks & practicality, QML-on-classical-data
    (finding datasets where QML doesn't fail), finance/fraud/commerce
    applications, and rigorous theory/proofs. Down-weight the anti-signals listed
@@ -47,8 +50,8 @@ regenerate it. Per-paper reading is delegated to the read-only
 
 2. **Write the shortlist.** Create `reading/<YYYY-MM-DD>.md` (use today's date).
    Begin the file with a one-line freshness note echoing the digest's
-   `_Retrieved:` date (copy it from the top of `papers/digest.md`) so it's clear
-   how fresh the reviewed set is, e.g. `_Reviewing digest retrieved 2026-09-09._`
+   `retrieved` field (from `papers/digest.json`) so it's clear how fresh the
+   reviewed set is, e.g. `_Reviewing digest retrieved 2026-09-09._`
    Then add a ranked table of every scored candidate, marking ones already in
    the library:
 

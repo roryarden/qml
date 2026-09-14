@@ -18,7 +18,7 @@ uv run scripts/get_digest.py
 ```
 
 This updates the rolling ledger (`papers/ledger.json`) and regenerates the daily
-snapshot (`papers/digest.md`).
+snapshot (`papers/digest.json`).
 
 ## Report
 

@@ -18,9 +18,11 @@ lastUpdatedDate-descending feed until it reaches the newest `last_updated`
 already in the ledger. Miss a day (or several) and the next run simply pages
 further back to catch everything in between, bounded by MAX_PAGES.
 
-The human-readable papers/digest.md is a fresh snapshot of exactly the papers
+The machine-readable papers/digest.json is a fresh snapshot of exactly the papers
 that changed in that run — both newly seen papers and revisions (v1→v2) that
-resurfaced — as a flat list sorted by last-updated timestamp (most recent first).
+resurfaced — as a JSON object (`retrieved`, `counts`, and `papers[]` each tagged
+with a `change` field of "new" or "revised"), sorted by last-updated timestamp
+(most recent first) and overwritten on every run.
 """
 
 from __future__ import annotations
@@ -35,10 +37,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from sync_library import ATOM_NS, fetch
+from arxiv_client import ARXIV_API, ATOM_NS, collapse, fetch
 
-ARXIV_API = "http://export.arxiv.org/api/query"
-DIGEST_PATH = Path("papers/digest.md")
+DIGEST_PATH = Path("papers/digest.json")
 LEDGER_PATH = Path("papers/ledger.json")
 
 # Categories + keywords that scope the feed to quantum machine learning.
@@ -53,23 +54,12 @@ MAX_PAGES = 10  # hard cap so a long gap (or first run) can't runaway-page.
 PAGE_DELAY = 3.0  # seconds between page requests (arXiv asks for ~3s).
 
 
-def _collapse(text: str | None) -> str:
-    return " ".join(text.split()) if text else ""
-
-
-def _display_author(authors: list[str]) -> str:
-    if not authors:
-        return "Unknown"
-    last_name = authors[0].split()[-1]
-    return f"{last_name} et al." if len(authors) > 1 else last_name
-
-
 def parse_entries(xml: str) -> list[dict[str, Any]]:
     """Parse arXiv Atom results into digest entries."""
     entries: list[dict[str, Any]] = []
     for entry in ET.fromstring(xml).findall("atom:entry", ATOM_NS):
         def text(tag: str) -> str:
-            return _collapse(entry.findtext(tag, namespaces=ATOM_NS))
+            return collapse(entry.findtext(tag, namespaces=ATOM_NS))
 
         abs_url = text("atom:id")
         match = re.search(r"/abs/(\S+)$", abs_url)
@@ -81,7 +71,7 @@ def parse_entries(xml: str) -> list[dict[str, Any]]:
                 "base_id": re.sub(r"v\d+$", "", versioned_id),
                 "title": text("atom:title"),
                 "authors": [
-                    _collapse(a.findtext("atom:name", namespaces=ATOM_NS))
+                    collapse(a.findtext("atom:name", namespaces=ATOM_NS))
                     for a in entry.findall("atom:author", ATOM_NS)
                 ],
                 "published": text("atom:published"),
@@ -178,37 +168,23 @@ def merge_entries(
     return new_entries, revised_entries
 
 
-def render_digest(
-    entries: list[dict[str, Any]], revised_ids: set[str]
-) -> str:
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    lines = [
-        "# arXiv QML Digest",
-        "",
-        f"Quantum-machine-learning papers that changed in the {today} retrieval",
-        "(new submissions and resurfaced revisions), newest first. Metadata only",
-        "— promote an entry into the library with:",
-        "",
-        "```sh",
-        "uv run scripts/sync_library.py <arxiv-id>",
-        "```",
-        "",
-        f"_Retrieved: {today} · {len(entries)} changed today · full history in "
-        "ledger.json_",
-        "",
+def build_digest(
+    entries: list[dict[str, Any]], revised_ids: set[str], today: str
+) -> dict[str, Any]:
+    """Build the structured per-run digest (new + revised papers this run)."""
+    papers: list[dict[str, Any]] = [
+        {**entry, "change": "revised" if entry["base_id"] in revised_ids else "new"}
+        for entry in entries
     ]
-    for entry in entries:
-        author = _display_author(entry["authors"])
-        tag = " · ↻ revised" if entry["base_id"] in revised_ids else ""
-        lines.append(f"### {author} — {entry['title']}")
-        lines.append(
-            f"[{entry['versioned_id']}]({entry['abs_url']}) · "
-            f"{entry['last_updated'][:10]} · {entry['primary_category']}{tag}"
-        )
-        lines.append("")
-        lines.append(f"> {entry['abstract']}")
-        lines.append("")
-    return "\n".join(lines)
+    return {
+        "retrieved": today,
+        "counts": {
+            "new": sum(1 for p in papers if p["change"] == "new"),
+            "revised": sum(1 for p in papers if p["change"] == "revised"),
+            "changed": len(papers),
+        },
+        "papers": papers,
+    }
 
 
 def main() -> int:
@@ -221,16 +197,20 @@ def main() -> int:
         print("arXiv query failed; digest not updated.", file=sys.stderr)
         return 1
 
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     new_entries, revised_entries = merge_entries(ledger, fetched)
 
-    # digest.md renders exactly what changed in this run (new + revised).
+    # digest.json holds exactly what changed in this run (new + revised).
     changed = new_entries + revised_entries
     revised_ids = {e["base_id"] for e in revised_entries}
     changed.sort(key=lambda e: e["last_updated"], reverse=True)
+    digest = build_digest(changed, revised_ids, today)
 
     DIGEST_PATH.parent.mkdir(parents=True, exist_ok=True)
     save_ledger(ledger)
-    DIGEST_PATH.write_text(render_digest(changed, revised_ids), encoding="utf-8")
+    DIGEST_PATH.write_text(
+        json.dumps(digest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
     print(
         f"{len(new_entries)} new, {len(revised_entries)} revised, "
         f"{len(ledger)} in ledger, {len(changed)} in {DIGEST_PATH}",

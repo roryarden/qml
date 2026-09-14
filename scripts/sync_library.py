@@ -25,15 +25,20 @@ import shutil
 import subprocess
 import sys
 import time
-import urllib.error
 import urllib.parse
-import urllib.request
 import xml.etree.ElementTree as ET
 from html import unescape
 from pathlib import Path
 from typing import Any
 
-USER_AGENT = "roryarden/qml/0.1 (https://arxiv.org; contact: local script)"
+from arxiv_client import (
+    ARXIV_API,
+    ATOM_NS,
+    REQUEST_DELAY,
+    collapse,
+    fetch,
+    fetch_bytes,
+)
 
 PDF_DIR = Path("papers/pdfs")
 MD_DIR = Path("papers/md")
@@ -51,39 +56,6 @@ INDEX_HEADER = (
     "| Year | Author | Title | arXiv |\n"
     "|------|--------|-------|-------|"
 )
-
-ARXIV_API = "http://export.arxiv.org/api/query"
-ATOM_NS = {
-    "atom": "http://www.w3.org/2005/Atom",
-    "arxiv": "http://arxiv.org/schemas/atom",
-}
-
-
-def fetch(url: str) -> str | None:
-    """Return the page body if the URL responds 200, else None."""
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            charset = response.headers.get_content_charset() or "utf-8"
-            return response.read().decode(charset, errors="replace")
-    except urllib.error.HTTPError as exc:
-        print(f"  {url} -> HTTP {exc.code}", file=sys.stderr)
-    except urllib.error.URLError as exc:
-        print(f"  {url} -> {exc.reason}", file=sys.stderr)
-    return None
-
-
-def fetch_bytes(url: str) -> bytes | None:
-    """Return the raw response body if the URL responds 200, else None."""
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(request, timeout=60) as response:
-            return response.read()
-    except urllib.error.HTTPError as exc:
-        print(f"  {url} -> HTTP {exc.code}", file=sys.stderr)
-    except urllib.error.URLError as exc:
-        print(f"  {url} -> {exc.reason}", file=sys.stderr)
-    return None
 
 
 def extract_article(html: str) -> str:
@@ -211,11 +183,6 @@ def download_pdf(versioned_id: str, pdf_path: Path) -> bool:
     return True
 
 
-def _collapse(text: str | None) -> str:
-    """Collapse arXiv's wrapped whitespace into a single-spaced string."""
-    return " ".join(text.split()) if text else ""
-
-
 def fetch_metadata(arxiv_id: str) -> dict[str, Any] | None:
     """Fetch structured metadata for a paper from the arXiv API."""
     query = urllib.parse.urlencode({"id_list": arxiv_id})
@@ -228,7 +195,7 @@ def fetch_metadata(arxiv_id: str) -> dict[str, Any] | None:
         return None
 
     def text(tag: str) -> str:
-        return _collapse(entry.findtext(tag, namespaces=ATOM_NS))
+        return collapse(entry.findtext(tag, namespaces=ATOM_NS))
 
     primary = entry.find("arxiv:primary_category", ATOM_NS)
     pdf_url = ""
@@ -239,7 +206,7 @@ def fetch_metadata(arxiv_id: str) -> dict[str, Any] | None:
     return {
         "title": text("atom:title"),
         "authors": [
-            _collapse(a.findtext("atom:name", namespaces=ATOM_NS))
+            collapse(a.findtext("atom:name", namespaces=ATOM_NS))
             for a in entry.findall("atom:author", ATOM_NS)
         ],
         "published": text("atom:published")[:10],
@@ -350,6 +317,7 @@ def add_paper(arxiv_id: str) -> bool:
     versioned_id = match.group(1) if match else base_id
     stem = build_stem(meta, versioned_id)
 
+    time.sleep(REQUEST_DELAY)
     pdf_ok = download_pdf(versioned_id, PDF_DIR / f"{stem}.pdf")
     if not pdf_ok:
         print("  PDF download failed; continuing with Markdown", file=sys.stderr)
@@ -362,6 +330,7 @@ def add_paper(arxiv_id: str) -> bool:
     html = None
     source_url = ""
     for candidate in candidates:
+        time.sleep(REQUEST_DELAY)
         print(f"Trying {candidate} ...", file=sys.stderr)
         html = fetch(candidate)
         if html is not None:
