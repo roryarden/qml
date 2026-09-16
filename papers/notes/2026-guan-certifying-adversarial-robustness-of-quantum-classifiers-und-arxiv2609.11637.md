@@ -1,15 +1,21 @@
 ---
 arxiv_id: 2609.11637
-version: v1
+version: v2
 title: "Certifying Adversarial Robustness of Quantum Classifiers under Known-Readout Query Access"
 authors: [Ji Guan, Mingyu Huang]
 primary_category: quant-ph
 published: 2026-09-10
-added: 2026-09-15
+added: 2026-09-16
 relevance: 4
 tags: [quantum-neural-networks, security, theory, classical-data, fraud, benchmark]
-full_text: ../md/2026-guan-certifying-adversarial-robustness-of-quantum-classifiers-und-arxiv2609.11637v1.md
+full_text: ../md/2026-guan-certifying-adversarial-robustness-of-quantum-classifiers-und-arxiv2609.11637v2.md
 ---
+
+<!-- v2 (2026-09-16): exposition/theory refinement over v1 — tighter derivation of the
+upper-bound quantity $p_k$ and a new §6.1 discussion of the attack-vs-witness tradeoff;
+no new experiments. Worked Example 5.4: $\varepsilon_{\mathrm{RLB}}\approx7.21\times10^{-3}$
+vs prior $2.55\times10^{-3}$, exact QCQP radius $1.20\times10^{-1}$ inside the sandwich
+$[7.21\times10^{-3},\,3.68\times10^{-1}]$. -->
 
 ## Problem
 

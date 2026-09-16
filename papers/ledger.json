@@ -1,5 +1,84 @@
 [
   {
+    "versioned_id": "2609.17501v1",
+    "base_id": "2609.17501",
+    "title": "A Case Study on Noise Resilient Operator Selection in Adaptive Variational Quantum Algorithms",
+    "authors": [
+      "Soorya Haravu",
+      "Mafalda Ramôa",
+      "Bharath Sambasivam"
+    ],
+    "published": "2026-09-15T17:42:37Z",
+    "last_updated": "2026-09-15T17:42:37Z",
+    "primary_category": "quant-ph",
+    "abstract": "Hardware noise has been shown to significantly impact the accuracy of ADAPT-VQE, a ground state preparation algorithm. While previous work has studied the impact of noise on its parameter optimization step, its impact on the critical operator selection step remains comparatively unexplored. In this work, we examine the impact of a variety of noise channels on this step, using a linear H$_3$ molecule as a test case. We show that, despite the selection criterion's natural resilience to some noise, both coherent and incoherent noise can prevent convergence for sufficiently high noise rates. We employ quantum error mitigation techniques--dynamical decoupling, zero noise extrapolation, and Pauli twirling--and show that when combined appropriately, these techniques are capable of restoring a successful convergence profile. Our results highlight how error mitigation can improve the performance of ADAPT-VQE and enable convergence in the presence of hardware noise, offering valuable insights into the implementation of the algorithm on near-term quantum hardware.",
+    "abs_url": "http://arxiv.org/abs/2609.17501v1"
+  },
+  {
+    "versioned_id": "2609.17358v1",
+    "base_id": "2609.17358",
+    "title": "Hybrid Variational Quantum Circuits for Multivariate Regression and High-Dimensional Data Reconstruction",
+    "authors": [
+      "Koffi Ognandon Ayena",
+      "Frédéric Holweck",
+      "Serge Iovleff",
+      "Amah S d'Almeida"
+    ],
+    "published": "2026-09-15T15:57:20Z",
+    "last_updated": "2026-09-15T15:57:20Z",
+    "primary_category": "cs.LG",
+    "abstract": "Variational quantum circuits (VQCs) are parameterized quantum circuits optimized classically. We propose a hybrid variational quantum circuit (HVQC) extending VQCs with a classical affine post-measurement layer, enabling vector-valued regression without the linear overhead of independent scalar circuits. Theoretically, we show that elementary one-and two-qubit circuits can approximate quadratic functions and products via data re-uploading and entanglement, providing the foundations of the full architecture. Experimentally, on two synthetic image reconstruction datasets and the Friedman1 benchmark (40,568 test samples), our HVQC matches Gaussian Process Regression and outperforms XGBoost and Random Forest. An ablation study confirms that both quantum and classical components are essential, and results highlight the central role of the feature map in hybrid quantum-classical models.",
+    "abs_url": "http://arxiv.org/abs/2609.17358v1"
+  },
+  {
+    "versioned_id": "2609.17352v1",
+    "base_id": "2609.17352",
+    "title": "Adaptive Relational Learning on Multi-instance Quantum Data with Photonic Processors",
+    "authors": [
+      "Marcin Jastrzebski",
+      "Shang Yu",
+      "Raj B. Patel",
+      "Oleksandr Kyriienko"
+    ],
+    "published": "2026-09-15T15:50:47Z",
+    "last_updated": "2026-09-15T15:50:47Z",
+    "primary_category": "quant-ph",
+    "abstract": "Loading multiple quantum states in parallel into a quantum machine learning (QML) model can unlock learning tasks where key information resides in the \\emph{relations} between states rather than in individual states. We introduce an adaptive relational learning framework for such multi-instance quantum data that accesses pairwise and higher-order relations. Our model combines global measurements via SWAP or CYCLE tests for evaluating an $n$-state Bargmann invariant with shallow trainable transformations applied locally to each input state. We demonstrate the approach for continuous-variable (CV) photonic systems, which naturally provide access to quantum data and necessary computing operations. We solve tasks involving hidden relationship detection, geometric phase classification, and sensing in the presence of an unknown shared nuisance interaction. We benchmark the adaptive model against a non-adaptive ``measure-first'' approach based on continuous-variable classical shadows, and show that the cost of shadow estimation grows rapidly with $n$, while our model avoids this dependence. Already for $n=2$, we achieve perfect test accuracy $A=1.0$ with $500$ inference shots, improving average test accuracy over the shadow-based method by $ΔA=0.15$ while using $100$ times fewer shots per data point. Our work opens routes to sensing and quantum-data applications where adaptive photonic QML can access relational features that are costly to recover with non-adaptive, measure-first models.",
+    "abs_url": "http://arxiv.org/abs/2609.17352v1"
+  },
+  {
+    "versioned_id": "2609.16266v1",
+    "base_id": "2609.16266",
+    "title": "Towards Surrogate Based Dequantization of Quantum Reinforcement Learning",
+    "authors": [
+      "Pablo Rodriguez-Grasa",
+      "Sofiene Jerbi",
+      "Mikel Sanz",
+      "Ryan Sweke"
+    ],
+    "published": "2026-09-14T19:26:35Z",
+    "last_updated": "2026-09-14T19:26:35Z",
+    "primary_category": "quant-ph",
+    "abstract": "In recent years, the utility of parameterized quantum circuits as function approximators has been widely studied. In the context of reinforcement learning, this approach has led to variational quantum algorithms such as quantum Q-learning. While these methods show promising empirical results, and can provide provable advantages for artificial problems, it remains unclear whether they can provide a provable quantum advantage over classical approaches for problems of practical relevance. A natural way to investigate this question is through the lens of dequantization: The construction of efficient classical algorithms capable of matching the performance of quantum variational methods. Building on recent kernel-based dequantization results for supervised learning, we take steps towards extending this surrogate-based dequantization program to reinforcement learning. Specifically, we study the simplified setting of reinforcement learning with a uniform generative model in which uniformly random state-action samples are available, which models the regime of sampling from a large experience replay buffer after sufficient exploration. Within this setting, we provide finite sample guarantees for classical kernelized Fitted Q-Iteration, with classical kernels designed to match the inductive bias of particular parameterized quantum circuits. Using these results, we then provide a set of sufficient conditions, on the data-encoding strategy of a parameterized quantum circuit, the corresponding classical kernel, and the problem structure, under which kernelized Fitted Q-Iteration provides a meaningful dequantization of quantum Q-learning, in this simplified setting. Apart from providing rigorous dequantization guarantees when these conditions are met, these results also motivate the use of kernelized fitted Q-iteration as a dequantization heuristic when these sufficient conditions cannot be verified.",
+    "abs_url": "http://arxiv.org/abs/2609.16266v1"
+  },
+  {
+    "versioned_id": "2609.16142v1",
+    "base_id": "2609.16142",
+    "title": "Investigating Interacting Fermionic Models with Locality-Preserving Qubit Encodings",
+    "authors": [
+      "Ashutosh P. Tripathi",
+      "Debasish Banerjee",
+      "Sandip Maiti",
+      "Nilmani Mathur"
+    ],
+    "published": "2026-09-14T18:00:07Z",
+    "last_updated": "2026-09-14T18:00:07Z",
+    "primary_category": "quant-ph",
+    "abstract": "We investigate the utility of the locality-preserving Derby-Klassen (DK) fermion-to-qubit mapping [arXiv:2003.06939] for variational quantum simulation of two-dimensional $t$-$V$ and Fermi-Hubbard models. The DK mapping preserves the locality of fermionic interactions with an enlarged Hilbert space, thereby requiring additional constraints that define the physical sector. We incorporate these constraints directly into a Hamiltonian Variational Ansätz (HVA) through Clifford-gate state preparation and use the Variational Quantum Eigensolver (VQE) to show that the low-energy properties of the resulting qubit Hamiltonian are accurately reproduced. We further exploit particle-number conservation inherent in the ansätz to resolve distinct symmetry sectors and reliably access degenerate states. Consequently, we benchmark the DK-HVA against Jordan-Wigner-based variational circuits at nonzero chemical potential, where particle-hole symmetry and the associated half-filled sign-free condition are absent. Finally, we demonstrate the advantage of locality-preserving mappings in higher-dimensional fermionic systems, where the conventional Jordan-Wigner (JW) transformation generates increasingly long Pauli strings and corresponding circuit overheads. We further extend the framework to the spinful Fermi-Hubbard model and identify a tradeoff between fermionic-mode placement and the locality of hopping and on-site interaction terms. These results establish a practical framework combining locality-preserving fermion-to-qubit mappings, constraint-preserving Clifford state preparation, and symmetry-preserving variational circuits, that trades auxiliary-qubit and stabilizer-preparation overhead for reduced operator nonlocality, providing a practical route toward resource-efficient quantum simulation of higher-dimensional interacting fermionic systems.",
+    "abs_url": "http://arxiv.org/abs/2609.16142v1"
+  },
+  {
     "versioned_id": "2609.15272v1",
     "base_id": "2609.15272",
     "title": "Variational Real-Time Dynamics on Reduced Operator Manifolds",
@@ -206,7 +285,7 @@
     "abs_url": "http://arxiv.org/abs/2609.12500v1"
   },
   {
-    "versioned_id": "2609.11637v1",
+    "versioned_id": "2609.11637v2",
     "base_id": "2609.11637",
     "title": "Certifying Adversarial Robustness of Quantum Classifiers under Known-Readout Query Access",
     "authors": [
@@ -214,10 +293,10 @@
       "Mingyu Huang"
     ],
     "published": "2026-09-10T14:45:21Z",
-    "last_updated": "2026-09-10T14:45:21Z",
+    "last_updated": "2026-09-15T06:43:55Z",
     "primary_category": "quant-ph",
-    "abstract": "A quantum classifier assigns labels by evolving an input quantum state and measuring the output, so repeated executions reveal only a distribution over labels. We study certified adversarial robustness for such classifiers under known-readout query access (KRQA), where an evaluator can prepare inputs, knows the quantum measurement, and observes finite-shot outcomes but cannot inspect the internal evolution, parameters, or gradients. We give a measurement-only framework that returns two complementary guarantees for each input: a lower bound ruling out untargeted errors within a radius, and an attack-independent upper bound witnessing an adversarial state within a radius. Both are estimable from the known readout measurement and sampled outcomes, require no tomography or circuit description, and admit finite-sample guarantees. The upper bound uses gap operators induced by the quantum measurement; the lower bound relaxes state-space search to an efficient optimization over outcome distributions with operator-spectrum constraints, yielding certificates that are never weaker than prior probability-only certificates and can be strictly stronger when the spectral constraints are active. Evaluations on multiple quantum classifiers show that the lower bound tracks exact optima on tractable instances, while the upper bound remains informative when standard attacks fail. We further demonstrate real-device feasibility on IBM Quantum hardware: from 40 executions of two 8-qubit quantum neural networks, our method computes both certificates, with the expected ordering between the lower and upper bounds on every tested input. Taken together, these results show that robustness claims for quantum classifiers can be audited directly from observable statistics under KRQA.",
-    "abs_url": "http://arxiv.org/abs/2609.11637v1"
+    "abstract": "A quantum classifier assigns labels by evolving an input quantum state and measuring the output, so repeated executions reveal only a distribution over labels. We study certified adversarial robustness for such classifiers under known-readout query access (KRQA), where an evaluator can prepare inputs, knows the quantum measurement, and observes finite-shot outcomes but cannot inspect the internal evolution, parameters, or gradients. We give a measurement-only framework that returns two complementary guarantees for each input: a lower bound ruling out untargeted errors within a radius, and an attack-independent upper bound witnessing an adversarial state within a radius. Both are estimable from the known readout measurement and sampled outcomes, require no tomography or circuit description, and have finite-sample control of probability-estimation error. The upper bound uses gap operators induced by the quantum measurement; the lower bound relaxes state-space search to an efficient optimization over outcome distributions with operator-spectrum constraints, yielding certificates that are never weaker than prior probability-only certificates and can be strictly stronger when the spectral constraints are active. On tractable instances, we compare the lower bound with numerical white-box reference estimates; across multiple classifiers, the upper bound remains informative when standard attacks fail. We further demonstrate real-device feasibility on IBM Quantum hardware: from 40 executions of two 8-qubit quantum neural networks, our method estimates both bounds, with the expected lower-upper ordering on every tested input. Taken together, these results show that robustness claims for quantum classifiers can be audited directly from observable statistics under KRQA.",
+    "abs_url": "http://arxiv.org/abs/2609.11637v2"
   },
   {
     "versioned_id": "2609.11333v1",
@@ -346,17 +425,17 @@
     "abs_url": "http://arxiv.org/abs/2609.08727v1"
   },
   {
-    "versioned_id": "2609.08170v1",
+    "versioned_id": "2609.08170v2",
     "base_id": "2609.08170",
     "title": "Classical Active-Space Hybrid Quantum Subspace Expansion (CASH-QSE): Quantum Corrections without Remeasuring the Classically Calculable Energy",
     "authors": [
       "Artur F. Izmaylov"
     ],
     "published": "2026-09-08T02:59:48Z",
-    "last_updated": "2026-09-08T02:59:48Z",
+    "last_updated": "2026-09-15T12:53:34Z",
     "primary_category": "quant-ph",
     "abstract": "The wave function prepared by a variational quantum eigensolver (VQE) can contain a substantial classically tractable component, yet its energy contribution is sampled on the quantum device. Representing the wave function as a combination of a classical reference and separately prepared quantum states allows the reference energy to be evaluated without quantum sampling. However, near-linear dependence among these components can amplify measurement errors and destabilize the resulting energy estimate. We introduce Classical Active-Space Hybrid Quantum Subspace Expansion (CASH-QSE), which retains a complete-active-space self-consistent field (CASSCF) reference classically and uses occupation structure to construct quantum states exactly orthogonal to the reference and to one another. The energy follows from an ordinary Hermitian eigenvalue problem without overlap measurements, while the same occupation constraints simplify the measured operators. Using full configuration interaction to guide component selection, we test CASH-QSE along H$_2$O and N$_2$ bond-stretching coordinates spanning weakly to strongly correlated regimes. The benchmarks use STO--3G for both molecules and a restricted cc-pVDZ orbital space for H$_2$O. CASH-QSE reaches chemical accuracy while limiting the largest complete measurement circuits to a few hundred all-to-all logical controlled-NOT gates. In favorable cases, it also reduces the idealized final-energy sampling cost by several orders of magnitude relative to VQE with an adaptive derivative-assembled pseudo-Trotter ansatz (ADAPT-VQE).",
-    "abs_url": "http://arxiv.org/abs/2609.08170v1"
+    "abs_url": "http://arxiv.org/abs/2609.08170v2"
   },
   {
     "versioned_id": "2609.07537v1",
