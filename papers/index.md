@@ -25,7 +25,18 @@ uv run scripts/sync_library.py <arxiv-id>
 | 2026 | Hassan et al. | Hybrid Quantum-Classical NLP Classification with Compact Semantic Representations: An Experimental Analysis of Representation Compression | [2609.10089v1](https://arxiv.org/abs/2609.10089v1) |
 | 2026 | Tang et al. | Characterizing Privacy Risks of Quantum Machine Learning with Emergent Quantum-Native Access | [2609.05702v2](https://arxiv.org/abs/2609.05702v2) |
 | 2026 | Joshi et al. | Balancing Expressivity and Overfitting in Quantum Gaussian Process Regression | [2609.09407v1](https://arxiv.org/abs/2609.09407v1) |
+| 2026 | Wang et al. | Structured Quantum Kernels for Chaotic Forecasting | [2609.13360v1](https://arxiv.org/abs/2609.13360v1) |
+| 2026 | Sulimov et al. | Certification cost of quantum models: measurement correlation, not parameter count | [2609.14424v1](https://arxiv.org/abs/2609.14424v1) |
+| 2026 | Meng et al. | Trainability-Oriented Hybrid Quantum Regression via Geometric Preconditioning and Curriculum Optimization | [2601.11942v4](https://arxiv.org/abs/2601.11942v4) |
+| 2026 | Zhu et al. | Rethinking Noise in Quantum Machine Learning: When Noise Improves Learning | [2601.13275v2](https://arxiv.org/abs/2601.13275v2) |
+| 2026 | Isogai et al. | A Quantum-Inspired Dequantization Method for Diagonally Weighted Matrix Functions: Application to Learning with Optimized Random Features | [2609.10729v1](https://arxiv.org/abs/2609.10729v1) |
+| 2026 | Nausheen et al. | Parameter-Efficient Quantum NLP for Paraphrase Detection: Performance, Robustness, and Entanglement | [2609.14529v1](https://arxiv.org/abs/2609.14529v1) |
+| 2026 | Guan et al. | Certifying Adversarial Robustness of Quantum Classifiers under Known-Readout Query Access | [2609.11637v1](https://arxiv.org/abs/2609.11637v1) |
+| 2026 | Wu et al. | Operator Learning with Variational Quantum Circuits | [2609.14131v1](https://arxiv.org/abs/2609.14131v1) |
 | 2025 | Du et al. | Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers | [2502.01146v1](https://arxiv.org/abs/2502.01146v1) |
+| 2025 | Wakaura et al. | Few-sample regression with an adaptively grown variational quantum Kolmogorov--Arnold network | [2503.21336v4](https://arxiv.org/abs/2503.21336v4) |
+| 2025 | Terada et al. | Classical and quantum kernel fusion for two-sample testing | [2511.20941v2](https://arxiv.org/abs/2511.20941v2) |
+| 2025 | Vlasic | Geodesics of Quantum Feature Maps on the Space of Quantum Operators | [2509.02795v6](https://arxiv.org/abs/2509.02795v6) |
 | 2024 | Ouyang et al. | OmniDocBench: Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations | [2412.07626v2](https://arxiv.org/abs/2412.07626v2) |
 | 2024 | Aizpurua et al. | Quantum Large Language Models via Tensor Network Disentanglers | [2410.17397v2](https://arxiv.org/abs/2410.17397v2) |
 | 2017 | Vaswani et al. | Attention Is All You Need | [1706.03762v7](https://arxiv.org/abs/1706.03762v7) |
