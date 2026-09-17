@@ -1,122 +1,128 @@
 {
-  "retrieved": "2026-09-16",
+  "retrieved": "2026-09-17",
   "counts": {
-    "new": 5,
-    "revised": 2,
+    "new": 7,
+    "revised": 0,
     "changed": 7
   },
   "papers": [
     {
-      "versioned_id": "2609.17501v1",
-      "base_id": "2609.17501",
-      "title": "A Case Study on Noise Resilient Operator Selection in Adaptive Variational Quantum Algorithms",
+      "versioned_id": "2609.18655v1",
+      "base_id": "2609.18655",
+      "title": "Learning to Program Adaptive Non-Local Observables for Machine Learning",
       "authors": [
-        "Soorya Haravu",
-        "Mafalda Ramôa",
-        "Bharath Sambasivam"
+        "Yu-Ting Lee",
+        "Samuel Yen-Chi Chen",
+        "Huan-Hsin Tseng"
       ],
-      "published": "2026-09-15T17:42:37Z",
-      "last_updated": "2026-09-15T17:42:37Z",
-      "primary_category": "quant-ph",
-      "abstract": "Hardware noise has been shown to significantly impact the accuracy of ADAPT-VQE, a ground state preparation algorithm. While previous work has studied the impact of noise on its parameter optimization step, its impact on the critical operator selection step remains comparatively unexplored. In this work, we examine the impact of a variety of noise channels on this step, using a linear H$_3$ molecule as a test case. We show that, despite the selection criterion's natural resilience to some noise, both coherent and incoherent noise can prevent convergence for sufficiently high noise rates. We employ quantum error mitigation techniques--dynamical decoupling, zero noise extrapolation, and Pauli twirling--and show that when combined appropriately, these techniques are capable of restoring a successful convergence profile. Our results highlight how error mitigation can improve the performance of ADAPT-VQE and enable convergence in the presence of hardware noise, offering valuable insights into the implementation of the algorithm on near-term quantum hardware.",
-      "abs_url": "http://arxiv.org/abs/2609.17501v1",
-      "change": "new"
-    },
-    {
-      "versioned_id": "2609.17358v1",
-      "base_id": "2609.17358",
-      "title": "Hybrid Variational Quantum Circuits for Multivariate Regression and High-Dimensional Data Reconstruction",
-      "authors": [
-        "Koffi Ognandon Ayena",
-        "Frédéric Holweck",
-        "Serge Iovleff",
-        "Amah S d'Almeida"
-      ],
-      "published": "2026-09-15T15:57:20Z",
-      "last_updated": "2026-09-15T15:57:20Z",
+      "published": "2026-09-16T13:35:31Z",
+      "last_updated": "2026-09-16T13:35:31Z",
       "primary_category": "cs.LG",
-      "abstract": "Variational quantum circuits (VQCs) are parameterized quantum circuits optimized classically. We propose a hybrid variational quantum circuit (HVQC) extending VQCs with a classical affine post-measurement layer, enabling vector-valued regression without the linear overhead of independent scalar circuits. Theoretically, we show that elementary one-and two-qubit circuits can approximate quadratic functions and products via data re-uploading and entanglement, providing the foundations of the full architecture. Experimentally, on two synthetic image reconstruction datasets and the Friedman1 benchmark (40,568 test samples), our HVQC matches Gaussian Process Regression and outperforms XGBoost and Random Forest. An ablation study confirms that both quantum and classical components are essential, and results highlight the central role of the feature map in hybrid quantum-classical models.",
-      "abs_url": "http://arxiv.org/abs/2609.17358v1",
+      "abstract": "Quantum neural networks (QNNs) are typically built from variational quantum circuits (VQCs), which are limited by local measurements. Adaptive non-local observables (ANO) address this by jointly optimizing circuit parameters and multi-qubit measurements. However, existing ANO-based VQCs learn only a single static observable that remains invariant across all inputs. We propose QFWP-ANO, a novel architecture which employs a classical hypernetwork to dynamically program VQC parameters and/or non-local observables conditioned on each input. On multivariate time-series forecasting across four ETT datasets, QFWP-ANO achieves the lowest MSE in 16 of 20 settings and second-lowest in the remaining four, surpassing ANO-based and other strong baselines. On reinforcement learning tasks, QFWP-ANO consistently surpasses ANO-VQCs. Our results establish input-conditioned ANO as an effective approach for enhancing QNNs.",
+      "abs_url": "http://arxiv.org/abs/2609.18655v1",
       "change": "new"
     },
     {
-      "versioned_id": "2609.17352v1",
-      "base_id": "2609.17352",
-      "title": "Adaptive Relational Learning on Multi-instance Quantum Data with Photonic Processors",
+      "versioned_id": "2609.18565v1",
+      "base_id": "2609.18565",
+      "title": "Variational Quantum Transformer Architecture for Synthetic Language Generation",
       "authors": [
-        "Marcin Jastrzebski",
-        "Shang Yu",
-        "Raj B. Patel",
-        "Oleksandr Kyriienko"
+        "Julian Hager",
+        "Michael Kölle",
+        "Gerhard Stenzel",
+        "Tobias Rohe",
+        "Jonas Stein",
+        "Claudia Linnhoff-Popien"
       ],
-      "published": "2026-09-15T15:50:47Z",
-      "last_updated": "2026-09-15T15:50:47Z",
+      "published": "2026-09-16T12:23:45Z",
+      "last_updated": "2026-09-16T12:23:45Z",
       "primary_category": "quant-ph",
-      "abstract": "Loading multiple quantum states in parallel into a quantum machine learning (QML) model can unlock learning tasks where key information resides in the \\emph{relations} between states rather than in individual states. We introduce an adaptive relational learning framework for such multi-instance quantum data that accesses pairwise and higher-order relations. Our model combines global measurements via SWAP or CYCLE tests for evaluating an $n$-state Bargmann invariant with shallow trainable transformations applied locally to each input state. We demonstrate the approach for continuous-variable (CV) photonic systems, which naturally provide access to quantum data and necessary computing operations. We solve tasks involving hidden relationship detection, geometric phase classification, and sensing in the presence of an unknown shared nuisance interaction. We benchmark the adaptive model against a non-adaptive ``measure-first'' approach based on continuous-variable classical shadows, and show that the cost of shadow estimation grows rapidly with $n$, while our model avoids this dependence. Already for $n=2$, we achieve perfect test accuracy $A=1.0$ with $500$ inference shots, improving average test accuracy over the shadow-based method by $ΔA=0.15$ while using $100$ times fewer shots per data point. Our work opens routes to sensing and quantum-data applications where adaptive photonic QML can access relational features that are costly to recover with non-adaptive, measure-first models.",
-      "abs_url": "http://arxiv.org/abs/2609.17352v1",
+      "abstract": "We propose a compact NISQ-compatible quantum transformer architecture for synthetic QNLP sequence modelling. The model preserves the autoregressive next-token interface of a classical transformer, but replaces attention and feed-forward sublayers with variational quantum encoder blocks, connector circuits, decoder blocks and a direct two-qubit measurement readout. Token contexts are angle-encoded into small quantum registers, processed by parallel variational heads and encoder integration circuits and conditioned through decoder ancillae to produce a distribution over a four-token vocabulary. We evaluate several architecture variants on deterministic and lexicographic grammar-generation tasks against a compact classical transformer baseline. The quantum models are trainable end-to-end and learn nontrivial grammar structure, including perfect deterministic generation in individual runs and high lexicographic validity in the strongest variant. The classical baseline remains more accurate and stable and the quantum models are sensitive to initialization. The contribution is therefore not a claim of quantum advantage, but a concrete architecture and evaluation of transformer-inspired QNLP sequence modelling under near-term quantum constraints.",
+      "abs_url": "http://arxiv.org/abs/2609.18565v1",
       "change": "new"
     },
     {
-      "versioned_id": "2609.08170v2",
-      "base_id": "2609.08170",
-      "title": "Classical Active-Space Hybrid Quantum Subspace Expansion (CASH-QSE): Quantum Corrections without Remeasuring the Classically Calculable Energy",
+      "versioned_id": "2609.18347v1",
+      "base_id": "2609.18347",
+      "title": "Optical Quantum Computing",
       "authors": [
-        "Artur F. Izmaylov"
+        "Hamza Hasnaoui",
+        "Leonardo Limongi",
+        "Taira Giordani",
+        "Beatrice Polacchi",
+        "Alberto Quaranta",
+        "Martino Bernard",
+        "Fabio Sciarrino",
+        "Mirko Lobino"
       ],
-      "published": "2026-09-08T02:59:48Z",
-      "last_updated": "2026-09-15T12:53:34Z",
+      "published": "2026-09-16T09:11:03Z",
+      "last_updated": "2026-09-16T09:11:03Z",
       "primary_category": "quant-ph",
-      "abstract": "The wave function prepared by a variational quantum eigensolver (VQE) can contain a substantial classically tractable component, yet its energy contribution is sampled on the quantum device. Representing the wave function as a combination of a classical reference and separately prepared quantum states allows the reference energy to be evaluated without quantum sampling. However, near-linear dependence among these components can amplify measurement errors and destabilize the resulting energy estimate. We introduce Classical Active-Space Hybrid Quantum Subspace Expansion (CASH-QSE), which retains a complete-active-space self-consistent field (CASSCF) reference classically and uses occupation structure to construct quantum states exactly orthogonal to the reference and to one another. The energy follows from an ordinary Hermitian eigenvalue problem without overlap measurements, while the same occupation constraints simplify the measured operators. Using full configuration interaction to guide component selection, we test CASH-QSE along H$_2$O and N$_2$ bond-stretching coordinates spanning weakly to strongly correlated regimes. The benchmarks use STO--3G for both molecules and a restricted cc-pVDZ orbital space for H$_2$O. CASH-QSE reaches chemical accuracy while limiting the largest complete measurement circuits to a few hundred all-to-all logical controlled-NOT gates. In favorable cases, it also reduces the idealized final-energy sampling cost by several orders of magnitude relative to VQE with an adaptive derivative-assembled pseudo-Trotter ansatz (ADAPT-VQE).",
-      "abs_url": "http://arxiv.org/abs/2609.08170v2",
-      "change": "revised"
-    },
-    {
-      "versioned_id": "2609.11637v2",
-      "base_id": "2609.11637",
-      "title": "Certifying Adversarial Robustness of Quantum Classifiers under Known-Readout Query Access",
-      "authors": [
-        "Ji Guan",
-        "Mingyu Huang"
-      ],
-      "published": "2026-09-10T14:45:21Z",
-      "last_updated": "2026-09-15T06:43:55Z",
-      "primary_category": "quant-ph",
-      "abstract": "A quantum classifier assigns labels by evolving an input quantum state and measuring the output, so repeated executions reveal only a distribution over labels. We study certified adversarial robustness for such classifiers under known-readout query access (KRQA), where an evaluator can prepare inputs, knows the quantum measurement, and observes finite-shot outcomes but cannot inspect the internal evolution, parameters, or gradients. We give a measurement-only framework that returns two complementary guarantees for each input: a lower bound ruling out untargeted errors within a radius, and an attack-independent upper bound witnessing an adversarial state within a radius. Both are estimable from the known readout measurement and sampled outcomes, require no tomography or circuit description, and have finite-sample control of probability-estimation error. The upper bound uses gap operators induced by the quantum measurement; the lower bound relaxes state-space search to an efficient optimization over outcome distributions with operator-spectrum constraints, yielding certificates that are never weaker than prior probability-only certificates and can be strictly stronger when the spectral constraints are active. On tractable instances, we compare the lower bound with numerical white-box reference estimates; across multiple classifiers, the upper bound remains informative when standard attacks fail. We further demonstrate real-device feasibility on IBM Quantum hardware: from 40 executions of two 8-qubit quantum neural networks, our method estimates both bounds, with the expected lower-upper ordering on every tested input. Taken together, these results show that robustness claims for quantum classifiers can be audited directly from observable statistics under KRQA.",
-      "abs_url": "http://arxiv.org/abs/2609.11637v2",
-      "change": "revised"
-    },
-    {
-      "versioned_id": "2609.16266v1",
-      "base_id": "2609.16266",
-      "title": "Towards Surrogate Based Dequantization of Quantum Reinforcement Learning",
-      "authors": [
-        "Pablo Rodriguez-Grasa",
-        "Sofiene Jerbi",
-        "Mikel Sanz",
-        "Ryan Sweke"
-      ],
-      "published": "2026-09-14T19:26:35Z",
-      "last_updated": "2026-09-14T19:26:35Z",
-      "primary_category": "quant-ph",
-      "abstract": "In recent years, the utility of parameterized quantum circuits as function approximators has been widely studied. In the context of reinforcement learning, this approach has led to variational quantum algorithms such as quantum Q-learning. While these methods show promising empirical results, and can provide provable advantages for artificial problems, it remains unclear whether they can provide a provable quantum advantage over classical approaches for problems of practical relevance. A natural way to investigate this question is through the lens of dequantization: The construction of efficient classical algorithms capable of matching the performance of quantum variational methods. Building on recent kernel-based dequantization results for supervised learning, we take steps towards extending this surrogate-based dequantization program to reinforcement learning. Specifically, we study the simplified setting of reinforcement learning with a uniform generative model in which uniformly random state-action samples are available, which models the regime of sampling from a large experience replay buffer after sufficient exploration. Within this setting, we provide finite sample guarantees for classical kernelized Fitted Q-Iteration, with classical kernels designed to match the inductive bias of particular parameterized quantum circuits. Using these results, we then provide a set of sufficient conditions, on the data-encoding strategy of a parameterized quantum circuit, the corresponding classical kernel, and the problem structure, under which kernelized Fitted Q-Iteration provides a meaningful dequantization of quantum Q-learning, in this simplified setting. Apart from providing rigorous dequantization guarantees when these conditions are met, these results also motivate the use of kernelized fitted Q-iteration as a dequantization heuristic when these sufficient conditions cannot be verified.",
-      "abs_url": "http://arxiv.org/abs/2609.16266v1",
+      "abstract": "Under the label of optical quantum computing, there are a variety of protocols and experiments that use the quantum properties of light to achieve a computational advantage over classical computing machines. In this review, we describe some of the main implementations, which differ in the type of encoding and in how the computation is performed, whether using gates or cluster states. For each protocol, we describe advantages and challenges with an overview of the experimental results obtained, summarized in tables. Because of the great relevance achieved in this field, there is a section dedicated to non-universal quantum computation with photons, where boson sampling, variational quantum eigensolvers, and quantum machine learning applications are described. The aim is to give the reader the broadest overview of the applications where photons and their quantum properties play a key role in computation.",
+      "abs_url": "http://arxiv.org/abs/2609.18347v1",
       "change": "new"
     },
     {
-      "versioned_id": "2609.16142v1",
-      "base_id": "2609.16142",
-      "title": "Investigating Interacting Fermionic Models with Locality-Preserving Qubit Encodings",
+      "versioned_id": "2609.18219v1",
+      "base_id": "2609.18219",
+      "title": "APGEM: Adaptive Policy-Guided Error Mitigation for Quantum Reinforcement Learning on a Real-World CVRP Case Study",
       "authors": [
-        "Ashutosh P. Tripathi",
-        "Debasish Banerjee",
-        "Sandip Maiti",
-        "Nilmani Mathur"
+        "Shabir Ahmad Sofi",
+        "Bisma Majid",
+        "Mir Mohammad Yousuf"
       ],
-      "published": "2026-09-14T18:00:07Z",
-      "last_updated": "2026-09-14T18:00:07Z",
+      "published": "2026-09-16T06:50:15Z",
+      "last_updated": "2026-09-16T06:50:15Z",
+      "primary_category": "cs.LG",
+      "abstract": "Quantum Reinforcement Learning (QRL) represents policies as variational quantum circuits (VQCs), making it attractive for combinatorial optimization such as the Capacitated Vehicle Routing Problem (CVRP). On noisy intermediate-scale quantum (NISQ) hardware, however, decoherence degrades fidelity and destabilizes learning, and conventional error mitigation is applied statically without regard to the learning context. We introduce Adaptive Policy-Guided Error Mitigation (APGEM), a controller that selects among Zero-Noise Extrapolation (ZNE), Probabilistic Error Cancellation (PEC), Clifford Data Regression (CDR), and Readout Error Mitigation (REM) online, driven by a fidelity, entropy, and cost aware utility function and an epsilon-greedy rule over temporal-difference Q-scores. We evaluate on a realistic urban-logistics testbed, a Delhi-based CVRP over real landmarks with geodesic inter-node costs, exercised across five noise families and four severity levels. On this instance, the QRL agent outperforms constructive heuristics and approaches metaheuristics, while mitigation restores approximation ratios from 0.84-0.87 to 0.92-0.94 under high noise. The controller shifts from a CDR-dominated regime under short training horizons to a balanced deployment across all four techniques under longer horizons, indicating genuine regime-dependent selection. These preliminary results position adaptive, learning-aware mitigation as a practical route to noise-resilient QRL.",
+      "abs_url": "http://arxiv.org/abs/2609.18219v1",
+      "change": "new"
+    },
+    {
+      "versioned_id": "2609.17991v1",
+      "base_id": "2609.17991",
+      "title": "Fourier Analysis of Parametrized Interactive Quantum Classifiers",
+      "authors": [
+        "Fábio Novaes",
+        "Fernando M. de Paula Neto",
+        "João V. M. Cardoso"
+      ],
+      "published": "2026-09-16T01:23:01Z",
+      "last_updated": "2026-09-16T01:23:01Z",
       "primary_category": "quant-ph",
-      "abstract": "We investigate the utility of the locality-preserving Derby-Klassen (DK) fermion-to-qubit mapping [arXiv:2003.06939] for variational quantum simulation of two-dimensional $t$-$V$ and Fermi-Hubbard models. The DK mapping preserves the locality of fermionic interactions with an enlarged Hilbert space, thereby requiring additional constraints that define the physical sector. We incorporate these constraints directly into a Hamiltonian Variational Ansätz (HVA) through Clifford-gate state preparation and use the Variational Quantum Eigensolver (VQE) to show that the low-energy properties of the resulting qubit Hamiltonian are accurately reproduced. We further exploit particle-number conservation inherent in the ansätz to resolve distinct symmetry sectors and reliably access degenerate states. Consequently, we benchmark the DK-HVA against Jordan-Wigner-based variational circuits at nonzero chemical potential, where particle-hole symmetry and the associated half-filled sign-free condition are absent. Finally, we demonstrate the advantage of locality-preserving mappings in higher-dimensional fermionic systems, where the conventional Jordan-Wigner (JW) transformation generates increasingly long Pauli strings and corresponding circuit overheads. We further extend the framework to the spinful Fermi-Hubbard model and identify a tradeoff between fermionic-mode placement and the locality of hopping and on-site interaction terms. These results establish a practical framework combining locality-preserving fermion-to-qubit mappings, constraint-preserving Clifford state preparation, and symmetry-preserving variational circuits, that trades auxiliary-qubit and stabilizer-preparation overhead for reduced operator nonlocality, providing a practical route toward resource-efficient quantum simulation of higher-dimensional interacting fermionic systems.",
-      "abs_url": "http://arxiv.org/abs/2609.16142v1",
+      "abstract": "Interactive Quantum Classifiers (IQCs) constitute a family of quantum machine learning models inspired by open quantum systems, in which the interaction between a target qubit and an environment is described by a Hamiltonian. Previous works introduced alternative Hamiltonian parameterizations and showed empirically that they can improve classification performance, but the role of these parameters in the resulting classifier remains poorly understood. In this work, we derive a closed-form expression for the reduced quantum channel generated by a parametrized IQC with a single target qubit. The analytical solution explicitly reveals how the Hamiltonian parameters control the constant, sine, and cosine components of the classifier output, establishing a Fourier interpretation of the induced feature map. This analysis motivates a generalized family of Hamiltonian encodings, including matrix-parameterized environmental Hamiltonians whose Fourier components depend on linear combinations of input features, thereby enabling non-separable Fourier structures. Numerical experiments on synthetic and real-world datasets show that the proposed models can improve classification performance on several nonlinear benchmarks. The generalized matrix encoding achieves the strongest aggregate performance in the evaluated benchmark, while a simpler four-parameter extension often attains comparable performance with substantially fewer trainable parameters. We additionally characterize the generated state ensembles using the standard fidelity-based expressibility measure, finding that global expressibility does not directly predict classification performance. Our results provide an analytical characterization of parametrized Hamiltonians in Interactive Quantum Classifiers and establish Fourier analysis as a useful framework for understanding and designing open-system-inspired quantum learning models.",
+      "abs_url": "http://arxiv.org/abs/2609.17991v1",
+      "change": "new"
+    },
+    {
+      "versioned_id": "2609.17789v1",
+      "base_id": "2609.17789",
+      "title": "QiT: Quantum-Inspired Transformer for Visual Recognition Task",
+      "authors": [
+        "Badri N. Patro",
+        "Vijay Agneeswaran"
+      ],
+      "published": "2026-09-15T19:55:07Z",
+      "last_updated": "2026-09-15T19:55:07Z",
+      "primary_category": "quant-ph",
+      "abstract": "Quantum machine learning offers a compelling representational perspective: angle-encoded states inhabit Hilbert spaces in which periodic similarities and interactions can be expressed naturally. Realizing this perspective for visual recognition remains difficult, however, because present quantum neural networks are constrained by limited qubit counts, costly circuit simulation and measurement, noise, and unstable optimization on noisy intermediate-scale quantum devices. We investigate whether useful structural ideas from quantum models can instead be realized as scalable classical Transformer operations. We introduce QiT, a Quantum-inspired Transformer for vision tasks with three components: (i) angle-inspired encoding that maps image tokens to learned trigonometric Hilbert-space features analogous to quantum rotation-based state encoding; (ii) self-attention over these periodic features, inducing a classical cosine kernel approximated to quantum fidelity kernels; and (iii) gated multiplicative emulation, a trainable classical surrogate for interaction terms found in variational circuits. All components are differentiable tensor operations, so QiT claims neither quantum computation nor quantum speedup and retains the $\\mathcal{O}(N^2D)$ attention complexity of a standard Vision Transformer. Across image-classification benchmarks, QiT is competitive with a matched classical Transformer while avoiding the severe runtime cost observed for a small simulated quantum Transformer. QiT-B reaches 78.3\\% ImageNet-1K top-1 accuracy with 45.7M parameters and 11.5 GFLOPs. These results position QiT as a scalable baseline for isolating and evaluating quantum-motivated inductive biases in visual recognition.",
+      "abs_url": "http://arxiv.org/abs/2609.17789v1",
+      "change": "new"
+    },
+    {
+      "versioned_id": "2509.00341v3",
+      "base_id": "2509.00341",
+      "title": "Solving Conic Programs over Sparse Graphs using a Variational Quantum Approach: The Case of the AC Optimal Power Flow",
+      "authors": [
+        "Thinh Viet Le",
+        "Mark M. Wilde",
+        "Vassilis Kekatos"
+      ],
+      "published": "2025-08-30T03:47:52Z",
+      "last_updated": "2026-09-15T18:20:40Z",
+      "primary_category": "eess.SY",
+      "abstract": "Conic programs arising in physics, quantum information, machine learning, and engineering are often defined over sparse graphs. Although such problems can be solved in polynomial time using classical interior-point solvers, the computational complexity scales unfavorably with graph size. We propose a variational quantum paradigm for solving conic programs, including quadratically constrained quadratic programs and semidefinite programs. We encode primal variables via the state of a parameterized quantum circuit (PQC) and dual variables via the probability mass function associated with a second PQC. The Lagrangian function can thus be expressed as scaled expectations of quantum observables. We pursue approximately stationary points of the Lagrangian by minimizing/maximizing the Lagrangian over the parameters of the first/second PQC. This is accomplished in a hybrid fashion: gradients are estimated using the two PQCs, while their parameters are updated classically using a primal-dual method. We propose permuting primal variables so that related observables have a banded form, enabling efficient measurement. We provide a complexity analysis that is useful to determine which problem types may enjoy quantum advantage. The framework is applied to the AC OPF problem, a large-scale optimization problem central to electric power system operation. Numerical tests on the IEEE 57-node system using PennyLane's simulator show that the proposed doubly variational quantum framework can find high-quality OPF solutions. While this demonstration does not yield a quantum speedup, the results serve as a proof-of-concept and highlight challenges toward practical quantum advantage. Although showcased for OPF, the framework has broader scope, including conic programs with many variables and constraints, problems defined over sparse graphs, and training quantum machine learning models to satisfy constraints.",
+      "abs_url": "http://arxiv.org/abs/2509.00341v3",
       "change": "new"
     }
   ]

@@ -35,6 +35,9 @@ uv run scripts/sync_library.py <arxiv-id>
 | 2026 | Rodriguez-Grasa et al. | Towards Surrogate Based Dequantization of Quantum Reinforcement Learning | [2609.16266v1](https://arxiv.org/abs/2609.16266v1) |
 | 2026 | Ayena et al. | Hybrid Variational Quantum Circuits for Multivariate Regression and High-Dimensional Data Reconstruction | [2609.17358v1](https://arxiv.org/abs/2609.17358v1) |
 | 2026 | Guan et al. | Certifying Adversarial Robustness of Quantum Classifiers under Known-Readout Query Access | [2609.11637v2](https://arxiv.org/abs/2609.11637v2) |
+| 2026 | Lee et al. | Learning to Program Adaptive Non-Local Observables for Machine Learning | [2609.18655v1](https://arxiv.org/abs/2609.18655v1) |
+| 2026 | Hager et al. | Variational Quantum Transformer Architecture for Synthetic Language Generation | [2609.18565v1](https://arxiv.org/abs/2609.18565v1) |
+| 2026 | Novaes et al. | Fourier Analysis of Parametrized Interactive Quantum Classifiers | [2609.17991v1](https://arxiv.org/abs/2609.17991v1) |
 | 2025 | Du et al. | Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers | [2502.01146v1](https://arxiv.org/abs/2502.01146v1) |
 | 2025 | Wakaura et al. | Few-sample regression with an adaptively grown variational quantum Kolmogorov--Arnold network | [2503.21336v4](https://arxiv.org/abs/2503.21336v4) |
 | 2025 | Terada et al. | Classical and quantum kernel fusion for two-sample testing | [2511.20941v2](https://arxiv.org/abs/2511.20941v2) |

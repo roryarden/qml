@@ -1,5 +1,102 @@
 [
   {
+    "versioned_id": "2609.18655v1",
+    "base_id": "2609.18655",
+    "title": "Learning to Program Adaptive Non-Local Observables for Machine Learning",
+    "authors": [
+      "Yu-Ting Lee",
+      "Samuel Yen-Chi Chen",
+      "Huan-Hsin Tseng"
+    ],
+    "published": "2026-09-16T13:35:31Z",
+    "last_updated": "2026-09-16T13:35:31Z",
+    "primary_category": "cs.LG",
+    "abstract": "Quantum neural networks (QNNs) are typically built from variational quantum circuits (VQCs), which are limited by local measurements. Adaptive non-local observables (ANO) address this by jointly optimizing circuit parameters and multi-qubit measurements. However, existing ANO-based VQCs learn only a single static observable that remains invariant across all inputs. We propose QFWP-ANO, a novel architecture which employs a classical hypernetwork to dynamically program VQC parameters and/or non-local observables conditioned on each input. On multivariate time-series forecasting across four ETT datasets, QFWP-ANO achieves the lowest MSE in 16 of 20 settings and second-lowest in the remaining four, surpassing ANO-based and other strong baselines. On reinforcement learning tasks, QFWP-ANO consistently surpasses ANO-VQCs. Our results establish input-conditioned ANO as an effective approach for enhancing QNNs.",
+    "abs_url": "http://arxiv.org/abs/2609.18655v1"
+  },
+  {
+    "versioned_id": "2609.18565v1",
+    "base_id": "2609.18565",
+    "title": "Variational Quantum Transformer Architecture for Synthetic Language Generation",
+    "authors": [
+      "Julian Hager",
+      "Michael Kölle",
+      "Gerhard Stenzel",
+      "Tobias Rohe",
+      "Jonas Stein",
+      "Claudia Linnhoff-Popien"
+    ],
+    "published": "2026-09-16T12:23:45Z",
+    "last_updated": "2026-09-16T12:23:45Z",
+    "primary_category": "quant-ph",
+    "abstract": "We propose a compact NISQ-compatible quantum transformer architecture for synthetic QNLP sequence modelling. The model preserves the autoregressive next-token interface of a classical transformer, but replaces attention and feed-forward sublayers with variational quantum encoder blocks, connector circuits, decoder blocks and a direct two-qubit measurement readout. Token contexts are angle-encoded into small quantum registers, processed by parallel variational heads and encoder integration circuits and conditioned through decoder ancillae to produce a distribution over a four-token vocabulary. We evaluate several architecture variants on deterministic and lexicographic grammar-generation tasks against a compact classical transformer baseline. The quantum models are trainable end-to-end and learn nontrivial grammar structure, including perfect deterministic generation in individual runs and high lexicographic validity in the strongest variant. The classical baseline remains more accurate and stable and the quantum models are sensitive to initialization. The contribution is therefore not a claim of quantum advantage, but a concrete architecture and evaluation of transformer-inspired QNLP sequence modelling under near-term quantum constraints.",
+    "abs_url": "http://arxiv.org/abs/2609.18565v1"
+  },
+  {
+    "versioned_id": "2609.18347v1",
+    "base_id": "2609.18347",
+    "title": "Optical Quantum Computing",
+    "authors": [
+      "Hamza Hasnaoui",
+      "Leonardo Limongi",
+      "Taira Giordani",
+      "Beatrice Polacchi",
+      "Alberto Quaranta",
+      "Martino Bernard",
+      "Fabio Sciarrino",
+      "Mirko Lobino"
+    ],
+    "published": "2026-09-16T09:11:03Z",
+    "last_updated": "2026-09-16T09:11:03Z",
+    "primary_category": "quant-ph",
+    "abstract": "Under the label of optical quantum computing, there are a variety of protocols and experiments that use the quantum properties of light to achieve a computational advantage over classical computing machines. In this review, we describe some of the main implementations, which differ in the type of encoding and in how the computation is performed, whether using gates or cluster states. For each protocol, we describe advantages and challenges with an overview of the experimental results obtained, summarized in tables. Because of the great relevance achieved in this field, there is a section dedicated to non-universal quantum computation with photons, where boson sampling, variational quantum eigensolvers, and quantum machine learning applications are described. The aim is to give the reader the broadest overview of the applications where photons and their quantum properties play a key role in computation.",
+    "abs_url": "http://arxiv.org/abs/2609.18347v1"
+  },
+  {
+    "versioned_id": "2609.18219v1",
+    "base_id": "2609.18219",
+    "title": "APGEM: Adaptive Policy-Guided Error Mitigation for Quantum Reinforcement Learning on a Real-World CVRP Case Study",
+    "authors": [
+      "Shabir Ahmad Sofi",
+      "Bisma Majid",
+      "Mir Mohammad Yousuf"
+    ],
+    "published": "2026-09-16T06:50:15Z",
+    "last_updated": "2026-09-16T06:50:15Z",
+    "primary_category": "cs.LG",
+    "abstract": "Quantum Reinforcement Learning (QRL) represents policies as variational quantum circuits (VQCs), making it attractive for combinatorial optimization such as the Capacitated Vehicle Routing Problem (CVRP). On noisy intermediate-scale quantum (NISQ) hardware, however, decoherence degrades fidelity and destabilizes learning, and conventional error mitigation is applied statically without regard to the learning context. We introduce Adaptive Policy-Guided Error Mitigation (APGEM), a controller that selects among Zero-Noise Extrapolation (ZNE), Probabilistic Error Cancellation (PEC), Clifford Data Regression (CDR), and Readout Error Mitigation (REM) online, driven by a fidelity, entropy, and cost aware utility function and an epsilon-greedy rule over temporal-difference Q-scores. We evaluate on a realistic urban-logistics testbed, a Delhi-based CVRP over real landmarks with geodesic inter-node costs, exercised across five noise families and four severity levels. On this instance, the QRL agent outperforms constructive heuristics and approaches metaheuristics, while mitigation restores approximation ratios from 0.84-0.87 to 0.92-0.94 under high noise. The controller shifts from a CDR-dominated regime under short training horizons to a balanced deployment across all four techniques under longer horizons, indicating genuine regime-dependent selection. These preliminary results position adaptive, learning-aware mitigation as a practical route to noise-resilient QRL.",
+    "abs_url": "http://arxiv.org/abs/2609.18219v1"
+  },
+  {
+    "versioned_id": "2609.17991v1",
+    "base_id": "2609.17991",
+    "title": "Fourier Analysis of Parametrized Interactive Quantum Classifiers",
+    "authors": [
+      "Fábio Novaes",
+      "Fernando M. de Paula Neto",
+      "João V. M. Cardoso"
+    ],
+    "published": "2026-09-16T01:23:01Z",
+    "last_updated": "2026-09-16T01:23:01Z",
+    "primary_category": "quant-ph",
+    "abstract": "Interactive Quantum Classifiers (IQCs) constitute a family of quantum machine learning models inspired by open quantum systems, in which the interaction between a target qubit and an environment is described by a Hamiltonian. Previous works introduced alternative Hamiltonian parameterizations and showed empirically that they can improve classification performance, but the role of these parameters in the resulting classifier remains poorly understood. In this work, we derive a closed-form expression for the reduced quantum channel generated by a parametrized IQC with a single target qubit. The analytical solution explicitly reveals how the Hamiltonian parameters control the constant, sine, and cosine components of the classifier output, establishing a Fourier interpretation of the induced feature map. This analysis motivates a generalized family of Hamiltonian encodings, including matrix-parameterized environmental Hamiltonians whose Fourier components depend on linear combinations of input features, thereby enabling non-separable Fourier structures. Numerical experiments on synthetic and real-world datasets show that the proposed models can improve classification performance on several nonlinear benchmarks. The generalized matrix encoding achieves the strongest aggregate performance in the evaluated benchmark, while a simpler four-parameter extension often attains comparable performance with substantially fewer trainable parameters. We additionally characterize the generated state ensembles using the standard fidelity-based expressibility measure, finding that global expressibility does not directly predict classification performance. Our results provide an analytical characterization of parametrized Hamiltonians in Interactive Quantum Classifiers and establish Fourier analysis as a useful framework for understanding and designing open-system-inspired quantum learning models.",
+    "abs_url": "http://arxiv.org/abs/2609.17991v1"
+  },
+  {
+    "versioned_id": "2609.17789v1",
+    "base_id": "2609.17789",
+    "title": "QiT: Quantum-Inspired Transformer for Visual Recognition Task",
+    "authors": [
+      "Badri N. Patro",
+      "Vijay Agneeswaran"
+    ],
+    "published": "2026-09-15T19:55:07Z",
+    "last_updated": "2026-09-15T19:55:07Z",
+    "primary_category": "quant-ph",
+    "abstract": "Quantum machine learning offers a compelling representational perspective: angle-encoded states inhabit Hilbert spaces in which periodic similarities and interactions can be expressed naturally. Realizing this perspective for visual recognition remains difficult, however, because present quantum neural networks are constrained by limited qubit counts, costly circuit simulation and measurement, noise, and unstable optimization on noisy intermediate-scale quantum devices. We investigate whether useful structural ideas from quantum models can instead be realized as scalable classical Transformer operations. We introduce QiT, a Quantum-inspired Transformer for vision tasks with three components: (i) angle-inspired encoding that maps image tokens to learned trigonometric Hilbert-space features analogous to quantum rotation-based state encoding; (ii) self-attention over these periodic features, inducing a classical cosine kernel approximated to quantum fidelity kernels; and (iii) gated multiplicative emulation, a trainable classical surrogate for interaction terms found in variational circuits. All components are differentiable tensor operations, so QiT claims neither quantum computation nor quantum speedup and retains the $\\mathcal{O}(N^2D)$ attention complexity of a standard Vision Transformer. Across image-classification benchmarks, QiT is competitive with a matched classical Transformer while avoiding the severe runtime cost observed for a small simulated quantum Transformer. QiT-B reaches 78.3\\% ImageNet-1K top-1 accuracy with 45.7M parameters and 11.5 GFLOPs. These results position QiT as a scalable baseline for isolating and evaluating quantum-motivated inductive biases in visual recognition.",
+    "abs_url": "http://arxiv.org/abs/2609.17789v1"
+  },
+  {
     "versioned_id": "2609.17501v1",
     "base_id": "2609.17501",
     "title": "A Case Study on Noise Resilient Operator Selection in Adaptive Variational Quantum Algorithms",
@@ -1992,6 +2089,21 @@
     "primary_category": "quant-ph",
     "abstract": "Recent advancements in the discipline of quantum algorithms have displayed the importance of the geometry of quantum operators. Given this thrust, this paper develops a rigorous geometric framework to analyze how the Riemannian structure of data, under the manifold hypothesis, influences the subspace of quantum gates induced by quantum feature maps. While numerous encoding schemes have been proposed in quantum machine learning, little attention has been given to how data geometry is deformed when mapped into the Lie group of special unitary operators. Addressing this gap, we assume a point cloud forms a smooth Riemannian manifold and formally construct the induced Riemannian geometry of a broad class of Hamiltonian quantum feature maps, which encompasses the majority of derived schemes. Starting from first principles, we derive analytic and, consequently, computational formulas for fundamental geometric measurements, including curvature, volume forms, and harmonic maps, providing tools for systematic deformation analysis. Notably, the derivations of the formulas elucidates how changes along paths in the data manifold interplay to changes in the associated subspace of special unitary operators, thereby indicating a direct geometric effect of data on quantum circuits. This framework establishes the mathematical validity required for principled analysis beyond heuristic ansatz and enables future research into geometry-aware quantum algorithm design.",
     "abs_url": "http://arxiv.org/abs/2509.02795v6"
+  },
+  {
+    "versioned_id": "2509.00341v3",
+    "base_id": "2509.00341",
+    "title": "Solving Conic Programs over Sparse Graphs using a Variational Quantum Approach: The Case of the AC Optimal Power Flow",
+    "authors": [
+      "Thinh Viet Le",
+      "Mark M. Wilde",
+      "Vassilis Kekatos"
+    ],
+    "published": "2025-08-30T03:47:52Z",
+    "last_updated": "2026-09-15T18:20:40Z",
+    "primary_category": "eess.SY",
+    "abstract": "Conic programs arising in physics, quantum information, machine learning, and engineering are often defined over sparse graphs. Although such problems can be solved in polynomial time using classical interior-point solvers, the computational complexity scales unfavorably with graph size. We propose a variational quantum paradigm for solving conic programs, including quadratically constrained quadratic programs and semidefinite programs. We encode primal variables via the state of a parameterized quantum circuit (PQC) and dual variables via the probability mass function associated with a second PQC. The Lagrangian function can thus be expressed as scaled expectations of quantum observables. We pursue approximately stationary points of the Lagrangian by minimizing/maximizing the Lagrangian over the parameters of the first/second PQC. This is accomplished in a hybrid fashion: gradients are estimated using the two PQCs, while their parameters are updated classically using a primal-dual method. We propose permuting primal variables so that related observables have a banded form, enabling efficient measurement. We provide a complexity analysis that is useful to determine which problem types may enjoy quantum advantage. The framework is applied to the AC OPF problem, a large-scale optimization problem central to electric power system operation. Numerical tests on the IEEE 57-node system using PennyLane's simulator show that the proposed doubly variational quantum framework can find high-quality OPF solutions. While this demonstration does not yield a quantum speedup, the results serve as a proof-of-concept and highlight challenges toward practical quantum advantage. Although showcased for OPF, the framework has broader scope, including conic programs with many variables and constraints, problems defined over sparse graphs, and training quantum machine learning models to satisfy constraints.",
+    "abs_url": "http://arxiv.org/abs/2509.00341v3"
   },
   {
     "versioned_id": "2508.12006v2",
