@@ -16,7 +16,6 @@ uv run scripts/sync_library.py <arxiv-id>
 | 2026 | Alcântara et al. | A Representation-Theoretic Framework for Characterizing Barren Plateaus | [2609.04462v1](https://arxiv.org/abs/2609.04462v1) |
 | 2026 | Zhang et al. | A Theory of Finite-Noise Optima and Generalization in Quantum Machine Learning | [2608.24229v1](https://arxiv.org/abs/2608.24229v1) |
 | 2026 | Kamisoyama et al. | Double Descent in Quantum Kernel Ridge Regression | [2604.17202v2](https://arxiv.org/abs/2604.17202v2) |
-| 2026 | Tekeli | The ZZ feature map induces a signless Laplacian metric: a closed-form classical surrogate for quantum kernel regression | [2608.29422v1](https://arxiv.org/abs/2608.29422v1) |
 | 2026 | Appel | Fractal dimension predicts quantum kernel collapse in angle-encoded data | [2609.00475v1](https://arxiv.org/abs/2609.00475v1) |
 | 2026 | Matsuura et al. | Discretization-Aware Fine-Tuning for Quantum Machine Learning with Chemical Foundation Models | [2609.03220v1](https://arxiv.org/abs/2609.03220v1) |
 | 2026 | Peng et al. | When Similarity Is Interaction-Driven: Quantum Kernels for Regime-Sensitive Learning | [2608.24631v1](https://arxiv.org/abs/2608.24631v1) |
@@ -42,6 +41,22 @@ uv run scripts/sync_library.py <arxiv-id>
 | 2026 | Kang | From Trainability Diagnostics to Optimization Claims: Boundaries and Controls in Variational Quantum Optimization | [2609.21243v1](https://arxiv.org/abs/2609.21243v1) |
 | 2026 | Lee et al. | Recursive Quantum Long Short-Term Memory for Stable Short-Horizon Temperature Forecasting | [2609.20594v1](https://arxiv.org/abs/2609.20594v1) |
 | 2026 | Sannia et al. | Temporal information processing on a 4,500-qubit quantum annealer | [2609.19308v1](https://arxiv.org/abs/2609.19308v1) |
+| 2026 | Lin et al. | Distilling Datasets into Shallow Circuits for Quantum Machine Learning | [2609.28229v1](https://arxiv.org/abs/2609.28229v1) |
+| 2026 | Mordarski et al. | Encryptability As a Coordinate Choice: Depth-One Homomorphic Federated Learning of Quantum Neural Networks | [2609.30581v1](https://arxiv.org/abs/2609.30581v1) |
+| 2026 | Oh et al. | Fourier-Geometric Circuit Design for Gate and Entanglement Placement in Quantum Neural Networks | [2609.35489v1](https://arxiv.org/abs/2609.35489v1) |
+| 2026 | Su et al. | Scalable Quantum Machine Learning via Multi-layer Fully-Connected Variational Quantum Circuits | [2602.16623v3](https://arxiv.org/abs/2602.16623v3) |
+| 2026 | Luca et al. | Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization | [2606.10179v3](https://arxiv.org/abs/2606.10179v3) |
+| 2026 | Zhu et al. | Quantum Machine Learning for Cybersecurity Applications: Simulation and Hardware Validation | [2609.32911v1](https://arxiv.org/abs/2609.32911v1) |
+| 2026 | Luu et al. | Modeling quantum neural network gradient with reinforcement learning | [2609.31066v1](https://arxiv.org/abs/2609.31066v1) |
+| 2026 | Margeta-Cacace | Krylov-Lie Algebras for Variational Quantum Algorithms: Geometric, Depth-Aware Insights into Expressivity and Trainability | [2607.02626v4](https://arxiv.org/abs/2607.02626v4) |
+| 2026 | Bhargava et al. | Loan Portfolio Optimization with Variational Quantum Algorithms | [2609.30195v1](https://arxiv.org/abs/2609.30195v1) |
+| 2026 | Pecilli et al. | Quantum Attention by Overlap Interference: Predicting Classical and Many-Body Quantum Sequences | [2602.06699v2](https://arxiv.org/abs/2602.06699v2) |
+| 2026 | Michálek et al. | On Relationship Between Circuit Depth and Trainability of VQAs | [2609.27488v1](https://arxiv.org/abs/2609.27488v1) |
+| 2026 | Hur | When Quantum Meets AI: Quantum Methods for Machine Learning and Machine Learning Methods for Quantum Systems | [2609.25641v1](https://arxiv.org/abs/2609.25641v1) |
+| 2026 | Anthony et al. | Experimental evidence of generalization in quantum machine learning in small-data regime | [2609.24666v1](https://arxiv.org/abs/2609.24666v1) |
+| 2026 | Greco et al. | From IceCube to IT-Sphere: A Hybrid Quantum-Classical GNN for Banking IT Root Cause Analysis | [2609.22822v1](https://arxiv.org/abs/2609.22822v1) |
+| 2026 | Cano et al. | Federating Quantum and Classical Computing: A Privacy-Preserving Hybrid Approach | [2609.25082v1](https://arxiv.org/abs/2609.25082v1) |
+| 2026 | Tekeli | The ZZ feature map induces a signless Laplacian metric: a closed-form classical surrogate for quantum kernel regression | [2608.29422v2](https://arxiv.org/abs/2608.29422v2) |
 | 2025 | Du et al. | Quantum Machine Learning: A Hands-on Tutorial for Machine Learning Practitioners and Researchers | [2502.01146v1](https://arxiv.org/abs/2502.01146v1) |
 | 2025 | Wakaura et al. | Few-sample regression with an adaptively grown variational quantum Kolmogorov--Arnold network | [2503.21336v4](https://arxiv.org/abs/2503.21336v4) |
 | 2025 | Terada et al. | Classical and quantum kernel fusion for two-sample testing | [2511.20941v2](https://arxiv.org/abs/2511.20941v2) |
