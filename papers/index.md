@@ -63,4 +63,6 @@ uv run scripts/sync_library.py <arxiv-id>
 | 2025 | Vlasic | Geodesics of Quantum Feature Maps on the Space of Quantum Operators | [2509.02795v6](https://arxiv.org/abs/2509.02795v6) |
 | 2024 | Ouyang et al. | OmniDocBench: Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations | [2412.07626v2](https://arxiv.org/abs/2412.07626v2) |
 | 2024 | Aizpurua et al. | Quantum Large Language Models via Tensor Network Disentanglers | [2410.17397v2](https://arxiv.org/abs/2410.17397v2) |
+| 2022 | Grinsztajn et al. | Why do tree-based models still outperform deep learning on tabular data? | [2207.08815v1](https://arxiv.org/abs/2207.08815v1) |
+| 2022 | Hollmann et al. | TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second | [2207.01848v6](https://arxiv.org/abs/2207.01848v6) |
 | 2017 | Vaswani et al. | Attention Is All You Need | [1706.03762v7](https://arxiv.org/abs/1706.03762v7) |
